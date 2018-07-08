@@ -29,7 +29,7 @@
                                 </constraints>
                                 <state key="normal" image="takePhotoButton"/>
                                 <connections>
-                                    <action selector="shutterButtonDidTap" destination="LjL-JW-f6s" eventType="touchUpInside" id="Yge-0Q-0Wj"/>
+                                    <action selector="recordButtonPressed:" destination="LjL-JW-f6s" eventType="touchUpInside" id="uEj-Gi-Cu6"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -42,11 +42,40 @@
                     <connections>
                         <outlet property="cameraButton" destination="YvR-bK-uTN" id="mXW-iq-40m"/>
                         <segue destination="cqj-Gt-NBz" kind="presentation" identifier="showPhoto" id="nGY-5L-5m6"/>
+                        <segue destination="g7t-85-xdj" kind="show" identifier="showVideo" id="MFj-4n-EOm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T0U-ZH-nch" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="204" y="112.89355322338831"/>
+            <point key="canvasLocation" x="-65" y="52"/>
+        </scene>
+        <!--Video Playback View Controller-->
+        <scene sceneID="Dyz-eM-3bD">
+            <objects>
+                <viewController id="g7t-85-xdj" customClass="VideoPlaybackViewController" customModule="Flokk" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Pdn-V2-hxj"/>
+                        <viewControllerLayoutGuide type="bottom" id="oOJ-5w-t9n"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="z7p-1Z-QhP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BwY-l4-4gg">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="videoView" destination="BwY-l4-4gg" id="5h5-jv-fr1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5rF-Jy-yHN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1300" y="532.98350824587715"/>
         </scene>
         <!--Image View Controller-->
         <scene sceneID="JgK-EM-dqI">
@@ -118,7 +147,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a19-ug-Pts" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="K72-w0-whx" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1001" y="113"/>
+            <point key="canvasLocation" x="1321" y="-260"/>
         </scene>
     </scenes>
     <resources>

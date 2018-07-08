@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8720D7C120F1DBBC0069F56B /* VideoPlaybackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8720D7C020F1DBBC0069F56B /* VideoPlaybackViewController.swift */; };
 		87221A0A20F073F2000A00F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87221A0920F073F2000A00F7 /* AppDelegate.swift */; };
 		87221A1120F073F2000A00F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87221A1020F073F2000A00F7 /* Assets.xcassets */; };
 		87221A1420F073F2000A00F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87221A1220F073F2000A00F7 /* LaunchScreen.storyboard */; };
@@ -14,10 +15,10 @@
 		87221A1E20F195B0000A00F7 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87221A1D20F195B0000A00F7 /* CameraViewController.swift */; };
 		87221A2020F195B6000A00F7 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87221A1F20F195B6000A00F7 /* ImageViewController.swift */; };
 		87221A2220F195C2000A00F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87221A2120F195C2000A00F7 /* Main.storyboard */; };
-		87221A2420F195CA000A00F7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87221A2320F195CA000A00F7 /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8720D7C020F1DBBC0069F56B /* VideoPlaybackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlaybackViewController.swift; sourceTree = "<group>"; };
 		87221A0620F073F2000A00F7 /* Flokk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flokk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87221A0920F073F2000A00F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		87221A1020F073F2000A00F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -27,7 +28,6 @@
 		87221A1D20F195B0000A00F7 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		87221A1F20F195B6000A00F7 /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		87221A2120F195C2000A00F7 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		87221A2320F195CA000A00F7 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,8 +63,8 @@
 				87221A0920F073F2000A00F7 /* AppDelegate.swift */,
 				87221A1B20F195AB000A00F7 /* CameraVC.swift */,
 				87221A1D20F195B0000A00F7 /* CameraViewController.swift */,
+				8720D7C020F1DBBC0069F56B /* VideoPlaybackViewController.swift */,
 				87221A1F20F195B6000A00F7 /* ImageViewController.swift */,
-				87221A2320F195CA000A00F7 /* ViewController.swift */,
 				87221A2120F195C2000A00F7 /* Main.storyboard */,
 				87221A1020F073F2000A00F7 /* Assets.xcassets */,
 				87221A1220F073F2000A00F7 /* LaunchScreen.storyboard */,
@@ -145,7 +145,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				87221A2420F195CA000A00F7 /* ViewController.swift in Sources */,
+				8720D7C120F1DBBC0069F56B /* VideoPlaybackViewController.swift in Sources */,
 				87221A1E20F195B0000A00F7 /* CameraViewController.swift in Sources */,
 				87221A2020F195B6000A00F7 /* ImageViewController.swift in Sources */,
 				87221A1C20F195AB000A00F7 /* CameraVC.swift in Sources */,
@@ -279,7 +279,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 529VSGMWPM;
+				DEVELOPMENT_TEAM = L4K4Q74X62;
 				INFOPLIST_FILE = Flokk/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = flokk.Flokk;
@@ -294,7 +294,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 529VSGMWPM;
+				DEVELOPMENT_TEAM = L4K4Q74X62;
 				INFOPLIST_FILE = Flokk/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = flokk.Flokk;
