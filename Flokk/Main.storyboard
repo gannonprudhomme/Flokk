@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="LjL-JW-f6s">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Camera View Controller-->
+        <scene sceneID="dDA-9S-6aJ">
+            <objects>
+                <viewController id="LjL-JW-f6s" customClass="CameraViewController" customModule="Flokk" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9S8-zd-swk"/>
+                        <viewControllerLayoutGuide type="bottom" id="csg-wV-BGo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yjH-HQ-X5T">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YvR-bK-uTN">
+                                <rect key="frame" x="116" y="524" width="143" height="143"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="143" id="ZjF-bU-4hT"/>
+                                    <constraint firstAttribute="height" constant="143" id="eYQ-Su-oAg"/>
+                                </constraints>
+                                <state key="normal" image="takePhotoButton"/>
+                                <connections>
+                                    <action selector="shutterButtonDidTap" destination="LjL-JW-f6s" eventType="touchUpInside" id="Yge-0Q-0Wj"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="csg-wV-BGo" firstAttribute="top" secondItem="YvR-bK-uTN" secondAttribute="bottom" id="vY5-IY-TGC"/>
+                            <constraint firstItem="YvR-bK-uTN" firstAttribute="centerX" secondItem="yjH-HQ-X5T" secondAttribute="centerX" id="xeH-zx-4mN"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="cameraButton" destination="YvR-bK-uTN" id="mXW-iq-40m"/>
+                        <segue destination="cqj-Gt-NBz" kind="presentation" identifier="showPhoto" id="nGY-5L-5m6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T0U-ZH-nch" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="204" y="112.89355322338831"/>
+        </scene>
+        <!--Image View Controller-->
+        <scene sceneID="JgK-EM-dqI">
+            <objects>
+                <viewController id="cqj-Gt-NBz" customClass="ImageViewController" customModule="Flokk" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tRy-oN-bON"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZqD-r2-Hzg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZkS-mw-V5m">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zMA-iI-xGs">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <view alpha="0.69999998807907104" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sbe-BQ-XLv">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="63p-QV-fd0">
+                                        <rect key="frame" x="326" y="21" width="37" height="33"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="Save">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="saveWithSender:" destination="cqj-Gt-NBz" eventType="touchUpInside" id="hM1-xb-jsy"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FeL-d6-iTX">
+                                        <rect key="frame" x="14" y="27" width="20" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="rd0-xF-rRo"/>
+                                            <constraint firstAttribute="width" constant="20" id="wWp-f6-sJx"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <state key="normal" image="button-close"/>
+                                        <connections>
+                                            <action selector="closeButtonDidTap" destination="cqj-Gt-NBz" eventType="touchUpInside" id="Ttj-J1-gCd"/>
+                                            <segue destination="K72-w0-whx" kind="unwind" unwindAction="unwindToCameraViewWithSegue:" id="cV9-bk-RMx"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="FeL-d6-iTX" firstAttribute="leading" secondItem="Sbe-BQ-XLv" secondAttribute="leading" constant="14" id="Aem-la-Pzg"/>
+                                    <constraint firstAttribute="trailing" secondItem="63p-QV-fd0" secondAttribute="trailing" constant="12" id="WBm-rc-kPC"/>
+                                    <constraint firstItem="FeL-d6-iTX" firstAttribute="top" secondItem="Sbe-BQ-XLv" secondAttribute="top" constant="27" id="WvD-2T-ozR"/>
+                                    <constraint firstItem="63p-QV-fd0" firstAttribute="top" secondItem="Sbe-BQ-XLv" secondAttribute="top" constant="21" id="pA2-Yj-EQk"/>
+                                    <constraint firstAttribute="height" constant="60" id="qjr-vr-YqD"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ZqD-r2-Hzg" firstAttribute="top" secondItem="zMA-iI-xGs" secondAttribute="bottom" id="7Ms-dz-Vff"/>
+                            <constraint firstItem="Sbe-BQ-XLv" firstAttribute="leading" secondItem="zMA-iI-xGs" secondAttribute="leading" id="Bq8-fl-aEA"/>
+                            <constraint firstItem="zMA-iI-xGs" firstAttribute="leading" secondItem="ZkS-mw-V5m" secondAttribute="leading" id="GPe-uB-srA"/>
+                            <constraint firstAttribute="trailing" secondItem="zMA-iI-xGs" secondAttribute="trailing" id="OpP-R1-k5T"/>
+                            <constraint firstItem="Sbe-BQ-XLv" firstAttribute="trailing" secondItem="zMA-iI-xGs" secondAttribute="trailing" id="Uce-8i-X1K"/>
+                            <constraint firstItem="zMA-iI-xGs" firstAttribute="top" secondItem="ZkS-mw-V5m" secondAttribute="top" id="pJo-vf-Pe0"/>
+                            <constraint firstItem="Sbe-BQ-XLv" firstAttribute="top" secondItem="zMA-iI-xGs" secondAttribute="top" id="ve7-KY-gkg"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="zMA-iI-xGs" id="JFq-cj-Y6e"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a19-ug-Pts" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="K72-w0-whx" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1001" y="113"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="button-close" width="40" height="40"/>
+        <image name="takePhotoButton" width="125" height="125"/>
+    </resources>
+</document>

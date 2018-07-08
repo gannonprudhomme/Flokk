@@ -1,9 +1,9 @@
 //
 //  ViewController.swift
-//  Flokk
+//  Flokk Basic
 //
-//  Created by Gannon Prudomme on 7/6/18.
-//  Copyright © 2018 Gannon Prudomme. All rights reserved.
+//  Created by Jared Heyen on 7/7/18.
+//  Copyright © 2018 Heyen Enterprises. All rights reserved.
 //
 
 import UIKit
