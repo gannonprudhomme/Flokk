@@ -8,11 +8,13 @@ class VideoPlaybackViewController: UIViewController {
     
     var videoURL: URL!
     
-    //connect this to your uiview in storyboard
     @IBOutlet weak var videoView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Add the callback function to the av player
+        NotificationCenter.default.addObserver(self, selector: #selector(VideoPlaybackViewController.videoEnded), name: Notification.Name.AVPlayerItemDidPlayToEndTime, object: avPlayer.currentItem)
         
         avPlayerLayer = AVPlayerLayer(player: avPlayer)
         avPlayerLayer.frame = view.bounds
@@ -27,5 +29,19 @@ class VideoPlaybackViewController: UIViewController {
         avPlayer.play()
     }
     
+    // Callback function for when the video ends
+    // Activates the replay button, or loops again automatically
     
+    @objc func videoEnded() {
+        //
+        print("video ended");
+        
+        restartVideo();
+        avPlayer.play();
+    }
+    
+    func restartVideo() {
+        // Seek to a time of 0 with a timescale of 1
+        avPlayer.seek(to: CMTime(seconds: 0, preferredTimescale: 1));
+    }
 }
