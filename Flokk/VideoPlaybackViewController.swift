@@ -31,17 +31,8 @@ class VideoPlaybackViewController: UIViewController {
     
     // Callback function for when the video ends
     // Activates the replay button, or loops again automatically
-    
     @objc func videoEnded() {
-        //
-        print("video ended");
-        
-        restartVideo();
-        avPlayer.play();
-    }
-    
-    func restartVideo() {
-        // Seek to a time of 0 with a timescale of 1
         avPlayer.seek(to: CMTime(seconds: 0, preferredTimescale: 1));
+        avPlayer.play();
     }
 }

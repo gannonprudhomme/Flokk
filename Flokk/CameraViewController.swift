@@ -35,6 +35,11 @@ class CameraViewController : UIViewController {
     
     var outputURL: URL!
     
+    // Fixed video duration in seconds
+    let videoDuration = 6
+    
+    var timer: Timer!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -57,7 +62,6 @@ class CameraViewController : UIViewController {
         
         // configure the session with the output for capturing our still image
         stillImageOutput = AVCapturePhotoOutput()
-        //stillImageOutput?.outputSettings = [AVVideoCodecKey : AVVideoCodecJPEG]
         
         do {
             let captureDeviceInput = try AVCaptureDeviceInput(device: currentDevice!)
@@ -86,20 +90,19 @@ class CameraViewController : UIViewController {
     
     @IBAction func recordButtonPressed(_ sender: Any) {
         if movieOutput?.isRecording == false {
-            let connection = movieOutput?.connection(with: AVMediaType.video)
-            
             let directory = NSTemporaryDirectory() as NSString
-            
             let path = directory.appendingPathComponent(NSUUID().uuidString + ".mp4")
             outputURL = URL(fileURLWithPath: path)
             
+            // Start recording
             movieOutput?.startRecording(to: outputURL, recordingDelegate: self)
-        } else {
+            
+            // Start the timer to stop recording after specified duration
+            timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(self.stopRecording), userInfo: nil, repeats: false)
+        } /*else {
             // Stop recording
             movieOutput?.stopRecording()
-        }
-        
-    
+        } */
     }
     
     @objc func videoWasSavedSuccessfully(_ video: String, didFinishSavingWithError error: NSError!, context: UnsafeMutableRawPointer) {
@@ -136,15 +139,24 @@ class CameraViewController : UIViewController {
         captureSession.commitConfiguration()
     }
     
+    // Callback function for timer to stop recording
+    @objc private func stopRecording() {
+        print("Stopping recording callback")
+        movieOutput?.stopRecording()
+        
+        timer.invalidate()
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Send the video file URL to the playback controller
         let vc = segue.destination as! VideoPlaybackViewController
         vc.videoURL = sender as! URL
     }
 }
 
 extension CameraViewController : AVCaptureFileOutputRecordingDelegate {
+    // Called when the video is finished recording
     func fileOutput(_ output: AVCaptureFileOutput, didFinishRecordingTo outputFileURL: URL, from connections: [AVCaptureConnection], error: Error?) {
-        
         if error != nil {
             print("Error in saving video: \(error?.localizedDescription)")
         } else {
