@@ -10,6 +10,7 @@
 
 import UIKit
 import AVFoundation
+import MobileCoreServices
 
 class CameraViewController : UIViewController {
     @IBOutlet weak var cameraButton: UIButton!
@@ -40,9 +41,15 @@ class CameraViewController : UIViewController {
     
     var timer: Timer!
     
+    let imagePicker = UIImagePickerController()
+    @IBOutlet weak var cameraRollButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+
+       // imagePicker.mediaTypes = [kUTTypeVideo as String]
         
+        // Set the camera quality to high
         captureSession.sessionPreset = AVCaptureSession.Preset.high
         
         // Set the camera capture devices with their corresponding inputs
@@ -86,6 +93,8 @@ class CameraViewController : UIViewController {
         } catch let error {
             print(error)
         }
+        
+        view.bringSubview(toFront: cameraRollButton)
     }
     
     @IBAction func recordButtonPressed(_ sender: Any) {
@@ -149,8 +158,14 @@ class CameraViewController : UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Send the video file URL to the playback controller
-        let vc = segue.destination as! VideoPlaybackViewController
-        vc.videoURL = sender as! URL
+        if segue.identifier == "showVideoSegue" {
+            let vc = segue.destination  as! VideoPlaybackViewController
+            vc.videoURL = sender as! URL
+        }
+    }
+    
+    @IBAction func cameraRollPressed(_ sender: Any) {
+        self.present(imagePicker, animated: true, completion: nil)
     }
 }
 

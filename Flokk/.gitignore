@@ -1,0 +1,9 @@
+pods/
+Info.plist
+.xcodeproj
+.xcworkspace
+FlokkTests/
+FlokkUITests/
+build/
+Podfile.lock
+.DS_STORE
