@@ -1,14 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="6aE-ud-V8T">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="6aE-ud-V8T">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="JosefinSans-Bold.ttf">
+            <string>JosefinSans-Bold</string>
+        </array>
+        <array key="JosefinSans-Regular.ttf">
+            <string>JosefinSans</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Temp Image Picker View Controller-->
         <scene sceneID="q4r-JP-Pm8">
@@ -19,19 +28,20 @@
                         <viewControllerLayoutGuide type="bottom" id="IjK-05-Rau"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="n7N-6r-vhb">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o7G-mO-0Ja">
-                                <rect key="frame" x="146" y="318" width="83" height="30"/>
+                                <rect key="frame" x="146" y="320" width="84" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="JosefinSans" family="Josefin Sans" pointSize="17"/>
                                 <state key="normal" title="Camera Roll"/>
                                 <connections>
                                     <action selector="cameraRollPressed:" destination="6aE-ud-V8T" eventType="touchUpInside" id="Z8P-ES-rqk"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" name="Flokk Navy"/>
                     </view>
                     <connections>
                         <segue destination="3L0-bz-qIH" kind="presentation" identifier="trimVideoSegue" id="af3-Hj-LZu"/>
@@ -50,11 +60,11 @@
                         <viewControllerLayoutGuide type="bottom" id="csg-wV-BGo"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="yjH-HQ-X5T">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YvR-bK-uTN">
-                                <rect key="frame" x="116" y="524" width="143" height="143"/>
+                                <rect key="frame" x="88.5" y="425" width="143" height="143"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="143" id="ZjF-bU-4hT"/>
                                     <constraint firstAttribute="height" constant="143" id="eYQ-Su-oAg"/>
@@ -65,7 +75,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" name="Flokk Navy"/>
                         <constraints>
                             <constraint firstItem="csg-wV-BGo" firstAttribute="top" secondItem="YvR-bK-uTN" secondAttribute="bottom" id="vY5-IY-TGC"/>
                             <constraint firstItem="YvR-bK-uTN" firstAttribute="centerX" secondItem="yjH-HQ-X5T" secondAttribute="centerX" id="xeH-zx-4mN"/>
@@ -89,17 +99,17 @@
                         <viewControllerLayoutGuide type="bottom" id="oOJ-5w-t9n"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="z7p-1Z-QhP">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BwY-l4-4gg">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
                                     <view alpha="0.69999998807907104" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GPa-rC-hj5">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xhA-ee-j16">
-                                                <rect key="frame" x="326" y="21" width="37" height="33"/>
+                                                <rect key="frame" x="271" y="21" width="37" height="33"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <state key="normal" title="Save">
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -132,7 +142,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" name="Flokk Navy"/>
                                 <constraints>
                                     <constraint firstItem="GPa-rC-hj5" firstAttribute="leading" secondItem="BwY-l4-4gg" secondAttribute="leading" id="86d-Vv-wYf"/>
                                     <constraint firstAttribute="trailing" secondItem="GPa-rC-hj5" secondAttribute="trailing" id="dK3-OO-uLx"/>
@@ -154,7 +164,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5rF-Jy-yHN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1023" y="52"/>
+            <point key="canvasLocation" x="993" y="52"/>
         </scene>
         <!--Video Trimmer View Controller-->
         <scene sceneID="9JY-Vq-9GO">
@@ -165,23 +175,23 @@
                         <viewControllerLayoutGuide type="bottom" id="h1O-rp-HBp"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="AN8-8A-hPz">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h5X-gr-dtK" customClass="ABVideoRangeSlider" customModule="ABVideoRangeSlider">
-                                <rect key="frame" x="16" y="621" width="343" height="34"/>
+                                <rect key="frame" x="16" y="518" width="288" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <accessibility key="accessibilityConfiguration" identifier="videoTrimmer"/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hbk-Wd-Und">
-                                <rect key="frame" x="38" y="20" width="298" height="490"/>
+                            <view contentMode="scaleAspectFill" fixedFrame="YES" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hbk-Wd-Und">
+                                <rect key="frame" x="20" y="20" width="281" height="461"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <accessibility key="accessibilityConfiguration" identifier="videoCanvas"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" name="Flokk Navy"/>
                     </view>
                     <connections>
                         <outlet property="videoCanvasView" destination="hbk-Wd-Und" id="SnE-Nk-mlt"/>
@@ -190,7 +200,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JCn-Sq-8gB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="992.79999999999995" y="-688.60569715142435"/>
+            <point key="canvasLocation" x="991.875" y="-688.73239436619724"/>
         </scene>
         <!--Image View Controller-->
         <scene sceneID="JgK-EM-dqI">
@@ -201,7 +211,7 @@
                         <viewControllerLayoutGuide type="bottom" id="ZqD-r2-Hzg"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ZkS-mw-V5m">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view alpha="0.69999998807907104" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sbe-BQ-XLv">
@@ -249,12 +259,210 @@
             </objects>
             <point key="canvasLocation" x="-2418" y="-904"/>
         </scene>
+        <!--Group-->
+        <scene sceneID="FIk-rn-AXh">
+            <objects>
+                <viewController title="Group" id="lJ7-IS-kbe" customClass="FeedVC" customModule="Flokk_Basic" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="M6b-Iu-9e1"/>
+                        <viewControllerLayoutGuide type="bottom" id="o6e-IZ-ZXL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1Mk-Az-WJq">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zJg-YJ-QW7">
+                                <rect key="frame" x="0.0" y="64" width="320" height="405"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" name="Flokk Navy"/>
+                                <color key="sectionIndexBackgroundColor" name="Flokk Navy"/>
+                                <view key="tableFooterView" contentMode="scaleAspectFill" id="eBc-ar-CEV">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="395"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </view>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GQT-s7-zuo">
+                                <rect key="frame" x="233" y="477" width="71" height="71"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
+                                <state key="normal" image="addPostBttn"/>
+                                <connections>
+                                    <action selector="addPostBttn:" destination="lJ7-IS-kbe" eventType="touchUpInside" id="ZLd-Vj-oqp"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" name="Flokk Navy"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Group" largeTitleDisplayMode="never" id="eoG-LZ-g4e">
+                        <barButtonItem key="leftBarButtonItem" image="groupsIcon" id="Z9p-Xq-5YU">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="groupsBttn:" destination="lJ7-IS-kbe" id="VPZ-9e-5xo"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="friendsIcon" id="3Oe-SC-3Ll">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="groupInfoBttn:" destination="lJ7-IS-kbe" id="QvR-0h-7zi"/>
+                            </connections>
+                        </barButtonItem>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nxt-Fl-ena" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="991.875" y="936.97183098591552"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="YfW-Xq-tDn">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qxU-YR-6FU" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="SoC-7S-r8k">
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" name="Flokk Navy"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="JosefinSans-Bold" family="Josefin Sans" pointSize="18"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="lJ7-IS-kbe" kind="relationship" relationship="rootViewController" id="KQz-5E-M4E"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aff-L1-OgD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-66" y="937"/>
+        </scene>
+        <!--Groups-->
+        <scene sceneID="gL6-GU-GJv">
+            <objects>
+                <viewController id="NLv-z9-zTP" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="l3x-lC-5QO"/>
+                        <viewControllerLayoutGuide type="bottom" id="hAR-xz-iAM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="o2h-dv-cCu">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="j1I-jH-vFO">
+                                <rect key="frame" x="0.0" y="113" width="320" height="455"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" name="Flokk Navy"/>
+                                <color key="sectionIndexBackgroundColor" name="Flokk Navy"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="100" id="pfQ-HT-ZFF">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pfQ-HT-ZFF" id="yee-DH-3hk">
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7oE-Pn-dQC">
+                                                    <rect key="frame" x="15" y="15" width="68" height="68"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Group Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m6l-lj-nka">
+                                                    <rect key="frame" x="100" y="27" width="116" height="22"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="JosefinSans" family="Josefin Sans" pointSize="22"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NCk-HF-969">
+                                                    <rect key="frame" x="100" y="57" width="28" height="15"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="JosefinSans" family="Josefin Sans" pointSize="15"/>
+                                                    <color key="textColor" name="Secondary Text"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleAspectFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vaj-2f-MvE">
+                                                    <rect key="frame" x="15" y="15" width="68" height="68"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="#" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t66-lQ-wdA">
+                                                            <rect key="frame" x="25" y="19" width="18" height="30"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" name="JosefinSans-Bold" family="Josefin Sans" pointSize="30"/>
+                                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                            <color key="shadowColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="0.069421157240000003" green="0.069742165509999995" blue="0.1379233003" alpha="0.6955265410958904" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </view>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" name="Flokk Navy"/>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" name="Flokk Navy"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Groups" id="hfL-qx-cMP">
+                        <barButtonItem key="leftBarButtonItem" image="settingsBttnWhite" id="VXP-5w-kIU">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="addBttnWhite" id="2Jx-bE-76b">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vbg-fn-VWC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="991.875" y="1666.9014084507041"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="gCe-MQ-3qa">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zL9-sM-k92" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="pvj-Mz-Iz7">
+                        <rect key="frame" x="0.0" y="20" width="320" height="93"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" name="Flokk Navy"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="JosefinSans-Bold" family="Josefin Sans" pointSize="17"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <fontDescription key="fontDescription" name="JosefinSans-Bold" family="Josefin Sans" pointSize="35"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="NLv-z9-zTP" kind="relationship" relationship="rootViewController" id="0GK-6o-xZ2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1qM-bF-wlU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-67.5" y="1666.9014084507041"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="addBttnWhite" width="18" height="18"/>
+        <image name="addPostBttn" width="68" height="68"/>
         <image name="button-close" width="40" height="40"/>
+        <image name="friendsIcon" width="21" height="17"/>
+        <image name="groupsIcon" width="18" height="15"/>
+        <image name="settingsBttnWhite" width="19" height="19"/>
         <image name="takePhotoButton" width="125" height="125"/>
+        <namedColor name="Flokk Navy">
+            <color red="0.082000002264976501" green="0.086000002920627594" blue="0.16899999976158142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Secondary Text">
+            <color red="0.61568627450980395" green="0.61568627450980395" blue="0.64313725490196083" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="6z7-wN-bvh"/>
     </inferredMetricsTieBreakers>
+    <color key="tintColor" name="Flokk Teal"/>
 </document>
