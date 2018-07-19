@@ -62,8 +62,9 @@
                                 <state key="normal" image="takePhotoButton"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8oL-2e-FcU">
-                                <rect key="frame" x="318" y="580" width="37" height="30"/>
+                                <rect key="frame" x="286" y="555" width="69" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <state key="normal" title="Done">
                                     <color key="titleColor" red="1" green="0.09911438423289165" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
@@ -80,6 +81,7 @@
                     </view>
                     <connections>
                         <outlet property="cameraButton" destination="YvR-bK-uTN" id="mXW-iq-40m"/>
+                        <outlet property="doneButton" destination="8oL-2e-FcU" id="zOg-3f-UEa"/>
                         <segue destination="g7t-85-xdj" kind="show" identifier="showVideoSegue" id="MFj-4n-EOm"/>
                     </connections>
                 </viewController>

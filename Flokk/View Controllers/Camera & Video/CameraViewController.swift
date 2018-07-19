@@ -15,6 +15,7 @@ import Photos
 
 class CameraViewController : UIViewController {
     @IBOutlet weak var cameraButton: UIButton!
+    @IBOutlet weak var doneButton: UIButton!
     var previewView: UIView!
     
     var videoURL: URL!
@@ -34,8 +35,8 @@ class CameraViewController : UIViewController {
         NextLevel.shared.photoDelegate = self
         
         //NextLevel.shared.videoConfiguration.maximumCaptureDuration = CMTimeMake(5, 600)
-        //NextLevel.shared.videoConfiguration.bitRate = 5500000
-        //NextLevel.shared.audioConfiguration.bitRate = 96000
+        NextLevel.shared.videoConfiguration.bitRate = 5500000
+        NextLevel.shared.audioConfiguration.bitRate = 96000
         
         // Configure the preview layer for the camera
         let screenBounds = UIScreen.main.bounds
@@ -49,6 +50,8 @@ class CameraViewController : UIViewController {
         }
         
         self.view.bringSubview(toFront: cameraButton)
+        self.view.bringSubview(toFront: doneButton)
+        
         
         // Initialize the long press gesture recognizer for recording
         self.longPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPressGestureRecognizer(_:)))
@@ -90,8 +93,10 @@ class CameraViewController : UIViewController {
         NextLevel.shared.stop()
     }
     
+    // When the done button is pressed, temporary
     @IBAction func donePressed(_ sender: Any) {
         self.endRecording()
+        performSegue(withIdentifier: "showVideoSegue", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -111,23 +116,29 @@ extension CameraViewController {
     
     internal func pauseRecording() {
         NextLevel.shared.pause()
-        //NextLevel.shared.stop()
     }
     
     // Handle the recorded video
     internal func endRecording() {
         if let session = NextLevel.shared.session {
-            if let lastClipURL = session.lastClipUrl {
+            if session.clips.count > 1 {
+                session.mergeClips(usingPreset: AVAssetExportPresetHighestQuality, completionHandler: { (url: URL?, error: Error?) in
+                    if let url = url {
+                       self.videoURL = url
+                    } else if let _ = error {
+                        print("failed to merge clips at the end of capture \(String(describing: error))")
+                    }
+                })
+            } else if let lastClipURL = session.lastClipUrl {
                 print(lastClipURL)
                 self.videoURL = lastClipURL
-            }
-            
-            if session.currentClipHasStarted {
+            } else if session.currentClipHasStarted {
                 print("clip has started")
                 session.endClip(completionHandler: { (clip, error) in
                     if error == nil {
                         var url = clip?.url
                         print(url)
+                        self.videoURL = url
                         
                     } else {
                         print("Error in ending recording: \(error)")
@@ -153,6 +164,8 @@ extension CameraViewController : UIGestureRecognizerDelegate {
         case .cancelled:
             fallthrough
         case .failed:
+            print(NextLevel.shared.session?.totalDuration)
+            print(NextLevel.shared.session?.currentClipDuration)
             self.pauseRecording()
             print("Done Recording")
             fallthrough
