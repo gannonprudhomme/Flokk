@@ -2,12 +2,14 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>Allow Flokk to save photos to your camera roll</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Allow flokk to save to your camera roll</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Allow Flokk to use your microphone prtty pls</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Allow Flokk to use your camera pls</string>
 	<key>LSApplicationCategoryType</key>
 	<string></string>
-	<key>NSCameraUsageDescription</key>
-	<string>Allow Flokk to access your camera to take videos</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="6aE-ud-V8T">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="LjL-JW-f6s">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -60,8 +60,15 @@
                                     <constraint firstAttribute="height" constant="143" id="eYQ-Su-oAg"/>
                                 </constraints>
                                 <state key="normal" image="takePhotoButton"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8oL-2e-FcU">
+                                <rect key="frame" x="318" y="580" width="37" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleColor" red="1" green="0.09911438423289165" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
                                 <connections>
-                                    <action selector="recordButtonPressed:" destination="LjL-JW-f6s" eventType="touchUpInside" id="uEj-Gi-Cu6"/>
+                                    <action selector="donePressed:" destination="LjL-JW-f6s" eventType="touchUpInside" id="4ok-6g-87I"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -78,7 +85,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T0U-ZH-nch" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-65" y="52"/>
+            <point key="canvasLocation" x="-66.400000000000006" y="51.724137931034484"/>
         </scene>
         <!--Video Playback View Controller-->
         <scene sceneID="Dyz-eM-3bD">
@@ -254,7 +261,4 @@
         <image name="button-close" width="40" height="40"/>
         <image name="takePhotoButton" width="125" height="125"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="6z7-wN-bvh"/>
-    </inferredMetricsTieBreakers>
 </document>

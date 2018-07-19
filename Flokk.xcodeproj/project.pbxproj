@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		045F43D18813B2FBAA585171 /* Pods_Flokk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 453D587CDE3B8763B595800A /* Pods_Flokk.framework */; };
 		8720D7C120F1DBBC0069F56B /* VideoPlaybackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8720D7C020F1DBBC0069F56B /* VideoPlaybackViewController.swift */; };
 		8720D7CE20F476DB0069F56B /* VideoTrimmerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8720D7CD20F476DB0069F56B /* VideoTrimmerViewController.swift */; };
 		87221A0A20F073F2000A00F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87221A0920F073F2000A00F7 /* AppDelegate.swift */; };
@@ -16,6 +15,7 @@
 		87221A1E20F195B0000A00F7 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87221A1D20F195B0000A00F7 /* CameraViewController.swift */; };
 		87221A2020F195B6000A00F7 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87221A1F20F195B6000A00F7 /* ImageViewController.swift */; };
 		87221A2220F195C2000A00F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87221A2120F195C2000A00F7 /* Main.storyboard */; };
+		875691A92101009000284EA3 /* Pods_Flokk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 453D587CDE3B8763B595800A /* Pods_Flokk.framework */; };
 		87706DAB20F95D3800663948 /* TempImagePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87706DAA20F95D3800663948 /* TempImagePickerViewController.swift */; };
 		87706DAD20F960B200663948 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 87706DAC20F960B200663948 /* .gitignore */; };
 /* End PBXBuildFile section */
@@ -43,7 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				045F43D18813B2FBAA585171 /* Pods_Flokk.framework in Frameworks */,
+				875691A92101009000284EA3 /* Pods_Flokk.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

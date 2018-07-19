@@ -14,7 +14,9 @@ class VideoPlaybackViewController: UIViewController {
         super.viewDidLoad()
         
         // Add the callback function to the av player
-        NotificationCenter.default.addObserver(self, selector: #selector(VideoPlaybackViewController.videoEnded), name: Notification.Name.AVPlayerItemDidPlayToEndTime, object: avPlayer.currentItem)
+        //NotificationCenter.default.addObserver(self, selector: #selector(VideoPlaybackViewController.videoEnded), name: Notification.Name.AVPlayerItemDidPlayToEndTime, object: avPlayer.currentItem)
+        
+        //videoURL = URL(string: "http://devimages.apple.com/iphone/samples/bipbop/bipbopall.m3u8")
         
         avPlayerLayer = AVPlayerLayer(player: avPlayer)
         avPlayerLayer.frame = view.bounds
