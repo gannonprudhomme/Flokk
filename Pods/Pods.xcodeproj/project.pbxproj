@@ -7,73 +7,103 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		08092F209A28AF2BFFA2B5994158E365 /* NextLevel+Metadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3B9174A108FDF9087F6134F883684B /* NextLevel+Metadata.swift */; };
-		18E4C3331B41A08A7991582BF7BD7C0E /* NextLevel-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CC6F2F8717097C11223F2CAE20EDAB86 /* NextLevel-dummy.m */; };
-		1A3A4E1AE520A8E774188A408AFFEF5A /* NextLevel-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2EB53946A88553E265852023B4B82187 /* NextLevel-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3A233D82744ED38EE3DD8EAA00E18B11 /* NextLevelSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CC1DE1222B25BDAAE09961DDB91651 /* NextLevelSession.swift */; };
-		498E2B8BA6D84C01D55FC1A411053EA6 /* Pods-Flokk-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7AAC12FE2739F4643DCAF263819202 /* Pods-Flokk-dummy.m */; };
-		4A5B556D994545428E510375EC4EBF7D /* Pods-Flokk-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AA8E4FA8B95BCB0B6C58AC78C6F1F44 /* Pods-Flokk-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		728E447BFFE943550FACAE6ED6A361FA /* NextLevel+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C163AB509E0ADFE383451A829692275 /* NextLevel+UIImage.swift */; };
-		868377463EDF6784964A58CF9FA36439 /* NextLevel+CoreImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E855F4927C7C36CDA07B099014106D /* NextLevel+CoreImage.swift */; };
-		868A9A9F7DB5CF75CC49F16FC6CB71CC /* NextLevel+AVFoundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A520335D0A4EAB16E3B128A25589A834 /* NextLevel+AVFoundation.swift */; };
-		8EB02CE90E0D1880D7B14C9612E42768 /* NextLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2160395362C2287310FA1F880A5E7F13 /* NextLevel.swift */; };
-		90872A89414125B319B310BC26CE533A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
-		95A4C5B683CE47ED6073AF564E18CA15 /* NextLevel+CoreMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE1909C058D516D64A27011D7E29399 /* NextLevel+CoreMedia.swift */; };
-		AB473211F7FB145326E75CA0A33C7204 /* NextLevelClip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FEA0B26AAE078F33CCC95F88EA0883 /* NextLevelClip.swift */; };
-		AD255737CC1E3DB5D5CAC53D5AADA363 /* NextLevel+Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AB761285CE58309021A452D72B1749 /* NextLevel+Foundation.swift */; };
-		C937B0570BD569375DDA69F1D94A7BCE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
-		CC9E89A3CD89862400C315D344635C4F /* NextLevelConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D54E81E0C77527408BC249D0BC43CFB /* NextLevelConfiguration.swift */; };
+		08092F209A28AF2BFFA2B5994158E365 /* NextLevel+Metadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C2639502ECEE315C25472C4D6A01E4 /* NextLevel+Metadata.swift */; };
+		18E4C3331B41A08A7991582BF7BD7C0E /* NextLevel-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C997EE59704B76E42C10FAB76B49F59 /* NextLevel-dummy.m */; };
+		1A3A4E1AE520A8E774188A408AFFEF5A /* NextLevel-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F8C70A91E152FBE782276BBFEE57EE0 /* NextLevel-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3A233D82744ED38EE3DD8EAA00E18B11 /* NextLevelSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = B453B2350584B5DD19EEB748370AB5D1 /* NextLevelSession.swift */; };
+		4BFE93FD7B75BE96C8570817E21DF6FE /* RecordButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3A5FE850C505B946BF50E17BBACE45 /* RecordButton.swift */; };
+		728E447BFFE943550FACAE6ED6A361FA /* NextLevel+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8663B73DF48ABA17C073033BFFCFCA5F /* NextLevel+UIImage.swift */; };
+		86562DC62D6196EB723805B9FA50C38B /* RecordButton-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 166781ECB1CF6D740593E3D2FA1C641F /* RecordButton-dummy.m */; };
+		868377463EDF6784964A58CF9FA36439 /* NextLevel+CoreImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E426EE78DC4BEF76D8ACC7732212CE /* NextLevel+CoreImage.swift */; };
+		868A9A9F7DB5CF75CC49F16FC6CB71CC /* NextLevel+AVFoundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06AD48400DCFC2CB3A122B8CB621B462 /* NextLevel+AVFoundation.swift */; };
+		8EB02CE90E0D1880D7B14C9612E42768 /* NextLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B7CA0665ED0E3F223A4A52FED634B6 /* NextLevel.swift */; };
+		90872A89414125B319B310BC26CE533A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 908E902E026C5C22904CF9014A5604AD /* Foundation.framework */; };
+		95A4C5B683CE47ED6073AF564E18CA15 /* NextLevel+CoreMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E397DC77059116EC93C23F9D4324A3 /* NextLevel+CoreMedia.swift */; };
+		A6A9B90A98B47A5C35EC5A0D8A9D7D4E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 908E902E026C5C22904CF9014A5604AD /* Foundation.framework */; };
+		AB473211F7FB145326E75CA0A33C7204 /* NextLevelClip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FB6DE7B60A2DA7D8F25DFA6D0AE518 /* NextLevelClip.swift */; };
+		AD255737CC1E3DB5D5CAC53D5AADA363 /* NextLevel+Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5477D7FC34C9D44ED25BCA005CE00E48 /* NextLevel+Foundation.swift */; };
+		B0236C76195DF4FF67D7057DE0878883 /* RecordButton-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C740CADD06C9A1671DA2F012EDEE5EB9 /* RecordButton-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C1599F58EAF914E138F6A1BEE057279B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 908E902E026C5C22904CF9014A5604AD /* Foundation.framework */; };
+		C841ADE213E967D455A0159952A68F68 /* Pods-Flokk-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7AAC12FE2739F4643DCAF263819202 /* Pods-Flokk-dummy.m */; };
+		CC9D6EC238BCE6C7189B62100EF3894B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC2C02191C153C1554B35DEE8B2D09D4 /* UIKit.framework */; };
+		CC9E89A3CD89862400C315D344635C4F /* NextLevelConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93620B3C33552B0B29D31B81CE93D35B /* NextLevelConfiguration.swift */; };
+		CF1F9E933B4B7CB867102F0DC77FB909 /* Pods-Flokk-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AA8E4FA8B95BCB0B6C58AC78C6F1F44 /* Pods-Flokk-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		28C7EEBB146CE8897FBC7FEC5D4442E2 /* PBXContainerItemProxy */ = {
+		870C130063F30D6950476AA5DF662E1E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = C3D3698354B858E60C18057455BA2FF8;
 			remoteInfo = NextLevel;
 		};
+		96762DE5333B456EDDC1407EF9DD709E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D076D106C11C946A66D82BC985FAF026;
+			remoteInfo = RecordButton;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		06AD48400DCFC2CB3A122B8CB621B462 /* NextLevel+AVFoundation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NextLevel+AVFoundation.swift"; path = "Sources/NextLevel+AVFoundation.swift"; sourceTree = "<group>"; };
 		07EAB1CE128DAAF04B14A4B1D05F860E /* Pods-Flokk-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Flokk-acknowledgements.plist"; sourceTree = "<group>"; };
-		08E855F4927C7C36CDA07B099014106D /* NextLevel+CoreImage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NextLevel+CoreImage.swift"; path = "Sources/NextLevel+CoreImage.swift"; sourceTree = "<group>"; };
-		0B5717FDA2C674539DC765E0BA6FF3E6 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0B7165DF912E72CA67FFC34A2A0625C2 /* NextLevel.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = NextLevel.modulemap; sourceTree = "<group>"; };
-		1985CCAB41E008D93A0C8EE8ECBDB0A5 /* Pods_Flokk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Flokk.framework; path = "Pods-Flokk.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2160395362C2287310FA1F880A5E7F13 /* NextLevel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NextLevel.swift; path = Sources/NextLevel.swift; sourceTree = "<group>"; };
-		2C163AB509E0ADFE383451A829692275 /* NextLevel+UIImage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NextLevel+UIImage.swift"; path = "Sources/NextLevel+UIImage.swift"; sourceTree = "<group>"; };
-		2DE1909C058D516D64A27011D7E29399 /* NextLevel+CoreMedia.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NextLevel+CoreMedia.swift"; path = "Sources/NextLevel+CoreMedia.swift"; sourceTree = "<group>"; };
-		2EB53946A88553E265852023B4B82187 /* NextLevel-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NextLevel-umbrella.h"; sourceTree = "<group>"; };
-		48AB761285CE58309021A452D72B1749 /* NextLevel+Foundation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NextLevel+Foundation.swift"; path = "Sources/NextLevel+Foundation.swift"; sourceTree = "<group>"; };
-		48FEA0B26AAE078F33CCC95F88EA0883 /* NextLevelClip.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NextLevelClip.swift; path = Sources/NextLevelClip.swift; sourceTree = "<group>"; };
+		10D4136DCCF86B49AE557CCA5B2C6B5B /* Pods_Flokk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Flokk.framework; path = "Pods-Flokk.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		166781ECB1CF6D740593E3D2FA1C641F /* RecordButton-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RecordButton-dummy.m"; sourceTree = "<group>"; };
+		197E01DC17EB41CB43C6A0C64CC7F2FB /* NextLevel.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = NextLevel.modulemap; sourceTree = "<group>"; };
+		27E426EE78DC4BEF76D8ACC7732212CE /* NextLevel+CoreImage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NextLevel+CoreImage.swift"; path = "Sources/NextLevel+CoreImage.swift"; sourceTree = "<group>"; };
+		2C997EE59704B76E42C10FAB76B49F59 /* NextLevel-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NextLevel-dummy.m"; sourceTree = "<group>"; };
+		32A30441A31AD5A66A66900937243431 /* NextLevel-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NextLevel-prefix.pch"; sourceTree = "<group>"; };
+		430A360EBECF7D0BB3B5EBF54F1EF20B /* RecordButton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = RecordButton.framework; path = RecordButton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5196344050CDAC1A4F889CD9BB816886 /* Pods-Flokk-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Flokk-resources.sh"; sourceTree = "<group>"; };
-		57EAA0F0283AEE8442BEB3E33D5A57CE /* NextLevel.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = NextLevel.xcconfig; sourceTree = "<group>"; };
-		5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		7693E2BB43FF1E723488601A50A27EE8 /* NextLevel-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NextLevel-prefix.pch"; sourceTree = "<group>"; };
+		5477D7FC34C9D44ED25BCA005CE00E48 /* NextLevel+Foundation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NextLevel+Foundation.swift"; path = "Sources/NextLevel+Foundation.swift"; sourceTree = "<group>"; };
+		60E397DC77059116EC93C23F9D4324A3 /* NextLevel+CoreMedia.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NextLevel+CoreMedia.swift"; path = "Sources/NextLevel+CoreMedia.swift"; sourceTree = "<group>"; };
+		6F8C70A91E152FBE782276BBFEE57EE0 /* NextLevel-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NextLevel-umbrella.h"; sourceTree = "<group>"; };
 		798313B4B8F23311060E1C22643A27B9 /* Pods-Flokk-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Flokk-acknowledgements.markdown"; sourceTree = "<group>"; };
 		7AA8E4FA8B95BCB0B6C58AC78C6F1F44 /* Pods-Flokk-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Flokk-umbrella.h"; sourceTree = "<group>"; };
 		7C187CCE51DCAC8CDCEC4418B4915928 /* Pods-Flokk.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Flokk.modulemap"; sourceTree = "<group>"; };
+		80457DDF284B791E1FA0571B62D440F2 /* RecordButton.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RecordButton.xcconfig; sourceTree = "<group>"; };
+		8663B73DF48ABA17C073033BFFCFCA5F /* NextLevel+UIImage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NextLevel+UIImage.swift"; path = "Sources/NextLevel+UIImage.swift"; sourceTree = "<group>"; };
+		86FB6DE7B60A2DA7D8F25DFA6D0AE518 /* NextLevelClip.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NextLevelClip.swift; path = Sources/NextLevelClip.swift; sourceTree = "<group>"; };
+		8E8758968E7987D78322FB578EFA1679 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8F7AAC12FE2739F4643DCAF263819202 /* Pods-Flokk-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Flokk-dummy.m"; sourceTree = "<group>"; };
+		908E902E026C5C22904CF9014A5604AD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		93620B3C33552B0B29D31B81CE93D35B /* NextLevelConfiguration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NextLevelConfiguration.swift; path = Sources/NextLevelConfiguration.swift; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9551F3F37B3ADC753993DCDA35EC26B5 /* Pods-Flokk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Flokk.release.xcconfig"; sourceTree = "<group>"; };
-		9D54E81E0C77527408BC249D0BC43CFB /* NextLevelConfiguration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NextLevelConfiguration.swift; path = Sources/NextLevelConfiguration.swift; sourceTree = "<group>"; };
 		A1618F6D1001FE9FB27DFAB90FC88F25 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A520335D0A4EAB16E3B128A25589A834 /* NextLevel+AVFoundation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NextLevel+AVFoundation.swift"; path = "Sources/NextLevel+AVFoundation.swift"; sourceTree = "<group>"; };
-		CC6F2F8717097C11223F2CAE20EDAB86 /* NextLevel-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NextLevel-dummy.m"; sourceTree = "<group>"; };
+		B0133DEB47C958B3F2446118E5886468 /* RecordButton-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RecordButton-prefix.pch"; sourceTree = "<group>"; };
+		B453B2350584B5DD19EEB748370AB5D1 /* NextLevelSession.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NextLevelSession.swift; path = Sources/NextLevelSession.swift; sourceTree = "<group>"; };
+		B4BB257F90E8BC0F94C524D5D0575344 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BC2C02191C153C1554B35DEE8B2D09D4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		BD5EECC15DE6E6E99584D7E2FD323AAA /* NextLevel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = NextLevel.framework; path = NextLevel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C04BB3034D882FD80AC03B484B89B4EC /* RecordButton.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = RecordButton.modulemap; sourceTree = "<group>"; };
+		C5C2639502ECEE315C25472C4D6A01E4 /* NextLevel+Metadata.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NextLevel+Metadata.swift"; path = "Sources/NextLevel+Metadata.swift"; sourceTree = "<group>"; };
+		C740CADD06C9A1671DA2F012EDEE5EB9 /* RecordButton-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RecordButton-umbrella.h"; sourceTree = "<group>"; };
+		CB3A5FE850C505B946BF50E17BBACE45 /* RecordButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RecordButton.swift; path = Pod/Classes/RecordButton.swift; sourceTree = "<group>"; };
 		D373D64078BA01CEDAAF4A707BB01C39 /* Pods-Flokk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Flokk.debug.xcconfig"; sourceTree = "<group>"; };
-		DC36C69FB8C2BE09958D27FD13061071 /* NextLevel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = NextLevel.framework; path = NextLevel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E3CC1DE1222B25BDAAE09961DDB91651 /* NextLevelSession.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NextLevelSession.swift; path = Sources/NextLevelSession.swift; sourceTree = "<group>"; };
 		E5FA43899B74287BBD4088B8DB9E81F6 /* Pods-Flokk-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Flokk-frameworks.sh"; sourceTree = "<group>"; };
-		EF3B9174A108FDF9087F6134F883684B /* NextLevel+Metadata.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NextLevel+Metadata.swift"; path = "Sources/NextLevel+Metadata.swift"; sourceTree = "<group>"; };
+		F337C5B70A663857F5D39ADF7229B384 /* NextLevel.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = NextLevel.xcconfig; sourceTree = "<group>"; };
+		F8B7CA0665ED0E3F223A4A52FED634B6 /* NextLevel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NextLevel.swift; path = Sources/NextLevel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		ED985DA3C5E3196D31D7B0FE36350351 /* Frameworks */ = {
+		514D8ECFECA853B1B6D8B8EF4612384E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C937B0570BD569375DDA69F1D94A7BCE /* Foundation.framework in Frameworks */,
+				A6A9B90A98B47A5C35EC5A0D8A9D7D4E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B1D24F3FB46BC1FE00C8ABE071B6B7E0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C1599F58EAF914E138F6A1BEE057279B /* Foundation.framework in Frameworks */,
+				CC9D6EC238BCE6C7189B62100EF3894B /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +118,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0076D4D93E23106F8BC925069D9DA6F5 /* NextLevel */ = {
+			isa = PBXGroup;
+			children = (
+				F8B7CA0665ED0E3F223A4A52FED634B6 /* NextLevel.swift */,
+				06AD48400DCFC2CB3A122B8CB621B462 /* NextLevel+AVFoundation.swift */,
+				27E426EE78DC4BEF76D8ACC7732212CE /* NextLevel+CoreImage.swift */,
+				60E397DC77059116EC93C23F9D4324A3 /* NextLevel+CoreMedia.swift */,
+				5477D7FC34C9D44ED25BCA005CE00E48 /* NextLevel+Foundation.swift */,
+				C5C2639502ECEE315C25472C4D6A01E4 /* NextLevel+Metadata.swift */,
+				8663B73DF48ABA17C073033BFFCFCA5F /* NextLevel+UIImage.swift */,
+				86FB6DE7B60A2DA7D8F25DFA6D0AE518 /* NextLevelClip.swift */,
+				93620B3C33552B0B29D31B81CE93D35B /* NextLevelConfiguration.swift */,
+				B453B2350584B5DD19EEB748370AB5D1 /* NextLevelSession.swift */,
+				35D25654A6106E2833068C43B38967C8 /* Support Files */,
+			);
+			name = NextLevel;
+			path = NextLevel;
+			sourceTree = "<group>";
+		};
+		0F03B8E49F099DAC03FE14FF97146FC2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0076D4D93E23106F8BC925069D9DA6F5 /* NextLevel */,
+				D9B133D079FDD1204546939CAECC5297 /* RecordButton */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		10DEDCB394BAA0C7FEDEBE330207B074 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				908E902E026C5C22904CF9014A5604AD /* Foundation.framework */,
+				BC2C02191C153C1554B35DEE8B2D09D4 /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
 		1F3A9E5C472225621C75191C1ABA72C1 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -96,60 +163,48 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		50735C73FE3E5BD8711D987ADCE30158 /* Pods */ = {
+		35D25654A6106E2833068C43B38967C8 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				682607D1ABD503A12601CE42FD45008A /* NextLevel */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		5E0D919E635D23B70123790B8308F8EF /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		682607D1ABD503A12601CE42FD45008A /* NextLevel */ = {
-			isa = PBXGroup;
-			children = (
-				2160395362C2287310FA1F880A5E7F13 /* NextLevel.swift */,
-				A520335D0A4EAB16E3B128A25589A834 /* NextLevel+AVFoundation.swift */,
-				08E855F4927C7C36CDA07B099014106D /* NextLevel+CoreImage.swift */,
-				2DE1909C058D516D64A27011D7E29399 /* NextLevel+CoreMedia.swift */,
-				48AB761285CE58309021A452D72B1749 /* NextLevel+Foundation.swift */,
-				EF3B9174A108FDF9087F6134F883684B /* NextLevel+Metadata.swift */,
-				2C163AB509E0ADFE383451A829692275 /* NextLevel+UIImage.swift */,
-				48FEA0B26AAE078F33CCC95F88EA0883 /* NextLevelClip.swift */,
-				9D54E81E0C77527408BC249D0BC43CFB /* NextLevelConfiguration.swift */,
-				E3CC1DE1222B25BDAAE09961DDB91651 /* NextLevelSession.swift */,
-				6BF37656D3EC66EB57F6A6E373DF793E /* Support Files */,
-			);
-			name = NextLevel;
-			path = NextLevel;
-			sourceTree = "<group>";
-		};
-		6BF37656D3EC66EB57F6A6E373DF793E /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				0B5717FDA2C674539DC765E0BA6FF3E6 /* Info.plist */,
-				0B7165DF912E72CA67FFC34A2A0625C2 /* NextLevel.modulemap */,
-				57EAA0F0283AEE8442BEB3E33D5A57CE /* NextLevel.xcconfig */,
-				CC6F2F8717097C11223F2CAE20EDAB86 /* NextLevel-dummy.m */,
-				7693E2BB43FF1E723488601A50A27EE8 /* NextLevel-prefix.pch */,
-				2EB53946A88553E265852023B4B82187 /* NextLevel-umbrella.h */,
+				8E8758968E7987D78322FB578EFA1679 /* Info.plist */,
+				197E01DC17EB41CB43C6A0C64CC7F2FB /* NextLevel.modulemap */,
+				F337C5B70A663857F5D39ADF7229B384 /* NextLevel.xcconfig */,
+				2C997EE59704B76E42C10FAB76B49F59 /* NextLevel-dummy.m */,
+				32A30441A31AD5A66A66900937243431 /* NextLevel-prefix.pch */,
+				6F8C70A91E152FBE782276BBFEE57EE0 /* NextLevel-umbrella.h */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/NextLevel";
 			sourceTree = "<group>";
 		};
-		7A9D41898B37232FB7C99CAE9DB685ED /* Products */ = {
+		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				DC36C69FB8C2BE09958D27FD13061071 /* NextLevel.framework */,
-				1985CCAB41E008D93A0C8EE8ECBDB0A5 /* Pods_Flokk.framework */,
+				10DEDCB394BAA0C7FEDEBE330207B074 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		67F37FD29A7BA4B3346C6D5F17E57D5C /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				B4BB257F90E8BC0F94C524D5D0575344 /* Info.plist */,
+				C04BB3034D882FD80AC03B484B89B4EC /* RecordButton.modulemap */,
+				80457DDF284B791E1FA0571B62D440F2 /* RecordButton.xcconfig */,
+				166781ECB1CF6D740593E3D2FA1C641F /* RecordButton-dummy.m */,
+				B0133DEB47C958B3F2446118E5886468 /* RecordButton-prefix.pch */,
+				C740CADD06C9A1671DA2F012EDEE5EB9 /* RecordButton-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/RecordButton";
+			sourceTree = "<group>";
+		};
+		768D87F9FF104B117F9D2BE19666D711 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BD5EECC15DE6E6E99584D7E2FD323AAA /* NextLevel.framework */,
+				10D4136DCCF86B49AE557CCA5B2C6B5B /* Pods_Flokk.framework */,
+				430A360EBECF7D0BB3B5EBF54F1EF20B /* RecordButton.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -158,19 +213,11 @@
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				50735C73FE3E5BD8711D987ADCE30158 /* Pods */,
-				7A9D41898B37232FB7C99CAE9DB685ED /* Products */,
+				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
+				0F03B8E49F099DAC03FE14FF97146FC2 /* Pods */,
+				768D87F9FF104B117F9D2BE19666D711 /* Products */,
 				1F3A9E5C472225621C75191C1ABA72C1 /* Targets Support Files */,
 			);
-			sourceTree = "<group>";
-		};
-		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				5E0D919E635D23B70123790B8308F8EF /* iOS */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		D7E18D64438FB1045F1A10EEBAC82FA9 /* Pods-Flokk */ = {
@@ -191,9 +238,35 @@
 			path = "Target Support Files/Pods-Flokk";
 			sourceTree = "<group>";
 		};
+		D9B133D079FDD1204546939CAECC5297 /* RecordButton */ = {
+			isa = PBXGroup;
+			children = (
+				CB3A5FE850C505B946BF50E17BBACE45 /* RecordButton.swift */,
+				67F37FD29A7BA4B3346C6D5F17E57D5C /* Support Files */,
+			);
+			name = RecordButton;
+			path = RecordButton;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		1A510F8F6FEBE2AB19BC2519CCBBECA6 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B0236C76195DF4FF67D7057DE0878883 /* RecordButton-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		37D20405DC44F9A5C8983863CCC6A0EA /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF1F9E933B4B7CB867102F0DC77FB909 /* Pods-Flokk-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AAB712FE74FC30097464146CE4E13E03 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -202,35 +275,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E83DD06DB0A3CF567825BB490CF1DD43 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4A5B556D994545428E510375EC4EBF7D /* Pods-Flokk-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		7A66C860DDC42D3EE312ADFF278C69DA /* Pods-Flokk */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B9268D2173A182AAE548337E0ED45ADE /* Build configuration list for PBXNativeTarget "Pods-Flokk" */;
-			buildPhases = (
-				B1DD910AFF984B4FB31A797FDB1C2CCD /* Sources */,
-				ED985DA3C5E3196D31D7B0FE36350351 /* Frameworks */,
-				E83DD06DB0A3CF567825BB490CF1DD43 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				5E38304E3D8DDB5E18B8535091743A32 /* PBXTargetDependency */,
-			);
-			name = "Pods-Flokk";
-			productName = "Pods-Flokk";
-			productReference = 1985CCAB41E008D93A0C8EE8ECBDB0A5 /* Pods_Flokk.framework */;
-			productType = "com.apple.product-type.framework";
-		};
 		C3D3698354B858E60C18057455BA2FF8 /* NextLevel */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0DCCE7715737ABD87D334A1D4B43F969 /* Build configuration list for PBXNativeTarget "NextLevel" */;
@@ -245,7 +292,43 @@
 			);
 			name = NextLevel;
 			productName = NextLevel;
-			productReference = DC36C69FB8C2BE09958D27FD13061071 /* NextLevel.framework */;
+			productReference = BD5EECC15DE6E6E99584D7E2FD323AAA /* NextLevel.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		D076D106C11C946A66D82BC985FAF026 /* RecordButton */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0FF645A020ED236A017AF6775AC94438 /* Build configuration list for PBXNativeTarget "RecordButton" */;
+			buildPhases = (
+				648BB9BB6FAF01E9864F0CBD00ECB2EC /* Sources */,
+				B1D24F3FB46BC1FE00C8ABE071B6B7E0 /* Frameworks */,
+				1A510F8F6FEBE2AB19BC2519CCBBECA6 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RecordButton;
+			productName = RecordButton;
+			productReference = 430A360EBECF7D0BB3B5EBF54F1EF20B /* RecordButton.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		FC91031095499B026E0BFE46BF74A82C /* Pods-Flokk */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C83884BC5E9BE0FA8363479FDA9C95C5 /* Build configuration list for PBXNativeTarget "Pods-Flokk" */;
+			buildPhases = (
+				F0366C2B0D26BC94E926C1C08D74A4B8 /* Sources */,
+				514D8ECFECA853B1B6D8B8EF4612384E /* Frameworks */,
+				37D20405DC44F9A5C8983863CCC6A0EA /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6395B329EE2BAACAC38076AA2C1B325A /* PBXTargetDependency */,
+				AE475F01F52071F3442C853AA8624E9C /* PBXTargetDependency */,
+			);
+			name = "Pods-Flokk";
+			productName = "Pods-Flokk";
+			productReference = 10D4136DCCF86B49AE557CCA5B2C6B5B /* Pods_Flokk.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -265,17 +348,27 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 7A9D41898B37232FB7C99CAE9DB685ED /* Products */;
+			productRefGroup = 768D87F9FF104B117F9D2BE19666D711 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				C3D3698354B858E60C18057455BA2FF8 /* NextLevel */,
-				7A66C860DDC42D3EE312ADFF278C69DA /* Pods-Flokk */,
+				FC91031095499B026E0BFE46BF74A82C /* Pods-Flokk */,
+				D076D106C11C946A66D82BC985FAF026 /* RecordButton */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
+		648BB9BB6FAF01E9864F0CBD00ECB2EC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				86562DC62D6196EB723805B9FA50C38B /* RecordButton-dummy.m in Sources */,
+				4BFE93FD7B75BE96C8570817E21DF6FE /* RecordButton.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		73497300394D7A330D7DD6AF62F1D701 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -294,29 +387,35 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B1DD910AFF984B4FB31A797FDB1C2CCD /* Sources */ = {
+		F0366C2B0D26BC94E926C1C08D74A4B8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				498E2B8BA6D84C01D55FC1A411053EA6 /* Pods-Flokk-dummy.m in Sources */,
+				C841ADE213E967D455A0159952A68F68 /* Pods-Flokk-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		5E38304E3D8DDB5E18B8535091743A32 /* PBXTargetDependency */ = {
+		6395B329EE2BAACAC38076AA2C1B325A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = NextLevel;
 			target = C3D3698354B858E60C18057455BA2FF8 /* NextLevel */;
-			targetProxy = 28C7EEBB146CE8897FBC7FEC5D4442E2 /* PBXContainerItemProxy */;
+			targetProxy = 870C130063F30D6950476AA5DF662E1E /* PBXContainerItemProxy */;
+		};
+		AE475F01F52071F3442C853AA8624E9C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RecordButton;
+			target = D076D106C11C946A66D82BC985FAF026 /* RecordButton */;
+			targetProxy = 96762DE5333B456EDDC1407EF9DD709E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		289CA2C6603BF9F2D21EC360FBEAF558 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 57EAA0F0283AEE8442BEB3E33D5A57CE /* NextLevel.xcconfig */;
+			baseConfigurationReference = F337C5B70A663857F5D39ADF7229B384 /* NextLevel.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -347,6 +446,38 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
+		};
+		29A99F61FAA1A9E541ADD10C2B3E06D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 80457DDF284B791E1FA0571B62D440F2 /* RecordButton.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/RecordButton/RecordButton-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/RecordButton/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/RecordButton/RecordButton.modulemap";
+				PRODUCT_MODULE_NAME = RecordButton;
+				PRODUCT_NAME = RecordButton;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
 		};
 		30D948AE62C04225F8DEF8734A4C5A26 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -408,7 +539,7 @@
 		};
 		536454F41AC3A90528A840AF2627C7AA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 57EAA0F0283AEE8442BEB3E33D5A57CE /* NextLevel.xcconfig */;
+			baseConfigurationReference = F337C5B70A663857F5D39ADF7229B384 /* NextLevel.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -438,6 +569,39 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
+		};
+		56B0D8A2E29E8F6DB8B19E8AA5D49BB3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 80457DDF284B791E1FA0571B62D440F2 /* RecordButton.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/RecordButton/RecordButton-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/RecordButton/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/RecordButton/RecordButton.modulemap";
+				PRODUCT_MODULE_NAME = RecordButton;
+				PRODUCT_NAME = RecordButton;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
 		};
 		9E88537B08ED4D6EB44DBA7BC8D56A35 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -502,43 +666,7 @@
 			};
 			name = Debug;
 		};
-		B84A8056596FC506B4F805739F775962 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D373D64078BA01CEDAAF4A707BB01C39 /* Pods-Flokk.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Flokk/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Flokk/Pods-Flokk.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		CB7BCBD59FF46E78383AC37FE54C43AD /* Release */ = {
+		A7B925275053FE18C81BF6A22FDC3D04 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9551F3F37B3ADC753993DCDA35EC26B5 /* Pods-Flokk.release.xcconfig */;
 			buildSettings = {
@@ -574,6 +702,42 @@
 			};
 			name = Release;
 		};
+		EE5149F5CFC3778D532A3BF69F530F66 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D373D64078BA01CEDAAF4A707BB01C39 /* Pods-Flokk.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Flokk/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Flokk/Pods-Flokk.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -582,6 +746,15 @@
 			buildConfigurations = (
 				536454F41AC3A90528A840AF2627C7AA /* Debug */,
 				289CA2C6603BF9F2D21EC360FBEAF558 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0FF645A020ED236A017AF6775AC94438 /* Build configuration list for PBXNativeTarget "RecordButton" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				29A99F61FAA1A9E541ADD10C2B3E06D2 /* Debug */,
+				56B0D8A2E29E8F6DB8B19E8AA5D49BB3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -595,11 +768,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B9268D2173A182AAE548337E0ED45ADE /* Build configuration list for PBXNativeTarget "Pods-Flokk" */ = {
+		C83884BC5E9BE0FA8363479FDA9C95C5 /* Build configuration list for PBXNativeTarget "Pods-Flokk" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B84A8056596FC506B4F805739F775962 /* Debug */,
-				CB7BCBD59FF46E78383AC37FE54C43AD /* Release */,
+				EE5149F5CFC3778D532A3BF69F530F66 /* Debug */,
+				A7B925275053FE18C81BF6A22FDC3D04 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

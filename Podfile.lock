@@ -1,16 +1,20 @@
 PODS:
   - NextLevel (0.9.8)
+  - RecordButton (1.0.2)
 
 DEPENDENCIES:
   - NextLevel (~> 0.9.5)
+  - RecordButton
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - NextLevel
+    - RecordButton
 
 SPEC CHECKSUMS:
   NextLevel: 14d10b1e6e85ba01f8660a39fb78adedd37bfec0
+  RecordButton: 76677be0f4b94f8a387454a23b4b64bd9b6c0e51
 
-PODFILE CHECKSUM: e12ad3adcec0355f5f023b5a04273b430952019e
+PODFILE CHECKSUM: ffc7ad65247a522531c025930d35e846e2c0125f
 
 COCOAPODS: 1.5.3

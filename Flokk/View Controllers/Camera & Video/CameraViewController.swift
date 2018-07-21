@@ -7,23 +7,27 @@
 //  Copyright © 2018 Heyen Enterprises. All rights reserved.
 //
 
-
 import UIKit
 import AVKit
 import NextLevel
 import Photos
+import RecordButton
+
+let maxRecordDuration: CGFloat! = 6 // Seconds
 
 class CameraViewController : UIViewController {
-    @IBOutlet weak var cameraButton: UIButton!
+    @IBOutlet weak var recordButton: RecordButton!
     @IBOutlet weak var doneButton: UIButton!
     var previewView: UIView!
     
+    // File URL for the recorded video, used when transitioning to the preview VC
     var videoURL: URL!
-    
-    var recording = false
     
     // For recording with the camera button
     var longPressGestureRecognizer: UILongPressGestureRecognizer?
+    
+    var progressTimer: Timer!
+    var progress: CGFloat! = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,7 +53,12 @@ class CameraViewController : UIViewController {
             self.view.addSubview(previewView)
         }
         
-        self.view.bringSubview(toFront: cameraButton)
+        recordButton.progressColor = .red
+        recordButton.closeWhenFinished = false
+        //recordButton.addTarget(self, action: #selector(CameraViewController.record), for: .touchDown)
+        //recordButton.addTarget(self, action: #selector(CameraViewController.stop), for: .touchUpInside)
+        
+        self.view.bringSubview(toFront: recordButton)
         self.view.bringSubview(toFront: doneButton)
         
         
@@ -59,7 +68,7 @@ class CameraViewController : UIViewController {
             gestureRecognizer.delegate = self
             gestureRecognizer.minimumPressDuration = 0.05
             gestureRecognizer.allowableMovement = 10.0
-            cameraButton.addGestureRecognizer(gestureRecognizer)
+            recordButton.addGestureRecognizer(gestureRecognizer)
         }
     }
     
@@ -96,7 +105,7 @@ class CameraViewController : UIViewController {
     // When the done button is pressed, temporary
     @IBAction func donePressed(_ sender: Any) {
         self.endRecording()
-        performSegue(withIdentifier: "showVideoSegue", sender: self)
+        //performSegue(withIdentifier: "showVideoSegue", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -112,26 +121,39 @@ class CameraViewController : UIViewController {
 extension CameraViewController {
     internal func startRecording() {
         NextLevel.shared.record()
+        
+        self.progressTimer = Timer.scheduledTimer(timeInterval: 0.05, target: self, selector: #selector(CameraViewController.updateProgress), userInfo: nil, repeats: true)
+        progressTimer.fire()
     }
     
     internal func pauseRecording() {
         NextLevel.shared.pause()
+        
+        progressTimer.invalidate()
     }
     
     // Handle the recorded video
     internal func endRecording() {
         if let session = NextLevel.shared.session {
+            // If there are multiple clips, attempt to merge them
             if session.clips.count > 1 {
                 session.mergeClips(usingPreset: AVAssetExportPresetHighestQuality, completionHandler: { (url: URL?, error: Error?) in
+                    // Retrieve the merged file URL
                     if let url = url {
                        self.videoURL = url
+                        
+                        // Segue to the next view only when the clips are done merging
+                        self.performSegue(withIdentifier: "showVideoSegue", sender: self)
                     } else if let _ = error {
                         print("failed to merge clips at the end of capture \(String(describing: error))")
                     }
                 })
+            // If there was only one clip?
             } else if let lastClipURL = session.lastClipUrl {
-                print(lastClipURL)
                 self.videoURL = lastClipURL
+                
+                self.performSegue(withIdentifier: "showVideoSegue", sender: self)
+            // When would this be called?
             } else if session.currentClipHasStarted {
                 print("clip has started")
                 session.endClip(completionHandler: { (clip, error) in
@@ -144,8 +166,24 @@ extension CameraViewController {
                         print("Error in ending recording: \(error)")
                     }
                 })
+            } else {
+                print("Not sure what to do here")
             }
         }
+    }
+}
+
+// Record Button Functions
+extension CameraViewController {
+    @objc func updateProgress() {
+        progress = progress + (CGFloat(0.05) / maxRecordDuration)
+        recordButton.setProgress(progress)
+        
+        // Recording has been completed
+        if progress >= 1 {
+            progressTimer.invalidate()
+        }
+        
     }
 }
 
@@ -164,10 +202,7 @@ extension CameraViewController : UIGestureRecognizerDelegate {
         case .cancelled:
             fallthrough
         case .failed:
-            print(NextLevel.shared.session?.totalDuration)
-            print(NextLevel.shared.session?.currentClipDuration)
             self.pauseRecording()
-            print("Done Recording")
             fallthrough
         default:
             break
@@ -180,7 +215,6 @@ extension CameraViewController : UIGestureRecognizerDelegate {
 // Consider moving this to a separate file?
 extension CameraViewController : NextLevelDelegate {
     // Permissions
-    // On launch,
     func nextLevel(_ nextLevel: NextLevel, didUpdateAuthorizationStatus status: NextLevelAuthorizationStatus, forMediaType mediaType: AVMediaType) {
         print("authorization update")
         // Check if already authorized

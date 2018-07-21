@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="6aE-ud-V8T">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="LjL-JW-f6s">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -63,16 +63,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YvR-bK-uTN">
-                                <rect key="frame" x="88.5" y="425" width="143" height="143"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="143" id="ZjF-bU-4hT"/>
-                                    <constraint firstAttribute="height" constant="143" id="eYQ-Su-oAg"/>
-                                </constraints>
-                                <state key="normal" image="takePhotoButton"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8oL-2e-FcU">
-                                <rect key="frame" x="286" y="555" width="69" height="55"/>
+                                <rect key="frame" x="239" y="469" width="69" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <state key="normal" title="Done">
@@ -82,22 +74,29 @@
                                     <action selector="donePressed:" destination="LjL-JW-f6s" eventType="touchUpInside" id="4ok-6g-87I"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YvR-bK-uTN" customClass="RecordButton" customModule="RecordButton">
+                                <rect key="frame" x="108" y="444" width="105" height="105"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="105" id="ZjF-bU-4hT"/>
+                                    <constraint firstAttribute="height" constant="105" id="eYQ-Su-oAg"/>
+                                </constraints>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" name="Flokk Navy"/>
                         <constraints>
-                            <constraint firstItem="csg-wV-BGo" firstAttribute="top" secondItem="YvR-bK-uTN" secondAttribute="bottom" id="vY5-IY-TGC"/>
+                            <constraint firstItem="csg-wV-BGo" firstAttribute="top" secondItem="YvR-bK-uTN" secondAttribute="bottom" constant="19" id="vY5-IY-TGC"/>
                             <constraint firstItem="YvR-bK-uTN" firstAttribute="centerX" secondItem="yjH-HQ-X5T" secondAttribute="centerX" id="xeH-zx-4mN"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="cameraButton" destination="YvR-bK-uTN" id="mXW-iq-40m"/>
                         <outlet property="doneButton" destination="8oL-2e-FcU" id="zOg-3f-UEa"/>
+                        <outlet property="recordButton" destination="YvR-bK-uTN" id="so2-J5-l7A"/>
                         <segue destination="g7t-85-xdj" kind="show" identifier="showVideoSegue" id="MFj-4n-EOm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T0U-ZH-nch" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-66.400000000000006" y="51.724137931034484"/>
+            <point key="canvasLocation" x="-67.5" y="50.70422535211268"/>
         </scene>
         <!--Video Playback View Controller-->
         <scene sceneID="Dyz-eM-3bD">
@@ -271,7 +270,7 @@
         <!--Group-->
         <scene sceneID="FIk-rn-AXh">
             <objects>
-                <viewController title="Group" id="lJ7-IS-kbe" customClass="FeedVC" customModule="Flokk_Basic" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Group" id="lJ7-IS-kbe" customClass="FeedVC" customModule="Flokk" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="M6b-Iu-9e1"/>
                         <viewControllerLayoutGuide type="bottom" id="o6e-IZ-ZXL"/>
@@ -462,7 +461,6 @@
         <image name="friendsIcon" width="21" height="17"/>
         <image name="groupsIcon" width="18" height="15"/>
         <image name="settingsBttnWhite" width="19" height="19"/>
-        <image name="takePhotoButton" width="125" height="125"/>
         <namedColor name="Flokk Navy">
             <color red="0.082000002264976501" green="0.086000002920627594" blue="0.16899999976158142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -470,8 +468,5 @@
             <color red="0.61568627450980395" green="0.61568627450980395" blue="0.64313725490196083" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="6z7-wN-bvh"/>
-    </inferredMetricsTieBreakers>
     <color key="tintColor" name="Flokk Teal"/>
 </document>

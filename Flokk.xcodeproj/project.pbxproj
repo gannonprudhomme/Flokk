@@ -232,15 +232,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7F8012AF210110D700CEA5DA /* videoPlayback.xib in Resources */,
 				87706DAD20F960B200663948 /* .gitignore in Resources */,
-				7F8012B12101149B00CEA5DA /* videoTrimmer.xib in Resources */,
 				87221A2220F195C2000A00F7 /* Main.storyboard in Resources */,
-				7F8012AD210101FA00CEA5DA /* Camera.xib in Resources */,
 				87221A1420F073F2000A00F7 /* LaunchScreen.storyboard in Resources */,
-				7F8012AA2100F6F200CEA5DA /* JosefinSans-Regular.ttf in Resources */,
 				87221A1120F073F2000A00F7 /* Assets.xcassets in Resources */,
-				7F8012AB2100F6FD00CEA5DA /* JosefinSans-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,10 +268,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Flokk/Pods-Flokk-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/NextLevel/NextLevel.framework",
+				"${BUILT_PRODUCTS_DIR}/RecordButton/RecordButton.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NextLevel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RecordButton.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -295,7 +292,6 @@
 				87221A1E20F195B0000A00F7 /* CameraViewController.swift in Sources */,
 				8720D7CE20F476DB0069F56B /* VideoTrimmerViewController.swift in Sources */,
 				87221A2020F195B6000A00F7 /* ImageViewController.swift in Sources */,
-				7F8012B4210123B100CEA5DA /* BounceButton.swift in Sources */,
 				87221A0A20F073F2000A00F7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -427,10 +423,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XT8KNR7TY2;
+				DEVELOPMENT_TEAM = L4K4Q74X62;
 				INFOPLIST_FILE = Flokk/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = flokk.Flokk1;
+				PRODUCT_BUNDLE_IDENTIFIER = flokk.F;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -443,10 +439,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XT8KNR7TY2;
+				DEVELOPMENT_TEAM = L4K4Q74X62;
 				INFOPLIST_FILE = Flokk/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = flokk.Flokk1;
+				PRODUCT_BUNDLE_IDENTIFIER = flokk.F;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
