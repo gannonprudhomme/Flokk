@@ -30,6 +30,7 @@
 		7F8012AE210110D700CEA5DA /* videoPlayback.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = videoPlayback.xib; sourceTree = "<group>"; };
 		7F8012B02101149B00CEA5DA /* videoTrimmer.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = videoTrimmer.xib; sourceTree = "<group>"; };
 		7F8012B3210123B000CEA5DA /* BounceButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BounceButton.swift; sourceTree = "<group>"; };
+		871BD3962102D84D00FA421C /* test.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = test.mp4; path = "View Controllers/test.mp4"; sourceTree = "<group>"; };
 		8720D7C020F1DBBC0069F56B /* VideoPlaybackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlaybackViewController.swift; sourceTree = "<group>"; };
 		8720D7CD20F476DB0069F56B /* VideoTrimmerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTrimmerViewController.swift; sourceTree = "<group>"; };
 		87221A0620F073F2000A00F7 /* Flokk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flokk.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -157,6 +158,7 @@
 		87221A0820F073F2000A00F7 /* Flokk */ = {
 			isa = PBXGroup;
 			children = (
+				871BD3962102D84D00FA421C /* test.mp4 */,
 				8720D7C420F46CDB0069F56B /* View Controllers */,
 				8720D7C520F46CF10069F56B /* Framework */,
 				87221A2120F195C2000A00F7 /* Main.storyboard */,
@@ -267,11 +269,13 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Flokk/Pods-Flokk-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ABVideoRangeSlider/ABVideoRangeSlider.framework",
 				"${BUILT_PRODUCTS_DIR}/NextLevel/NextLevel.framework",
 				"${BUILT_PRODUCTS_DIR}/RecordButton/RecordButton.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ABVideoRangeSlider.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NextLevel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RecordButton.framework",
 			);
