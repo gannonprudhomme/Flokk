@@ -271,7 +271,7 @@
         <!--Group-->
         <scene sceneID="FIk-rn-AXh">
             <objects>
-                <viewController title="Group" id="lJ7-IS-kbe" customClass="FeedVC" customModule="Flokk_Basic" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Group" id="lJ7-IS-kbe" customClass="FeedVC" customModule="Flokk" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="M6b-Iu-9e1"/>
                         <viewControllerLayoutGuide type="bottom" id="o6e-IZ-ZXL"/>
@@ -322,7 +322,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nxt-Fl-ena" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="991.875" y="936.97183098591552"/>
+            <point key="canvasLocation" x="3264" y="1500"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="YfW-Xq-tDn">
@@ -345,7 +345,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aff-L1-OgD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-66" y="937"/>
+            <point key="canvasLocation" x="2205" y="1500"/>
         </scene>
         <!--Groups-->
         <scene sceneID="gL6-GU-GJv">
@@ -425,7 +425,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vbg-fn-VWC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="991.875" y="1666.9014084507041"/>
+            <point key="canvasLocation" x="3264" y="2230"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gCe-MQ-3qa">
@@ -433,7 +433,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zL9-sM-k92" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="pvj-Mz-Iz7">
-                        <rect key="frame" x="0.0" y="20" width="320" height="93"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" name="Flokk Navy"/>
                         <textAttributes key="titleTextAttributes">
@@ -452,7 +452,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1qM-bF-wlU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-67.5" y="1666.9014084507041"/>
+            <point key="canvasLocation" x="2205" y="2230"/>
         </scene>
     </scenes>
     <resources>

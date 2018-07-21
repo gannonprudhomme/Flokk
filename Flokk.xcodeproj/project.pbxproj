@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F8012BB2102CBF200CEA5DA /* Camera.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F8012BA2102CBF200CEA5DA /* Camera.storyboard */; };
 		8720D7C120F1DBBC0069F56B /* VideoPlaybackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8720D7C020F1DBBC0069F56B /* VideoPlaybackViewController.swift */; };
 		8720D7CE20F476DB0069F56B /* VideoTrimmerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8720D7CD20F476DB0069F56B /* VideoTrimmerViewController.swift */; };
 		87221A0A20F073F2000A00F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87221A0920F073F2000A00F7 /* AppDelegate.swift */; };
@@ -30,6 +31,7 @@
 		7F8012AE210110D700CEA5DA /* videoPlayback.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = videoPlayback.xib; sourceTree = "<group>"; };
 		7F8012B02101149B00CEA5DA /* videoTrimmer.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = videoTrimmer.xib; sourceTree = "<group>"; };
 		7F8012B3210123B000CEA5DA /* BounceButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BounceButton.swift; sourceTree = "<group>"; };
+		7F8012BA2102CBF200CEA5DA /* Camera.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Camera.storyboard; sourceTree = "<group>"; };
 		8720D7C020F1DBBC0069F56B /* VideoPlaybackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlaybackViewController.swift; sourceTree = "<group>"; };
 		8720D7CD20F476DB0069F56B /* VideoTrimmerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTrimmerViewController.swift; sourceTree = "<group>"; };
 		87221A0620F073F2000A00F7 /* Flokk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flokk.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -160,6 +162,7 @@
 				8720D7C420F46CDB0069F56B /* View Controllers */,
 				8720D7C520F46CF10069F56B /* Framework */,
 				87221A2120F195C2000A00F7 /* Main.storyboard */,
+				7F8012BA2102CBF200CEA5DA /* Camera.storyboard */,
 				87221A1020F073F2000A00F7 /* Assets.xcassets */,
 				87221A0920F073F2000A00F7 /* AppDelegate.swift */,
 				87221A1220F073F2000A00F7 /* LaunchScreen.storyboard */,
@@ -232,15 +235,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7F8012AF210110D700CEA5DA /* videoPlayback.xib in Resources */,
 				87706DAD20F960B200663948 /* .gitignore in Resources */,
-				7F8012B12101149B00CEA5DA /* videoTrimmer.xib in Resources */,
 				87221A2220F195C2000A00F7 /* Main.storyboard in Resources */,
-				7F8012AD210101FA00CEA5DA /* Camera.xib in Resources */,
 				87221A1420F073F2000A00F7 /* LaunchScreen.storyboard in Resources */,
-				7F8012AA2100F6F200CEA5DA /* JosefinSans-Regular.ttf in Resources */,
 				87221A1120F073F2000A00F7 /* Assets.xcassets in Resources */,
-				7F8012AB2100F6FD00CEA5DA /* JosefinSans-Bold.ttf in Resources */,
+				7F8012BB2102CBF200CEA5DA /* Camera.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,7 +294,6 @@
 				87221A1E20F195B0000A00F7 /* CameraViewController.swift in Sources */,
 				8720D7CE20F476DB0069F56B /* VideoTrimmerViewController.swift in Sources */,
 				87221A2020F195B6000A00F7 /* ImageViewController.swift in Sources */,
-				7F8012B4210123B100CEA5DA /* BounceButton.swift in Sources */,
 				87221A0A20F073F2000A00F7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
