@@ -8,4 +8,5 @@ target 'Flokk' do
     # Pods for Flokk
     pod "NextLevel", "~> 0.9.5"
     pod "RecordButton"
+    pod "ABVideoRangeSlider"
 end

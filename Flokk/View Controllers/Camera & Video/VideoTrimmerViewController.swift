@@ -8,21 +8,28 @@
 
 import UIKit
 import AVFoundation
+import ABVideoRangeSlider
 
 class VideoTrimmerViewController: UIViewController {
     @IBOutlet weak var videoCanvasView: UIView!
+    @IBOutlet var rangeSlider: ABVideoRangeSlider!
     
     var videoURL: URL!
     
     var avPlayer: AVPlayer!
     var avPlayerLayer: AVPlayerLayer!
     
+    var startTime: CMTime!
+    var endTime: CMTime!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //videoURL = URL(string: "http://devimages.apple.com/iphone/samples/bipbop/bipbopall.m3u8")
+        
         avPlayer = AVPlayer()
         
-        // Add the callback function to the av player that causes it to loop
+        // Add the callback function to the AVPlayer to make it loop
         NotificationCenter.default.addObserver(self, selector: #selector(VideoTrimmerViewController.videoEnded), name: Notification.Name.AVPlayerItemDidPlayToEndTime, object: avPlayer.currentItem)
         
         // Set up the AVPlayer to play the video
@@ -31,13 +38,19 @@ class VideoTrimmerViewController: UIViewController {
         avPlayerLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
         videoCanvasView.layer.insertSublayer(avPlayerLayer, at: 0)
         
-        view.layoutIfNeeded()
+        self.view.layoutIfNeeded()
         
         let playerItem = AVPlayerItem(url: videoURL as URL)
         avPlayer.replaceCurrentItem(with: playerItem)
         
         // Start playing the video
         avPlayer.play()
+        
+        // Video Range Slider set up
+        rangeSlider.setVideoURL(videoURL: videoURL)
+        rangeSlider.delegate = self
+        rangeSlider.minSpace = 6
+        rangeSlider.maxSpace = 6
     }
 
     override func didReceiveMemoryWarning() {
@@ -49,15 +62,14 @@ class VideoTrimmerViewController: UIViewController {
         avPlayer.seek(to: CMTime(seconds: 0, preferredTimescale: 1));
         avPlayer.play();
     }
+}
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+extension VideoTrimmerViewController : ABVideoRangeSliderDelegate {
+    func didChangeValue(videoRangeSlider: ABVideoRangeSlider, startTime: Float64, endTime: Float64) {
+        
     }
-    */
-
+    
+    func indicatorDidChangePosition(videoRangeSlider: ABVideoRangeSlider, position: Float64) {
+        //avPlayer.seek(to: CMTime(
+    }
 }
