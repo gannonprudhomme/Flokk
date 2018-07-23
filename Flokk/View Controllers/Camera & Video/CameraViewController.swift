@@ -15,10 +15,15 @@ import RecordButton
 
 let maxRecordDuration: CGFloat! = 6 // Seconds
 
+// Should split up by extensions
 class CameraViewController : UIViewController {
     @IBOutlet weak var recordButton: RecordButton!
     @IBOutlet weak var doneButton: UIButton!
-    var previewView: UIView!
+    @IBOutlet weak var flashButton: UIButton!
+    @IBOutlet weak var photoLibraryButton: UIButton!
+    
+    @IBOutlet weak var previewView: UIView!
+    //var previewView: UIView!
     
     // File URL for the recorded video, used when transitioning to the preview VC
     var videoURL: URL!
@@ -29,8 +34,15 @@ class CameraViewController : UIViewController {
     var progressTimer: Timer!
     var progress: CGFloat! = 0
     
+    // When done recording, show the doneButton, and hide the rest of them
+    //var doneRecording = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Initially hide the done button
+        doneButton.isHidden = true
+        flashButton.isHidden = true
         
         // Configure the capture session
         NextLevel.shared.delegate = self
@@ -42,9 +54,13 @@ class CameraViewController : UIViewController {
         NextLevel.shared.videoConfiguration.bitRate = 5500000
         NextLevel.shared.audioConfiguration.bitRate = 96000
         
+        // Only stops if there are atleast 2 clips
+        NextLevel.shared.videoConfiguration.maximumCaptureDuration = CMTimeMakeWithSeconds(Double(maxRecordDuration), 1)
+        print(CMTimeMakeWithSeconds(6, 1).seconds)
+        
         // Configure the preview layer for the camera
         let screenBounds = UIScreen.main.bounds
-        previewView = UIView(frame: screenBounds)
+        //previewView = UIView(frame: screenBounds)
         if let previewView = self.previewView {
             previewView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
             previewView.backgroundColor = UIColor.black
@@ -58,9 +74,10 @@ class CameraViewController : UIViewController {
         //recordButton.addTarget(self, action: #selector(CameraViewController.record), for: .touchDown)
         //recordButton.addTarget(self, action: #selector(CameraViewController.stop), for: .touchUpInside)
         
-        self.view.bringSubview(toFront: recordButton)
+        self.view.bringSubview(toFront: photoLibraryButton)
+        self.view.bringSubview(toFront: flashButton)
         self.view.bringSubview(toFront: doneButton)
-        
+        self.view.bringSubview(toFront: recordButton)
         
         // Initialize the long press gesture recognizer for recording
         self.longPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPressGestureRecognizer(_:)))
@@ -100,6 +117,22 @@ class CameraViewController : UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         NextLevel.shared.stop()
+    }
+    
+    // When done recording, hide all of the recording buttons(record, flash, photo library) and show the
+    // doneButton
+    func doneRecording() {
+        recordButton.isHidden = true
+        flashButton.isHidden = true
+        photoLibraryButton.isHidden = true
+    }
+    
+    @IBAction func photoLibraryPressed(_ sender: Any) {
+        // Segue to a UIImagePickerController
+    }
+    
+    @IBAction func flashPressed(_ sender: Any) {
+        // Toggle flash
     }
     
     // When the done button is pressed, temporary
@@ -167,7 +200,7 @@ extension CameraViewController {
                     }
                 })
             } else {
-                print("Not sure what to do here")
+                
             }
         }
     }
@@ -187,26 +220,34 @@ extension CameraViewController {
     }
 }
 
+// Gesture Recognizer for holding the record button and detecting when we're done recording
 extension CameraViewController : UIGestureRecognizerDelegate {
     @objc internal func handleLongPressGestureRecognizer(_ gestureRecognizer: UIGestureRecognizer) {
-        switch gestureRecognizer.state {
-        case .began:
-            self.startRecording()
-            // Zoom?
-            break
-        case .changed:
-            // Zoom?
-            break
-        case .ended:
-            fallthrough
-        case .cancelled:
-            fallthrough
-        case .failed:
-            self.pauseRecording()
-            fallthrough
-        default:
-            break
-        }
+        // Check if we've recorded enough video to go to the finalization screen
+        //if (NextLevel.shared.session?.totalDuration.seconds)! < Double(maxRecordDuration) {
+            switch gestureRecognizer.state {
+            case .began:
+                self.startRecording()
+                // Zoom?
+                break
+            case .changed:
+                // Zoom?
+                break
+            case .ended:
+                fallthrough
+            case .cancelled:
+                fallthrough
+            case .failed:
+                self.pauseRecording()
+                fallthrough
+            default:
+                break
+            }
+        //} else { // If we've reached the max duration, switch to the "finalization" stage
+           // doneRecording = true
+        //}
+        
+        //print(NextLevel.shared.session?.totalDuration.seconds)
     }
 }
 
@@ -232,14 +273,8 @@ extension CameraViewController : NextLevelDelegate {
     func nextLevel(_ nextLevel: NextLevel, didUpdateVideoConfiguration videoConfiguration: NextLevelVideoConfiguration) {}
     func nextLevel(_ nextLevel: NextLevel, didUpdateAudioConfiguration audioConfiguration: NextLevelAudioConfiguration) {}
     func nextLevelSessionWillStart(_ nextLevel: NextLevel) {}
-    
-    func nextLevelSessionDidStart(_ nextLevel: NextLevel) {
-        
-    }
-    func nextLevelSessionDidStop(_ nextLevel: NextLevel) {
-        
-    }
-    
+    func nextLevelSessionDidStart(_ nextLevel: NextLevel) {}
+    func nextLevelSessionDidStop(_ nextLevel: NextLevel) {}
     func nextLevelSessionWasInterrupted(_ nextLevel: NextLevel) {}
     func nextLevelSessionInterruptionEnded(_ nextLevel: NextLevel) {}
     func nextLevelCaptureModeWillChange(_ nextLevel: NextLevel) {}
@@ -267,18 +302,20 @@ extension CameraViewController : NextLevelVideoDelegate {
         print("Completed Session")
     }
     
+    func nextLevel(_ nextLevel: NextLevel, didStartClipInSession session: NextLevelSession) {
+        print("Started Clip")
+    }
+    
+    func nextLevel(_ nextLevel: NextLevel, didCompleteClip clip: NextLevelClip, inSession session: NextLevelSession) {
+        print("Completed Clip")
+    }
+    
     func nextLevel(_ nextLevel: NextLevel, didUpdateVideoZoomFactor videoZoomFactor: Float) {}
     func nextLevel(_ nextLevel: NextLevel, willProcessRawVideoSampleBuffer sampleBuffer: CMSampleBuffer, onQueue queue: DispatchQueue) {}
     func nextLevel(_ nextLevel: NextLevel, renderToCustomContextWithImageBuffer imageBuffer: CVPixelBuffer, onQueue queue: DispatchQueue) {}
     func nextLevel(_ nextLevel: NextLevel, willProcessFrame frame: AnyObject, pixelBuffer: CVPixelBuffer, timestamp: TimeInterval, onQueue queue: DispatchQueue) {}
     func nextLevel(_ nextLevel: NextLevel, didSetupVideoInSession session: NextLevelSession) {}
     func nextLevel(_ nextLevel: NextLevel, didSetupAudioInSession session: NextLevelSession) {}
-    func nextLevel(_ nextLevel: NextLevel, didStartClipInSession session: NextLevelSession) {
-        print("Started Clip")
-    }
-    func nextLevel(_ nextLevel: NextLevel, didCompleteClip clip: NextLevelClip, inSession session: NextLevelSession) {
-        print("Completed Clip")
-    }
     func nextLevel(_ nextLevel: NextLevel, didAppendVideoSampleBuffer sampleBuffer: CMSampleBuffer, inSession session: NextLevelSession) {}
     func nextLevel(_ nextLevel: NextLevel, didSkipVideoSampleBuffer sampleBuffer: CMSampleBuffer, inSession session: NextLevelSession) {}
     func nextLevel(_ nextLevel: NextLevel, didAppendVideoPixelBuffer pixelBuffer: CVPixelBuffer, timestamp: TimeInterval, inSession session: NextLevelSession) {}
