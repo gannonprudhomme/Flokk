@@ -10,15 +10,17 @@
     case recording, idle, hidden;
 }
 
+@available(iOS 11.0, *)
+@available(iOS 11.0, *)
 @objc open class RecordButton : UIButton {
     
-    open var buttonColor: UIColor! = .blue{
+    open var buttonColor: UIColor! = UIColor(named: "Flokk Teal"){
         didSet {
             circleLayer.backgroundColor = buttonColor.cgColor
             circleBorder.borderColor = buttonColor.cgColor
         }
     }
-    open var progressColor: UIColor!  = .red {
+    open var progressColor: UIColor!  = UIColor(named: "Flokk Teal") {
         didSet {
             gradientMaskLayer.colors = [progressColor.cgColor, progressColor.cgColor]
         }

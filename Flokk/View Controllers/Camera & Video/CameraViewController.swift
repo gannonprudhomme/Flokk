@@ -41,7 +41,7 @@ class CameraViewController : UIViewController {
         super.viewDidLoad()
         
         // Initially hide the done button
-        flashButton.isHidden = true
+        flashButton.isHidden = false
         
         // Configure the capture session
         NextLevel.shared.delegate = self
@@ -68,7 +68,7 @@ class CameraViewController : UIViewController {
             self.view.addSubview(previewView)
         }
         
-        recordButton.progressColor = .red
+        recordButton.progressColor = UIColor (named: "Flokk Teal")
         recordButton.closeWhenFinished = false
         
         self.view.bringSubview(toFront: photoLibraryButton)
