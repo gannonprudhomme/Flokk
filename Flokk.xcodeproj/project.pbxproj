@@ -159,11 +159,10 @@
 		87221A0820F073F2000A00F7 /* Flokk */ = {
 			isa = PBXGroup;
 			children = (
-				871BD3962102D84D00FA421C /* test.mp4 */,
 				8720D7C420F46CDB0069F56B /* View Controllers */,
 				8720D7C520F46CF10069F56B /* Framework */,
-				87221A2120F195C2000A00F7 /* Main.storyboard */,
 				7F8012BA2102CBF200CEA5DA /* Camera.storyboard */,
+				87221A2120F195C2000A00F7 /* Main.storyboard */,
 				87221A1020F073F2000A00F7 /* Assets.xcassets */,
 				87221A0920F073F2000A00F7 /* AppDelegate.swift */,
 				87221A1220F073F2000A00F7 /* LaunchScreen.storyboard */,

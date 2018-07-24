@@ -18,7 +18,7 @@ let maxRecordDuration: CGFloat! = 6 // Seconds
 // Should split up by extensions
 class CameraViewController : UIViewController {
     @IBOutlet weak var recordButton: RecordButton!
-    @IBOutlet weak var doneButton: UIButton!
+    //@IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var flashButton: UIButton!
     @IBOutlet weak var photoLibraryButton: UIButton!
     
@@ -41,7 +41,6 @@ class CameraViewController : UIViewController {
         super.viewDidLoad()
         
         // Initially hide the done button
-        doneButton.isHidden = true
         flashButton.isHidden = true
         
         // Configure the capture session
@@ -71,12 +70,9 @@ class CameraViewController : UIViewController {
         
         recordButton.progressColor = .red
         recordButton.closeWhenFinished = false
-        //recordButton.addTarget(self, action: #selector(CameraViewController.record), for: .touchDown)
-        //recordButton.addTarget(self, action: #selector(CameraViewController.stop), for: .touchUpInside)
         
         self.view.bringSubview(toFront: photoLibraryButton)
         self.view.bringSubview(toFront: flashButton)
-        self.view.bringSubview(toFront: doneButton)
         self.view.bringSubview(toFront: recordButton)
         
         // Initialize the long press gesture recognizer for recording
@@ -119,28 +115,12 @@ class CameraViewController : UIViewController {
         NextLevel.shared.stop()
     }
     
-    // When done recording, hide all of the recording buttons(record, flash, photo library) and show the
-    // doneButton
-    func doneRecording() {
-        recordButton.isHidden = true
-        flashButton.isHidden = true
-        photoLibraryButton.isHidden = true
-        doneButton.isHidden = false
-        //self.view.updateFocusIfNeeded()
-    }
-    
     @IBAction func photoLibraryPressed(_ sender: Any) {
         // Segue to a UIImagePickerController
     }
     
     @IBAction func flashPressed(_ sender: Any) {
         // Toggle flash
-    }
-    
-    // When the done button is pressed, temporary
-    @IBAction func donePressed(_ sender: Any) {
-        self.endRecording()
-        //performSegue(withIdentifier: "showVideoSegue", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -193,8 +173,7 @@ extension CameraViewController {
                 print("clip has started")
                 session.endClip(completionHandler: { (clip, error) in
                     if error == nil {
-                        var url = clip?.url
-                        print(url)
+                        let url = clip?.url
                         self.videoURL = url
                         
                     } else {
@@ -246,7 +225,8 @@ extension CameraViewController : UIGestureRecognizerDelegate {
                 break
             }
         } else { // If we've reached the max duration, switch to the "finalization" stage
-           self.doneRecording()
+            self.endRecording()
+           //self.performSegue(withIdentifier: "doneRecordingSegue", sender: self)
         }
         
         //print(NextLevel.shared.session?.totalDuration.seconds)
@@ -302,6 +282,7 @@ extension CameraViewController : NextLevelVideoDelegate {
     func nextLevel(_ nextLevel: NextLevel, didCompleteSession session: NextLevelSession) {
         // End Capture
         print("Completed Session")
+        //self.endRecording()
     }
     
     func nextLevel(_ nextLevel: NextLevel, didStartClipInSession session: NextLevelSession) {

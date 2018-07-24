@@ -9,6 +9,7 @@ class VideoPlaybackViewController: UIViewController {
     var videoURL: URL!
     
     @IBOutlet weak var videoView: UIView!
+    @IBOutlet weak var doneButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,5 +43,9 @@ class VideoPlaybackViewController: UIViewController {
     @objc func videoEnded() {
         avPlayer.seek(to: CMTime(seconds: 0, preferredTimescale: 1));
         avPlayer.play();
+    }
+    
+    @IBAction func donePressed(_ sender: Any) {
+        
     }
 }

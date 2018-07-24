@@ -98,10 +98,10 @@
             </objects>
             <point key="canvasLocation" x="-67.5" y="50.70422535211268"/>
         </scene>
-        <!--Video Playback View Controller-->
+        <!--View Controller-->
         <scene sceneID="Dyz-eM-3bD">
             <objects>
-                <viewController id="g7t-85-xdj" customClass="VideoPlaybackViewController" customModule="Flokk" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="g7t-85-xdj" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Pdn-V2-hxj"/>
                         <viewControllerLayoutGuide type="bottom" id="oOJ-5w-t9n"/>
@@ -485,7 +485,7 @@
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="MFj-4n-EOm"/>
+        <segue reference="6z7-wN-bvh"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" name="Flokk Teal"/>
 </document>
