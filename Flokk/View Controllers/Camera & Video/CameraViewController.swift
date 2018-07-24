@@ -125,6 +125,8 @@ class CameraViewController : UIViewController {
         recordButton.isHidden = true
         flashButton.isHidden = true
         photoLibraryButton.isHidden = true
+        doneButton.isHidden = false
+        //self.view.updateFocusIfNeeded()
     }
     
     @IBAction func photoLibraryPressed(_ sender: Any) {
@@ -224,7 +226,7 @@ extension CameraViewController {
 extension CameraViewController : UIGestureRecognizerDelegate {
     @objc internal func handleLongPressGestureRecognizer(_ gestureRecognizer: UIGestureRecognizer) {
         // Check if we've recorded enough video to go to the finalization screen
-        //if (NextLevel.shared.session?.totalDuration.seconds)! < Double(maxRecordDuration) {
+        if (NextLevel.shared.session?.totalDuration.seconds)! < Double(maxRecordDuration) {
             switch gestureRecognizer.state {
             case .began:
                 self.startRecording()
@@ -243,9 +245,9 @@ extension CameraViewController : UIGestureRecognizerDelegate {
             default:
                 break
             }
-        //} else { // If we've reached the max duration, switch to the "finalization" stage
-           // doneRecording = true
-        //}
+        } else { // If we've reached the max duration, switch to the "finalization" stage
+           self.doneRecording()
+        }
         
         //print(NextLevel.shared.session?.totalDuration.seconds)
     }
