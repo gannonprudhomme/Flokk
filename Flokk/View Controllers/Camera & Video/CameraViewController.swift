@@ -68,7 +68,7 @@ class CameraViewController : UIViewController {
             self.view.addSubview(previewView)
         }
         
-        recordButton.progressColor = .red
+        recordButton.progressColor = UIColor (named: "Flokk Teal")
         recordButton.closeWhenFinished = false
         
         self.view.bringSubview(toFront: photoLibraryButton)
