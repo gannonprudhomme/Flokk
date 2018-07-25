@@ -20,7 +20,7 @@ class VideoPlaybackViewController: UIViewController {
         //videoURL = URL(string: "http://devimages.apple.com/iphone/samples/bipbop/bipbopall.m3u8")
         
         avPlayerLayer = AVPlayerLayer(player: avPlayer)
-        avPlayerLayer.frame = view.bounds
+        avPlayerLayer.frame = videoView.bounds
         avPlayerLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
         videoView.layer.insertSublayer(avPlayerLayer, at: 0)
         

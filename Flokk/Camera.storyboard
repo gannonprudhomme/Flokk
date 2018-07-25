@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="phD-lm-FPK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="phD-lm-FPK">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -34,20 +34,20 @@
                                     <action selector="flashPressed:" destination="OKf-5s-7N5" eventType="touchUpInside" id="jBj-AD-o1V"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I8f-NB-Z5n" customClass="RecordButton" customModule="RecordButton">
-                                <rect key="frame" x="206" y="597.5" width="34" height="34"/>
+                            <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="UZC-Qr-IFB">
+                                <rect key="frame" x="0.0" y="64" width="375" height="506"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I8f-NB-Z5n" customClass="RecordButton" customModule="RecordButton">
+                                <rect key="frame" x="147" y="581" width="80" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="I8f-NB-Z5n" secondAttribute="height" multiplier="1:1" id="xgb-0s-zXK"/>
                                 </constraints>
                             </button>
-                            <view contentMode="scaleAspectFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UZC-Qr-IFB">
-                                <rect key="frame" x="0.0" y="64" width="375" height="506"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" name="Flokk Navy"/>
                         <constraints>
-                            <constraint firstItem="v9g-L2-5ks" firstAttribute="top" secondItem="UZC-Qr-IFB" secondAttribute="bottom" constant="34" id="17g-01-S3L"/>
+                            <constraint firstItem="v9g-L2-5ks" firstAttribute="top" secondItem="UZC-Qr-IFB" secondAttribute="bottom" constant="22" id="17g-01-S3L"/>
                             <constraint firstItem="UZC-Qr-IFB" firstAttribute="leading" secondItem="1B9-vK-nUI" secondAttribute="leading" id="Fr5-ex-W8d"/>
                             <constraint firstAttribute="trailing" secondItem="UZC-Qr-IFB" secondAttribute="trailing" id="HXy-nh-AwG"/>
                             <constraint firstItem="v9g-L2-5ks" firstAttribute="top" secondItem="Pzd-OP-J45" secondAttribute="top" id="IkQ-0H-n9k"/>
@@ -55,8 +55,8 @@
                             <constraint firstItem="BzZ-jG-YXG" firstAttribute="bottom" secondItem="v9g-L2-5ks" secondAttribute="bottom" constant="17" id="OdA-Tc-Bph"/>
                             <constraint firstItem="BzZ-jG-YXG" firstAttribute="trailing" secondItem="Pzd-OP-J45" secondAttribute="trailing" constant="37" id="XX0-RV-QRP"/>
                             <constraint firstItem="v9g-L2-5ks" firstAttribute="leading" secondItem="BzZ-jG-YXG" secondAttribute="leading" constant="38" id="giS-Lb-wk7"/>
-                            <constraint firstItem="Pzd-OP-J45" firstAttribute="leading" secondItem="I8f-NB-Z5n" secondAttribute="trailing" constant="40" id="hqq-Vf-O5n"/>
-                            <constraint firstItem="I8f-NB-Z5n" firstAttribute="centerY" secondItem="Pzd-OP-J45" secondAttribute="centerY" constant="-6.5" id="nOw-gl-ZCO"/>
+                            <constraint firstItem="Pzd-OP-J45" firstAttribute="leading" secondItem="I8f-NB-Z5n" secondAttribute="trailing" constant="53" id="hqq-Vf-O5n"/>
+                            <constraint firstItem="I8f-NB-Z5n" firstAttribute="centerY" secondItem="Pzd-OP-J45" secondAttribute="centerY" id="nOw-gl-ZCO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="BzZ-jG-YXG"/>
                     </view>

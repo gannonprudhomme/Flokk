@@ -41,7 +41,7 @@ class CameraViewController : UIViewController {
         super.viewDidLoad()
         
         // Initially hide the done button
-        flashButton.isHidden = true
+        //flashButton.isHidden = true
         
         // Configure the capture session
         NextLevel.shared.delegate = self
@@ -124,7 +124,7 @@ class CameraViewController : UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showVideoSegue" {
+        if segue.identifier == "doneRecordingSegue" {
             if let vc = segue.destination as? VideoPlaybackViewController {
                 vc.videoURL = self.videoURL
             }
@@ -158,7 +158,7 @@ extension CameraViewController {
                        self.videoURL = url
                         
                         // Segue to the next view only when the clips are done merging
-                        self.performSegue(withIdentifier: "showVideoSegue", sender: self)
+                        self.performSegue(withIdentifier: "doneRecordingSegue", sender: self)
                     } else if let _ = error {
                         print("failed to merge clips at the end of capture \(String(describing: error))")
                     }
@@ -167,7 +167,7 @@ extension CameraViewController {
             } else if let lastClipURL = session.lastClipUrl {
                 self.videoURL = lastClipURL
                 
-                self.performSegue(withIdentifier: "showVideoSegue", sender: self)
+                self.performSegue(withIdentifier: "doneRecordingSegue", sender: self)
             // When would this be called?
             } else if session.currentClipHasStarted {
                 print("clip has started")
@@ -205,28 +205,32 @@ extension CameraViewController {
 extension CameraViewController : UIGestureRecognizerDelegate {
     @objc internal func handleLongPressGestureRecognizer(_ gestureRecognizer: UIGestureRecognizer) {
         // Check if we've recorded enough video to go to the finalization screen
-        if (NextLevel.shared.session?.totalDuration.seconds)! < Double(maxRecordDuration) {
-            switch gestureRecognizer.state {
-            case .began:
-                self.startRecording()
-                // Zoom?
-                break
-            case .changed:
-                // Zoom?
-                break
-            case .ended:
-                fallthrough
-            case .cancelled:
-                fallthrough
-            case .failed:
-                self.pauseRecording()
-                fallthrough
-            default:
-                break
+        if let session = NextLevel.shared.session {
+            if (session.totalDuration.seconds) < Double(maxRecordDuration) {
+                switch gestureRecognizer.state {
+                case .began:
+                    self.startRecording()
+                    // Zoom?
+                    break
+                case .changed:
+                    // Zoom?
+                    break
+                case .ended:
+                    fallthrough
+                case .cancelled:
+                    fallthrough
+                case .failed:
+                    self.pauseRecording()
+                    fallthrough
+                default:
+                    break
+                }
+            } else { // If we've reached the max duration, switch to the "finalization" stage
+                self.endRecording()
+                //self.performSegue(withIdentifier: "doneRecordingSegue", sender: self)
             }
-        } else { // If we've reached the max duration, switch to the "finalization" stage
-            self.endRecording()
-           //self.performSegue(withIdentifier: "doneRecordingSegue", sender: self)
+        } else {
+            
         }
         
         //print(NextLevel.shared.session?.totalDuration.seconds)
