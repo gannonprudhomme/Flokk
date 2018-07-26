@@ -72,25 +72,18 @@ public class ABVideoRangeSlider: UIView {
         let startDrag = UIPanGestureRecognizer(target:self,
                                                action: #selector(startDragged(recognizer:)))
         
-        startIndicator = ABStartIndicator(frame: CGRect(x: 0,
-                                                        y: -topBorderHeight,
-                                                        width: 20,
-                                                        height: self.frame.size.height + bottomBorderHeight + topBorderHeight))
+        startIndicator = ABStartIndicator(frame: CGRect(x: 0, y: -topBorderHeight, width: 20, height: self.frame.size.height + bottomBorderHeight + topBorderHeight))
         startIndicator.layer.anchorPoint = CGPoint(x: 1, y: 0.5)
-        startIndicator.addGestureRecognizer(startDrag)
+        //startIndicator.addGestureRecognizer(startDrag)
         self.addSubview(startIndicator)
         
         // Setup End Indicator
         
-        let endDrag = UIPanGestureRecognizer(target:self,
-                                             action: #selector(endDragged(recognizer:)))
+        let endDrag = UIPanGestureRecognizer(target:self, action: #selector(endDragged(recognizer:)))
         
-        endIndicator = ABEndIndicator(frame: CGRect(x: 0,
-                                                    y: -topBorderHeight,
-                                                    width: indicatorWidth,
-                                                    height: self.frame.size.height + bottomBorderHeight + topBorderHeight))
+        endIndicator = ABEndIndicator(frame: CGRect(x: 0, y: -topBorderHeight, width: indicatorWidth,  height: self.frame.size.height + bottomBorderHeight + topBorderHeight))
         endIndicator.layer.anchorPoint = CGPoint(x: 0, y: 0.5)
-        endIndicator.addGestureRecognizer(endDrag)
+        //endIndicator.addGestureRecognizer(endDrag)
         self.addSubview(endIndicator)
 
 
@@ -234,6 +227,7 @@ public class ABVideoRangeSlider: UIView {
     
     // MARK: Private functions
     
+    // Were value is a percentage?
     private func positionFromValue(value: CGFloat) -> CGFloat{
         let position = value * self.frame.size.width / 100
         return position
@@ -320,7 +314,6 @@ public class ABVideoRangeSlider: UIView {
         }
         
         let positionLimit = positionFromValue(value: valueFromSeconds(seconds: minSpace) + self.startPercentage)
-        
         if Float(self.duration) < self.minSpace {
             position = self.frame.size.width
         }else{
@@ -391,6 +384,7 @@ public class ABVideoRangeSlider: UIView {
         layoutSubviews()
     }
     
+    // TODO: Gannon Need to add a duration limit
     @objc func viewDragged(recognizer: UIPanGestureRecognizer){
         let translation = recognizer.translation(in: self)
         
@@ -404,13 +398,17 @@ public class ABVideoRangeSlider: UIView {
         
         if startPosition < 0 {
             startPosition = 0
-            endPosition = endPosition - translation.x
+            // This only works for a fixed space, not if there's a range
+            endPosition = positionFromValue(value: valueFromSeconds(seconds: maxSpace) + self.startPercentage)
+            //endPosition = endPosition - translation.x
             progressPosition = progressPosition - translation.x
         }
         
         if endPosition > self.frame.size.width{
             endPosition = self.frame.size.width
-            startPosition = startPosition - translation.x
+            // This only works for a fixed space, not if there's a range
+            startPosition = positionFromValue(value: self.endPercentage - valueFromSeconds(seconds: maxSpace))
+            //startPosition = startPosition - translation.x
             progressPosition = progressPosition - translation.x
         }
         
