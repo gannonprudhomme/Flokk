@@ -46,13 +46,17 @@ open class ABTimeView: UIView {
         
         // Add Background View
         self.backgroundView.frame = self.bounds
-        self.backgroundView.backgroundColor = UIColor.yellow
+        if #available(iOS 11.0, *) {
+            self.backgroundView.backgroundColor = UIColor(named: "Flokk Teal")
+        } else {
+            // Fallback on earlier versions
+        }
         self.addSubview(self.backgroundView)
         
         // Add time label
         self.timeLabel = UILabel()
         self.timeLabel.textAlignment = .center
-        self.timeLabel.textColor = UIColor.lightGray
+        self.timeLabel.textColor = UIColor.white
         self.addSubview(self.timeLabel)
 
     }

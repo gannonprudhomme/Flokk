@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 48;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,21 +11,20 @@
 		087EC2610C4F4BD2AAF6340826683DBB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 908E902E026C5C22904CF9014A5604AD /* Foundation.framework */; };
 		0A29F9F35361C218A6F5C8EE1096225A /* ABStartIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FC633399E6295636743D3204B9A5DD /* ABStartIndicator.swift */; };
 		0B9F3A8232263C444D2D061888CF8A4B /* RecordButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2004C103A6C451DEF88EE5C37B4206CF /* RecordButton.swift */; };
-		0DBE68576B6D2DE81A16C51F49FD46B1 /* BorderLine.png in Resources */ = {isa = PBXBuildFile; fileRef = AD1BB726AAA911FF1A48C0A9279035FA /* BorderLine.png */; };
 		18E4C3331B41A08A7991582BF7BD7C0E /* NextLevel-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 349F8F04A7D185AD335E92D9B43C96ED /* NextLevel-dummy.m */; };
 		1A3A4E1AE520A8E774188A408AFFEF5A /* NextLevel-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E36D48CB8ADA56E2FA20C164CFF9FCB9 /* NextLevel-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2AC82DCA48289DA9CD0E8719136A03D5 /* ProgressIndicator.png in Sources */ = {isa = PBXBuildFile; fileRef = 3DF4BD933846C345BE0C4DE6CF9DB65E /* ProgressIndicator.png */; };
-		2FB96D81174F20166A6989288A97FFF1 /* EndIndicator.png in Sources */ = {isa = PBXBuildFile; fileRef = EABD49EA8F985DF38D33F423F0BAFD69 /* EndIndicator.png */; };
 		30EC492314C50DAADF24B5AF5E8B8B81 /* Pods-Flokk-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7AAC12FE2739F4643DCAF263819202 /* Pods-Flokk-dummy.m */; };
-		3264A2A3BB35068B0F4100DB71E51782 /* BorderLine.png in Sources */ = {isa = PBXBuildFile; fileRef = AD1BB726AAA911FF1A48C0A9279035FA /* BorderLine.png */; };
 		38E070F7C55A8AC6D708A89A7A947D52 /* ABThumbnailsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F2FA246FFBFAA7831326C880185EA1 /* ABThumbnailsManager.swift */; };
 		3A233D82744ED38EE3DD8EAA00E18B11 /* NextLevelSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B9D8DDDB59E9051372DD583999D291 /* NextLevelSession.swift */; };
-		4ADDA3C49AA6A5C8D5B5968D41B6BAF8 /* StartIndicator.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BDF5DA5FBB2FCCC21F0A41940E884D1 /* StartIndicator.png */; };
 		4B22D4909E41A71B2865330B71BE31FC /* RecordButton-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3901BE08FE35BEF6573D5C9F8A0EFB7A /* RecordButton-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4D71B66A1497CB5E7C3C6EAA61058717 /* ABBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220DE552A9A247BA4A7EA63344864A00 /* ABBorder.swift */; };
 		5D0F4A10725EBF1DAE8C0C4E222BD5A6 /* ABProgressIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02083AC0C8E130307603A050910581DB /* ABProgressIndicator.swift */; };
 		728E447BFFE943550FACAE6ED6A361FA /* NextLevel+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B5F75DB51A27AAF09997F62A62C863 /* NextLevel+UIImage.swift */; };
 		7E546514A4B72781B59E8CDA6327EEB4 /* ABEndIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEEEA5A16F93419A095178D427D4413 /* ABEndIndicator.swift */; };
+		7F4F0C0B2109753D0073A8A0 /* EndIndicatorWhite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F4F0C072109753B0073A8A0 /* EndIndicatorWhite.png */; };
+		7F4F0C0C2109753D0073A8A0 /* BorderLineWhite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F4F0C082109753C0073A8A0 /* BorderLineWhite.png */; };
+		7F4F0C0D2109753D0073A8A0 /* ProgressIndicatorTeal.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F4F0C092109753C0073A8A0 /* ProgressIndicatorTeal.png */; };
+		7F4F0C0E2109753D0073A8A0 /* StartIndicatorWhite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F4F0C0A2109753C0073A8A0 /* StartIndicatorWhite.png */; };
 		868377463EDF6784964A58CF9FA36439 /* NextLevel+CoreImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5205053C46A6A479DA61070291B262F /* NextLevel+CoreImage.swift */; };
 		868A9A9F7DB5CF75CC49F16FC6CB71CC /* NextLevel+AVFoundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0629382755ACFC26C582D3F44D67D994 /* NextLevel+AVFoundation.swift */; };
 		8B35DEAFF758009C06DA8B409014F838 /* ABVideoRangeSlider-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4ABA72E705D428E1FDC9E20E0BFEA287 /* ABVideoRangeSlider-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -39,14 +38,11 @@
 		AD255737CC1E3DB5D5CAC53D5AADA363 /* NextLevel+Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034D026B84FBD9D65564FE69C49366AE /* NextLevel+Foundation.swift */; };
 		B4B6F08A7ED1B12CCF033DFAD2C9927D /* ABVideoHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C2BDEF42B71FDFD104FD45DE8F7FE5 /* ABVideoHelper.swift */; };
 		CC9E89A3CD89862400C315D344635C4F /* NextLevelConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D3DCD19F255212D216162B1FED9B95 /* NextLevelConfiguration.swift */; };
-		CF93C40D6C36FA585786E42038E4F0F2 /* EndIndicator.png in Resources */ = {isa = PBXBuildFile; fileRef = EABD49EA8F985DF38D33F423F0BAFD69 /* EndIndicator.png */; };
-		D07973B87B1C3AD82BA64BAA4895AE7E /* StartIndicator.png in Sources */ = {isa = PBXBuildFile; fileRef = 2BDF5DA5FBB2FCCC21F0A41940E884D1 /* StartIndicator.png */; };
 		DAAF6873ABD6193119C0DFDCB466C149 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 908E902E026C5C22904CF9014A5604AD /* Foundation.framework */; };
 		E0C166AAF537D3DEF6EB77163341385D /* Pods-Flokk-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AA8E4FA8B95BCB0B6C58AC78C6F1F44 /* Pods-Flokk-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E15A89992462AEEB8211187C14DE2D2C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC2C02191C153C1554B35DEE8B2D09D4 /* UIKit.framework */; };
 		E71CFF126D2781C57FA879AD56B6DAEF /* RecordButton-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DF8304C87077BE6262F0CCC905E3C5F5 /* RecordButton-dummy.m */; };
 		EE26FFABF48C47D6B82E7ACA50B01875 /* ABVideoRangeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA62F9008BE61F37C3DC3122F6C5E78E /* ABVideoRangeSlider.swift */; };
-		EFD8254D6682ABF14AFE6A176CB6DE8E /* ProgressIndicator.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DF4BD933846C345BE0C4DE6CF9DB65E /* ProgressIndicator.png */; };
 		F0B333E2E75105435832C44DE3567BC4 /* ABVideoRangeSlider-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A51914ABA6A9C98E49001A93262D338C /* ABVideoRangeSlider-dummy.m */; };
 /* End PBXBuildFile section */
 
@@ -90,17 +86,15 @@
 		1EB3C552E7EA78C425121B3622A21216 /* NextLevel+CoreMedia.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NextLevel+CoreMedia.swift"; path = "Sources/NextLevel+CoreMedia.swift"; sourceTree = "<group>"; };
 		2004C103A6C451DEF88EE5C37B4206CF /* RecordButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RecordButton.swift; path = Pod/Classes/RecordButton.swift; sourceTree = "<group>"; };
 		220DE552A9A247BA4A7EA63344864A00 /* ABBorder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ABBorder.swift; path = ABVideoRangeSlider/Classes/ABBorder.swift; sourceTree = "<group>"; };
-		25B91B64E77868CBEFDE52DFFBE6C048 /* ABVideoRangeSlider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ABVideoRangeSlider.framework; path = ABVideoRangeSlider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		25B91B64E77868CBEFDE52DFFBE6C048 /* ABVideoRangeSlider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ABVideoRangeSlider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		28B9D8DDDB59E9051372DD583999D291 /* NextLevelSession.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NextLevelSession.swift; path = Sources/NextLevelSession.swift; sourceTree = "<group>"; };
-		2BDF5DA5FBB2FCCC21F0A41940E884D1 /* StartIndicator.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = StartIndicator.png; path = ABVideoRangeSlider/Assets/StartIndicator.png; sourceTree = "<group>"; };
 		349F8F04A7D185AD335E92D9B43C96ED /* NextLevel-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NextLevel-dummy.m"; sourceTree = "<group>"; };
 		36BC1A77800537804D3C1B61DDBC7752 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		36D0C97931D48E7915C4738D63A678F1 /* NextLevel-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NextLevel-prefix.pch"; sourceTree = "<group>"; };
 		3901BE08FE35BEF6573D5C9F8A0EFB7A /* RecordButton-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RecordButton-umbrella.h"; sourceTree = "<group>"; };
 		39B5F75DB51A27AAF09997F62A62C863 /* NextLevel+UIImage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NextLevel+UIImage.swift"; path = "Sources/NextLevel+UIImage.swift"; sourceTree = "<group>"; };
-		3DF4BD933846C345BE0C4DE6CF9DB65E /* ProgressIndicator.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = ProgressIndicator.png; path = ABVideoRangeSlider/Assets/ProgressIndicator.png; sourceTree = "<group>"; };
 		4171800E049D5CBDF353317936E1AD68 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		438B0FC5B0AD9B78890E20992E35D756 /* NextLevel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = NextLevel.framework; path = NextLevel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		438B0FC5B0AD9B78890E20992E35D756 /* NextLevel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NextLevel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		484F15A198D7F49E3366F0B3C2C27C24 /* NextLevelClip.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NextLevelClip.swift; path = Sources/NextLevelClip.swift; sourceTree = "<group>"; };
 		4ABA72E705D428E1FDC9E20E0BFEA287 /* ABVideoRangeSlider-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ABVideoRangeSlider-umbrella.h"; sourceTree = "<group>"; };
 		5196344050CDAC1A4F889CD9BB816886 /* Pods-Flokk-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Flokk-resources.sh"; sourceTree = "<group>"; };
@@ -111,26 +105,29 @@
 		7AA8E4FA8B95BCB0B6C58AC78C6F1F44 /* Pods-Flokk-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Flokk-umbrella.h"; sourceTree = "<group>"; };
 		7C187CCE51DCAC8CDCEC4418B4915928 /* Pods-Flokk.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Flokk.modulemap"; sourceTree = "<group>"; };
 		7DF22E0C392735F00D715F6A7E56EC88 /* RecordButton.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = RecordButton.modulemap; sourceTree = "<group>"; };
+		7F4F0C072109753B0073A8A0 /* EndIndicatorWhite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EndIndicatorWhite.png; sourceTree = "<group>"; };
+		7F4F0C082109753C0073A8A0 /* BorderLineWhite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BorderLineWhite.png; sourceTree = "<group>"; };
+		7F4F0C092109753C0073A8A0 /* ProgressIndicatorTeal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ProgressIndicatorTeal.png; sourceTree = "<group>"; };
+		7F4F0C0A2109753C0073A8A0 /* StartIndicatorWhite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StartIndicatorWhite.png; sourceTree = "<group>"; };
 		88F2FA246FFBFAA7831326C880185EA1 /* ABThumbnailsManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ABThumbnailsManager.swift; path = ABVideoRangeSlider/Classes/ABThumbnailsManager.swift; sourceTree = "<group>"; };
 		8E091179E6ECC39D28F9CF2DE33F1ED9 /* ABVideoRangeSlider-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ABVideoRangeSlider-prefix.pch"; sourceTree = "<group>"; };
 		8F7AAC12FE2739F4643DCAF263819202 /* Pods-Flokk-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Flokk-dummy.m"; sourceTree = "<group>"; };
 		908E902E026C5C22904CF9014A5604AD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		9176B857363EEE5A72581D5FA249CF9D /* ABVideoRangeSlider.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ABVideoRangeSlider.xcconfig; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9551F3F37B3ADC753993DCDA35EC26B5 /* Pods-Flokk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Flokk.release.xcconfig"; sourceTree = "<group>"; };
 		A1618F6D1001FE9FB27DFAB90FC88F25 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A4FC633399E6295636743D3204B9A5DD /* ABStartIndicator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ABStartIndicator.swift; path = ABVideoRangeSlider/Classes/ABStartIndicator.swift; sourceTree = "<group>"; };
 		A51914ABA6A9C98E49001A93262D338C /* ABVideoRangeSlider-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ABVideoRangeSlider-dummy.m"; sourceTree = "<group>"; };
 		A6FFF6A7AABE6FE32AB49C39B96B87D2 /* NextLevel.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = NextLevel.modulemap; sourceTree = "<group>"; };
-		A92AE4E3275FB52BFDDE2A66632CB6A4 /* RecordButton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = RecordButton.framework; path = RecordButton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		AD1BB726AAA911FF1A48C0A9279035FA /* BorderLine.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = BorderLine.png; path = ABVideoRangeSlider/Assets/BorderLine.png; sourceTree = "<group>"; };
+		A92AE4E3275FB52BFDDE2A66632CB6A4 /* RecordButton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RecordButton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5205053C46A6A479DA61070291B262F /* NextLevel+CoreImage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NextLevel+CoreImage.swift"; path = "Sources/NextLevel+CoreImage.swift"; sourceTree = "<group>"; };
 		B571C5E80313E22CA1948432C8241032 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B798589B454714170C23938C50F867F7 /* NextLevel.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = NextLevel.xcconfig; sourceTree = "<group>"; };
 		BC2C02191C153C1554B35DEE8B2D09D4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		D373D64078BA01CEDAAF4A707BB01C39 /* Pods-Flokk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Flokk.debug.xcconfig"; sourceTree = "<group>"; };
 		D6B1AA641BA2B150F71E6D58691B9687 /* RecordButton.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RecordButton.xcconfig; sourceTree = "<group>"; };
-		D882744755036D782486BA2564BCB357 /* ABVideoRangeSlider.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = ABVideoRangeSlider.bundle; path = "ABVideoRangeSlider-ABVideoRangeSlider.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D882744755036D782486BA2564BCB357 /* ABVideoRangeSlider.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ABVideoRangeSlider.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF8304C87077BE6262F0CCC905E3C5F5 /* RecordButton-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RecordButton-dummy.m"; sourceTree = "<group>"; };
 		E0E0238AFC863E9B922B7C7E53E50922 /* ABTimeView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ABTimeView.swift; path = ABVideoRangeSlider/Classes/ABTimeView.swift; sourceTree = "<group>"; };
 		E36D48CB8ADA56E2FA20C164CFF9FCB9 /* NextLevel-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NextLevel-umbrella.h"; sourceTree = "<group>"; };
@@ -138,9 +135,8 @@
 		E5FA43899B74287BBD4088B8DB9E81F6 /* Pods-Flokk-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Flokk-frameworks.sh"; sourceTree = "<group>"; };
 		E6446D83CC63B33B8C164D504CE3E2B7 /* NextLevel+Metadata.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NextLevel+Metadata.swift"; path = "Sources/NextLevel+Metadata.swift"; sourceTree = "<group>"; };
 		EA62F9008BE61F37C3DC3122F6C5E78E /* ABVideoRangeSlider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ABVideoRangeSlider.swift; path = ABVideoRangeSlider/Classes/ABVideoRangeSlider.swift; sourceTree = "<group>"; };
-		EABD49EA8F985DF38D33F423F0BAFD69 /* EndIndicator.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = EndIndicator.png; path = ABVideoRangeSlider/Assets/EndIndicator.png; sourceTree = "<group>"; };
 		EBEEEA5A16F93419A095178D427D4413 /* ABEndIndicator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ABEndIndicator.swift; path = ABVideoRangeSlider/Classes/ABEndIndicator.swift; sourceTree = "<group>"; };
-		F4F4829DB6212C4DD2109491597C78E0 /* Pods_Flokk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Flokk.framework; path = "Pods-Flokk.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4F4829DB6212C4DD2109491597C78E0 /* Pods_Flokk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Flokk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB2077134B867114D144BEFB2FA1A2BE /* NextLevel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NextLevel.swift; path = Sources/NextLevel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -278,7 +274,6 @@
 				28B9D8DDDB59E9051372DD583999D291 /* NextLevelSession.swift */,
 				6182C0CF0EE7F2E87136C8B29B5DC124 /* Support Files */,
 			);
-			name = NextLevel;
 			path = NextLevel;
 			sourceTree = "<group>";
 		};
@@ -299,7 +294,6 @@
 				2004C103A6C451DEF88EE5C37B4206CF /* RecordButton.swift */,
 				0162E2BAC7EF4259FCB72F89D8610F5F /* Support Files */,
 			);
-			name = RecordButton;
 			path = RecordButton;
 			sourceTree = "<group>";
 		};
@@ -321,14 +315,13 @@
 				E0E0238AFC863E9B922B7C7E53E50922 /* ABTimeView.swift */,
 				76C2BDEF42B71FDFD104FD45DE8F7FE5 /* ABVideoHelper.swift */,
 				EA62F9008BE61F37C3DC3122F6C5E78E /* ABVideoRangeSlider.swift */,
-				AD1BB726AAA911FF1A48C0A9279035FA /* BorderLine.png */,
-				EABD49EA8F985DF38D33F423F0BAFD69 /* EndIndicator.png */,
-				3DF4BD933846C345BE0C4DE6CF9DB65E /* ProgressIndicator.png */,
-				2BDF5DA5FBB2FCCC21F0A41940E884D1 /* StartIndicator.png */,
+				7F4F0C082109753C0073A8A0 /* BorderLineWhite.png */,
+				7F4F0C072109753B0073A8A0 /* EndIndicatorWhite.png */,
+				7F4F0C092109753C0073A8A0 /* ProgressIndicatorTeal.png */,
+				7F4F0C0A2109753C0073A8A0 /* StartIndicatorWhite.png */,
 				9493FACDA3C2E442F474321FE2382B3A /* Resources */,
 				FDBBFFBC5A67A0293572BE7C62086D60 /* Support Files */,
 			);
-			name = ABVideoRangeSlider;
 			path = ABVideoRangeSlider;
 			sourceTree = "<group>";
 		};
@@ -528,10 +521,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0DBE68576B6D2DE81A16C51F49FD46B1 /* BorderLine.png in Resources */,
-				CF93C40D6C36FA585786E42038E4F0F2 /* EndIndicator.png in Resources */,
-				EFD8254D6682ABF14AFE6A176CB6DE8E /* ProgressIndicator.png in Resources */,
-				4ADDA3C49AA6A5C8D5B5968D41B6BAF8 /* StartIndicator.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -539,7 +528,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F4F0C0D2109753D0073A8A0 /* ProgressIndicatorTeal.png in Resources */,
+				7F4F0C0B2109753D0073A8A0 /* EndIndicatorWhite.png in Resources */,
+				7F4F0C0C2109753D0073A8A0 /* BorderLineWhite.png in Resources */,
 				96E54C5B7F55A160AB4179477AC3E685 /* ABVideoRangeSlider.bundle in Resources */,
+				7F4F0C0E2109753D0073A8A0 /* StartIndicatorWhite.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -601,10 +594,6 @@
 				B4B6F08A7ED1B12CCF033DFAD2C9927D /* ABVideoHelper.swift in Sources */,
 				F0B333E2E75105435832C44DE3567BC4 /* ABVideoRangeSlider-dummy.m in Sources */,
 				EE26FFABF48C47D6B82E7ACA50B01875 /* ABVideoRangeSlider.swift in Sources */,
-				3264A2A3BB35068B0F4100DB71E51782 /* BorderLine.png in Sources */,
-				2FB96D81174F20166A6989288A97FFF1 /* EndIndicator.png in Sources */,
-				2AC82DCA48289DA9CD0E8719136A03D5 /* ProgressIndicator.png in Sources */,
-				D07973B87B1C3AD82BA64BAA4895AE7E /* StartIndicator.png in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
