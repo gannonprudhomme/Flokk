@@ -53,7 +53,6 @@ class ABThumbnailsManager: NSObject {
     }
     
     func updateThumbnails(view: UIView, videoURL: URL, duration: Float64) -> [UIImageView]{
-        
         for view in self.thumbnailViews{
             DispatchQueue.main.async {
                 view.removeFromSuperview()

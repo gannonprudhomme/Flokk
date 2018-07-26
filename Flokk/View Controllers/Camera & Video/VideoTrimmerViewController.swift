@@ -51,6 +51,14 @@ class VideoTrimmerViewController: UIViewController {
         rangeSlider.delegate = self
         rangeSlider.minSpace = 6
         rangeSlider.maxSpace = 6
+        
+        self.rangeSlider.updateThumbnails()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        
     }
 
     override func didReceiveMemoryWarning() {

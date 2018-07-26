@@ -106,6 +106,13 @@
 			path = Groups;
 			sourceTree = "<group>";
 		};
+		8707026821093895005FC62F /* Navigation Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Navigation Controllers";
+			sourceTree = "<group>";
+		};
 		8720D7C420F46CDB0069F56B /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +133,7 @@
 		8720D7C820F46D3C0069F56B /* Camera & Video */ = {
 			isa = PBXGroup;
 			children = (
+				8707026821093895005FC62F /* Navigation Controllers */,
 				87221A1D20F195B0000A00F7 /* CameraViewController.swift */,
 				8720D7C020F1DBBC0069F56B /* VideoPlaybackViewController.swift */,
 				87221A1F20F195B6000A00F7 /* ImageViewController.swift */,
@@ -429,10 +437,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XT8KNR7TY2;
+				DEVELOPMENT_TEAM = L4K4Q74X62;
 				INFOPLIST_FILE = Flokk/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = flokk;
+				PRODUCT_BUNDLE_IDENTIFIER = flokk1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -445,10 +453,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XT8KNR7TY2;
+				DEVELOPMENT_TEAM = L4K4Q74X62;
 				INFOPLIST_FILE = Flokk/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = flokk;
+				PRODUCT_BUNDLE_IDENTIFIER = flokk1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

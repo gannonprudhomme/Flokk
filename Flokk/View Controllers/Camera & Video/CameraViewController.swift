@@ -31,11 +31,11 @@ class CameraViewController : UIViewController {
     // For recording with the camera button
     var longPressGestureRecognizer: UILongPressGestureRecognizer?
     
+    // For counting recording duration, sent to RecordButton
     var progressTimer: Timer!
     var progress: CGFloat! = 0
-    
-    // When done recording, show the doneButton, and hide the rest of them
-    //var doneRecording = false
+
+    let imagePicker = UIImagePickerController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -83,6 +83,12 @@ class CameraViewController : UIViewController {
             gestureRecognizer.allowableMovement = 10.0
             recordButton.addGestureRecognizer(gestureRecognizer)
         }
+        
+        // Set up Image Picker
+        imagePicker.delegate = self
+        imagePicker.sourceType = .photoLibrary
+        imagePicker.mediaTypes = ["public.movie"]
+        imagePicker.allowsEditing = false // Skip the built in "editing" step
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -113,10 +119,14 @@ class CameraViewController : UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         NextLevel.shared.stop()
+        
+        // Reset the record button incase the user goes back from VideoPlaybackVC
+        self.progress = 0
+        self.recordButton.setProgress(progress)
     }
     
     @IBAction func photoLibraryPressed(_ sender: Any) {
-        // Segue to a UIImagePickerController
+        self.present(imagePicker, animated: true, completion: nil)
     }
     
     @IBAction func flashPressed(_ sender: Any) {
@@ -124,8 +134,13 @@ class CameraViewController : UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Pass the video URL to the playback/finalization screen
         if segue.identifier == "doneRecordingSegue" {
             if let vc = segue.destination as? VideoPlaybackViewController {
+                vc.videoURL = self.videoURL
+            }
+        } else if segue.identifier == "trimVideoSegue" {
+            if let vc = segue.destination as? VideoTrimmerViewController {
                 vc.videoURL = self.videoURL
             }
         }
@@ -201,6 +216,20 @@ extension CameraViewController {
     }
 }
 
+extension CameraViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        dismiss(animated: true, completion: nil)
+        
+        videoURL = info[UIImagePickerControllerMediaURL] as! URL
+        
+        performSegue(withIdentifier: "trimVideoSegue", sender: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
+}
+
 // Gesture Recognizer for holding the record button and detecting when we're done recording
 extension CameraViewController : UIGestureRecognizerDelegate {
     @objc internal func handleLongPressGestureRecognizer(_ gestureRecognizer: UIGestureRecognizer) {
@@ -223,14 +252,17 @@ extension CameraViewController : UIGestureRecognizerDelegate {
                     self.pauseRecording()
                     fallthrough
                 default:
+                   // print("Default: \(session.totalDuration.seconds)")
+                    
                     break
                 }
             } else { // If we've reached the max duration, switch to the "finalization" stage
-                self.endRecording()
+                print("Max duration reached")
+                //self.endRecording()
                 //self.performSegue(withIdentifier: "doneRecordingSegue", sender: self)
             }
         } else {
-            
+            print("unable to access session")
         }
         
         //print(NextLevel.shared.session?.totalDuration.seconds)
@@ -286,11 +318,11 @@ extension CameraViewController : NextLevelVideoDelegate {
     func nextLevel(_ nextLevel: NextLevel, didCompleteSession session: NextLevelSession) {
         // End Capture
         print("Completed Session")
-        //self.endRecording()
+        self.endRecording()
     }
     
     func nextLevel(_ nextLevel: NextLevel, didStartClipInSession session: NextLevelSession) {
-        print("Started Clip")
+        print("Started Clip \((NextLevel.shared.session?.totalDuration.seconds)!)")
     }
     
     func nextLevel(_ nextLevel: NextLevel, didCompleteClip clip: NextLevelClip, inSession session: NextLevelSession) {
