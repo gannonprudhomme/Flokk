@@ -36,6 +36,7 @@ class VideoPlaybackViewController: UIViewController {
         super.viewWillDisappear(animated)
         
         avPlayer.pause()
+        // Need to set AVPlayer to nil to (possibly) prevent a memory leak
     }
     
     // Callback function for when the video ends

@@ -15,6 +15,7 @@ class VideoTrimmerViewController: UIViewController {
     @IBOutlet var rangeSlider: ABVideoRangeSlider!
     
     var videoURL: URL!
+    fileprivate var trimmedVideoURL: URL!
     
     var avPlayer: AVPlayer!
     var avPlayerLayer: AVPlayerLayer!
@@ -66,6 +67,7 @@ class VideoTrimmerViewController: UIViewController {
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         
+        // Need to set AVPlayer to nil to (possibly) prevent a memory leak
         avPlayer.pause()
         progressTimer.invalidate()
     }
@@ -74,16 +76,79 @@ class VideoTrimmerViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
+    // Loops the video once it has ended
     @objc func videoEnded() {
         avPlayer.seek(to: CMTime(seconds: startTime, preferredTimescale: 1000));
         avPlayer.play();
     }
     
+    @IBAction func doneTrimmingPressed(_ sender: Any) {
+        // Crop the video
+        cropVideo(sourceURL: self.videoURL, startTime: self.startTime, endTime: self.endTime, completion: { (outputURL) in
+            // Once done cropping the video, segue to the playback VC(for now)
+            DispatchQueue.main.async {
+                self.trimmedVideoURL = outputURL
+                self.performSegue(withIdentifier: "playbackFromTrimSegue", sender: self)
+            }
+        })
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // segue for going back?
+        if segue.identifier == "playbackFromTrimSegue" {
+            if let vc = segue.destination as? VideoPlaybackViewController {
+                vc.videoURL = self.trimmedVideoURL
+            }
+        }
     }
 }
 
+extension VideoTrimmerViewController {
+    // Consider putting this in a helper function class
+    // From: https://stackoverflow.com/questions/35696188/how-to-trim-a-video-in-swift-for-a-particular-time , answer 2
+    func cropVideo(sourceURL: URL, startTime: Double, endTime: Double, completion: ((_ outputUrl: URL) -> Void)? = nil) {
+        let fileManager = FileManager.default
+        let documentDirectory = fileManager.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        
+        let asset = AVAsset(url: sourceURL)
+        let length = Float(asset.duration.value) / Float(asset.duration.timescale)
+        print("video length: \(length) seconds")
+        
+        var outputURL = documentDirectory.appendingPathComponent("output")
+        do {
+            try fileManager.createDirectory(at: outputURL, withIntermediateDirectories: true, attributes: nil)
+            outputURL = outputURL.appendingPathComponent("\(sourceURL.lastPathComponent).mp4")
+        }catch let error {
+            print(error)
+        }
+        
+        //Remove existing file
+        try? fileManager.removeItem(at: outputURL)
+        
+        guard let exportSession = AVAssetExportSession(asset: asset, presetName: AVAssetExportPresetHighestQuality) else { return }
+        exportSession.outputURL = outputURL
+        exportSession.outputFileType = .mp4
+        
+        let timeRange = CMTimeRange(start: CMTime(seconds: startTime, preferredTimescale: 1000),
+                                    end: CMTime(seconds: endTime, preferredTimescale: 1000))
+        
+        exportSession.timeRange = timeRange
+        exportSession.exportAsynchronously {
+            switch exportSession.status {
+            case .completed:
+                print("exported at \(outputURL)")
+                completion?(outputURL)
+            case .failed:
+                print("failed \(exportSession.error.debugDescription)")
+            case .cancelled:
+                print("cancelled \(exportSession.error.debugDescription)")
+            default: break
+            }
+        }
+    }
+}
+
+// MARK: Delegate functions for ABVideoRangeSlider
 extension VideoTrimmerViewController : ABVideoRangeSliderDelegate {
     func didChangeValue(videoRangeSlider: ABVideoRangeSlider, startTime: Float64, endTime: Float64) {
         self.startTime = startTime
@@ -109,9 +174,10 @@ extension VideoTrimmerViewController : ABVideoRangeSliderDelegate {
     }
     
     // Update the progress indicator's location
+    // (not a delegate function)
     @objc func updateProgressIndicator() {
         let currentTime = self.avPlayer.currentTime().seconds
-        print("\(currentTime) Start: \(startTime!) End: \(endTime!)")
+        //print("\(currentTime) Start: \(startTime!) End: \(endTime!)")
         
         if currentTime > startTime && currentTime < endTime {
             self.rangeSlider.updateProgressIndicator(seconds: currentTime)

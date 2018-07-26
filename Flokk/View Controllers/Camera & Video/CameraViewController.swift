@@ -37,6 +37,8 @@ class CameraViewController : UIViewController {
 
     let imagePicker = UIImagePickerController()
     
+    var isFlashOn = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -55,7 +57,6 @@ class CameraViewController : UIViewController {
         
         // Only stops if there are atleast 2 clips
         NextLevel.shared.videoConfiguration.maximumCaptureDuration = CMTimeMakeWithSeconds(Double(maxRecordDuration), 1)
-        print(CMTimeMakeWithSeconds(6, 1).seconds)
         
         // Configure the preview layer for the camera
         let screenBounds = UIScreen.main.bounds
@@ -68,7 +69,7 @@ class CameraViewController : UIViewController {
             self.view.addSubview(previewView)
         }
         
-        recordButton.progressColor = UIColor (named: "Flokk Teal")
+        recordButton.progressColor = UIColor(named: "Flokk Teal")
         recordButton.closeWhenFinished = false
         
         self.view.bringSubview(toFront: photoLibraryButton)
@@ -129,8 +130,22 @@ class CameraViewController : UIViewController {
         self.present(imagePicker, animated: true, completion: nil)
     }
     
+    // Not working
     @IBAction func flashPressed(_ sender: Any) {
         // Toggle flash
+        if NextLevel.shared.isFlashAvailable {
+            if self.isFlashOn {
+                NextLevel.shared.flashMode = .off
+                self.isFlashOn = false
+            } else {
+                NextLevel.shared.flashMode = .on
+                self.isFlashOn = true
+            }
+        }
+    }
+    
+    @IBAction func switchCameraPressed(_ sender: Any) {
+        NextLevel.shared.flipCaptureDevicePosition()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -147,7 +162,7 @@ class CameraViewController : UIViewController {
     }
 }
 
-// Camera functions
+// MARK: - Camera functions
 extension CameraViewController {
     internal func startRecording() {
         NextLevel.shared.record()
@@ -202,7 +217,7 @@ extension CameraViewController {
     }
 }
 
-// Record Button Functions
+// MARK: Record Button Delegate Functions
 extension CameraViewController {
     @objc func updateProgress() {
         progress = progress + (CGFloat(0.05) / maxRecordDuration)
@@ -216,6 +231,7 @@ extension CameraViewController {
     }
 }
 
+// MARK: Image Picker Delegate Functions
 extension CameraViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         dismiss(animated: true, completion: nil)
@@ -230,7 +246,8 @@ extension CameraViewController : UIImagePickerControllerDelegate, UINavigationCo
     }
 }
 
-// Gesture Recognizer for holding the record button and detecting when we're done recording
+// MARK: Gesture Recognizer
+// For holding the record button and detecting when we're done recording(?)
 extension CameraViewController : UIGestureRecognizerDelegate {
     @objc internal func handleLongPressGestureRecognizer(_ gestureRecognizer: UIGestureRecognizer) {
         // Check if we've recorded enough video to go to the finalization screen
@@ -269,9 +286,8 @@ extension CameraViewController : UIGestureRecognizerDelegate {
     }
 }
 
-// Delegates needed to use NextLevel for video recording
-// Not even needed(at least initially)
-// Consider moving this to a separate file?
+// MARK: - NextLevel delegates for video capture
+// Consider moving these to a separate file, at least the unused ones
 extension CameraViewController : NextLevelDelegate {
     // Permissions
     func nextLevel(_ nextLevel: NextLevel, didUpdateAuthorizationStatus status: NextLevelAuthorizationStatus, forMediaType mediaType: AVMediaType) {
