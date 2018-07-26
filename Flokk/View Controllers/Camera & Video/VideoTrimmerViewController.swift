@@ -19,8 +19,10 @@ class VideoTrimmerViewController: UIViewController {
     var avPlayer: AVPlayer!
     var avPlayerLayer: AVPlayerLayer!
     
-    var startTime: CMTime!
-    var endTime: CMTime!
+    var startTime: Double! = 0
+    var endTime: Double! = 6
+    
+    var progressTimer: Timer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,33 +53,74 @@ class VideoTrimmerViewController: UIViewController {
         rangeSlider.delegate = self
         rangeSlider.minSpace = 6
         rangeSlider.maxSpace = 6
+        rangeSlider.setStartPosition(seconds: 0)
+        rangeSlider.setEndPosition(seconds: 6) // What if it's not long enough?
         
-        self.rangeSlider.updateThumbnails()
+        // Create and start a timer to update the progress indicator, wherever the video is currently
+        progressTimer = Timer.scheduledTimer(timeInterval: 0.05, target: self, selector: #selector(VideoTrimmerViewController.updateProgressIndicator), userInfo: nil, repeats: true)
+        progressTimer.fire()
+        
+        self.videoEnded()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         
-        
+        avPlayer.pause()
+        progressTimer.invalidate()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     @objc func videoEnded() {
-        avPlayer.seek(to: CMTime(seconds: 0, preferredTimescale: 1));
+        avPlayer.seek(to: CMTime(seconds: startTime, preferredTimescale: 1000));
         avPlayer.play();
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // segue for going back?
     }
 }
 
 extension VideoTrimmerViewController : ABVideoRangeSliderDelegate {
     func didChangeValue(videoRangeSlider: ABVideoRangeSlider, startTime: Float64, endTime: Float64) {
+        self.startTime = startTime
+        self.endTime = endTime
         
+        let currentTime = self.avPlayer.currentTime().seconds
+        
+        // If where the user seeked to is out of bounds of the start and end time
+        // restart the playback to the start of the trimmer
+        if currentTime > startTime && currentTime < endTime {
+        } else {
+            avPlayer.seek(to: CMTimeMakeWithSeconds(startTime, 1000))
+        }
     }
     
     func indicatorDidChangePosition(videoRangeSlider: ABVideoRangeSlider, position: Float64) {
-        //avPlayer.seek(to: CMTime(
+        if position > 0 {
+            //progressTimer.invalidate()
+            //avPlayer.seek(to: CMTimeMakeWithSeconds(position * 100, 100))
+            //progressTimer = Timer.scheduledTimer(timeInterval: 0.05, target: self, selector: #selector(VideoTrimmerViewController.updateProgressIndicator), userInfo: nil, repeats: true)
+            //progressTimer.fire()
+        }
+    }
+    
+    // Update the progress indicator's location
+    @objc func updateProgressIndicator() {
+        let currentTime = self.avPlayer.currentTime().seconds
+        print("\(currentTime) Start: \(startTime!) End: \(endTime!)")
+        
+        if currentTime > startTime && currentTime < endTime {
+            self.rangeSlider.updateProgressIndicator(seconds: currentTime)
+        }
+        
+        // Also check if the avplayer has reached the endTime
+        // If so, restart the video to play at startTime
+        if currentTime >= endTime {
+            self.videoEnded()
+        }
     }
 }
