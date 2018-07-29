@@ -66,6 +66,7 @@
                         <viewLayoutGuide key="safeArea" id="BzZ-jG-YXG"/>
                     </view>
                     <navigationItem key="navigationItem" id="7rB-oE-zKV">
+                        <barButtonItem key="backBarButtonItem" title=" " id="P4U-7Y-S7i"/>
                         <barButtonItem key="leftBarButtonItem" title="Item" image="exitBttnWhite" id="awb-rZ-Wo5">
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </barButtonItem>
@@ -121,7 +122,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Lfp-bi-XeY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="WEu-BM-I9y"/>
+                    <navigationItem key="navigationItem" id="WEu-BM-I9y">
+                        <barButtonItem key="backBarButtonItem" title=" " id="vkW-sQ-WT6"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="doneButton" destination="m1w-qZ-5iU" id="2tX-29-NBL"/>
                         <outlet property="videoView" destination="A9Y-An-M1D" id="47w-8U-pUR"/>
@@ -170,7 +173,9 @@
                         <viewLayoutGuide key="safeArea" id="sCr-wl-7oj"/>
                     </view>
                     <navigationItem key="navigationItem" id="uI4-sR-WvE">
-                        <barButtonItem key="rightBarButtonItem" image="acceptBttn" id="JZ5-6Z-LFM">
+                        <barButtonItem key="backBarButtonItem" title=" " id="eKc-M1-aNB"/>
+                        <barButtonItem key="rightBarButtonItem" image="checkBttnTeal" id="JZ5-6Z-LFM">
+                            <color key="tintColor" name="Flokk Teal"/>
                             <connections>
                                 <action selector="doneTrimmingPressed:" destination="Mek-J5-Sg6" id="6A5-jP-rwB"/>
                             </connections>
@@ -189,10 +194,9 @@
         <!--Navigation Controller-->
         <scene sceneID="Fby-Ev-NNC">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YfJ-Ck-31C" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="phD-lm-FPK" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="QOJ-JD-ESG">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" backIndicatorImage="backBttnWhite" backIndicatorTransitionMaskImage="backBttnWhite" id="QOJ-JD-ESG">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" name="Flokk Navy"/>
@@ -202,6 +206,7 @@
                         <segue destination="OKf-5s-7N5" kind="relationship" relationship="rootViewController" id="SPx-oK-0A3"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YfJ-Ck-31C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-106.875" y="-45.422535211267608"/>
         </scene>
@@ -243,7 +248,9 @@
     </scenes>
     <resources>
         <image name="acceptBttn" width="68" height="68"/>
+        <image name="backBttnWhite" width="18" height="15"/>
         <image name="cameraRollBttnClear" width="58" height="58"/>
+        <image name="checkBttnTeal" width="19" height="13"/>
         <image name="exitBttn" width="43" height="43"/>
         <image name="exitBttnWhite" width="25" height="25"/>
         <image name="flashBttnClear" width="58" height="58"/>
@@ -251,12 +258,15 @@
         <namedColor name="Flokk Navy">
             <color red="0.082000002259999996" green="0.086000002919999999" blue="0.16899999979999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <namedColor name="Flokk Teal">
+            <color red="0.2199999988079071" green="0.63099998235702515" blue="0.62400001287460327" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="Secondary Navy">
             <color red="0.17599999899999999" green="0.18000000720000001" blue="0.2549999952" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="rud-a2-bk4"/>
+        <segue reference="CXZ-n3-mUG"/>
     </inferredMetricsTieBreakers>
-    <color key="tintColor" name="Flokk Teal"/>
+    <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
