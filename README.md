@@ -5,7 +5,7 @@
 
 iOS Application currently in development
 
-# TODO
+# Todo
   - Add About section
   - Add Libraries/Pods used section
   - Add licensing
