@@ -1,5 +1,12 @@
 language: swift
 os: osx
+osx_image: xcode9.4
 xcode_project: Flokk.xcodeproj
 xcode_scheme: Flokk
 podfile: Podfile
+
+before_install:
+  - gem install cocoapods
+script:
+  - set -o pipefail
+    - xcodebuild clean build -sdk iphonesimulator -workspace FLokki.xcworkspace -scheme Flokk CODE_SIGNING_REQUIRED=NO
