@@ -1,0 +1,5 @@
+language: swift
+os: osx
+xcode_project: Flokk.xcodeproj
+xcode_scheme: Flokk
+podfile: Podfile
