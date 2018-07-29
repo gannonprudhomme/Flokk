@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		7F8012BB2102CBF200CEA5DA /* Camera.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F8012BA2102CBF200CEA5DA /* Camera.storyboard */; };
+		8711A831210D468F00CCFD38 /* Feed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8711A830210D468F00CCFD38 /* Feed.storyboard */; };
+		8711A836210D478C00CCFD38 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8711A835210D478C00CCFD38 /* FeedViewController.swift */; };
+		8711A839210D47CD00CCFD38 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8711A838210D47CD00CCFD38 /* Post.swift */; };
+		8711A83B210D539D00CCFD38 /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8711A83A210D539D00CCFD38 /* FeedTableViewCell.swift */; };
 		8720D7C120F1DBBC0069F56B /* VideoPlaybackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8720D7C020F1DBBC0069F56B /* VideoPlaybackViewController.swift */; };
 		8720D7CE20F476DB0069F56B /* VideoTrimmerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8720D7CD20F476DB0069F56B /* VideoTrimmerViewController.swift */; };
 		87221A0A20F073F2000A00F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87221A0920F073F2000A00F7 /* AppDelegate.swift */; };
@@ -25,11 +29,12 @@
 		4E7F9723779119924F127835 /* Pods-Flokk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flokk.release.xcconfig"; path = "Pods/Target Support Files/Pods-Flokk/Pods-Flokk.release.xcconfig"; sourceTree = "<group>"; };
 		7F8012A72100F69800CEA5DA /* JosefinSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JosefinSans-Bold.ttf"; sourceTree = "<group>"; };
 		7F8012A82100F69800CEA5DA /* JosefinSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JosefinSans-Regular.ttf"; sourceTree = "<group>"; };
-		7F8012AC210101FA00CEA5DA /* Camera.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Camera.xib; sourceTree = "<group>"; };
-		7F8012AE210110D700CEA5DA /* videoPlayback.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = videoPlayback.xib; sourceTree = "<group>"; };
-		7F8012B02101149B00CEA5DA /* videoTrimmer.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = videoTrimmer.xib; sourceTree = "<group>"; };
 		7F8012B3210123B000CEA5DA /* BounceButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BounceButton.swift; sourceTree = "<group>"; };
 		7F8012BA2102CBF200CEA5DA /* Camera.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Camera.storyboard; sourceTree = "<group>"; };
+		8711A830210D468F00CCFD38 /* Feed.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Feed.storyboard; sourceTree = "<group>"; };
+		8711A835210D478C00CCFD38 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		8711A838210D47CD00CCFD38 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		8711A83A210D539D00CCFD38 /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
 		8720D7C020F1DBBC0069F56B /* VideoPlaybackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlaybackViewController.swift; sourceTree = "<group>"; };
 		8720D7CD20F476DB0069F56B /* VideoTrimmerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTrimmerViewController.swift; sourceTree = "<group>"; };
 		87221A0620F073F2000A00F7 /* Flokk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flokk.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,54 +93,38 @@
 			path = Animation;
 			sourceTree = "<group>";
 		};
-		7F8012B821012F8D00CEA5DA /* Feed */ = {
+		8711A834210D478100CCFD38 /* Feed */ = {
 			isa = PBXGroup;
 			children = (
+				8711A835210D478C00CCFD38 /* FeedViewController.swift */,
+				8711A83A210D539D00CCFD38 /* FeedTableViewCell.swift */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
 		};
-		7F8012B92101374D00CEA5DA /* Groups */ = {
+		8711A837210D47C400CCFD38 /* Framework */ = {
 			isa = PBXGroup;
 			children = (
+				8711A838210D47CD00CCFD38 /* Post.swift */,
 			);
-			path = Groups;
-			sourceTree = "<group>";
-		};
-		8707026821093895005FC62F /* Navigation Controllers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Navigation Controllers";
+			path = Framework;
 			sourceTree = "<group>";
 		};
 		8720D7C420F46CDB0069F56B /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				7F8012B92101374D00CEA5DA /* Groups */,
-				7F8012B821012F8D00CEA5DA /* Feed */,
+				8711A834210D478100CCFD38 /* Feed */,
 				8720D7C820F46D3C0069F56B /* Camera & Video */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
 		};
-		8720D7C520F46CF10069F56B /* Framework */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Framework;
-			sourceTree = "<group>";
-		};
 		8720D7C820F46D3C0069F56B /* Camera & Video */ = {
 			isa = PBXGroup;
 			children = (
-				8707026821093895005FC62F /* Navigation Controllers */,
 				87221A1D20F195B0000A00F7 /* CameraViewController.swift */,
 				8720D7C020F1DBBC0069F56B /* VideoPlaybackViewController.swift */,
 				8720D7CD20F476DB0069F56B /* VideoTrimmerViewController.swift */,
-				7F8012AC210101FA00CEA5DA /* Camera.xib */,
-				7F8012AE210110D700CEA5DA /* videoPlayback.xib */,
-				7F8012B02101149B00CEA5DA /* videoTrimmer.xib */,
 			);
 			path = "Camera & Video";
 			sourceTree = "<group>";
@@ -162,8 +151,9 @@
 			isa = PBXGroup;
 			children = (
 				8720D7C420F46CDB0069F56B /* View Controllers */,
-				8720D7C520F46CF10069F56B /* Framework */,
+				8711A837210D47C400CCFD38 /* Framework */,
 				7F8012BA2102CBF200CEA5DA /* Camera.storyboard */,
+				8711A830210D468F00CCFD38 /* Feed.storyboard */,
 				87221A2120F195C2000A00F7 /* Main.storyboard */,
 				87221A1020F073F2000A00F7 /* Assets.xcassets */,
 				87221A0920F073F2000A00F7 /* AppDelegate.swift */,
@@ -239,6 +229,7 @@
 			files = (
 				87706DAD20F960B200663948 /* .gitignore in Resources */,
 				87221A2220F195C2000A00F7 /* Main.storyboard in Resources */,
+				8711A831210D468F00CCFD38 /* Feed.storyboard in Resources */,
 				87221A1420F073F2000A00F7 /* LaunchScreen.storyboard in Resources */,
 				87221A1120F073F2000A00F7 /* Assets.xcassets in Resources */,
 				7F8012BB2102CBF200CEA5DA /* Camera.storyboard in Resources */,
@@ -297,6 +288,9 @@
 			files = (
 				8720D7C120F1DBBC0069F56B /* VideoPlaybackViewController.swift in Sources */,
 				87221A1E20F195B0000A00F7 /* CameraViewController.swift in Sources */,
+				8711A83B210D539D00CCFD38 /* FeedTableViewCell.swift in Sources */,
+				8711A836210D478C00CCFD38 /* FeedViewController.swift in Sources */,
+				8711A839210D47CD00CCFD38 /* Post.swift in Sources */,
 				8720D7CE20F476DB0069F56B /* VideoTrimmerViewController.swift in Sources */,
 				87221A0A20F073F2000A00F7 /* AppDelegate.swift in Sources */,
 			);
