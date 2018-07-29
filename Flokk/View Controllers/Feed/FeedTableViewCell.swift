@@ -42,6 +42,15 @@ class FeedTableViewCell: UITableViewCell {
 
 // MARK: - Loading functions
 extension FeedTableViewCell {
+    func setAspectRatio() {
+        let aspect = self.post.dimensions.width / self.post.dimensions.height
+        let constraint = NSLayoutConstraint(item: mainView, attribute: NSLayoutAttribute.width, relatedBy: NSLayoutRelation.equal, toItem: mainView, attribute: NSLayoutAttribute.height, multiplier: CGFloat(aspect), constant: 0.0)
+        
+        constraint.priority = UILayoutPriority(rawValue: 999)
+        
+        
+    }
+    
     // Set the preview image on the view
     func addPreviewImageToView(image: UIImage) {
         // Create a UIImage

@@ -20,7 +20,7 @@ class FeedViewController: UIViewController {
 
         // Load initial amount of posts
         
-        // Add listener
+        // Add listener for new posts
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -38,21 +38,15 @@ class FeedViewController: UIViewController {
         
         // Stop the new posts listener
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+
     }
 }
 
 // MARK: Stuff
 extension FeedViewController {
+    // Initial post loading
     func loadPosts() {
         
     }
@@ -87,7 +81,7 @@ extension FeedViewController: UITableViewDataSource, UITableViewDelegate {
         
         // Check if we've reached the bottom of the table
         if distanceFromBottom < height {
-            // If so, 
+            // If so, start loading the other posts
         }
     }
 }

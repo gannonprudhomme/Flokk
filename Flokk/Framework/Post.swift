@@ -25,14 +25,13 @@ class Post {
     
     // Width and height of the video, in pixels
     // Can this be retrieved from the URL?
-    var dimensions: Dimensions!
+    var dimensions: Dimensions?
     
     var loaded = false
     
-    init(url: URL, timestamp: Double!) {
-        self.fileURL = url
+    init(dimensions: Dimensions, timestamp: Double!) {
         self.timestamp = timestamp
         
-        self.dimensions = Dimensions(width: 0, height: 0)
+        self.dimensions = dimensions
     }
 }
