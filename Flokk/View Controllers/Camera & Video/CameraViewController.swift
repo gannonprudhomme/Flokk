@@ -63,8 +63,8 @@ class CameraViewController : UIViewController {
         //previewView = UIView(frame: screenBounds)
         if let previewView = self.previewView {
             previewView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-            previewView.backgroundColor = UIColor.black
-            NextLevel.shared.previewLayer.frame = previewView.bounds
+            previewView.backgroundColor = UIColor(named: "Flokk Navy")
+            NextLevel.shared.previewLayer.frame = previewView.bounds    
             previewView.layer.addSublayer(NextLevel.shared.previewLayer)
             self.view.addSubview(previewView)
         }
