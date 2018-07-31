@@ -33,7 +33,7 @@ class VideoTrimmerViewController: UIViewController {
         avPlayer = AVPlayer()
         
         // Add the callback function to the AVPlayer to make it loop
-        NotificationCenter.default.addObserver(self, selector: #selector(VideoTrimmerViewController.videoEnded), name: Notification.Name.AVPlayerItemDidPlayToEndTime, object: avPlayer.currentItem)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.restartVideo), name: Notification.Name.AVPlayerItemDidPlayToEndTime, object: avPlayer.currentItem)
         
         // Set up the AVPlayer to play the video
         avPlayerLayer = AVPlayerLayer(player: avPlayer)
@@ -61,7 +61,8 @@ class VideoTrimmerViewController: UIViewController {
         progressTimer = Timer.scheduledTimer(timeInterval: 0.05, target: self, selector: #selector(VideoTrimmerViewController.updateProgressIndicator), userInfo: nil, repeats: true)
         progressTimer.fire()
         
-        self.videoEnded()
+        // WHy do we need to do this here
+        self.restartVideo()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -77,7 +78,7 @@ class VideoTrimmerViewController: UIViewController {
     }
     
     // Loops the video once it has ended
-    @objc func videoEnded() {
+    @objc func restartVideo() {
         avPlayer.seek(to: CMTime(seconds: startTime, preferredTimescale: 1000));
         avPlayer.play();
     }
@@ -186,7 +187,7 @@ extension VideoTrimmerViewController : ABVideoRangeSliderDelegate {
         // Also check if the avplayer has reached the endTime
         // If so, restart the video to play at startTime
         if currentTime >= endTime {
-            self.videoEnded()
+            self.restartVideo()
         }
     }
 }

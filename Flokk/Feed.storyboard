@@ -29,23 +29,23 @@
                                 <color key="backgroundColor" name="Flokk Navy"/>
                                 <color key="sectionIndexBackgroundColor" name="Flokk Navy"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="default" rowHeight="270" id="jle-Uz-763" customClass="FeedTableViewCell" customModule="Flokk" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="270"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="default" rowHeight="308" id="jle-Uz-763" customClass="FeedTableViewCell" customModule="Flokk" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="308"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jle-Uz-763" id="uE8-Zv-Cyq">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="270"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="308"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l1U-3B-shT">
-                                                    <rect key="frame" x="15" y="11" width="345" height="248"/>
-                                                    <color key="backgroundColor" name="Secondary Navy"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="248"/>
                                                 </view>
                                             </subviews>
+                                            <color key="backgroundColor" name="Flokk Navy"/>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="l1U-3B-shT" secondAttribute="bottom" constant="11" id="IGS-BB-7s1"/>
-                                                <constraint firstItem="l1U-3B-shT" firstAttribute="leading" secondItem="uE8-Zv-Cyq" secondAttribute="leading" constant="15" id="LAg-aT-Fnp"/>
-                                                <constraint firstItem="l1U-3B-shT" firstAttribute="top" secondItem="uE8-Zv-Cyq" secondAttribute="top" constant="11" id="Uzs-DT-UEh"/>
-                                                <constraint firstAttribute="trailing" secondItem="l1U-3B-shT" secondAttribute="trailing" constant="15" id="inf-8d-E7d"/>
+                                                <constraint firstAttribute="bottom" secondItem="l1U-3B-shT" secondAttribute="bottom" constant="60" id="IGS-BB-7s1"/>
+                                                <constraint firstItem="l1U-3B-shT" firstAttribute="leading" secondItem="uE8-Zv-Cyq" secondAttribute="leading" id="LAg-aT-Fnp"/>
+                                                <constraint firstItem="l1U-3B-shT" firstAttribute="top" secondItem="uE8-Zv-Cyq" secondAttribute="top" id="Uzs-DT-UEh"/>
+                                                <constraint firstAttribute="trailing" secondItem="l1U-3B-shT" secondAttribute="trailing" id="inf-8d-E7d"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -122,8 +122,8 @@
         <namedColor name="Flokk Navy">
             <color red="0.082000002259999996" green="0.086000002919999999" blue="0.16899999979999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="Secondary Navy">
-            <color red="0.17599999904632568" green="0.18000000715255737" blue="0.25499999523162842" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="Flokk Navy">
+            <color red="0.082000002264976501" green="0.086000002920627594" blue="0.16899999976158142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

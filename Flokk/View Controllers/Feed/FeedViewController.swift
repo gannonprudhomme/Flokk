@@ -8,6 +8,7 @@
 
 import UIKit
 
+// Is there a need for this to be global
 let initialPostsCount = 5
 
 class FeedViewController: UIViewController {
@@ -16,6 +17,11 @@ class FeedViewController: UIViewController {
     // Serves as a queue / priority queue?
     // Sorted by date, although hopefully Firebase fills it sorted automatically
     var posts = [Post]()
+    
+    let loadCount = 3 // Only load 3 posts at a time(after the initial 5)
+    var currentPostCount = initialPostsCount
+    var totalPostsCount = 10 // Max amount of posts we can load(the # of posts in the group)
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,7 +55,7 @@ class FeedViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
+        
     }
 }
 
@@ -63,16 +69,53 @@ extension FeedViewController {
     // When we scroll down past a certain point, load more posts
     // Completion handler?
     func loadMorePosts() {
+        var postDiff = totalPostsCount - currentPostCount
         
+        if postDiff > loadCount {
+            postDiff = loadCount
+        }
+        
+        //print("Loading \(postDiff) number of posts")
+        
+        var indexPaths = [IndexPath]()
+        // currentPostCount is a size(aka size of 1 = index of 0), so i starts at 0
+        for i in 0..<postDiff {
+            print("adding \(currentPostCount + i)")
+            indexPaths.append(IndexPath(row: currentPostCount + i, section: 0))
+        }
+        
+        currentPostCount += postDiff
+        
+        //tableView.reloadData()
+        tableView.insertRows(at: indexPaths, with: UITableViewRowAnimation.bottom)
+    }
+    
+    func sortPosts() {
+        // Larger timestamp(more recent) should be at the top, so ascending order
+        posts.sort(by: { $0.timestamp < $1.timestamp})
     }
     
     // Temporary function to fill in the posts
     fileprivate func fillEmptyPosts() {
-        var videoURL = Bundle.main.path(forResource: "clip1", ofType: "m4v")
+        let video1URL = Bundle.main.path(forResource: "clip1", ofType: "m4v")
+        let video2URL = Bundle.main.path(forResource: "clip2", ofType: "mov")
         
-        let post = Post(url: URL(fileURLWithPath: videoURL!), dimensions: Dimensions(width: 1920, height: 1080), timestamp: 0)
         
-        self.posts.append(post)
+        let post1 = Post(url: URL(fileURLWithPath: video1URL!), dimensions: Dimensions(width: 1920, height: 1080), timestamp: 0)
+        let post2 = Post(url: URL(fileURLWithPath: video2URL!), dimensions: Dimensions(width: 1080, height: 1920), timestamp: 0)
+        
+        self.posts.append(post1)
+        self.posts.append(post1)
+        self.posts.append(post1)
+        self.posts.append(post1)
+        self.posts.append(post1)
+        
+        
+        self.posts.append(post2)
+        self.posts.append(post2)
+        self.posts.append(post2)
+        self.posts.append(post2)
+        self.posts.append(post2)
         
     }
 }
@@ -83,17 +126,22 @@ extension FeedViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: "default", for: indexPath as IndexPath) as! FeedTableViewCell
         
         cell.post = self.posts[indexPath.row]
-        cell.addVideoToView()
+        cell.initialize()
         
-        
-        
-        //cell.addVideoToView()
+        //print("Cell for \(indexPath.row)")
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return posts.count
+        return currentPostCount
+        //return posts.count
+    }
+    
+    func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if let feedCell = cell as? FeedTableViewCell {
+            feedCell.pauseVideo()
+        }
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -104,6 +152,9 @@ extension FeedViewController: UITableViewDataSource, UITableViewDelegate {
         // Check if we've reached the bottom of the table
         if distanceFromBottom < height {
             // If so, start loading the other posts
+            if currentPostCount < totalPostsCount {
+                loadMorePosts()
+            }
         }
     }
 }

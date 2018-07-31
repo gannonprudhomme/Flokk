@@ -15,7 +15,7 @@ class VideoPlaybackViewController: UIViewController {
         super.viewDidLoad()
         
         // Add the callback function to the av player
-        NotificationCenter.default.addObserver(self, selector: #selector(VideoPlaybackViewController.videoEnded), name: Notification.Name.AVPlayerItemDidPlayToEndTime, object: avPlayer.currentItem)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.restartVideo), name: Notification.Name.AVPlayerItemDidPlayToEndTime, object: avPlayer.currentItem)
         
         //videoURL = URL(string: "http://devimages.apple.com/iphone/samples/bipbop/bipbopall.m3u8")
         
@@ -41,7 +41,7 @@ class VideoPlaybackViewController: UIViewController {
     
     // Callback function for when the video ends
     // Activates the replay button, or loops again automatically
-    @objc func videoEnded() {
+    @objc func restartVideo() {
         avPlayer.seek(to: CMTime(seconds: 0, preferredTimescale: 1));
         avPlayer.play();
     }
