@@ -14,7 +14,7 @@
 @available(iOS 11.0, *)
 @objc open class RecordButton : UIButton {
     
-    open var buttonColor: UIColor! = UIColor(named: "Flokk Teal"){
+    open var buttonColor: UIColor! = UIColor.white{
         didSet {
             circleLayer.backgroundColor = buttonColor.cgColor
             circleBorder.borderColor = buttonColor.cgColor
