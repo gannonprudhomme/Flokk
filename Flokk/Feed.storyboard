@@ -19,59 +19,45 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Navigation Controller-->
-        <scene sceneID="7fM-qt-H1x">
+        <!--Feed-->
+        <scene sceneID="YjI-u7-tcE">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="axF-PO-QBs" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="cBc-rD-zpg">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" name="Flokk Navy"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="GfU-h9-ofJ" kind="relationship" relationship="rootViewController" id="tAJ-OO-gw5"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="TB4-w2-Tnk" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-106.875" y="-45.422535211267608"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="bvB-Sr-NAa">
-            <objects>
-                <viewController id="GfU-h9-ofJ" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="BcC-xz-iWN">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                <viewController title="Feed" id="oYP-pD-vul" customClass="FeedViewController" customModule="Flokk" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Rex-Qc-qvl"/>
+                        <viewControllerLayoutGuide type="bottom" id="N6E-Kw-rZA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6KQ-3b-6tA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iNs-fy-XSp">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UeM-HM-Bmi">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" name="Flokk Navy"/>
+                                <color key="sectionIndexBackgroundColor" name="Flokk Navy"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="288" id="NKj-Hr-nmw" customClass="FeedTableViewCell" customModule="Flokk" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="288"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="default" rowHeight="308" id="jle-Uz-763" customClass="FeedTableViewCell" customModule="Flokk" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="308"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NKj-Hr-nmw" id="t9w-ES-BKy">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="287.5"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jle-Uz-763" id="uE8-Zv-Cyq">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="308"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y4r-tg-Fvq">
-                                                    <rect key="frame" x="15" y="0.0" width="345" height="277"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l1U-3B-shT">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="248"/>
                                                 </view>
                                             </subviews>
+                                            <color key="backgroundColor" name="Flokk Navy"/>
                                             <constraints>
-                                                <constraint firstItem="y4r-tg-Fvq" firstAttribute="top" secondItem="t9w-ES-BKy" secondAttribute="top" id="1Au-Sp-TqD"/>
-                                                <constraint firstAttribute="bottom" secondItem="y4r-tg-Fvq" secondAttribute="bottom" constant="10.5" id="aQi-Nj-L9p"/>
-                                                <constraint firstAttribute="trailing" secondItem="y4r-tg-Fvq" secondAttribute="trailing" constant="15" id="iTk-oH-GJA"/>
-                                                <constraint firstItem="y4r-tg-Fvq" firstAttribute="leading" secondItem="t9w-ES-BKy" secondAttribute="leading" constant="15" id="itu-M2-cOf"/>
+                                                <constraint firstAttribute="bottom" secondItem="l1U-3B-shT" secondAttribute="bottom" constant="60" id="IGS-BB-7s1"/>
+                                                <constraint firstItem="l1U-3B-shT" firstAttribute="leading" secondItem="uE8-Zv-Cyq" secondAttribute="leading" id="LAg-aT-Fnp"/>
+                                                <constraint firstItem="l1U-3B-shT" firstAttribute="top" secondItem="uE8-Zv-Cyq" secondAttribute="top" id="Uzs-DT-UEh"/>
+                                                <constraint firstAttribute="trailing" secondItem="l1U-3B-shT" secondAttribute="trailing" id="inf-8d-E7d"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="mainView" destination="y4r-tg-Fvq" id="EoK-IF-RQi"/>
+                                            <outlet property="mainView" destination="l1U-3B-shT" id="6Uk-yA-dsz"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -140,10 +126,13 @@
                             <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
                         </userDefinedRuntimeAttributes>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="UeM-HM-Bmi" id="nUR-V1-IGR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v5t-VV-7Xk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2218" y="779"/>
+            <point key="canvasLocation" x="2216.8000000000002" y="778.56071964017997"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="NpB-Em-YPF">
@@ -276,7 +265,7 @@
         <image name="ski" width="1536" height="1536"/>
         <image name="turtle" width="1537" height="1536"/>
         <namedColor name="Flokk Navy">
-            <color red="0.082000002259999996" green="0.086000002919999999" blue="0.16899999979999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.082000002264976501" green="0.086000002920627594" blue="0.16899999976158142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
