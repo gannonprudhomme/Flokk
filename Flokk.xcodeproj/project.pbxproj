@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		7F8012BB2102CBF200CEA5DA /* Camera.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F8012BA2102CBF200CEA5DA /* Camera.storyboard */; };
+		7F912B982110DB8E00ADABEE /* Groups.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F912B972110DB8E00ADABEE /* Groups.storyboard */; };
+		7F912B9C211114E000ADABEE /* Next.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F912B9B211114E000ADABEE /* Next.storyboard */; };
 		8711A831210D468F00CCFD38 /* Feed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8711A830210D468F00CCFD38 /* Feed.storyboard */; };
 		8711A836210D478C00CCFD38 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8711A835210D478C00CCFD38 /* FeedViewController.swift */; };
 		8711A839210D47CD00CCFD38 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8711A838210D47CD00CCFD38 /* Post.swift */; };
@@ -20,7 +22,6 @@
 		87221A1120F073F2000A00F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87221A1020F073F2000A00F7 /* Assets.xcassets */; };
 		87221A1420F073F2000A00F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87221A1220F073F2000A00F7 /* LaunchScreen.storyboard */; };
 		87221A1E20F195B0000A00F7 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87221A1D20F195B0000A00F7 /* CameraViewController.swift */; };
-		87221A2220F195C2000A00F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87221A2120F195C2000A00F7 /* Main.storyboard */; };
 		875691A92101009000284EA3 /* Pods_Flokk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 453D587CDE3B8763B595800A /* Pods_Flokk.framework */; };
 		87706DAD20F960B200663948 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 87706DAC20F960B200663948 /* .gitignore */; };
 /* End PBXBuildFile section */
@@ -33,6 +34,8 @@
 		7F8012A82100F69800CEA5DA /* JosefinSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JosefinSans-Regular.ttf"; sourceTree = "<group>"; };
 		7F8012B3210123B000CEA5DA /* BounceButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BounceButton.swift; sourceTree = "<group>"; };
 		7F8012BA2102CBF200CEA5DA /* Camera.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Camera.storyboard; sourceTree = "<group>"; };
+		7F912B972110DB8E00ADABEE /* Groups.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Groups.storyboard; sourceTree = "<group>"; };
+		7F912B9B211114E000ADABEE /* Next.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Next.storyboard; sourceTree = "<group>"; };
 		8711A830210D468F00CCFD38 /* Feed.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Feed.storyboard; sourceTree = "<group>"; };
 		8711A835210D478C00CCFD38 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		8711A838210D47CD00CCFD38 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
@@ -47,7 +50,6 @@
 		87221A1320F073F2000A00F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		87221A1520F073F2000A00F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		87221A1D20F195B0000A00F7 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
-		87221A2120F195C2000A00F7 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		87706DAC20F960B200663948 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -158,7 +160,8 @@
 				8711A837210D47C400CCFD38 /* Framework */,
 				7F8012BA2102CBF200CEA5DA /* Camera.storyboard */,
 				8711A830210D468F00CCFD38 /* Feed.storyboard */,
-				87221A2120F195C2000A00F7 /* Main.storyboard */,
+				7F912B972110DB8E00ADABEE /* Groups.storyboard */,
+				7F912B9B211114E000ADABEE /* Next.storyboard */,
 				87221A1020F073F2000A00F7 /* Assets.xcassets */,
 				8711A83C210EABBF00CCFD38 /* clip1.m4v */,
 				8711A83E2110F73200CCFD38 /* clip2.mov */,
@@ -235,12 +238,12 @@
 			files = (
 				8711A83D210EABDA00CCFD38 /* clip1.m4v in Resources */,
 				87706DAD20F960B200663948 /* .gitignore in Resources */,
-				87221A2220F195C2000A00F7 /* Main.storyboard in Resources */,
-				8711A83F2110F73300CCFD38 /* clip2.mov in Resources */,
 				8711A831210D468F00CCFD38 /* Feed.storyboard in Resources */,
 				87221A1420F073F2000A00F7 /* LaunchScreen.storyboard in Resources */,
 				87221A1120F073F2000A00F7 /* Assets.xcassets in Resources */,
 				7F8012BB2102CBF200CEA5DA /* Camera.storyboard in Resources */,
+				7F912B9C211114E000ADABEE /* Next.storyboard in Resources */,
+				7F912B982110DB8E00ADABEE /* Groups.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
