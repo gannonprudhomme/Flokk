@@ -7,10 +7,14 @@
 //
 
 import UIKit
+import AVFoundation
 
 class FeedTableViewCell: UITableViewCell {
     @IBOutlet weak var mainView: UIView!
-    fileprivate var post: Post! // THe post this cell is representing
+    var post: Post! // THe post this cell is representing
+    
+    let avPlayer = AVPlayer()
+    var avPlayerLayer: AVPlayerLayer! = nil
     
     internal var aspectConstraint: NSLayoutConstraint? {
         didSet {
@@ -34,7 +38,7 @@ class FeedTableViewCell: UITableViewCell {
         
         // What would need to be done here?
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
@@ -43,12 +47,22 @@ class FeedTableViewCell: UITableViewCell {
 // MARK: - Loading functions
 extension FeedTableViewCell {
     func setAspectRatio() {
-        let aspect = self.post.dimensions?.width;  self.post.dimensions?.height
-        let constraint = NSLayoutConstraint(item: mainView, attribute: NSLayoutAttribute.width, relatedBy: NSLayoutRelation.equal, toItem: mainView, attribute: NSLayoutAttribute.height, multiplier: CGFloat(aspect!), constant: 0.0)
+        // Calculate the aspect ratio of the video/post
+        let width: Int = (self.post.dimensions?.width)!
+        let height: Int = (self.post.dimensions?.height)!
+        let aspect: Float = Float(width) / Float(height)
+        
+        // Create the aspect ratio constraint, which resizes this cell's height
+        let constraint = NSLayoutConstraint(item: mainView, attribute: NSLayoutAttribute.width, relatedBy: NSLayoutRelation.equal, toItem: mainView, attribute: NSLayoutAttribute.height, multiplier: CGFloat(aspect), constant: 0.0)
         
         constraint.priority = UILayoutPriority(rawValue: 999)
         
+        aspectConstraint = constraint
         
+        // Recalculate the height for the view itself
+        // The AVPlayer's bounds are detetmined by the mainView, without this the cell would be the right size
+        // but the video would be cut too short
+        mainView.bounds.size = CGSize(width: mainView.bounds.width, height: mainView.bounds.width / CGFloat(aspect))
     }
     
     // Set the preview image on the view
@@ -63,7 +77,23 @@ extension FeedTableViewCell {
     func addVideoToView() {
         // If there was a preview image, remove it from the mainView
         
-        // Initialize & setup AVPlayer
+        // Calculate the aspect constraint
+        setAspectRatio()
         
+        // Initialize & setup AVPlayer
+        avPlayerLayer = AVPlayerLayer(player: avPlayer)
+        avPlayerLayer.frame = self.mainView.bounds
+        avPlayerLayer.videoGravity = .resizeAspectFill
+        self.mainView.layer.insertSublayer(avPlayerLayer, at: 0)
+        
+        let playerItem = AVPlayerItem(url: self.post.fileURL!)
+        avPlayer.replaceCurrentItem(with: playerItem)
+        avPlayer.play()
+    }
+    
+    func resolutionForLocalVideo(url: URL) -> CGSize? {
+        guard let track = AVURLAsset(url: url).tracks(withMediaType: AVMediaType.video).first else { return nil }
+        let size = track.naturalSize.applying(track.preferredTransform)
+        return CGSize(width: fabs(size.width), height: fabs(size.height))
     }
 }

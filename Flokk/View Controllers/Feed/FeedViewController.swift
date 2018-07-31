@@ -11,13 +11,22 @@ import UIKit
 let initialPostsCount = 5
 
 class FeedViewController: UIViewController {
+    @IBOutlet weak var tableView: UITableView!
+    
     // Serves as a queue / priority queue?
     // Sorted by date, although hopefully Firebase fills it sorted automatically
-    var posts: [Post]!
+    var posts = [Post]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.delegate = self
+        tableView.dataSource = self
 
+        fillEmptyPosts()
+        
+        self.tableView.reloadData()
+        
         // Load initial amount of posts
         
         // Add listener for new posts
@@ -52,12 +61,18 @@ extension FeedViewController {
     }
     
     // When we scroll down past a certain point, load more posts
+    // Completion handler?
     func loadMorePosts() {
         
     }
     
     // Temporary function to fill in the posts
     fileprivate func fillEmptyPosts() {
+        var videoURL = Bundle.main.path(forResource: "clip1", ofType: "m4v")
+        
+        let post = Post(url: URL(fileURLWithPath: videoURL!), dimensions: Dimensions(width: 1920, height: 1080), timestamp: 0)
+        
+        self.posts.append(post)
         
     }
 }
@@ -65,7 +80,14 @@ extension FeedViewController {
 // MARK: - Table View Functions
 extension FeedViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "default", for: indexPath as IndexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "default", for: indexPath as IndexPath) as! FeedTableViewCell
+        
+        cell.post = self.posts[indexPath.row]
+        cell.addVideoToView()
+        
+        
+        
+        //cell.addVideoToView()
         
         return cell
     }
