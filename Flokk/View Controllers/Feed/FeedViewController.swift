@@ -52,6 +52,14 @@ class FeedViewController: UIViewController {
         super.viewDidDisappear(animated)
         
         // Stop the new posts listener
+        
+        // Stop the videos from being played
+    }
+    
+    @IBAction func addPostPressed(_ sender: Any) {
+        let vc = UIStoryboard(name: "Camera", bundle: nil).instantiateViewController(withIdentifier: "CameraNavigatonController")
+        
+        self.present(vc, animated: true, completion: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -59,7 +67,7 @@ class FeedViewController: UIViewController {
     }
 }
 
-// MARK: Stuff
+// MARK: - Post Handling
 extension FeedViewController {
     // Initial post loading
     func loadPosts() {
@@ -80,7 +88,6 @@ extension FeedViewController {
         var indexPaths = [IndexPath]()
         // currentPostCount is a size(aka size of 1 = index of 0), so i starts at 0
         for i in 0..<postDiff {
-            print("adding \(currentPostCount + i)")
             indexPaths.append(IndexPath(row: currentPostCount + i, section: 0))
         }
         

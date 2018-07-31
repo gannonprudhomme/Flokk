@@ -15,7 +15,7 @@
         <!--Camera View Controller-->
         <scene sceneID="Y5a-M2-bkY">
             <objects>
-                <viewController id="OKf-5s-7N5" customClass="CameraViewController" customModule="Flokk" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CameraViewController" id="OKf-5s-7N5" customClass="CameraViewController" customModule="Flokk" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1B9-vK-nUI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -69,6 +69,9 @@
                         <barButtonItem key="backBarButtonItem" title=" " id="P4U-7Y-S7i"/>
                         <barButtonItem key="leftBarButtonItem" title="Item" image="exitBttnWhite" id="awb-rZ-Wo5">
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="exitButtonPressed:" destination="OKf-5s-7N5" id="9po-cb-bZg"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="rotateCameraBttn" id="NVi-YF-g6k">
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -194,7 +197,7 @@
         <!--Navigation Controller-->
         <scene sceneID="Fby-Ev-NNC">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="phD-lm-FPK" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="CameraNavigatonController" automaticallyAdjustsScrollViewInsets="NO" id="phD-lm-FPK" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" backIndicatorImage="backBttnWhite" backIndicatorTransitionMaskImage="backBttnWhite" id="QOJ-JD-ESG">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -266,7 +269,7 @@
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="rud-a2-bk4"/>
+        <segue reference="CXZ-n3-mUG"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

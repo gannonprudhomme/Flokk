@@ -28,12 +28,44 @@ class VideoTrimmerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //videoURL = URL(string: "http://devimages.apple.com/iphone/samples/bipbop/bipbopall.m3u8")
+        addVideo()
         
+        // Video Range Slider set up
+        rangeSlider.setVideoURL(videoURL: videoURL)
+        rangeSlider.delegate = self
+        rangeSlider.minSpace = 6
+        rangeSlider.maxSpace = 6
+        rangeSlider.setStartPosition(seconds: 0)
+        rangeSlider.setEndPosition(seconds: 6) // What if it's not long enough?
+        
+        // Why do we need to do this here
+        restartVideo()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        //addVideo()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        avPlayer.pause()
+        
+        // Would have to create avplayer in viewDidAppear in order to do below
+        //removeVideo()
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    func addVideo() {
         avPlayer = AVPlayer()
         
         // Add the callback function to the AVPlayer to make it loop
-        NotificationCenter.default.addObserver(self, selector: #selector(self.restartVideo), name: Notification.Name.AVPlayerItemDidPlayToEndTime, object: avPlayer.currentItem)
+        NotificationCenter.default.addObserver(self, selector: #selector(VideoTrimmerViewController.restartVideo), name: Notification.Name.AVPlayerItemDidPlayToEndTime, object: avPlayer.currentItem)
         
         // Set up the AVPlayer to play the video
         avPlayerLayer = AVPlayerLayer(player: avPlayer)
@@ -49,38 +81,27 @@ class VideoTrimmerViewController: UIViewController {
         // Start playing the video
         avPlayer.play()
         
-        // Video Range Slider set up
-        rangeSlider.setVideoURL(videoURL: videoURL)
-        rangeSlider.delegate = self
-        rangeSlider.minSpace = 6
-        rangeSlider.maxSpace = 6
-        rangeSlider.setStartPosition(seconds: 0)
-        rangeSlider.setEndPosition(seconds: 6) // What if it's not long enough?
-        
         // Create and start a timer to update the progress indicator, wherever the video is currently
-        progressTimer = Timer.scheduledTimer(timeInterval: 0.05, target: self, selector: #selector(VideoTrimmerViewController.updateProgressIndicator), userInfo: nil, repeats: true)
+        progressTimer = Timer.scheduledTimer(timeInterval: 0.05, target: self, selector: #selector(self.updateProgressIndicator), userInfo: nil, repeats: true)
         progressTimer.fire()
-        
-        // WHy do we need to do this here
-        self.restartVideo()
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
+    func removeVideo() {
+        if avPlayer != nil {
+            avPlayer.pause()
+            avPlayerLayer.removeFromSuperlayer()
+            avPlayer = nil
+        }
         
-        // Need to set AVPlayer to nil to (possibly) prevent a memory leak
-        avPlayer.pause()
         progressTimer.invalidate()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
     }
     
     // Loops the video once it has ended
     @objc func restartVideo() {
-        avPlayer.seek(to: CMTime(seconds: startTime, preferredTimescale: 1000));
-        avPlayer.play();
+        if avPlayer != nil {
+            avPlayer.seek(to: CMTime(seconds: startTime, preferredTimescale: 1000));
+            avPlayer.play();
+        }
     }
     
     @IBAction func doneTrimmingPressed(_ sender: Any) {
@@ -177,17 +198,19 @@ extension VideoTrimmerViewController : ABVideoRangeSliderDelegate {
     // Update the progress indicator's location
     // (not a delegate function)
     @objc func updateProgressIndicator() {
-        let currentTime = self.avPlayer.currentTime().seconds
-        //print("\(currentTime) Start: \(startTime!) End: \(endTime!)")
-        
-        if currentTime > startTime && currentTime < endTime {
-            self.rangeSlider.updateProgressIndicator(seconds: currentTime)
-        }
-        
-        // Also check if the avplayer has reached the endTime
-        // If so, restart the video to play at startTime
-        if currentTime >= endTime {
-            self.restartVideo()
+        if avPlayer != nil {
+            let currentTime = self.avPlayer.currentTime().seconds
+            //print("\(currentTime) Start: \(startTime!) End: \(endTime!)")
+            
+            if currentTime > startTime && currentTime < endTime {
+                self.rangeSlider.updateProgressIndicator(seconds: currentTime)
+            }
+            
+            // Also check if the avplayer has reached the endTime
+            // If so, restart the video to play at startTime
+            if currentTime >= endTime {
+                self.restartVideo()
+            }
         }
     }
 }

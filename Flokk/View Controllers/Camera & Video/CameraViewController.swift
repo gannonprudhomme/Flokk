@@ -42,7 +42,6 @@ class CameraViewController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Initially hide the done button
         //flashButton.isHidden = true
         
         // Configure the capture session
@@ -95,6 +94,10 @@ class CameraViewController : UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        // Reset the record button incase the user goes back from VideoPlaybackVC
+        self.progress = 0
+        self.recordButton.setProgress(progress)
+        
         // Attempt to start the camera when the view appears
         // Fails on first launch, as authorization for camera & microphone is needed
         if NextLevel.shared.authorizationStatus(forMediaType: AVMediaType.video) == .authorized && NextLevel.shared.authorizationStatus(forMediaType: AVMediaType.audio) == .authorized {
@@ -105,8 +108,8 @@ class CameraViewController : UIViewController {
             }
         } else { // If not authorized, attempt to
             AVCaptureDevice.requestAccess(for: AVMediaType.video, completionHandler: { result in })
+            
             AVCaptureDevice.requestAccess(for: AVMediaType.audio, completionHandler: { result in
-                
                 // Once we've authorized both audio and video, attempt to start the camera again
                 do {
                     try NextLevel.shared.start()
@@ -122,8 +125,8 @@ class CameraViewController : UIViewController {
         NextLevel.shared.stop()
         
         // Reset the record button incase the user goes back from VideoPlaybackVC
-        self.progress = 0
-        self.recordButton.setProgress(progress)
+        //self.progress = 0
+        //self.recordButton.setProgress(progress)
     }
     
     @IBAction func photoLibraryPressed(_ sender: Any) {
@@ -146,6 +149,10 @@ class CameraViewController : UIViewController {
     
     @IBAction func switchCameraPressed(_ sender: Any) {
         NextLevel.shared.flipCaptureDevicePosition()
+    }
+    
+    @IBAction func exitButtonPressed(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

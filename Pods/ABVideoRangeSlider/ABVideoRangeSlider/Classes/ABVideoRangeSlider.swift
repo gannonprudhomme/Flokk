@@ -69,21 +69,22 @@ public class ABVideoRangeSlider: UIView {
         
         // Setup Start Indicator
         
-        let startDrag = UIPanGestureRecognizer(target:self,
-                                               action: #selector(startDragged(recognizer:)))
+        let startDrag = UIPanGestureRecognizer(target:self, action: #selector(viewDragged(recognizer:)))
+        //let startDrag = UIPanGestureRecognizer(target:self, action: #selector(startDragged(recognizer:)))
         
         startIndicator = ABStartIndicator(frame: CGRect(x: 0, y: -topBorderHeight, width: 20, height: self.frame.size.height + bottomBorderHeight + topBorderHeight))
         startIndicator.layer.anchorPoint = CGPoint(x: 1, y: 0.5)
-        //startIndicator.addGestureRecognizer(startDrag)
+        startIndicator.addGestureRecognizer(startDrag)
         self.addSubview(startIndicator)
         
         // Setup End Indicator
         
-        let endDrag = UIPanGestureRecognizer(target:self, action: #selector(endDragged(recognizer:)))
+        let endDrag = UIPanGestureRecognizer(target:self, action: #selector(viewDragged(recognizer:)))
+        //let endDrag = UIPanGestureRecognizer(target:self, action: #selector(endDragged(recognizer:)))
         
         endIndicator = ABEndIndicator(frame: CGRect(x: 0, y: -topBorderHeight, width: indicatorWidth,  height: self.frame.size.height + bottomBorderHeight + topBorderHeight))
         endIndicator.layer.anchorPoint = CGPoint(x: 0, y: 0.5)
-        //endIndicator.addGestureRecognizer(endDrag)
+        endIndicator.addGestureRecognizer(endDrag)
         self.addSubview(endIndicator)
 
 
@@ -108,14 +109,13 @@ public class ABVideoRangeSlider: UIView {
         
         // Setup Progress Indicator
         
-        let progressDrag = UIPanGestureRecognizer(target:self,
-                                                  action: #selector(progressDragged(recognizer:)))
+        let progressDrag = UIPanGestureRecognizer(target:self, action: #selector(progressDragged(recognizer:)))
         
         progressIndicator = ABProgressIndicator(frame: CGRect(x: 0,
                                                               y: -topBorderHeight,
                                                               width: 10,
                                                               height: self.frame.size.height + bottomBorderHeight + topBorderHeight))
-        progressIndicator.addGestureRecognizer(progressDrag)
+        //progressIndicator.addGestureRecognizer(progressDrag)
         self.addSubview(progressIndicator)
         
         // Setup Draggable View

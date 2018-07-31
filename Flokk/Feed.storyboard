@@ -59,7 +59,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
                                 <state key="normal" image="addPostBttn"/>
                                 <connections>
-                                    <action selector="addPostBttn:" destination="oYP-pD-vul" eventType="touchUpInside" id="2LF-zc-MrG"/>
+                                    <action selector="addPostPressed:" destination="oYP-pD-vul" eventType="touchUpInside" id="mIN-pB-gFR"/>
                                 </connections>
                             </button>
                         </subviews>

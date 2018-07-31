@@ -3,7 +3,7 @@ import AVFoundation
 
 class VideoPlaybackViewController: UIViewController {
     
-    let avPlayer = AVPlayer()
+    var avPlayer: AVPlayer!
     var avPlayerLayer: AVPlayerLayer!
     
     var videoURL: URL!
@@ -14,10 +14,26 @@ class VideoPlaybackViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Add the callback function to the av player
-        NotificationCenter.default.addObserver(self, selector: #selector(self.restartVideo), name: Notification.Name.AVPlayerItemDidPlayToEndTime, object: avPlayer.currentItem)
+        addVideo()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
-        //videoURL = URL(string: "http://devimages.apple.com/iphone/samples/bipbop/bipbopall.m3u8")
+        //addVideo()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        //removeVideo()
+    }
+    
+    func addVideo() {
+        avPlayer = AVPlayer()
+        
+        // Add the callback function to the av player for looping the video once it's ended
+        NotificationCenter.default.addObserver(self, selector: #selector(VideoPlaybackViewController.restartVideo), name: Notification.Name.AVPlayerItemDidPlayToEndTime, object: avPlayer.currentItem)
         
         avPlayerLayer = AVPlayerLayer(player: avPlayer)
         avPlayerLayer.frame = self.videoView.bounds
@@ -32,18 +48,21 @@ class VideoPlaybackViewController: UIViewController {
         avPlayer.play()
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-        avPlayer.pause()
-        // Need to set AVPlayer to nil to (possibly) prevent a memory leak
+    func removeVideo() {
+        if avPlayer != nil {
+            avPlayer.pause()
+            avPlayerLayer.removeFromSuperlayer()
+            avPlayer = nil
+        }
     }
     
     // Callback function for when the video ends
     // Activates the replay button, or loops again automatically
     @objc func restartVideo() {
-        avPlayer.seek(to: CMTime(seconds: 0, preferredTimescale: 1));
-        avPlayer.play();
+        if avPlayer != nil {
+            avPlayer.seek(to: CMTime(seconds: 0, preferredTimescale: 1000));
+            avPlayer.play();
+        }
     }
     
     @IBAction func donePressed(_ sender: Any) {
