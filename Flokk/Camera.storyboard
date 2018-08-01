@@ -236,7 +236,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RoF-g3-SNb">
-                                            <rect key="frame" x="8" y="8" width="153" height="211"/>
+                                            <rect key="frame" x="8" y="7.5" width="153" height="211"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="153" id="KaL-12-yHT"/>
                                                 <constraint firstAttribute="height" constant="211" id="vDs-JC-8GW"/>

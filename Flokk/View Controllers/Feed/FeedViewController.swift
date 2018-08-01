@@ -107,7 +107,6 @@ extension FeedViewController {
         let video1URL = Bundle.main.path(forResource: "clip1", ofType: "m4v")
         let video2URL = Bundle.main.path(forResource: "clip2", ofType: "mov")
         
-        
         let post1 = Post(url: URL(fileURLWithPath: video1URL!), dimensions: Dimensions(width: 1920, height: 1080), timestamp: 0)
         let post2 = Post(url: URL(fileURLWithPath: video2URL!), dimensions: Dimensions(width: 1080, height: 1920), timestamp: 0)
         
