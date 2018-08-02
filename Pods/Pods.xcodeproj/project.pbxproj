@@ -3,72 +3,81 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 48;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		08092F209A28AF2BFFA2B5994158E365 /* NextLevel+Metadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6446D83CC63B33B8C164D504CE3E2B7 /* NextLevel+Metadata.swift */; };
-		087EC2610C4F4BD2AAF6340826683DBB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 908E902E026C5C22904CF9014A5604AD /* Foundation.framework */; };
-		0A29F9F35361C218A6F5C8EE1096225A /* ABStartIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FC633399E6295636743D3204B9A5DD /* ABStartIndicator.swift */; };
-		0B9F3A8232263C444D2D061888CF8A4B /* RecordButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2004C103A6C451DEF88EE5C37B4206CF /* RecordButton.swift */; };
-		18E4C3331B41A08A7991582BF7BD7C0E /* NextLevel-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 349F8F04A7D185AD335E92D9B43C96ED /* NextLevel-dummy.m */; };
-		1A3A4E1AE520A8E774188A408AFFEF5A /* NextLevel-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E36D48CB8ADA56E2FA20C164CFF9FCB9 /* NextLevel-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		30EC492314C50DAADF24B5AF5E8B8B81 /* Pods-Flokk-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7AAC12FE2739F4643DCAF263819202 /* Pods-Flokk-dummy.m */; };
-		38E070F7C55A8AC6D708A89A7A947D52 /* ABThumbnailsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F2FA246FFBFAA7831326C880185EA1 /* ABThumbnailsManager.swift */; };
-		3A233D82744ED38EE3DD8EAA00E18B11 /* NextLevelSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B9D8DDDB59E9051372DD583999D291 /* NextLevelSession.swift */; };
-		4B22D4909E41A71B2865330B71BE31FC /* RecordButton-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3901BE08FE35BEF6573D5C9F8A0EFB7A /* RecordButton-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4D71B66A1497CB5E7C3C6EAA61058717 /* ABBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220DE552A9A247BA4A7EA63344864A00 /* ABBorder.swift */; };
-		5D0F4A10725EBF1DAE8C0C4E222BD5A6 /* ABProgressIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02083AC0C8E130307603A050910581DB /* ABProgressIndicator.swift */; };
-		728E447BFFE943550FACAE6ED6A361FA /* NextLevel+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B5F75DB51A27AAF09997F62A62C863 /* NextLevel+UIImage.swift */; };
-		7E546514A4B72781B59E8CDA6327EEB4 /* ABEndIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEEEA5A16F93419A095178D427D4413 /* ABEndIndicator.swift */; };
-		7F4F0C0B2109753D0073A8A0 /* EndIndicatorWhite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F4F0C072109753B0073A8A0 /* EndIndicatorWhite.png */; };
-		7F4F0C0C2109753D0073A8A0 /* BorderLineWhite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F4F0C082109753C0073A8A0 /* BorderLineWhite.png */; };
-		7F4F0C0D2109753D0073A8A0 /* ProgressIndicatorTeal.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F4F0C092109753C0073A8A0 /* ProgressIndicatorTeal.png */; };
-		7F4F0C0E2109753D0073A8A0 /* StartIndicatorWhite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F4F0C0A2109753C0073A8A0 /* StartIndicatorWhite.png */; };
-		868377463EDF6784964A58CF9FA36439 /* NextLevel+CoreImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5205053C46A6A479DA61070291B262F /* NextLevel+CoreImage.swift */; };
-		868A9A9F7DB5CF75CC49F16FC6CB71CC /* NextLevel+AVFoundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0629382755ACFC26C582D3F44D67D994 /* NextLevel+AVFoundation.swift */; };
-		8B35DEAFF758009C06DA8B409014F838 /* ABVideoRangeSlider-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4ABA72E705D428E1FDC9E20E0BFEA287 /* ABVideoRangeSlider-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8EB02CE90E0D1880D7B14C9612E42768 /* NextLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2077134B867114D144BEFB2FA1A2BE /* NextLevel.swift */; };
+		08092F209A28AF2BFFA2B5994158E365 /* NextLevel+Metadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48826AA82CDC2E866B23C8BABF396B74 /* NextLevel+Metadata.swift */; };
+		18E4C3331B41A08A7991582BF7BD7C0E /* NextLevel-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4769D3DDD49645391DE0B7D422B06BB2 /* NextLevel-dummy.m */; };
+		1A3A4E1AE520A8E774188A408AFFEF5A /* NextLevel-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 23CD45BC065E1177B7B1C3EED407A05A /* NextLevel-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		200CCFC824646DBF71D9AF8EFB733F47 /* ABTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21649852B2D404B078D1DC3CD6ECBCA9 /* ABTimeView.swift */; };
+		34FDD81BE46544293BFD518259B3770A /* ABThumbnailsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F044118D85A8B1B702A5B890C42F51 /* ABThumbnailsManager.swift */; };
+		3A233D82744ED38EE3DD8EAA00E18B11 /* NextLevelSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A748B3D371391E57254849FA4C5812 /* NextLevelSession.swift */; };
+		417F82EE7A529242C9E28B2CC1AB6BDE /* ABVideoRangeSlider.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 72A9EC9ED5A83988CE792ACBBE8F3BB7 /* ABVideoRangeSlider.bundle */; };
+		515015E3D6C8DB4147637BD2EB84DB7F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 908E902E026C5C22904CF9014A5604AD /* Foundation.framework */; };
+		53C4C345BD49E0FEC9CC1DFD31CAF5AC /* SwiftVideoBackground-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 83D3CBE8237AC9487C0F9B4559A54387 /* SwiftVideoBackground-dummy.m */; };
+		59942672BD6BC3B62125E07C1746AC55 /* VideoBackgroundError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C79978EF4A23C225C2FE162D53D706 /* VideoBackgroundError.swift */; };
+		728E447BFFE943550FACAE6ED6A361FA /* NextLevel+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAC1C3137AF9E423884EF5E79BD9A7E /* NextLevel+UIImage.swift */; };
+		7AE05EB20C031BD8F4FA4AE5EB842DCD /* ABVideoHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC36C52A733F4924D1324EE84B2B674A /* ABVideoHelper.swift */; };
+		868377463EDF6784964A58CF9FA36439 /* NextLevel+CoreImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323DC18191CF802EA38431EB70D12495 /* NextLevel+CoreImage.swift */; };
+		868A9A9F7DB5CF75CC49F16FC6CB71CC /* NextLevel+AVFoundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02E22D624F616646F66F0F227D59E0D /* NextLevel+AVFoundation.swift */; };
+		876CC96F3F4005FADB2134D80546A2C0 /* SwiftVideoBackground-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 30805AC193E4BF4628E214AAFA3D29C4 /* SwiftVideoBackground-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8CD1CA969404623D668F0AADA2A35F5E /* VideoBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31852178307ECAF2A2707855F813EDFD /* VideoBackground.swift */; };
+		8EB02CE90E0D1880D7B14C9612E42768 /* NextLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EAD7E0826EC1138DD05B75D9E9563FF /* NextLevel.swift */; };
+		8FDB171B9A3FB9BFF9B63EFD4640CA9A /* ABEndIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C170C82C057E63D697B09A9E02249E6 /* ABEndIndicator.swift */; };
 		90872A89414125B319B310BC26CE533A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 908E902E026C5C22904CF9014A5604AD /* Foundation.framework */; };
-		95A4C5B683CE47ED6073AF564E18CA15 /* NextLevel+CoreMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB3C552E7EA78C425121B3622A21216 /* NextLevel+CoreMedia.swift */; };
-		96E54C5B7F55A160AB4179477AC3E685 /* ABVideoRangeSlider.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D882744755036D782486BA2564BCB357 /* ABVideoRangeSlider.bundle */; };
-		A660B0629E5268403D15B208D0656B3A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 908E902E026C5C22904CF9014A5604AD /* Foundation.framework */; };
-		AB473211F7FB145326E75CA0A33C7204 /* NextLevelClip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484F15A198D7F49E3366F0B3C2C27C24 /* NextLevelClip.swift */; };
-		ABFF94C55128AA6100B7B158CD221BDF /* ABTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E0238AFC863E9B922B7C7E53E50922 /* ABTimeView.swift */; };
-		AD255737CC1E3DB5D5CAC53D5AADA363 /* NextLevel+Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034D026B84FBD9D65564FE69C49366AE /* NextLevel+Foundation.swift */; };
-		B4B6F08A7ED1B12CCF033DFAD2C9927D /* ABVideoHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C2BDEF42B71FDFD104FD45DE8F7FE5 /* ABVideoHelper.swift */; };
-		CC9E89A3CD89862400C315D344635C4F /* NextLevelConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D3DCD19F255212D216162B1FED9B95 /* NextLevelConfiguration.swift */; };
-		DAAF6873ABD6193119C0DFDCB466C149 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 908E902E026C5C22904CF9014A5604AD /* Foundation.framework */; };
-		E0C166AAF537D3DEF6EB77163341385D /* Pods-Flokk-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AA8E4FA8B95BCB0B6C58AC78C6F1F44 /* Pods-Flokk-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E15A89992462AEEB8211187C14DE2D2C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC2C02191C153C1554B35DEE8B2D09D4 /* UIKit.framework */; };
-		E71CFF126D2781C57FA879AD56B6DAEF /* RecordButton-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DF8304C87077BE6262F0CCC905E3C5F5 /* RecordButton-dummy.m */; };
-		EE26FFABF48C47D6B82E7ACA50B01875 /* ABVideoRangeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA62F9008BE61F37C3DC3122F6C5E78E /* ABVideoRangeSlider.swift */; };
-		F0B333E2E75105435832C44DE3567BC4 /* ABVideoRangeSlider-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A51914ABA6A9C98E49001A93262D338C /* ABVideoRangeSlider-dummy.m */; };
+		95A4C5B683CE47ED6073AF564E18CA15 /* NextLevel+CoreMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691FEFA4A2AA29BBDBDD518773940D47 /* NextLevel+CoreMedia.swift */; };
+		9B048F4043D4998F4C193D5F0CDB3F61 /* Pods-Flokk-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AA8E4FA8B95BCB0B6C58AC78C6F1F44 /* Pods-Flokk-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A3B99DB4214D0F09B13A19BB676290AC /* RecordButton-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C3084550570F35053F167A93C6B5D1DF /* RecordButton-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A63ADE0A5F31FB44670EB49D35A347F9 /* Pods-Flokk-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7AAC12FE2739F4643DCAF263819202 /* Pods-Flokk-dummy.m */; };
+		AB473211F7FB145326E75CA0A33C7204 /* NextLevelClip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44ACD921E6F46A23C43716F426388E86 /* NextLevelClip.swift */; };
+		AD255737CC1E3DB5D5CAC53D5AADA363 /* NextLevel+Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96DFEC1749BA8E78147855B05880D75 /* NextLevel+Foundation.swift */; };
+		AEC67D38159FC29DD24B34F5E2396147 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC2C02191C153C1554B35DEE8B2D09D4 /* UIKit.framework */; };
+		B69D3245354D786FC311025A75594A49 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 908E902E026C5C22904CF9014A5604AD /* Foundation.framework */; };
+		BBF8EC875E579D78481308A0C20753A8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 908E902E026C5C22904CF9014A5604AD /* Foundation.framework */; };
+		BE1E8B172558FD9F91BD61312A2E6D12 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 908E902E026C5C22904CF9014A5604AD /* Foundation.framework */; };
+		C3BBA596EAD9532D712E9597F40D092A /* RecordButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC3F12718C8AA06B0B4BCD38F7234F5 /* RecordButton.swift */; };
+		C71D2B208C6914AE58935B82CE4371ED /* ABBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4F3E85303DF6A1D576FE213EDDA0DA /* ABBorder.swift */; };
+		CC9E89A3CD89862400C315D344635C4F /* NextLevelConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B81BF5C2450B53B988F1FAA5036CC48 /* NextLevelConfiguration.swift */; };
+		CE63984AB70B0400FEE05D7F36461C2E /* ABStartIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5617EE4130B1BA89459B78170C98D72B /* ABStartIndicator.swift */; };
+		D19C3EEFDF69EA1A6CD538A3EE7F89A1 /* ABProgressIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B70C1927C9B065C730F8C0CEC4EFC62 /* ABProgressIndicator.swift */; };
+		D46AC232F03D52A843DEC18AECF788DC /* RecordButton-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F655D4728BB9D2A6CDE07E2B8CA0511 /* RecordButton-dummy.m */; };
+		DE56E0D20A42DF819B9CA6C9F7421CF8 /* ABVideoRangeSlider-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CE68FF4AEBCD021B533AA730057158A /* ABVideoRangeSlider-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F077F1EEF617C5AE30A17FF413DD1D76 /* ABVideoRangeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F893C27FCBA9FF8F7163C3DC51C8A486 /* ABVideoRangeSlider.swift */; };
+		FCD772123A6F4157A765F056CFC583A3 /* SwiftVideoBackground.h in Headers */ = {isa = PBXBuildFile; fileRef = 32B6B9B38A37EE61446B3EB9F27CE67F /* SwiftVideoBackground.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FE28BE4272E9C1B62AF17B413CDD7E55 /* ABVideoRangeSlider-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6083E2C908E9257F7AFA279725C8ADC5 /* ABVideoRangeSlider-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		024A4C98DA87A74423A6FF4FC2736ADF /* PBXContainerItemProxy */ = {
+		417C11E2E8BA7BC9B7D05706DA1ECF90 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = A0951EAB6192EB4079334F62CACB21D5;
-			remoteInfo = RecordButton;
-		};
-		14F524158088387D419B0C9288FB8F1B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 007FCD09B4D962F27B8D2342248E9318;
+			remoteGlobalIDString = C6456C8DB19B34E80A1E032D6F8914B3;
 			remoteInfo = "ABVideoRangeSlider-ABVideoRangeSlider";
 		};
-		7D0946CC55C0709B90182FB77DD5E86D /* PBXContainerItemProxy */ = {
+		5BF08466131E7E2257AC1FDFF8E65097 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 5681C12C2E05A7026DD6934FD7D8CB07;
+			remoteGlobalIDString = 7E260146DEB9BA59DDD7D815652790D5;
+			remoteInfo = RecordButton;
+		};
+		628606E8C8E4A84B41F9AA5F457E7AF9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1945A6F963B83F0FB3C24EA1BBDC0C59;
+			remoteInfo = SwiftVideoBackground;
+		};
+		A848D610669C30B54F34163D1588862A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 98C7D6FF97A403CF8ACDF8C123B2B178;
 			remoteInfo = ABVideoRangeSlider;
 		};
-		995404C23E7E5B1499B049621B94F09E /* PBXContainerItemProxy */ = {
+		FAF50419A8509C29DC26ACEFF810B2DE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
@@ -78,98 +87,104 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		02083AC0C8E130307603A050910581DB /* ABProgressIndicator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ABProgressIndicator.swift; path = ABVideoRangeSlider/Classes/ABProgressIndicator.swift; sourceTree = "<group>"; };
-		034D026B84FBD9D65564FE69C49366AE /* NextLevel+Foundation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NextLevel+Foundation.swift"; path = "Sources/NextLevel+Foundation.swift"; sourceTree = "<group>"; };
-		0629382755ACFC26C582D3F44D67D994 /* NextLevel+AVFoundation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NextLevel+AVFoundation.swift"; path = "Sources/NextLevel+AVFoundation.swift"; sourceTree = "<group>"; };
 		07EAB1CE128DAAF04B14A4B1D05F860E /* Pods-Flokk-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Flokk-acknowledgements.plist"; sourceTree = "<group>"; };
-		1C328B41DBF0F0BDBADA2474CFD4A905 /* RecordButton-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RecordButton-prefix.pch"; sourceTree = "<group>"; };
-		1EB3C552E7EA78C425121B3622A21216 /* NextLevel+CoreMedia.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NextLevel+CoreMedia.swift"; path = "Sources/NextLevel+CoreMedia.swift"; sourceTree = "<group>"; };
-		2004C103A6C451DEF88EE5C37B4206CF /* RecordButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RecordButton.swift; path = Pod/Classes/RecordButton.swift; sourceTree = "<group>"; };
-		220DE552A9A247BA4A7EA63344864A00 /* ABBorder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ABBorder.swift; path = ABVideoRangeSlider/Classes/ABBorder.swift; sourceTree = "<group>"; };
-		25B91B64E77868CBEFDE52DFFBE6C048 /* ABVideoRangeSlider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ABVideoRangeSlider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		28B9D8DDDB59E9051372DD583999D291 /* NextLevelSession.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NextLevelSession.swift; path = Sources/NextLevelSession.swift; sourceTree = "<group>"; };
-		349F8F04A7D185AD335E92D9B43C96ED /* NextLevel-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NextLevel-dummy.m"; sourceTree = "<group>"; };
-		36BC1A77800537804D3C1B61DDBC7752 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		36D0C97931D48E7915C4738D63A678F1 /* NextLevel-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NextLevel-prefix.pch"; sourceTree = "<group>"; };
-		3901BE08FE35BEF6573D5C9F8A0EFB7A /* RecordButton-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RecordButton-umbrella.h"; sourceTree = "<group>"; };
-		39B5F75DB51A27AAF09997F62A62C863 /* NextLevel+UIImage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NextLevel+UIImage.swift"; path = "Sources/NextLevel+UIImage.swift"; sourceTree = "<group>"; };
-		4171800E049D5CBDF353317936E1AD68 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		438B0FC5B0AD9B78890E20992E35D756 /* NextLevel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NextLevel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		484F15A198D7F49E3366F0B3C2C27C24 /* NextLevelClip.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NextLevelClip.swift; path = Sources/NextLevelClip.swift; sourceTree = "<group>"; };
-		4ABA72E705D428E1FDC9E20E0BFEA287 /* ABVideoRangeSlider-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ABVideoRangeSlider-umbrella.h"; sourceTree = "<group>"; };
+		09CA5F83B821A1AA6AB5FDCFE38AF59E /* ABVideoRangeSlider.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ABVideoRangeSlider.xcconfig; sourceTree = "<group>"; };
+		0F655D4728BB9D2A6CDE07E2B8CA0511 /* RecordButton-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RecordButton-dummy.m"; sourceTree = "<group>"; };
+		10F044118D85A8B1B702A5B890C42F51 /* ABThumbnailsManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ABThumbnailsManager.swift; path = ABVideoRangeSlider/Classes/ABThumbnailsManager.swift; sourceTree = "<group>"; };
+		129AC299EA824877A568B8DA24847F9C /* NextLevel.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = NextLevel.xcconfig; sourceTree = "<group>"; };
+		14DBBECF7C0DCFFCBDAE9F441ABD04A4 /* ABVideoRangeSlider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ABVideoRangeSlider.framework; path = ABVideoRangeSlider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1633E72492CB3BFE3152E148B62C7D04 /* NextLevel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = NextLevel.framework; path = NextLevel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		17A748B3D371391E57254849FA4C5812 /* NextLevelSession.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NextLevelSession.swift; path = Sources/NextLevelSession.swift; sourceTree = "<group>"; };
+		19678FEA7BC2DCA3CEEA0B5A1CC763F0 /* ABVideoRangeSlider-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ABVideoRangeSlider-prefix.pch"; sourceTree = "<group>"; };
+		1B81BF5C2450B53B988F1FAA5036CC48 /* NextLevelConfiguration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NextLevelConfiguration.swift; path = Sources/NextLevelConfiguration.swift; sourceTree = "<group>"; };
+		1DAC1C3137AF9E423884EF5E79BD9A7E /* NextLevel+UIImage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NextLevel+UIImage.swift"; path = "Sources/NextLevel+UIImage.swift"; sourceTree = "<group>"; };
+		21649852B2D404B078D1DC3CD6ECBCA9 /* ABTimeView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ABTimeView.swift; path = ABVideoRangeSlider/Classes/ABTimeView.swift; sourceTree = "<group>"; };
+		23BE08944C849C10211F928C7EEC0E12 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		23CD45BC065E1177B7B1C3EED407A05A /* NextLevel-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NextLevel-umbrella.h"; sourceTree = "<group>"; };
+		2583E62E940F894FE813655A9D08F521 /* RecordButton-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RecordButton-prefix.pch"; sourceTree = "<group>"; };
+		30805AC193E4BF4628E214AAFA3D29C4 /* SwiftVideoBackground-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftVideoBackground-umbrella.h"; sourceTree = "<group>"; };
+		31852178307ECAF2A2707855F813EDFD /* VideoBackground.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VideoBackground.swift; path = SwiftVideoBackground/Sources/VideoBackground.swift; sourceTree = "<group>"; };
+		323DC18191CF802EA38431EB70D12495 /* NextLevel+CoreImage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NextLevel+CoreImage.swift"; path = "Sources/NextLevel+CoreImage.swift"; sourceTree = "<group>"; };
+		32B6B9B38A37EE61446B3EB9F27CE67F /* SwiftVideoBackground.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SwiftVideoBackground.h; path = SwiftVideoBackground/Sources/SwiftVideoBackground.h; sourceTree = "<group>"; };
+		3C170C82C057E63D697B09A9E02249E6 /* ABEndIndicator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ABEndIndicator.swift; path = ABVideoRangeSlider/Classes/ABEndIndicator.swift; sourceTree = "<group>"; };
+		43C371E9B69D3C1D384629C43556927F /* SwiftVideoBackground.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftVideoBackground.framework; path = SwiftVideoBackground.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		44ACD921E6F46A23C43716F426388E86 /* NextLevelClip.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NextLevelClip.swift; path = Sources/NextLevelClip.swift; sourceTree = "<group>"; };
+		4769D3DDD49645391DE0B7D422B06BB2 /* NextLevel-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NextLevel-dummy.m"; sourceTree = "<group>"; };
+		48826AA82CDC2E866B23C8BABF396B74 /* NextLevel+Metadata.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NextLevel+Metadata.swift"; path = "Sources/NextLevel+Metadata.swift"; sourceTree = "<group>"; };
 		5196344050CDAC1A4F889CD9BB816886 /* Pods-Flokk-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Flokk-resources.sh"; sourceTree = "<group>"; };
-		72D3DCD19F255212D216162B1FED9B95 /* NextLevelConfiguration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NextLevelConfiguration.swift; path = Sources/NextLevelConfiguration.swift; sourceTree = "<group>"; };
-		76C2BDEF42B71FDFD104FD45DE8F7FE5 /* ABVideoHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ABVideoHelper.swift; path = ABVideoRangeSlider/Classes/ABVideoHelper.swift; sourceTree = "<group>"; };
+		543B707F761C799C7226EC92F53EE77F /* ABVideoRangeSlider.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ABVideoRangeSlider.modulemap; sourceTree = "<group>"; };
+		5542983A9593FE525950199AA730083A /* RecordButton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = RecordButton.framework; path = RecordButton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5617EE4130B1BA89459B78170C98D72B /* ABStartIndicator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ABStartIndicator.swift; path = ABVideoRangeSlider/Classes/ABStartIndicator.swift; sourceTree = "<group>"; };
+		58823373CC44E369294CEABE57CA1BF5 /* SwiftVideoBackground.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftVideoBackground.modulemap; sourceTree = "<group>"; };
+		5BB86EC32CEF2C073CC0908E561229C5 /* SwiftVideoBackground-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftVideoBackground-prefix.pch"; sourceTree = "<group>"; };
+		6083E2C908E9257F7AFA279725C8ADC5 /* ABVideoRangeSlider-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ABVideoRangeSlider-dummy.m"; sourceTree = "<group>"; };
+		691FEFA4A2AA29BBDBDD518773940D47 /* NextLevel+CoreMedia.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NextLevel+CoreMedia.swift"; path = "Sources/NextLevel+CoreMedia.swift"; sourceTree = "<group>"; };
+		6B70C1927C9B065C730F8C0CEC4EFC62 /* ABProgressIndicator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ABProgressIndicator.swift; path = ABVideoRangeSlider/Classes/ABProgressIndicator.swift; sourceTree = "<group>"; };
+		72A9EC9ED5A83988CE792ACBBE8F3BB7 /* ABVideoRangeSlider.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = ABVideoRangeSlider.bundle; path = "ABVideoRangeSlider-ABVideoRangeSlider.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
 		798313B4B8F23311060E1C22643A27B9 /* Pods-Flokk-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Flokk-acknowledgements.markdown"; sourceTree = "<group>"; };
-		79C1E33A22175ACCA8D90C8B2D6F7E48 /* ResourceBundle-ABVideoRangeSlider-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-ABVideoRangeSlider-Info.plist"; sourceTree = "<group>"; };
 		7AA8E4FA8B95BCB0B6C58AC78C6F1F44 /* Pods-Flokk-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Flokk-umbrella.h"; sourceTree = "<group>"; };
+		7BC3F12718C8AA06B0B4BCD38F7234F5 /* RecordButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RecordButton.swift; path = Pod/Classes/RecordButton.swift; sourceTree = "<group>"; };
 		7C187CCE51DCAC8CDCEC4418B4915928 /* Pods-Flokk.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Flokk.modulemap"; sourceTree = "<group>"; };
-		7DF22E0C392735F00D715F6A7E56EC88 /* RecordButton.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = RecordButton.modulemap; sourceTree = "<group>"; };
-		7F4F0C072109753B0073A8A0 /* EndIndicatorWhite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EndIndicatorWhite.png; sourceTree = "<group>"; };
-		7F4F0C082109753C0073A8A0 /* BorderLineWhite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BorderLineWhite.png; sourceTree = "<group>"; };
-		7F4F0C092109753C0073A8A0 /* ProgressIndicatorTeal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ProgressIndicatorTeal.png; sourceTree = "<group>"; };
-		7F4F0C0A2109753C0073A8A0 /* StartIndicatorWhite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StartIndicatorWhite.png; sourceTree = "<group>"; };
-		88F2FA246FFBFAA7831326C880185EA1 /* ABThumbnailsManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ABThumbnailsManager.swift; path = ABVideoRangeSlider/Classes/ABThumbnailsManager.swift; sourceTree = "<group>"; };
-		8E091179E6ECC39D28F9CF2DE33F1ED9 /* ABVideoRangeSlider-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ABVideoRangeSlider-prefix.pch"; sourceTree = "<group>"; };
+		7EAD7E0826EC1138DD05B75D9E9563FF /* NextLevel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NextLevel.swift; path = Sources/NextLevel.swift; sourceTree = "<group>"; };
+		83D3CBE8237AC9487C0F9B4559A54387 /* SwiftVideoBackground-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftVideoBackground-dummy.m"; sourceTree = "<group>"; };
 		8F7AAC12FE2739F4643DCAF263819202 /* Pods-Flokk-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Flokk-dummy.m"; sourceTree = "<group>"; };
 		908E902E026C5C22904CF9014A5604AD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		9176B857363EEE5A72581D5FA249CF9D /* ABVideoRangeSlider.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ABVideoRangeSlider.xcconfig; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9551F3F37B3ADC753993DCDA35EC26B5 /* Pods-Flokk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Flokk.release.xcconfig"; sourceTree = "<group>"; };
+		9BEBC89418C0B58F7996FF483CE42E15 /* NextLevel.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = NextLevel.modulemap; sourceTree = "<group>"; };
+		9CE68FF4AEBCD021B533AA730057158A /* ABVideoRangeSlider-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ABVideoRangeSlider-umbrella.h"; sourceTree = "<group>"; };
+		A02E22D624F616646F66F0F227D59E0D /* NextLevel+AVFoundation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NextLevel+AVFoundation.swift"; path = "Sources/NextLevel+AVFoundation.swift"; sourceTree = "<group>"; };
 		A1618F6D1001FE9FB27DFAB90FC88F25 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A4FC633399E6295636743D3204B9A5DD /* ABStartIndicator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ABStartIndicator.swift; path = ABVideoRangeSlider/Classes/ABStartIndicator.swift; sourceTree = "<group>"; };
-		A51914ABA6A9C98E49001A93262D338C /* ABVideoRangeSlider-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ABVideoRangeSlider-dummy.m"; sourceTree = "<group>"; };
-		A6FFF6A7AABE6FE32AB49C39B96B87D2 /* NextLevel.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = NextLevel.modulemap; sourceTree = "<group>"; };
-		A92AE4E3275FB52BFDDE2A66632CB6A4 /* RecordButton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RecordButton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B5205053C46A6A479DA61070291B262F /* NextLevel+CoreImage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NextLevel+CoreImage.swift"; path = "Sources/NextLevel+CoreImage.swift"; sourceTree = "<group>"; };
-		B571C5E80313E22CA1948432C8241032 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B798589B454714170C23938C50F867F7 /* NextLevel.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = NextLevel.xcconfig; sourceTree = "<group>"; };
+		A9A937C0781F09A1F57553E3DC383953 /* Pods_Flokk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Flokk.framework; path = "Pods-Flokk.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB310AD9482C2B3A0EBECD85C10A1E88 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BC2C02191C153C1554B35DEE8B2D09D4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		BE2FEA38E841E1BF82FA9D494A73D074 /* NextLevel-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NextLevel-prefix.pch"; sourceTree = "<group>"; };
+		C3084550570F35053F167A93C6B5D1DF /* RecordButton-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RecordButton-umbrella.h"; sourceTree = "<group>"; };
+		C96DFEC1749BA8E78147855B05880D75 /* NextLevel+Foundation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NextLevel+Foundation.swift"; path = "Sources/NextLevel+Foundation.swift"; sourceTree = "<group>"; };
+		CC36C52A733F4924D1324EE84B2B674A /* ABVideoHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ABVideoHelper.swift; path = ABVideoRangeSlider/Classes/ABVideoHelper.swift; sourceTree = "<group>"; };
+		CFCC616BD0E9BE028AD0CC56546FC194 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D373D64078BA01CEDAAF4A707BB01C39 /* Pods-Flokk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Flokk.debug.xcconfig"; sourceTree = "<group>"; };
-		D6B1AA641BA2B150F71E6D58691B9687 /* RecordButton.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RecordButton.xcconfig; sourceTree = "<group>"; };
-		D882744755036D782486BA2564BCB357 /* ABVideoRangeSlider.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ABVideoRangeSlider.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
-		DF8304C87077BE6262F0CCC905E3C5F5 /* RecordButton-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RecordButton-dummy.m"; sourceTree = "<group>"; };
-		E0E0238AFC863E9B922B7C7E53E50922 /* ABTimeView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ABTimeView.swift; path = ABVideoRangeSlider/Classes/ABTimeView.swift; sourceTree = "<group>"; };
-		E36D48CB8ADA56E2FA20C164CFF9FCB9 /* NextLevel-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NextLevel-umbrella.h"; sourceTree = "<group>"; };
-		E3836CC6EF78482840A648875B2F2498 /* ABVideoRangeSlider.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ABVideoRangeSlider.modulemap; sourceTree = "<group>"; };
+		D3E243AA9EB184C9A3386629FA9598BB /* RecordButton.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RecordButton.xcconfig; sourceTree = "<group>"; };
+		DC09FEB89E4745FB9DE6051C6352DC0E /* SwiftVideoBackground.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftVideoBackground.xcconfig; sourceTree = "<group>"; };
+		DE421B20ACA01DA530D4E3C6604127F8 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E43DC087182CB138CEF1D6A9A73B9C4D /* ResourceBundle-ABVideoRangeSlider-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-ABVideoRangeSlider-Info.plist"; sourceTree = "<group>"; };
 		E5FA43899B74287BBD4088B8DB9E81F6 /* Pods-Flokk-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Flokk-frameworks.sh"; sourceTree = "<group>"; };
-		E6446D83CC63B33B8C164D504CE3E2B7 /* NextLevel+Metadata.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NextLevel+Metadata.swift"; path = "Sources/NextLevel+Metadata.swift"; sourceTree = "<group>"; };
-		EA62F9008BE61F37C3DC3122F6C5E78E /* ABVideoRangeSlider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ABVideoRangeSlider.swift; path = ABVideoRangeSlider/Classes/ABVideoRangeSlider.swift; sourceTree = "<group>"; };
-		EBEEEA5A16F93419A095178D427D4413 /* ABEndIndicator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ABEndIndicator.swift; path = ABVideoRangeSlider/Classes/ABEndIndicator.swift; sourceTree = "<group>"; };
-		F4F4829DB6212C4DD2109491597C78E0 /* Pods_Flokk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Flokk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FB2077134B867114D144BEFB2FA1A2BE /* NextLevel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NextLevel.swift; path = Sources/NextLevel.swift; sourceTree = "<group>"; };
+		EDACF441F4FE238CBE0F9ED33BC29D25 /* RecordButton.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = RecordButton.modulemap; sourceTree = "<group>"; };
+		F2C79978EF4A23C225C2FE162D53D706 /* VideoBackgroundError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VideoBackgroundError.swift; path = SwiftVideoBackground/Sources/VideoBackgroundError.swift; sourceTree = "<group>"; };
+		F893C27FCBA9FF8F7163C3DC51C8A486 /* ABVideoRangeSlider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ABVideoRangeSlider.swift; path = ABVideoRangeSlider/Classes/ABVideoRangeSlider.swift; sourceTree = "<group>"; };
+		FD4F3E85303DF6A1D576FE213EDDA0DA /* ABBorder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ABBorder.swift; path = ABVideoRangeSlider/Classes/ABBorder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		042BFE09722B374A92F66EE00A2BA338 /* Frameworks */ = {
+		02272B4A66B91F372CADE41CC5E47ADD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2897550F4C159E28F90D0C5CB4651EE4 /* Frameworks */ = {
+		73251851080481AB0831C6DDD46F7AB9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A660B0629E5268403D15B208D0656B3A /* Foundation.framework in Frameworks */,
+				515015E3D6C8DB4147637BD2EB84DB7F /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6EF4F08E84D2AE5977FA7B7F90F504DD /* Frameworks */ = {
+		B02748945394DB6789A8B2FA5BA04E91 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				087EC2610C4F4BD2AAF6340826683DBB /* Foundation.framework in Frameworks */,
+				B69D3245354D786FC311025A75594A49 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		96E9F23364AA9E1F7966F679171D30E9 /* Frameworks */ = {
+		C0875ED4D6A174DE3E77790ECE4C2765 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DAAF6873ABD6193119C0DFDCB466C149 /* Foundation.framework in Frameworks */,
-				E15A89992462AEEB8211187C14DE2D2C /* UIKit.framework in Frameworks */,
+				BE1E8B172558FD9F91BD61312A2E6D12 /* Foundation.framework in Frameworks */,
+				AEC67D38159FC29DD24B34F5E2396147 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,41 +196,43 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FF6B28D001C9618FE7A417053A1521ED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BBF8EC875E579D78481308A0C20753A8 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0162E2BAC7EF4259FCB72F89D8610F5F /* Support Files */ = {
+		0A697107BA0DCEFFC5FBBA16827347A9 /* ABVideoRangeSlider */ = {
 			isa = PBXGroup;
 			children = (
-				4171800E049D5CBDF353317936E1AD68 /* Info.plist */,
-				7DF22E0C392735F00D715F6A7E56EC88 /* RecordButton.modulemap */,
-				D6B1AA641BA2B150F71E6D58691B9687 /* RecordButton.xcconfig */,
-				DF8304C87077BE6262F0CCC905E3C5F5 /* RecordButton-dummy.m */,
-				1C328B41DBF0F0BDBADA2474CFD4A905 /* RecordButton-prefix.pch */,
-				3901BE08FE35BEF6573D5C9F8A0EFB7A /* RecordButton-umbrella.h */,
+				FD4F3E85303DF6A1D576FE213EDDA0DA /* ABBorder.swift */,
+				3C170C82C057E63D697B09A9E02249E6 /* ABEndIndicator.swift */,
+				6B70C1927C9B065C730F8C0CEC4EFC62 /* ABProgressIndicator.swift */,
+				5617EE4130B1BA89459B78170C98D72B /* ABStartIndicator.swift */,
+				10F044118D85A8B1B702A5B890C42F51 /* ABThumbnailsManager.swift */,
+				21649852B2D404B078D1DC3CD6ECBCA9 /* ABTimeView.swift */,
+				CC36C52A733F4924D1324EE84B2B674A /* ABVideoHelper.swift */,
+				F893C27FCBA9FF8F7163C3DC51C8A486 /* ABVideoRangeSlider.swift */,
+				FCDFF3382AB4131E62D28DE80D4ACB73 /* Support Files */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/RecordButton";
+			name = ABVideoRangeSlider;
+			path = ABVideoRangeSlider;
 			sourceTree = "<group>";
 		};
-		039487B7E479545FE5C20BC1CF5B15D4 /* Pods */ = {
+		0FBE6E167FA59EFB037BB67A89FAA17E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D0C06D95553D32B4D1EA821F181A1F71 /* ABVideoRangeSlider */,
-				6940947CA813A453A8D9A7890D3A9E8C /* NextLevel */,
-				8C2BE8AEB7AFFEDFA84CFF5DAE2E520F /* RecordButton */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		0935E20F915D223E9EBEC59B37362106 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				D882744755036D782486BA2564BCB357 /* ABVideoRangeSlider.bundle */,
-				25B91B64E77868CBEFDE52DFFBE6C048 /* ABVideoRangeSlider.framework */,
-				438B0FC5B0AD9B78890E20992E35D756 /* NextLevel.framework */,
-				F4F4829DB6212C4DD2109491597C78E0 /* Pods_Flokk.framework */,
-				A92AE4E3275FB52BFDDE2A66632CB6A4 /* RecordButton.framework */,
+				72A9EC9ED5A83988CE792ACBBE8F3BB7 /* ABVideoRangeSlider.bundle */,
+				14DBBECF7C0DCFFCBDAE9F441ABD04A4 /* ABVideoRangeSlider.framework */,
+				1633E72492CB3BFE3152E148B62C7D04 /* NextLevel.framework */,
+				A9A937C0781F09A1F57553E3DC383953 /* Pods_Flokk.framework */,
+				5542983A9593FE525950199AA730083A /* RecordButton.framework */,
+				43C371E9B69D3C1D384629C43556927F /* SwiftVideoBackground.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -227,6 +244,18 @@
 				BC2C02191C153C1554B35DEE8B2D09D4 /* UIKit.framework */,
 			);
 			name = iOS;
+			sourceTree = "<group>";
+		};
+		1B67C723D0112A1A0D68B630CD6F03B9 /* SwiftVideoBackground */ = {
+			isa = PBXGroup;
+			children = (
+				32B6B9B38A37EE61446B3EB9F27CE67F /* SwiftVideoBackground.h */,
+				31852178307ECAF2A2707855F813EDFD /* VideoBackground.swift */,
+				F2C79978EF4A23C225C2FE162D53D706 /* VideoBackgroundError.swift */,
+				EE7C5D5D9D659AC1BA55B4A8691BABDD /* Support Files */,
+			);
+			name = SwiftVideoBackground;
+			path = SwiftVideoBackground;
 			sourceTree = "<group>";
 		};
 		1F3A9E5C472225621C75191C1ABA72C1 /* Targets Support Files */ = {
@@ -245,36 +274,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		6182C0CF0EE7F2E87136C8B29B5DC124 /* Support Files */ = {
+		51590C67068706D0EAC1E9F392491808 /* RecordButton */ = {
 			isa = PBXGroup;
 			children = (
-				B571C5E80313E22CA1948432C8241032 /* Info.plist */,
-				A6FFF6A7AABE6FE32AB49C39B96B87D2 /* NextLevel.modulemap */,
-				B798589B454714170C23938C50F867F7 /* NextLevel.xcconfig */,
-				349F8F04A7D185AD335E92D9B43C96ED /* NextLevel-dummy.m */,
-				36D0C97931D48E7915C4738D63A678F1 /* NextLevel-prefix.pch */,
-				E36D48CB8ADA56E2FA20C164CFF9FCB9 /* NextLevel-umbrella.h */,
+				7BC3F12718C8AA06B0B4BCD38F7234F5 /* RecordButton.swift */,
+				9F0AE75DF40252BB2804674F7A0181AB /* Support Files */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/NextLevel";
-			sourceTree = "<group>";
-		};
-		6940947CA813A453A8D9A7890D3A9E8C /* NextLevel */ = {
-			isa = PBXGroup;
-			children = (
-				FB2077134B867114D144BEFB2FA1A2BE /* NextLevel.swift */,
-				0629382755ACFC26C582D3F44D67D994 /* NextLevel+AVFoundation.swift */,
-				B5205053C46A6A479DA61070291B262F /* NextLevel+CoreImage.swift */,
-				1EB3C552E7EA78C425121B3622A21216 /* NextLevel+CoreMedia.swift */,
-				034D026B84FBD9D65564FE69C49366AE /* NextLevel+Foundation.swift */,
-				E6446D83CC63B33B8C164D504CE3E2B7 /* NextLevel+Metadata.swift */,
-				39B5F75DB51A27AAF09997F62A62C863 /* NextLevel+UIImage.swift */,
-				484F15A198D7F49E3366F0B3C2C27C24 /* NextLevelClip.swift */,
-				72D3DCD19F255212D216162B1FED9B95 /* NextLevelConfiguration.swift */,
-				28B9D8DDDB59E9051372DD583999D291 /* NextLevelSession.swift */,
-				6182C0CF0EE7F2E87136C8B29B5DC124 /* Support Files */,
-			);
-			path = NextLevel;
+			name = RecordButton;
+			path = RecordButton;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -282,47 +289,38 @@
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
-				039487B7E479545FE5C20BC1CF5B15D4 /* Pods */,
-				0935E20F915D223E9EBEC59B37362106 /* Products */,
+				DCF59E88BF871B3C1430BC896B9E3895 /* Pods */,
+				0FBE6E167FA59EFB037BB67A89FAA17E /* Products */,
 				1F3A9E5C472225621C75191C1ABA72C1 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		8C2BE8AEB7AFFEDFA84CFF5DAE2E520F /* RecordButton */ = {
+		9F0AE75DF40252BB2804674F7A0181AB /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				2004C103A6C451DEF88EE5C37B4206CF /* RecordButton.swift */,
-				0162E2BAC7EF4259FCB72F89D8610F5F /* Support Files */,
+				DE421B20ACA01DA530D4E3C6604127F8 /* Info.plist */,
+				EDACF441F4FE238CBE0F9ED33BC29D25 /* RecordButton.modulemap */,
+				D3E243AA9EB184C9A3386629FA9598BB /* RecordButton.xcconfig */,
+				0F655D4728BB9D2A6CDE07E2B8CA0511 /* RecordButton-dummy.m */,
+				2583E62E940F894FE813655A9D08F521 /* RecordButton-prefix.pch */,
+				C3084550570F35053F167A93C6B5D1DF /* RecordButton-umbrella.h */,
 			);
-			path = RecordButton;
+			name = "Support Files";
+			path = "../Target Support Files/RecordButton";
 			sourceTree = "<group>";
 		};
-		9493FACDA3C2E442F474321FE2382B3A /* Resources */ = {
+		D0F6E039BCAF73768E91F99A6A368A3A /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
+				23BE08944C849C10211F928C7EEC0E12 /* Info.plist */,
+				9BEBC89418C0B58F7996FF483CE42E15 /* NextLevel.modulemap */,
+				129AC299EA824877A568B8DA24847F9C /* NextLevel.xcconfig */,
+				4769D3DDD49645391DE0B7D422B06BB2 /* NextLevel-dummy.m */,
+				BE2FEA38E841E1BF82FA9D494A73D074 /* NextLevel-prefix.pch */,
+				23CD45BC065E1177B7B1C3EED407A05A /* NextLevel-umbrella.h */,
 			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		D0C06D95553D32B4D1EA821F181A1F71 /* ABVideoRangeSlider */ = {
-			isa = PBXGroup;
-			children = (
-				220DE552A9A247BA4A7EA63344864A00 /* ABBorder.swift */,
-				EBEEEA5A16F93419A095178D427D4413 /* ABEndIndicator.swift */,
-				02083AC0C8E130307603A050910581DB /* ABProgressIndicator.swift */,
-				A4FC633399E6295636743D3204B9A5DD /* ABStartIndicator.swift */,
-				88F2FA246FFBFAA7831326C880185EA1 /* ABThumbnailsManager.swift */,
-				E0E0238AFC863E9B922B7C7E53E50922 /* ABTimeView.swift */,
-				76C2BDEF42B71FDFD104FD45DE8F7FE5 /* ABVideoHelper.swift */,
-				EA62F9008BE61F37C3DC3122F6C5E78E /* ABVideoRangeSlider.swift */,
-				7F4F0C082109753C0073A8A0 /* BorderLineWhite.png */,
-				7F4F0C072109753B0073A8A0 /* EndIndicatorWhite.png */,
-				7F4F0C092109753C0073A8A0 /* ProgressIndicatorTeal.png */,
-				7F4F0C0A2109753C0073A8A0 /* StartIndicatorWhite.png */,
-				9493FACDA3C2E442F474321FE2382B3A /* Resources */,
-				FDBBFFBC5A67A0293572BE7C62086D60 /* Support Files */,
-			);
-			path = ABVideoRangeSlider;
+			name = "Support Files";
+			path = "../Target Support Files/NextLevel";
 			sourceTree = "<group>";
 		};
 		D7E18D64438FB1045F1A10EEBAC82FA9 /* Pods-Flokk */ = {
@@ -343,37 +341,73 @@
 			path = "Target Support Files/Pods-Flokk";
 			sourceTree = "<group>";
 		};
-		FDBBFFBC5A67A0293572BE7C62086D60 /* Support Files */ = {
+		DCF59E88BF871B3C1430BC896B9E3895 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				E3836CC6EF78482840A648875B2F2498 /* ABVideoRangeSlider.modulemap */,
-				9176B857363EEE5A72581D5FA249CF9D /* ABVideoRangeSlider.xcconfig */,
-				A51914ABA6A9C98E49001A93262D338C /* ABVideoRangeSlider-dummy.m */,
-				8E091179E6ECC39D28F9CF2DE33F1ED9 /* ABVideoRangeSlider-prefix.pch */,
-				4ABA72E705D428E1FDC9E20E0BFEA287 /* ABVideoRangeSlider-umbrella.h */,
-				36BC1A77800537804D3C1B61DDBC7752 /* Info.plist */,
-				79C1E33A22175ACCA8D90C8B2D6F7E48 /* ResourceBundle-ABVideoRangeSlider-Info.plist */,
+				0A697107BA0DCEFFC5FBBA16827347A9 /* ABVideoRangeSlider */,
+				FEF053107FE7BBA271C2399D193D8464 /* NextLevel */,
+				51590C67068706D0EAC1E9F392491808 /* RecordButton */,
+				1B67C723D0112A1A0D68B630CD6F03B9 /* SwiftVideoBackground */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		EE7C5D5D9D659AC1BA55B4A8691BABDD /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				AB310AD9482C2B3A0EBECD85C10A1E88 /* Info.plist */,
+				58823373CC44E369294CEABE57CA1BF5 /* SwiftVideoBackground.modulemap */,
+				DC09FEB89E4745FB9DE6051C6352DC0E /* SwiftVideoBackground.xcconfig */,
+				83D3CBE8237AC9487C0F9B4559A54387 /* SwiftVideoBackground-dummy.m */,
+				5BB86EC32CEF2C073CC0908E561229C5 /* SwiftVideoBackground-prefix.pch */,
+				30805AC193E4BF4628E214AAFA3D29C4 /* SwiftVideoBackground-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SwiftVideoBackground";
+			sourceTree = "<group>";
+		};
+		FCDFF3382AB4131E62D28DE80D4ACB73 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				543B707F761C799C7226EC92F53EE77F /* ABVideoRangeSlider.modulemap */,
+				09CA5F83B821A1AA6AB5FDCFE38AF59E /* ABVideoRangeSlider.xcconfig */,
+				6083E2C908E9257F7AFA279725C8ADC5 /* ABVideoRangeSlider-dummy.m */,
+				19678FEA7BC2DCA3CEEA0B5A1CC763F0 /* ABVideoRangeSlider-prefix.pch */,
+				9CE68FF4AEBCD021B533AA730057158A /* ABVideoRangeSlider-umbrella.h */,
+				CFCC616BD0E9BE028AD0CC56546FC194 /* Info.plist */,
+				E43DC087182CB138CEF1D6A9A73B9C4D /* ResourceBundle-ABVideoRangeSlider-Info.plist */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/ABVideoRangeSlider";
 			sourceTree = "<group>";
 		};
+		FEF053107FE7BBA271C2399D193D8464 /* NextLevel */ = {
+			isa = PBXGroup;
+			children = (
+				7EAD7E0826EC1138DD05B75D9E9563FF /* NextLevel.swift */,
+				A02E22D624F616646F66F0F227D59E0D /* NextLevel+AVFoundation.swift */,
+				323DC18191CF802EA38431EB70D12495 /* NextLevel+CoreImage.swift */,
+				691FEFA4A2AA29BBDBDD518773940D47 /* NextLevel+CoreMedia.swift */,
+				C96DFEC1749BA8E78147855B05880D75 /* NextLevel+Foundation.swift */,
+				48826AA82CDC2E866B23C8BABF396B74 /* NextLevel+Metadata.swift */,
+				1DAC1C3137AF9E423884EF5E79BD9A7E /* NextLevel+UIImage.swift */,
+				44ACD921E6F46A23C43716F426388E86 /* NextLevelClip.swift */,
+				1B81BF5C2450B53B988F1FAA5036CC48 /* NextLevelConfiguration.swift */,
+				17A748B3D371391E57254849FA4C5812 /* NextLevelSession.swift */,
+				D0F6E039BCAF73768E91F99A6A368A3A /* Support Files */,
+			);
+			name = NextLevel;
+			path = NextLevel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		1969815CEE78E614EF9DDA1FAA766F16 /* Headers */ = {
+		A6497FDD3CB57BFEA4CC7AE4343C4EC6 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B22D4909E41A71B2865330B71BE31FC /* RecordButton-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		97178BF53077715C195285156A09CFDF /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8B35DEAFF758009C06DA8B409014F838 /* ABVideoRangeSlider-umbrella.h in Headers */,
+				9B048F4043D4998F4C193D5F0CDB3F61 /* Pods-Flokk-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,80 +419,58 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D18968E47156FB3CAE601B870AB9B378 /* Headers */ = {
+		CC24984B40AE3DE4CBD57ED6A45CB0E9 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E0C166AAF537D3DEF6EB77163341385D /* Pods-Flokk-umbrella.h in Headers */,
+				DE56E0D20A42DF819B9CA6C9F7421CF8 /* ABVideoRangeSlider-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0A6C9287202067A9820557EF186AC96 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A3B99DB4214D0F09B13A19BB676290AC /* RecordButton-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F846E9F70EC5C3D5238798252F07AF9C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				876CC96F3F4005FADB2134D80546A2C0 /* SwiftVideoBackground-umbrella.h in Headers */,
+				FCD772123A6F4157A765F056CFC583A3 /* SwiftVideoBackground.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		007FCD09B4D962F27B8D2342248E9318 /* ABVideoRangeSlider-ABVideoRangeSlider */ = {
+		1945A6F963B83F0FB3C24EA1BBDC0C59 /* SwiftVideoBackground */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C76849185D034C10E3B8D581C74708F6 /* Build configuration list for PBXNativeTarget "ABVideoRangeSlider-ABVideoRangeSlider" */;
+			buildConfigurationList = C3774613F4A8C37B91F33272DC596D3A /* Build configuration list for PBXNativeTarget "SwiftVideoBackground" */;
 			buildPhases = (
-				6DAAE7B05C564242185832168C4109A0 /* Sources */,
-				042BFE09722B374A92F66EE00A2BA338 /* Frameworks */,
-				D1FB2BD9340179BE2C71C9320C0887BF /* Resources */,
+				64873E18C50E91EFB34B99503383C717 /* Sources */,
+				FF6B28D001C9618FE7A417053A1521ED /* Frameworks */,
+				F846E9F70EC5C3D5238798252F07AF9C /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "ABVideoRangeSlider-ABVideoRangeSlider";
-			productName = "ABVideoRangeSlider-ABVideoRangeSlider";
-			productReference = D882744755036D782486BA2564BCB357 /* ABVideoRangeSlider.bundle */;
-			productType = "com.apple.product-type.bundle";
-		};
-		4C6D04B310FED908C7C750C53C368171 /* Pods-Flokk */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 458238EC8878FF9ED36544A601CD413E /* Build configuration list for PBXNativeTarget "Pods-Flokk" */;
-			buildPhases = (
-				7568224F79A4D7C8C52388393103DEE1 /* Sources */,
-				6EF4F08E84D2AE5977FA7B7F90F504DD /* Frameworks */,
-				D18968E47156FB3CAE601B870AB9B378 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				B0310390070DB311F43E95A2F38A9B49 /* PBXTargetDependency */,
-				E800823F3D5A6A55CBCAC517D93E675E /* PBXTargetDependency */,
-				5988807BE48CF21D281F9230E28654BC /* PBXTargetDependency */,
-			);
-			name = "Pods-Flokk";
-			productName = "Pods-Flokk";
-			productReference = F4F4829DB6212C4DD2109491597C78E0 /* Pods_Flokk.framework */;
+			name = SwiftVideoBackground;
+			productName = SwiftVideoBackground;
+			productReference = 43C371E9B69D3C1D384629C43556927F /* SwiftVideoBackground.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		5681C12C2E05A7026DD6934FD7D8CB07 /* ABVideoRangeSlider */ = {
+		7E260146DEB9BA59DDD7D815652790D5 /* RecordButton */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 64672366054660509BDB540580008051 /* Build configuration list for PBXNativeTarget "ABVideoRangeSlider" */;
+			buildConfigurationList = BCB8FB36FB5476D028EECFC4F545DCFC /* Build configuration list for PBXNativeTarget "RecordButton" */;
 			buildPhases = (
-				EFD3CDAB13377D893D68588DC416169B /* Sources */,
-				2897550F4C159E28F90D0C5CB4651EE4 /* Frameworks */,
-				FFB558E83BEB06624B9BD948DCE89CCE /* Resources */,
-				97178BF53077715C195285156A09CFDF /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				3F1FED69791FC201D8B1E536F835E211 /* PBXTargetDependency */,
-			);
-			name = ABVideoRangeSlider;
-			productName = ABVideoRangeSlider;
-			productReference = 25B91B64E77868CBEFDE52DFFBE6C048 /* ABVideoRangeSlider.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		A0951EAB6192EB4079334F62CACB21D5 /* RecordButton */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 6C8EA242371F6D3BE7BABB202CEC1F54 /* Build configuration list for PBXNativeTarget "RecordButton" */;
-			buildPhases = (
-				001E49CC8B0CF7990B4A423CECBE200F /* Sources */,
-				96E9F23364AA9E1F7966F679171D30E9 /* Frameworks */,
-				1969815CEE78E614EF9DDA1FAA766F16 /* Headers */,
+				959EAE3025ED0D80183B2BD341F8BE4E /* Sources */,
+				C0875ED4D6A174DE3E77790ECE4C2765 /* Frameworks */,
+				D0A6C9287202067A9820557EF186AC96 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -466,7 +478,47 @@
 			);
 			name = RecordButton;
 			productName = RecordButton;
-			productReference = A92AE4E3275FB52BFDDE2A66632CB6A4 /* RecordButton.framework */;
+			productReference = 5542983A9593FE525950199AA730083A /* RecordButton.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		82B9830D7F4FD05B7A00E60F96B17A89 /* Pods-Flokk */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6BC525F386859B94ED601B8B3D4DF558 /* Build configuration list for PBXNativeTarget "Pods-Flokk" */;
+			buildPhases = (
+				D5B807AF062D938336EAE7953F28CEA8 /* Sources */,
+				B02748945394DB6789A8B2FA5BA04E91 /* Frameworks */,
+				A6497FDD3CB57BFEA4CC7AE4343C4EC6 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				99369BBCF3E217FEFCA0178A6A58225D /* PBXTargetDependency */,
+				1446432E7ED4C29E83CFFAC0D1ABA243 /* PBXTargetDependency */,
+				D568D5D8EAE44D542FD216AA8A0E2ABC /* PBXTargetDependency */,
+				B800469A5D94BB4D4DC8F343404C3190 /* PBXTargetDependency */,
+			);
+			name = "Pods-Flokk";
+			productName = "Pods-Flokk";
+			productReference = A9A937C0781F09A1F57553E3DC383953 /* Pods_Flokk.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		98C7D6FF97A403CF8ACDF8C123B2B178 /* ABVideoRangeSlider */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1E0A77346762C3CD80507129FEB215F7 /* Build configuration list for PBXNativeTarget "ABVideoRangeSlider" */;
+			buildPhases = (
+				EC1CA5C564F3BEF30B972F8D0F9FB0AB /* Sources */,
+				73251851080481AB0831C6DDD46F7AB9 /* Frameworks */,
+				73A269E4F8AB09020B552C0E23ECB60C /* Resources */,
+				CC24984B40AE3DE4CBD57ED6A45CB0E9 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				419688200598E2F2C737BF1F71B4C724 /* PBXTargetDependency */,
+			);
+			name = ABVideoRangeSlider;
+			productName = ABVideoRangeSlider;
+			productReference = 14DBBECF7C0DCFFCBDAE9F441ABD04A4 /* ABVideoRangeSlider.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		C3D3698354B858E60C18057455BA2FF8 /* NextLevel */ = {
@@ -483,8 +535,25 @@
 			);
 			name = NextLevel;
 			productName = NextLevel;
-			productReference = 438B0FC5B0AD9B78890E20992E35D756 /* NextLevel.framework */;
+			productReference = 1633E72492CB3BFE3152E148B62C7D04 /* NextLevel.framework */;
 			productType = "com.apple.product-type.framework";
+		};
+		C6456C8DB19B34E80A1E032D6F8914B3 /* ABVideoRangeSlider-ABVideoRangeSlider */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D979EC82410938182F43A36B5F266E87 /* Build configuration list for PBXNativeTarget "ABVideoRangeSlider-ABVideoRangeSlider" */;
+			buildPhases = (
+				D562BD3EAE3DED59677D3DF638B1FF0C /* Sources */,
+				02272B4A66B91F372CADE41CC5E47ADD /* Frameworks */,
+				BEC0F35E7ACB3ABA08724EF87916BE61 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ABVideoRangeSlider-ABVideoRangeSlider";
+			productName = "ABVideoRangeSlider-ABVideoRangeSlider";
+			productReference = 72A9EC9ED5A83988CE792ACBBE8F3BB7 /* ABVideoRangeSlider.bundle */;
+			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
 
@@ -503,55 +572,46 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 0935E20F915D223E9EBEC59B37362106 /* Products */;
+			productRefGroup = 0FBE6E167FA59EFB037BB67A89FAA17E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				5681C12C2E05A7026DD6934FD7D8CB07 /* ABVideoRangeSlider */,
-				007FCD09B4D962F27B8D2342248E9318 /* ABVideoRangeSlider-ABVideoRangeSlider */,
+				98C7D6FF97A403CF8ACDF8C123B2B178 /* ABVideoRangeSlider */,
+				C6456C8DB19B34E80A1E032D6F8914B3 /* ABVideoRangeSlider-ABVideoRangeSlider */,
 				C3D3698354B858E60C18057455BA2FF8 /* NextLevel */,
-				4C6D04B310FED908C7C750C53C368171 /* Pods-Flokk */,
-				A0951EAB6192EB4079334F62CACB21D5 /* RecordButton */,
+				82B9830D7F4FD05B7A00E60F96B17A89 /* Pods-Flokk */,
+				7E260146DEB9BA59DDD7D815652790D5 /* RecordButton */,
+				1945A6F963B83F0FB3C24EA1BBDC0C59 /* SwiftVideoBackground */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		D1FB2BD9340179BE2C71C9320C0887BF /* Resources */ = {
+		73A269E4F8AB09020B552C0E23ECB60C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				417F82EE7A529242C9E28B2CC1AB6BDE /* ABVideoRangeSlider.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FFB558E83BEB06624B9BD948DCE89CCE /* Resources */ = {
+		BEC0F35E7ACB3ABA08724EF87916BE61 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7F4F0C0D2109753D0073A8A0 /* ProgressIndicatorTeal.png in Resources */,
-				7F4F0C0B2109753D0073A8A0 /* EndIndicatorWhite.png in Resources */,
-				7F4F0C0C2109753D0073A8A0 /* BorderLineWhite.png in Resources */,
-				96E54C5B7F55A160AB4179477AC3E685 /* ABVideoRangeSlider.bundle in Resources */,
-				7F4F0C0E2109753D0073A8A0 /* StartIndicatorWhite.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		001E49CC8B0CF7990B4A423CECBE200F /* Sources */ = {
+		64873E18C50E91EFB34B99503383C717 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E71CFF126D2781C57FA879AD56B6DAEF /* RecordButton-dummy.m in Sources */,
-				0B9F3A8232263C444D2D061888CF8A4B /* RecordButton.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6DAAE7B05C564242185832168C4109A0 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				53C4C345BD49E0FEC9CC1DFD31CAF5AC /* SwiftVideoBackground-dummy.m in Sources */,
+				8CD1CA969404623D668F0AADA2A35F5E /* VideoBackground.swift in Sources */,
+				59942672BD6BC3B62125E07C1746AC55 /* VideoBackgroundError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -573,63 +633,85 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7568224F79A4D7C8C52388393103DEE1 /* Sources */ = {
+		959EAE3025ED0D80183B2BD341F8BE4E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				30EC492314C50DAADF24B5AF5E8B8B81 /* Pods-Flokk-dummy.m in Sources */,
+				D46AC232F03D52A843DEC18AECF788DC /* RecordButton-dummy.m in Sources */,
+				C3BBA596EAD9532D712E9597F40D092A /* RecordButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EFD3CDAB13377D893D68588DC416169B /* Sources */ = {
+		D562BD3EAE3DED59677D3DF638B1FF0C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4D71B66A1497CB5E7C3C6EAA61058717 /* ABBorder.swift in Sources */,
-				7E546514A4B72781B59E8CDA6327EEB4 /* ABEndIndicator.swift in Sources */,
-				5D0F4A10725EBF1DAE8C0C4E222BD5A6 /* ABProgressIndicator.swift in Sources */,
-				0A29F9F35361C218A6F5C8EE1096225A /* ABStartIndicator.swift in Sources */,
-				38E070F7C55A8AC6D708A89A7A947D52 /* ABThumbnailsManager.swift in Sources */,
-				ABFF94C55128AA6100B7B158CD221BDF /* ABTimeView.swift in Sources */,
-				B4B6F08A7ED1B12CCF033DFAD2C9927D /* ABVideoHelper.swift in Sources */,
-				F0B333E2E75105435832C44DE3567BC4 /* ABVideoRangeSlider-dummy.m in Sources */,
-				EE26FFABF48C47D6B82E7ACA50B01875 /* ABVideoRangeSlider.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5B807AF062D938336EAE7953F28CEA8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A63ADE0A5F31FB44670EB49D35A347F9 /* Pods-Flokk-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC1CA5C564F3BEF30B972F8D0F9FB0AB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C71D2B208C6914AE58935B82CE4371ED /* ABBorder.swift in Sources */,
+				8FDB171B9A3FB9BFF9B63EFD4640CA9A /* ABEndIndicator.swift in Sources */,
+				D19C3EEFDF69EA1A6CD538A3EE7F89A1 /* ABProgressIndicator.swift in Sources */,
+				CE63984AB70B0400FEE05D7F36461C2E /* ABStartIndicator.swift in Sources */,
+				34FDD81BE46544293BFD518259B3770A /* ABThumbnailsManager.swift in Sources */,
+				200CCFC824646DBF71D9AF8EFB733F47 /* ABTimeView.swift in Sources */,
+				7AE05EB20C031BD8F4FA4AE5EB842DCD /* ABVideoHelper.swift in Sources */,
+				FE28BE4272E9C1B62AF17B413CDD7E55 /* ABVideoRangeSlider-dummy.m in Sources */,
+				F077F1EEF617C5AE30A17FF413DD1D76 /* ABVideoRangeSlider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		3F1FED69791FC201D8B1E536F835E211 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "ABVideoRangeSlider-ABVideoRangeSlider";
-			target = 007FCD09B4D962F27B8D2342248E9318 /* ABVideoRangeSlider-ABVideoRangeSlider */;
-			targetProxy = 14F524158088387D419B0C9288FB8F1B /* PBXContainerItemProxy */;
-		};
-		5988807BE48CF21D281F9230E28654BC /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = RecordButton;
-			target = A0951EAB6192EB4079334F62CACB21D5 /* RecordButton */;
-			targetProxy = 024A4C98DA87A74423A6FF4FC2736ADF /* PBXContainerItemProxy */;
-		};
-		B0310390070DB311F43E95A2F38A9B49 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = ABVideoRangeSlider;
-			target = 5681C12C2E05A7026DD6934FD7D8CB07 /* ABVideoRangeSlider */;
-			targetProxy = 7D0946CC55C0709B90182FB77DD5E86D /* PBXContainerItemProxy */;
-		};
-		E800823F3D5A6A55CBCAC517D93E675E /* PBXTargetDependency */ = {
+		1446432E7ED4C29E83CFFAC0D1ABA243 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = NextLevel;
 			target = C3D3698354B858E60C18057455BA2FF8 /* NextLevel */;
-			targetProxy = 995404C23E7E5B1499B049621B94F09E /* PBXContainerItemProxy */;
+			targetProxy = FAF50419A8509C29DC26ACEFF810B2DE /* PBXContainerItemProxy */;
+		};
+		419688200598E2F2C737BF1F71B4C724 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "ABVideoRangeSlider-ABVideoRangeSlider";
+			target = C6456C8DB19B34E80A1E032D6F8914B3 /* ABVideoRangeSlider-ABVideoRangeSlider */;
+			targetProxy = 417C11E2E8BA7BC9B7D05706DA1ECF90 /* PBXContainerItemProxy */;
+		};
+		99369BBCF3E217FEFCA0178A6A58225D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ABVideoRangeSlider;
+			target = 98C7D6FF97A403CF8ACDF8C123B2B178 /* ABVideoRangeSlider */;
+			targetProxy = A848D610669C30B54F34163D1588862A /* PBXContainerItemProxy */;
+		};
+		B800469A5D94BB4D4DC8F343404C3190 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftVideoBackground;
+			target = 1945A6F963B83F0FB3C24EA1BBDC0C59 /* SwiftVideoBackground */;
+			targetProxy = 628606E8C8E4A84B41F9AA5F457E7AF9 /* PBXContainerItemProxy */;
+		};
+		D568D5D8EAE44D542FD216AA8A0E2ABC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RecordButton;
+			target = 7E260146DEB9BA59DDD7D815652790D5 /* RecordButton */;
+			targetProxy = 5BF08466131E7E2257AC1FDFF8E65097 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		22012F8F47D1B3DAA6657B8CC4A3EC08 /* Debug */ = {
+		05926CB7B4E060F5125B0963CD6D605D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D6B1AA641BA2B150F71E6D58691B9687 /* RecordButton.xcconfig */;
+			baseConfigurationReference = DC09FEB89E4745FB9DE6051C6352DC0E /* SwiftVideoBackground.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -640,14 +722,47 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/RecordButton/RecordButton-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/RecordButton/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftVideoBackground/SwiftVideoBackground-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftVideoBackground/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/RecordButton/RecordButton.modulemap";
-				PRODUCT_MODULE_NAME = RecordButton;
-				PRODUCT_NAME = RecordButton;
+				MODULEMAP_FILE = "Target Support Files/SwiftVideoBackground/SwiftVideoBackground.modulemap";
+				PRODUCT_MODULE_NAME = SwiftVideoBackground;
+				PRODUCT_NAME = SwiftVideoBackground;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		235C0088AB7E56AA3B62EFDAC0FBA4CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DC09FEB89E4745FB9DE6051C6352DC0E /* SwiftVideoBackground.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftVideoBackground/SwiftVideoBackground-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftVideoBackground/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SwiftVideoBackground/SwiftVideoBackground.modulemap";
+				PRODUCT_MODULE_NAME = SwiftVideoBackground;
+				PRODUCT_NAME = SwiftVideoBackground;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
@@ -661,7 +776,7 @@
 		};
 		289CA2C6603BF9F2D21EC360FBEAF558 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B798589B454714170C23938C50F867F7 /* NextLevel.xcconfig */;
+			baseConfigurationReference = 129AC299EA824877A568B8DA24847F9C /* NextLevel.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -751,25 +866,42 @@
 			};
 			name = Release;
 		};
-		3FE211C711D5D075AAFAA395D5E1AFF6 /* Debug */ = {
+		5086486788D3820282FB3CA8BB9475F4 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9176B857363EEE5A72581D5FA249CF9D /* ABVideoRangeSlider.xcconfig */;
+			baseConfigurationReference = 09CA5F83B821A1AA6AB5FDCFE38AF59E /* ABVideoRangeSlider.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ABVideoRangeSlider";
-				INFOPLIST_FILE = "Target Support Files/ABVideoRangeSlider/ResourceBundle-ABVideoRangeSlider-Info.plist";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/ABVideoRangeSlider/ABVideoRangeSlider-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ABVideoRangeSlider/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/ABVideoRangeSlider/ABVideoRangeSlider.modulemap";
+				PRODUCT_MODULE_NAME = ABVideoRangeSlider;
 				PRODUCT_NAME = ABVideoRangeSlider;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
 		536454F41AC3A90528A840AF2627C7AA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B798589B454714170C23938C50F867F7 /* NextLevel.xcconfig */;
+			baseConfigurationReference = 129AC299EA824877A568B8DA24847F9C /* NextLevel.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -800,9 +932,9 @@
 			};
 			name = Debug;
 		};
-		711B5810C026E589717AAF04C9411502 /* Debug */ = {
+		5FEC943895DFF1246CF6CA738E19A0BE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9176B857363EEE5A72581D5FA249CF9D /* ABVideoRangeSlider.xcconfig */;
+			baseConfigurationReference = 09CA5F83B821A1AA6AB5FDCFE38AF59E /* ABVideoRangeSlider.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -832,12 +964,10 @@
 			};
 			name = Debug;
 		};
-		8E4F9A1864DD34DBDEA8AF467CEBAE09 /* Release */ = {
+		611A6A14BCE419512DC8B20B1476DCD3 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9551F3F37B3ADC753993DCDA35EC26B5 /* Pods-Flokk.release.xcconfig */;
+			baseConfigurationReference = D3E243AA9EB184C9A3386629FA9598BB /* RecordButton.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -847,30 +977,28 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Flokk/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/RecordButton/RecordButton-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/RecordButton/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Flokk/Pods-Flokk.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				MODULEMAP_FILE = "Target Support Files/RecordButton/RecordButton.modulemap";
+				PRODUCT_MODULE_NAME = RecordButton;
+				PRODUCT_NAME = RecordButton;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
-		957B88E65837C15A41D8BDBD91A9FB00 /* Release */ = {
+		654710CDED95D20CE51181089ABAAFF7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9176B857363EEE5A72581D5FA249CF9D /* ABVideoRangeSlider.xcconfig */;
+			baseConfigurationReference = 09CA5F83B821A1AA6AB5FDCFE38AF59E /* ABVideoRangeSlider.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ABVideoRangeSlider";
@@ -883,6 +1011,55 @@
 				WRAPPER_EXTENSION = bundle;
 			};
 			name = Release;
+		};
+		6BF030D3B2A9CDA058E5A53EF0F08F3F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D3E243AA9EB184C9A3386629FA9598BB /* RecordButton.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/RecordButton/RecordButton-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/RecordButton/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/RecordButton/RecordButton.modulemap";
+				PRODUCT_MODULE_NAME = RecordButton;
+				PRODUCT_NAME = RecordButton;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		721C5C68D3ECFB3F8CEDE51E8FBD36A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 09CA5F83B821A1AA6AB5FDCFE38AF59E /* ABVideoRangeSlider.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ABVideoRangeSlider";
+				INFOPLIST_FILE = "Target Support Files/ABVideoRangeSlider/ResourceBundle-ABVideoRangeSlider-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_NAME = ABVideoRangeSlider;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
 		};
 		9E88537B08ED4D6EB44DBA7BC8D56A35 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -947,7 +1124,7 @@
 			};
 			name = Debug;
 		};
-		B98A6CDE3CC0543F21E87C1D83F70D99 /* Debug */ = {
+		C33BD616059DD8F9E692F2DF122BDEF6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D373D64078BA01CEDAAF4A707BB01C39 /* Pods-Flokk.debug.xcconfig */;
 			buildSettings = {
@@ -983,10 +1160,12 @@
 			};
 			name = Debug;
 		};
-		DC39CDB0717F9F75C853456082008932 /* Release */ = {
+		C8DDDB4D32599739334F787F5D377FF9 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9176B857363EEE5A72581D5FA249CF9D /* ABVideoRangeSlider.xcconfig */;
+			baseConfigurationReference = 9551F3F37B3ADC753993DCDA35EC26B5 /* Pods-Flokk.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -996,52 +1175,20 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/ABVideoRangeSlider/ABVideoRangeSlider-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/ABVideoRangeSlider/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-Flokk/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/ABVideoRangeSlider/ABVideoRangeSlider.modulemap";
-				PRODUCT_MODULE_NAME = ABVideoRangeSlider;
-				PRODUCT_NAME = ABVideoRangeSlider;
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Flokk/Pods-Flokk.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		FA81C22AAEE8623B38B87ABEF86C6010 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D6B1AA641BA2B150F71E6D58691B9687 /* RecordButton.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/RecordButton/RecordButton-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/RecordButton/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/RecordButton/RecordButton.modulemap";
-				PRODUCT_MODULE_NAME = RecordButton;
-				PRODUCT_NAME = RecordButton;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1061,6 +1208,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		1E0A77346762C3CD80507129FEB215F7 /* Build configuration list for PBXNativeTarget "ABVideoRangeSlider" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5FEC943895DFF1246CF6CA738E19A0BE /* Debug */,
+				5086486788D3820282FB3CA8BB9475F4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1070,38 +1226,38 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		458238EC8878FF9ED36544A601CD413E /* Build configuration list for PBXNativeTarget "Pods-Flokk" */ = {
+		6BC525F386859B94ED601B8B3D4DF558 /* Build configuration list for PBXNativeTarget "Pods-Flokk" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B98A6CDE3CC0543F21E87C1D83F70D99 /* Debug */,
-				8E4F9A1864DD34DBDEA8AF467CEBAE09 /* Release */,
+				C33BD616059DD8F9E692F2DF122BDEF6 /* Debug */,
+				C8DDDB4D32599739334F787F5D377FF9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		64672366054660509BDB540580008051 /* Build configuration list for PBXNativeTarget "ABVideoRangeSlider" */ = {
+		BCB8FB36FB5476D028EECFC4F545DCFC /* Build configuration list for PBXNativeTarget "RecordButton" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				711B5810C026E589717AAF04C9411502 /* Debug */,
-				DC39CDB0717F9F75C853456082008932 /* Release */,
+				611A6A14BCE419512DC8B20B1476DCD3 /* Debug */,
+				6BF030D3B2A9CDA058E5A53EF0F08F3F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6C8EA242371F6D3BE7BABB202CEC1F54 /* Build configuration list for PBXNativeTarget "RecordButton" */ = {
+		C3774613F4A8C37B91F33272DC596D3A /* Build configuration list for PBXNativeTarget "SwiftVideoBackground" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				22012F8F47D1B3DAA6657B8CC4A3EC08 /* Debug */,
-				FA81C22AAEE8623B38B87ABEF86C6010 /* Release */,
+				235C0088AB7E56AA3B62EFDAC0FBA4CE /* Debug */,
+				05926CB7B4E060F5125B0963CD6D605D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C76849185D034C10E3B8D581C74708F6 /* Build configuration list for PBXNativeTarget "ABVideoRangeSlider-ABVideoRangeSlider" */ = {
+		D979EC82410938182F43A36B5F266E87 /* Build configuration list for PBXNativeTarget "ABVideoRangeSlider-ABVideoRangeSlider" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3FE211C711D5D075AAFAA395D5E1AFF6 /* Debug */,
-				957B88E65837C15A41D8BDBD91A9FB00 /* Release */,
+				721C5C68D3ECFB3F8CEDE51E8FBD36A9 /* Debug */,
+				654710CDED95D20CE51181089ABAAFF7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -6,7 +6,8 @@ target 'Flokk' do
     use_frameworks!
 
     # Pods for Flokk
-    pod "NextLevel", "~> 0.9.5"
+    pod "NextLevel", "~> 0.9.8"
     pod "RecordButton"
     pod "ABVideoRangeSlider"
+    pod "SwiftVideoBackground", "~> 3.0"
 end
