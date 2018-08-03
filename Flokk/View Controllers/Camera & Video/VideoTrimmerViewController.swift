@@ -45,12 +45,21 @@ class VideoTrimmerViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+        // Add the observer in case we segue away and come back
+        if avPlayer != nil && avPlayer.currentItem != nil {
+            NotificationCenter.default.addObserver(self, selector: #selector(VideoTrimmerViewController.restartVideo), name: Notification.Name.AVPlayerItemDidPlayToEndTime, object: avPlayer.currentItem)
+            
+            avPlayer.play()
+        }
+        
         //addVideo()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         
+        // Remove the observer to prevent it being triggered when it shouldn't be
+        NotificationCenter.default.removeObserver(self)
         avPlayer.pause()
         
         // Would have to create avplayer in viewDidAppear in order to do below
@@ -65,7 +74,7 @@ class VideoTrimmerViewController: UIViewController {
         avPlayer = AVPlayer()
         
         // Add the callback function to the AVPlayer to make it loop
-        NotificationCenter.default.addObserver(self, selector: #selector(VideoTrimmerViewController.restartVideo), name: Notification.Name.AVPlayerItemDidPlayToEndTime, object: avPlayer.currentItem)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.restartVideo), name: Notification.Name.AVPlayerItemDidPlayToEndTime, object: avPlayer.currentItem)
         
         // Set up the AVPlayer to play the video
         avPlayerLayer = AVPlayerLayer(player: avPlayer)
@@ -86,6 +95,7 @@ class VideoTrimmerViewController: UIViewController {
         progressTimer.fire()
     }
     
+    // Temp
     func removeVideo() {
         if avPlayer != nil {
             avPlayer.pause()
@@ -99,6 +109,7 @@ class VideoTrimmerViewController: UIViewController {
     // Loops the video once it has ended
     @objc func restartVideo() {
         if avPlayer != nil {
+            print("Restarting Trim")
             avPlayer.seek(to: CMTime(seconds: startTime, preferredTimescale: 1000));
             avPlayer.play();
         }

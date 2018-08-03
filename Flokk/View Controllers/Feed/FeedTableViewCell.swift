@@ -40,8 +40,8 @@ class FeedTableViewCell: UITableViewCell {
         
         // Remove the video layer to prevent it stacking with the next video that will occupy this cell
         if avPlayerLayer != nil {
+            pauseVideo()
             avPlayerLayer.removeFromSuperlayer()
-            avPlayer.pause()
         }
         
         // Same as above
@@ -52,7 +52,8 @@ class FeedTableViewCell: UITableViewCell {
     
     func initialize() {
         // Add listener for the end of the video, causing it to loop
-        NotificationCenter.default.addObserver(self, selector: #selector(self.restartVideo), name: Notification.Name.AVPlayerItemDidPlayToEndTime, object: avPlayer.currentItem)
+        //addObserver()
+        //NotificationCenter.default.addObserver(self, selector: #selector(self.restartVideo), name: Notification.Name.AVPlayerItemDidPlayToEndTime, object: avPlayer.currentItem)
         
         setAspectRatio()
         addPlayTouchGesture()
@@ -63,6 +64,16 @@ class FeedTableViewCell: UITableViewCell {
         beginLoadingVideo(completion: { (loaded) in
             self.addVideoToView()
         })
+    }
+    
+    // Observer is only added when it is being played
+    func addObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(self.restartVideo), name: Notification.Name.AVPlayerItemDidPlayToEndTime, object: avPlayer.currentItem)
+    }
+    
+    // Observer is removed when it is paused
+    func removeObserver() {
+        NotificationCenter.default.removeObserver(self)
     }
     
     // Adds the gesture for pausing & playing the video by tapping it
@@ -145,6 +156,7 @@ extension FeedTableViewCell {
         if avPlayerLayer != nil {
             isPaused = false
             avPlayer.play()
+            addObserver()
         }
     }
     
@@ -152,10 +164,12 @@ extension FeedTableViewCell {
         if avPlayerLayer != nil {
             isPaused = true
             avPlayer.pause()
+            removeObserver()
         }
     }
     
     @objc func restartVideo() {
+        print("Restarting Feed Video")
         avPlayer.seek(to: CMTime(seconds: 0, preferredTimescale: 1000));
         playVideo()
     }
