@@ -42,11 +42,13 @@ class FeedTableViewCell: UITableViewCell {
         if avPlayerLayer != nil {
             pauseVideo()
             avPlayerLayer.removeFromSuperlayer()
+            avPlayerLayer = nil
         }
         
         // Same as above
         if previewImageView != nil {
             previewImageView.removeFromSuperview()
+            previewImageView = nil
         }
     }
     
@@ -54,7 +56,7 @@ class FeedTableViewCell: UITableViewCell {
         setAspectRatio()
         addPlayTouchGesture()
         
-        addPreviewImageToView(image: UIImage(named: "testPhoto2")!)
+        //addPreviewImageToView(image: UIImage(named: "testPhoto2")!)
 
         // Add preview image while the video is loading
         beginLoadingVideo(completion: { (loaded) in
@@ -110,7 +112,7 @@ extension FeedTableViewCell {
     func beginLoadingVideo(completion: @escaping (Bool) -> Void) {
         // First check if the video has already been loaded
         if post.fileURL != nil {
-            completion(true)
+            //completion(true)
         } else {
             // Begin loading the video
             
