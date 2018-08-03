@@ -17,7 +17,7 @@ class ABEndIndicator: UIView {
         self.isUserInteractionEnabled = true
         
         let bundle = Bundle(for: ABStartIndicator.self)
-        let image = UIImage(named: "EndIndicatorWhite", in: bundle, compatibleWith: nil)
+        let image = UIImage(named: "EndIndicatorWhite")
         
         imageView.frame = self.bounds
         imageView.image = image

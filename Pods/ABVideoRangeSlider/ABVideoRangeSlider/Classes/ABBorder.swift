@@ -16,7 +16,7 @@ class ABBorder: UIView {
         super.init(frame: frame)
         
         let bundle = Bundle(for: ABStartIndicator.self)
-        let image = UIImage(named: "BorderLineWhite", in: bundle, compatibleWith: nil)
+        let image = UIImage(named: "BorderLineWhite")
         
         imageView.frame = self.bounds
         imageView.image = image
