@@ -20,6 +20,8 @@
 		8711A83B210D539D00CCFD38 /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8711A83A210D539D00CCFD38 /* FeedTableViewCell.swift */; };
 		8711A83D210EABDA00CCFD38 /* clip1.m4v in Resources */ = {isa = PBXBuildFile; fileRef = 8711A83C210EABBF00CCFD38 /* clip1.m4v */; };
 		8711A8412111328400CCFD38 /* clip2.mov in Resources */ = {isa = PBXBuildFile; fileRef = 8711A8402111328400CCFD38 /* clip2.mov */; };
+		8711A8432113E55D00CCFD38 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8711A8422113E55C00CCFD38 /* GoogleService-Info.plist */; };
+		8711A8462113E5F000CCFD38 /* CameraNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8711A8452113E5F000CCFD38 /* CameraNavigationController.swift */; };
 		8720D7C120F1DBBC0069F56B /* VideoPlaybackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8720D7C020F1DBBC0069F56B /* VideoPlaybackViewController.swift */; };
 		8720D7CE20F476DB0069F56B /* VideoTrimmerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8720D7CD20F476DB0069F56B /* VideoTrimmerViewController.swift */; };
 		87221A0A20F073F2000A00F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87221A0920F073F2000A00F7 /* AppDelegate.swift */; };
@@ -47,6 +49,8 @@
 		8711A83A210D539D00CCFD38 /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
 		8711A83C210EABBF00CCFD38 /* clip1.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = clip1.m4v; sourceTree = "<group>"; };
 		8711A8402111328400CCFD38 /* clip2.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = clip2.mov; sourceTree = "<group>"; };
+		8711A8422113E55C00CCFD38 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8711A8452113E5F000CCFD38 /* CameraNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraNavigationController.swift; sourceTree = "<group>"; };
 		8720D7C020F1DBBC0069F56B /* VideoPlaybackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlaybackViewController.swift; sourceTree = "<group>"; };
 		8720D7CD20F476DB0069F56B /* VideoTrimmerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTrimmerViewController.swift; sourceTree = "<group>"; };
 		87221A0620F073F2000A00F7 /* Flokk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flokk.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -135,6 +139,14 @@
 			path = Framework;
 			sourceTree = "<group>";
 		};
+		8711A8442113E5D900CCFD38 /* Nav Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8711A8452113E5F000CCFD38 /* CameraNavigationController.swift */,
+			);
+			path = "Nav Controllers";
+			sourceTree = "<group>";
+		};
 		8720D7C420F46CDB0069F56B /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -149,6 +161,7 @@
 		8720D7C820F46D3C0069F56B /* Camera & Video */ = {
 			isa = PBXGroup;
 			children = (
+				8711A8442113E5D900CCFD38 /* Nav Controllers */,
 				87221A1D20F195B0000A00F7 /* CameraViewController.swift */,
 				8720D7C020F1DBBC0069F56B /* VideoPlaybackViewController.swift */,
 				8720D7CD20F476DB0069F56B /* VideoTrimmerViewController.swift */,
@@ -189,6 +202,7 @@
 				7F58608021127295001FA93B /* myVideo.mp4 */,
 				87221A0920F073F2000A00F7 /* AppDelegate.swift */,
 				87221A1220F073F2000A00F7 /* LaunchScreen.storyboard */,
+				8711A8422113E55C00CCFD38 /* GoogleService-Info.plist */,
 				87221A1520F073F2000A00F7 /* Info.plist */,
 				87706DAC20F960B200663948 /* .gitignore */,
 				7F8012B5210123B700CEA5DA /* Animation */,
@@ -271,6 +285,7 @@
 				7F912B9C211114E000ADABEE /* Next.storyboard in Resources */,
 				7F85D2BF21115D88006E2772 /* Info.plist in Resources */,
 				7F912B982110DB8E00ADABEE /* Groups.storyboard in Resources */,
+				8711A8432113E55D00CCFD38 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,16 +318,20 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Flokk/Pods-Flokk-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/ABVideoRangeSlider/ABVideoRangeSlider.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/NextLevel/NextLevel.framework",
 				"${BUILT_PRODUCTS_DIR}/RecordButton/RecordButton.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftVideoBackground/SwiftVideoBackground.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ABVideoRangeSlider.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NextLevel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RecordButton.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftVideoBackground.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -326,6 +345,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8711A8462113E5F000CCFD38 /* CameraNavigationController.swift in Sources */,
 				8720D7C120F1DBBC0069F56B /* VideoPlaybackViewController.swift in Sources */,
 				87221A1E20F195B0000A00F7 /* CameraViewController.swift in Sources */,
 				8711A83B210D539D00CCFD38 /* FeedTableViewCell.swift in Sources */,
@@ -463,10 +483,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XT8KNR7TY2;
+				DEVELOPMENT_TEAM = L4K4Q74X62;
 				INFOPLIST_FILE = Flokk/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = flokk;
+				PRODUCT_BUNDLE_IDENTIFIER = flokk1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -479,10 +499,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XT8KNR7TY2;
+				DEVELOPMENT_TEAM = L4K4Q74X62;
 				INFOPLIST_FILE = Flokk/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = flokk;
+				PRODUCT_BUNDLE_IDENTIFIER = flokk1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

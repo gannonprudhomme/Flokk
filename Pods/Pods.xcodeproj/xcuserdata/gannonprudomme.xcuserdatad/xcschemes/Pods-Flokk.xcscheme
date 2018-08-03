@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "82B9830D7F4FD05B7A00E60F96B17A89"
+               BlueprintIdentifier = "32EDB89E06346201E18EB749DB2E40D6"
                BuildableName = "Pods_Flokk.framework"
                BlueprintName = "Pods-Flokk"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "82B9830D7F4FD05B7A00E60F96B17A89"
+            BlueprintIdentifier = "32EDB89E06346201E18EB749DB2E40D6"
             BuildableName = "Pods_Flokk.framework"
             BlueprintName = "Pods-Flokk"
             ReferencedContainer = "container:Pods.xcodeproj">
