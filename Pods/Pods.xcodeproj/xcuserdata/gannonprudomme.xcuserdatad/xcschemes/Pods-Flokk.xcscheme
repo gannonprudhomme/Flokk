@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4C6D04B310FED908C7C750C53C368171"
+               BlueprintIdentifier = "82B9830D7F4FD05B7A00E60F96B17A89"
                BuildableName = "Pods_Flokk.framework"
                BlueprintName = "Pods-Flokk"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -26,7 +26,6 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      language = ""
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
@@ -37,7 +36,6 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      language = ""
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
@@ -47,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "4C6D04B310FED908C7C750C53C368171"
+            BlueprintIdentifier = "82B9830D7F4FD05B7A00E60F96B17A89"
             BuildableName = "Pods_Flokk.framework"
             BlueprintName = "Pods-Flokk"
             ReferencedContainer = "container:Pods.xcodeproj">

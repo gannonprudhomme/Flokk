@@ -10,6 +10,8 @@ class VideoPlaybackViewController: UIViewController {
     
     @IBOutlet weak var videoView: UIView!
     @IBOutlet weak var doneButton: UIButton!
+    
+    var uploadPostDelegate: UploadPostDelegate!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,16 +23,20 @@ class VideoPlaybackViewController: UIViewController {
         super.viewDidAppear(animated)
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.restartVideo), name: Notification.Name.AVPlayerItemDidPlayToEndTime, object: avPlayer.currentItem)
-        
-        //addVideo()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
         NotificationCenter.default.removeObserver(self)
+    }
+    
+    @IBAction func donePressed(_ sender: Any) {
+        // Upload the video to the current feed
+        uploadPostDelegate.uploadPost(fileID: "file ID")
         
-        //removeVideo()
+        // Get a preview image(of diff sizes?)
+        self.dismiss(animated: true, completion: nil)
     }
     
     func addVideo() {
@@ -52,14 +58,6 @@ class VideoPlaybackViewController: UIViewController {
         avPlayer.play()
     }
     
-    func removeVideo() {
-        if avPlayer != nil {
-            avPlayer.pause()
-            avPlayerLayer.removeFromSuperlayer()
-            avPlayer = nil
-        }
-    }
-    
     // Callback function for when the video ends
     // Activates the replay button, or loops again automatically
     @objc func restartVideo() {
@@ -70,7 +68,7 @@ class VideoPlaybackViewController: UIViewController {
         }
     }
     
-    @IBAction func donePressed(_ sender: Any) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
     }
 }

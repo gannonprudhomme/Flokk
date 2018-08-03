@@ -51,29 +51,15 @@ class FeedTableViewCell: UITableViewCell {
     }
     
     func initialize() {
-        // Add listener for the end of the video, causing it to loop
-        //addObserver()
-        //NotificationCenter.default.addObserver(self, selector: #selector(self.restartVideo), name: Notification.Name.AVPlayerItemDidPlayToEndTime, object: avPlayer.currentItem)
-        
         setAspectRatio()
         addPlayTouchGesture()
         
-        //addPreviewImageToView(image: UIImage(named: "testPhoto2")!)
+        addPreviewImageToView(image: UIImage(named: "testPhoto2")!)
 
         // Add preview image while the video is loading
         beginLoadingVideo(completion: { (loaded) in
             self.addVideoToView()
         })
-    }
-    
-    // Observer is only added when it is being played
-    func addObserver() {
-        NotificationCenter.default.addObserver(self, selector: #selector(self.restartVideo), name: Notification.Name.AVPlayerItemDidPlayToEndTime, object: avPlayer.currentItem)
-    }
-    
-    // Observer is removed when it is paused
-    func removeObserver() {
-        NotificationCenter.default.removeObserver(self)
     }
     
     // Adds the gesture for pausing & playing the video by tapping it
@@ -104,6 +90,11 @@ extension FeedTableViewCell {
         constraint.priority = UILayoutPriority(rawValue: 999)
         
         aspectConstraint = constraint
+        
+        // Recalculate the height for the view itself
+        // The AVPlayer's & previewImageView's bounds are detetmined by the mainView,
+        // without this the cell would be the right size, but the video/image would not be the correct height
+        mainView.bounds.size = CGSize(width: mainView.bounds.width, height: mainView.bounds.width / CGFloat(aspect))
     }
     
     // Set the preview image on the view
@@ -118,6 +109,12 @@ extension FeedTableViewCell {
     
     func beginLoadingVideo(completion: @escaping (Bool) -> Void) {
         // First check if the video has already been loaded
+        if post.fileURL != nil {
+            completion(true)
+        } else {
+            // Begin loading the video
+            
+        }
         
         // Firebase stuff
         completion(true)
@@ -126,17 +123,9 @@ extension FeedTableViewCell {
     // Once the video has been loaded, this will be called
     func addVideoToView() {
         // If there was a preview image, remove it from the mainView
-        //previewImageView.isHidden = true
-        
-        // Calculate the aspect constraint
-        setAspectRatio()
-        
-        let aspect = Float((self.post.dimensions?.width)!) / Float((self.post.dimensions?.height)!)
-        
-        // Recalculate the height for the view itself
-        // The AVPlayer's bounds are detetmined by the mainView, without this the cell would be the right size
-        // but the video would be cut too short
-        mainView.bounds.size = CGSize(width: mainView.bounds.width, height: mainView.bounds.width / CGFloat(aspect))
+        if previewImageView != nil {
+            previewImageView.isHidden = true
+        }
         
         // Initialize & setup AVPlayer
         avPlayerLayer = AVPlayerLayer(player: avPlayer)
@@ -146,7 +135,6 @@ extension FeedTableViewCell {
         
         let playerItem = AVPlayerItem(url: self.post.fileURL!)
         avPlayer.replaceCurrentItem(with: playerItem)
-        //avPlayer.play()
     }
 }
 
@@ -168,8 +156,17 @@ extension FeedTableViewCell {
         }
     }
     
+    // Observer is only added when it is being played
+    func addObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(self.restartVideo), name: Notification.Name.AVPlayerItemDidPlayToEndTime, object: avPlayer.currentItem)
+    }
+    
+    // Observer is removed when it is paused
+    func removeObserver() {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     @objc func restartVideo() {
-        print("Restarting Feed Video")
         avPlayer.seek(to: CMTime(seconds: 0, preferredTimescale: 1000));
         playVideo()
     }

@@ -39,6 +39,8 @@ class CameraViewController : UIViewController {
     
     var isFlashOn = false
     
+    var uploadPostDelegate: UploadPostDelegate!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -160,10 +162,13 @@ class CameraViewController : UIViewController {
         if segue.identifier == "doneRecordingSegue" {
             if let vc = segue.destination as? VideoPlaybackViewController {
                 vc.videoURL = self.videoURL
+                vc.uploadPostDelegate = uploadPostDelegate
+                
             }
         } else if segue.identifier == "trimVideoSegue" {
             if let vc = segue.destination as? VideoTrimmerViewController {
                 vc.videoURL = self.videoURL
+                vc.uploadPostDelegate = uploadPostDelegate
             }
         }
     }

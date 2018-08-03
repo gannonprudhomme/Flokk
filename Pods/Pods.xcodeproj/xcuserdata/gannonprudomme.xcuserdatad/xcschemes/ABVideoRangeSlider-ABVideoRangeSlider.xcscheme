@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "007FCD09B4D962F27B8D2342248E9318"
+               BlueprintIdentifier = "C6456C8DB19B34E80A1E032D6F8914B3"
                BuildableName = "ABVideoRangeSlider.bundle"
                BlueprintName = "ABVideoRangeSlider-ABVideoRangeSlider"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -26,7 +26,6 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      language = ""
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
@@ -37,7 +36,6 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      language = ""
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
@@ -47,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "007FCD09B4D962F27B8D2342248E9318"
+            BlueprintIdentifier = "C6456C8DB19B34E80A1E032D6F8914B3"
             BuildableName = "ABVideoRangeSlider.bundle"
             BlueprintName = "ABVideoRangeSlider-ABVideoRangeSlider"
             ReferencedContainer = "container:Pods.xcodeproj">

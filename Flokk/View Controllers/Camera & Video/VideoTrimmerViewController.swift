@@ -25,6 +25,8 @@ class VideoTrimmerViewController: UIViewController {
     
     var progressTimer: Timer!
     
+    var uploadPostDelegate: UploadPostDelegate!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -39,7 +41,7 @@ class VideoTrimmerViewController: UIViewController {
         rangeSlider.setEndPosition(seconds: 6) // What if it's not long enough?
         
         // Why do we need to do this here
-        restartVideo()
+        //restartVideo()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -51,8 +53,6 @@ class VideoTrimmerViewController: UIViewController {
             
             avPlayer.play()
         }
-        
-        //addVideo()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -61,9 +61,6 @@ class VideoTrimmerViewController: UIViewController {
         // Remove the observer to prevent it being triggered when it shouldn't be
         NotificationCenter.default.removeObserver(self)
         avPlayer.pause()
-        
-        // Would have to create avplayer in viewDidAppear in order to do below
-        //removeVideo()
     }
 
     override func didReceiveMemoryWarning() {
@@ -131,6 +128,7 @@ class VideoTrimmerViewController: UIViewController {
         if segue.identifier == "playbackFromTrimSegue" {
             if let vc = segue.destination as? VideoPlaybackViewController {
                 vc.videoURL = self.trimmedVideoURL
+                vc.uploadPostDelegate = uploadPostDelegate
             }
         }
     }
@@ -145,7 +143,7 @@ extension VideoTrimmerViewController {
         
         let asset = AVAsset(url: sourceURL)
         let length = Float(asset.duration.value) / Float(asset.duration.timescale)
-        print("video length: \(length) seconds")
+       // print("video length: \(length) seconds")
         
         var outputURL = documentDirectory.appendingPathComponent("output")
         do {

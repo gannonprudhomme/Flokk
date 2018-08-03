@@ -11,6 +11,12 @@ import UIKit
 // Is there a need for this to be global
 let initialPostsCount = 5
 
+// For telling the feed that we uploaded a photo from VideoPlaybackVC
+// Passed along from Camera Nav -> Camera (-> maybe VideoTrimmer) -> VideoPlayback
+protocol UploadPostDelegate {
+    func uploadPost(fileID: String)
+}
+
 class FeedViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
@@ -69,15 +75,19 @@ class FeedViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+        if let vc = segue.destination as? CameraNavigationController {
+            vc.uploadPostDelegate = self
+        }
     }
 }
 
 // MARK: - Post Handling
-extension FeedViewController {
+extension FeedViewController: UploadPostDelegate {
     // Initial post loading
     func loadPosts() {
+        // Maybe get all of the posts (generic) info?
         
+        // Only add the cell to the tableview when we have the preview image downloaded?
     }
     
     // When we scroll down past a certain point, load more posts
@@ -101,6 +111,10 @@ extension FeedViewController {
         
         //tableView.reloadData()
         tableView.insertRows(at: indexPaths, with: UITableViewRowAnimation.bottom)
+    }
+    
+    func uploadPost(fileID: String) {
+        
     }
     
     func sortPosts() {
@@ -127,7 +141,6 @@ extension FeedViewController {
         self.posts.append(post2)
         self.posts.append(post2)
         self.posts.append(post2)
-        
     }
 }
 
