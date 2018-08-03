@@ -45,9 +45,13 @@ class VideoPlaybackViewController: UIViewController {
         // Add the callback function to the av player for looping the video once it's ended
         NotificationCenter.default.addObserver(self, selector: #selector(self.restartVideo), name: Notification.Name.AVPlayerItemDidPlayToEndTime, object: avPlayer.currentItem)
         
+    
+        // Configure the preview layer for the camera
+        let screenBounds = UIScreen.main.bounds
+        
         avPlayerLayer = AVPlayerLayer(player: avPlayer)
         avPlayerLayer.frame = self.videoView.bounds
-        avPlayerLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
+        avPlayerLayer.videoGravity = AVLayerVideoGravity.resizeAspect
         self.videoView.layer.insertSublayer(avPlayerLayer, at: 0)
         
         view.layoutIfNeeded()

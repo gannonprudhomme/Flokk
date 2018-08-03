@@ -73,10 +73,13 @@ class VideoTrimmerViewController: UIViewController {
         // Add the callback function to the AVPlayer to make it loop
         NotificationCenter.default.addObserver(self, selector: #selector(self.restartVideo), name: Notification.Name.AVPlayerItemDidPlayToEndTime, object: avPlayer.currentItem)
         
+        // Configure the preview layer for the camera
+        let screenBounds = UIScreen.main.bounds
+        
         // Set up the AVPlayer to play the video
         avPlayerLayer = AVPlayerLayer(player: avPlayer)
-        avPlayerLayer.frame = videoCanvasView.bounds
-        avPlayerLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
+        avPlayerLayer.frame = self.videoCanvasView.bounds
+        avPlayerLayer.videoGravity = AVLayerVideoGravity.resizeAspect
         videoCanvasView.layer.insertSublayer(avPlayerLayer, at: 0)
         
         self.view.layoutIfNeeded()

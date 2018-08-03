@@ -16,7 +16,7 @@ class ABProgressIndicator: UIView {
         super.init(frame: frame)
         
         let bundle = Bundle(for: ABStartIndicator.self)
-        let image = UIImage(named: "ProgressIndicatorTeal", in: bundle, compatibleWith: nil)
+        let image = UIImage(named: "ProgressIndicatorTeal")
         imageView.frame = self.bounds
         imageView.image = image
         imageView.contentMode = UIViewContentMode.scaleToFill

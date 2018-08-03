@@ -17,7 +17,7 @@ class ABStartIndicator: UIView {
         self.isUserInteractionEnabled = true
         
         let bundle = Bundle(for: ABStartIndicator.self)
-        let image = UIImage(named: "StartIndicatorWhite", in: bundle, compatibleWith: nil)
+        let image = UIImage(named: "StartIndicatorWhite")
         
         imageView.frame = self.bounds
         imageView.image = image
