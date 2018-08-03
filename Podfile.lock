@@ -2,23 +2,27 @@ PODS:
   - ABVideoRangeSlider (0.1.5)
   - NextLevel (0.9.8)
   - RecordButton (1.0.2)
+  - SwiftVideoBackground (3.0.0)
 
 DEPENDENCIES:
   - ABVideoRangeSlider
-  - NextLevel (~> 0.9.5)
+  - NextLevel (~> 0.9.8)
   - RecordButton
+  - SwiftVideoBackground (~> 3.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - ABVideoRangeSlider
     - NextLevel
     - RecordButton
+    - SwiftVideoBackground
 
 SPEC CHECKSUMS:
   ABVideoRangeSlider: f2b6d894170bd0951693de4c1ad625f7f9f8b6a5
   NextLevel: 14d10b1e6e85ba01f8660a39fb78adedd37bfec0
   RecordButton: 76677be0f4b94f8a387454a23b4b64bd9b6c0e51
+  SwiftVideoBackground: 15c69b74458ad57f123c52f55a5bf6865eaf4eae
 
-PODFILE CHECKSUM: 48347db211e4ad073dddeddb5e7859b29b379a30
+PODFILE CHECKSUM: 63c4006238e361a774d97785a218b4ef717f3862
 
 COCOAPODS: 1.5.3

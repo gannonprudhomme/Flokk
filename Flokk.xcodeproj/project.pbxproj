@@ -7,7 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F58608121127295001FA93B /* myVideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 7F58608021127295001FA93B /* myVideo.mp4 */; };
 		7F8012BB2102CBF200CEA5DA /* Camera.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F8012BA2102CBF200CEA5DA /* Camera.storyboard */; };
+		7F85D2BF21115D88006E2772 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 87221A1520F073F2000A00F7 /* Info.plist */; };
+		7F85D2C021115D93006E2772 /* JosefinSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7F8012A82100F69800CEA5DA /* JosefinSans-Regular.ttf */; };
+		7F85D2C121115D96006E2772 /* JosefinSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7F8012A72100F69800CEA5DA /* JosefinSans-Bold.ttf */; };
 		7F912B982110DB8E00ADABEE /* Groups.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F912B972110DB8E00ADABEE /* Groups.storyboard */; };
 		7F912B9C211114E000ADABEE /* Next.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F912B9B211114E000ADABEE /* Next.storyboard */; };
 		8711A831210D468F00CCFD38 /* Feed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8711A830210D468F00CCFD38 /* Feed.storyboard */; };
@@ -30,6 +34,7 @@
 		4179953DF8DE914F0B1E1396 /* Pods-Flokk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flokk.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Flokk/Pods-Flokk.debug.xcconfig"; sourceTree = "<group>"; };
 		453D587CDE3B8763B595800A /* Pods_Flokk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Flokk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E7F9723779119924F127835 /* Pods-Flokk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flokk.release.xcconfig"; path = "Pods/Target Support Files/Pods-Flokk/Pods-Flokk.release.xcconfig"; sourceTree = "<group>"; };
+		7F58608021127295001FA93B /* myVideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = myVideo.mp4; sourceTree = "<group>"; };
 		7F8012A72100F69800CEA5DA /* JosefinSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JosefinSans-Bold.ttf"; sourceTree = "<group>"; };
 		7F8012A82100F69800CEA5DA /* JosefinSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JosefinSans-Regular.ttf"; sourceTree = "<group>"; };
 		7F8012B3210123B000CEA5DA /* BounceButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BounceButton.swift; sourceTree = "<group>"; };
@@ -99,6 +104,20 @@
 			path = Animation;
 			sourceTree = "<group>";
 		};
+		7F85D2CE21126E39006E2772 /* Next */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Next;
+			sourceTree = "<group>";
+		};
+		7FF3CB79211380CC00D1438C /* Groups */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Groups;
+			sourceTree = "<group>";
+		};
 		8711A834210D478100CCFD38 /* Feed */ = {
 			isa = PBXGroup;
 			children = (
@@ -121,6 +140,8 @@
 			children = (
 				8711A834210D478100CCFD38 /* Feed */,
 				8720D7C820F46D3C0069F56B /* Camera & Video */,
+				7F85D2CE21126E39006E2772 /* Next */,
+				7FF3CB79211380CC00D1438C /* Groups */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -165,6 +186,7 @@
 				87221A1020F073F2000A00F7 /* Assets.xcassets */,
 				8711A83C210EABBF00CCFD38 /* clip1.m4v */,
 				8711A8402111328400CCFD38 /* clip2.mov */,
+				7F58608021127295001FA93B /* myVideo.mp4 */,
 				87221A0920F073F2000A00F7 /* AppDelegate.swift */,
 				87221A1220F073F2000A00F7 /* LaunchScreen.storyboard */,
 				87221A1520F073F2000A00F7 /* Info.plist */,
@@ -236,14 +258,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F58608121127295001FA93B /* myVideo.mp4 in Resources */,
 				8711A8412111328400CCFD38 /* clip2.mov in Resources */,
 				8711A83D210EABDA00CCFD38 /* clip1.m4v in Resources */,
 				87706DAD20F960B200663948 /* .gitignore in Resources */,
 				8711A831210D468F00CCFD38 /* Feed.storyboard in Resources */,
 				87221A1420F073F2000A00F7 /* LaunchScreen.storyboard in Resources */,
+				7F85D2C121115D96006E2772 /* JosefinSans-Bold.ttf in Resources */,
 				87221A1120F073F2000A00F7 /* Assets.xcassets in Resources */,
 				7F8012BB2102CBF200CEA5DA /* Camera.storyboard in Resources */,
+				7F85D2C021115D93006E2772 /* JosefinSans-Regular.ttf in Resources */,
 				7F912B9C211114E000ADABEE /* Next.storyboard in Resources */,
+				7F85D2BF21115D88006E2772 /* Info.plist in Resources */,
 				7F912B982110DB8E00ADABEE /* Groups.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -279,12 +305,14 @@
 				"${BUILT_PRODUCTS_DIR}/ABVideoRangeSlider/ABVideoRangeSlider.framework",
 				"${BUILT_PRODUCTS_DIR}/NextLevel/NextLevel.framework",
 				"${BUILT_PRODUCTS_DIR}/RecordButton/RecordButton.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftVideoBackground/SwiftVideoBackground.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ABVideoRangeSlider.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NextLevel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RecordButton.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftVideoBackground.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -435,10 +463,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = L4K4Q74X62;
+				DEVELOPMENT_TEAM = XT8KNR7TY2;
 				INFOPLIST_FILE = Flokk/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = flokk1;
+				PRODUCT_BUNDLE_IDENTIFIER = flokk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -451,10 +479,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = L4K4Q74X62;
+				DEVELOPMENT_TEAM = XT8KNR7TY2;
 				INFOPLIST_FILE = Flokk/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = flokk1;
+				PRODUCT_BUNDLE_IDENTIFIER = flokk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
