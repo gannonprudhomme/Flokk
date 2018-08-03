@@ -22,7 +22,6 @@ class FeedViewController: UIViewController {
     var currentPostCount = initialPostsCount
     var totalPostsCount = 10 // Max amount of posts we can load(the # of posts in the group)
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -54,6 +53,13 @@ class FeedViewController: UIViewController {
         // Stop the new posts listener
         
         // Stop the videos from being played
+        
+        for c in tableView.visibleCells {
+            if let cell = c as? FeedTableViewCell {
+                // Pause the video if it's playing and remove the observers
+                cell.pauseVideo()
+            }
+        }
     }
     
     @IBAction func addPostPressed(_ sender: Any) {
@@ -116,7 +122,6 @@ extension FeedViewController {
         self.posts.append(post1)
         self.posts.append(post1)
         
-        
         self.posts.append(post2)
         self.posts.append(post2)
         self.posts.append(post2)
@@ -133,8 +138,6 @@ extension FeedViewController: UITableViewDataSource, UITableViewDelegate {
         
         cell.post = self.posts[indexPath.row]
         cell.initialize()
-        
-        //print("Cell for \(indexPath.row)")
         
         return cell
     }
