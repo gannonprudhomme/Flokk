@@ -9,7 +9,6 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="Segues with Peek and Pop" minToolsVersion="7.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -18,10 +17,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Initial Screen-->
         <scene sceneID="nen-ml-KPb">
             <objects>
-                <viewController id="kak-MI-9sT" sceneMemberID="viewController">
+                <viewController title="Initial Screen" id="kak-MI-9sT" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sS3-PR-Qm8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -67,15 +66,15 @@
             </objects>
             <point key="canvasLocation" x="936.79999999999995" y="-11.244377811094454"/>
         </scene>
-        <!-- -->
+        <!-- Sign Up 1-->
         <scene sceneID="EPw-af-6hL">
             <objects>
-                <viewController title=" " id="FAM-2j-n0g" sceneMemberID="viewController">
+                <viewController title=" Sign Up 1" id="FAM-2j-n0g" customClass="FirstSignUpViewController" customModule="Flokk" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UF1-99-IMH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2RS-nD-qQj">
+                            <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone Number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2RS-nD-qQj">
                                 <rect key="frame" x="71" y="76" width="275" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="maj-pu-EiK"/>
@@ -111,7 +110,7 @@
                                 <rect key="frame" x="71" y="160" width="275" height="1"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Elp-QF-FEW">
+                            <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Elp-QF-FEW">
                                 <rect key="frame" x="71" y="188" width="275" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="28w-rI-5tt"/>
@@ -133,13 +132,10 @@
                                 <rect key="frame" x="122.5" y="280.5" width="130" height="42"/>
                                 <state key="normal" image="continueBttn"/>
                                 <connections>
-                                    <segue destination="TK3-m4-SFM" kind="show" id="RPy-BQ-f5I">
-                                        <segue key="commit" inheritsFrom="parent" id="Nvo-Pq-SXA"/>
-                                        <segue key="preview" inheritsFrom="commit" id="jKG-Pl-1O3"/>
-                                    </segue>
+                                    <action selector="continuePressed:" destination="FAM-2j-n0g" eventType="touchUpInside" id="Vlh-N2-dik"/>
                                 </connections>
                             </button>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="userIconTeal" translatesAutoresizingMaskIntoConstraints="NO" id="UPf-gM-et8">
+                            <imageView hidden="YES" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="userIconTeal" translatesAutoresizingMaskIntoConstraints="NO" id="UPf-gM-et8">
                                 <rect key="frame" x="28" y="83" width="16" height="17"/>
                             </imageView>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="phoneIconTeal" translatesAutoresizingMaskIntoConstraints="NO" id="98x-Zg-mvd">
@@ -183,15 +179,19 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="pH2-rB-dYt"/>
                     </view>
+                    <connections>
+                        <outlet property="phoneNumberField" destination="DWh-nZ-zTt" id="Arf-ZS-rjq"/>
+                        <segue destination="guP-8x-eyw" kind="show" id="0PD-0h-Mzh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L6d-N8-5JR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1848.8" y="-11.244377811094454"/>
         </scene>
-        <!--View Controller-->
+        <!--Sign Up 2-->
         <scene sceneID="KjD-Jg-Ppq">
             <objects>
-                <viewController id="TK3-m4-SFM" sceneMemberID="viewController">
+                <viewController title="Sign Up 2" id="TK3-m4-SFM" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7FE-NU-cV6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -269,7 +269,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6MK-tJ-XMr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2688.8000000000002" y="-11.244377811094454"/>
+            <point key="canvasLocation" x="2870" y="-11"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ad5-LE-igT">
@@ -291,10 +291,10 @@
             </objects>
             <point key="canvasLocation" x="-2.3999999999999999" y="-11.244377811094454"/>
         </scene>
-        <!-- -->
+        <!-- Sign In-->
         <scene sceneID="pwX-Vc-CDD">
             <objects>
-                <viewController title=" " id="Q30-Dc-eNJ" sceneMemberID="viewController">
+                <viewController title=" Sign In" id="Q30-Dc-eNJ" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WYW-qO-GiE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -314,7 +314,7 @@
                                 <rect key="frame" x="71" y="160" width="275" height="2"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OUv-ic-rOj">
+                            <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OUv-ic-rOj">
                                 <rect key="frame" x="71" y="189" width="275" height="30"/>
                                 <color key="textColor" name="White"/>
                                 <fontDescription key="fontDescription" name="JosefinSans" family="Josefin Sans" pointSize="15"/>
@@ -336,11 +336,14 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EXT-lm-nFN">
                                 <rect key="frame" x="122.5" y="280.5" width="130" height="42"/>
                                 <state key="normal" image="continueBttn"/>
+                                <connections>
+                                    <segue destination="guP-8x-eyw" kind="show" id="Llc-bf-XvH"/>
+                                </connections>
                             </button>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="userIconTeal" translatesAutoresizingMaskIntoConstraints="NO" id="P2b-2e-pgO">
                                 <rect key="frame" x="28" y="138" width="16" height="17"/>
                             </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="passwordIconTeal" translatesAutoresizingMaskIntoConstraints="NO" id="HFW-2z-T5y">
+                            <imageView hidden="YES" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="passwordIconTeal" translatesAutoresizingMaskIntoConstraints="NO" id="HFW-2z-T5y">
                                 <rect key="frame" x="29" y="195" width="14" height="18"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4TV-xv-oHv">
@@ -387,10 +390,10 @@
             </objects>
             <point key="canvasLocation" x="937" y="808"/>
         </scene>
-        <!--View Controller-->
+        <!--Forgot Password-->
         <scene sceneID="wAP-du-IkG">
             <objects>
-                <viewController id="7Jo-MI-iUe" sceneMemberID="viewController">
+                <viewController title="Forgot Password" id="7Jo-MI-iUe" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wTP-8V-O44">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -456,6 +459,78 @@ into your account.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dhC-yB-0rf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="937" y="1606"/>
+        </scene>
+        <!--Verify Phone #-->
+        <scene sceneID="CaC-Lr-UwH">
+            <objects>
+                <viewController title="Verify Phone #" id="guP-8x-eyw" customClass="VerifyNumberViewController" customModule="Flokk" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MY2-0B-FbZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zct-zw-UTE">
+                                <rect key="frame" x="122.5" y="281" width="130" height="41"/>
+                                <state key="normal" image="sendBttn"/>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Verification Code" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ieh-gj-oT0">
+                                <rect key="frame" x="73" y="169" width="275" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="275" id="qXq-pQ-xg2"/>
+                                </constraints>
+                                <color key="textColor" name="White"/>
+                                <fontDescription key="fontDescription" name="JosefinSans" family="Josefin Sans" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="phonePad" keyboardAppearance="alert" textContentType="tel"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
+                                        <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SID-jV-HD1">
+                                <rect key="frame" x="73" y="197" width="275" height="1"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="eBw-oH-pnl"/>
+                                </constraints>
+                            </view>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="phoneIconTeal" translatesAutoresizingMaskIntoConstraints="NO" id="5Vl-tR-YOJ">
+                                <rect key="frame" x="29" y="176" width="16" height="16"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your verification code" textAlignment="center" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FJB-Bg-NUC">
+                                <rect key="frame" x="89" y="56" width="197" height="91"/>
+                                <fontDescription key="fontDescription" name="JosefinSans" family="Josefin Sans" pointSize="16"/>
+                                <color key="textColor" name="White"/>
+                                <color key="highlightedColor" name="White"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" name="Flokk Navy"/>
+                        <constraints>
+                            <constraint firstItem="FJB-Bg-NUC" firstAttribute="centerX" secondItem="Zct-zw-UTE" secondAttribute="centerX" id="23g-JV-hQ8"/>
+                            <constraint firstItem="FJB-Bg-NUC" firstAttribute="leading" secondItem="ZUp-5A-a1D" secondAttribute="leading" constant="89" id="6F5-be-I6H"/>
+                            <constraint firstItem="Zct-zw-UTE" firstAttribute="top" secondItem="SID-jV-HD1" secondAttribute="bottom" constant="83" id="A0w-FQ-2JO"/>
+                            <constraint firstItem="ieh-gj-oT0" firstAttribute="leading" secondItem="5Vl-tR-YOJ" secondAttribute="trailing" constant="28" id="CZt-UA-clJ"/>
+                            <constraint firstItem="Zct-zw-UTE" firstAttribute="top" secondItem="ieh-gj-oT0" secondAttribute="bottom" constant="82" id="QDE-wP-LDN"/>
+                            <constraint firstItem="Zct-zw-UTE" firstAttribute="centerY" secondItem="ZUp-5A-a1D" secondAttribute="centerY" id="QV1-PU-Qgg"/>
+                            <constraint firstItem="5Vl-tR-YOJ" firstAttribute="leading" secondItem="ZUp-5A-a1D" secondAttribute="leading" constant="29" id="YeB-Rs-7rI"/>
+                            <constraint firstItem="FJB-Bg-NUC" firstAttribute="top" secondItem="ZUp-5A-a1D" secondAttribute="top" constant="56" id="bL4-Re-IbE"/>
+                            <constraint firstItem="ieh-gj-oT0" firstAttribute="top" secondItem="ZUp-5A-a1D" secondAttribute="top" constant="169" id="bfW-bo-Zkm"/>
+                            <constraint firstItem="5Vl-tR-YOJ" firstAttribute="centerY" secondItem="ieh-gj-oT0" secondAttribute="centerY" id="dyM-YH-54P"/>
+                            <constraint firstItem="ieh-gj-oT0" firstAttribute="top" secondItem="FJB-Bg-NUC" secondAttribute="bottom" constant="22" id="hWk-xM-TaF"/>
+                            <constraint firstItem="SID-jV-HD1" firstAttribute="top" secondItem="ZUp-5A-a1D" secondAttribute="top" constant="197" id="hZZ-df-U7i"/>
+                            <constraint firstItem="ieh-gj-oT0" firstAttribute="leading" secondItem="SID-jV-HD1" secondAttribute="leading" id="igh-Gs-lGq"/>
+                            <constraint firstItem="ieh-gj-oT0" firstAttribute="trailing" secondItem="SID-jV-HD1" secondAttribute="trailing" id="x2T-xL-ljI"/>
+                            <constraint firstItem="Zct-zw-UTE" firstAttribute="centerX" secondItem="ZUp-5A-a1D" secondAttribute="centerX" id="xnp-nZ-d4F"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ZUp-5A-a1D"/>
+                    </view>
+                    <connections>
+                        <outlet property="codeField" destination="ieh-gj-oT0" id="aCC-e3-m5a"/>
+                        <segue destination="TK3-m4-SFM" kind="show" id="R57-F3-WHB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RFZ-IV-Dvg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
             <point key="canvasLocation" x="1849" y="807"/>
         </scene>
     </scenes>
@@ -474,15 +549,21 @@ into your account.</string>
         <namedColor name="Flokk Navy">
             <color red="0.082000002259999996" green="0.086000002919999999" blue="0.16899999979999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <namedColor name="Flokk Navy">
+            <color red="0.082000002259999996" green="0.086000002919999999" blue="0.16899999979999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="Secondary Text">
             <color red="0.61568627450980395" green="0.61568627450980395" blue="0.64313725490196083" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="White">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <namedColor name="White">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="RPy-BQ-f5I"/>
+        <segue reference="0PD-0h-Mzh"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" name="White"/>
 </document>

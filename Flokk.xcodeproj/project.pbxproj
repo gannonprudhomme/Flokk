@@ -30,6 +30,8 @@
 		87221A1E20F195B0000A00F7 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87221A1D20F195B0000A00F7 /* CameraViewController.swift */; };
 		875691A92101009000284EA3 /* Pods_Flokk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 453D587CDE3B8763B595800A /* Pods_Flokk.framework */; };
 		87706DAD20F960B200663948 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 87706DAC20F960B200663948 /* .gitignore */; };
+		87D2CEAA21167570007785DC /* FirstSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D2CEA921167570007785DC /* FirstSignUpViewController.swift */; };
+		87D2CEAC211675AD007785DC /* VerifyNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D2CEAB211675AD007785DC /* VerifyNumberViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +62,8 @@
 		87221A1520F073F2000A00F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		87221A1D20F195B0000A00F7 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		87706DAC20F960B200663948 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		87D2CEA921167570007785DC /* FirstSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstSignUpViewController.swift; sourceTree = "<group>"; };
+		87D2CEAB211675AD007785DC /* VerifyNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyNumberViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,13 +112,6 @@
 			path = Animation;
 			sourceTree = "<group>";
 		};
-		7F85D2CE21126E39006E2772 /* Next */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Next;
-			sourceTree = "<group>";
-		};
 		7FF3CB79211380CC00D1438C /* Groups */ = {
 			isa = PBXGroup;
 			children = (
@@ -152,7 +149,7 @@
 			children = (
 				8711A834210D478100CCFD38 /* Feed */,
 				8720D7C820F46D3C0069F56B /* Camera & Video */,
-				7F85D2CE21126E39006E2772 /* Next */,
+				87D2CEA821167524007785DC /* Sign Up */,
 				7FF3CB79211380CC00D1438C /* Groups */,
 			);
 			path = "View Controllers";
@@ -209,6 +206,15 @@
 				7F8012A92100F69D00CEA5DA /* Fonts */,
 			);
 			path = Flokk;
+			sourceTree = "<group>";
+		};
+		87D2CEA821167524007785DC /* Sign Up */ = {
+			isa = PBXGroup;
+			children = (
+				87D2CEA921167570007785DC /* FirstSignUpViewController.swift */,
+				87D2CEAB211675AD007785DC /* VerifyNumberViewController.swift */,
+			);
+			path = "Sign Up";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -318,6 +324,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Flokk/Pods-Flokk-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/ABVideoRangeSlider/ABVideoRangeSlider.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/NextLevel/NextLevel.framework",
 				"${BUILT_PRODUCTS_DIR}/RecordButton/RecordButton.framework",
@@ -327,6 +334,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ABVideoRangeSlider.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NextLevel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RecordButton.framework",
@@ -348,6 +356,8 @@
 				8711A8462113E5F000CCFD38 /* CameraNavigationController.swift in Sources */,
 				8720D7C120F1DBBC0069F56B /* VideoPlaybackViewController.swift in Sources */,
 				87221A1E20F195B0000A00F7 /* CameraViewController.swift in Sources */,
+				87D2CEAA21167570007785DC /* FirstSignUpViewController.swift in Sources */,
+				87D2CEAC211675AD007785DC /* VerifyNumberViewController.swift in Sources */,
 				8711A83B210D539D00CCFD38 /* FeedTableViewCell.swift in Sources */,
 				8711A836210D478C00CCFD38 /* FeedViewController.swift in Sources */,
 				8711A839210D47CD00CCFD38 /* Post.swift in Sources */,
