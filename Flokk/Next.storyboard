@@ -335,7 +335,7 @@
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EXT-lm-nFN">
                                 <rect key="frame" x="122.5" y="280.5" width="130" height="42"/>
-                                <state key="normal" image="continueBttn"/>
+                                <state key="normal" image="logInLarge"/>
                                 <connections>
                                     <segue destination="guP-8x-eyw" kind="show" id="Llc-bf-XvH"/>
                                 </connections>
@@ -471,7 +471,7 @@ into your account.</string>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zct-zw-UTE">
                                 <rect key="frame" x="122.5" y="281" width="130" height="41"/>
-                                <state key="normal" image="sendBttn"/>
+                                <state key="normal" image="continueBttn"/>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Verification Code" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ieh-gj-oT0">
                                 <rect key="frame" x="73" y="169" width="275" height="30"/>
@@ -480,7 +480,7 @@ into your account.</string>
                                 </constraints>
                                 <color key="textColor" name="White"/>
                                 <fontDescription key="fontDescription" name="JosefinSans" family="Josefin Sans" pointSize="15"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="phonePad" keyboardAppearance="alert" textContentType="tel"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" keyboardAppearance="alert"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
                                         <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -498,7 +498,7 @@ into your account.</string>
                                 <rect key="frame" x="29" y="176" width="16" height="16"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your verification code" textAlignment="center" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FJB-Bg-NUC">
-                                <rect key="frame" x="89" y="56" width="197" height="91"/>
+                                <rect key="frame" x="89" y="88" width="197" height="28"/>
                                 <fontDescription key="fontDescription" name="JosefinSans" family="Josefin Sans" pointSize="16"/>
                                 <color key="textColor" name="White"/>
                                 <color key="highlightedColor" name="White"/>
@@ -513,10 +513,10 @@ into your account.</string>
                             <constraint firstItem="Zct-zw-UTE" firstAttribute="top" secondItem="ieh-gj-oT0" secondAttribute="bottom" constant="82" id="QDE-wP-LDN"/>
                             <constraint firstItem="Zct-zw-UTE" firstAttribute="centerY" secondItem="ZUp-5A-a1D" secondAttribute="centerY" id="QV1-PU-Qgg"/>
                             <constraint firstItem="5Vl-tR-YOJ" firstAttribute="leading" secondItem="ZUp-5A-a1D" secondAttribute="leading" constant="29" id="YeB-Rs-7rI"/>
-                            <constraint firstItem="FJB-Bg-NUC" firstAttribute="top" secondItem="ZUp-5A-a1D" secondAttribute="top" constant="56" id="bL4-Re-IbE"/>
+                            <constraint firstItem="FJB-Bg-NUC" firstAttribute="top" secondItem="ZUp-5A-a1D" secondAttribute="top" constant="88" id="bL4-Re-IbE"/>
                             <constraint firstItem="ieh-gj-oT0" firstAttribute="top" secondItem="ZUp-5A-a1D" secondAttribute="top" constant="169" id="bfW-bo-Zkm"/>
                             <constraint firstItem="5Vl-tR-YOJ" firstAttribute="centerY" secondItem="ieh-gj-oT0" secondAttribute="centerY" id="dyM-YH-54P"/>
-                            <constraint firstItem="ieh-gj-oT0" firstAttribute="top" secondItem="FJB-Bg-NUC" secondAttribute="bottom" constant="22" id="hWk-xM-TaF"/>
+                            <constraint firstItem="ieh-gj-oT0" firstAttribute="top" secondItem="FJB-Bg-NUC" secondAttribute="bottom" constant="53" id="hWk-xM-TaF"/>
                             <constraint firstItem="SID-jV-HD1" firstAttribute="top" secondItem="ZUp-5A-a1D" secondAttribute="top" constant="197" id="hZZ-df-U7i"/>
                             <constraint firstItem="ieh-gj-oT0" firstAttribute="leading" secondItem="SID-jV-HD1" secondAttribute="leading" id="igh-Gs-lGq"/>
                             <constraint firstItem="ieh-gj-oT0" firstAttribute="trailing" secondItem="SID-jV-HD1" secondAttribute="trailing" id="x2T-xL-ljI"/>
@@ -531,7 +531,7 @@ into your account.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RFZ-IV-Dvg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1849" y="807"/>
+            <point key="canvasLocation" x="1848.8" y="806.44677661169419"/>
         </scene>
     </scenes>
     <resources>
@@ -540,6 +540,7 @@ into your account.</string>
         <image name="backBttnWhite" width="18" height="15"/>
         <image name="continueBttn" width="130" height="42"/>
         <image name="logInBttn" width="121" height="36"/>
+        <image name="logInLarge" width="130" height="42"/>
         <image name="passwordIconTeal" width="14" height="18"/>
         <image name="phoneIconTeal" width="16" height="16"/>
         <image name="registerBttn" width="130" height="42"/>
@@ -549,21 +550,15 @@ into your account.</string>
         <namedColor name="Flokk Navy">
             <color red="0.082000002259999996" green="0.086000002919999999" blue="0.16899999979999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="Flokk Navy">
-            <color red="0.082000002259999996" green="0.086000002919999999" blue="0.16899999979999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="Secondary Text">
             <color red="0.61568627450980395" green="0.61568627450980395" blue="0.64313725490196083" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="White">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="White">
-            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="0PD-0h-Mzh"/>
+        <segue reference="Llc-bf-XvH"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" name="White"/>
 </document>
