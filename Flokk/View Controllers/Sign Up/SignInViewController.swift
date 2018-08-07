@@ -25,7 +25,7 @@ class SignInViewController: UIViewController {
     
     @IBAction func signInPressed(_ sender: Any) {
         let email = emailField.text!
-        let password = emailField.text!
+        let password = passwordField.text!
         
         Auth.auth().signIn(withEmail: email, password: password, completion: { (authResult, error) in
             if error == nil {
