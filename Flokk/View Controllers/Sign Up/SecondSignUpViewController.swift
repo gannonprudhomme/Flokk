@@ -58,7 +58,7 @@ class SecondSignUpViewController: UIViewController {
                     storage.child("users").child(uid).child("profilePhoto").putData(data!, metadata: nil, completion: { (metadata, error) in
                         if error == nil {
                             // Create the main user, to be used throughout the app
-                            mainUser = User(uid: uid, handle: self.handleField.text!, email: self.email)
+                            mainUser = User(uid: uid, handle: self.handleField.text!)
                             
                             print("registered user")
                             
