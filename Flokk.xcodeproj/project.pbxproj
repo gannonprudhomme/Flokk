@@ -13,7 +13,7 @@
 		7F85D2C021115D93006E2772 /* JosefinSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7F8012A82100F69800CEA5DA /* JosefinSans-Regular.ttf */; };
 		7F85D2C121115D96006E2772 /* JosefinSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7F8012A72100F69800CEA5DA /* JosefinSans-Bold.ttf */; };
 		7F912B982110DB8E00ADABEE /* Groups.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F912B972110DB8E00ADABEE /* Groups.storyboard */; };
-		7F912B9C211114E000ADABEE /* Next.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F912B9B211114E000ADABEE /* Next.storyboard */; };
+		7F912B9C211114E000ADABEE /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F912B9B211114E000ADABEE /* SignUp.storyboard */; };
 		8711A831210D468F00CCFD38 /* Feed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8711A830210D468F00CCFD38 /* Feed.storyboard */; };
 		8711A836210D478C00CCFD38 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8711A835210D478C00CCFD38 /* FeedViewController.swift */; };
 		8711A839210D47CD00CCFD38 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8711A838210D47CD00CCFD38 /* Post.swift */; };
@@ -32,6 +32,11 @@
 		87706DAD20F960B200663948 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 87706DAC20F960B200663948 /* .gitignore */; };
 		87D2CEAA21167570007785DC /* FirstSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D2CEA921167570007785DC /* FirstSignUpViewController.swift */; };
 		87D2CEAC211675AD007785DC /* VerifyNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D2CEAB211675AD007785DC /* VerifyNumberViewController.swift */; };
+		87D2CEAE211A4069007785DC /* SecondSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D2CEAD211A4069007785DC /* SecondSignUpViewController.swift */; };
+		87D2CEB1211A4D52007785DC /* ImageUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D2CEB0211A4D52007785DC /* ImageUtils.swift */; };
+		87D2CEB3211A4ED6007785DC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D2CEB2211A4ED6007785DC /* User.swift */; };
+		87D2CEB5211A5D4C007785DC /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D2CEB4211A5D4C007785DC /* SignInViewController.swift */; };
+		87D2CEB8211A5E94007785DC /* GroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D2CEB7211A5E94007785DC /* GroupsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,7 +49,7 @@
 		7F8012B3210123B000CEA5DA /* BounceButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BounceButton.swift; sourceTree = "<group>"; };
 		7F8012BA2102CBF200CEA5DA /* Camera.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Camera.storyboard; sourceTree = "<group>"; };
 		7F912B972110DB8E00ADABEE /* Groups.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Groups.storyboard; sourceTree = "<group>"; };
-		7F912B9B211114E000ADABEE /* Next.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Next.storyboard; sourceTree = "<group>"; };
+		7F912B9B211114E000ADABEE /* SignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
 		8711A830210D468F00CCFD38 /* Feed.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Feed.storyboard; sourceTree = "<group>"; };
 		8711A835210D478C00CCFD38 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		8711A838210D47CD00CCFD38 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
@@ -64,6 +69,11 @@
 		87706DAC20F960B200663948 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		87D2CEA921167570007785DC /* FirstSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstSignUpViewController.swift; sourceTree = "<group>"; };
 		87D2CEAB211675AD007785DC /* VerifyNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyNumberViewController.swift; sourceTree = "<group>"; };
+		87D2CEAD211A4069007785DC /* SecondSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondSignUpViewController.swift; sourceTree = "<group>"; };
+		87D2CEB0211A4D52007785DC /* ImageUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUtils.swift; sourceTree = "<group>"; };
+		87D2CEB2211A4ED6007785DC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		87D2CEB4211A5D4C007785DC /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		87D2CEB7211A5E94007785DC /* GroupsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,13 +122,6 @@
 			path = Animation;
 			sourceTree = "<group>";
 		};
-		7FF3CB79211380CC00D1438C /* Groups */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Groups;
-			sourceTree = "<group>";
-		};
 		8711A834210D478100CCFD38 /* Feed */ = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				8711A838210D47CD00CCFD38 /* Post.swift */,
+				87D2CEB2211A4ED6007785DC /* User.swift */,
 			);
 			path = Framework;
 			sourceTree = "<group>";
@@ -147,10 +151,10 @@
 		8720D7C420F46CDB0069F56B /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				87D2CEA821167524007785DC /* Sign Up */,
+				87D2CEB6211A5E7D007785DC /* Groups */,
 				8711A834210D478100CCFD38 /* Feed */,
 				8720D7C820F46D3C0069F56B /* Camera & Video */,
-				87D2CEA821167524007785DC /* Sign Up */,
-				7FF3CB79211380CC00D1438C /* Groups */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -189,10 +193,11 @@
 			children = (
 				8720D7C420F46CDB0069F56B /* View Controllers */,
 				8711A837210D47C400CCFD38 /* Framework */,
+				87D2CEAF211A4D41007785DC /* Utils */,
 				7F8012BA2102CBF200CEA5DA /* Camera.storyboard */,
 				8711A830210D468F00CCFD38 /* Feed.storyboard */,
 				7F912B972110DB8E00ADABEE /* Groups.storyboard */,
-				7F912B9B211114E000ADABEE /* Next.storyboard */,
+				7F912B9B211114E000ADABEE /* SignUp.storyboard */,
 				87221A1020F073F2000A00F7 /* Assets.xcassets */,
 				8711A83C210EABBF00CCFD38 /* clip1.m4v */,
 				8711A8402111328400CCFD38 /* clip2.mov */,
@@ -212,9 +217,27 @@
 			isa = PBXGroup;
 			children = (
 				87D2CEA921167570007785DC /* FirstSignUpViewController.swift */,
+				87D2CEAD211A4069007785DC /* SecondSignUpViewController.swift */,
+				87D2CEB4211A5D4C007785DC /* SignInViewController.swift */,
 				87D2CEAB211675AD007785DC /* VerifyNumberViewController.swift */,
 			);
 			path = "Sign Up";
+			sourceTree = "<group>";
+		};
+		87D2CEAF211A4D41007785DC /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				87D2CEB0211A4D52007785DC /* ImageUtils.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		87D2CEB6211A5E7D007785DC /* Groups */ = {
+			isa = PBXGroup;
+			children = (
+				87D2CEB7211A5E94007785DC /* GroupsViewController.swift */,
+			);
+			path = Groups;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -288,7 +311,7 @@
 				87221A1120F073F2000A00F7 /* Assets.xcassets in Resources */,
 				7F8012BB2102CBF200CEA5DA /* Camera.storyboard in Resources */,
 				7F85D2C021115D93006E2772 /* JosefinSans-Regular.ttf in Resources */,
-				7F912B9C211114E000ADABEE /* Next.storyboard in Resources */,
+				7F912B9C211114E000ADABEE /* SignUp.storyboard in Resources */,
 				7F85D2BF21115D88006E2772 /* Info.plist in Resources */,
 				7F912B982110DB8E00ADABEE /* Groups.storyboard in Resources */,
 				8711A8432113E55D00CCFD38 /* GoogleService-Info.plist in Resources */,
@@ -329,6 +352,7 @@
 				"${BUILT_PRODUCTS_DIR}/NextLevel/NextLevel.framework",
 				"${BUILT_PRODUCTS_DIR}/RecordButton/RecordButton.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftVideoBackground/SwiftVideoBackground.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -339,6 +363,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NextLevel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RecordButton.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftVideoBackground.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -353,7 +378,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87D2CEB5211A5D4C007785DC /* SignInViewController.swift in Sources */,
+				87D2CEB3211A4ED6007785DC /* User.swift in Sources */,
 				8711A8462113E5F000CCFD38 /* CameraNavigationController.swift in Sources */,
+				87D2CEAE211A4069007785DC /* SecondSignUpViewController.swift in Sources */,
 				8720D7C120F1DBBC0069F56B /* VideoPlaybackViewController.swift in Sources */,
 				87221A1E20F195B0000A00F7 /* CameraViewController.swift in Sources */,
 				87D2CEAA21167570007785DC /* FirstSignUpViewController.swift in Sources */,
@@ -363,6 +391,8 @@
 				8711A839210D47CD00CCFD38 /* Post.swift in Sources */,
 				8720D7CE20F476DB0069F56B /* VideoTrimmerViewController.swift in Sources */,
 				87221A0A20F073F2000A00F7 /* AppDelegate.swift in Sources */,
+				87D2CEB1211A4D52007785DC /* ImageUtils.swift in Sources */,
+				87D2CEB8211A5E94007785DC /* GroupsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -496,7 +526,7 @@
 				DEVELOPMENT_TEAM = L4K4Q74X62;
 				INFOPLIST_FILE = Flokk/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = flokk1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.flokk.flokk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -512,7 +542,7 @@
 				DEVELOPMENT_TEAM = L4K4Q74X62;
 				INFOPLIST_FILE = Flokk/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = flokk1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.flokk.flokk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

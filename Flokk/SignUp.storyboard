@@ -29,7 +29,7 @@
                                 <rect key="frame" x="100" y="339" width="175" height="51"/>
                                 <state key="normal" image="signUpBttn"/>
                                 <connections>
-                                    <segue destination="FAM-2j-n0g" kind="show" id="DEl-tN-sme"/>
+                                    <segue destination="FAM-2j-n0g" kind="show" id="ZhA-Rl-3ue"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ci-Ce-uhQ">
@@ -74,14 +74,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone Number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2RS-nD-qQj">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2RS-nD-qQj">
                                 <rect key="frame" x="71" y="76" width="275" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="maj-pu-EiK"/>
                                 </constraints>
                                 <color key="textColor" name="White"/>
                                 <fontDescription key="fontDescription" name="JosefinSans" family="Josefin Sans" pointSize="15"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert" returnKeyType="next" textContentType="name"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert" returnKeyType="next" textContentType="email"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
                                         <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -110,7 +110,7 @@
                                 <rect key="frame" x="71" y="160" width="275" height="1"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Elp-QF-FEW">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Elp-QF-FEW">
                                 <rect key="frame" x="71" y="188" width="275" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="28w-rI-5tt"/>
@@ -135,7 +135,7 @@
                                     <action selector="continuePressed:" destination="FAM-2j-n0g" eventType="touchUpInside" id="Vlh-N2-dik"/>
                                 </connections>
                             </button>
-                            <imageView hidden="YES" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="userIconTeal" translatesAutoresizingMaskIntoConstraints="NO" id="UPf-gM-et8">
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="userIconTeal" translatesAutoresizingMaskIntoConstraints="NO" id="UPf-gM-et8">
                                 <rect key="frame" x="28" y="83" width="16" height="17"/>
                             </imageView>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="phoneIconTeal" translatesAutoresizingMaskIntoConstraints="NO" id="98x-Zg-mvd">
@@ -180,8 +180,10 @@
                         <viewLayoutGuide key="safeArea" id="pH2-rB-dYt"/>
                     </view>
                     <connections>
+                        <outlet property="emailField" destination="2RS-nD-qQj" id="x7q-Xp-hYI"/>
+                        <outlet property="passwordField" destination="Elp-QF-FEW" id="HaC-NS-tSe"/>
                         <outlet property="phoneNumberField" destination="DWh-nZ-zTt" id="Arf-ZS-rjq"/>
-                        <segue destination="guP-8x-eyw" kind="show" id="0PD-0h-Mzh"/>
+                        <segue destination="TK3-m4-SFM" kind="show" identifier="firstToSecondSignUpSegue" id="Yju-SG-J9j"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L6d-N8-5JR" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -191,18 +193,24 @@
         <!--Sign Up 2-->
         <scene sceneID="KjD-Jg-Ppq">
             <objects>
-                <viewController title="Sign Up 2" id="TK3-m4-SFM" sceneMemberID="viewController">
+                <viewController title="Sign Up 2" id="TK3-m4-SFM" customClass="SecondSignUpViewController" customModule="Flokk" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7FE-NU-cV6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Oa-Ui-1Yc">
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Oa-Ui-1Yc">
                                 <rect key="frame" x="137.5" y="20" width="100" height="100"/>
                                 <state key="normal" image="addProfilePicBttn"/>
+                                <connections>
+                                    <action selector="addProfilePhotoPressed:" destination="TK3-m4-SFM" eventType="touchUpInside" id="iKY-Eh-mJS"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aPk-oi-l6q">
                                 <rect key="frame" x="122.5" y="280.5" width="130" height="42"/>
                                 <state key="normal" image="registerBttn"/>
+                                <connections>
+                                    <action selector="registerPressed:" destination="TK3-m4-SFM" eventType="touchUpInside" id="rOH-Sr-nhI"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g0g-Rh-oPe">
                                 <rect key="frame" x="70" y="153" width="275" height="30"/>
@@ -266,15 +274,19 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xbe-PC-jXB"/>
                     </view>
+                    <connections>
+                        <outlet property="handleField" destination="g0g-Rh-oPe" id="Lsi-zo-33d"/>
+                        <outlet property="profilePhotoButton" destination="1Oa-Ui-1Yc" id="5tp-QP-UV1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6MK-tJ-XMr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2870" y="-11"/>
+            <point key="canvasLocation" x="2822" y="-11"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ad5-LE-igT">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="JdY-xc-RIE" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="SignUpNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="JdY-xc-RIE" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" translucent="NO" backIndicatorImage="backBttnWhite" backIndicatorTransitionMaskImage="backBttnWhite" id="A4Y-Lz-HOZ">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -294,7 +306,7 @@
         <!-- Sign In-->
         <scene sceneID="pwX-Vc-CDD">
             <objects>
-                <viewController title=" Sign In" id="Q30-Dc-eNJ" sceneMemberID="viewController">
+                <viewController title=" Sign In" id="Q30-Dc-eNJ" customClass="SignInViewController" customModule="Flokk" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WYW-qO-GiE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -337,7 +349,7 @@
                                 <rect key="frame" x="122.5" y="280.5" width="130" height="42"/>
                                 <state key="normal" image="logInLarge"/>
                                 <connections>
-                                    <segue destination="guP-8x-eyw" kind="show" id="Llc-bf-XvH"/>
+                                    <action selector="signInPressed:" destination="Q30-Dc-eNJ" eventType="touchUpInside" id="G95-mx-q2d"/>
                                 </connections>
                             </button>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="userIconTeal" translatesAutoresizingMaskIntoConstraints="NO" id="P2b-2e-pgO">
@@ -385,6 +397,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="j1u-hN-u0R"/>
                     </view>
+                    <connections>
+                        <outlet property="emailField" destination="ejf-8U-iSr" id="U4v-11-ZDE"/>
+                        <outlet property="passwordField" destination="OUv-ic-rOj" id="NCw-9o-j0G"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gmd-Tv-oOA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -466,15 +482,18 @@ into your account.</string>
             <objects>
                 <viewController title="Verify Phone #" id="guP-8x-eyw" customClass="VerifyNumberViewController" customModule="Flokk" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MY2-0B-FbZ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zct-zw-UTE">
-                                <rect key="frame" x="122.5" y="281" width="130" height="41"/>
+                                <rect key="frame" x="122.5" y="301" width="130" height="85"/>
                                 <state key="normal" image="continueBttn"/>
+                                <connections>
+                                    <action selector="continuePressed:" destination="guP-8x-eyw" eventType="touchUpInside" id="J7w-MF-yft"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Verification Code" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ieh-gj-oT0">
-                                <rect key="frame" x="73" y="169" width="275" height="30"/>
+                                <rect key="frame" x="73" y="189" width="275" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="275" id="qXq-pQ-xg2"/>
                                 </constraints>
@@ -486,19 +505,22 @@ into your account.</string>
                                         <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="codeEntered:" destination="guP-8x-eyw" eventType="editingDidEnd" id="peT-VR-CW8"/>
+                                </connections>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SID-jV-HD1">
-                                <rect key="frame" x="73" y="197" width="275" height="1"/>
+                                <rect key="frame" x="73" y="217" width="275" height="1"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="eBw-oH-pnl"/>
                                 </constraints>
                             </view>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="phoneIconTeal" translatesAutoresizingMaskIntoConstraints="NO" id="5Vl-tR-YOJ">
-                                <rect key="frame" x="29" y="176" width="16" height="16"/>
+                                <rect key="frame" x="29" y="196" width="16" height="16"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your verification code" textAlignment="center" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FJB-Bg-NUC">
-                                <rect key="frame" x="89" y="88" width="197" height="28"/>
+                                <rect key="frame" x="89" y="108" width="197" height="28"/>
                                 <fontDescription key="fontDescription" name="JosefinSans" family="Josefin Sans" pointSize="16"/>
                                 <color key="textColor" name="White"/>
                                 <color key="highlightedColor" name="White"/>
@@ -526,7 +548,6 @@ into your account.</string>
                     </view>
                     <connections>
                         <outlet property="codeField" destination="ieh-gj-oT0" id="aCC-e3-m5a"/>
-                        <segue destination="TK3-m4-SFM" kind="show" id="R57-F3-WHB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RFZ-IV-Dvg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -557,8 +578,5 @@ into your account.</string>
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="Llc-bf-XvH"/>
-    </inferredMetricsTieBreakers>
     <color key="tintColor" name="White"/>
 </document>

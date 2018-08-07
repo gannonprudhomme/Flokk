@@ -14,5 +14,7 @@ target 'Flokk' do
     # Firebase Pods
     pod "Firebase/Core"
     pod "Firebase/Auth"
+    pod "Firebase/Database"
+    pod "Firebase/Storage"
     
 end

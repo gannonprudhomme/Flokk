@@ -112,7 +112,7 @@
         <!--Groups-->
         <scene sceneID="B9W-gw-pXJ">
             <objects>
-                <viewController id="G4k-nW-SfF" sceneMemberID="viewController">
+                <viewController id="G4k-nW-SfF" customClass="GroupsViewController" customModule="Flokk" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="A7N-RD-fMo"/>
                         <viewControllerLayoutGuide type="bottom" id="kcN-dV-btN"/>
@@ -149,7 +149,7 @@
                                                     <color key="textColor" name="Secondary Text"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="3PO-01-NXj">
+                                                <view hidden="YES" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="3PO-01-NXj">
                                                     <rect key="frame" x="15" y="15" width="68" height="68"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zWT-cJ-dog">

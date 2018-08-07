@@ -10,13 +10,14 @@ import UIKit
 import Firebase
 import FirebaseAuth
 
-class FirstSignUpViewController: UINavigationController {
+// For now, purpose is to just pass on data to the SecondSignUp VC
+class FirstSignUpViewController: UIViewController {
+    @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var phoneNumberField: UITextField!
+    @IBOutlet weak var passwordField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,26 +26,24 @@ class FirstSignUpViewController: UINavigationController {
     }
     
     @IBAction func continuePressed(_ sender: Any) {
-        let phoneNum = phoneNumberField.text!
+        // Check if the credientials are fine
+        let password = passwordField.text!
+        let phoneNumber = phoneNumberField.text!
+        let email = emailField.text!
         
-        // Check if the phone number field is long enough
-        // Would have to change for out-of-US phone numbers
-        if phoneNumberField.text?.count == 10 {
-            // Attempt to verify the phone number
-            PhoneAuthProvider.provider().verifyPhoneNumber(phoneNum, uiDelegate: nil, completion: { (verificationID, error) in
-                if let error = error { // If there was an error
-                    print("Error in phone verification \(error.localizedDescription)")
-                    return
-                } else {
-                    UserDefaults.standard.set(verificationID, forKey: "authVerificationID")
-                }
-            })
-        } else { // Not enough digits in phone number
-            
+        // Change these to something legitamate
+        if email.count > 0 && password.count > 0 {
+            performSegue(withIdentifier: "firstToSecondSignUpSegue", sender: nil)
         }
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+        if segue.identifier == "firstToSecondSignUpSegue" {
+            if let vc = segue.destination as? SecondSignUpViewController {
+                vc.email = emailField.text!
+                vc.password = passwordField.text!
+                vc.phoneNumber = phoneNumberField.text!
+            }
+        }
     }
 }
