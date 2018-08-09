@@ -7,6 +7,8 @@
 The entire basis of Flokk is group messaging in 6-second Vine-like video form. 
 Flokk is currently in development, which an expected release date of early September 2018
 
+## Screen Shots
+
 ## Pods/Libraries Used
 - [Firebase](https://firebase.google.com/)
 - [Next Level](https://github.com/NextLevel/NextLevel)
