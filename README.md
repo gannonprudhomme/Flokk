@@ -24,10 +24,8 @@ Flokk is currently in development, which an expected release date of early Septe
 ### Group Settings
 ![Settings](https://i.imgur.com/rtLiJAx.png)
 
-#### The Camera
+### The Camera
 ![Camera](https://i.imgur.com/Vjm5Cgw.png)
 
 ## About
 The Flokk iOS Application is owned by Flokk LLC, which is founded by [Jared Heyen](https://github.com/heyenhigher)(CEO and UI/UX Designer) and Gannon Prudhomme(CTO and Lead Programmer).
-
-## Licensing
