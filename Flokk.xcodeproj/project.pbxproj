@@ -37,6 +37,8 @@
 		87D2CEB3211A4ED6007785DC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D2CEB2211A4ED6007785DC /* User.swift */; };
 		87D2CEB5211A5D4C007785DC /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D2CEB4211A5D4C007785DC /* SignInViewController.swift */; };
 		87D2CEB8211A5E94007785DC /* GroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D2CEB7211A5E94007785DC /* GroupsViewController.swift */; };
+		87D2CEBA211BB04F007785DC /* GroupsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D2CEB9211BB04F007785DC /* GroupsTableViewCell.swift */; };
+		87D2CEBC211BB0EE007785DC /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D2CEBB211BB0EE007785DC /* Group.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +76,8 @@
 		87D2CEB2211A4ED6007785DC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		87D2CEB4211A5D4C007785DC /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		87D2CEB7211A5E94007785DC /* GroupsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsViewController.swift; sourceTree = "<group>"; };
+		87D2CEB9211BB04F007785DC /* GroupsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsTableViewCell.swift; sourceTree = "<group>"; };
+		87D2CEBB211BB0EE007785DC /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +140,7 @@
 			children = (
 				8711A838210D47CD00CCFD38 /* Post.swift */,
 				87D2CEB2211A4ED6007785DC /* User.swift */,
+				87D2CEBB211BB0EE007785DC /* Group.swift */,
 			);
 			path = Framework;
 			sourceTree = "<group>";
@@ -236,6 +241,7 @@
 			isa = PBXGroup;
 			children = (
 				87D2CEB7211A5E94007785DC /* GroupsViewController.swift */,
+				87D2CEB9211BB04F007785DC /* GroupsTableViewCell.swift */,
 			);
 			path = Groups;
 			sourceTree = "<group>";
@@ -379,12 +385,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				87D2CEB5211A5D4C007785DC /* SignInViewController.swift in Sources */,
+				87D2CEBC211BB0EE007785DC /* Group.swift in Sources */,
 				87D2CEB3211A4ED6007785DC /* User.swift in Sources */,
 				8711A8462113E5F000CCFD38 /* CameraNavigationController.swift in Sources */,
 				87D2CEAE211A4069007785DC /* SecondSignUpViewController.swift in Sources */,
 				8720D7C120F1DBBC0069F56B /* VideoPlaybackViewController.swift in Sources */,
 				87221A1E20F195B0000A00F7 /* CameraViewController.swift in Sources */,
 				87D2CEAA21167570007785DC /* FirstSignUpViewController.swift in Sources */,
+				87D2CEBA211BB04F007785DC /* GroupsTableViewCell.swift in Sources */,
 				87D2CEAC211675AD007785DC /* VerifyNumberViewController.swift in Sources */,
 				8711A83B210D539D00CCFD38 /* FeedTableViewCell.swift in Sources */,
 				8711A836210D478C00CCFD38 /* FeedViewController.swift in Sources */,

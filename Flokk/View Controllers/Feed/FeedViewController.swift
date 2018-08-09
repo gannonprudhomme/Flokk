@@ -24,6 +24,8 @@ class FeedViewController: UIViewController {
     // Sorted by date, although hopefully Firebase fills it sorted automatically
     var posts = [Post]()
     
+    var group: Group!
+    
     let loadCount = 3 // Only load 3 posts at a time(after the initial 5)
     var currentPostCount = initialPostsCount
     var totalPostsCount = 10 // Max amount of posts we can load(the # of posts in the group)

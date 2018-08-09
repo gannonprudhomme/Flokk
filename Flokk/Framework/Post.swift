@@ -13,8 +13,7 @@ typealias Dimensions = (width: Int?, height: Int?)
 
 // Represents a user's post within a Feed
 class Post {
-    // User/poster
-    //
+    var uid: String!
     
     // Private and have a getter?
     // Set only after the video has been loaded

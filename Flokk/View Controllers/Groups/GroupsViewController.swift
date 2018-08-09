@@ -11,11 +11,12 @@ import Firebase
 import FirebaseAuth
 
 class GroupsViewController: UIViewController {
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if Auth.auth().currentUser != nil {
+        if Auth.auth().currentUser != nil && mainUser != nil {
             // User is signed in
         } else {
             // No user is signed in, go to the sign in / sign up
@@ -27,8 +28,18 @@ class GroupsViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
+    
+    // Load the groups into the main user
+    func loadGroups() {
+        
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
     }
+}
+
+// MARK: - Framework functions
+extension GroupsViewController {
+    
 }

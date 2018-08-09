@@ -19,6 +19,9 @@ class User {
     // Should profilePhoto be an image or a link to the image?
     var profilePhoto: URL?
     
+    // Only needed for the main user
+    var groups = [Group]()
+    
     // Empty user with nothing loaded
     init(uid: String) {
         self.uid = uid
