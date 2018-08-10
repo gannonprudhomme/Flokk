@@ -92,14 +92,14 @@
                                 <rect key="frame" x="71" y="105" width="275" height="1"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DWh-nZ-zTt">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DWh-nZ-zTt">
                                 <rect key="frame" x="71" y="131" width="275" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="pWP-Hk-BZX"/>
                                 </constraints>
                                 <color key="textColor" name="White"/>
                                 <fontDescription key="fontDescription" name="JosefinSans" family="Josefin Sans" pointSize="15"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="phonePad" keyboardAppearance="alert" returnKeyType="next" smartDashesType="yes" textContentType="tel"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" keyboardAppearance="alert" returnKeyType="next" smartDashesType="yes" textContentType="email"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
                                         <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -138,11 +138,11 @@
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="userIconTeal" translatesAutoresizingMaskIntoConstraints="NO" id="UPf-gM-et8">
                                 <rect key="frame" x="28" y="83" width="16" height="17"/>
                             </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="phoneIconTeal" translatesAutoresizingMaskIntoConstraints="NO" id="98x-Zg-mvd">
-                                <rect key="frame" x="28" y="138" width="16" height="16"/>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="emailIcon" translatesAutoresizingMaskIntoConstraints="NO" id="98x-Zg-mvd">
+                                <rect key="frame" x="28" y="139" width="18" height="14"/>
                             </imageView>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="passwordIconTeal" translatesAutoresizingMaskIntoConstraints="NO" id="62T-1N-M49">
-                                <rect key="frame" x="29" y="194" width="14" height="18"/>
+                                <rect key="frame" x="30" y="194" width="14" height="18"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" name="Flokk Navy"/>
@@ -418,14 +418,14 @@
                                 <rect key="frame" x="122.5" y="281" width="130" height="41"/>
                                 <state key="normal" image="sendBttn"/>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hHq-YP-fxC">
-                                <rect key="frame" x="73" y="169" width="275" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hHq-YP-fxC">
+                                <rect key="frame" x="75" y="169" width="275" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="275" id="TXb-pJ-FU0"/>
                                 </constraints>
                                 <color key="textColor" name="White"/>
                                 <fontDescription key="fontDescription" name="JosefinSans" family="Josefin Sans" pointSize="15"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="phonePad" keyboardAppearance="alert" textContentType="tel"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" keyboardAppearance="alert" textContentType="email"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
                                         <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -433,14 +433,14 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k3f-va-JLT">
-                                <rect key="frame" x="73" y="197" width="275" height="1"/>
+                                <rect key="frame" x="75" y="197" width="275" height="1"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="cce-20-Bbf"/>
                                 </constraints>
                             </view>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="phoneIconTeal" translatesAutoresizingMaskIntoConstraints="NO" id="7e3-px-iqp">
-                                <rect key="frame" x="29" y="176" width="16" height="16"/>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="emailIcon" translatesAutoresizingMaskIntoConstraints="NO" id="7e3-px-iqp">
+                                <rect key="frame" x="29" y="177" width="18" height="14"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kGR-tG-BP0">
                                 <rect key="frame" x="89" y="56" width="197" height="91"/>
@@ -493,7 +493,7 @@ into your account.</string>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Verification Code" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ieh-gj-oT0">
-                                <rect key="frame" x="73" y="189" width="275" height="30"/>
+                                <rect key="frame" x="75" y="189" width="275" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="275" id="qXq-pQ-xg2"/>
                                 </constraints>
@@ -510,14 +510,14 @@ into your account.</string>
                                 </connections>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SID-jV-HD1">
-                                <rect key="frame" x="73" y="217" width="275" height="1"/>
+                                <rect key="frame" x="75" y="217" width="275" height="1"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="eBw-oH-pnl"/>
                                 </constraints>
                             </view>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="phoneIconTeal" translatesAutoresizingMaskIntoConstraints="NO" id="5Vl-tR-YOJ">
-                                <rect key="frame" x="29" y="196" width="16" height="16"/>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="emailIcon" translatesAutoresizingMaskIntoConstraints="NO" id="5Vl-tR-YOJ">
+                                <rect key="frame" x="29" y="197" width="18" height="14"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your verification code" textAlignment="center" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FJB-Bg-NUC">
                                 <rect key="frame" x="89" y="108" width="197" height="28"/>
@@ -560,10 +560,10 @@ into your account.</string>
         <image name="addProfilePicBttn" width="100" height="100"/>
         <image name="backBttnWhite" width="18" height="15"/>
         <image name="continueBttn" width="130" height="42"/>
+        <image name="emailIcon" width="18" height="14"/>
         <image name="logInBttn" width="121" height="36"/>
         <image name="logInLarge" width="130" height="42"/>
         <image name="passwordIconTeal" width="14" height="18"/>
-        <image name="phoneIconTeal" width="16" height="16"/>
         <image name="registerBttn" width="130" height="42"/>
         <image name="sendBttn" width="130" height="42"/>
         <image name="signUpBttn" width="175" height="51"/>
