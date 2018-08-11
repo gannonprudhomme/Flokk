@@ -32,6 +32,10 @@ class SignInViewController: UIViewController {
                 if let user = authResult?.user {
                     let uid = user.uid
                     
+                    // All the user loading is done within the Groups VC anyways
+                    self.performSegue(withIdentifier: "signInToGroupsSegue", sender: nil)
+                    
+                    /*
                     // Get the user data from the database
                     database.child("users").child(uid).observeSingleEvent(of: .value, with: { (snapshot) in
                         if let value = snapshot.value as? NSDictionary {
@@ -42,6 +46,13 @@ class SignInViewController: UIViewController {
                                 // Iterate over all of the groups
                                 for groupID in groups.keys {
                                     let groupName = groups[groupID]
+                                    let group = Group(uid: groupID, name: groupName!)
+                                    
+                                    group.requestGroupIcon(completion: { (icon) in
+                                        if let icon = icon {
+                                            group.setIcon(icon: icon)
+                                        }
+                                    })
                                     
                                     // Initialize the group and add it to the user's groups array
                                     mainUser.groups.append(Group(uid: groupID, name: groupName!))
@@ -57,7 +68,7 @@ class SignInViewController: UIViewController {
                             // Segue to groups, don't need to pass anything
                             self.performSegue(withIdentifier: "signInToGroupsSegue", sender: nil)
                         }
-                    })
+                    }) */
                 }
             } else {
                 print(error?.localizedDescription)
