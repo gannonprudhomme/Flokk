@@ -13,7 +13,7 @@ import UIKit
 class Group {
     var uid: String
     var name: String
-    var icon: UIImage? // Once it's loaded in, set it
+    var icon: UIImage? // Once it's loaded in, set it. Should it be a URL
     
     var members: [User]?
     var posts: [Post]? // Does it matter when this is initialized?
@@ -28,7 +28,6 @@ class Group {
         self.name = name
         
         // Set the default icon before the original is loaded
-        setIcon(icon: UIImage(named: "GroupIcon")!)
         
         posts = [Post]()
         members = [User]()
@@ -41,15 +40,33 @@ class Group {
     }
     
     // or reorderPosts()
+    // We basically manually sort every time, so no need
     func sortPosts() {
         
     }
     
+    // TODO: Should this be done in here?
     // Attempt to load the group Icon
     // If it's already loaded, return immediately
     // Otherwise, load it in from Firebase
-    func requestGroupIcon(completion: @escaping (URL) -> Void) {
-        
+    func requestGroupIcon(completion: @escaping (UIImage?) -> Void) {
+        //if icon == nil {
+            // Load it from firebase
+            
+            storage.child("groups").child(uid).child("icon.jpg").getData(maxSize: MAX_PROFILE_PHOTO_SIZE, completion: { (data, error) in
+                if error == nil {
+                    let icon = UIImage(data: data!)
+                    
+                    completion(icon)
+                } else {
+                    print(error?.localizedDescription)
+                    return
+                    
+                    // Don't know if it matters if I return or do completion first
+                    completion(nil)
+                }
+            })
+        //}
     }
     
     func setIcon(icon: UIImage) {

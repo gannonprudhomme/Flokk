@@ -91,8 +91,34 @@ extension GroupsViewController : GroupsViewControllerDelegate {
                     for groupID in groups.keys {
                         let groupName = groups[groupID]
                         
+                        let group = Group(uid: groupID, name: groupName!)
+                        
                         // Initialize the group and add it to the user's groups array
-                        mainUser.groups.append(Group(uid: groupID, name: groupName!))
+                        mainUser.groups.append(group)
+                        
+                        // Attempt to download the group icon
+                        group.requestGroupIcon(completion: { (icon) in
+                            if let icon = icon {
+                                // Once it's loaded, set it in the group
+                                group.setIcon(icon: icon)
+                                
+                                // And updated the according row
+                                DispatchQueue.main.async {
+                                    // This is so fucking stupid
+                                    // Have to do this because simply counting
+                                    var index = -1
+                                    for i in 0..<mainUser.groups.count {
+                                        if mainUser.groups[i].uid == groupID {
+                                            index = i
+                                        }
+                                    }
+                                    
+                                    self.tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .none)
+                                }
+                            }
+                        })
+                        
+                        
                     }
                 } else {
                     // No groups, do nothing I guess
@@ -103,6 +129,14 @@ extension GroupsViewController : GroupsViewControllerDelegate {
                 completion()
             }
         })
+    }
+    
+    func groupUpdated(group: Group) {
+        // Update the mainUsers' groups array, and get the index(row) this group is located at
+        let row = mainUser.groupUpdated(group: group)
+        
+        // Move the row to the top
+        tableView.moveRow(at: IndexPath(row: row, section: 0), to: IndexPath(row: 0, section: 0))
     }
     
     func addNewGroup(groupName: String, icon: UIImage) {
@@ -121,14 +155,14 @@ extension GroupsViewController : GroupsViewControllerDelegate {
         groupRef.child("members").child(mainUser.uid).setValue(mainUser.handle)
         
         // Upload the icon to storage. We don't need to wait on this, so no need to do anything on completion
-        storage.child("groups").child(groupID).child("icon").putData(icon.convertJpegToData())
+        storage.child("groups").child(groupID).child("icon.jpg").putData(icon.convertJpegToData())
         
         // Initialize the Group object and add it to the mainUser's groups array
         let group = Group(uid: groupID, name: groupName)
         group.setIcon(icon: icon)
         
         // Prepend this group to the groups array
-        mainUser.groups.insert(Group(uid: groupID, name: groupName), at: 0)
+        mainUser.groups.insert(group, at: 0)
         
         // Insert it into the top of the tableView, shifting the other
         tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .none)
@@ -153,7 +187,6 @@ extension GroupsViewController : UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }
@@ -162,4 +195,3 @@ extension GroupsViewController : UITableViewDelegate, UITableViewDataSource {
         
     }
 }
-

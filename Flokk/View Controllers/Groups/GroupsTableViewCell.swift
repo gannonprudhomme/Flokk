@@ -29,6 +29,8 @@ class GroupsTableViewCell: UITableViewCell {
         
         if let icon = group.getIcon() {
             groupPhotoView.image = icon
+        } else {
+            groupPhotoView.image = UIImage(named: "HOME ICON")
         }
     }
 }

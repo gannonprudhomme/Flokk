@@ -15,6 +15,10 @@ var database: DatabaseReference!
 var storage: StorageReference!
 var mainUser: User! // Flokk User, not Firebase
 
+// Global constants
+let MAX_PROFILE_PHOTO_SIZE: Int64 = 1 * 4096 * 4096
+let MAX_POST_SIZE: Int64 = 1 * 4096 * 4096
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
