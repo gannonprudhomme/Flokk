@@ -21,23 +21,34 @@ class Group {
     // Is this needed?
     var numNewPosts: Int = 0
     
+    var newestPostTime: Date!
+    
     init(uid: String, name: String) {
         self.uid = uid
         self.name = name
         
         // Set the default icon before the original is loaded
-        setIcon(icon: UIImage(named: "HOME ICON")!)
+        setIcon(icon: UIImage(named: "GroupIcon")!)
         
         posts = [Post]()
         members = [User]()
     }
     
     func addPost(post: Post) {
+        // Set the newest post time
         
+        // Add it to the posts array
     }
     
     // or reorderPosts()
     func sortPosts() {
+        
+    }
+    
+    // Attempt to load the group Icon
+    // If it's already loaded, return immediately
+    // Otherwise, load it in from Firebase
+    func requestGroupIcon(completion: @escaping (URL) -> Void) {
         
     }
     

@@ -9,7 +9,7 @@
 import UIKit
 
 class GroupsTableViewCell: UITableViewCell {
-    @IBOutlet weak var groupPhotoView: UIImageView!
+    @IBOutlet weak var groupPhotoView: UIImageView! // Should be called icon
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     
@@ -20,6 +20,15 @@ class GroupsTableViewCell: UITableViewCell {
     }
     
     func initialize() {
+        nameLabel.text = group.name
+        timeLabel.text = "Time"
         
+        // Group the group icon to a circle
+        groupPhotoView?.layer.cornerRadius = groupPhotoView.frame.size.width / 2
+        groupPhotoView.clipsToBounds = true
+        
+        if let icon = group.getIcon() {
+            groupPhotoView.image = icon
+        }
     }
 }

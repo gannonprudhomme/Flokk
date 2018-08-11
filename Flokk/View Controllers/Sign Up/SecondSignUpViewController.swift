@@ -62,10 +62,8 @@ class SecondSignUpViewController: UIViewController {
                             
                             print("registered user")
                             
-                            // Now go to the groups view
-                            //let feed = UIStoryboard(name: "Feed", bundle: nil).instantiateViewController(withIdentifier: "FeedNavigationController")
-                            
-                            //self.present(feed, animated: true, completion: nil)
+                            // Now go to the groups view, nothing to transfer to it
+                            self.performSegue(withIdentifier: "signUpToGroupsSegue", sender: nil)
                         } else { // Throw an error if there was one
                             print("Storage error: \(error!.localizedDescription)")
                             return

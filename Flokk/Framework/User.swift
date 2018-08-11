@@ -17,7 +17,7 @@ class User {
     //var email: String? // Don't see why we would need access to the email
     
     // Should profilePhoto be an image or a link to the image?
-    var profilePhoto: URL?
+    var profilePhoto: URL? // or UIImage
     
     // Only needed for the main user
     var groups = [Group]()

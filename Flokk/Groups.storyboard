@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gJz-i0-dBL">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -127,34 +127,34 @@
                                 <color key="backgroundColor" name="Flokk Navy"/>
                                 <color key="sectionIndexBackgroundColor" name="Flokk Navy"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="100" id="SYk-VV-GNx" customClass="GroupsTableViewCell" customModule="Flokk" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="100"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="default" rowHeight="105" id="SYk-VV-GNx" customClass="GroupsTableViewCell" customModule="Flokk" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="105"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SYk-VV-GNx" id="Hyt-v4-k6f">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="100"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="105"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C54-kn-f6S">
                                                     <rect key="frame" x="15" y="15" width="68" height="68"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Group Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vcs-Az-NHv">
-                                                    <rect key="frame" x="100" y="27" width="116" height="22"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Group Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vcs-Az-NHv">
+                                                    <rect key="frame" x="100" y="32" width="116" height="22"/>
                                                     <fontDescription key="fontDescription" name="JosefinSans" family="Josefin Sans" pointSize="22"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jB9-8q-RSI">
-                                                    <rect key="frame" x="100" y="57" width="28" height="15"/>
+                                                    <rect key="frame" x="100" y="62" width="28" height="15"/>
                                                     <fontDescription key="fontDescription" name="JosefinSans" family="Josefin Sans" pointSize="15"/>
                                                     <color key="textColor" name="Secondary Text"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view hidden="YES" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="3PO-01-NXj">
-                                                    <rect key="frame" x="15" y="15" width="68" height="68"/>
+                                                    <rect key="frame" x="15" y="15" width="68" height="73"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zWT-cJ-dog">
-                                                            <rect key="frame" x="25" y="18.5" width="18" height="31"/>
+                                                            <rect key="frame" x="25" y="21" width="18" height="31"/>
                                                             <fontDescription key="fontDescription" name="JosefinSans-Bold" family="Josefin Sans" pointSize="30"/>
                                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -205,6 +205,9 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="addBttnWhite" id="ZhO-CP-3pk">
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <segue destination="zLu-Hx-i2n" kind="show" identifier="groupsToCreateGroupSegue" id="dfN-ME-MSR"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -215,24 +218,30 @@
             </objects>
             <point key="canvasLocation" x="3263.1999999999998" y="2229.5352323838083"/>
         </scene>
-        <!--View Controller-->
+        <!--Create Group View Controller-->
         <scene sceneID="5E8-Pl-v9F">
             <objects>
-                <viewController id="zLu-Hx-i2n" sceneMemberID="viewController">
+                <viewController id="zLu-Hx-i2n" customClass="CreateGroupViewController" customModule="Flokk" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CRo-tt-qHb">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LcH-tn-6fc">
-                                <rect key="frame" x="122" y="344" width="130" height="42"/>
+                                <rect key="frame" x="122" y="280.5" width="130" height="42"/>
                                 <state key="normal" image="continueBttn"/>
+                                <connections>
+                                    <action selector="continuePressed:" destination="zLu-Hx-i2n" eventType="touchUpInside" id="bDe-zq-ksE"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0gX-O2-gJf">
-                                <rect key="frame" x="137" y="81" width="100" height="100"/>
+                                <rect key="frame" x="137" y="17.5" width="100" height="100"/>
                                 <state key="normal" image="addProfilePicBttn"/>
+                                <connections>
+                                    <action selector="groupIconPressed:" destination="zLu-Hx-i2n" eventType="touchUpInside" id="yQS-S6-H4Q"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Group Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e3G-ne-yFH">
-                                <rect key="frame" x="75" y="244" width="225" height="30"/>
+                                <rect key="frame" x="75" y="180.5" width="225" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="JosefinSans" family="Josefin Sans" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" keyboardAppearance="alert" textContentType="name"/>
@@ -252,13 +261,17 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Gip-Iv-wLu"/>
                     </view>
-                    <navigationItem key="navigationItem" id="KhY-3K-AC4">
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="KhY-3K-AC4">
                         <barButtonItem key="backBarButtonItem" title=" " id="hgK-Z2-2GX"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="groupIconButton" destination="0gX-O2-gJf" id="7qI-aX-yfX"/>
+                        <outlet property="groupNameField" destination="e3G-ne-yFH" id="UTg-5v-U1D"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kj6-Xz-wfe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5194" y="2230"/>
+            <point key="canvasLocation" x="4297" y="2230"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Qj0-ja-e3d">
@@ -346,7 +359,7 @@
         <!--Navigation Controller-->
         <scene sceneID="hGG-TZ-UgH">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gJz-i0-dBL" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="GroupsNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="gJz-i0-dBL" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" translucent="NO" backIndicatorImage="backBttnWhite" largeTitles="YES" backIndicatorTransitionMaskImage="backBttnWhite" id="xqz-wd-dZZ">
                         <rect key="frame" x="0.0" y="20" width="375" height="96"/>
@@ -372,29 +385,8 @@
             <point key="canvasLocation" x="2205" y="2230"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="0Zx-Ie-j7A">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QOA-lE-XYO" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" backIndicatorImage="backBttnWhite" backIndicatorTransitionMaskImage="backBttnWhite" id="Fpt-xD-qo8">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" name="White"/>
-                        <color key="barTintColor" name="Flokk Navy"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="zLu-Hx-i2n" kind="relationship" relationship="rootViewController" id="QeY-MC-myZ"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Z4B-zp-Gb6" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4255" y="2230"/>
-        </scene>
-        <!--Navigation Controller-->
         <scene sceneID="SJn-Vt-M7V">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YR7-4N-OZm" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hfZ-z9-4lE" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iM4-gx-QO9">
@@ -407,6 +399,7 @@
                         <segue destination="IqZ-ek-dYw" kind="relationship" relationship="rootViewController" id="gX7-0U-crA"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YR7-4N-OZm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6052" y="2230"/>
         </scene>
@@ -422,9 +415,6 @@
         <namedColor name="Flokk Navy">
             <color red="0.082000002259999996" green="0.086000002919999999" blue="0.16899999979999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="Flokk Navy">
-            <color red="0.082000002264976501" green="0.086000002920627594" blue="0.16899999976158142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="Flokk Teal">
             <color red="0.2199999988079071" green="0.63099998235702515" blue="0.62400001287460327" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -433,9 +423,6 @@
         </namedColor>
         <namedColor name="Secondary Text">
             <color red="0.61568627450980395" green="0.61568627450980395" blue="0.64313725490196083" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="White">
-            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="White">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

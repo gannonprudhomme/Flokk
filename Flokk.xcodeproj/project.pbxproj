@@ -39,6 +39,7 @@
 		87D2CEB8211A5E94007785DC /* GroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D2CEB7211A5E94007785DC /* GroupsViewController.swift */; };
 		87D2CEBA211BB04F007785DC /* GroupsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D2CEB9211BB04F007785DC /* GroupsTableViewCell.swift */; };
 		87D2CEBC211BB0EE007785DC /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D2CEBB211BB0EE007785DC /* Group.swift */; };
+		87D2CEC0211E55C7007785DC /* CreateGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D2CEBF211E55C7007785DC /* CreateGroupViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +79,7 @@
 		87D2CEB7211A5E94007785DC /* GroupsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsViewController.swift; sourceTree = "<group>"; };
 		87D2CEB9211BB04F007785DC /* GroupsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsTableViewCell.swift; sourceTree = "<group>"; };
 		87D2CEBB211BB0EE007785DC /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
+		87D2CEBF211E55C7007785DC /* CreateGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGroupViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -242,6 +244,7 @@
 			children = (
 				87D2CEB7211A5E94007785DC /* GroupsViewController.swift */,
 				87D2CEB9211BB04F007785DC /* GroupsTableViewCell.swift */,
+				87D2CEBF211E55C7007785DC /* CreateGroupViewController.swift */,
 			);
 			path = Groups;
 			sourceTree = "<group>";
@@ -398,6 +401,7 @@
 				8711A836210D478C00CCFD38 /* FeedViewController.swift in Sources */,
 				8711A839210D47CD00CCFD38 /* Post.swift in Sources */,
 				8720D7CE20F476DB0069F56B /* VideoTrimmerViewController.swift in Sources */,
+				87D2CEC0211E55C7007785DC /* CreateGroupViewController.swift in Sources */,
 				87221A0A20F073F2000A00F7 /* AppDelegate.swift in Sources */,
 				87D2CEB1211A4D52007785DC /* ImageUtils.swift in Sources */,
 				87D2CEB8211A5E94007785DC /* GroupsViewController.swift in Sources */,
@@ -531,10 +535,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XT8KNR7TY2;
+				DEVELOPMENT_TEAM = L4K4Q74X62;
 				INFOPLIST_FILE = Flokk/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = flokk;
+				PRODUCT_BUNDLE_IDENTIFIER = com.flokk.flokk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -547,10 +551,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XT8KNR7TY2;
+				DEVELOPMENT_TEAM = L4K4Q74X62;
 				INFOPLIST_FILE = Flokk/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = flokk;
+				PRODUCT_BUNDLE_IDENTIFIER = com.flokk.flokk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -9,9 +9,11 @@
 import UIKit
 import AVFoundation
 
+// I think I'm doing too much in here
+// Probably needs to be handled elsewhere
 class FeedTableViewCell: UITableViewCell {
     @IBOutlet weak var mainView: UIView!
-    var post: Post! // THe post this cell is representing
+    var post: Post! // The post this cell is representing
     
     var avPlayer = AVPlayer()
     var avPlayerLayer: AVPlayerLayer! = nil // Initialized when the video is added to the view

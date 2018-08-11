@@ -277,11 +277,20 @@
                     <connections>
                         <outlet property="handleField" destination="g0g-Rh-oPe" id="Lsi-zo-33d"/>
                         <outlet property="profilePhotoButton" destination="1Oa-Ui-1Yc" id="5tp-QP-UV1"/>
+                        <segue destination="fnK-TO-Z29" kind="presentation" identifier="signUpToGroupsSegue" id="K2F-q7-UmQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6MK-tJ-XMr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2822" y="-11"/>
+        </scene>
+        <!--GroupsNavigationController-->
+        <scene sceneID="dcQ-zh-Ctb">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Groups" referencedIdentifier="GroupsNavigationController" id="fnK-TO-Z29" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pry-N4-PQ7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3623" y="-12"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ad5-LE-igT">
@@ -400,11 +409,20 @@
                     <connections>
                         <outlet property="emailField" destination="ejf-8U-iSr" id="U4v-11-ZDE"/>
                         <outlet property="passwordField" destination="OUv-ic-rOj" id="NCw-9o-j0G"/>
+                        <segue destination="ezf-5d-9d1" kind="presentation" identifier="signInToGroupsSegue" id="o8O-tj-zvD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gmd-Tv-oOA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="937" y="808"/>
+        </scene>
+        <!--GroupsNavigationController-->
+        <scene sceneID="fCa-1i-AAh">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Groups" referencedIdentifier="GroupsNavigationController" id="ezf-5d-9d1" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p79-fx-yJL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1803" y="807"/>
         </scene>
         <!--Forgot Password-->
         <scene sceneID="wAP-du-IkG">
@@ -552,7 +570,7 @@ into your account.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RFZ-IV-Dvg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1848.8" y="806.44677661169419"/>
+            <point key="canvasLocation" x="100" y="797"/>
         </scene>
     </scenes>
     <resources>
