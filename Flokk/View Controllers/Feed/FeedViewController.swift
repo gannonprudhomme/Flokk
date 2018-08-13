@@ -22,7 +22,7 @@ class FeedViewController: UIViewController {
     
     // Serves as a queue / priority queue?
     // Sorted by date, although hopefully Firebase fills it sorted automatically
-    var posts = [Post]()
+    //var posts = [Post]()
     
     var group: Group!
     
@@ -36,13 +36,16 @@ class FeedViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
 
-        fillEmptyPosts()
+        loadPostsData()
         
-        self.tableView.reloadData()
+        //fillEmptyPosts()
+        
+        tableView.reloadData()
         
         // Load initial amount of posts
         
         // Add listener for new posts
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -85,11 +88,13 @@ class FeedViewController: UIViewController {
 
 // MARK: - Post Handling
 extension FeedViewController: UploadPostDelegate {
-    // Initial post loading
-    func loadPosts() {
-        // Maybe get all of the posts (generic) info?
-        
-        // Only add the cell to the tableview when we have the preview image downloaded?
+    // Initial post loading. Load all of the posts data, but not the video/preview-image files
+    func loadPostsData() {
+        database.child("groups").child(group.uid).child("posts").observeSingleEvent(of: .value, with: { (snapshot) in
+            if let value = snapshot.value as? [String : [String : Any]] {
+                print(value)
+            }
+        })
     }
     
     // When we scroll down past a certain point, load more posts
@@ -121,7 +126,7 @@ extension FeedViewController: UploadPostDelegate {
     
     func sortPosts() {
         // Larger timestamp(more recent) should be at the top, so ascending order
-        posts.sort(by: { $0.timestamp < $1.timestamp})
+        group.posts?.sort(by: { $0.timestamp < $1.timestamp})
     }
     
     // Temporary function to fill in the posts
@@ -132,6 +137,7 @@ extension FeedViewController: UploadPostDelegate {
         let post1 = Post(url: URL(fileURLWithPath: video1URL!), dimensions: Dimensions(width: 1920, height: 1080), timestamp: 0)
         let post2 = Post(url: URL(fileURLWithPath: video2URL!), dimensions: Dimensions(width: 1080, height: 1920), timestamp: 0)
         
+        /*
         self.posts.append(post1)
         self.posts.append(post1)
         self.posts.append(post1)
@@ -143,6 +149,7 @@ extension FeedViewController: UploadPostDelegate {
         self.posts.append(post2)
         self.posts.append(post2)
         self.posts.append(post2)
+         */
     }
 }
 
@@ -151,15 +158,15 @@ extension FeedViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "default", for: indexPath as IndexPath) as! FeedTableViewCell
         
-        cell.post = self.posts[indexPath.row]
+        cell.post = group.posts![indexPath.row]
         cell.initialize()
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return currentPostCount
-        //return posts.count
+        //return currentPostCount
+        return group.posts!.count
     }
     
     func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
