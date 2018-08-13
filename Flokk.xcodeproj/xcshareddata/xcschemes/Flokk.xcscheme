@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A0951EAB6192EB4079334F62CACB21D5"
+               BlueprintIdentifier = "B62978E4347E6144D87296388CED7633"
                BuildableName = "RecordButton.framework"
                BlueprintName = "RecordButton"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">
@@ -42,7 +42,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5681C12C2E05A7026DD6934FD7D8CB07"
+               BlueprintIdentifier = "98C7D6FF97A403CF8ACDF8C123B2B178"
                BuildableName = "ABVideoRangeSlider.framework"
                BlueprintName = "ABVideoRangeSlider"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">

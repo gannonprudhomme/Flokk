@@ -169,14 +169,15 @@
                                                 </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="jB9-8q-RSI" firstAttribute="top" secondItem="Vcs-Az-NHv" secondAttribute="bottom" constant="8" id="CR7-St-QDJ"/>
+                                                <constraint firstItem="Vcs-Az-NHv" firstAttribute="leading" secondItem="Hyt-v4-k6f" secondAttribute="leading" constant="100" id="2jt-oa-hxl"/>
+                                                <constraint firstItem="jB9-8q-RSI" firstAttribute="top" secondItem="Vcs-Az-NHv" secondAttribute="bottom" constant="8" symbolic="YES" id="aXn-l3-90A"/>
                                                 <constraint firstItem="3PO-01-NXj" firstAttribute="top" secondItem="Hyt-v4-k6f" secondAttribute="top" constant="15" id="bSR-gT-UMg"/>
                                                 <constraint firstItem="jB9-8q-RSI" firstAttribute="leading" secondItem="3PO-01-NXj" secondAttribute="trailing" constant="17" id="cKu-LS-rMT"/>
-                                                <constraint firstAttribute="trailing" secondItem="Vcs-Az-NHv" secondAttribute="trailing" constant="126" id="eI1-3v-1nM"/>
                                                 <constraint firstAttribute="bottom" secondItem="jB9-8q-RSI" secondAttribute="bottom" constant="28" id="fPY-ri-U6O"/>
                                                 <constraint firstItem="3PO-01-NXj" firstAttribute="leading" secondItem="Hyt-v4-k6f" secondAttribute="leading" constant="15" id="mbT-UC-sMc"/>
                                                 <constraint firstAttribute="bottom" secondItem="3PO-01-NXj" secondAttribute="bottom" constant="17" id="tzI-AK-t0U"/>
                                                 <constraint firstAttribute="trailing" secondItem="jB9-8q-RSI" secondAttribute="trailing" constant="214" id="udX-qQ-8Wc"/>
+                                                <constraint firstItem="Vcs-Az-NHv" firstAttribute="leading" secondItem="jB9-8q-RSI" secondAttribute="leading" id="yJV-ae-ubN"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" name="Flokk Navy"/>
