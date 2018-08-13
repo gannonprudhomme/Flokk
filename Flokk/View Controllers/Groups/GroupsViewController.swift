@@ -48,7 +48,7 @@ class GroupsViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        
+        tableView.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -60,6 +60,13 @@ class GroupsViewController: UIViewController {
             if let vc = segue.destination as? CreateGroupViewController {
                 // Set the create group's delegate at this class, in order to send the new group data back
                 vc.delegate = self
+            }
+        } else if segue.identifier == "groupsToFeedSegue" {
+            if let vc = segue.destination as? FeedViewController {
+                // Get the according group from the selected cell
+                if let tag = (sender as? GroupsTableViewCell)?.tag {
+                    vc.group = mainUser.groups[tag]
+                }
             }
         }
     }
@@ -174,6 +181,7 @@ extension GroupsViewController : UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "default", for: indexPath as IndexPath) as! GroupsTableViewCell
         
         cell.group = mainUser.groups[indexPath.row]
+        cell.tag = indexPath.row
         cell.initialize()
         
         return cell
