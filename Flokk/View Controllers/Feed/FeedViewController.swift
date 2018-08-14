@@ -26,9 +26,8 @@ class FeedViewController: UIViewController {
     
     var group: Group!
     
-    let loadCount = 3 // Only load 3 posts at a time(after the initial 5)
+    let loadCount = 5 // Only load 3 posts at a time(after the initial 5)
     var currentPostCount = 0 // Start out at 0, increased within loadPostsData()
-    var totalPostsCount = 10 // Max amount of posts we can load(the # of posts in the group)
     
     var leaveGroupDelegate: LeaveGroupDelegate! // Used by GroupSettingsVC
     
@@ -49,8 +48,10 @@ class FeedViewController: UIViewController {
                 }
                 
                 // After we're done loading the data, load the initial videos
-                self.loadPostVideos()
+                self.loadPostVideos(startIndex: 0, count: self.currentPostCount)
             } else { // If the posts are already loaded
+                // Set the post count, depending on how many there are
+                // TODO: Iterate through all of the posts, and add all of the videos
                 if self.group.posts.count < initialPostsCount {
                     self.currentPostCount = self.group.posts.count
                 } else {
@@ -118,9 +119,11 @@ extension FeedViewController: UploadPostDelegate {
                     for postID in value.keys {
                         let timestamp = value[postID]!["timestamp"] as! Double
                         let poster = value[postID]!["poster"] as! String // UID of the poster, unused for now
+                        let width = value[postID]!["width"] as! Int
+                        let height = value[postID]!["height"] as! Int
                         
                         let post = Post(uid: postID, timestamp: timestamp)
-                        post.setDimensions(width: 1080, height: 1920)
+                        post.setDimensions(width: width, height: height)
                         
                         // Simplt add it to the posts array
                         // We don't call group.addPost(...) b/c that is for new posts, not existing oness
@@ -148,7 +151,7 @@ extension FeedViewController: UploadPostDelegate {
         }
     }
     
-    func loadPostVideos() {
+    func loadPostVideos(startIndex: Int, count: Int) {
         // Create the directory for the posts to be stored
         let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
         var outputURL = documentDirectory.appendingPathComponent("groups/\(group.uid)/posts")
@@ -159,8 +162,9 @@ extension FeedViewController: UploadPostDelegate {
             print(error)
         }
         
-        for i in 0..<currentPostCount {
+        for i in startIndex..<startIndex + count {
             let post = group.posts[i]
+            print("Loading video at index \(i) with uid \(post.uid)")
             
             var url = outputURL.appendingPathComponent("\(post.uid).mp4")
             
@@ -178,30 +182,13 @@ extension FeedViewController: UploadPostDelegate {
                     return
                 }
             })
-            
-            /*
-            storage.child("groups").child(group.uid).child("posts").child(post.uid).downloadURL(completion: { (url, error) in
-                if error == nil {
-                    post.fileURL = url
-                    //post.fileURL = URL(fileURLWithPath: Bundle.main.path(forResource: "clip1", ofType: ".m4v")!)
-                    
-                    // Update the according tableViewCell once the post has been loaded
-                    DispatchQueue.main.async {
-                        self.tableView.reloadRows(at: [IndexPath(row: i, section: 0)], with: .none)
-                    }
-                } else {
-                    print("ERROR LOADING POST VIDEO")
-                    print(error?.localizedDescription)
-                    return
-                }
-            }) */
         }
     }
     
     // When we scroll down past a certain point, load more posts
     // Completion handler?
     func loadMorePosts() {
-        var postDiff = totalPostsCount - currentPostCount
+        var postDiff = group.posts.count - currentPostCount
         
         if postDiff > loadCount {
             postDiff = loadCount
@@ -210,6 +197,7 @@ extension FeedViewController: UploadPostDelegate {
         var indexPaths = [IndexPath]()
         // currentPostCount is a size(aka size of 1 = index of 0), so i starts at 0
         for i in 0..<postDiff {
+            print("adding index \(currentPostCount + i) with UID of \(group.posts[currentPostCount + i].uid)")
             indexPaths.append(IndexPath(row: currentPostCount + i, section: 0))
         }
         
@@ -217,6 +205,9 @@ extension FeedViewController: UploadPostDelegate {
         
         //tableView.reloadData()
         tableView.insertRows(at: indexPaths, with: UITableViewRowAnimation.bottom)
+        
+        // Load more posts
+        loadPostVideos(startIndex: currentPostCount - postDiff, count: postDiff)
     }
     
     // Called in VideoPlaybackVC after the user has finalized the post
@@ -231,6 +222,11 @@ extension FeedViewController: UploadPostDelegate {
         postRef.child("poster").setValue(mainUser.uid)
         postRef.child("timestamp").setValue(timestamp)
         
+        // Set the post dimensions in the database
+        var dim = VideoUtils.resolutionForLocalVideo(url: fileURL)
+        postRef.child("width").setValue(Int((dim?.width)!))
+        postRef.child("height").setValue(Int((dim?.height)!))
+        
         // Upload the video to Firebase Storage
         storage.child("groups").child(group.uid).child("posts").child(postID).putFile(from: fileURL)
         
@@ -238,7 +234,6 @@ extension FeedViewController: UploadPostDelegate {
         let post = Post(uid: postID, timestamp: timestamp)
         post.fileURL = fileURL
         
-        var dim = VideoUtils.resolutionForLocalVideo(url: fileURL)
         post.setDimensions(width: Int((dim?.width)!), height: Int((dim?.height)!))
         
         // Add the post to the posts array in the current Group
@@ -285,8 +280,8 @@ extension FeedViewController: UITableViewDataSource, UITableViewDelegate {
         // Check if we've reached the bottom of the table
         if distanceFromBottom < height {
             // If so, start loading the other posts
-            if currentPostCount < totalPostsCount {
-                //loadMorePosts()
+            if currentPostCount < group.posts.count {
+                loadMorePosts()
             }
         }
     }

@@ -15,7 +15,7 @@ class SecondSignUpViewController: UIViewController {
     @IBOutlet weak var handleField: UITextField!
     
     var email: String!
-    var phoneNumber: String!
+    var fullName: String!
     var password: String!
     
     let imagePicker = UIImagePickerController()
@@ -51,6 +51,7 @@ class SecondSignUpViewController: UIViewController {
                     let userRef = database.child("users").child(uid)
                     userRef.child("email").setValue(self.email)
                     userRef.child("handle").setValue(self.handleField.text!)
+                    userRef.child("name").setValue(self.fullName)
                     
                     let data = self.profilePhotoButton.imageView?.image!.convertJpegToData()
                     

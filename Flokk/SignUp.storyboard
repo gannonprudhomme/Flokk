@@ -75,7 +75,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2RS-nD-qQj">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Full Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2RS-nD-qQj">
                                 <rect key="frame" x="71" y="76" width="275" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="maj-pu-EiK"/>
@@ -181,9 +181,9 @@
                         <viewLayoutGuide key="safeArea" id="pH2-rB-dYt"/>
                     </view>
                     <connections>
-                        <outlet property="emailField" destination="2RS-nD-qQj" id="x7q-Xp-hYI"/>
+                        <outlet property="emailField" destination="DWh-nZ-zTt" id="g0q-jZ-Dpp"/>
+                        <outlet property="fullNameField" destination="2RS-nD-qQj" id="QZS-W4-Hpj"/>
                         <outlet property="passwordField" destination="Elp-QF-FEW" id="HaC-NS-tSe"/>
-                        <outlet property="phoneNumberField" destination="DWh-nZ-zTt" id="Arf-ZS-rjq"/>
                         <segue destination="TK3-m4-SFM" kind="show" identifier="firstToSecondSignUpSegue" id="Yju-SG-J9j"/>
                     </connections>
                 </viewController>
@@ -243,17 +243,12 @@
                                 <state key="normal" title="By registering, you are agreeing"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QYf-q2-D6W">
-                                <rect key="frame" x="128.5" y="213" width="119" height="25"/>
+                                <rect key="frame" x="117" y="213" width="142" height="27.5"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
-                                        <fragment content="to our ">
+                                        <fragment content="to our Terms of Service">
                                             <attributes>
-                                                <font key="NSFont" size="13" name="JosefinSans"/>
-                                            </attributes>
-                                        </fragment>
-                                        <fragment content="Terms of Service">
-                                            <attributes>
-                                                <font key="NSFont" size="13" name="JosefinSans-Bold"/>
+                                                <font key="NSFont" metaFont="system"/>
                                             </attributes>
                                         </fragment>
                                     </attributedString>

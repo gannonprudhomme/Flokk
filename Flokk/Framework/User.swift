@@ -14,7 +14,8 @@ import UIKit
 class User {
     var uid: String
     var handle: String?
-    //var email: String? // Don't see why we would need access to the email
+    var fullName: String?
+    var email: String? // Don't see why we would need access to the email
     
     // Should profilePhoto be an image or a link to the image?
     //var profilePhoto: URL? // or UIImage

@@ -12,6 +12,9 @@ class VideoPlaybackViewController: UIViewController {
     @IBOutlet weak var doneButton: UIButton!
     
     var uploadPostDelegate: UploadPostDelegate!
+    
+    // Change the aspect fill/fit for the AVPlayer, depending on which view we came from
+    var fromCamera = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,7 +54,13 @@ class VideoPlaybackViewController: UIViewController {
         
         avPlayerLayer = AVPlayerLayer(player: avPlayer)
         avPlayerLayer.frame = self.videoView.bounds
-        avPlayerLayer.videoGravity = AVLayerVideoGravity.resizeAspect
+        
+        if fromCamera {
+            avPlayerLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
+        } else {
+            avPlayerLayer.videoGravity = AVLayerVideoGravity.resizeAspect
+        }
+        
         self.videoView.layer.insertSublayer(avPlayerLayer, at: 0)
         
         view.layoutIfNeeded()

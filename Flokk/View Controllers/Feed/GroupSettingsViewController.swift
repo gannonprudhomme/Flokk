@@ -19,6 +19,9 @@ class GroupSettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        groupIconView?.layer.cornerRadius = groupIconView.frame.size.width / 2
+        groupIconView.clipsToBounds = true
+        
         groupNameLabel.text = group.name
         groupIconView.image = group.getIcon()
     }
@@ -31,6 +34,8 @@ class GroupSettingsViewController: UIViewController {
     // Leave the group
     @IBAction func leaveButtonPressed(_ sender: Any) {
         // Remove the user from the group in the database
+        
+        
         
         leaveGroupDelegate.leaveGroup(group: group)
     }

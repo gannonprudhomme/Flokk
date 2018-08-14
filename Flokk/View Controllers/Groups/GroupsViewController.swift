@@ -98,8 +98,10 @@ extension GroupsViewController {
         database.child("users").child(uid!).observeSingleEvent(of: .value, with: { (snapshot) in
             if let value = snapshot.value as? NSDictionary {
                 let handle = value["handle"] as! String
+                let fullName = value["name"] as! String
                 
                 mainUser = User(uid: uid!, handle: handle)
+                mainUser.fullName = fullName
                 
                 // Attempt to load in the group IDs
                 if let groups = value["groups"] as? [String : String] {
