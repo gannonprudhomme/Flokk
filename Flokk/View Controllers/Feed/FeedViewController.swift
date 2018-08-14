@@ -30,6 +30,8 @@ class FeedViewController: UIViewController {
     var currentPostCount = 0 // Start out at 0, increased within loadPostsData()
     var totalPostsCount = 10 // Max amount of posts we can load(the # of posts in the group)
     
+    var leaveGroupDelegate: LeaveGroupDelegate! // Used by GroupSettingsVC
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -94,6 +96,11 @@ class FeedViewController: UIViewController {
         if segue.identifier == "feedToCameraSegue" {
             if let vc = segue.destination as? CameraNavigationController {
                 vc.uploadPostDelegate = self
+            }
+        } else if segue.identifier == "feedToGroupSettingsSegue" {
+            if let vc = segue.destination as? GroupSettingsViewController {
+                vc.group = group
+                vc.leaveGroupDelegate = leaveGroupDelegate
             }
         }
     }

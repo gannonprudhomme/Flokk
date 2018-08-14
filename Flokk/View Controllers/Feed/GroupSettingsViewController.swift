@@ -9,11 +9,18 @@
 import UIKit
 
 class GroupSettingsViewController: UIViewController {
-
+    @IBOutlet weak var groupNameLabel: UILabel!
+    @IBOutlet weak var groupIconView: UIImageView! // This should be a button
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    var group: Group!
+    var leaveGroupDelegate: LeaveGroupDelegate!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        groupNameLabel.text = group.name
+        groupIconView.image = group.getIcon()
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,15 +28,22 @@ class GroupSettingsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // Leave the group
+    @IBAction func leaveButtonPressed(_ sender: Any) {
+        // Remove the user from the group in the database
+        
+        leaveGroupDelegate.leaveGroup(group: group)
     }
-    */
+}
 
+extension GroupSettingsViewController : UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "default", for: indexPath)
+        
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 0
+    }
 }

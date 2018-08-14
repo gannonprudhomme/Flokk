@@ -18,7 +18,7 @@ class UserSettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        profilePhotoView.image = UIImage(named: "HOME ICON")
+        profilePhotoView.image = mainUser.profilePhoto
         handleLabel.text = mainUser.handle
         emailLabel.text = Auth.auth().currentUser?.email
         phoneNumberLabel.text = "281-000-0000"

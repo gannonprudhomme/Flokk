@@ -235,7 +235,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="CLY-gc-ISL" id="sSY-f6-13k"/>
-                        <segue destination="ALE-U7-dku" kind="presentation" identifier="groupsToSignUpSegue" id="pss-If-7ck"/>
+                        <segue destination="ALE-U7-dku" kind="presentation" identifier="groupsToSignUpSegue" animates="NO" id="pss-If-7ck"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kl7-4Y-qfX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -489,7 +489,7 @@
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="groupInfoBttn:" destination="LRL-pG-lpy" id="vxb-SV-duJ"/>
-                                <segue destination="XVh-KU-Sq0" kind="show" id="Aew-pq-l7K"/>
+                                <segue destination="XVh-KU-Sq0" kind="show" identifier="feedToGroupSettingsSegue" id="Aew-pq-l7K"/>
                             </connections>
                         </barButtonItem>
                         <userDefinedRuntimeAttributes>
@@ -512,11 +512,11 @@
             </objects>
             <point key="canvasLocation" x="4289" y="2710"/>
         </scene>
-        <!--View Controller-->
+        <!--Group Settings View Controller-->
         <scene sceneID="hRe-ff-3br">
             <objects>
-                <viewController id="XVh-KU-Sq0" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="2Px-tO-u9T">
+                <viewController id="XVh-KU-Sq0" customClass="GroupSettingsViewController" customModule="Flokk" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2Px-tO-u9T" customClass="GroupsTableViewCell" customModule="Flokk" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -534,9 +534,12 @@
                                     <constraint firstAttribute="width" constant="130" id="iUL-9F-Dwt"/>
                                 </constraints>
                                 <state key="normal" image="leaveButton"/>
+                                <connections>
+                                    <action selector="leaveButtonPressed:" destination="XVh-KU-Sq0" eventType="touchUpInside" id="gHH-qf-Njc"/>
+                                </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="BU6-Jf-zXs">
-                                <rect key="frame" x="0.0" y="258" width="375" height="372"/>
+                                <rect key="frame" x="0.0" y="258" width="375" height="345"/>
                                 <color key="backgroundColor" name="Flokk Navy"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="AN8-kY-Whn">
                                     <size key="itemSize" width="50" height="50"/>
@@ -545,7 +548,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="3Ft-71-uQf">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="default" id="3Ft-71-uQf">
                                         <rect key="frame" x="0.0" y="0.0" width="178" height="173"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -597,17 +600,22 @@
                             <constraint firstItem="3Q9-5h-nYf" firstAttribute="top" secondItem="Hh7-ia-HJj" secondAttribute="top" constant="20" id="TkN-sP-owb"/>
                             <constraint firstItem="wFF-4S-uyT" firstAttribute="top" secondItem="3Q9-5h-nYf" secondAttribute="bottom" constant="14" id="YkN-ZW-3MG"/>
                             <constraint firstItem="BU6-Jf-zXs" firstAttribute="trailing" secondItem="Hh7-ia-HJj" secondAttribute="trailing" id="a76-FA-jUQ"/>
-                            <constraint firstItem="BU6-Jf-zXs" firstAttribute="bottom" secondItem="Hh7-ia-HJj" secondAttribute="bottom" constant="27" id="f7d-UQ-dGP"/>
+                            <constraint firstItem="BU6-Jf-zXs" firstAttribute="bottom" secondItem="Hh7-ia-HJj" secondAttribute="bottom" id="f7d-UQ-dGP"/>
                             <constraint firstItem="BU6-Jf-zXs" firstAttribute="leading" secondItem="Hh7-ia-HJj" secondAttribute="leading" id="jsl-IZ-Ng1"/>
                             <constraint firstItem="wFF-4S-uyT" firstAttribute="centerX" secondItem="Hh7-ia-HJj" secondAttribute="centerX" id="vhP-kn-pdz"/>
                             <constraint firstItem="BU6-Jf-zXs" firstAttribute="top" secondItem="TnQ-n4-Ddt" secondAttribute="bottom" constant="20" id="wyq-Ie-9sP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Hh7-ia-HJj"/>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="BU6-Jf-zXs" id="R2i-cO-opT"/>
+                        <outlet property="groupIconView" destination="3Q9-5h-nYf" id="4gi-eS-68Z"/>
+                        <outlet property="groupNameLabel" destination="wFF-4S-uyT" id="33b-ZH-Eer"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uhE-0x-OIV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5169" y="2230"/>
+            <point key="canvasLocation" x="5168.8000000000002" y="2229.5352323838083"/>
         </scene>
     </scenes>
     <resources>
