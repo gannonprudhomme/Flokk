@@ -361,7 +361,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RRv-ga-HlU">
-                                <rect key="frame" x="0.0" y="211" width="375" height="456"/>
+                                <rect key="frame" x="0.0" y="156" width="375" height="511"/>
                                 <color key="backgroundColor" name="Flokk Navy"/>
                                 <color key="sectionIndexBackgroundColor" name="Flokk Navy"/>
                                 <prototypes>
@@ -398,26 +398,15 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <searchBar contentMode="redraw" text="" placeholder="Name" translatesAutoresizingMaskIntoConstraints="NO" id="NFq-jU-mYg">
-                                <rect key="frame" x="16" y="155" width="343" height="56"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="56" id="cT0-dk-Czv"/>
-                                </constraints>
-                                <color key="barTintColor" name="Flokk Navy"/>
-                                <textInputTraits key="textInputTraits" textContentType="name"/>
-                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" name="Flokk Navy"/>
                         <color key="tintColor" name="White"/>
                         <constraints>
+                            <constraint firstItem="RRv-ga-HlU" firstAttribute="top" secondItem="1mA-Cr-Mzc" secondAttribute="bottom" constant="1" id="4wA-g0-FDK"/>
                             <constraint firstItem="Rzm-xJ-hQY" firstAttribute="trailing" secondItem="8in-Yy-Bqd" secondAttribute="trailingMargin" constant="-4" id="DOb-al-gNG"/>
-                            <constraint firstItem="1mA-Cr-Mzc" firstAttribute="centerX" secondItem="NFq-jU-mYg" secondAttribute="centerX" id="FBO-HZ-0vs"/>
                             <constraint firstItem="RRv-ga-HlU" firstAttribute="bottom" secondItem="Na0-NK-DDr" secondAttribute="bottom" id="OR3-hS-BpD"/>
                             <constraint firstItem="1mA-Cr-Mzc" firstAttribute="top" secondItem="Rzm-xJ-hQY" secondAttribute="bottom" constant="14" id="OWd-RZ-l3p"/>
-                            <constraint firstItem="RRv-ga-HlU" firstAttribute="top" secondItem="NFq-jU-mYg" secondAttribute="bottom" id="P9g-KG-dSB"/>
                             <constraint firstItem="RRv-ga-HlU" firstAttribute="trailing" secondItem="Na0-NK-DDr" secondAttribute="trailing" id="Sg4-xb-5r1"/>
-                            <constraint firstItem="NFq-jU-mYg" firstAttribute="leading" secondItem="Na0-NK-DDr" secondAttribute="leading" constant="16" id="Xvc-y7-DUS"/>
-                            <constraint firstItem="NFq-jU-mYg" firstAttribute="top" secondItem="1mA-Cr-Mzc" secondAttribute="bottom" id="YPt-b3-KGi"/>
                             <constraint firstItem="RRv-ga-HlU" firstAttribute="leading" secondItem="Na0-NK-DDr" secondAttribute="leading" id="dqy-De-Dh3"/>
                             <constraint firstAttribute="trailing" secondItem="1mA-Cr-Mzc" secondAttribute="trailing" id="j4K-iC-qzD"/>
                             <constraint firstItem="Rzm-xJ-hQY" firstAttribute="top" secondItem="Na0-NK-DDr" secondAttribute="top" constant="22" id="jJi-FT-FeG"/>
@@ -434,7 +423,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AuQ-0m-vnK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6159" y="1429"/>
+            <point key="canvasLocation" x="6157.6000000000004" y="1428.9355322338831"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hGG-TZ-UgH">
@@ -694,9 +683,6 @@
         <namedColor name="Flokk Navy">
             <color red="0.082000002264976501" green="0.086000002920627594" blue="0.16899999976158142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="Flokk Navy">
-            <color red="0.082000002259999996" green="0.086000002919999999" blue="0.16899999979999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="Flokk Teal">
             <color red="0.2199999988079071" green="0.63099998235702515" blue="0.62400001287460327" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -705,9 +691,6 @@
         </namedColor>
         <namedColor name="Secondary Text">
             <color red="0.61568627450980395" green="0.61568627450980395" blue="0.64313725490196083" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="White">
-            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="White">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
