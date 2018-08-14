@@ -3,7 +3,7 @@
 //  Flokk
 //
 //  Created by Gannon Prudhomme on 8/10/18.
-//  Copyright © 2018 Gannon Prudomme. All rights reserved.
+//  Copyright © 2018 Gannon Prudhomme. All rights reserved.
 //
 
 import UIKit

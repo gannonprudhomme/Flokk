@@ -39,9 +39,10 @@ class GroupsViewController: UIViewController {
             })
             
         } else {
+            performSegue(withIdentifier: "groupsToSignUpSegue", sender: nil)
             // No user is signed in, go to the sign in / sign up
-            let vc = UIStoryboard(name: "SignUp", bundle: nil).instantiateViewController(withIdentifier: "SignUpNavigationController")
-            present(vc, animated: false, completion: nil)
+            //let vc = UIStoryboard(name: "SignUp", bundle: nil).instantiateViewController(withIdentifier: "SignUpNavigationController")
+            //present(vc, animated: false, completion: nil)
         }
     }
     

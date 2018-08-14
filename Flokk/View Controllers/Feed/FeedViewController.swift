@@ -35,7 +35,9 @@ class FeedViewController: UIViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
-
+        
+        navigationItem.title = group.name
+        
         // Load the data for ALL of the posts in this group
         loadPostsData(completion: { (didLoadPosts) in
             // If posts were loaded
@@ -54,12 +56,6 @@ class FeedViewController: UIViewController {
                 }
             }
         })
-        
-        //fillEmptyPosts()
-        
-        tableView.reloadData()
-        
-        // Load initial amount of posts
         
         // Add listener for new posts
         

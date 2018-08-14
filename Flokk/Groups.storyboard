@@ -20,63 +20,74 @@
         </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--SignUpNavigationController-->
+        <scene sceneID="9yw-h5-l6y">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SignUp" referencedIdentifier="SignUpNavigationController" id="ALE-U7-dku" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v8r-gs-c6O" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3856" y="2709"/>
+        </scene>
+        <!--Settings-->
         <scene sceneID="3n9-Bx-r0q">
             <objects>
-                <viewController id="gS6-0y-Qhe" sceneMemberID="viewController">
+                <viewController id="gS6-0y-Qhe" customClass="UserSettingsViewController" customModule="Flokk" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="z7P-c4-v60">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ygW-bl-3PD">
-                                <rect key="frame" x="137" y="62" width="100" height="100"/>
+                                <rect key="frame" x="137" y="42" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="Vq5-Yt-WaG"/>
                                     <constraint firstAttribute="height" constant="100" id="jaZ-a7-4N2"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IhK-yB-3Vs">
-                                <rect key="frame" x="142" y="199" width="90" height="34"/>
+                                <rect key="frame" x="142" y="179" width="90" height="34"/>
                                 <fontDescription key="fontDescription" name="JosefinSans-Bold" family="Josefin Sans" pointSize="34"/>
                                 <color key="textColor" name="White"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USERNAME" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CvE-K2-A2h">
-                                <rect key="frame" x="152" y="269" width="71" height="13"/>
+                                <rect key="frame" x="152" y="249" width="71" height="13"/>
                                 <fontDescription key="fontDescription" name="JosefinSans" family="Josefin Sans" pointSize="13"/>
                                 <color key="textColor" name="Secondary Text"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PHONE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a9L-3S-gFF">
-                                <rect key="frame" x="164" y="423" width="47" height="13"/>
+                                <rect key="frame" x="164" y="403" width="47" height="13"/>
                                 <fontDescription key="fontDescription" name="JosefinSans" family="Josefin Sans" pointSize="13"/>
                                 <color key="textColor" name="Secondary Text"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="phoneNumberDisplay" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m2i-AN-BoD">
-                                <rect key="frame" x="119" y="444" width="137" height="15"/>
+                                <rect key="frame" x="119" y="424" width="137" height="15"/>
                                 <fontDescription key="fontDescription" name="JosefinSans-Bold" family="Josefin Sans" pointSize="15"/>
                                 <color key="textColor" name="White"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="usernameDisplay" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vU5-Ux-vPS">
-                                <rect key="frame" x="134" y="290" width="107" height="15"/>
+                                <rect key="frame" x="134" y="270" width="107" height="15"/>
                                 <fontDescription key="fontDescription" name="JosefinSans-Bold" family="Josefin Sans" pointSize="15"/>
                                 <color key="textColor" name="White"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="add-ta-603">
-                                <rect key="frame" x="72" y="577" width="230" height="57"/>
+                                <rect key="frame" x="72" y="513" width="230" height="57"/>
                                 <state key="normal" image="logoutBttn"/>
+                                <connections>
+                                    <action selector="logOutPressed:" destination="gS6-0y-Qhe" eventType="touchUpInside" id="fc8-24-lnu"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EMAIL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ng-fs-bEQ">
-                                <rect key="frame" x="168" y="346" width="39" height="13"/>
+                                <rect key="frame" x="168" y="326" width="39" height="13"/>
                                 <fontDescription key="fontDescription" name="JosefinSans" family="Josefin Sans" pointSize="13"/>
                                 <color key="textColor" name="Secondary Text"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="emailDisplay" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oDP-PJ-B6X">
-                                <rect key="frame" x="147" y="367" width="80" height="15"/>
+                                <rect key="frame" x="147" y="347" width="80" height="15"/>
                                 <fontDescription key="fontDescription" name="JosefinSans-Bold" family="Josefin Sans" pointSize="15"/>
                                 <color key="textColor" name="White"/>
                                 <nil key="highlightedColor"/>
@@ -105,10 +116,18 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qXV-Ou-CoX"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Settings" largeTitleDisplayMode="never" id="4de-6g-fse"/>
+                    <connections>
+                        <outlet property="emailLabel" destination="oDP-PJ-B6X" id="W8Z-rv-uLK"/>
+                        <outlet property="handleLabel" destination="vU5-Ux-vPS" id="mju-7I-VEJ"/>
+                        <outlet property="phoneNumberLabel" destination="m2i-AN-BoD" id="CnW-Xf-hFx"/>
+                        <outlet property="profilePhotoView" destination="ygW-bl-3PD" id="pRr-0y-CCV"/>
+                        <segue destination="ALE-U7-dku" kind="presentation" identifier="settingsToSignUpSegue" id="0vq-RI-gl1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4AD-Rp-Nzh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2785" y="1429"/>
+            <point key="canvasLocation" x="3262" y="3061"/>
         </scene>
         <!--Groups-->
         <scene sceneID="B9W-gw-pXJ">
@@ -203,6 +222,9 @@
                         <barButtonItem key="backBarButtonItem" title=" " id="i1n-tN-jkr"/>
                         <barButtonItem key="leftBarButtonItem" image="settingsBttnWhite" id="icV-7o-SEA">
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <segue destination="gS6-0y-Qhe" kind="show" id="D9r-bv-83b"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="addBttnWhite" id="ZhO-CP-3pk">
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -213,6 +235,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="CLY-gc-ISL" id="sSY-f6-13k"/>
+                        <segue destination="ALE-U7-dku" kind="presentation" identifier="groupsToSignUpSegue" id="pss-If-7ck"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kl7-4Y-qfX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -272,7 +295,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kj6-Xz-wfe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3900" y="1429"/>
+            <point key="canvasLocation" x="3262" y="1429"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Qj0-ja-e3d">
@@ -616,4 +639,7 @@
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="0vq-RI-gl1"/>
+    </inferredMetricsTieBreakers>
 </document>
