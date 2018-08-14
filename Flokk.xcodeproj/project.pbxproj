@@ -41,6 +41,9 @@
 		87D2CEC221223B2B007785DC /* VideoUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D2CEC121223B2B007785DC /* VideoUtils.swift */; };
 		87D2CEC621225722007785DC /* GroupSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D2CEC521225722007785DC /* GroupSettingsViewController.swift */; };
 		87D2CEC821225745007785DC /* UserSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D2CEC721225745007785DC /* UserSettingsViewController.swift */; };
+		87D2CF2221235493007785DC /* AddUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D2CF2121235493007785DC /* AddUserViewController.swift */; };
+		87D2CF2421235696007785DC /* UserSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D2CF2321235696007785DC /* UserSearchTableViewCell.swift */; };
+		87D2CF26212356C6007785DC /* UserSearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D2CF25212356C6007785DC /* UserSearchCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +86,9 @@
 		87D2CEC121223B2B007785DC /* VideoUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoUtils.swift; sourceTree = "<group>"; };
 		87D2CEC521225722007785DC /* GroupSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupSettingsViewController.swift; sourceTree = "<group>"; };
 		87D2CEC721225745007785DC /* UserSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingsViewController.swift; sourceTree = "<group>"; };
+		87D2CF2121235493007785DC /* AddUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserViewController.swift; sourceTree = "<group>"; };
+		87D2CF2321235696007785DC /* UserSearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSearchTableViewCell.swift; sourceTree = "<group>"; };
+		87D2CF25212356C6007785DC /* UserSearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSearchCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +143,9 @@
 				8711A835210D478C00CCFD38 /* FeedViewController.swift */,
 				8711A83A210D539D00CCFD38 /* FeedTableViewCell.swift */,
 				87D2CEC521225722007785DC /* GroupSettingsViewController.swift */,
+				87D2CF2121235493007785DC /* AddUserViewController.swift */,
+				87D2CF2321235696007785DC /* UserSearchTableViewCell.swift */,
+				87D2CF25212356C6007785DC /* UserSearchCollectionViewCell.swift */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -390,6 +399,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87D2CF2421235696007785DC /* UserSearchTableViewCell.swift in Sources */,
 				87D2CEB5211A5D4C007785DC /* SignInViewController.swift in Sources */,
 				87D2CEBC211BB0EE007785DC /* Group.swift in Sources */,
 				87D2CEB3211A4ED6007785DC /* User.swift in Sources */,
@@ -401,6 +411,8 @@
 				87221A1E20F195B0000A00F7 /* CameraViewController.swift in Sources */,
 				87D2CEAA21167570007785DC /* FirstSignUpViewController.swift in Sources */,
 				87D2CEBA211BB04F007785DC /* GroupsTableViewCell.swift in Sources */,
+				87D2CF2221235493007785DC /* AddUserViewController.swift in Sources */,
+				87D2CF26212356C6007785DC /* UserSearchCollectionViewCell.swift in Sources */,
 				87D2CEAC211675AD007785DC /* VerifyNumberViewController.swift in Sources */,
 				8711A83B210D539D00CCFD38 /* FeedTableViewCell.swift in Sources */,
 				8711A836210D478C00CCFD38 /* FeedViewController.swift in Sources */,

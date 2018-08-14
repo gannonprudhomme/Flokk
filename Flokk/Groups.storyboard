@@ -120,6 +120,7 @@
                         <outlet property="fullNameLabel" destination="IhK-yB-3Vs" id="4k4-mp-gMZ"/>
                         <outlet property="handleLabel" destination="vU5-Ux-vPS" id="mju-7I-VEJ"/>
                         <outlet property="phoneNumberLabel" destination="m2i-AN-BoD" id="CnW-Xf-hFx"/>
+                        <outlet property="profilePhotoButton" destination="UDq-1R-I70" id="LxG-P5-F1B"/>
                         <segue destination="ALE-U7-dku" kind="presentation" identifier="settingsToSignUpSegue" id="0vq-RI-gl1"/>
                     </connections>
                 </viewController>
@@ -222,7 +223,7 @@
                         <barButtonItem key="leftBarButtonItem" image="userIconTeal" id="icV-7o-SEA">
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
-                                <segue destination="gS6-0y-Qhe" kind="show" id="D9r-bv-83b"/>
+                                <segue destination="gS6-0y-Qhe" kind="show" id="g2X-JQ-Nz6"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="addBttnWhite" id="ZhO-CP-3pk">
@@ -312,16 +313,16 @@
             </objects>
             <point key="canvasLocation" x="3900" y="1428.9355322338831"/>
         </scene>
-        <!--View Controller-->
+        <!--Add User View Controller-->
         <scene sceneID="Qj0-ja-e3d">
             <objects>
-                <viewController id="IqZ-ek-dYw" sceneMemberID="viewController">
+                <viewController id="IqZ-ek-dYw" customClass="AddUserViewController" customModule="Flokk" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8in-Yy-Bqd">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Rzm-xJ-hQY">
-                                <rect key="frame" x="24" y="86" width="331" height="54"/>
+                                <rect key="frame" x="24" y="22" width="331" height="54"/>
                                 <color key="backgroundColor" name="Flokk Navy"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="54" id="UPM-YC-HXU"/>
@@ -333,7 +334,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="fLX-6L-LNZ">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="default" id="fLX-6L-LNZ" customClass="UserSearchCollectionViewCell" customModule="Flokk" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -351,22 +352,25 @@
                                             <constraint firstAttribute="bottom" secondItem="3KW-jL-jB5" secondAttribute="bottom" id="UKx-2Q-Q0k"/>
                                             <constraint firstAttribute="trailing" secondItem="3KW-jL-jB5" secondAttribute="trailing" id="dZI-hr-4XH"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="profilePhotoView" destination="3KW-jL-jB5" id="d0a-ol-ybg"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1mA-Cr-Mzc">
-                                <rect key="frame" x="0.0" y="154" width="375" height="1"/>
+                                <rect key="frame" x="0.0" y="90" width="375" height="1"/>
                                 <color key="backgroundColor" name="Secondary Navy"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="1Ov-Ux-k2L"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RRv-ga-HlU">
-                                <rect key="frame" x="0.0" y="156" width="375" height="511"/>
+                                <rect key="frame" x="0.0" y="92" width="375" height="511"/>
                                 <color key="backgroundColor" name="Flokk Navy"/>
                                 <color key="sectionIndexBackgroundColor" name="Flokk Navy"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" editingAccessoryType="checkmark" rowHeight="72" id="Wsf-fe-1Lr">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="default" editingAccessoryType="checkmark" rowHeight="72" id="Wsf-fe-1Lr" customClass="UserSearchTableViewCell" customModule="Flokk" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="72"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Wsf-fe-1Lr" id="YPJ-aY-Sl7">
@@ -396,6 +400,10 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" name="Flokk Navy"/>
+                                        <connections>
+                                            <outlet property="handleLabel" destination="QWU-Vx-d1X" id="vMB-Dj-dBP"/>
+                                            <outlet property="profilePhotoView" destination="8e3-iw-bjl" id="Ebe-VU-JpR"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -419,12 +427,19 @@
                     <navigationItem key="navigationItem" id="uPe-65-cV4">
                         <barButtonItem key="rightBarButtonItem" image="checkBttnTeal" id="CYf-hw-KqX">
                             <color key="tintColor" name="Flokk Teal"/>
+                            <connections>
+                                <action selector="invitePressed:" destination="IqZ-ek-dYw" id="jqn-aY-dci"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="collectionView" destination="Rzm-xJ-hQY" id="eWJ-8g-KPF"/>
+                        <outlet property="tableView" destination="RRv-ga-HlU" id="8MA-Oh-JvY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AuQ-0m-vnK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6157.6000000000004" y="1428.9355322338831"/>
+            <point key="canvasLocation" x="6137" y="2230"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hGG-TZ-UgH">
@@ -453,25 +468,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ewc-a5-YV2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2205" y="2230"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="SJn-Vt-M7V">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hfZ-z9-4lE" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iM4-gx-QO9">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" name="Flokk Navy"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="IqZ-ek-dYw" kind="relationship" relationship="rootViewController" id="gX7-0U-crA"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YR7-4N-OZm" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5169" y="1429"/>
         </scene>
         <!--Feed-->
         <scene sceneID="Nob-zt-8CK">
@@ -654,7 +650,11 @@
                         <viewLayoutGuide key="safeArea" id="Hh7-ia-HJj"/>
                     </view>
                     <navigationItem key="navigationItem" title="Group" id="ASO-oV-Iz9">
-                        <barButtonItem key="rightBarButtonItem" image="addFriendsIcon" id="vdh-Dt-YEb"/>
+                        <barButtonItem key="rightBarButtonItem" image="addFriendsIcon" id="vdh-Dt-YEb">
+                            <connections>
+                                <segue destination="IqZ-ek-dYw" kind="show" id="h7e-gy-LL7"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="BU6-Jf-zXs" id="R2i-cO-opT"/>

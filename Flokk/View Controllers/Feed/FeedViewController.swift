@@ -147,43 +147,51 @@ extension FeedViewController: UploadPostDelegate {
                     completion(true)
                 }
             })
-        } else {
-            // No posts needed to be loaded, so call completion false
+        } else { // Posts count != 0
+            // No posts needed to be loaded(as group.posts is not empty), so call completion as false
             completion(false)
         }
     }
     
     func loadPostVideos(startIndex: Int, count: Int) {
         // Create the directory for the posts to be stored
-        let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        let fileManager = FileManager.default
+        let documentDirectory = fileManager.urls(for: .documentDirectory, in: .userDomainMask)[0]
         let outputURL = documentDirectory.appendingPathComponent("groups/\(group.uid)/posts")
         
         do {
-            try FileManager.default.createDirectory(at: outputURL, withIntermediateDirectories: true, attributes: nil)
+            try fileManager.createDirectory(at: outputURL, withIntermediateDirectories: true, attributes: nil)
         } catch let error {
             print(error)
         }
         
+        // Iterate through a range of posts
         for i in startIndex..<startIndex + count {
             let post = group.posts[i]
             print("Loading video at index \(i) with uid \(post.uid)")
             
             let url = outputURL.appendingPathComponent("\(post.uid).mp4")
             
-            storage.child("groups").child(group.uid).child("posts").child(post.uid).write(toFile: url, completion: { (url, error) in
-                if error == nil {
-                    post.fileURL = url
-                    
-                    // Update the according tableViewCell once the post has been loaded
-                    DispatchQueue.main.async {
-                        self.tableView.reloadRows(at: [IndexPath(row: i, section: 0)], with: .none)
+            // TODO: Check if the file exists before trying to load it
+            if fileManager.fileExists(atPath: url.absoluteString) { // Never works/always false
+                print("FILE EXISTS for post \(post.uid)")
+            
+            } else { // File does not exist, load it from Firebase Storage
+                storage.child("groups").child(group.uid).child("posts").child(post.uid).write(toFile: url, completion: { (url, error) in
+                    if error == nil {
+                        post.fileURL = url
+                        
+                        // Update the according tableViewCell once the post has been loaded
+                        DispatchQueue.main.async {
+                            self.tableView.reloadRows(at: [IndexPath(row: i, section: 0)], with: .none)
+                        }
+                    } else {
+                        print("ERROR LOADING POST VIDEO")
+                        print(error?.localizedDescription as Any)
+                        return
                     }
-                } else {
-                    print("ERROR LOADING POST VIDEO")
-                    print(error?.localizedDescription as Any)
-                    return
-                }
-            })
+                })
+            }
         }
     }
     
