@@ -28,7 +28,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gy9-Gu-U8z" customClass="BounceButton" customModule="Flokk">
                                 <rect key="frame" x="100" y="339" width="175" height="51"/>
-                                <state key="normal" image="signUpBttn"/>
+                                <state key="normal" image="signUpNavyBttn"/>
                                 <connections>
                                     <segue destination="FAM-2j-n0g" kind="show" id="ZhA-Rl-3ue"/>
                                 </connections>
@@ -67,10 +67,10 @@
             </objects>
             <point key="canvasLocation" x="936.79999999999995" y="-11.244377811094454"/>
         </scene>
-        <!-- Sign Up 1-->
+        <!-- -->
         <scene sceneID="EPw-af-6hL">
             <objects>
-                <viewController title=" Sign Up 1" id="FAM-2j-n0g" customClass="FirstSignUpViewController" customModule="Flokk" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title=" " id="FAM-2j-n0g" customClass="FirstSignUpViewController" customModule="Flokk" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UF1-99-IMH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -191,10 +191,10 @@
             </objects>
             <point key="canvasLocation" x="1848.8" y="-11.244377811094454"/>
         </scene>
-        <!--Sign Up 2-->
+        <!--Second Sign Up View Controller-->
         <scene sceneID="KjD-Jg-Ppq">
             <objects>
-                <viewController title="Sign Up 2" id="TK3-m4-SFM" customClass="SecondSignUpViewController" customModule="Flokk" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="TK3-m4-SFM" customClass="SecondSignUpViewController" customModule="Flokk" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7FE-NU-cV6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -305,6 +305,9 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="barTintColor" name="Flokk Navy"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="JosefinSans-Bold" family="Josefin Sans" pointSize="17"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -315,10 +318,10 @@
             </objects>
             <point key="canvasLocation" x="-2.3999999999999999" y="-11.244377811094454"/>
         </scene>
-        <!-- Sign In-->
+        <!-- -->
         <scene sceneID="pwX-Vc-CDD">
             <objects>
-                <viewController title=" Sign In" id="Q30-Dc-eNJ" customClass="SignInViewController" customModule="Flokk" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title=" " id="Q30-Dc-eNJ" customClass="SignInViewController" customModule="Flokk" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WYW-qO-GiE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -430,10 +433,10 @@
             </objects>
             <point key="canvasLocation" x="1803" y="807"/>
         </scene>
-        <!--Forgot Password-->
+        <!--View Controller-->
         <scene sceneID="wAP-du-IkG">
             <objects>
-                <viewController title="Forgot Password" id="7Jo-MI-iUe" sceneMemberID="viewController">
+                <viewController id="7Jo-MI-iUe" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wTP-8V-O44">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -468,7 +471,7 @@
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kGR-tG-BP0">
                                 <rect key="frame" x="89" y="56" width="197" height="91"/>
-                                <string key="text">Enter your phone number and
+                                <string key="text">Enter your email address and
 we'll send a link to get back
 into your account.</string>
                                 <fontDescription key="fontDescription" name="JosefinSans" family="Josefin Sans" pointSize="15"/>
@@ -590,7 +593,7 @@ into your account.</string>
         <image name="passwordIconTeal" width="14" height="18"/>
         <image name="registerBttn" width="130" height="42"/>
         <image name="sendBttn" width="130" height="42"/>
-        <image name="signUpBttn" width="175" height="51"/>
+        <image name="signUpNavyBttn" width="175" height="51"/>
         <image name="userIconTeal" width="16" height="17"/>
         <namedColor name="Flokk Navy">
             <color red="0.082000002259999996" green="0.086000002919999999" blue="0.16899999979999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
