@@ -56,7 +56,7 @@ class SecondSignUpViewController: UIViewController {
                     let data = self.profilePhotoButton.imageView?.image!.convertJpegToData()
                     
                     // Upload the profile photo picked by the user
-                    storage.child("users").child(uid).child("profilePhoto").putData(data!, metadata: nil, completion: { (metadata, error) in
+                    storage.child("users").child(uid).child("profilePhoto.jpg").putData(data!, metadata: nil, completion: { (metadata, error) in
                         if error == nil {
                             // Create the main user, to be used throughout the app
                             mainUser = User(uid: uid, handle: self.handleField.text!)

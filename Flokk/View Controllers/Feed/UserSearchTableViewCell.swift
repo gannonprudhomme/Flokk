@@ -16,7 +16,16 @@ class UserSearchTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        profilePhotoView?.layer.cornerRadius = profilePhotoView.frame.size.width / 2
+        profilePhotoView.clipsToBounds = true
+
+        if let user = user {
+            profilePhotoView.image = user.profilePhoto
+            handleLabel.text = user.handle
+        } else {
+            print("user not init")
+        }
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

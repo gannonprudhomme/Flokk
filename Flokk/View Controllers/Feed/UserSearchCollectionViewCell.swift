@@ -16,6 +16,9 @@ class UserSearchCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        profilePhotoView?.layer.cornerRadius = profilePhotoView.frame.size.width / 2
+        profilePhotoView.clipsToBounds = true
+        
         if let user = user {
             profilePhotoView.image = user.profilePhoto
         }

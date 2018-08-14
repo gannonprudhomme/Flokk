@@ -37,7 +37,7 @@ class UserSettingsViewController: UIViewController {
     
     @IBAction func logOutPressed(_ sender: Any) {
         // Create an alert
-        let alert = UIAlertController(title: "Leave Group", message: "Are you sure you want to log out?", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Log Out", message: "Are you sure you want to log out?", preferredStyle: .alert)
         
         let confirmActionButton = UIAlertAction(title: "Confirm", style: .default, handler: { (_) in
             do {
@@ -51,9 +51,11 @@ class UserSettingsViewController: UIViewController {
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         
+        // Add the actions to the alert
         alert.addAction(cancelAction)
         alert.addAction(confirmActionButton)
         
+        // Present the alert, causing it to pop up on screen
         present(alert, animated: true, completion: nil)
     }
 }
