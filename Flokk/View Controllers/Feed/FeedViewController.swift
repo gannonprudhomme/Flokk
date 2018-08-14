@@ -26,9 +26,8 @@ class FeedViewController: UIViewController {
     
     var group: Group!
     
-    let loadCount = 3 // Only load 3 posts at a time(after the initial 5)
+    let loadCount = 5 // Only load 3 posts at a time(after the initial 5)
     var currentPostCount = 0 // Start out at 0, increased within loadPostsData()
-    var totalPostsCount = 10 // Max amount of posts we can load(the # of posts in the group)
     
     var leaveGroupDelegate: LeaveGroupDelegate! // Used by GroupSettingsVC
     
@@ -49,7 +48,7 @@ class FeedViewController: UIViewController {
                 }
                 
                 // After we're done loading the data, load the initial videos
-                self.loadPostVideos()
+                self.loadPostVideos(startIndex: 0, count: self.currentPostCount)
             } else { // If the posts are already loaded
                 if self.group.posts.count < initialPostsCount {
                     self.currentPostCount = self.group.posts.count
@@ -148,7 +147,7 @@ extension FeedViewController: UploadPostDelegate {
         }
     }
     
-    func loadPostVideos() {
+    func loadPostVideos(startIndex: Int, count: Int) {
         // Create the directory for the posts to be stored
         let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
         var outputURL = documentDirectory.appendingPathComponent("groups/\(group.uid)/posts")
@@ -159,7 +158,7 @@ extension FeedViewController: UploadPostDelegate {
             print(error)
         }
         
-        for i in 0..<currentPostCount {
+        for i in startIndex..<count {
             let post = group.posts[i]
             
             var url = outputURL.appendingPathComponent("\(post.uid).mp4")
@@ -178,30 +177,13 @@ extension FeedViewController: UploadPostDelegate {
                     return
                 }
             })
-            
-            /*
-            storage.child("groups").child(group.uid).child("posts").child(post.uid).downloadURL(completion: { (url, error) in
-                if error == nil {
-                    post.fileURL = url
-                    //post.fileURL = URL(fileURLWithPath: Bundle.main.path(forResource: "clip1", ofType: ".m4v")!)
-                    
-                    // Update the according tableViewCell once the post has been loaded
-                    DispatchQueue.main.async {
-                        self.tableView.reloadRows(at: [IndexPath(row: i, section: 0)], with: .none)
-                    }
-                } else {
-                    print("ERROR LOADING POST VIDEO")
-                    print(error?.localizedDescription)
-                    return
-                }
-            }) */
         }
     }
     
     // When we scroll down past a certain point, load more posts
     // Completion handler?
     func loadMorePosts() {
-        var postDiff = totalPostsCount - currentPostCount
+        var postDiff = group.posts.count - currentPostCount
         
         if postDiff > loadCount {
             postDiff = loadCount
@@ -217,6 +199,9 @@ extension FeedViewController: UploadPostDelegate {
         
         //tableView.reloadData()
         tableView.insertRows(at: indexPaths, with: UITableViewRowAnimation.bottom)
+        
+        // Load more posts
+        loadPostVideos(startIndex: currentPostCount - postDiff - 1, count: postDiff)
     }
     
     // Called in VideoPlaybackVC after the user has finalized the post
@@ -285,8 +270,8 @@ extension FeedViewController: UITableViewDataSource, UITableViewDelegate {
         // Check if we've reached the bottom of the table
         if distanceFromBottom < height {
             // If so, start loading the other posts
-            if currentPostCount < totalPostsCount {
-                //loadMorePosts()
+            if currentPostCount < group.posts.count {
+                loadMorePosts()
             }
         }
     }

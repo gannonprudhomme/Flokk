@@ -164,7 +164,7 @@ class CameraViewController : UIViewController {
             if let vc = segue.destination as? VideoPlaybackViewController {
                 vc.videoURL = self.videoURL
                 vc.uploadPostDelegate = uploadPostDelegate
-                
+                vc.fromCamera = true
             }
         } else if segue.identifier == "trimVideoSegue" {
             if let vc = segue.destination as? VideoTrimmerViewController {
