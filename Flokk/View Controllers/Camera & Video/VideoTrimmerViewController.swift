@@ -74,7 +74,7 @@ class VideoTrimmerViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(self.restartVideo), name: Notification.Name.AVPlayerItemDidPlayToEndTime, object: avPlayer.currentItem)
         
         // Configure the preview layer for the camera
-        let screenBounds = UIScreen.main.bounds
+        //let screenBounds = UIScreen.main.bounds
         
         // Set up the AVPlayer to play the video
         avPlayerLayer = AVPlayerLayer(player: avPlayer)
@@ -145,7 +145,7 @@ extension VideoTrimmerViewController {
         let documentDirectory = fileManager.urls(for: .documentDirectory, in: .userDomainMask)[0]
         
         let asset = AVAsset(url: sourceURL)
-        let length = Float(asset.duration.value) / Float(asset.duration.timescale)
+        //let length = Float(asset.duration.value) / Float(asset.duration.timescale)
        // print("video length: \(length) seconds")
         
         var outputURL = documentDirectory.appendingPathComponent("output")

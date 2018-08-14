@@ -13,9 +13,10 @@ import UIKit
 class Group {
     var uid: String
     var name: String
-    var icon: UIImage? // Once it's loaded in, set it. Should it be a URL
+    var icon: UIImage? // Once it's loaded in, set it
+    var creatorUID: String?
     
-    var members: [User]?
+    var members: [User]
     
     // After initial post initialization
     var posts: [Post] // Does it matter when this is initialized?
@@ -41,12 +42,6 @@ class Group {
         
         // Add it to the top posts array
         posts.insert(post, at: 0)
-    }
-    
-    // or reorderPosts()
-    // We basically manually sort every time, so no need
-    func sortPosts() {
-        
     }
     
     // TODO: Should this be done in here?

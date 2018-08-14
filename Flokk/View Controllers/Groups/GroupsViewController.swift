@@ -11,7 +11,7 @@ import Firebase
 import FirebaseAuth
 
 // Used in CreateGroupViewController
-protocol GroupsViewControllerDelegate {
+protocol AddGroupDelegate {
     func addNewGroup(groupName: String, icon: UIImage)
 }
 
@@ -31,7 +31,6 @@ class GroupsViewController: UIViewController {
         
         if Auth.auth().currentUser != nil && mainUser != nil {
             // User is completely signed in, act like normal
-            
             
         } else if Auth.auth().currentUser != nil && mainUser == nil {
             // User is signed into Firebase, but the Flokk user isn't initialized yet
@@ -149,7 +148,7 @@ extension GroupsViewController {
                         mainUser.profilePhoto = UIImage(data: data!)
                         
                     } else {
-                        print(error?.localizedDescription)
+                        print(error!)
                         return
                     }
                 })
@@ -164,11 +163,10 @@ extension GroupsViewController {
         // Move the row to the top
         tableView.moveRow(at: IndexPath(row: row, section: 0), to: IndexPath(row: 0, section: 0))
     }
-    
-    
 }
 
-extension GroupsViewController: GroupsViewControllerDelegate, LeaveGroupDelegate {
+// MARK: - Delegate functions for adding and leaving groups
+extension GroupsViewController: AddGroupDelegate, LeaveGroupDelegate {
     // GroupsViewControllerDelegate function, called from CreateGroupVC
     func addNewGroup(groupName: String, icon: UIImage) {
         let groupID = database.ref.child("groups").childByAutoId().key
@@ -200,7 +198,51 @@ extension GroupsViewController: GroupsViewControllerDelegate, LeaveGroupDelegate
     }
     
     func leaveGroup(group: Group) {
+        // If there is only one member, delete the group completely
+        if group.members.count == 1 {
+            // Remove it from the groups tree
+            database.child("groups").child(group.uid).removeValue()
+            
+            // Remove the group icon from storage
+            storage.child("groups").child(group.uid).child("icon.jpg").delete(completion: { (error) in
+                if let error = error {
+                    print(error)
+                    return
+                }
+            })
+            
+            // Iterate through all of the posts and delete them from storage
+            for post in group.posts {
+                // Remove all of the storage files for it
+                storage.child("groups").child(group.uid).child("posts").child(post.uid).delete(completion: { (error) in
+                    if let error = error {
+                        print(error)
+                        return
+                    }
+                })
+            }
+        }
         
+        // Remove the group from the user's list of groups in the database
+        database.child("users").child(mainUser.uid).child("groups").child(group.uid).removeValue()
+        
+        // Find the row/index of the group to be removed
+        var index = -1
+        for i in 0..<mainUser.groups.count {
+            if mainUser.groups[i].uid == group.uid {
+                index = i
+                break // Found the group, stop looping
+            }
+        }
+        
+        // If the group was found(should be always)
+        if index >= 0 {
+            // Remove the group from the user's groups array
+            mainUser.groups.remove(at: index)
+            
+            // Delete the row from the tableView
+            tableView.deleteRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
+        }
     }
 }
 

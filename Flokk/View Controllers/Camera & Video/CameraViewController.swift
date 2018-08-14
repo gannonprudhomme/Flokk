@@ -220,7 +220,7 @@ extension CameraViewController {
                         self.videoURL = url
                         
                     } else {
-                        print("Error in ending recording: \(error)")
+                        print("Error in ending recording: \(error!)")
                     }
                 })
             } else {

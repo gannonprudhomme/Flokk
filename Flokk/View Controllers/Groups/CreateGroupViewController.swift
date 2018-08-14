@@ -13,7 +13,7 @@ class CreateGroupViewController: UIViewController {
     @IBOutlet weak var groupNameField: UITextField!
     
     // For passing the new group back to the groups view
-    var delegate: GroupsViewControllerDelegate!
+    var delegate: AddGroupDelegate!
     
     var imagePicker = UIImagePickerController()
     

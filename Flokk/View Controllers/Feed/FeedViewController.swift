@@ -60,7 +60,9 @@ class FeedViewController: UIViewController {
             }
         })
         
-        // Add listener for new posts
+        loadExtraGroupData()
+        
+        // TODO: Add listener for new posts
         
     }
     
@@ -118,7 +120,7 @@ extension FeedViewController: UploadPostDelegate {
                 if let value = snapshot.value as? [String : [String : Any]] {
                     for postID in value.keys {
                         let timestamp = value[postID]!["timestamp"] as! Double
-                        let poster = value[postID]!["poster"] as! String // UID of the poster, unused for now
+                        //let poster = value[postID]!["poster"] as! String // UID of the poster, unused for now
                         let width = value[postID]!["width"] as! Int
                         let height = value[postID]!["height"] as! Int
                         
@@ -154,7 +156,7 @@ extension FeedViewController: UploadPostDelegate {
     func loadPostVideos(startIndex: Int, count: Int) {
         // Create the directory for the posts to be stored
         let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-        var outputURL = documentDirectory.appendingPathComponent("groups/\(group.uid)/posts")
+        let outputURL = documentDirectory.appendingPathComponent("groups/\(group.uid)/posts")
         
         do {
             try FileManager.default.createDirectory(at: outputURL, withIntermediateDirectories: true, attributes: nil)
@@ -166,7 +168,7 @@ extension FeedViewController: UploadPostDelegate {
             let post = group.posts[i]
             print("Loading video at index \(i) with uid \(post.uid)")
             
-            var url = outputURL.appendingPathComponent("\(post.uid).mp4")
+            let url = outputURL.appendingPathComponent("\(post.uid).mp4")
             
             storage.child("groups").child(group.uid).child("posts").child(post.uid).write(toFile: url, completion: { (url, error) in
                 if error == nil {
@@ -178,7 +180,7 @@ extension FeedViewController: UploadPostDelegate {
                     }
                 } else {
                     print("ERROR LOADING POST VIDEO")
-                    print(error?.localizedDescription)
+                    print(error?.localizedDescription as Any)
                     return
                 }
             })
@@ -223,7 +225,7 @@ extension FeedViewController: UploadPostDelegate {
         postRef.child("timestamp").setValue(timestamp)
         
         // Set the post dimensions in the database
-        var dim = VideoUtils.resolutionForLocalVideo(url: fileURL)
+        let dim = VideoUtils.resolutionForLocalVideo(url: fileURL)
         postRef.child("width").setValue(Int((dim?.width)!))
         postRef.child("height").setValue(Int((dim?.height)!))
         
@@ -248,6 +250,26 @@ extension FeedViewController: UploadPostDelegate {
     func sortPosts() {
         // Larger timestamp(more recent) should be at the top, so ascending order
         group.posts.sort(by: { $0.timestamp > $1.timestamp})
+    }
+    
+    // Load the extra group data, mainly used in GroupSettings
+    func loadExtraGroupData() {
+        database.child("groups").child(group.uid).observe(.value, with: { (snapshot) in
+            if let value = snapshot.value as? NSDictionary {
+                let members = value["members"] as! [String: String]
+                let creatorUID = value["creator"] as! String
+                
+                self.group.creatorUID = creatorUID
+                
+                // Iterate over the members dictionary and add them to the Group's member array
+                // Used in Group Settings to show who is in the group
+                for uid in members.keys {
+                    let handle = members[uid]
+                    
+                    self.group.members.append(User(uid: uid, handle: handle!))
+                }
+            }
+        })
     }
 }
 
@@ -276,6 +298,10 @@ extension FeedViewController: UITableViewDataSource, UITableViewDelegate {
         let height = scrollView.frame.size.height
         let contentYoffset = scrollView.contentOffset.y
         let distanceFromBottom = scrollView.contentSize.height - contentYoffset
+        
+        // TODO: Determine what cell is in view
+        // If the cell's center is in a certain range in the middle of the screen, 
+        
         
         // Check if we've reached the bottom of the table
         if distanceFromBottom < height {
