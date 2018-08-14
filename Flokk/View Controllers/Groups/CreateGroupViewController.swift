@@ -20,6 +20,8 @@ class CreateGroupViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        groupNameField.layer.cornerRadius = 15.0
+       
         imagePicker.delegate = self
         imagePicker.sourceType = .photoLibrary
         

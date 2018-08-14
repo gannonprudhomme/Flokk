@@ -229,37 +229,53 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LcH-tn-6fc">
-                                <rect key="frame" x="122" y="280.5" width="130" height="42"/>
+                                <rect key="frame" x="122" y="281" width="130" height="42"/>
                                 <state key="normal" image="continueBttn"/>
                                 <connections>
                                     <action selector="continuePressed:" destination="zLu-Hx-i2n" eventType="touchUpInside" id="bDe-zq-ksE"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0gX-O2-gJf">
-                                <rect key="frame" x="137" y="17.5" width="100" height="100"/>
+                                <rect key="frame" x="137" y="16" width="100" height="100"/>
                                 <state key="normal" image="addProfilePicBttn"/>
                                 <connections>
                                     <action selector="groupIconPressed:" destination="zLu-Hx-i2n" eventType="touchUpInside" id="yQS-S6-H4Q"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Group Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e3G-ne-yFH">
-                                <rect key="frame" x="75" y="180.5" width="225" height="30"/>
-                                <nil key="textColor"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ch3-yD-zhw">
+                                <rect key="frame" x="50" y="209" width="275" height="1"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Group Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e3G-ne-yFH">
+                                <rect key="frame" x="50" y="179" width="275" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="fhO-d0-shb"/>
+                                </constraints>
+                                <color key="textColor" name="White"/>
                                 <fontDescription key="fontDescription" name="JosefinSans" family="Josefin Sans" pointSize="15"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="words" keyboardAppearance="alert" textContentType="name"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" keyboardAppearance="alert"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
+                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" name="Flokk Navy"/>
                         <color key="tintColor" name="White"/>
                         <constraints>
+                            <constraint firstItem="ch3-yD-zhw" firstAttribute="top" secondItem="0gX-O2-gJf" secondAttribute="bottom" constant="93" id="8LE-PA-Ppb"/>
                             <constraint firstItem="LcH-tn-6fc" firstAttribute="centerX" secondItem="Gip-Iv-wLu" secondAttribute="centerX" id="8S6-R6-1St"/>
-                            <constraint firstItem="LcH-tn-6fc" firstAttribute="top" secondItem="e3G-ne-yFH" secondAttribute="bottom" constant="70" id="LAB-fy-i7C"/>
-                            <constraint firstItem="e3G-ne-yFH" firstAttribute="leading" secondItem="Gip-Iv-wLu" secondAttribute="leading" constant="75" id="NJ1-AS-VJc"/>
+                            <constraint firstItem="ch3-yD-zhw" firstAttribute="bottom" secondItem="e3G-ne-yFH" secondAttribute="bottom" id="BaM-dt-dmT"/>
+                            <constraint firstItem="e3G-ne-yFH" firstAttribute="leading" secondItem="Gip-Iv-wLu" secondAttribute="leading" constant="50" id="NJ1-AS-VJc"/>
                             <constraint firstItem="LcH-tn-6fc" firstAttribute="centerY" secondItem="Gip-Iv-wLu" secondAttribute="centerY" id="NYu-Ah-qdm"/>
                             <constraint firstItem="e3G-ne-yFH" firstAttribute="centerX" secondItem="LcH-tn-6fc" secondAttribute="centerX" id="Y1C-X1-7Fs"/>
                             <constraint firstItem="0gX-O2-gJf" firstAttribute="centerX" secondItem="CRo-tt-qHb" secondAttribute="centerX" id="Zb5-ae-W0j"/>
                             <constraint firstItem="0gX-O2-gJf" firstAttribute="centerX" secondItem="e3G-ne-yFH" secondAttribute="centerX" id="cKv-1y-Xqf"/>
                             <constraint firstItem="e3G-ne-yFH" firstAttribute="top" secondItem="0gX-O2-gJf" secondAttribute="bottom" constant="63" id="gxF-5f-H8z"/>
+                            <constraint firstItem="ch3-yD-zhw" firstAttribute="trailing" secondItem="e3G-ne-yFH" secondAttribute="trailing" id="lBz-7h-PF7"/>
+                            <constraint firstItem="ch3-yD-zhw" firstAttribute="leading" secondItem="e3G-ne-yFH" secondAttribute="leading" id="uyp-iG-kag"/>
+                            <constraint firstItem="LcH-tn-6fc" firstAttribute="top" secondItem="ch3-yD-zhw" secondAttribute="bottom" constant="71" id="ydq-HJ-a78"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Gip-Iv-wLu"/>
                     </view>
@@ -273,7 +289,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kj6-Xz-wfe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3900" y="1429"/>
+            <point key="canvasLocation" x="3900" y="1428.9355322338831"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Qj0-ja-e3d">
@@ -448,8 +464,8 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UtU-fz-doa">
-                                <rect key="frame" x="275" y="507" width="84" height="76"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UtU-fz-doa" customClass="BounceButton" customModule="Flokk">
+                                <rect key="frame" x="275" y="506" width="84" height="77"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
                                 <state key="normal" image="addPostBttn"/>
                                 <connections>
@@ -595,9 +611,6 @@
         <namedColor name="Flokk Navy">
             <color red="0.082000002259999996" green="0.086000002919999999" blue="0.16899999979999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="Flokk Navy">
-            <color red="0.082000002259999996" green="0.086000002919999999" blue="0.16899999979999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="Flokk Teal">
             <color red="0.2199999988079071" green="0.63099998235702515" blue="0.62400001287460327" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -606,6 +619,9 @@
         </namedColor>
         <namedColor name="Secondary Text">
             <color red="0.61568627450980395" green="0.61568627450980395" blue="0.64313725490196083" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="White">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="White">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

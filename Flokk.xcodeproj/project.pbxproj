@@ -15,7 +15,6 @@
 		7F912B982110DB8E00ADABEE /* Groups.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F912B972110DB8E00ADABEE /* Groups.storyboard */; };
 		7F912B9C211114E000ADABEE /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F912B9B211114E000ADABEE /* SignUp.storyboard */; };
 		7FED457E21222A29004D4D36 /* BounceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8012B3210123B000CEA5DA /* BounceButton.swift */; };
-		8711A831210D468F00CCFD38 /* Feed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8711A830210D468F00CCFD38 /* Feed.storyboard */; };
 		8711A836210D478C00CCFD38 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8711A835210D478C00CCFD38 /* FeedViewController.swift */; };
 		8711A839210D47CD00CCFD38 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8711A838210D47CD00CCFD38 /* Post.swift */; };
 		8711A83B210D539D00CCFD38 /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8711A83A210D539D00CCFD38 /* FeedTableViewCell.swift */; };
