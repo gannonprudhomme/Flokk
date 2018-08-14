@@ -10,8 +10,14 @@ import UIKit
 import Firebase
 import FirebaseAuth
 
+// Used in CreateGroupViewController
 protocol GroupsViewControllerDelegate {
     func addNewGroup(groupName: String, icon: UIImage)
+}
+
+// Used in GroupSettingsViewController
+protocol LeaveGroupDelegate {
+    func leaveGroup(group: Group)
 }
 
 class GroupsViewController: UIViewController {
@@ -39,9 +45,10 @@ class GroupsViewController: UIViewController {
             })
             
         } else {
+            performSegue(withIdentifier: "groupsToSignUpSegue", sender: nil)
             // No user is signed in, go to the sign in / sign up
-            let vc = UIStoryboard(name: "SignUp", bundle: nil).instantiateViewController(withIdentifier: "SignUpNavigationController")
-            present(vc, animated: false, completion: nil)
+            //let vc = UIStoryboard(name: "SignUp", bundle: nil).instantiateViewController(withIdentifier: "SignUpNavigationController")
+            //present(vc, animated: false, completion: nil)
         }
     }
     
@@ -67,13 +74,15 @@ class GroupsViewController: UIViewController {
                 if let tag = (sender as? GroupsTableViewCell)?.tag {
                     vc.group = mainUser.groups[tag]
                 }
+                
+                vc.leaveGroupDelegate = self
             }
         }
     }
 }
 
 // MARK: - Framework functions
-extension GroupsViewController : GroupsViewControllerDelegate {
+extension GroupsViewController {
     // Load the groups into the main user
     func loadGroups() {
         // what would even be loaded here?
@@ -109,6 +118,7 @@ extension GroupsViewController : GroupsViewControllerDelegate {
                                 // Once it's loaded, set it in the group
                                 group.setIcon(icon: icon)
                                 
+                                // TODO: Review this operation
                                 // And updated the according row
                                 DispatchQueue.main.async {
                                     // This is so fucking stupid
@@ -120,20 +130,27 @@ extension GroupsViewController : GroupsViewControllerDelegate {
                                         }
                                     }
                                     
+                                    // Reload the row
                                     self.tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .none)
                                 }
                             }
                         })
-                        
-                        
                     }
-                } else {
-                    // No groups, do nothing I guess
                 }
                 
-                // TODO: Also load in user's profile photo(later)
-                
                 completion()
+                
+                // Load in the profile photo
+                // Does not matter when this is loaded(in regards to calling completion())
+                storage.child("users").child(mainUser.uid).child("profilePhoto").getData(maxSize: MAX_PROFILE_PHOTO_SIZE, completion: { (data, error) in
+                    if error == nil {
+                        mainUser.profilePhoto = UIImage(data: data!)
+                        
+                    } else {
+                        print(error?.localizedDescription)
+                        return
+                    }
+                })
             }
         })
     }
@@ -146,6 +163,11 @@ extension GroupsViewController : GroupsViewControllerDelegate {
         tableView.moveRow(at: IndexPath(row: row, section: 0), to: IndexPath(row: 0, section: 0))
     }
     
+    
+}
+
+extension GroupsViewController: GroupsViewControllerDelegate, LeaveGroupDelegate {
+    // GroupsViewControllerDelegate function, called from CreateGroupVC
     func addNewGroup(groupName: String, icon: UIImage) {
         let groupID = database.ref.child("groups").childByAutoId().key
         
@@ -173,6 +195,10 @@ extension GroupsViewController : GroupsViewControllerDelegate {
         
         // Insert it into the top of the tableView, shifting the other
         tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .none)
+    }
+    
+    func leaveGroup(group: Group) {
+        
     }
 }
 

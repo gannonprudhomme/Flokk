@@ -40,6 +40,9 @@
 		87D2CEBA211BB04F007785DC /* GroupsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D2CEB9211BB04F007785DC /* GroupsTableViewCell.swift */; };
 		87D2CEBC211BB0EE007785DC /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D2CEBB211BB0EE007785DC /* Group.swift */; };
 		87D2CEC0211E55C7007785DC /* CreateGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D2CEBF211E55C7007785DC /* CreateGroupViewController.swift */; };
+		87D2CEC221223B2B007785DC /* VideoUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D2CEC121223B2B007785DC /* VideoUtils.swift */; };
+		87D2CEC621225722007785DC /* GroupSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D2CEC521225722007785DC /* GroupSettingsViewController.swift */; };
+		87D2CEC821225745007785DC /* UserSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D2CEC721225745007785DC /* UserSettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,6 +82,9 @@
 		87D2CEB9211BB04F007785DC /* GroupsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsTableViewCell.swift; sourceTree = "<group>"; };
 		87D2CEBB211BB0EE007785DC /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		87D2CEBF211E55C7007785DC /* CreateGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGroupViewController.swift; sourceTree = "<group>"; };
+		87D2CEC121223B2B007785DC /* VideoUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoUtils.swift; sourceTree = "<group>"; };
+		87D2CEC521225722007785DC /* GroupSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupSettingsViewController.swift; sourceTree = "<group>"; };
+		87D2CEC721225745007785DC /* UserSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +138,7 @@
 			children = (
 				8711A835210D478C00CCFD38 /* FeedViewController.swift */,
 				8711A83A210D539D00CCFD38 /* FeedTableViewCell.swift */,
+				87D2CEC521225722007785DC /* GroupSettingsViewController.swift */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -233,6 +240,7 @@
 			isa = PBXGroup;
 			children = (
 				87D2CEB0211A4D52007785DC /* ImageUtils.swift */,
+				87D2CEC121223B2B007785DC /* VideoUtils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -243,6 +251,7 @@
 				87D2CEB7211A5E94007785DC /* GroupsViewController.swift */,
 				87D2CEB9211BB04F007785DC /* GroupsTableViewCell.swift */,
 				87D2CEBF211E55C7007785DC /* CreateGroupViewController.swift */,
+				87D2CEC721225745007785DC /* UserSettingsViewController.swift */,
 			);
 			path = Groups;
 			sourceTree = "<group>";
@@ -389,6 +398,8 @@
 				87D2CEB3211A4ED6007785DC /* User.swift in Sources */,
 				8711A8462113E5F000CCFD38 /* CameraNavigationController.swift in Sources */,
 				87D2CEAE211A4069007785DC /* SecondSignUpViewController.swift in Sources */,
+				87D2CEC821225745007785DC /* UserSettingsViewController.swift in Sources */,
+				87D2CEC621225722007785DC /* GroupSettingsViewController.swift in Sources */,
 				8720D7C120F1DBBC0069F56B /* VideoPlaybackViewController.swift in Sources */,
 				87221A1E20F195B0000A00F7 /* CameraViewController.swift in Sources */,
 				87D2CEAA21167570007785DC /* FirstSignUpViewController.swift in Sources */,
@@ -399,6 +410,7 @@
 				8711A836210D478C00CCFD38 /* FeedViewController.swift in Sources */,
 				8711A839210D47CD00CCFD38 /* Post.swift in Sources */,
 				8720D7CE20F476DB0069F56B /* VideoTrimmerViewController.swift in Sources */,
+				87D2CEC221223B2B007785DC /* VideoUtils.swift in Sources */,
 				87D2CEC0211E55C7007785DC /* CreateGroupViewController.swift in Sources */,
 				87221A0A20F073F2000A00F7 /* AppDelegate.swift in Sources */,
 				87D2CEB1211A4D52007785DC /* ImageUtils.swift in Sources */,

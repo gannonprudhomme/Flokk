@@ -13,11 +13,12 @@ typealias Dimensions = (width: Int?, height: Int?)
 
 // Represents a user's post within a Feed
 class Post {
-    var uid: String!
+    var uid: String
+    var posterID: String?
     
     // Private and have a getter?
     // Set only after the video has been loaded
-    var fileURL: URL?
+    var fileURL: URL? // Change to downloadURL
     
     // Private and have a getter?
     var timestamp: Double
@@ -26,17 +27,28 @@ class Post {
     // Can this be retrieved from the URL?
     var dimensions: Dimensions?
     
-    var loaded = false
+    init(uid: String, timestamp: Double) {
+        self.uid = uid
+        self.timestamp = timestamp
+    }
     
-    init(dimensions: Dimensions, timestamp: Double!) {
+    // Used for testing
+    init(dimensions: Dimensions, timestamp: Double) {
         self.timestamp = timestamp
         
         self.dimensions = dimensions
+        self.uid = ""
     }
     
+    // Used for testing
     init(url: URL, dimensions: Dimensions, timestamp: Double) {
         self.fileURL = url
         self.timestamp = timestamp
         self.dimensions = dimensions
+        self.uid = ""
+    }
+    
+    func setDimensions(width: Int, height: Int) {
+        self.dimensions = Dimensions(width: width, height: height)
     }
 }

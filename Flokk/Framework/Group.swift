@@ -16,12 +16,14 @@ class Group {
     var icon: UIImage? // Once it's loaded in, set it. Should it be a URL
     
     var members: [User]?
-    var posts: [Post]? // Does it matter when this is initialized?
+    
+    // After initial post initialization
+    var posts: [Post] // Does it matter when this is initialized?
     
     // Is this needed?
     var numNewPosts: Int = 0
     
-    var newestPostTime: Date!
+    var newestPostTime: Double!
     
     init(uid: String, name: String) {
         self.uid = uid
@@ -35,8 +37,10 @@ class Group {
     
     func addPost(post: Post) {
         // Set the newest post time
+        newestPostTime = post.timestamp
         
-        // Add it to the posts array
+        // Add it to the top posts array
+        posts.insert(post, at: 0)
     }
     
     // or reorderPosts()
