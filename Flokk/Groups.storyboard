@@ -453,6 +453,7 @@
                                 <state key="normal" image="addPostBttn"/>
                                 <connections>
                                     <action selector="addPostPressed:" destination="LRL-pG-lpy" eventType="touchUpInside" id="wOT-fx-oDM"/>
+                                    <segue destination="zv0-we-gQ4" kind="show" identifier="feedToCameraSegue" id="gCs-Xr-6XB"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -478,7 +479,15 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cTB-bE-bUn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4289" y="2230"/>
+            <point key="canvasLocation" x="4288.8000000000002" y="2229.5352323838083"/>
+        </scene>
+        <!--CameraNavigationController-->
+        <scene sceneID="59c-xl-QaK">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Camera" referencedIdentifier="CameraNavigationController" id="zv0-we-gQ4" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rUs-F2-gdQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4289" y="2710"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="hRe-ff-3br">
@@ -591,9 +600,6 @@
         <image name="settingsBttnWhite" width="19" height="19"/>
         <image name="ski" width="1536" height="1536"/>
         <image name="turtle" width="1537" height="1536"/>
-        <namedColor name="Flokk Navy">
-            <color red="0.082000002259999996" green="0.086000002919999999" blue="0.16899999979999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="Flokk Navy">
             <color red="0.082000002259999996" green="0.086000002919999999" blue="0.16899999979999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

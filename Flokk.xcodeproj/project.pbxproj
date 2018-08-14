@@ -39,6 +39,7 @@
 		87D2CEBA211BB04F007785DC /* GroupsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D2CEB9211BB04F007785DC /* GroupsTableViewCell.swift */; };
 		87D2CEBC211BB0EE007785DC /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D2CEBB211BB0EE007785DC /* Group.swift */; };
 		87D2CEC0211E55C7007785DC /* CreateGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D2CEBF211E55C7007785DC /* CreateGroupViewController.swift */; };
+		87D2CEC221223B2B007785DC /* VideoUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D2CEC121223B2B007785DC /* VideoUtils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +79,7 @@
 		87D2CEB9211BB04F007785DC /* GroupsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsTableViewCell.swift; sourceTree = "<group>"; };
 		87D2CEBB211BB0EE007785DC /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		87D2CEBF211E55C7007785DC /* CreateGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGroupViewController.swift; sourceTree = "<group>"; };
+		87D2CEC121223B2B007785DC /* VideoUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoUtils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				87D2CEB0211A4D52007785DC /* ImageUtils.swift */,
+				87D2CEC121223B2B007785DC /* VideoUtils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -397,6 +400,7 @@
 				8711A836210D478C00CCFD38 /* FeedViewController.swift in Sources */,
 				8711A839210D47CD00CCFD38 /* Post.swift in Sources */,
 				8720D7CE20F476DB0069F56B /* VideoTrimmerViewController.swift in Sources */,
+				87D2CEC221223B2B007785DC /* VideoUtils.swift in Sources */,
 				87D2CEC0211E55C7007785DC /* CreateGroupViewController.swift in Sources */,
 				87221A0A20F073F2000A00F7 /* AppDelegate.swift in Sources */,
 				87D2CEB1211A4D52007785DC /* ImageUtils.swift in Sources */,

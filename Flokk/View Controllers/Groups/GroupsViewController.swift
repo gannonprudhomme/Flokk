@@ -109,6 +109,7 @@ extension GroupsViewController : GroupsViewControllerDelegate {
                                 // Once it's loaded, set it in the group
                                 group.setIcon(icon: icon)
                                 
+                                // TODO: Review this operation
                                 // And updated the according row
                                 DispatchQueue.main.async {
                                     // This is so fucking stupid
@@ -120,12 +121,11 @@ extension GroupsViewController : GroupsViewControllerDelegate {
                                         }
                                     }
                                     
+                                    // Reload the row
                                     self.tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .none)
                                 }
                             }
                         })
-                        
-                        
                     }
                 } else {
                     // No groups, do nothing I guess
@@ -146,6 +146,7 @@ extension GroupsViewController : GroupsViewControllerDelegate {
         tableView.moveRow(at: IndexPath(row: row, section: 0), to: IndexPath(row: 0, section: 0))
     }
     
+    // GroupsViewControllerDelegate function, called from CreateGroupVC
     func addNewGroup(groupName: String, icon: UIImage) {
         let groupID = database.ref.child("groups").childByAutoId().key
         

@@ -33,18 +33,18 @@ class VideoPlaybackViewController: UIViewController {
     
     @IBAction func donePressed(_ sender: Any) {
         // Upload the video to the current feed
-        uploadPostDelegate.uploadPost(fileID: "file ID")
+        uploadPostDelegate.uploadPost(fileURL: videoURL)
         
         // Get a preview image(of diff sizes?)
-        self.dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
     
+    // Called on initialization
     func addVideo() {
         avPlayer = AVPlayer()
         
         // Add the callback function to the av player for looping the video once it's ended
         NotificationCenter.default.addObserver(self, selector: #selector(self.restartVideo), name: Notification.Name.AVPlayerItemDidPlayToEndTime, object: avPlayer.currentItem)
-        
     
         // Configure the preview layer for the camera
         let screenBounds = UIScreen.main.bounds
@@ -70,9 +70,5 @@ class VideoPlaybackViewController: UIViewController {
             avPlayer.seek(to: CMTime(seconds: 0, preferredTimescale: 1000));
             avPlayer.play();
         }
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
     }
 }

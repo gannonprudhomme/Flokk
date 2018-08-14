@@ -36,21 +36,9 @@ class FeedTableViewCell: UITableViewCell {
         }
     }
     
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        aspectConstraint = nil
-        
-        // Remove the video layer to prevent it stacking with the next video that will occupy this cell
-        if avPlayerLayer != nil {
-            pauseVideo()
-            avPlayerLayer.removeFromSuperlayer()
-            avPlayerLayer = nil
-        }
-        
-        // Same as above
-        if previewImageView != nil {
-            previewImageView.removeFromSuperview()
-            previewImageView = nil
+    var videoPlayerItem: AVPlayerItem? = nil {
+        didSet {
+            avPlayer.replaceCurrentItem(with: videoPlayerItem)
         }
     }
     
@@ -59,11 +47,34 @@ class FeedTableViewCell: UITableViewCell {
         addPlayTouchGesture()
         
         //addPreviewImageToView(image: UIImage(named: "testPhoto2")!)
-
-        // Add preview image while the video is loading
-        beginLoadingVideo(completion: { (loaded) in
-            self.addVideoToView()
-        })
+        
+        if post.fileURL != nil {
+            addVideoToView()
+        }
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        //initialize()
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        aspectConstraint = nil
+        
+        // Remove the video layer to prevent it stacking with the next video that will occupy this cell
+        if avPlayerLayer != nil {
+            pauseVideo()
+            //avPlayerLayer.removeFromSuperlayer()
+            //avPlayerLayer = nil
+        }
+        
+        // Same as above
+        if previewImageView != nil {
+            previewImageView.removeFromSuperview()
+            previewImageView = nil
+        }
     }
     
     // Adds the gesture for pausing & playing the video by tapping it
@@ -109,19 +120,6 @@ extension FeedTableViewCell {
         previewImageView.frame = mainView.bounds
         
         // Add a loading icon?
-    }
-    
-    func beginLoadingVideo(completion: @escaping (Bool) -> Void) {
-        // First check if the video has already been loaded
-        if post.fileURL != nil {
-            //completion(true)
-        } else {
-            // Begin loading the video
-            
-        }
-        
-        // Firebase stuff
-        completion(true)
     }
     
     // Once the video has been loaded, this will be called
@@ -175,7 +173,7 @@ extension FeedTableViewCell {
         playVideo()
     }
     
-    func resolutionForLocalVideo(url: URL) -> CGSize? {
+    static func resolutionForLocalVideo(url: URL) -> CGSize? {
         guard let track = AVURLAsset(url: url).tracks(withMediaType: AVMediaType.video).first else { return nil }
         let size = track.naturalSize.applying(track.preferredTransform)
         return CGSize(width: fabs(size.width), height: fabs(size.height))
