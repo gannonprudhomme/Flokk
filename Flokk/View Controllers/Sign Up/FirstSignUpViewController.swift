@@ -12,8 +12,8 @@ import FirebaseAuth
 
 // For now, purpose is to just pass on data to the SecondSignUp VC
 class FirstSignUpViewController: UIViewController {
+    @IBOutlet weak var fullNameField: UITextField!
     @IBOutlet weak var emailField: UITextField!
-    @IBOutlet weak var phoneNumberField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     
     override func viewDidLoad() {
@@ -28,7 +28,7 @@ class FirstSignUpViewController: UIViewController {
     @IBAction func continuePressed(_ sender: Any) {
         // Check if the credientials are fine
         let password = passwordField.text!
-        let phoneNumber = phoneNumberField.text!
+        let fullName = fullNameField.text!
         let email = emailField.text!
         
         // Change these to something legitamate
@@ -42,7 +42,7 @@ class FirstSignUpViewController: UIViewController {
             if let vc = segue.destination as? SecondSignUpViewController {
                 vc.email = emailField.text!
                 vc.password = passwordField.text!
-                vc.phoneNumber = phoneNumberField.text!
+                vc.fullName = fullNameField.text!
             }
         }
     }

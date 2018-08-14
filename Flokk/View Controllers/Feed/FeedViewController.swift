@@ -50,6 +50,8 @@ class FeedViewController: UIViewController {
                 // After we're done loading the data, load the initial videos
                 self.loadPostVideos(startIndex: 0, count: self.currentPostCount)
             } else { // If the posts are already loaded
+                // Set the post count, depending on how many there are
+                // TODO: Iterate through all of the posts, and add all of the videos
                 if self.group.posts.count < initialPostsCount {
                     self.currentPostCount = self.group.posts.count
                 } else {
@@ -117,9 +119,11 @@ extension FeedViewController: UploadPostDelegate {
                     for postID in value.keys {
                         let timestamp = value[postID]!["timestamp"] as! Double
                         let poster = value[postID]!["poster"] as! String // UID of the poster, unused for now
+                        let width = value[postID]!["width"] as! Int
+                        let height = value[postID]!["height"] as! Int
                         
                         let post = Post(uid: postID, timestamp: timestamp)
-                        post.setDimensions(width: 1080, height: 1920)
+                        post.setDimensions(width: width, height: height)
                         
                         // Simplt add it to the posts array
                         // We don't call group.addPost(...) b/c that is for new posts, not existing oness
@@ -158,8 +162,9 @@ extension FeedViewController: UploadPostDelegate {
             print(error)
         }
         
-        for i in startIndex..<count {
+        for i in startIndex..<startIndex + count {
             let post = group.posts[i]
+            print("Loading video at index \(i) with uid \(post.uid)")
             
             var url = outputURL.appendingPathComponent("\(post.uid).mp4")
             
@@ -192,6 +197,7 @@ extension FeedViewController: UploadPostDelegate {
         var indexPaths = [IndexPath]()
         // currentPostCount is a size(aka size of 1 = index of 0), so i starts at 0
         for i in 0..<postDiff {
+            print("adding index \(currentPostCount + i) with UID of \(group.posts[currentPostCount + i].uid)")
             indexPaths.append(IndexPath(row: currentPostCount + i, section: 0))
         }
         
@@ -201,7 +207,7 @@ extension FeedViewController: UploadPostDelegate {
         tableView.insertRows(at: indexPaths, with: UITableViewRowAnimation.bottom)
         
         // Load more posts
-        loadPostVideos(startIndex: currentPostCount - postDiff - 1, count: postDiff)
+        loadPostVideos(startIndex: currentPostCount - postDiff, count: postDiff)
     }
     
     // Called in VideoPlaybackVC after the user has finalized the post
@@ -216,6 +222,11 @@ extension FeedViewController: UploadPostDelegate {
         postRef.child("poster").setValue(mainUser.uid)
         postRef.child("timestamp").setValue(timestamp)
         
+        // Set the post dimensions in the database
+        var dim = VideoUtils.resolutionForLocalVideo(url: fileURL)
+        postRef.child("width").setValue(Int((dim?.width)!))
+        postRef.child("height").setValue(Int((dim?.height)!))
+        
         // Upload the video to Firebase Storage
         storage.child("groups").child(group.uid).child("posts").child(postID).putFile(from: fileURL)
         
@@ -223,7 +234,6 @@ extension FeedViewController: UploadPostDelegate {
         let post = Post(uid: postID, timestamp: timestamp)
         post.fileURL = fileURL
         
-        var dim = VideoUtils.resolutionForLocalVideo(url: fileURL)
         post.setDimensions(width: Int((dim?.width)!), height: Int((dim?.height)!))
         
         // Add the post to the posts array in the current Group
