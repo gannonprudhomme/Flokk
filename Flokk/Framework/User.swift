@@ -24,14 +24,18 @@ class User {
     // Only needed for the main user
     var groups = [Group]()
     
-    // Empty user with nothing loaded
-    init(uid: String) {
-        self.uid = uid
-    }
-    
+    // Default initializer, the minimum data required to initialize one
     init(uid: String, handle: String) {
         self.uid = uid
         self.handle = handle
+    }
+    
+    // Used in AddUser / User Search, where the user will only be initialized once the profile photo is loaded
+    // No real need to use convenience. More to show that this is not the primary initializer
+    convenience init(uid: String, handle: String, profilePhoto: UIImage) {
+        self.init(uid: uid, handle: handle)
+        
+        self.profilePhoto = profilePhoto
     }
     
     // Called whenever a post has been added to a group

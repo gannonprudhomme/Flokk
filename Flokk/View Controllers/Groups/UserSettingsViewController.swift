@@ -10,7 +10,7 @@ import UIKit
 import FirebaseAuth
 
 class UserSettingsViewController: UIViewController {
-    @IBOutlet weak var profilePhotoView: UIImageView!
+    @IBOutlet weak var profilePhotoButton: UIButton!
     @IBOutlet weak var handleLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var fullNameLabel: UILabel!
@@ -20,10 +20,10 @@ class UserSettingsViewController: UIViewController {
         super.viewDidLoad()
         
         // Crop the profile photo view to a circle
-        profilePhotoView.layer.cornerRadius = profilePhotoView.bounds.width / 2
-        profilePhotoView.clipsToBounds = true
+        profilePhotoButton.imageView?.layer.cornerRadius = profilePhotoButton.bounds.width / 2
+        profilePhotoButton.clipsToBounds = true
         
-        profilePhotoView.image = mainUser.profilePhoto
+        profilePhotoButton.imageView?.image = mainUser.profilePhoto
         fullNameLabel.text = mainUser.fullName
         handleLabel.text = mainUser.handle
         emailLabel.text = Auth.auth().currentUser?.email
@@ -36,12 +36,24 @@ class UserSettingsViewController: UIViewController {
     }
     
     @IBAction func logOutPressed(_ sender: Any) {
-        do {
-            try Auth.auth().signOut()
-            
-            performSegue(withIdentifier: "settingsToSignUpSegue", sender: nil)
-        } catch let error {
-            print(error)
-        }
+        // Create an alert
+        let alert = UIAlertController(title: "Leave Group", message: "Are you sure you want to log out?", preferredStyle: .alert)
+        
+        let confirmActionButton = UIAlertAction(title: "Confirm", style: .default, handler: { (_) in
+            do {
+                try Auth.auth().signOut()
+                
+                self.performSegue(withIdentifier: "settingsToSignUpSegue", sender: nil)
+            } catch let error {
+                print(error)
+            }
+        })
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+        alert.addAction(cancelAction)
+        alert.addAction(confirmActionButton)
+        
+        present(alert, animated: true, completion: nil)
     }
 }
