@@ -37,8 +37,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IhK-yB-3Vs">
-                                <rect key="frame" x="67" y="169" width="240" height="34"/>
-                                <fontDescription key="fontDescription" name="JosefinSans-Bold" family="Josefin Sans" pointSize="34"/>
+                                <rect key="frame" x="150" y="175" width="74" height="28"/>
+                                <fontDescription key="fontDescription" name="JosefinSans-Bold" family="Josefin Sans" pointSize="28"/>
                                 <color key="textColor" name="White"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -67,7 +67,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UDq-1R-I70">
-                                <rect key="frame" x="141" y="41" width="100" height="100"/>
+                                <rect key="frame" x="141" y="47" width="100" height="100"/>
                                 <state key="normal" image="addProfilePicBttn"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PHONE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a9L-3S-gFF">
@@ -95,10 +95,10 @@
                             <constraint firstItem="UDq-1R-I70" firstAttribute="centerX" secondItem="z7P-c4-v60" secondAttribute="centerX" constant="3.5" id="5em-UZ-fia"/>
                             <constraint firstItem="oDP-PJ-B6X" firstAttribute="centerX" secondItem="a9L-3S-gFF" secondAttribute="centerX" id="8TT-XP-s7W"/>
                             <constraint firstItem="m2i-AN-BoD" firstAttribute="centerX" secondItem="add-ta-603" secondAttribute="centerX" constant="-2" id="92j-tE-qqm"/>
+                            <constraint firstItem="IhK-yB-3Vs" firstAttribute="centerX" secondItem="qXV-Ou-CoX" secondAttribute="centerX" id="D7d-wL-HBg"/>
                             <constraint firstItem="9Ng-fs-bEQ" firstAttribute="centerY" secondItem="qXV-Ou-CoX" secondAttribute="centerY" constant="-2" id="Iky-Pw-d0K"/>
                             <constraint firstItem="vU5-Ux-vPS" firstAttribute="centerX" secondItem="9Ng-fs-bEQ" secondAttribute="centerX" constant="1" id="NoE-Rn-dYk"/>
                             <constraint firstItem="9Ng-fs-bEQ" firstAttribute="centerX" secondItem="oDP-PJ-B6X" secondAttribute="centerX" id="Usl-zO-yvj"/>
-                            <constraint firstItem="IhK-yB-3Vs" firstAttribute="leading" secondItem="qXV-Ou-CoX" secondAttribute="leading" constant="67" id="Uvm-ah-yhB"/>
                             <constraint firstItem="m2i-AN-BoD" firstAttribute="top" secondItem="a9L-3S-gFF" secondAttribute="bottom" constant="8" symbolic="YES" id="Y8s-hB-f5O"/>
                             <constraint firstItem="IhK-yB-3Vs" firstAttribute="centerX" secondItem="CvE-K2-A2h" secondAttribute="centerX" constant="-0.5" id="Z2x-ea-qjb"/>
                             <constraint firstItem="a9L-3S-gFF" firstAttribute="top" secondItem="oDP-PJ-B6X" secondAttribute="bottom" constant="22" id="b8J-7M-tDm"/>
@@ -365,7 +365,7 @@
                                     <constraint firstAttribute="height" constant="1" id="1Ov-Ux-k2L"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RRv-ga-HlU">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RRv-ga-HlU">
                                 <rect key="frame" x="0.0" y="92" width="375" height="511"/>
                                 <color key="backgroundColor" name="Flokk Navy"/>
                                 <color key="sectionIndexBackgroundColor" name="Flokk Navy"/>
@@ -374,12 +374,13 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="72"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Wsf-fe-1Lr" id="YPJ-aY-Sl7">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="71.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="72"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8e3-iw-bjl">
                                                     <rect key="frame" x="25" y="11" width="50" height="50"/>
                                                     <constraints>
+                                                        <constraint firstAttribute="height" constant="50" id="T37-35-k40"/>
                                                         <constraint firstAttribute="width" constant="50" id="nXg-u6-gQ7"/>
                                                     </constraints>
                                                 </imageView>
@@ -513,7 +514,7 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UtU-fz-doa" customClass="BounceButton" customModule="Flokk">
-                                <rect key="frame" x="275" y="505" width="84" height="76"/>
+                                <rect key="frame" x="275" y="504" width="84" height="77"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
                                 <state key="normal" image="addPostBttn"/>
                                 <connections>
@@ -554,7 +555,7 @@
             </objects>
             <point key="canvasLocation" x="4289" y="2710"/>
         </scene>
-        <!--Group-->
+        <!-- -->
         <scene sceneID="hRe-ff-3br">
             <objects>
                 <viewController id="XVh-KU-Sq0" customClass="GroupSettingsViewController" customModule="Flokk" customModuleProvider="target" sceneMemberID="viewController">
@@ -649,7 +650,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Hh7-ia-HJj"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Group" id="ASO-oV-Iz9">
+                    <navigationItem key="navigationItem" title=" " id="ASO-oV-Iz9">
                         <barButtonItem key="rightBarButtonItem" image="addFriendsIcon" id="vdh-Dt-YEb">
                             <connections>
                                 <segue destination="IqZ-ek-dYw" kind="show" id="h7e-gy-LL7"/>
@@ -698,6 +699,6 @@
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="0vq-RI-gl1"/>
+        <segue reference="pss-If-7ck"/>
     </inferredMetricsTieBreakers>
 </document>
