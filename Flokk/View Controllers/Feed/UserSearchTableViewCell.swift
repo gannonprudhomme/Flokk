@@ -21,11 +21,15 @@ class UserSearchTableViewCell: UITableViewCell {
         profilePhotoView.clipsToBounds = true
 
         if let user = user {
-            profilePhotoView.image = user.profilePhoto
-            handleLabel.text = user.handle
+            initialize()
         } else {
             print("user not init")
         }
+    }
+    
+    func initialize() {
+        profilePhotoView.image = user.profilePhoto
+        handleLabel.text = user.handle
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

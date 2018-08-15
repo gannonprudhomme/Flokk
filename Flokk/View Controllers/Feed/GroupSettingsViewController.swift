@@ -8,7 +8,12 @@
 
 import UIKit
 
-class GroupSettingsViewController: UIViewController {
+// User in AddUserVC for adding the user to the tableView
+protocol AddUserDelegate {
+    func addUsersToGroup(users: [User])
+}
+
+class GroupSettingsViewController: UIViewController, AddUserDelegate {
     @IBOutlet weak var groupNameLabel: UILabel!
     @IBOutlet weak var groupIconView: UIImageView! // This should be a button
     @IBOutlet weak var collectionView: UICollectionView!
@@ -48,16 +53,34 @@ class GroupSettingsViewController: UIViewController {
         
         present(alert, animated: true, completion: nil)
     }
+    
+    // Add User Delegate
+    func addUsersToGroup(users: [User]) {
+        for user in users {
+            // Add the user to the group tree
+            database.child("groups").child(group.uid).child("members").child(user.uid).setValue(user.handle)
+            
+            // Add the group to the users list of groups
+            database.child("users").child(user.uid).child("groups").child(group.uid).setValue(group.name)
+            
+            group.members.append(user)
+            
+            // Add the user to the collection view
+            collectionView.insertItems(at: [IndexPath(row: 0, section: 0)])
+        }
+    }
 }
 
 extension GroupSettingsViewController : UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "default", for: indexPath)
         
+        //cell.
+        
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 0
+        return group.members.count
     }
 }

@@ -14,6 +14,8 @@ class AddUserViewController: UIViewController {
     
     let searchController = UISearchController(searchResultsController: nil)
     
+    let addUsersDelegate: AddUserDelegate! = nil
+    
     // Users that are displayed in the search results. tableView data source
     var userResults = [User]()
     
@@ -54,12 +56,7 @@ class AddUserViewController: UIViewController {
         if selectedUsers.count == 0 {
             // If there were no users selected
         } else {
-            // Iterate over all of the selected users
-            for user in selectedUsers {
-                // Add the user to the group
-                
-                
-            }
+           addUsersDelegate.addUsersToGroup(users: selectedUsers)
         }
     }
     
@@ -73,13 +70,28 @@ extension AddUserViewController :  UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "default", for: indexPath) as! UserSearchTableViewCell
         
-        let user = userResults[indexPath.row]
-        cell.profilePhotoView.image = user.profilePhoto
-        cell.handleLabel.text = user.handle
+        cell.user = userResults[indexPath.row]
+        cell.initialize()
         
         cell.tag = indexPath.row
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let user = userResults[indexPath.row]
+        
+        // If this user is selected
+        if selectedUsers.contains(where: { $0.uid == user.uid }) {
+            // Remove him from the selection?
+            
+        } else {
+            // Add the selected user to the array
+            selectedUsers.append(user)
+            
+            // And insert a new item for this user
+            collectionView.insertItems(at: [IndexPath(row: selectedUsers.count - 1, section: 0)])
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -90,16 +102,23 @@ extension AddUserViewController :  UITableViewDataSource, UITableViewDelegate {
 // MARK: - Collection View functions
 extension AddUserViewController : UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "delegate", for: indexPath) as! UserSearchCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "default", for: indexPath) as! UserSearchCollectionViewCell
         
-        let user = selectedUsers[indexPath.row]
-        cell.user = selectedUsers[indexPath.row]
+        if selectedUsers.count > 0 {
+            cell.user = selectedUsers[indexPath.row]
+            cell.initialize()
+        }
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return selectedUsers.count
+        // For adding "ghost" icons
+        if selectedUsers.count < 4 {
+            return selectedUsers.count + 4
+        } else {
+            return selectedUsers.count
+        }
     }
 }
 
