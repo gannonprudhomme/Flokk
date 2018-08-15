@@ -18,6 +18,8 @@ class FeedTableViewCell: UITableViewCell {
     var avPlayer = AVPlayer()
     var avPlayerLayer: AVPlayerLayer! = nil // Initialized when the video is added to the view
     
+    var videoAsset: AVAsset!
+    
     // Created when the preview image is added
     var previewImageView: UIImageView!
     
@@ -36,27 +38,50 @@ class FeedTableViewCell: UITableViewCell {
         }
     }
     
+    /*
     var videoPlayerItem: AVPlayerItem? = nil {
         didSet {
             avPlayer.replaceCurrentItem(with: videoPlayerItem)
         }
-    }
+    } */
     
     func initialize() {
         setAspectRatio()
         addPlayTouchGesture()
         
-        //addPreviewImageToView(image: UIImage(named: "testPhoto2")!)
-        
+        // If the video is loaded
         if post.fileURL != nil {
-            addVideoToView()
+            // Load the asset
+            
+            //addVideoToView()
+            
+            avPlayerLayer.frame = self.mainView.bounds
+            avPlayer.pause()
+            
+            videoAsset = AVAsset(url: post.fileURL!)
+            
+            videoAsset.loadValuesAsynchronously(forKeys: ["duration"], completionHandler: { () in
+                guard self.videoAsset.statusOfValue(forKey: "duration", error: nil) == .loaded else {
+                    return
+                }
+                
+                let videoPlayerItem = AVPlayerItem(asset: self.videoAsset)
+                DispatchQueue.main.async {
+                    self.avPlayer.replaceCurrentItem(with: videoPlayerItem)
+                }
+            })
+        } else {
+            mainView.backgroundColor = UIColor.lightGray
+            //addPreviewImageToView(image: UIImage(named: "testPhoto2")!)
         }
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        //initialize()
+        // Add the video layer upon initialization of this cell
+        addVideoToView()
+        //avPlayerLayer.isHidden = true
     }
     
     override func prepareForReuse() {
@@ -119,10 +144,12 @@ extension FeedTableViewCell {
         mainView.addSubview(previewImageView)
         previewImageView.frame = mainView.bounds
         
+        //previewImageView.image = UIImage(named: "testPhoto2")
+        
         // Add a loading icon?
     }
     
-    // Once the video has been loaded, this will be called
+    // Add the AVPlayerLayer
     func addVideoToView() {
         // If there was a preview image, remove it from the mainView
         if previewImageView != nil {
@@ -135,8 +162,8 @@ extension FeedTableViewCell {
         avPlayerLayer.videoGravity = .resizeAspectFill
         self.mainView.layer.insertSublayer(avPlayerLayer, at: 0)
         
-        let playerItem = AVPlayerItem(url: self.post.fileURL!)
-        avPlayer.replaceCurrentItem(with: playerItem)
+        //let playerItem = AVPlayerItem(url: self.post.fileURL!)
+        //avPlayer.replaceCurrentItem(with: playerItem)
     }
 }
 

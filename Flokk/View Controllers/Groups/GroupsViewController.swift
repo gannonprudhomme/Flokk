@@ -143,7 +143,7 @@ extension GroupsViewController {
                 
                 // Load in the profile photo
                 // Does not matter when this is loaded(in regards to calling completion())
-                storage.child("users").child(mainUser.uid).child("profilePhoto").getData(maxSize: MAX_PROFILE_PHOTO_SIZE, completion: { (data, error) in
+                storage.child("users").child(mainUser.uid).child("profilePhoto.jpg").getData(maxSize: MAX_PROFILE_PHOTO_SIZE, completion: { (data, error) in
                     if error == nil {
                         mainUser.profilePhoto = UIImage(data: data!)
                         

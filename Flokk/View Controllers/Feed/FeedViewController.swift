@@ -52,11 +52,17 @@ class FeedViewController: UIViewController {
             } else { // If the posts are already loaded
                 // Set the post count, depending on how many there are
                 // TODO: Iterate through all of the posts, and add all of the videos
+                
+                //self.currentPostCount = self.group.posts.count
+                //self.tableView.reloadData()
+                
                 if self.group.posts.count < initialPostsCount {
                     self.currentPostCount = self.group.posts.count
                 } else {
                     self.currentPostCount = initialPostsCount
                 }
+                
+                self.tableView.reloadData()
             }
         })
         
@@ -69,9 +75,9 @@ class FeedViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        // Check for posts that the user just uploaded
+        //tableView.reloadData()
         
-        // Sort the posts? Just in case??
+        // Check for posts that the user just uploaded
         
         // Check if there were any
     }
@@ -83,12 +89,13 @@ class FeedViewController: UIViewController {
         
         // Stop the videos from being played
         
+        /*
         for c in tableView.visibleCells {
             if let cell = c as? FeedTableViewCell {
                 // Pause the video if it's playing and remove the observers
                 cell.pauseVideo()
             }
-        }
+        } */
     }
     
     @IBAction func addPostPressed(_ sender: Any) {
@@ -137,11 +144,13 @@ extension FeedViewController: UploadPostDelegate {
                     
                     // Set how many posts to load, depending on how many we have
                     
+                    self.currentPostCount = self.group.posts.count
+                    /*
                     if self.group.posts.count < initialPostsCount {
                         self.currentPostCount = self.group.posts.count
                     } else {
                         self.currentPostCount = initialPostsCount
-                    }
+                    } */
                     
                     // Done loading posts data, call completion with true, meaning posts have actually been loaded
                     completion(true)
@@ -168,13 +177,13 @@ extension FeedViewController: UploadPostDelegate {
         // Iterate through a range of posts
         for i in startIndex..<startIndex + count {
             let post = group.posts[i]
-            print("Loading video at index \(i) with uid \(post.uid)")
+            //print("Loading video at index \(i) with uid \(post.uid)")
             
             let url = outputURL.appendingPathComponent("\(post.uid).mp4")
             
             // TODO: Check if the file exists before trying to load it
-            if fileManager.fileExists(atPath: url.absoluteString) { // Never works/always false
-                print("FILE EXISTS for post \(post.uid)")
+            if post.fileURL != nil || fileManager.fileExists(atPath: url.absoluteString) { // Never works/always false
+               print("FILE EXISTS for post \(post.uid)")
             
             } else { // File does not exist, load it from Firebase Storage
                 storage.child("groups").child(group.uid).child("posts").child(post.uid).write(toFile: url, completion: { (url, error) in
@@ -183,6 +192,7 @@ extension FeedViewController: UploadPostDelegate {
                         
                         // Update the according tableViewCell once the post has been loaded
                         DispatchQueue.main.async {
+                            print(i)
                             self.tableView.reloadRows(at: [IndexPath(row: i, section: 0)], with: .none)
                         }
                     } else {
@@ -213,8 +223,9 @@ extension FeedViewController: UploadPostDelegate {
         
         currentPostCount += postDiff
         
-        //tableView.reloadData()
+        print(indexPaths)
         tableView.insertRows(at: indexPaths, with: UITableViewRowAnimation.bottom)
+        //tableView.reloadData()
         
         // Load more posts
         loadPostVideos(startIndex: currentPostCount - postDiff, count: postDiff)
@@ -284,10 +295,21 @@ extension FeedViewController: UploadPostDelegate {
 // MARK: - Table View Functions
 extension FeedViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "default", for: indexPath as IndexPath) as! FeedTableViewCell
         
         cell.post = group.posts[indexPath.row]
         cell.initialize()
+        
+        print("Init \(indexPath.row) \(cell.avPlayerLayer == nil)")
+        
+        /*
+        let cell = tableView.dequeueReusableCell(withIdentifier: "new") as! NewFeedTableViewCell
+        
+        */
+        
+        // Set up video URL
+        
         
         return cell
     }
@@ -310,12 +332,15 @@ extension FeedViewController: UITableViewDataSource, UITableViewDelegate {
         // TODO: Determine what cell is in view
         // If the cell's center is in a certain range in the middle of the screen, 
         
-        
         // Check if we've reached the bottom of the table
         if distanceFromBottom < height {
+            // Add refresh control to the bottom
+            // Wait til all of the posts are loaded, then add them to the tableView?
+            
             // If so, start loading the other posts
             if currentPostCount < group.posts.count {
-                loadMorePosts()
+                //print("Loading more posts")
+                //loadMorePosts()
             }
         }
     }

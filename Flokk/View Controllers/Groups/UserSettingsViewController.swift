@@ -16,6 +16,8 @@ class UserSettingsViewController: UIViewController {
     @IBOutlet weak var fullNameLabel: UILabel!
     @IBOutlet weak var phoneNumberLabel: UILabel!
     
+    let imagePicker = UIImagePickerController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,7 +25,7 @@ class UserSettingsViewController: UIViewController {
         profilePhotoButton.imageView?.layer.cornerRadius = profilePhotoButton.bounds.width / 2
         profilePhotoButton.clipsToBounds = true
         
-        profilePhotoButton.imageView?.image = mainUser.profilePhoto
+        profilePhotoButton.setImage(mainUser.profilePhoto, for: .normal)
         fullNameLabel.text = mainUser.fullName
         handleLabel.text = mainUser.handle
         emailLabel.text = Auth.auth().currentUser?.email
@@ -33,6 +35,22 @@ class UserSettingsViewController: UIViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    // Change profile photo
+    @IBAction func profilePhotoPressed(_ sender: Any) {
+        present(imagePicker, animated: true, completion: nil)
+    }
+    
+    // Upload the new profile photo
+    @IBAction func donePressed(_ sender: Any) {
+        let newProfilePhoto = profilePhotoButton.imageView?.image
+        
+        // Upload the new profile photo
+        storage.child("users").child(mainUser.uid).child("profilePhoto.jpg").putData((newProfilePhoto?.convertJpegToData())!)
+        
+        // Set the profile photo property for the local user
+        mainUser.profilePhoto = newProfilePhoto
     }
     
     @IBAction func logOutPressed(_ sender: Any) {
@@ -57,5 +75,20 @@ class UserSettingsViewController: UIViewController {
         
         // Present the alert, causing it to pop up on screen
         present(alert, animated: true, completion: nil)
+    }
+}
+
+// MARK: - Image Picker Function
+extension UserSettingsViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            profilePhotoButton.setImage(pickedImage, for: UIControlState.normal)
+        }
+        
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
     }
 }
