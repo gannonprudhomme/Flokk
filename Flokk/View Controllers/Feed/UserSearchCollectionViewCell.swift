@@ -16,10 +16,17 @@ class UserSearchCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        profilePhotoView?.layer.cornerRadius = profilePhotoView.frame.size.width / 2
+        profilePhotoView.clipsToBounds = true
+        profilePhotoView.backgroundColor = UIColor.gray
+        profilePhotoView.image = UIImage(named: "takePhotoButton")
+        
         if let user = user {
             profilePhotoView.image = user.profilePhoto
         }
     }
     
-    
+    func initialize() {
+        profilePhotoView.image = user.profilePhoto
+    }
 }

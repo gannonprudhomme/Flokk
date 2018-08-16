@@ -68,7 +68,14 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UDq-1R-I70">
                                 <rect key="frame" x="141" y="47" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="Myr-Wk-j1k"/>
+                                    <constraint firstAttribute="height" constant="100" id="c1x-LA-ky6"/>
+                                </constraints>
                                 <state key="normal" image="addProfilePicBttn"/>
+                                <connections>
+                                    <action selector="profilePhotoPressed:" destination="gS6-0y-Qhe" eventType="touchUpInside" id="9aq-Vw-fja"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PHONE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a9L-3S-gFF">
                                 <rect key="frame" x="163" y="351" width="46.5" height="13"/>
@@ -87,6 +94,14 @@
                                 <state key="normal" image="logoutBttn"/>
                                 <connections>
                                     <action selector="logOutPressed:" destination="gS6-0y-Qhe" eventType="touchUpInside" id="fc8-24-lnu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wL4-gb-0vi">
+                                <rect key="frame" x="123" y="430" width="130" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="registerBttn"/>
+                                <connections>
+                                    <action selector="donePressed:" destination="gS6-0y-Qhe" eventType="touchUpInside" id="uM0-sA-SPp"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -257,8 +272,12 @@
                                     <action selector="continuePressed:" destination="zLu-Hx-i2n" eventType="touchUpInside" id="bDe-zq-ksE"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0gX-O2-gJf">
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0gX-O2-gJf">
                                 <rect key="frame" x="137.5" y="15.5" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="aOu-Vl-FKE"/>
+                                    <constraint firstAttribute="width" constant="100" id="zGf-ig-XmM"/>
+                                </constraints>
                                 <state key="normal" image="addProfilePicBttn"/>
                                 <connections>
                                     <action selector="groupIconPressed:" destination="zLu-Hx-i2n" eventType="touchUpInside" id="yQS-S6-H4Q"/>
@@ -679,6 +698,7 @@
         <image name="friendsIcon" width="21" height="17"/>
         <image name="leaveButton" width="130" height="42"/>
         <image name="logoutBttn" width="230" height="57"/>
+        <image name="registerBttn" width="130" height="42"/>
         <image name="ski" width="1536" height="1536"/>
         <image name="turtle" width="1537" height="1536"/>
         <image name="userIconTeal" width="16" height="17"/>
@@ -699,6 +719,6 @@
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="pss-If-7ck"/>
+        <segue reference="0vq-RI-gl1"/>
     </inferredMetricsTieBreakers>
 </document>

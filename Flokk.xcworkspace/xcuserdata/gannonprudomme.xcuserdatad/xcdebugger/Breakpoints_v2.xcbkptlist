@@ -310,16 +310,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Pods/RecordButton/Pod/Classes/RecordButton.swift"
-            timestampString = "555960254.482581"
+            filePath = "Flokk/View Controllers/Feed/AddUserViewController.swift"
+            timestampString = "556064931.040077"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "96"
-            endingLineNumber = "96"
-            landmarkName = "drawButton()"
+            startingLineNumber = "145"
+            endingLineNumber = "145"
+            landmarkName = "searchBarSearchButtonClicked(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

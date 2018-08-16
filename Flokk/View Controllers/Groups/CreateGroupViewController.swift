@@ -51,6 +51,7 @@ class CreateGroupViewController: UIViewController {
 extension CreateGroupViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            groupIconButton.imageView?.image = pickedImage
             groupIconButton.setImage(pickedImage, for: UIControlState.normal)
         }
         
