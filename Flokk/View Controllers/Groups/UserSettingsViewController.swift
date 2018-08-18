@@ -15,6 +15,7 @@ class UserSettingsViewController: UIViewController {
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var fullNameLabel: UILabel!
     @IBOutlet weak var phoneNumberLabel: UILabel!
+    @IBOutlet weak var saveButton: UIButton!
     
     let imagePicker = UIImagePickerController()
     
@@ -31,6 +32,9 @@ class UserSettingsViewController: UIViewController {
         emailLabel.text = Auth.auth().currentUser?.email
         
         phoneNumberLabel.text = "281-000-0000"
+        
+        // Save button is only shown if the information has been changed/updated
+        saveButton.isHidden = true
     }
     
     override func didReceiveMemoryWarning() {
@@ -82,6 +86,8 @@ class UserSettingsViewController: UIViewController {
 extension UserSettingsViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            // Only show the save button if the profile photo has changed
+            saveButton.isHidden = false
             profilePhotoButton.setImage(pickedImage, for: UIControlState.normal)
         }
         

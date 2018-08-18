@@ -94,6 +94,8 @@ extension GroupsViewController {
         // Will never be nil, as this is only called after confirming the user is signed in
         let uid = Auth.auth().currentUser?.uid
         
+        // TODO: Check if the data is stored locally
+        
         database.child("users").child(uid!).observeSingleEvent(of: .value, with: { (snapshot) in
             if let value = snapshot.value as? NSDictionary {
                 let handle = value["handle"] as! String
