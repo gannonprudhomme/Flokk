@@ -14,14 +14,21 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     
+    let effectView = UIVisualEffectView(effect: UIBlurEffect(style: .dark))
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        emailField.keyboardAppearance = .dark
+        passwordField.keyboardAppearance = .dark
+        emailField.becomeFirstResponder()
         
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
     
     @IBAction func signInPressed(_ sender: Any) {
         let email = emailField.text!

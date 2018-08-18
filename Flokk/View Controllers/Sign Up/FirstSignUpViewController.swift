@@ -18,6 +18,9 @@ class FirstSignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        fullNameField.becomeFirstResponder()
+        
     }
 
     override func didReceiveMemoryWarning() {

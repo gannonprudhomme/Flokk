@@ -19,7 +19,7 @@ class UserSearchCollectionViewCell: UICollectionViewCell {
         profilePhotoView?.layer.cornerRadius = profilePhotoView.frame.size.width / 2
         profilePhotoView.clipsToBounds = true
         profilePhotoView.backgroundColor = UIColor.gray
-        profilePhotoView.image = UIImage(named: "takePhotoButton")
+        profilePhotoView.image = UIImage(named: "Loading Image - Small")
         
         if let user = user {
             profilePhotoView.image = user.profilePhoto

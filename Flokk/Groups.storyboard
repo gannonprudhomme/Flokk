@@ -161,7 +161,7 @@
                                 <color key="backgroundColor" name="Flokk Navy"/>
                                 <color key="sectionIndexBackgroundColor" name="Flokk Navy"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="default" rowHeight="105" id="SYk-VV-GNx" customClass="GroupsTableViewCell" customModule="Flokk" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="default" rowHeight="105" id="SYk-VV-GNx" customClass="GroupsTableViewCell" customModule="Flokk" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="105"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SYk-VV-GNx" id="Hyt-v4-k6f">
@@ -215,6 +215,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" name="Flokk Navy"/>
+                                        <color key="tintColor" name="Secondary Navy"/>
                                         <connections>
                                             <outlet property="groupPhotoView" destination="C54-kn-f6S" id="d7q-zK-Jro"/>
                                             <outlet property="nameLabel" destination="Vcs-Az-NHv" id="mwW-Vk-RtM"/>
@@ -226,6 +227,7 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" name="Flokk Navy"/>
+                        <color key="tintColor" name="Secondary Navy"/>
                         <constraints>
                             <constraint firstItem="CLY-gc-ISL" firstAttribute="trailing" secondItem="Xqp-am-86a" secondAttribute="trailing" id="946-hH-iM9"/>
                             <constraint firstItem="CLY-gc-ISL" firstAttribute="top" secondItem="A7N-RD-fMo" secondAttribute="bottom" id="N5M-Mh-CeF"/>
@@ -256,7 +258,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kl7-4Y-qfX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3262" y="2230"/>
+            <point key="canvasLocation" x="3261.5999999999999" y="2229.5352323838083"/>
         </scene>
         <!--Create Group View Controller-->
         <scene sceneID="5E8-Pl-v9F">
@@ -421,6 +423,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" name="Flokk Navy"/>
+                                        <color key="tintColor" name="Secondary Navy"/>
                                         <connections>
                                             <outlet property="handleLabel" destination="QWU-Vx-d1X" id="vMB-Dj-dBP"/>
                                             <outlet property="profilePhotoView" destination="8e3-iw-bjl" id="Ebe-VU-JpR"/>
@@ -710,6 +713,9 @@
         </namedColor>
         <namedColor name="Flokk Teal">
             <color red="0.2199999988079071" green="0.63099998235702515" blue="0.62400001287460327" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Secondary Navy">
+            <color red="0.17599999904632568" green="0.18000000715255737" blue="0.25499999523162842" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Secondary Navy">
             <color red="0.17599999904632568" green="0.18000000715255737" blue="0.25499999523162842" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
