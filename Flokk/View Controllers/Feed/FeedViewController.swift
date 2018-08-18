@@ -184,14 +184,12 @@ extension FeedViewController: UploadPostDelegate {
             
             let finalURL = outputURL.appendingPathComponent("\(post.uid).mp4")
             
-            // TODO: Check if the file exists before trying to load it
+            // Check if the file exists before trying to load it
             if let asset = AVAsset(url: finalURL) as? AVAsset { // Never works/always false
-                print("File exists")
                 post.fileURL = finalURL
                 
-                // Update the according tableViewCell once the post has been loaded
+                // Update the according tableViewCell
                 DispatchQueue.main.async {
-                    print(i)
                     self.tableView.reloadRows(at: [IndexPath(row: i, section: 0)], with: .none)
                 }
             
@@ -202,7 +200,6 @@ extension FeedViewController: UploadPostDelegate {
                         
                         // Update the according tableViewCell once the post has been loaded
                         DispatchQueue.main.async {
-                            print(i)
                             self.tableView.reloadRows(at: [IndexPath(row: i, section: 0)], with: .none)
                         }
                     } else {
