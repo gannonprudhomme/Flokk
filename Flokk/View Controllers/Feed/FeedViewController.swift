@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 // Is there a need for this to be global
 let initialPostsCount = 5
@@ -53,14 +54,15 @@ class FeedViewController: UIViewController {
                 // Set the post count, depending on how many there are
                 // TODO: Iterate through all of the posts, and add all of the videos
                 
-                //self.currentPostCount = self.group.posts.count
+                self.currentPostCount = self.group.posts.count
                 //self.tableView.reloadData()
                 
+                /*
                 if self.group.posts.count < initialPostsCount {
                     self.currentPostCount = self.group.posts.count
                 } else {
                     self.currentPostCount = initialPostsCount
-                }
+                } */
                 
                 self.tableView.reloadData()
             }
@@ -89,13 +91,12 @@ class FeedViewController: UIViewController {
         
         // Stop the videos from being played
         
-        /*
         for c in tableView.visibleCells {
             if let cell = c as? FeedTableViewCell {
                 // Pause the video if it's playing and remove the observers
                 cell.pauseVideo()
             }
-        } */
+        }
     }
     
     @IBAction func addPostPressed(_ sender: Any) {
@@ -123,6 +124,8 @@ extension FeedViewController: UploadPostDelegate {
     func loadPostsData(completion: @escaping (Bool) -> Void) {
         // If there posts isn't empty, then they have already been loaded
         if group.posts.count == 0 {
+            // TODO: Check if the data has been stored locally by attempting to load the data
+            
             database.child("groups").child(group.uid).child("posts").observeSingleEvent(of: .value, with: { (snapshot) in
                 if let value = snapshot.value as? [String : [String : Any]] {
                     for postID in value.keys {
@@ -179,20 +182,24 @@ extension FeedViewController: UploadPostDelegate {
             let post = group.posts[i]
             //print("Loading video at index \(i) with uid \(post.uid)")
             
-            let url = outputURL.appendingPathComponent("\(post.uid).mp4")
+            let finalURL = outputURL.appendingPathComponent("\(post.uid).mp4")
             
-            // TODO: Check if the file exists before trying to load it
-            if post.fileURL != nil || fileManager.fileExists(atPath: url.absoluteString) { // Never works/always false
-               print("FILE EXISTS for post \(post.uid)")
+            // Check if the file exists before trying to load it
+            if let asset = AVAsset(url: finalURL) as? AVAsset { // Never works/always false
+                post.fileURL = finalURL
+                
+                // Update the according tableViewCell
+                DispatchQueue.main.async {
+                    self.tableView.reloadRows(at: [IndexPath(row: i, section: 0)], with: .none)
+                }
             
             } else { // File does not exist, load it from Firebase Storage
-                storage.child("groups").child(group.uid).child("posts").child(post.uid).write(toFile: url, completion: { (url, error) in
+                storage.child("groups").child(group.uid).child("posts").child(post.uid).write(toFile: finalURL, completion: { (url, error) in
                     if error == nil {
                         post.fileURL = url
                         
                         // Update the according tableViewCell once the post has been loaded
                         DispatchQueue.main.async {
-                            print(i)
                             self.tableView.reloadRows(at: [IndexPath(row: i, section: 0)], with: .none)
                         }
                     } else {
@@ -301,7 +308,7 @@ extension FeedViewController: UITableViewDataSource, UITableViewDelegate {
         cell.post = group.posts[indexPath.row]
         cell.initialize()
         
-        print("Init \(indexPath.row) \(cell.avPlayerLayer == nil)")
+        //print("Init \(indexPath.row) \(cell.avPlayerLayer == nil)")
         
         /*
         let cell = tableView.dequeueReusableCell(withIdentifier: "new") as! NewFeedTableViewCell

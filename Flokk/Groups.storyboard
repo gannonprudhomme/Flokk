@@ -137,6 +137,7 @@
                         <outlet property="handleLabel" destination="vU5-Ux-vPS" id="mju-7I-VEJ"/>
                         <outlet property="phoneNumberLabel" destination="m2i-AN-BoD" id="CnW-Xf-hFx"/>
                         <outlet property="profilePhotoButton" destination="UDq-1R-I70" id="LxG-P5-F1B"/>
+                        <outlet property="saveButton" destination="wL4-gb-0vi" id="han-8T-FUj"/>
                         <segue destination="ALE-U7-dku" kind="presentation" identifier="settingsToSignUpSegue" id="0vq-RI-gl1"/>
                     </connections>
                 </viewController>
@@ -728,6 +729,6 @@
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="pss-If-7ck"/>
+        <segue reference="0vq-RI-gl1"/>
     </inferredMetricsTieBreakers>
 </document>
