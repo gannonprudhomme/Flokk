@@ -124,41 +124,48 @@ extension FeedViewController: UploadPostDelegate {
     func loadPostsData(completion: @escaping (Bool) -> Void) {
         // If there posts isn't empty, then they have already been loaded
         if group.posts.count == 0 {
-            // TODO: Check if the data has been stored locally by attempting to load the data
-            
-            database.child("groups").child(group.uid).child("posts").observeSingleEvent(of: .value, with: { (snapshot) in
-                if let value = snapshot.value as? [String : [String : Any]] {
-                    for postID in value.keys {
-                        let timestamp = value[postID]!["timestamp"] as! Double
-                        //let poster = value[postID]!["poster"] as! String // UID of the poster, unused for now
-                        let width = value[postID]!["width"] as! Int
-                        let height = value[postID]!["height"] as! Int
+            // Check if the data has been stored locally by attempting to load the data
+            if let value = FileUtils.loadJSON(file: "groups/\(group.uid).json") {
+                // Load in the post data from the json dictionary
+                
+            } else {
+                database.child("groups").child(group.uid).child("posts").observeSingleEvent(of: .value, with: { (snapshot) in
+                    if let value = snapshot.value as? [String : [String : Any]] {
+                        for postID in value.keys {
+                            let timestamp = value[postID]!["timestamp"] as! Double
+                            //let poster = value[postID]!["poster"] as! String // UID of the poster, unused for now
+                            let width = value[postID]!["width"] as! Int
+                            let height = value[postID]!["height"] as! Int
+                            
+                            let post = Post(uid: postID, timestamp: timestamp)
+                            post.setDimensions(width: width, height: height)
+                            
+                            // Simplt add it to the posts array
+                            // We don't call group.addPost(...) b/c that is for new posts, not existing oness
+                            self.group.posts.append(post)
+                        }
                         
-                        let post = Post(uid: postID, timestamp: timestamp)
-                        post.setDimensions(width: width, height: height)
+                        // TODO: Save the post data
                         
-                        // Simplt add it to the posts array
-                        // We don't call group.addPost(...) b/c that is for new posts, not existing oness
-                        self.group.posts.append(post)
-                    }
-                    
-                    // After loading in all of the posts, sort them
-                    self.sortPosts()
-                    
-                    // Set how many posts to load, depending on how many we have
-                    
-                    self.currentPostCount = self.group.posts.count
-                    /*
-                    if self.group.posts.count < initialPostsCount {
+                        // After loading in all of the posts, sort them
+                        self.sortPosts()
+                        
+                        // Set how many posts to load, depending on how many we have
+                        
                         self.currentPostCount = self.group.posts.count
-                    } else {
-                        self.currentPostCount = initialPostsCount
-                    } */
-                    
-                    // Done loading posts data, call completion with true, meaning posts have actually been loaded
-                    completion(true)
-                }
-            })
+                        
+                        /*
+                         if self.group.posts.count < initialPostsCount {
+                         self.currentPostCount = self.group.posts.count
+                         } else {
+                         self.currentPostCount = initialPostsCount
+                         } */
+                        
+                        // Done loading posts data, call completion with true, meaning posts have actually been loaded
+                        completion(true)
+                    }
+                })
+            }
         } else { // Posts count != 0
             // No posts needed to be loaded(as group.posts is not empty), so call completion as false
             completion(false)

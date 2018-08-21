@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import AVFoundation
+import SwiftyJSON
 
 // Helper class that would take care of saving and loading data to the disk
 // Handles JSON for group and feed data, as well as saving group icons and post videos
@@ -33,8 +34,10 @@ class FileUtils {
     
     // Load JSON file
     static func loadJSON(file: String) -> [String : Any]? {
+        let url = getDocumentsDirectory().appendingPathComponent("users/mainUser.json")
+        
         do {
-            let data = try Data(contentsOf: URL(fileURLWithPath: "mainUser.json"))
+            let data = try Data(contentsOf: url)
             let json = try JSONSerialization.jsonObject(with: data, options: [])
             
             if let dictionary = json as? [String : Any] {
@@ -53,23 +56,32 @@ class FileUtils {
     }
     
     static func saveToJSON(dict: [String : Any], toPath path: String) {
-        let url = FileUtils.createDirectory(path: path)
+        // Create the directory for the posts to be stored
+        //let fileManager = FileManager.default
+        //let documentDirectory = fileManager.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        //let outputURL = documentDirectory.appendingPathComponent("users")
         
-        // Edit this syntax
-        if JSONSerialization.isValidJSONObject(dict) {
-            do {
-                let rawData = try JSONSerialization.data(withJSONObject: dict, options: .prettyPrinted)
-            } catch let error {
-                print(error)
-                return
-            }
+        do {
+            //try fileManager.createDirectory(at: outputURL, withIntermediateDirectories: true, attributes: nil)
+            
+            //var finalURL = outputURL.appendingPathComponent("mainUser").appendingPathExtension("json")
+            var finalURL = getDocumentsDirectory().appendingPathComponent("users/mainUser.json")
+            
+            let json = JSON(dict)
+            let str = json.description
+            let data = str.data(using: .utf8)
+            try str.write(to: finalURL, atomically: true, encoding: .utf8)
+            
+        } catch let error {
+            print(error)
         }
+        
     }
     
+    // Attempt to load this groups icon from the local disk
     // If this returns nil, we have to download the group icon from Firebase
     static func loadGroupIcon(group: Group) -> UIImage? {
         let image: UIImage
-        
         
         return nil
     }
@@ -96,5 +108,10 @@ class FileUtils {
         } else {
             return false
         }
+    }
+    
+    static func getDocumentsDirectory() -> URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        return paths[0]
     }
 }

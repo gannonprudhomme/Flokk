@@ -96,7 +96,9 @@ extension GroupsViewController {
         
         // TODO: Check if the data is stored locally, if it's not stored the json data into it, and load it the same way?
         // Or should we load it into memory and write into it
-        if let value = FileUtils.loadJSON(file: "mainUser.json") { // If the file exists locally
+        if let value = FileUtils.loadJSON(file: "users/mainUser.json")  { // If the file exists locally
+            print("Loading user data from disk")
+            
             processUserData(value)
             
             // Done loading in the data
@@ -106,6 +108,8 @@ extension GroupsViewController {
             database.child("users").child(uid!).observeSingleEvent(of: .value, with: { (snapshot) in
                 if let value = snapshot.value as? [String : Any] {
                     self.processUserData(value)
+                    
+                    // Write the current user data
                     FileUtils.saveToJSON(dict: value, toPath: "mainUser.json")
                     
                     completion()
@@ -124,8 +128,6 @@ extension GroupsViewController {
                 }
             })
         }
-        
-        
     }
     
     // Helper function for processing the user data from a dictionary
