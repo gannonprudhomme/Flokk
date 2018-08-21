@@ -31,14 +31,39 @@ class FileUtils {
         }
     }
     
-    static func loadJSON(file: URL) -> NSDictionary {
-        let dict = NSDictionary()
-        
-        return dict
+    // Load JSON file
+    static func loadJSON(file: String) -> [String : Any]? {
+        do {
+            let data = try Data(contentsOf: URL(fileURLWithPath: "mainUser.json"))
+            let json = try JSONSerialization.jsonObject(with: data, options: [])
+            
+            if let dictionary = json as? [String : Any] {
+                return dictionary
+            } else {
+                // Something went wrong, return nil, forcing it to load in the data directly from the database
+                // Basically handles 
+                return nil
+            }
+        } catch let error {
+            print(error)
+            
+            // File doesn't exist, load it in from the database
+            return nil
+        }
     }
     
-    static func saveToJSON(dictionary: NSDictionary) {
+    static func saveToJSON(dict: [String : Any], toPath path: String) {
+        let url = FileUtils.createDirectory(path: path)
         
+        // Edit this syntax
+        if JSONSerialization.isValidJSONObject(dict) {
+            do {
+                let rawData = try JSONSerialization.data(withJSONObject: dict, options: .prettyPrinted)
+            } catch let error {
+                print(error)
+                return
+            }
+        }
     }
     
     // If this returns nil, we have to download the group icon from Firebase

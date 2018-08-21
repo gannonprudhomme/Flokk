@@ -39,7 +39,7 @@ class GroupsViewController: UIViewController {
                 // Do something
                 DispatchQueue.main.async {
                     self.loadGroups()
-                    self.tableView.reloadData()
+                    self.tableView.reloadData() // I don't like using this
                 }
             })
             
@@ -94,68 +94,86 @@ extension GroupsViewController {
         // Will never be nil, as this is only called after confirming the user is signed in
         let uid = Auth.auth().currentUser?.uid
         
-        // TODO: Check if the data is stored locally
+        // TODO: Check if the data is stored locally, if it's not stored the json data into it, and load it the same way?
+        // Or should we load it into memory and write into it
+        if let value = FileUtils.loadJSON(file: "mainUser.json") { // If the file exists locally
+            processUserData(value)
+            
+            // Done loading in the data
+            completion()
+        } else {
+            // Load it from the dastabase
+            database.child("users").child(uid!).observeSingleEvent(of: .value, with: { (snapshot) in
+                if let value = snapshot.value as? [String : Any] {
+                    self.processUserData(value)
+                    FileUtils.saveToJSON(dict: value, toPath: "mainUser.json")
+                    
+                    completion()
+                    
+                    // Load in the profile photo
+                    // Does not matter when this is loaded(in regards to calling completion())
+                    storage.child("users").child(mainUser.uid).child("profilePhoto.jpg").getData(maxSize: MAX_PROFILE_PHOTO_SIZE, completion: { (data, error) in
+                        if error == nil {
+                            mainUser.profilePhoto = UIImage(data: data!)
+                            
+                        } else {
+                            print(error!)
+                            return
+                        }
+                    })
+                }
+            })
+        }
         
-        database.child("users").child(uid!).observeSingleEvent(of: .value, with: { (snapshot) in
-            if let value = snapshot.value as? NSDictionary {
-                let handle = value["handle"] as! String
-                let fullName = value["name"] as! String
+        
+    }
+    
+    // Helper function for processing the user data from a dictionary
+    private func processUserData(_ value: [String : Any]) {
+        let uid = Auth.auth().currentUser?.uid
+        
+        let handle = value["handle"] as! String
+        let fullName = value["name"] as! String
+        
+        mainUser = User(uid: uid!, handle: handle)
+        mainUser.fullName = fullName
+        
+        // Attempt to load in the group IDs
+        if let groups = value["groups"] as? [String : String] {
+            // Load in each of the groupIDs
+            for groupID in groups.keys {
+                let groupName = groups[groupID]
                 
-                mainUser = User(uid: uid!, handle: handle)
-                mainUser.fullName = fullName
+                let group = Group(uid: groupID, name: groupName!)
                 
-                // Attempt to load in the group IDs
-                if let groups = value["groups"] as? [String : String] {
-                    // Load in each of the groupIDs
-                    for groupID in groups.keys {
-                        let groupName = groups[groupID]
+                // Initialize the group and add it to the user's groups array
+                mainUser.groups.append(group)
+                
+                // Attempt to download the group icon
+                group.requestGroupIcon(completion: { (icon) in
+                    if let icon = icon {
+                        // Once it's loaded, set it in the group
+                        group.setIcon(icon: icon)
                         
-                        let group = Group(uid: groupID, name: groupName!)
-                        
-                        // Initialize the group and add it to the user's groups array
-                        mainUser.groups.append(group)
-                        
-                        // Attempt to download the group icon
-                        group.requestGroupIcon(completion: { (icon) in
-                            if let icon = icon {
-                                // Once it's loaded, set it in the group
-                                group.setIcon(icon: icon)
-                                
-                                // TODO: Review this operation
-                                // And updated the according row
-                                DispatchQueue.main.async {
-                                    // This is so fucking stupid
-                                    // Have to do this because simply counting
-                                    var index = -1
-                                    for i in 0..<mainUser.groups.count {
-                                        if mainUser.groups[i].uid == groupID {
-                                            index = i
-                                        }
-                                    }
-                                    
-                                    // Reload the row
-                                    self.tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .none)
+                        // TODO: Review this operation
+                        // And updated the according row
+                        DispatchQueue.main.async {
+                            // This is so fucking stupid
+                            // Have to do this because simply counting
+                            var index = -1
+                            for i in 0..<mainUser.groups.count {
+                                if mainUser.groups[i].uid == groupID {
+                                    index = i
                                 }
                             }
-                        })
-                    }
-                }
-                
-                completion()
-                
-                // Load in the profile photo
-                // Does not matter when this is loaded(in regards to calling completion())
-                storage.child("users").child(mainUser.uid).child("profilePhoto.jpg").getData(maxSize: MAX_PROFILE_PHOTO_SIZE, completion: { (data, error) in
-                    if error == nil {
-                        mainUser.profilePhoto = UIImage(data: data!)
-                        
-                    } else {
-                        print(error!)
-                        return
+                            
+                            // Reload the row
+                            self.tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .none)
+                        }
                     }
                 })
             }
-        })
+        }
     }
     
     func groupUpdated(group: Group) {
