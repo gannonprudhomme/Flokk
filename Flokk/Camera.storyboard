@@ -230,7 +230,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="168" height="226"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RoF-g3-SNb">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RoF-g3-SNb">
                                             <rect key="frame" x="8" y="7.5" width="153" height="211"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="153" id="KaL-12-yHT"/>
