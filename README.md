@@ -17,13 +17,13 @@ Flokk is currently in redevelopment, with an expected release date of early Sept
 - [SwiftVideoBackground](https://github.com/dingwilson/SwiftVideoBackground)
 
 ## Screen Shots
-### Main Groups View
+### The Groups
 ![Groups](https://i.imgur.com/37otXZa.png)
 
 ### The Feed
 ![Feed](https://i.imgur.com/o2o7i8k.png)
 
-### Group Settings
+### The Settings
 ![Settings](https://i.imgur.com/rtLiJAx.png)
 
 ### The Camera
