@@ -32,6 +32,8 @@ class VideoTrimmerViewController: UIViewController {
         
         addVideo()
         
+        print(videoURL.path)
+        
         // Video Range Slider set up
         rangeSlider.setVideoURL(videoURL: videoURL)
         rangeSlider.delegate = self
@@ -95,7 +97,7 @@ class VideoTrimmerViewController: UIViewController {
         progressTimer.fire()
     }
     
-    // Temp
+    // Temp. unused
     func removeVideo() {
         if avPlayer != nil {
             avPlayer.pause()
@@ -148,7 +150,7 @@ extension VideoTrimmerViewController {
         //let length = Float(asset.duration.value) / Float(asset.duration.timescale)
        // print("video length: \(length) seconds")
         
-        var outputURL = documentDirectory.appendingPathComponent("output")
+        var outputURL = documentDirectory //.appendingPathComponent("output")
         do {
             try fileManager.createDirectory(at: outputURL, withIntermediateDirectories: true, attributes: nil)
             outputURL = outputURL.appendingPathComponent("\(sourceURL.lastPathComponent).mp4")

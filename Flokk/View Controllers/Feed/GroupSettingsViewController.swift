@@ -44,6 +44,9 @@ class GroupSettingsViewController: UIViewController, AddUserDelegate {
         let confirmActionButton = UIAlertAction(title: "Confirm", style: .default, handler: { (_) in
             // Remove the user from the group in the database
             self.leaveGroupDelegate.leaveGroup(group: self.group)
+            
+            // Segue back to the groups view
+            self.performSegue(withIdentifier: "unwindToGroups", sender: nil)
         })
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
@@ -69,8 +72,18 @@ class GroupSettingsViewController: UIViewController, AddUserDelegate {
             collectionView.insertItems(at: [IndexPath(row: 0, section: 0)])
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "groupSettingsToAddUserSegue" {
+            if let vc = segue.destination as? AddUserViewController {
+                // Set the 
+                vc.addUsersDelegate = self
+            }
+        }
+    }
 }
 
+// TODO: Set up collectionviewcell
 extension GroupSettingsViewController : UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "default", for: indexPath)

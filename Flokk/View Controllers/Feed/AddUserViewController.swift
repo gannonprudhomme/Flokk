@@ -14,7 +14,7 @@ class AddUserViewController: UIViewController {
     
     let searchController = UISearchController(searchResultsController: nil)
     
-    let addUsersDelegate: AddUserDelegate! = nil
+    var addUsersDelegate: AddUserDelegate! = nil
     
     // Users that are displayed in the search results. tableView data source
     var userResults = [User]()
@@ -54,9 +54,10 @@ class AddUserViewController: UIViewController {
     // Invite all of the selected users
     @IBAction func invitePressed(_ sender: Any) {
         if selectedUsers.count == 0 {
-            // If there were no users selected
+            // If there were no users selected, display an error
         } else {
-           addUsersDelegate.addUsersToGroup(users: selectedUsers)
+            addUsersDelegate.addUsersToGroup(users: selectedUsers)
+            // TODO: Show an alert confirming that these users were invited
         }
     }
     

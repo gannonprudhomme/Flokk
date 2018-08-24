@@ -18,7 +18,7 @@ class Post {
     
     // Private and have a getter?
     // Set only after the video has been loaded
-    var fileURL: URL? // Change to downloadURL
+    var filePath: String?
     
     // Private and have a getter?
     var timestamp: Double
@@ -41,8 +41,8 @@ class Post {
     }
     
     // Used for testing
-    init(url: URL, dimensions: Dimensions, timestamp: Double) {
-        self.fileURL = url
+    init(path: String, dimensions: Dimensions, timestamp: Double) {
+        self.filePath = path
         self.timestamp = timestamp
         self.dimensions = dimensions
         self.uid = ""
@@ -50,5 +50,28 @@ class Post {
     
     func setDimensions(width: Int, height: Int) {
         self.dimensions = Dimensions(width: width, height: height)
+    }
+    
+    func getFileURL() -> URL? {
+        if let _ = filePath {
+            return FileUtils.getDocumentsDirectory().appendingPathComponent(filePath!)
+        } else {
+            return nil
+        }
+    }
+    
+    // Converts this post to a dictionary
+    func convertToDict() -> [String : Any] {
+        var dict = [String : Any]()
+        var data = [String : Any]()
+        
+        data["poster"] = posterID ?? "nil"
+        data["timestamp"] = timestamp
+        data["width"] = dimensions?.width ?? 0
+        data["height"] = dimensions?.height ?? 0
+        
+        dict[uid] = data
+        
+        return dict
     }
 }

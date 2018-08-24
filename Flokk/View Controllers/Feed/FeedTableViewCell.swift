@@ -46,22 +46,25 @@ class FeedTableViewCell: UITableViewCell {
     } */
     
     func initialize() {
+        //print("init")
         setAspectRatio()
         addPlayTouchGesture()
         
+        mainView.backgroundColor = UIColor.lightGray
+        
         // If the video is loaded
-        if post.fileURL != nil {
+        if post.getFileURL() != nil {
             // Load the asset
             
-            //addVideoToView()
-            
             avPlayerLayer.frame = self.mainView.bounds
-            avPlayer.pause()
+            avPlayer.pause() // Why pause here?
             
-            videoAsset = AVAsset(url: post.fileURL!)
+            videoAsset = AVAsset(url: post.getFileURL()!)
             
             videoAsset.loadValuesAsynchronously(forKeys: ["duration"], completionHandler: { () in
-                guard self.videoAsset.statusOfValue(forKey: "duration", error: nil) == .loaded else {
+                let error: NSErrorPointer = nil
+                
+                guard self.videoAsset.statusOfValue(forKey: "duration", error: error) == .loaded else {
                     return
                 }
                 
@@ -71,13 +74,14 @@ class FeedTableViewCell: UITableViewCell {
                 }
             })
         } else {
-            mainView.backgroundColor = UIColor.lightGray
+            //mainView.backgroundColor = UIColor.lightGray
             //addPreviewImageToView(image: UIImage(named: "testPhoto2")!)
         }
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        //print("awaken")
         
         // Add the video layer upon initialization of this cell
         addVideoToView()
@@ -87,10 +91,12 @@ class FeedTableViewCell: UITableViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         aspectConstraint = nil
+        //print("prepare")
         
         // Remove the video layer to prevent it stacking with the next video that will occupy this cell
         if avPlayerLayer != nil {
             pauseVideo()
+            avPlayer.replaceCurrentItem(with: nil)
             //avPlayerLayer.removeFromSuperlayer()
             //avPlayerLayer = nil
         }
@@ -102,6 +108,7 @@ class FeedTableViewCell: UITableViewCell {
         }
     }
     
+    // TODO: Remove this
     // Adds the gesture for pausing & playing the video by tapping it
     func addPlayTouchGesture() {
         let touchGesture = UITapGestureRecognizer(target: self, action: #selector(self.mainViewPressed(_:)))

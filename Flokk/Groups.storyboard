@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -679,7 +678,7 @@
                         <barButtonItem key="backBarButtonItem" title=" " id="XHY-Hu-A7Y"/>
                         <barButtonItem key="rightBarButtonItem" image="addFriendsIcon" id="vdh-Dt-YEb">
                             <connections>
-                                <segue destination="IqZ-ek-dYw" kind="show" id="h7e-gy-LL7"/>
+                                <segue destination="IqZ-ek-dYw" kind="show" identifier="groupSettingsToAddUserSegue" id="h7e-gy-LL7"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -687,11 +686,13 @@
                         <outlet property="collectionView" destination="BU6-Jf-zXs" id="R2i-cO-opT"/>
                         <outlet property="groupIconView" destination="3Q9-5h-nYf" id="4gi-eS-68Z"/>
                         <outlet property="groupNameLabel" destination="wFF-4S-uyT" id="33b-ZH-Eer"/>
+                        <segue destination="xcE-wM-b7X" kind="unwind" identifier="unwindToGroups" unwindAction="unwindToGroupsWithSegue:" id="qKk-BQ-yKf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uhE-0x-OIV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="xcE-wM-b7X" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="5168.8000000000002" y="2229.5352323838083"/>
+            <point key="canvasLocation" x="5178" y="2230"/>
         </scene>
     </scenes>
     <resources>
@@ -718,9 +719,6 @@
         <namedColor name="Secondary Navy">
             <color red="0.17599999904632568" green="0.18000000715255737" blue="0.25499999523162842" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="Secondary Navy">
-            <color red="0.17599999904632568" green="0.18000000715255737" blue="0.25499999523162842" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="Secondary Text">
             <color red="0.61568627450980395" green="0.61568627450980395" blue="0.64313725490196083" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -729,6 +727,6 @@
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="0vq-RI-gl1"/>
+        <segue reference="pss-If-7ck"/>
     </inferredMetricsTieBreakers>
 </document>
