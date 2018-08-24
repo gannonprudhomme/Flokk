@@ -6,8 +6,8 @@
 
 ![Imgur](https://i.imgur.com/vVAbqcF.jpg)
 
-The entire basis of Flokk is group messaging in 6-second Vine-like video form. 
-Flokk is currently in development, with an expected release date of early September 2018
+Flokk is a group messaging, iOS application that allows users to share 6-second videos in private feeds. 
+Flokk is currently in redevelopment, with an expected release date of early September 2018.
 
 ## Pods/Libraries Used
 - [Firebase](https://firebase.google.com/)
@@ -30,4 +30,4 @@ Flokk is currently in development, with an expected release date of early Septem
 ![Camera](https://i.imgur.com/Vjm5Cgw.png)
 
 ## About
-The Flokk iOS Application is owned by Flokk LLC, which is founded by [Jared Heyen](https://github.com/heyenhigher)(CEO and UI/UX Designer) and Gannon Prudhomme(CTO and Lead Developer).
+The Flokk iOS Application is owned and operated by Flokk LLC, which was founded by [Jared Heyen](https://github.com/heyenhigher)(CEO and UI/UX Designer) and Gannon Prudhomme(CTO and Lead Developer) in the Spring of 2017.
