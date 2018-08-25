@@ -36,37 +36,37 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IhK-yB-3Vs">
-                                <rect key="frame" x="150" y="175" width="74" height="28"/>
+                                <rect key="frame" x="150" y="175.5" width="74" height="28"/>
                                 <fontDescription key="fontDescription" name="JosefinSans-Bold" family="Josefin Sans" pointSize="28"/>
                                 <color key="textColor" name="White"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USERNAME" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CvE-K2-A2h">
-                                <rect key="frame" x="152" y="228" width="71" height="13"/>
+                                <rect key="frame" x="152" y="228.5" width="71" height="13"/>
                                 <fontDescription key="fontDescription" name="JosefinSans" family="Josefin Sans" pointSize="13"/>
                                 <color key="textColor" name="Secondary Text"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="usernameDisplay" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vU5-Ux-vPS">
-                                <rect key="frame" x="134" y="249" width="107" height="15"/>
+                                <rect key="frame" x="134.5" y="249.5" width="106.5" height="15"/>
                                 <fontDescription key="fontDescription" name="JosefinSans-Bold" family="Josefin Sans" pointSize="15"/>
                                 <color key="textColor" name="White"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EMAIL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ng-fs-bEQ">
-                                <rect key="frame" x="167" y="286" width="39" height="13"/>
+                                <rect key="frame" x="167" y="286.5" width="39" height="13"/>
                                 <fontDescription key="fontDescription" name="JosefinSans" family="Josefin Sans" pointSize="13"/>
                                 <color key="textColor" name="Secondary Text"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="emailDisplay" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oDP-PJ-B6X">
-                                <rect key="frame" x="146" y="307" width="80" height="15"/>
+                                <rect key="frame" x="146" y="307.5" width="80" height="15"/>
                                 <fontDescription key="fontDescription" name="JosefinSans-Bold" family="Josefin Sans" pointSize="15"/>
                                 <color key="textColor" name="White"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UDq-1R-I70">
-                                <rect key="frame" x="141" y="47" width="100" height="100"/>
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UDq-1R-I70">
+                                <rect key="frame" x="141" y="47.5" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="Myr-Wk-j1k"/>
                                     <constraint firstAttribute="height" constant="100" id="c1x-LA-ky6"/>
@@ -76,27 +76,27 @@
                                     <action selector="profilePhotoPressed:" destination="gS6-0y-Qhe" eventType="touchUpInside" id="9aq-Vw-fja"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PHONE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a9L-3S-gFF">
-                                <rect key="frame" x="163" y="344" width="47" height="13"/>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PHONE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a9L-3S-gFF">
+                                <rect key="frame" x="163.5" y="344.5" width="46.5" height="13"/>
                                 <fontDescription key="fontDescription" name="JosefinSans" family="Josefin Sans" pointSize="13"/>
                                 <color key="textColor" name="Secondary Text"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="phoneNumberDisplay" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m2i-AN-BoD">
-                                <rect key="frame" x="118" y="365" width="137" height="15"/>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="phoneNumberDisplay" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m2i-AN-BoD">
+                                <rect key="frame" x="118.5" y="365.5" width="137" height="15"/>
                                 <fontDescription key="fontDescription" name="JosefinSans-Bold" family="Josefin Sans" pointSize="15"/>
                                 <color key="textColor" name="White"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wL4-gb-0vi">
-                                <rect key="frame" x="99" y="415" width="175" height="51"/>
+                                <rect key="frame" x="99" y="415.5" width="175" height="51"/>
                                 <state key="normal" image="saveBttn"/>
                                 <connections>
                                     <action selector="donePressed:" destination="gS6-0y-Qhe" eventType="touchUpInside" id="uM0-sA-SPp"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="add-ta-603">
-                                <rect key="frame" x="126" y="494" width="121" height="36"/>
+                                <rect key="frame" x="126" y="494.5" width="121" height="36"/>
                                 <state key="normal" image="logOutBttnRed"/>
                                 <connections>
                                     <action selector="logOutPressed:" destination="gS6-0y-Qhe" eventType="touchUpInside" id="fc8-24-lnu"/>
@@ -275,7 +275,7 @@
                                     <action selector="continuePressed:" destination="zLu-Hx-i2n" eventType="touchUpInside" id="bDe-zq-ksE"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0gX-O2-gJf">
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0gX-O2-gJf">
                                 <rect key="frame" x="137.5" y="15.5" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="aOu-Vl-FKE"/>
@@ -296,7 +296,7 @@
                                     <constraint firstAttribute="height" constant="31" id="fhO-d0-shb"/>
                                 </constraints>
                                 <color key="textColor" name="White"/>
-                                <fontDescription key="fontDescription" name="JosefinSans" family="Josefin Sans" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="JosefinSans" family="Josefin Sans" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" keyboardAppearance="alert"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
@@ -608,6 +608,7 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="BU6-Jf-zXs">
                                 <rect key="frame" x="0.0" y="258" width="375" height="345"/>
                                 <color key="backgroundColor" name="Flokk Navy"/>
+                                <color key="tintColor" name="Flokk Navy"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="AN8-kY-Whn">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -664,6 +665,7 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" name="Flokk Navy"/>
+                        <color key="tintColor" name="Flokk Navy"/>
                         <constraints>
                             <constraint firstItem="3Q9-5h-nYf" firstAttribute="centerX" secondItem="Hh7-ia-HJj" secondAttribute="centerX" constant="-0.5" id="AB8-RX-eo5"/>
                             <constraint firstItem="TnQ-n4-Ddt" firstAttribute="centerX" secondItem="Hh7-ia-HJj" secondAttribute="centerX" id="IkA-XS-3we"/>

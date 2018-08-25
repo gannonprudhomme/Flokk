@@ -19,7 +19,12 @@ class FirstSignUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        fullNameField.becomeFirstResponder()
+        fullNameField.perform(
+            #selector(becomeFirstResponder),
+            with: nil,
+            afterDelay: 0.1
+        )
+        //fullNameField.becomeFirstResponder()
         
     }
 

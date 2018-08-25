@@ -28,6 +28,7 @@ class UserSettingsViewController: UIViewController {
         // Crop the profile photo view to a circle
         profilePhotoButton.imageView?.layer.cornerRadius = profilePhotoButton.bounds.width / 2
         profilePhotoButton.clipsToBounds = true
+        profilePhotoButton.contentMode = .scaleAspectFill
         
         profilePhotoButton.setImage(mainUser.profilePhoto, for: .normal)
         fullNameLabel.text = mainUser.fullName

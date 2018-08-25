@@ -25,7 +25,7 @@ class CreateGroupViewController: UIViewController {
         imagePicker.delegate = self
         imagePicker.sourceType = .photoLibrary
         
-        groupIconButton.contentMode = .scaleAspectFit
+        groupIconButton.contentMode = .scaleAspectFill
         groupIconButton?.layer.cornerRadius = (self.groupIconButton?.frame.size.width)! / 2
         groupIconButton?.clipsToBounds = true
     }
