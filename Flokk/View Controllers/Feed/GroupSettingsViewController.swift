@@ -113,8 +113,9 @@ class GroupSettingsViewController: UIViewController, AddUserDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "groupSettingsToAddUserSegue" {
             if let vc = segue.destination as? AddUserViewController {
-                // Set the 
+                // Set the delegate to add new users to the collectionView and database
                 vc.addUsersDelegate = self
+                vc.group = group
             }
         }
     }

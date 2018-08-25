@@ -22,6 +22,10 @@ class AddUserViewController: UIViewController {
     // Users the mainUser has selected to invite. collectionView data source
     var selectedUsers = [User]()
     
+    // Reference to the group we're in. Used for checking if the selected user is a member
+    // before attempting to invite them/add them to the group
+    var group: Group!
+    
     var numCells = 5
     
     override func viewDidLoad() {
@@ -83,16 +87,32 @@ extension AddUserViewController :  UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let user = userResults[indexPath.row]
         
-        // If this user is selected
-        if selectedUsers.contains(where: { $0.uid == user.uid }) {
-            // Remove them from the selection?
+        // If this user is not already a member
+        if !group.members.contains(where: { $0.uid == user.uid}) {
             
-        } else {
-            // Add the selected user to the array
+            // If this user is not selected
+            //if !selectedUsers.contains(where: { $0.uid == user.uid }) {
+                // Add the selected user to the array
+            
             selectedUsers.append(user)
             
-            collectionView.reloadItems(at: [IndexPath(item: selectedUsers.count - 1, section: 0)])
+            if selectedUsers.count < 5 {
+                collectionView.reloadItems(at: [IndexPath(item: selectedUsers.count - 1, section: 0)])
+            } else {
+                collectionView.reloadData()
+                //collectionView.insertItems(at: [IndexPath(item: selectedUsers.count - 1, section: 0)])
+            }
+                
+           //} else { // User is already selected
+                // Remove it from the collectionView?
+                
+                
+           // }
+            
+        } else { // User is already a member of this group
+            // TODO: Give feedback notifying the mainUser that the user is already a member
         }
+
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -115,7 +135,7 @@ extension AddUserViewController : UICollectionViewDataSource, UICollectionViewDe
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // For adding "ghost" icons
-        if selectedUsers.count < 5 {
+        if selectedUsers.count <= 5 {
             return 5
         } else {
             return selectedUsers.count
