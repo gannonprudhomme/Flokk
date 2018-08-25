@@ -273,9 +273,7 @@ extension GroupsViewController: AddGroupDelegate, LeaveGroupDelegate {
         }
     }
 
-    @IBAction func unwindToGroups(segue: UIStoryboardSegue) {
-        
-    }
+    @IBAction func unwindToGroups(segue: UIStoryboardSegue) {}
 }
 
 extension GroupsViewController : UITableViewDelegate, UITableViewDataSource {

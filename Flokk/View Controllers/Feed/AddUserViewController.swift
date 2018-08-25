@@ -22,6 +22,8 @@ class AddUserViewController: UIViewController {
     // Users the mainUser has selected to invite. collectionView data source
     var selectedUsers = [User]()
     
+    var numCells = 5
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -37,10 +39,10 @@ class AddUserViewController: UIViewController {
         searchController.dimsBackgroundDuringPresentation = false
         searchController.searchBar.sizeToFit()
         //searchController.searchBar.tintColor = UIColor(named: "Flokk Navy")
-        //searchController.searchBar.tintColor = UIColor(named: "Flokk Navy")
         searchController.searchBar.barTintColor = UIColor(named: "Secondary Navy")
         searchController.searchBar.keyboardAppearance = .dark
         searchController.searchBar.layer.cornerRadius = searchController.searchBar.bounds.width / 2
+        searchController.searchBar.placeholder = "Enter a username"
         
         // Set the search bar as the header of the tableView
         tableView.tableHeaderView = searchController.searchBar
@@ -62,8 +64,7 @@ class AddUserViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        //searchController.searchBar.isHidden = true
     }
 }
 
@@ -84,14 +85,13 @@ extension AddUserViewController :  UITableViewDataSource, UITableViewDelegate {
         
         // If this user is selected
         if selectedUsers.contains(where: { $0.uid == user.uid }) {
-            // Remove him from the selection?
+            // Remove them from the selection?
             
         } else {
             // Add the selected user to the array
             selectedUsers.append(user)
             
-            // And insert a new item for this user
-            collectionView.insertItems(at: [IndexPath(row: selectedUsers.count - 1, section: 0)])
+            collectionView.reloadItems(at: [IndexPath(item: selectedUsers.count - 1, section: 0)])
         }
     }
     
@@ -104,9 +104,9 @@ extension AddUserViewController :  UITableViewDataSource, UITableViewDelegate {
 extension AddUserViewController : UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "default", for: indexPath) as! UserSearchCollectionViewCell
-        
-        if selectedUsers.count > 0 {
-            cell.user = selectedUsers[indexPath.row]
+
+        if indexPath.item < selectedUsers.count {
+            cell.user = selectedUsers[indexPath.item]
             cell.initialize()
         }
         
@@ -115,8 +115,8 @@ extension AddUserViewController : UICollectionViewDataSource, UICollectionViewDe
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // For adding "ghost" icons
-        if selectedUsers.count < 4 {
-            return selectedUsers.count + 4
+        if selectedUsers.count < 5 {
+            return 5
         } else {
             return selectedUsers.count
         }
@@ -126,36 +126,54 @@ extension AddUserViewController : UICollectionViewDataSource, UICollectionViewDe
 // MARK: - Search Bar functions
 extension AddUserViewController : UISearchBarDelegate, UISearchResultsUpdating {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        let searchRef = database.child("users").queryOrdered(byChild: "handle").queryStarting(atValue: searchBar.text)
+        let searchText = searchBar.text!
+        let searchRef = database.child("users").queryOrdered(byChild: "handle").queryStarting(atValue: searchText)
         
         // Clear all the previous results
         userResults.removeAll()
-        //tableView.reloadData()
+        tableView.reloadData()
         
         searchRef.observe(.value, with: { (snapshot) in
-            if let value = snapshot.value as? NSDictionary {
-                for uid in value.allKeys {
+            if let value = snapshot.value as? [String : Any] {
+                for uid in value.keys {
                     let uid = uid as! String
                     
                     if uid != mainUser.uid {
                         let userData = value[uid] as! [String : Any]
                         let handle = userData["handle"] as! String
                         
-                        storage.child("users").child(uid).child("profilePhoto").getData(maxSize: MAX_PROFILE_PHOTO_SIZE, completion: { (data, error) in
-                            if error == nil {
-                                let profilePhoto = UIImage(data: data!)
-                                
-                                let user = User(uid: uid, handle: handle, profilePhoto: profilePhoto!)
-                                
-                                self.userResults.append(user)
-                                
-                                // Insert the row into the last index
-                                self.tableView.insertRows(at: [IndexPath(row: self.userResults.count - 1, section: 0)], with: .bottom)
-                            } else {
-                                print(error!)
-                                return
+                        // Compare the searchText with the user's handle
+                        let minLength = min(handle.count, searchText.count)
+                        var isEqual = true // If the portion of the handle and searchText are
+                        for i in 0..<minLength {
+                            // Get the according indices for the character to compare
+                            let handleIndex = handle.index(handle.startIndex, offsetBy: i)
+                            let searchIndex = searchText.index(searchText.startIndex, offsetBy: i)
+                            
+                            // Only compare the lowercased strings
+                            if handle.lowercased()[handleIndex] != searchText.lowercased()[searchIndex] {
+                                isEqual = false
                             }
-                        })
+                        }
+                        
+                        // If the handle and searchText are equal, download the profilePhoto and add the user to the tableView
+                        if isEqual {
+                            storage.child("users").child(uid).child("profilePhoto.jpg").getData(maxSize: MAX_PROFILE_PHOTO_SIZE, completion: { (data, error) in
+                                if error == nil {
+                                    let profilePhoto = UIImage(data: data!)
+                                    
+                                    let user = User(uid: uid, handle: handle, profilePhoto: profilePhoto!)
+                                    
+                                    self.userResults.append(user)
+                                    
+                                    // Insert the row into the last index
+                                    self.tableView.insertRows(at: [IndexPath(row: self.userResults.count - 1, section: 0)], with: .bottom)
+                                } else {
+                                    print(error!)
+                                    return
+                                }
+                            })
+                        }
                     }
                 }
             }
@@ -176,5 +194,7 @@ extension AddUserViewController : UISearchBarDelegate, UISearchResultsUpdating {
         tableView.reloadData()
     }
     
-    func updateSearchResults(for searchController: UISearchController) {}
+    func updateSearchResults(for searchController: UISearchController) {
+        print("update")
+    }
 }

@@ -65,7 +65,8 @@ class FeedViewController: UIViewController {
             }
         })
         
-        loadExtraGroupData()
+        // Handle this somewhere else
+        //loadExtraGroupData()
         
         // TODO: Add listener for new posts
         
