@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7F58608121127295001FA93B /* myVideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 7F58608021127295001FA93B /* myVideo.mp4 */; };
 		7F8012BB2102CBF200CEA5DA /* Camera.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F8012BA2102CBF200CEA5DA /* Camera.storyboard */; };
 		7F85D2C021115D93006E2772 /* JosefinSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7F8012A82100F69800CEA5DA /* JosefinSans-Regular.ttf */; };
 		7F85D2C121115D96006E2772 /* JosefinSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7F8012A72100F69800CEA5DA /* JosefinSans-Bold.ttf */; };
@@ -17,8 +16,6 @@
 		8711A836210D478C00CCFD38 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8711A835210D478C00CCFD38 /* FeedViewController.swift */; };
 		8711A839210D47CD00CCFD38 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8711A838210D47CD00CCFD38 /* Post.swift */; };
 		8711A83B210D539D00CCFD38 /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8711A83A210D539D00CCFD38 /* FeedTableViewCell.swift */; };
-		8711A83D210EABDA00CCFD38 /* clip1.m4v in Resources */ = {isa = PBXBuildFile; fileRef = 8711A83C210EABBF00CCFD38 /* clip1.m4v */; };
-		8711A8412111328400CCFD38 /* clip2.mov in Resources */ = {isa = PBXBuildFile; fileRef = 8711A8402111328400CCFD38 /* clip2.mov */; };
 		8711A8432113E55D00CCFD38 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8711A8422113E55C00CCFD38 /* GoogleService-Info.plist */; };
 		8711A8462113E5F000CCFD38 /* CameraNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8711A8452113E5F000CCFD38 /* CameraNavigationController.swift */; };
 		8720D7C120F1DBBC0069F56B /* VideoPlaybackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8720D7C020F1DBBC0069F56B /* VideoPlaybackViewController.swift */; };
@@ -27,6 +24,7 @@
 		87221A1120F073F2000A00F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87221A1020F073F2000A00F7 /* Assets.xcassets */; };
 		87221A1420F073F2000A00F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87221A1220F073F2000A00F7 /* LaunchScreen.storyboard */; };
 		87221A1E20F195B0000A00F7 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87221A1D20F195B0000A00F7 /* CameraViewController.swift */; };
+		872334222130C3FC00CA1BF6 /* GroupMemberCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872334212130C3FC00CA1BF6 /* GroupMemberCollectionViewCell.swift */; };
 		875691A92101009000284EA3 /* Pods_Flokk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 453D587CDE3B8763B595800A /* Pods_Flokk.framework */; };
 		87706DAD20F960B200663948 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 87706DAC20F960B200663948 /* .gitignore */; };
 		87D2CEAA21167570007785DC /* FirstSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D2CEA921167570007785DC /* FirstSignUpViewController.swift */; };
@@ -53,7 +51,6 @@
 		4179953DF8DE914F0B1E1396 /* Pods-Flokk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flokk.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Flokk/Pods-Flokk.debug.xcconfig"; sourceTree = "<group>"; };
 		453D587CDE3B8763B595800A /* Pods_Flokk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Flokk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E7F9723779119924F127835 /* Pods-Flokk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flokk.release.xcconfig"; path = "Pods/Target Support Files/Pods-Flokk/Pods-Flokk.release.xcconfig"; sourceTree = "<group>"; };
-		7F58608021127295001FA93B /* myVideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = myVideo.mp4; sourceTree = "<group>"; };
 		7F8012A72100F69800CEA5DA /* JosefinSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JosefinSans-Bold.ttf"; sourceTree = "<group>"; };
 		7F8012A82100F69800CEA5DA /* JosefinSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JosefinSans-Regular.ttf"; sourceTree = "<group>"; };
 		7F8012B3210123B000CEA5DA /* BounceButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BounceButton.swift; sourceTree = "<group>"; };
@@ -64,8 +61,6 @@
 		8711A835210D478C00CCFD38 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		8711A838210D47CD00CCFD38 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		8711A83A210D539D00CCFD38 /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
-		8711A83C210EABBF00CCFD38 /* clip1.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = clip1.m4v; sourceTree = "<group>"; };
-		8711A8402111328400CCFD38 /* clip2.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = clip2.mov; sourceTree = "<group>"; };
 		8711A8422113E55C00CCFD38 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8711A8452113E5F000CCFD38 /* CameraNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraNavigationController.swift; sourceTree = "<group>"; };
 		8720D7C020F1DBBC0069F56B /* VideoPlaybackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlaybackViewController.swift; sourceTree = "<group>"; };
@@ -76,6 +71,7 @@
 		87221A1320F073F2000A00F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		87221A1520F073F2000A00F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		87221A1D20F195B0000A00F7 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		872334212130C3FC00CA1BF6 /* GroupMemberCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupMemberCollectionViewCell.swift; sourceTree = "<group>"; };
 		87706DAC20F960B200663948 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		87D2CEA921167570007785DC /* FirstSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstSignUpViewController.swift; sourceTree = "<group>"; };
 		87D2CEAB211675AD007785DC /* VerifyNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyNumberViewController.swift; sourceTree = "<group>"; };
@@ -146,13 +142,10 @@
 		8711A834210D478100CCFD38 /* Feed */ = {
 			isa = PBXGroup;
 			children = (
+				872334232130C40100CA1BF6 /* Cells */,
 				8711A835210D478C00CCFD38 /* FeedViewController.swift */,
-				8711A83A210D539D00CCFD38 /* FeedTableViewCell.swift */,
-				87D2CF272124D30A007785DC /* NewFeedTableViewCell.swift */,
 				87D2CEC521225722007785DC /* GroupSettingsViewController.swift */,
 				87D2CF2121235493007785DC /* AddUserViewController.swift */,
-				87D2CF2321235696007785DC /* UserSearchTableViewCell.swift */,
-				87D2CF25212356C6007785DC /* UserSearchCollectionViewCell.swift */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -225,9 +218,6 @@
 				7F912B972110DB8E00ADABEE /* Groups.storyboard */,
 				7F912B9B211114E000ADABEE /* SignUp.storyboard */,
 				87221A1020F073F2000A00F7 /* Assets.xcassets */,
-				8711A83C210EABBF00CCFD38 /* clip1.m4v */,
-				8711A8402111328400CCFD38 /* clip2.mov */,
-				7F58608021127295001FA93B /* myVideo.mp4 */,
 				87221A0920F073F2000A00F7 /* AppDelegate.swift */,
 				87221A1220F073F2000A00F7 /* LaunchScreen.storyboard */,
 				8711A8422113E55C00CCFD38 /* GoogleService-Info.plist */,
@@ -237,6 +227,18 @@
 				7F8012A92100F69D00CEA5DA /* Fonts */,
 			);
 			path = Flokk;
+			sourceTree = "<group>";
+		};
+		872334232130C40100CA1BF6 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				8711A83A210D539D00CCFD38 /* FeedTableViewCell.swift */,
+				87D2CF272124D30A007785DC /* NewFeedTableViewCell.swift */,
+				872334212130C3FC00CA1BF6 /* GroupMemberCollectionViewCell.swift */,
+				87D2CF2321235696007785DC /* UserSearchTableViewCell.swift */,
+				87D2CF25212356C6007785DC /* UserSearchCollectionViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		87D2CEA821167524007785DC /* Sign Up */ = {
@@ -333,9 +335,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7F58608121127295001FA93B /* myVideo.mp4 in Resources */,
-				8711A8412111328400CCFD38 /* clip2.mov in Resources */,
-				8711A83D210EABDA00CCFD38 /* clip1.m4v in Resources */,
 				87706DAD20F960B200663948 /* .gitignore in Resources */,
 				87221A1420F073F2000A00F7 /* LaunchScreen.storyboard in Resources */,
 				7F85D2C121115D96006E2772 /* JosefinSans-Bold.ttf in Resources */,
@@ -382,6 +381,7 @@
 				"${BUILT_PRODUCTS_DIR}/NextLevel/NextLevel.framework",
 				"${BUILT_PRODUCTS_DIR}/RecordButton/RecordButton.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftVideoBackground/SwiftVideoBackground.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -393,6 +393,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NextLevel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RecordButton.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftVideoBackground.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -418,6 +419,7 @@
 				87D2CEC821225745007785DC /* UserSettingsViewController.swift in Sources */,
 				87D2CEC621225722007785DC /* GroupSettingsViewController.swift in Sources */,
 				87D2CF2C2127A33D007785DC /* FileUtils.swift in Sources */,
+				872334222130C3FC00CA1BF6 /* GroupMemberCollectionViewCell.swift in Sources */,
 				8720D7C120F1DBBC0069F56B /* VideoPlaybackViewController.swift in Sources */,
 				87221A1E20F195B0000A00F7 /* CameraViewController.swift in Sources */,
 				87D2CEAA21167570007785DC /* FirstSignUpViewController.swift in Sources */,
@@ -571,6 +573,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XT8KNR7TY2;
 				INFOPLIST_FILE = Flokk/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = flokk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -587,6 +590,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XT8KNR7TY2;
 				INFOPLIST_FILE = Flokk/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = flokk;
 				PRODUCT_NAME = "$(TARGET_NAME)";

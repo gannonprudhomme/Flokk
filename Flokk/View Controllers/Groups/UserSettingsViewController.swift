@@ -22,6 +22,9 @@ class UserSettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        imagePicker.delegate = self
+        imagePicker.sourceType = .photoLibrary
+        
         // Crop the profile photo view to a circle
         profilePhotoButton.imageView?.layer.cornerRadius = profilePhotoButton.bounds.width / 2
         profilePhotoButton.clipsToBounds = true
@@ -65,6 +68,7 @@ class UserSettingsViewController: UIViewController {
         let confirmActionButton = UIAlertAction(title: "Confirm", style: .default, handler: { (_) in
             do {
                 try Auth.auth().signOut()
+                mainUser = nil
                 
                 self.performSegue(withIdentifier: "settingsToSignUpSegue", sender: nil)
             } catch let error {
@@ -85,7 +89,7 @@ class UserSettingsViewController: UIViewController {
 
 // MARK: - Image Picker Function
 extension UserSettingsViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+    @objc func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
             // Only show the save button if the profile photo has changed
             saveButton.isHidden = false

@@ -9,9 +9,6 @@
 import UIKit
 import AVFoundation
 
-// Is there a need for this to be global
-let initialPostsCount = 5
-
 // For telling the feed that we uploaded a photo from VideoPlaybackVC
 // Passed along from Camera Nav -> Camera (-> maybe VideoTrimmer) -> VideoPlayback
 protocol UploadPostDelegate {
@@ -27,7 +24,6 @@ class FeedViewController: UIViewController {
     
     var group: Group!
     
-    let loadCount = 5 // Only load 3 posts at a time(after the initial 5)
     var currentPostCount = 0 // Start out at 0, increased within loadPostsData()
     
     var leaveGroupDelegate: LeaveGroupDelegate! // Used by GroupSettingsVC
@@ -44,6 +40,7 @@ class FeedViewController: UIViewController {
         loadPostsData(completion: { (didLoadPosts) in
             // If posts were loaded
             if didLoadPosts {
+                // Reload the tableView so we can
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                 }
@@ -64,11 +61,12 @@ class FeedViewController: UIViewController {
                     self.currentPostCount = initialPostsCount
                 } */
                 
-                self.tableView.reloadData()
+                //self.tableView.reloadData()
             }
         })
         
-        loadExtraGroupData()
+        // Handle this somewhere else
+        //loadExtraGroupData()
         
         // TODO: Add listener for new posts
         
@@ -119,20 +117,51 @@ class FeedViewController: UIViewController {
 
 // MARK: - Post Handling
 extension FeedViewController: UploadPostDelegate {
+    func load() {
+        // First check if the group data is not loaded
+            // If there is a local file
+                // Read from the local file
+                // Download and compare the database data
+                    // If there are new posts/members, insert them
+        
+                // Save the new data locally
+        
+            // If there is no local file
+                // Download the database data and load it directly in
+                // Save the data locally
+        
+        // If the group data is loaded, we have already gone through this process
+            // Do nothing
+    }
+    
     // Initial post loading. Load all of the posts data, but not the video/preview-image files
     // Boolean in completion handler is true
     func loadPostsData(completion: @escaping (Bool) -> Void) {
         // If there posts isn't empty, then they have already been loaded
         if group.posts.count == 0 {
-            // TODO: Check if the data has been stored locally by attempting to load the data
-            
-            database.child("groups").child(group.uid).child("posts").observeSingleEvent(of: .value, with: { (snapshot) in
-                if let value = snapshot.value as? [String : [String : Any]] {
-                    for postID in value.keys {
-                        let timestamp = value[postID]!["timestamp"] as! Double
+            // Check if the data has been stored locally by attempting to load the data
+            if let value = FileUtils.loadJSON(file: "groups/\(group.uid).json") {
+                // Load in the post data from the json dictionary
+                let members = value["members"] as! [String : String]
+                let creatorUID = value["creator"] as! String
+                
+                self.group.creatorUID = creatorUID
+                
+                // Iterate over the members dictionary and add them to the Group's member array
+                // Used in Group Settings to show who is in the group
+                for uid in members.keys {
+                    let handle = members[uid]
+                    
+                    self.group.members.append(User(uid: uid, handle: handle!))
+                }
+                
+                // Load the posts
+                if let posts = value["posts"] as? [String : [String : Any]] {
+                    for postID in posts.keys {
+                        let timestamp = posts[postID]!["timestamp"] as! Double
                         //let poster = value[postID]!["poster"] as! String // UID of the poster, unused for now
-                        let width = value[postID]!["width"] as! Int
-                        let height = value[postID]!["height"] as! Int
+                        let width = posts[postID]!["width"] as! Int
+                        let height = posts[postID]!["height"] as! Int
                         
                         let post = Post(uid: postID, timestamp: timestamp)
                         post.setDimensions(width: width, height: height)
@@ -146,33 +175,61 @@ extension FeedViewController: UploadPostDelegate {
                     self.sortPosts()
                     
                     // Set how many posts to load, depending on how many we have
-                    
                     self.currentPostCount = self.group.posts.count
-                    /*
-                    if self.group.posts.count < initialPostsCount {
-                        self.currentPostCount = self.group.posts.count
-                    } else {
-                        self.currentPostCount = initialPostsCount
-                    } */
                     
                     // Done loading posts data, call completion with true, meaning posts have actually been loaded
                     completion(true)
                 }
-            })
+            } else {
+                database.child("groups").child(group.uid).child("posts").observeSingleEvent(of: .value, with: { (snapshot) in
+                    if let value = snapshot.value as? [String : [String : Any]] {
+                        for postID in value.keys {
+                            let timestamp = value[postID]!["timestamp"] as! Double
+                            //let poster = value[postID]!["poster"] as! String // UID of the poster, unused for now
+                            let width = value[postID]!["width"] as! Int
+                            let height = value[postID]!["height"] as! Int
+                            
+                            let post = Post(uid: postID, timestamp: timestamp)
+                            post.setDimensions(width: width, height: height)
+                            
+                            // Simplt add it to the posts array
+                            // We don't call group.addPost(...) b/c that is for new posts, not existing oness
+                            self.group.posts.append(post)
+                        }
+                        
+                        // TODO: Save the post data after all of the posts are loaded
+                        FileUtils.saveToJSON(dict: self.group.convertToDict(), toPath: "groups/\(self.group.uid).json")
+                        
+                        // After loading in all of the posts, sort them
+                        self.sortPosts()
+                        
+                        // Set how many posts to load, depending on how many we have
+                        self.currentPostCount = self.group.posts.count
+                        
+                        // Done loading posts data, call completion with true, meaning posts have actually been loaded
+                        completion(true)
+                    }
+                })
+            }
         } else { // Posts count != 0
             // No posts needed to be loaded(as group.posts is not empty), so call completion as false
             completion(false)
         }
     }
     
+    // Process the JSON/database dictionary into post objects
+    private func processPostData(dict: [String : Any]) {
+        
+    }
+    
     func loadPostVideos(startIndex: Int, count: Int) {
         // Create the directory for the posts to be stored
-        let fileManager = FileManager.default
-        let documentDirectory = fileManager.urls(for: .documentDirectory, in: .userDomainMask)[0]
-        let outputURL = documentDirectory.appendingPathComponent("groups/\(group.uid)/posts")
+        var documentDirectory = FileUtils.getDocumentsDirectory()
+        let outputPath = "groups/\(group.uid)/posts" // TODO: don't store with the document directory's location
+        let outputURL = documentDirectory.appendingPathComponent(outputPath)
         
         do {
-            try fileManager.createDirectory(at: outputURL, withIntermediateDirectories: true, attributes: nil)
+            try FileManager.default.createDirectory(at: outputURL, withIntermediateDirectories: true, attributes: nil)
         } catch let error {
             print(error)
         }
@@ -183,10 +240,13 @@ extension FeedViewController: UploadPostDelegate {
             //print("Loading video at index \(i) with uid \(post.uid)")
             
             let finalURL = outputURL.appendingPathComponent("\(post.uid).mp4")
+            let finalPath = outputPath + "/\(post.uid).mp4"
+            
+            //print(finalURL)
             
             // Check if the file exists before trying to load it
-            if let asset = AVAsset(url: finalURL) as? AVAsset { // Never works/always false
-                post.fileURL = finalURL
+            if FileUtils.doesFileExist(atPath: finalPath) { // Never works/always false
+                post.filePath = finalPath
                 
                 // Update the according tableViewCell
                 DispatchQueue.main.async {
@@ -196,7 +256,7 @@ extension FeedViewController: UploadPostDelegate {
             } else { // File does not exist, load it from Firebase Storage
                 storage.child("groups").child(group.uid).child("posts").child(post.uid).write(toFile: finalURL, completion: { (url, error) in
                     if error == nil {
-                        post.fileURL = url
+                        post.filePath = finalPath
                         
                         // Update the according tableViewCell once the post has been loaded
                         DispatchQueue.main.async {
@@ -217,9 +277,10 @@ extension FeedViewController: UploadPostDelegate {
     func loadMorePosts() {
         var postDiff = group.posts.count - currentPostCount
         
+        /*
         if postDiff > loadCount {
             postDiff = loadCount
-        }
+        } */
         
         var indexPaths = [IndexPath]()
         // currentPostCount is a size(aka size of 1 = index of 0), so i starts at 0
@@ -238,6 +299,7 @@ extension FeedViewController: UploadPostDelegate {
         loadPostVideos(startIndex: currentPostCount - postDiff, count: postDiff)
     }
     
+    // UploadPostDelegate function
     // Called in VideoPlaybackVC after the user has finalized the post
     func uploadPost(fileURL: URL) {
         // Generate a unique ID for this post
@@ -260,7 +322,7 @@ extension FeedViewController: UploadPostDelegate {
         
         // Initialize the post
         let post = Post(uid: postID, timestamp: timestamp)
-        post.fileURL = fileURL
+        post.filePath = fileURL.lastPathComponent
         
         post.setDimensions(width: Int((dim?.width)!), height: Int((dim?.height)!))
         
@@ -271,6 +333,9 @@ extension FeedViewController: UploadPostDelegate {
         
         // Insert it into the top of the tableView, shifting the other
         tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .none)
+        
+        // Resave the group json
+        FileUtils.saveToJSON(dict: group.convertToDict(), toPath: "groups/\(group.uid).json")
     }
     
     func sortPosts() {
@@ -280,8 +345,9 @@ extension FeedViewController: UploadPostDelegate {
     
     // Load the extra group data, mainly used in GroupSettings
     func loadExtraGroupData() {
+        // This is loading in the posts data anyways
         database.child("groups").child(group.uid).observe(.value, with: { (snapshot) in
-            if let value = snapshot.value as? NSDictionary {
+            if let value = snapshot.value as? [String : Any] {
                 let members = value["members"] as! [String: String]
                 let creatorUID = value["creator"] as! String
                 
@@ -294,6 +360,9 @@ extension FeedViewController: UploadPostDelegate {
                     
                     self.group.members.append(User(uid: uid, handle: handle!))
                 }
+                
+                // Will save all of the data to the disk, every time
+                FileUtils.saveToJSON(dict: value, toPath: "groups/\(self.group.uid).json")
             }
         })
     }

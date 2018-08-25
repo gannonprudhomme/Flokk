@@ -64,4 +64,10 @@ class User {
         
         return index
     }
+    
+    func convertToDict() -> [String : Any] {
+        var dict = [String : Any]()
+        
+        return dict
+    }
 }

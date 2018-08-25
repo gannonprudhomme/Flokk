@@ -10,6 +10,7 @@ target 'Flokk' do
     pod "RecordButton"
     pod "ABVideoRangeSlider"
     pod "SwiftVideoBackground", "~> 3.0"
+    pod "SwiftyJSON", "~> 4.0"
     
     # Firebase Pods
     pod "Firebase/Core"

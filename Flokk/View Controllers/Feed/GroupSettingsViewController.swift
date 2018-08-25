@@ -19,10 +19,25 @@ class GroupSettingsViewController: UIViewController, AddUserDelegate {
     @IBOutlet weak var collectionView: UICollectionView!
     
     var group: Group!
-    var leaveGroupDelegate: LeaveGroupDelegate! // 
+    var leaveGroupDelegate: LeaveGroupDelegate! //
+    
+    let numberOfCellsPerRow: CGFloat = 2
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        
+        // Set the size of the cells in order to have two cells per row in the collectionView
+        if let flowLayout = collectionView?.collectionViewLayout as? UICollectionViewFlowLayout {
+            let horizontalSpacing = flowLayout.scrollDirection == .vertical ? flowLayout.minimumInteritemSpacing : flowLayout.minimumLineSpacing
+            let cellWidth = (view.frame.width - max(0, numberOfCellsPerRow - 1) * horizontalSpacing) / numberOfCellsPerRow
+            flowLayout.itemSize = CGSize(width: cellWidth, height: cellWidth)
+        }
+        
+        // Load the member profile photos
+        loadMembers()
 
         // Crop the group icon to a circle
         groupIconView?.layer.cornerRadius = groupIconView.frame.size.width / 2
@@ -34,7 +49,6 @@ class GroupSettingsViewController: UIViewController, AddUserDelegate {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     @IBAction func leaveButtonPressed(_ sender: Any) {
@@ -44,6 +58,9 @@ class GroupSettingsViewController: UIViewController, AddUserDelegate {
         let confirmActionButton = UIAlertAction(title: "Confirm", style: .default, handler: { (_) in
             // Remove the user from the group in the database
             self.leaveGroupDelegate.leaveGroup(group: self.group)
+            
+            // Segue back to the groups view
+            self.performSegue(withIdentifier: "unwindToGroups", sender: nil)
         })
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
@@ -69,18 +86,58 @@ class GroupSettingsViewController: UIViewController, AddUserDelegate {
             collectionView.insertItems(at: [IndexPath(row: 0, section: 0)])
         }
     }
+    
+    // Load all of the profile photos for the users
+    func loadMembers() {
+        // Praying the members are loaded by now
+        for i in 0..<group.members.count {
+            let member = group.members[i]
+            
+            storage.child("users").child(member.uid).child("profilePhoto.jpg").getData(maxSize: MAX_PROFILE_PHOTO_SIZE, completion: { (data, error) in
+                if error == nil {
+                    member.profilePhoto = UIImage(data: data!)
+                    
+                    DispatchQueue.main.async {
+                        self.collectionView.reloadItems(at: [IndexPath(item: i, section: 0)])
+                    }
+                    
+                } else {
+                    print("ERROR LOADING \(member.uid) PROFILE PHOTO")
+                    print(error)
+                    return
+                }
+            })
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "groupSettingsToAddUserSegue" {
+            if let vc = segue.destination as? AddUserViewController {
+                // Set the 
+                vc.addUsersDelegate = self
+            }
+        }
+    }
 }
 
+// TODO: Set up collectionviewcell
 extension GroupSettingsViewController : UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "default", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "default", for: indexPath) as! GroupMemberCollectionViewCell
         
-        //cell.
+        cell.user = group.members[indexPath.item]
+        cell.initialize()
+        
+        cell.tag = indexPath.item
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return group.members.count
+    }
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
     }
 }

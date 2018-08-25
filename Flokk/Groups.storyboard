@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -364,7 +363,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3KW-jL-jB5">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Loading Image - Small" translatesAutoresizingMaskIntoConstraints="NO" id="3KW-jL-jB5">
                                                     <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                 </imageView>
                                             </subviews>
@@ -580,11 +579,11 @@
             </objects>
             <point key="canvasLocation" x="4289" y="2710"/>
         </scene>
-        <!-- -->
+        <!--Group Settings-->
         <scene sceneID="hRe-ff-3br">
             <objects>
-                <viewController id="XVh-KU-Sq0" customClass="GroupSettingsViewController" customModule="Flokk" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="2Px-tO-u9T" customClass="GroupsTableViewCell" customModule="Flokk" customModuleProvider="target">
+                <viewController title="Group Settings" id="XVh-KU-Sq0" customClass="GroupSettingsViewController" customModule="Flokk" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2Px-tO-u9T">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -617,14 +616,14 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="default" id="3Ft-71-uQf">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="default" id="3Ft-71-uQf" customClass="GroupMemberCollectionViewCell" customModule="Flokk" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="178" height="173"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="178" height="173"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="turtle" translatesAutoresizingMaskIntoConstraints="NO" id="VXV-i3-kTm">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Loading Image" translatesAutoresizingMaskIntoConstraints="NO" id="VXV-i3-kTm">
                                                     <rect key="frame" x="39" y="20" width="100" height="100"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="100" id="9B7-MW-CIA"/>
@@ -647,6 +646,10 @@
                                             <constraint firstItem="VXV-i3-kTm" firstAttribute="centerX" secondItem="3Ft-71-uQf" secondAttribute="centerX" id="vsW-OJ-HX0"/>
                                         </constraints>
                                         <size key="customSize" width="178" height="173"/>
+                                        <connections>
+                                            <outlet property="imageView" destination="VXV-i3-kTm" id="4wI-Bj-11g"/>
+                                            <outlet property="nameLabel" destination="9Ts-wd-joQ" id="q7u-02-saF"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -681,7 +684,7 @@
                         <barButtonItem key="backBarButtonItem" title=" " id="XHY-Hu-A7Y"/>
                         <barButtonItem key="rightBarButtonItem" image="addFriendsIcon" id="vdh-Dt-YEb">
                             <connections>
-                                <segue destination="IqZ-ek-dYw" kind="show" id="h7e-gy-LL7"/>
+                                <segue destination="IqZ-ek-dYw" kind="show" identifier="groupSettingsToAddUserSegue" id="h7e-gy-LL7"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -689,14 +692,18 @@
                         <outlet property="collectionView" destination="BU6-Jf-zXs" id="R2i-cO-opT"/>
                         <outlet property="groupIconView" destination="3Q9-5h-nYf" id="4gi-eS-68Z"/>
                         <outlet property="groupNameLabel" destination="wFF-4S-uyT" id="33b-ZH-Eer"/>
+                        <segue destination="xcE-wM-b7X" kind="unwind" identifier="unwindToGroups" unwindAction="unwindToGroupsWithSegue:" id="qKk-BQ-yKf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uhE-0x-OIV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="xcE-wM-b7X" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="5168.8000000000002" y="2229.5352323838083"/>
+            <point key="canvasLocation" x="5178" y="2230"/>
         </scene>
     </scenes>
     <resources>
+        <image name="Loading Image" width="66" height="66"/>
+        <image name="Loading Image - Small" width="50" height="50"/>
         <image name="addBttnWhite" width="18" height="18"/>
         <image name="addFriendsIcon" width="23" height="17"/>
         <image name="addPostBttn" width="68" height="68"/>
@@ -709,7 +716,6 @@
         <image name="logOutBttnRed" width="121" height="36"/>
         <image name="saveBttn" width="175" height="51"/>
         <image name="ski" width="1536" height="1536"/>
-        <image name="turtle" width="1537" height="1536"/>
         <image name="userIconTeal" width="16" height="17"/>
         <namedColor name="Flokk Navy">
             <color red="0.082000002264976501" green="0.086000002920627594" blue="0.16899999976158142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

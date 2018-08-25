@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import AVFoundation
+import SwiftyJSON
 
 // Helper class that would take care of saving and loading data to the disk
 // Handles JSON for group and feed data, as well as saving group icons and post videos
@@ -33,11 +34,15 @@ class FileUtils {
     
     // Load JSON file
     static func loadJSON(file: String) -> [String : Any]? {
+        let url = getDocumentsDirectory().appendingPathComponent(file)
+        
         do {
-            let data = try Data(contentsOf: URL(fileURLWithPath: "mainUser.json"))
+            let data = try Data(contentsOf: url)
             let json = try JSONSerialization.jsonObject(with: data, options: [])
             
             if let dictionary = json as? [String : Any] {
+                print("Sucessfully loaded \(url.lastPathComponent)")
+                
                 return dictionary
             } else {
                 // Something went wrong, return nil, forcing it to load in the data directly from the database
@@ -53,23 +58,52 @@ class FileUtils {
     }
     
     static func saveToJSON(dict: [String : Any], toPath path: String) {
-        let url = FileUtils.createDirectory(path: path)
+        // Create the directory for the posts to be stored
+        //let fileManager = FileManager.default
+        //let documentDirectory = fileManager.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        //let outputURL = documentDirectory.appendingPathComponent("users")
         
-        // Edit this syntax
-        if JSONSerialization.isValidJSONObject(dict) {
-            do {
-                let rawData = try JSONSerialization.data(withJSONObject: dict, options: .prettyPrinted)
-            } catch let error {
-                print(error)
-                return
+        do {
+            //try fileManager.createDirectory(at: outputURL, withIntermediateDirectories: true, attributes: nil)
+            
+            //var finalURL = outputURL.appendingPathComponent("mainUser").appendingPathExtension("json")
+            var finalURL = getDocumentsDirectory().appendingPathComponent(path)
+            
+            let json = JSON(dict)
+            let str = json.description
+            let data = str.data(using: .utf8)
+            try str.write(to: finalURL, atomically: true, encoding: .utf8)
+            
+            print("Successfully saved \(finalURL.lastPathComponent)")
+        } catch let error {
+            print(error)
+        }
+        
+    }
+    
+    static func doesFileExist(atPath: String) -> Bool{
+        let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
+        let url = NSURL(fileURLWithPath: path)
+        if let pathComponent = url.appendingPathComponent(atPath) {
+            let filePath = pathComponent.path
+            let fileManager = FileManager.default
+            if fileManager.fileExists(atPath: filePath) {
+                //print("FILE AVAILABLE")
+                return true
+            } else {
+                //print("FILE NOT AVAILABLE   \(filePath)")
+                return false
             }
+        } else {
+            //print("FILE PATH NOT AVAILABLE")
+            return false
         }
     }
     
+    // Attempt to load this groups icon from the local disk
     // If this returns nil, we have to download the group icon from Firebase
     static func loadGroupIcon(group: Group) -> UIImage? {
         let image: UIImage
-        
         
         return nil
     }
@@ -96,5 +130,27 @@ class FileUtils {
         } else {
             return false
         }
+    }
+    
+    static func getDocumentsDirectory() -> URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        return paths[0]
+    }
+}
+
+// JSON Manipulation functions for app framework
+extension FileUtils {
+    // Save the post to the appropriate group json file
+    static func savePost(_ post: Post, group: Group) {
+        
+    }
+    
+    // Save the group to the user's json file and make one for it
+    static func saveGroup(_ group: Group) {
+        
+    }
+    
+    static func deleteGroup(_ group: Group) {
+        
     }
 }

@@ -45,8 +45,7 @@ class Group {
     }
     
     // TODO: Should this be done in here?
-    // Attempt to load the group Icon
-    // If it's already loaded, return immediately
+    // Attempt to load the group Icon. If it's already loaded, return immediately
     // Otherwise, load it in from Firebase
     func requestGroupIcon(completion: @escaping (UIImage?) -> Void) {
         // Check if the icon is stored locally
@@ -62,10 +61,9 @@ class Group {
                     completion(icon)
                 } else {
                     print(error?.localizedDescription)
+                    
+                    completion(nil)
                     return
-                        
-                        // Don't know if it matters if I return or do completion first
-                        completion(nil)
                 }
             })
         }
@@ -75,7 +73,37 @@ class Group {
         self.icon = icon
     }
     
+    // whats the point of having both this and requestGroupIcon
     func getIcon() -> UIImage? {
         return icon
+    }
+    
+    // Converts this Group object to a dictionary for saving the data to JSON(locally)
+    // Replicates the structure of the database
+    // Need to be careful when I call this. If the group data isn't fully loaded, the file will be missing things
+    func convertToDict() -> [String : Any] {
+        var data = [String : Any]()
+        
+        data["creator"] = creatorUID ?? "nil"
+        data["name"] = name
+        
+        // Iterate through the members and store their data
+        var membersData = [String : Any]()
+        for member in self.members {
+            membersData[member.uid] = member.handle
+        }
+        
+        data["members"] = membersData
+        
+        // Iterate through the posts and store its data
+        var postsData = [String : Any]()
+        for post in self.posts {
+            postsData[post.uid] = post.convertToDict()
+        }
+        
+        data["posts"] = postsData
+        
+        // Fill the dictionary with the post data
+        return data
     }
 }
