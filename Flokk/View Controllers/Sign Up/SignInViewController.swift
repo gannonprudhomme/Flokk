@@ -21,7 +21,7 @@ class SignInViewController: UIViewController {
         
         emailField.keyboardAppearance = .dark
         passwordField.keyboardAppearance = .dark
-        emailField.becomeFirstResponder()
+        //emailField.becomeFirstResponder()
         
     }
 

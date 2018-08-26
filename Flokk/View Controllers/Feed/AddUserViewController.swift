@@ -46,6 +46,10 @@ class AddUserViewController: UIViewController {
         searchController.searchBar.layer.cornerRadius = searchController.searchBar.bounds.width / 2
         searchController.searchBar.placeholder = "Enter a username"
         
+        // Set font for search bar
+        //UIBarButtonItem.appearanceWhenContainedInInstancesOfClasses([UISearchBar.self]).setTitleTextAttributes([NSAttributedStringKey.font : UIFont(name: "OpenSans", size: 15)!], forState: .Normal)
+        
+    
         // Set the search bar as the header of the tableView
         tableView.tableHeaderView = searchController.searchBar
         

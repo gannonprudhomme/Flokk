@@ -344,10 +344,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Rzm-xJ-hQY">
-                                <rect key="frame" x="24" y="22" width="331" height="54"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="91"/>
                                 <color key="backgroundColor" name="Flokk Navy"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="54" id="UPM-YC-HXU"/>
+                                    <constraint firstAttribute="height" constant="91" id="UPM-YC-HXU"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="uFr-8f-N4C">
                                     <size key="itemSize" width="50" height="50"/>
@@ -436,15 +436,16 @@
                         <color key="tintColor" name="White"/>
                         <constraints>
                             <constraint firstItem="RRv-ga-HlU" firstAttribute="top" secondItem="1mA-Cr-Mzc" secondAttribute="bottom" constant="1" id="4wA-g0-FDK"/>
-                            <constraint firstItem="Rzm-xJ-hQY" firstAttribute="trailing" secondItem="8in-Yy-Bqd" secondAttribute="trailingMargin" constant="-4" id="DOb-al-gNG"/>
+                            <constraint firstItem="Rzm-xJ-hQY" firstAttribute="trailing" secondItem="Na0-NK-DDr" secondAttribute="trailing" id="LsK-T2-Dzl"/>
                             <constraint firstItem="RRv-ga-HlU" firstAttribute="bottom" secondItem="Na0-NK-DDr" secondAttribute="bottom" id="OR3-hS-BpD"/>
-                            <constraint firstItem="1mA-Cr-Mzc" firstAttribute="top" secondItem="Rzm-xJ-hQY" secondAttribute="bottom" constant="14" id="OWd-RZ-l3p"/>
+                            <constraint firstItem="1mA-Cr-Mzc" firstAttribute="top" secondItem="Rzm-xJ-hQY" secondAttribute="bottom" constant="-1" id="OWd-RZ-l3p"/>
                             <constraint firstItem="RRv-ga-HlU" firstAttribute="trailing" secondItem="Na0-NK-DDr" secondAttribute="trailing" id="Sg4-xb-5r1"/>
                             <constraint firstItem="RRv-ga-HlU" firstAttribute="leading" secondItem="Na0-NK-DDr" secondAttribute="leading" id="dqy-De-Dh3"/>
+                            <constraint firstItem="Rzm-xJ-hQY" firstAttribute="leading" secondItem="Na0-NK-DDr" secondAttribute="leading" id="eIJ-eE-Fps"/>
                             <constraint firstAttribute="trailing" secondItem="1mA-Cr-Mzc" secondAttribute="trailing" id="j4K-iC-qzD"/>
-                            <constraint firstItem="Rzm-xJ-hQY" firstAttribute="top" secondItem="Na0-NK-DDr" secondAttribute="top" constant="22" id="jJi-FT-FeG"/>
+                            <constraint firstItem="Rzm-xJ-hQY" firstAttribute="top" secondItem="Na0-NK-DDr" secondAttribute="top" id="jJi-FT-FeG"/>
                             <constraint firstItem="1mA-Cr-Mzc" firstAttribute="leading" secondItem="8in-Yy-Bqd" secondAttribute="leading" id="jbi-Ar-fma"/>
-                            <constraint firstItem="Rzm-xJ-hQY" firstAttribute="leading" secondItem="Na0-NK-DDr" secondAttribute="leading" constant="24" id="ukZ-aQ-9Ov"/>
+                            <constraint firstItem="Rzm-xJ-hQY" firstAttribute="leading" secondItem="Na0-NK-DDr" secondAttribute="leading" id="ukZ-aQ-9Ov"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Na0-NK-DDr"/>
                     </view>
@@ -464,7 +465,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AuQ-0m-vnK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6137" y="2230"/>
+            <point key="canvasLocation" x="6136.8000000000002" y="2229.5352323838083"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hGG-TZ-UgH">
