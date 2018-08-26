@@ -1,5 +1,5 @@
 //
-//  OpenViewController.swift
+//  FirstScreenViewController.swift
 //  Flokk
 //
 //  Created by Jared Heyen on 8/23/18.
@@ -8,11 +8,11 @@
 
 import UIKit
 
-class OpenViewController: UIViewController {
+class FirstScreenViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         // Do any additional setup after loading the view.
     }
 
@@ -24,9 +24,6 @@ class OpenViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        // Light content status bar
-        UIApplication.shared.statusBarStyle = UIStatusBarStyle.lightContent
-        
         // Hide the Navigation Bar
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
     }
@@ -37,7 +34,7 @@ class OpenViewController: UIViewController {
         // Show the Navigation Bar
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
     }
-
+    
 
     /*
     // MARK: - Navigation

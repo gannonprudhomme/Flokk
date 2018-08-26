@@ -23,7 +23,7 @@ class SecondSignUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        handleField.becomeFirstResponder()
+        //handleField.becomeFirstResponder()
         
         profilePhotoButton.contentMode = .scaleAspectFit
         profilePhotoButton?.layer.cornerRadius = (self.profilePhotoButton?.frame.size.width)! / 2
