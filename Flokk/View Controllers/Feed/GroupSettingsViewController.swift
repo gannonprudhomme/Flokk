@@ -121,7 +121,6 @@ class GroupSettingsViewController: UIViewController, AddUserDelegate {
     }
 }
 
-// TODO: Set up collectionviewcell
 extension GroupSettingsViewController : UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "default", for: indexPath) as! GroupMemberCollectionViewCell

@@ -49,6 +49,8 @@ class GroupsViewController: UIViewController {
             //let vc = UIStoryboard(name: "SignUp", bundle: nil).instantiateViewController(withIdentifier: "SignUpNavigationController")
             //present(vc, animated: false, completion: nil)
         }
+        
+        // TODO: Listen for group changes in users/mainUser.uid/groups
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -91,7 +93,19 @@ extension GroupsViewController {
     }
     
     func load() {
+        let uid = Auth.auth().currentUser?.uid
         
+        // Attempt to load from the local file first
+        if let value = FileUtils.loadJSON(file: "users/mainUser.json") {
+            processUserData(value)
+            
+            // Then download the new data anyways and compare with the loaded data
+                // Only need to compare what groups the user is in
+            
+        // Load directly from the database into the user data
+        } else {
+            
+        }
     }
     
     // Load the Flokk user data from the database
@@ -184,12 +198,21 @@ extension GroupsViewController {
         }
     }
     
+    // Called when a new post is added, should be a delegate
     func groupUpdated(group: Group) {
         // Update the mainUsers' groups array, and get the index(row) this group is located at
         let row = mainUser.groupUpdated(group: group)
         
+        
         // Move the row to the top
         tableView.moveRow(at: IndexPath(row: row, section: 0), to: IndexPath(row: 0, section: 0))
+        
+        // TODO: Update the timestamp
+    }
+    
+    // Called when a remote user adds this user to their group
+    func addNewGroup(group: Group) {
+        // Insert and initialize the new group
     }
 }
 

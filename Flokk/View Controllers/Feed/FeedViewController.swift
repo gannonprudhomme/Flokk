@@ -197,7 +197,7 @@ extension FeedViewController: UploadPostDelegate {
                             self.group.posts.append(post)
                         }
                         
-                        // TODO: Save the post data after all of the posts are loaded
+                        // Save the post data after all of the posts are loaded
                         FileUtils.saveToJSON(dict: self.group.convertToDict(), toPath: "groups/\(self.group.uid).json")
                         
                         // After loading in all of the posts, sort them
@@ -225,7 +225,7 @@ extension FeedViewController: UploadPostDelegate {
     func loadPostVideos(startIndex: Int, count: Int) {
         // Create the directory for the posts to be stored
         var documentDirectory = FileUtils.getDocumentsDirectory()
-        let outputPath = "groups/\(group.uid)/posts" // TODO: don't store with the document directory's location
+        let outputPath = "groups/\(group.uid)/posts"
         let outputURL = documentDirectory.appendingPathComponent(outputPath)
         
         do {
@@ -406,7 +406,7 @@ extension FeedViewController: UITableViewDataSource, UITableViewDelegate {
         let distanceFromBottom = scrollView.contentSize.height - contentYoffset
         
         // TODO: Determine what cell is in view
-        // If the cell's center is in a certain range in the middle of the screen, 
+        // If the cell's center is in a certain range in the middle of the screen, play the video
         
         // Check if we've reached the bottom of the table
         if distanceFromBottom < height {

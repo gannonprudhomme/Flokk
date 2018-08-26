@@ -26,8 +26,6 @@ class AddUserViewController: UIViewController {
     // before attempting to invite them/add them to the group
     var group: Group!
     
-    var numCells = 5
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -50,6 +48,12 @@ class AddUserViewController: UIViewController {
         
         // Set the search bar as the header of the tableView
         tableView.tableHeaderView = searchController.searchBar
+        
+        let singleTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.singleTap(sender:)))
+        singleTapGestureRecognizer.numberOfTapsRequired = 1
+        singleTapGestureRecognizer.isEnabled = true
+        singleTapGestureRecognizer.cancelsTouchesInView = false
+        self.view.addGestureRecognizer(singleTapGestureRecognizer)
     }
 
     override func didReceiveMemoryWarning() {
@@ -91,28 +95,24 @@ extension AddUserViewController :  UITableViewDataSource, UITableViewDelegate {
         if !group.members.contains(where: { $0.uid == user.uid}) {
             
             // If this user is not selected
-            //if !selectedUsers.contains(where: { $0.uid == user.uid }) {
+            if !selectedUsers.contains(where: { $0.uid == user.uid }) {
                 // Add the selected user to the array
-            
-            selectedUsers.append(user)
-            
-            if selectedUsers.count < 5 {
-                collectionView.reloadItems(at: [IndexPath(item: selectedUsers.count - 1, section: 0)])
-            } else {
-                collectionView.reloadData()
-                //collectionView.insertItems(at: [IndexPath(item: selectedUsers.count - 1, section: 0)])
-            }
+                selectedUsers.append(user)
                 
-           //} else { // User is already selected
+                if selectedUsers.count < 5 {
+                    collectionView.reloadItems(at: [IndexPath(item: selectedUsers.count - 1, section: 0)])
+                } else {
+                    collectionView.reloadData()
+                    //collectionView.insertItems(at: [IndexPath(item: selectedUsers.count - 1, section: 0)])
+                }
+            } else { // User is already selected
                 // Remove it from the collectionView?
                 
                 
-           // }
-            
+            }
         } else { // User is already a member of this group
             // TODO: Give feedback notifying the mainUser that the user is already a member
         }
-
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -140,6 +140,11 @@ extension AddUserViewController : UICollectionViewDataSource, UICollectionViewDe
         } else {
             return selectedUsers.count
         }
+    }
+    
+    @objc func singleTap(sender: UITapGestureRecognizer) {
+        // Deselect the
+        self.searchController.searchBar.resignFirstResponder()
     }
 }
 
