@@ -26,6 +26,8 @@ class AddUserViewController: UIViewController {
     // before attempting to invite them/add them to the group
     var group: Group!
     
+    var numEmptyCells = 6
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -72,6 +74,8 @@ class AddUserViewController: UIViewController {
         } else {
             addUsersDelegate.addUsersToGroup(users: selectedUsers)
             // TODO: Show an alert confirming that these users were invited
+            
+            dismiss(animated: true, completion: nil)
         }
     }
     
@@ -103,7 +107,7 @@ extension AddUserViewController :  UITableViewDataSource, UITableViewDelegate {
                 // Add the selected user to the array
                 selectedUsers.append(user)
                 
-                if selectedUsers.count < 5 {
+                if selectedUsers.count < numEmptyCells {
                     collectionView.reloadItems(at: [IndexPath(item: selectedUsers.count - 1, section: 0)])
                 } else {
                     collectionView.reloadData()
@@ -139,8 +143,8 @@ extension AddUserViewController : UICollectionViewDataSource, UICollectionViewDe
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // For adding "ghost" icons
-        if selectedUsers.count <= 5 {
-            return 5
+        if selectedUsers.count <= numEmptyCells {
+            return numEmptyCells
         } else {
             return selectedUsers.count
         }
@@ -165,8 +169,6 @@ extension AddUserViewController : UISearchBarDelegate, UISearchResultsUpdating {
         searchRef.observe(.value, with: { (snapshot) in
             if let value = snapshot.value as? [String : Any] {
                 for uid in value.keys {
-                    let uid = uid as! String
-                    
                     if uid != mainUser.uid {
                         let userData = value[uid] as! [String : Any]
                         let handle = userData["handle"] as! String

@@ -62,7 +62,7 @@ class Post {
     
     // Converts this post to a dictionary
     func convertToDict() -> [String : Any] {
-        var dict = [String : Any]()
+        //var dict = [String : Any]()
         var data = [String : Any]()
         
         data["poster"] = posterID ?? "nil"
@@ -70,8 +70,8 @@ class Post {
         data["width"] = dimensions?.width ?? 0
         data["height"] = dimensions?.height ?? 0
         
-        dict[uid] = data
+        //dict[uid] = data
         
-        return dict
+        return data
     }
 }

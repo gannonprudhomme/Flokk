@@ -40,7 +40,7 @@ class CreateGroupViewController: UIViewController {
     
     @IBAction func continuePressed(_ sender: Any) {
         if groupNameField.text!.count > 0 {
-            delegate.addNewGroup(groupName: groupNameField.text!, icon: (groupIconButton.imageView?.image)!)
+            delegate.createNewGroup(groupName: groupNameField.text!, icon: (groupIconButton.imageView?.image)!)
             
             self.navigationController?.popViewController(animated: true)
         }

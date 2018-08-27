@@ -103,7 +103,7 @@ class GroupSettingsViewController: UIViewController, AddUserDelegate {
                     
                 } else {
                     print("ERROR LOADING \(member.uid) PROFILE PHOTO")
-                    print(error)
+                    print(error!)
                     return
                 }
             })

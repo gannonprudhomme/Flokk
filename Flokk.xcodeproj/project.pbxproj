@@ -25,6 +25,7 @@
 		87221A1420F073F2000A00F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87221A1220F073F2000A00F7 /* LaunchScreen.storyboard */; };
 		87221A1E20F195B0000A00F7 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87221A1D20F195B0000A00F7 /* CameraViewController.swift */; };
 		872334222130C3FC00CA1BF6 /* GroupMemberCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872334212130C3FC00CA1BF6 /* GroupMemberCollectionViewCell.swift */; };
+		8723342D213371F900CA1BF6 /* FirstScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8723342C213371F900CA1BF6 /* FirstScreenViewController.swift */; };
 		875691A92101009000284EA3 /* Pods_Flokk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 453D587CDE3B8763B595800A /* Pods_Flokk.framework */; };
 		87706DAD20F960B200663948 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 87706DAC20F960B200663948 /* .gitignore */; };
 		87D2CEAA21167570007785DC /* FirstSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D2CEA921167570007785DC /* FirstSignUpViewController.swift */; };
@@ -72,6 +73,7 @@
 		87221A1520F073F2000A00F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		87221A1D20F195B0000A00F7 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		872334212130C3FC00CA1BF6 /* GroupMemberCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupMemberCollectionViewCell.swift; sourceTree = "<group>"; };
+		8723342C213371F900CA1BF6 /* FirstScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstScreenViewController.swift; sourceTree = "<group>"; };
 		87706DAC20F960B200663948 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		87D2CEA921167570007785DC /* FirstSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstSignUpViewController.swift; sourceTree = "<group>"; };
 		87D2CEAB211675AD007785DC /* VerifyNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyNumberViewController.swift; sourceTree = "<group>"; };
@@ -244,6 +246,7 @@
 		87D2CEA821167524007785DC /* Sign Up */ = {
 			isa = PBXGroup;
 			children = (
+				8723342C213371F900CA1BF6 /* FirstScreenViewController.swift */,
 				87D2CEA921167570007785DC /* FirstSignUpViewController.swift */,
 				87D2CEAD211A4069007785DC /* SecondSignUpViewController.swift */,
 				87D2CEB4211A5D4C007785DC /* SignInViewController.swift */,
@@ -409,6 +412,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8723342D213371F900CA1BF6 /* FirstScreenViewController.swift in Sources */,
 				87D2CF2421235696007785DC /* UserSearchTableViewCell.swift in Sources */,
 				87D2CEB5211A5D4C007785DC /* SignInViewController.swift in Sources */,
 				87D2CEBC211BB0EE007785DC /* Group.swift in Sources */,

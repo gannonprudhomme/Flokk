@@ -40,7 +40,7 @@ class User {
     
     // Called whenever a post has been added to a group
     // Move the updated group to the front of the array
-    // Also returns the index so the 
+    // Also returns the index so ... the GroupsVC knows which index to reference?
     func groupUpdated(group: Group) -> Int {
         var index = -1
         

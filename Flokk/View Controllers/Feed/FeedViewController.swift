@@ -28,6 +28,8 @@ class FeedViewController: UIViewController {
     
     var leaveGroupDelegate: LeaveGroupDelegate! // Used by GroupSettingsVC
     
+    var postChangesHandle: UInt!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -47,26 +49,23 @@ class FeedViewController: UIViewController {
                 
                 // After we're done loading the data, load the initial videos
                 self.loadPostVideos(startIndex: 0, count: self.currentPostCount)
+                
+                // Add listener for new posts
+                self.addListeners()
             } else { // If the posts are already loaded
                 // Set the post count, depending on how many there are
                 // TODO: Iterate through all of the posts, and add all of the videos
                 
                 self.currentPostCount = self.group.posts.count
-                //self.tableView.reloadData()
                 
-                /*
-                if self.group.posts.count < initialPostsCount {
-                    self.currentPostCount = self.group.posts.count
-                } else {
-                    self.currentPostCount = initialPostsCount
-                } */
-                
+                // Add listener for new posts
+                self.addListeners()
                 //self.tableView.reloadData()
             }
         })
         
         // Handle this somewhere else
-        //loadExtraGroupData()
+        loadExtraGroupData()
         
         // TODO: Add listener for new posts
         
@@ -86,6 +85,7 @@ class FeedViewController: UIViewController {
         super.viewDidDisappear(animated)
         
         // Stop the new posts listener
+        removeListeners()
         
         // Stop the videos from being played
         
@@ -140,7 +140,8 @@ extension FeedViewController: UploadPostDelegate {
         // If there posts isn't empty, then they have already been loaded
         if group.posts.count == 0 {
             // Check if the data has been stored locally by attempting to load the data
-            if let value = FileUtils.loadJSON(file: "groups/\(group.uid).json") {
+            if group.posts.count != 0/*let value = FileUtils.loadJSON(file: "groups/\(group.uid).json")*/ {
+                /*
                 // Load in the post data from the json dictionary
                 let members = value["members"] as! [String : String]
                 let creatorUID = value["creator"] as! String
@@ -179,7 +180,7 @@ extension FeedViewController: UploadPostDelegate {
                     
                     // Done loading posts data, call completion with true, meaning posts have actually been loaded
                     completion(true)
-                }
+                } */
             } else {
                 database.child("groups").child(group.uid).child("posts").observeSingleEvent(of: .value, with: { (snapshot) in
                     if let value = snapshot.value as? [String : [String : Any]] {
@@ -208,6 +209,8 @@ extension FeedViewController: UploadPostDelegate {
                         
                         // Done loading posts data, call completion with true, meaning posts have actually been loaded
                         completion(true)
+                    } else {
+                        completion(false)
                     }
                 })
             }
@@ -215,6 +218,8 @@ extension FeedViewController: UploadPostDelegate {
             // No posts needed to be loaded(as group.posts is not empty), so call completion as false
             completion(false)
         }
+        
+        completion(false)
     }
     
     // Process the JSON/database dictionary into post objects
@@ -224,7 +229,7 @@ extension FeedViewController: UploadPostDelegate {
     
     func loadPostVideos(startIndex: Int, count: Int) {
         // Create the directory for the posts to be stored
-        var documentDirectory = FileUtils.getDocumentsDirectory()
+        let documentDirectory = FileUtils.getDocumentsDirectory()
         let outputPath = "groups/\(group.uid)/posts"
         let outputURL = documentDirectory.appendingPathComponent(outputPath)
         
@@ -309,13 +314,13 @@ extension FeedViewController: UploadPostDelegate {
         
         // Upload the post data to the database
         let postRef = database.child("groups").child(group.uid).child("posts").child(postID)
-        postRef.child("poster").setValue(mainUser.uid)
-        postRef.child("timestamp").setValue(timestamp)
+        //postRef.child("timestamp").setValue(timestamp)
+        //postRef.child("poster").setValue(mainUser.uid)
         
         // Set the post dimensions in the database
         let dim = VideoUtils.resolutionForLocalVideo(url: fileURL)
-        postRef.child("width").setValue(Int((dim?.width)!))
-        postRef.child("height").setValue(Int((dim?.height)!))
+        //postRef.child("width").setValue(Int((dim?.width)!))
+        //postRef.child("height").setValue(Int((dim?.height)!))
         
         // Upload the video to Firebase Storage
         storage.child("groups").child(group.uid).child("posts").child(postID).putFile(from: fileURL)
@@ -325,6 +330,8 @@ extension FeedViewController: UploadPostDelegate {
         post.filePath = fileURL.lastPathComponent
         
         post.setDimensions(width: Int((dim?.width)!), height: Int((dim?.height)!))
+        
+        postRef.setValue(post.convertToDict())
         
         // Add the post to the posts array in the current Group
         group.addPost(post: post)
@@ -355,16 +362,70 @@ extension FeedViewController: UploadPostDelegate {
                 
                 // Iterate over the members dictionary and add them to the Group's member array
                 // Used in Group Settings to show who is in the group
-                for uid in members.keys {
-                    let handle = members[uid]
-                    
-                    self.group.members.append(User(uid: uid, handle: handle!))
+                if self.group.members.count == 0 { // Would add members each time we went into the Feed
+                    for uid in members.keys {
+                        let handle = members[uid]
+                        
+                        self.group.members.append(User(uid: uid, handle: handle!))
+                    }
                 }
                 
                 // Will save all of the data to the disk, every time
-                FileUtils.saveToJSON(dict: value, toPath: "groups/\(self.group.uid).json")
+                //FileUtils.saveToJSON(dict: value, toPath: "groups/\(self.group.uid).json")
             }
         })
+    }
+
+    // Initilaizes observer for listening to new posts
+    func addListeners() {
+        postChangesHandle = database.child("groups").child(group.uid).child("posts").observe(.value, with: { (snapshot) in
+            if let value = snapshot.value as? [String : Any] {
+                print(value)
+                for newPostID in value.keys {
+                    var isNewPost = true
+                    
+                    // Check if the newPostID is listed in group.posts
+                    for oldPost in self.group.posts {
+                        if newPostID == oldPost.uid { // If the newPostID matches an existing post ID
+                            isNewPost = false // Then this isn't a new post, skip it
+                        }
+                    }
+                    
+                    // If this is a new post
+                    if isNewPost {
+                        print(value[newPostID])
+                        if let data = value[newPostID] as? [String : Any] {
+                            
+                            let timestamp = data["timestamp"] as! Double
+                            //let poster = value[postID]!["poster"] as! String // UID of the poster, unused for now
+                            let width = data["width"] as! Int
+                            let height = data["height"] as! Int
+                            
+                            let post = Post(uid: newPostID, timestamp: timestamp)
+                            post.setDimensions(width: width, height: height)
+                            
+                            // Add it to the tableView and posts array
+                            self.group.addPost(post: post)
+                            
+                            self.currentPostCount += 1
+                            
+                            DispatchQueue.main.async {
+                                self.tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .automatic)
+                            }
+                            
+                            // Begin loading the video for the new post
+                            self.loadPostVideos(startIndex: 0, count: 1)
+                        }
+                    }
+                }
+            }
+        })
+    }
+
+    func removeListeners() {
+        if let _ = postChangesHandle {
+            database.removeObserver(withHandle: self.postChangesHandle)
+        }
     }
 }
 

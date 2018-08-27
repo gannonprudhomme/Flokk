@@ -9,10 +9,11 @@
 import UIKit
 import Firebase
 import FirebaseAuth
+import FirebaseDatabase
 
 // Used in CreateGroupViewController
 protocol AddGroupDelegate {
-    func addNewGroup(groupName: String, icon: UIImage)
+    func createNewGroup(groupName: String, icon: UIImage)
 }
 
 // Used in GroupSettingsViewController
@@ -22,6 +23,9 @@ protocol LeaveGroupDelegate {
 
 class GroupsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
+    
+    // Observer handle for listening to group changes
+    var groupChangesHandle: UInt!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,11 +40,12 @@ class GroupsViewController: UIViewController {
             // User is signed into Firebase, but the Flokk user isn't initialized yet
             // Load initial user data
             loadUserData(completion:{ () in
-                // Do something
                 DispatchQueue.main.async {
-                    self.loadGroups()
+                    //self.loadGroups()
                     self.tableView.reloadData() // I don't like using this
                 }
+                
+                self.addListeners()
             })
             
         } else {
@@ -51,6 +56,7 @@ class GroupsViewController: UIViewController {
         }
         
         // TODO: Listen for group changes in users/mainUser.uid/groups
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -168,7 +174,6 @@ extension GroupsViewController {
                 
                 let group = Group(uid: groupID, name: groupName!)
                 
-                // Initialize the group and add it to the user's groups array
                 mainUser.groups.append(group)
                 
                 // Attempt to download the group icon
@@ -184,7 +189,7 @@ extension GroupsViewController {
                             // Have to do this because simply counting
                             var index = -1
                             for i in 0..<mainUser.groups.count {
-                                if mainUser.groups[i].uid == groupID {
+                                if mainUser.groups[i].uid == group.uid {
                                     index = i
                                 }
                             }
@@ -198,7 +203,67 @@ extension GroupsViewController {
         }
     }
     
-    // Called when a new post is added, should be a delegate
+    // Adds observers listening for changes in the database
+    func addListeners() {
+        
+        // Begin listening for changes to the mainUser's groups. Called if another user removes/adds the mainUser to a group
+        groupChangesHandle = database.child("users").child(mainUser.uid).child("groups").observe(.value, with: { (snapshot) in
+            if let value = snapshot.value as? [String : Any] {
+                // Iterate through all of the groups, checking for which one is new
+                for newGroupID in value.keys {
+                    let groupName = value[newGroupID] as! String
+                    var isNewGroup = true
+                    
+                    // Check if the groupID is listed in mainUser.groups
+                    for group in mainUser.groups {
+                        if newGroupID == group.uid { // If this new groupID matches an existing groupID
+                            isNewGroup = false // Then this isn't a new group, skip
+                        }
+                    }
+                    
+                    // If this is a new group
+                    if isNewGroup {
+                        // Initialize it
+                        self.joinedNewGroup(group: Group(uid: newGroupID, name: groupName))
+                    }
+                }
+            }
+        })
+    }
+    
+    // Called when a remote user adds this user to their group
+    func joinedNewGroup(group: Group) {
+        // add it to the user's groups array
+        mainUser.groups.insert(group, at: 0)
+        
+        // Insert the new group into the tableView
+        tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .automatic)
+        
+        // Attempt to download the group icon
+        group.requestGroupIcon(completion: { (icon) in
+            if let icon = icon {
+                // Once it's loaded, set it in the group
+                group.setIcon(icon: icon)
+                
+                // And updated the according row
+                DispatchQueue.main.async {
+                    // This is so fucking stupid
+                    // Have to do this because simply counting
+                    var index = -1
+                    for i in 0..<mainUser.groups.count {
+                        if mainUser.groups[i].uid == group.uid {
+                            index = i
+                        }
+                    }
+                    
+                    // Reload the row
+                    self.tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .none)
+                }
+            }
+        })
+    }
+    
+    // Called when a new post is added, should be a delegate?
     func groupUpdated(group: Group) {
         // Update the mainUsers' groups array, and get the index(row) this group is located at
         let row = mainUser.groupUpdated(group: group)
@@ -209,17 +274,12 @@ extension GroupsViewController {
         
         // TODO: Update the timestamp
     }
-    
-    // Called when a remote user adds this user to their group
-    func addNewGroup(group: Group) {
-        // Insert and initialize the new group
-    }
 }
 
 // MARK: - Delegate functions for adding and leaving groups
 extension GroupsViewController: AddGroupDelegate, LeaveGroupDelegate {
     // GroupsViewControllerDelegate function, called from CreateGroupVC
-    func addNewGroup(groupName: String, icon: UIImage) {
+    func createNewGroup(groupName: String, icon: UIImage) {
         let groupID = database.ref.child("groups").childByAutoId().key
         
         // Add the data to the user tree
@@ -248,6 +308,7 @@ extension GroupsViewController: AddGroupDelegate, LeaveGroupDelegate {
         tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .none)
     }
     
+    // LeaveGroupDelegate. Called from GroupSettingsVC
     func leaveGroup(group: Group) {
         // If there is only one member, delete the group completely
         if group.members.count == 1 {
@@ -276,6 +337,9 @@ extension GroupsViewController: AddGroupDelegate, LeaveGroupDelegate {
         
         // Remove the group from the user's list of groups in the database
         database.child("users").child(mainUser.uid).child("groups").child(group.uid).removeValue()
+        
+        // Remove the user from the group's members list
+        database.child("groups").child(group.uid).child("members").child(mainUser.uid).removeValue()
         
         // Find the row/index of the group to be removed
         var index = -1
