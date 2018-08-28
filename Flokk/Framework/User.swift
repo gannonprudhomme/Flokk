@@ -65,8 +65,20 @@ class User {
         return index
     }
     
+    // Convert the user data into a dictionary, used to save the data locally
     func convertToDict() -> [String : Any] {
-        var dict = [String : Any]()
+        var data = [String : Any]()
+        
+        data["handle"] = mainUser.handle
+        data["name"] = mainUser.fullName
+        
+        // Get the groups data
+        var groupData = [String : Any]()
+        for group in mainUser.groups {
+            groupData = group.convertToDict()
+        }
+        
+        data["groups"] = groupData
         
         return dict
     }
