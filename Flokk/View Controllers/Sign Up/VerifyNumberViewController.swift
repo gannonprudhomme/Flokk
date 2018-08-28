@@ -32,7 +32,7 @@ class VerifyNumberViewController: UINavigationController {
         // Authenticate the phone number by verifying the code
         
         authenticateUser(verificationCode: codeField.text!, completion: { (completed) in
-            if let parentVC = self.parent as? FirstSignUpViewController {
+            if let _ = self.parent as? FirstSignUpViewController {
                 // Segue to the second sign up
                 
                 
@@ -54,7 +54,7 @@ class VerifyNumberViewController: UINavigationController {
             }
             
             // User is signed in
-            print("User signed in successfully, auth result: \(authResult)")
+            print("User signed in successfully, auth result: \(authResult!)")
             completion(true)
         })
     }

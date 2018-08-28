@@ -48,6 +48,7 @@
 		87D2CF26212356C6007785DC /* UserSearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D2CF25212356C6007785DC /* UserSearchCollectionViewCell.swift */; };
 		87D2CF282124D30A007785DC /* NewFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D2CF272124D30A007785DC /* NewFeedTableViewCell.swift */; };
 		87D2CF2C2127A33D007785DC /* FileUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D2CF2B2127A33D007785DC /* FileUtils.swift */; };
+		87E363472135297600C7DF85 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E363462135297600C7DF85 /* Networking.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,6 +97,7 @@
 		87D2CF25212356C6007785DC /* UserSearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSearchCollectionViewCell.swift; sourceTree = "<group>"; };
 		87D2CF272124D30A007785DC /* NewFeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFeedTableViewCell.swift; sourceTree = "<group>"; };
 		87D2CF2B2127A33D007785DC /* FileUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileUtils.swift; sourceTree = "<group>"; };
+		87E363462135297600C7DF85 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +163,7 @@
 				8711A838210D47CD00CCFD38 /* Post.swift */,
 				87D2CEB2211A4ED6007785DC /* User.swift */,
 				87D2CEBB211BB0EE007785DC /* Group.swift */,
+				87E363462135297600C7DF85 /* Networking.swift */,
 			);
 			path = Framework;
 			sourceTree = "<group>";
@@ -439,6 +442,7 @@
 				7FE56E1C212F254C00A8CEE8 /* OpenViewController.swift in Sources */,
 				87D2CEAC211675AD007785DC /* VerifyNumberViewController.swift in Sources */,
 				8711A83B210D539D00CCFD38 /* FeedTableViewCell.swift in Sources */,
+				87E363472135297600C7DF85 /* Networking.swift in Sources */,
 				8711A836210D478C00CCFD38 /* FeedViewController.swift in Sources */,
 				8711A839210D47CD00CCFD38 /* Post.swift in Sources */,
 				8720D7CE20F476DB0069F56B /* VideoTrimmerViewController.swift in Sources */,

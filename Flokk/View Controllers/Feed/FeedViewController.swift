@@ -123,6 +123,8 @@ extension FeedViewController: UploadPostDelegate {
                 // Read from the local file
                 // Download and compare the database data
                     // If there are new posts/members, insert them
+                    // Query by the most recent timestamp to only get new posts
+                    // Add the new posts and download the video for them
         
                 // Save the new data locally
         
@@ -132,6 +134,7 @@ extension FeedViewController: UploadPostDelegate {
         
         // If the group data is loaded, we have already gone through this process
             // Do nothing
+            // What about checking for changes? There could've been a post update when we weren't in the group
     }
     
     // Initial post loading. Load all of the posts data, but not the video/preview-image files
@@ -242,15 +245,13 @@ extension FeedViewController: UploadPostDelegate {
         // Iterate through a range of posts
         for i in startIndex..<startIndex + count {
             let post = group.posts[i]
-            //print("Loading video at index \(i) with uid \(post.uid)")
             
             let finalURL = outputURL.appendingPathComponent("\(post.uid).mp4")
             let finalPath = outputPath + "/\(post.uid).mp4"
             
-            //print(finalURL)
-            
             // Check if the file exists before trying to load it
             if FileUtils.doesFileExist(atPath: finalPath) { // Never works/always false
+                print("Post loaded locally in \(group.name) with uid of \(post.uid)")
                 post.filePath = finalPath
                 
                 // Update the according tableViewCell
@@ -259,6 +260,7 @@ extension FeedViewController: UploadPostDelegate {
                 }
             
             } else { // File does not exist, load it from Firebase Storage
+                print("Downloading post from Storage in group \(group.name) for post ID \(post.uid)")
                 storage.child("groups").child(group.uid).child("posts").child(post.uid).write(toFile: finalURL, completion: { (url, error) in
                     if error == nil {
                         post.filePath = finalPath
