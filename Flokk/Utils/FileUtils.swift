@@ -59,15 +59,14 @@ class FileUtils {
     
     static func saveToJSON(dict: [String : Any], toPath path: String) {
         // Create the directory for the posts to be stored
-        //let fileManager = FileManager.default
-        //let documentDirectory = fileManager.urls(for: .documentDirectory, in: .userDomainMask)[0]
-        //let outputURL = documentDirectory.appendingPathComponent("users")
+        let fileManager = FileManager.default
         
+        var finalURL = getDocumentsDirectory().appendingPathComponent(path)
         do {
-            //try fileManager.createDirectory(at: outputURL, withIntermediateDirectories: true, attributes: nil)
+            try fileManager.createDirectory(at: finalURL.deletingLastPathComponent(), withIntermediateDirectories: true, attributes: nil)
             
             //var finalURL = outputURL.appendingPathComponent("mainUser").appendingPathExtension("json")
-            var finalURL = getDocumentsDirectory().appendingPathComponent(path)
+            //var finalURL = getDocumentsDirectory().appendingPathComponent(path)
             
             let json = JSON(dict)
             let str = json.description
@@ -76,6 +75,7 @@ class FileUtils {
             
             print("Successfully saved \(finalURL.lastPathComponent)")
         } catch let error {
+            print("Unsuccessfully saved \(finalURL.lastPathComponent)")
             print(error)
         }
         

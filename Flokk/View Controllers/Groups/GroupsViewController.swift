@@ -39,14 +39,15 @@ class GroupsViewController: UIViewController {
         } else if Auth.auth().currentUser != nil && mainUser == nil {
             // User is signed into Firebase, but the Flokk user isn't initialized yet
             // Load initial user data
-            loadUserData(completion:{ () in
+            load {
                 DispatchQueue.main.async {
                     //self.loadGroups()
                     self.tableView.reloadData() // I don't like using this
                 }
                 
+                // Attach the observer for listening for group additions
                 self.addListeners()
-            })
+            }
             
         } else {
             performSegue(withIdentifier: "groupsToSignUpSegue", sender: nil)
@@ -98,19 +99,97 @@ extension GroupsViewController {
         
     }
     
-    func load() {
+    // WIP new way of loading data, both locally
+    func load(completion: @escaping () -> Void) {
         let uid = Auth.auth().currentUser?.uid
         
         // Attempt to load from the local file first
-        if let value = FileUtils.loadJSON(file: "users/mainUser.json") {
+        if /*uid == ""*/ let value = FileUtils.loadJSON(file: "users/mainUser.json") {
+            print(value)
             processUserData(value)
             
             // Then download the new data anyways and compare with the loaded data
                 // Only need to compare what groups the user is in
+                // As in, if the user was invited to a group when they weren't in the app
+                // Need to match the groups that are together and perhaps remove them from the comparison(on both sides)
+                // In case this user is removed from a group, but also added to a new different one
+            database.child("users").child(mainUser.uid).child("groups").observeSingleEvent(of: .value, with: { (snapshot) in
+                if let value = snapshot.value as? [String : Any] {
+                    // Compare the groups with the existing groups
+                    
+                    var newGroupIDs = Array(value.keys) // Ends up being the groups to add
+                    var oldGroups = mainUser.groups // Ends up being the groups to remove
+                    
+                    // Iterate over both groups, and remove the matches from both arrays
+                    for var (i, newID) in newGroupIDs.enumerated().reversed() {
+                        //let newID = newGroupIDs[i]
+                        
+                        // Iterate over the old group
+                        for (j, group) in oldGroups.enumerated().reversed() {
+                            let oldID = group.uid
+                            
+                            // If the uid's match
+                            if newID == oldID {
+                                // Remove the value from both arrays
+                                newGroupIDs.remove(at: i)
+                                oldGroups.remove(at: j)
+                            }
+                        }
+                    }
+                    
+                    // After removing all the matches, add and remove the according groups
+                   
+                    // print("\(newGroupIDs.count) new groups to add!")
+                    
+                    // Add all the new groups, if there are any
+                    for groupID in newGroupIDs {
+                        // Now that we know what data we need to process, get the according data from the database
+                        
+                        database.child("groups").child(groupID).observeSingleEvent(of: .value, with: { (snapshot) in
+                            if let groupValue = snapshot.value as? [String : Any] {
+                                print("Inserting new group \(groupID)")
+                                let groupName = groupValue["name"] as! String
+                                let group = Group(uid: groupID, name: groupName)
+                                
+                                self.joinedNewGroup(group: group)
+                                
+                                // TODO: Place this in a better place
+                                //
+                                print(mainUser.convertToDict())
+                                FileUtils.saveToJSON(dict: mainUser.convertToDict(), toPath: "users/mainUser.json")
+                            }
+                        })
+                    }
+                    
+                    mainUser.uid = mainUser.uid
+                    // Save the (possibly) updated groups to the file system
+                    //FileUtils.saveToJSON(dict: mainUser.convertToDict(), toPath: "users/mainUser.json")
+                    completion()
+                    
+                    // How inefficient is this?
+                    // Will it ever be a problem with the table view if the cells aren't inserterd/refreshed into the tableView
+                    for group in oldGroups {
+                        // Remove the group from the user's groups
+                        print("Removing group \(group.uid)")
+                        
+                        let index = mainUser.groups.index(where: { $0.uid == group.uid})!
+                        mainUser.groups.remove(at: index)
+                        
+                        // Remove the group from the tableView
+                        DispatchQueue.main.async {
+                            self.tableView.deleteRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
+                        }
+                    }
+                }
+            })
             
-        // Load directly from the database into the user data
         } else {
-            
+            // Load directly from the database into the user data
+            // Save the data
+            // For now, using the old data loading function cause it gets the job done
+            loadUserData {
+                completion()
+            }
         }
     }
     
@@ -185,7 +264,6 @@ extension GroupsViewController {
                         // TODO: Review this operation
                         // And updated the according row
                         DispatchQueue.main.async {
-                            // This is so fucking stupid
                             // Have to do this because simply counting
                             var index = -1
                             for i in 0..<mainUser.groups.count {
@@ -200,6 +278,47 @@ extension GroupsViewController {
                     }
                 })
             }
+        }
+    }
+    
+    // TODO: Consider moving this function to a separate class
+    // Used in load() and processUserData()
+    
+    private func processGroupData(uid: String, value: [String : Any]) {
+        if let data = value[uid] as? [String : Any] {
+            let groupName = data["groupName"] as! String
+            let group = Group(uid: uid, name: groupName)
+            
+            // Add the new group to the global list
+            mainUser.groups.append(group)
+            
+            // Insert the group in the first row, without checking what timestamp it's at
+            DispatchQueue.main.async {
+                self.tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .automatic)
+            }
+            
+            // Attempt to download the group icon
+            group.requestGroupIcon(completion: { (icon) in
+                if let icon = icon {
+                    // Once it's loaded, set it in the group
+                    group.setIcon(icon: icon)
+                    
+                    // TODO: Review this operation
+                    // And updated the according row
+                    DispatchQueue.main.async {
+                        // Have to do this because simply counting
+                        var index = -1
+                        for i in 0..<mainUser.groups.count {
+                            if mainUser.groups[i].uid == group.uid {
+                                index = i
+                            }
+                        }
+                        
+                        // Reload the row
+                        self.tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .none)
+                    }
+                }
+            })
         }
     }
     
@@ -223,6 +342,7 @@ extension GroupsViewController {
                     
                     // If this is a new group
                     if isNewGroup {
+                        print("Joining new group \(newGroupID)")
                         // Initialize it
                         self.joinedNewGroup(group: Group(uid: newGroupID, name: groupName))
                     }

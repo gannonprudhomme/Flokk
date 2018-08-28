@@ -63,7 +63,7 @@ class SecondSignUpViewController: UIViewController {
                             // Create the main user, to be used throughout the app
                             mainUser = User(uid: uid, handle: self.handleField.text!)
                             
-                            print("registered user")
+                            // print("registered user")
                             
                             // Now go to the groups view, nothing to transfer to it
                             self.performSegue(withIdentifier: "signUpToGroupsSegue", sender: nil)

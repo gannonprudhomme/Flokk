@@ -75,11 +75,11 @@ class User {
         // Get the groups data
         var groupData = [String : Any]()
         for group in mainUser.groups {
-            groupData = group.convertToDict()
+            groupData[group.uid] = group.convertToDict()
         }
         
         data["groups"] = groupData
         
-        return dict
+        return data
     }
 }
