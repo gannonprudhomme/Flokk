@@ -201,6 +201,7 @@
 		872219FD20F073F2000A00F7 = {
 			isa = PBXGroup;
 			children = (
+				7FEFAF852133A35A00D9537E /* myVideo.mp4 */,
 				87221A0820F073F2000A00F7 /* Flokk */,
 				87221A0720F073F2000A00F7 /* Products */,
 				10533BB5E74E72772E132DDB /* Pods */,
@@ -258,7 +259,6 @@
 				87D2CEB4211A5D4C007785DC /* SignInViewController.swift */,
 				87D2CEAB211675AD007785DC /* VerifyNumberViewController.swift */,
 				7FE56E1B212F254C00A8CEE8 /* OpenViewController.swift */,
-				7FEFAF852133A35A00D9537E /* myVideo.mp4 */,
 			);
 			path = "Sign Up";
 			sourceTree = "<group>";
@@ -585,11 +585,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XT8KNR7TY2;
+				DEVELOPMENT_TEAM = L4K4Q74X62;
 				INFOPLIST_FILE = Flokk/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = flokk;
+				PRODUCT_BUNDLE_IDENTIFIER = com.flokk.flokk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -602,11 +602,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XT8KNR7TY2;
+				DEVELOPMENT_TEAM = L4K4Q74X62;
 				INFOPLIST_FILE = Flokk/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = flokk;
+				PRODUCT_BUNDLE_IDENTIFIER = com.flokk.flokk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

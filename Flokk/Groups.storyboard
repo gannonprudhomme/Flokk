@@ -153,7 +153,7 @@
                         <viewControllerLayoutGuide type="bottom" id="kcN-dV-btN"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="2kb-lf-zkL">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="coloredView" translatesAutoresizingMaskIntoConstraints="NO" id="4WT-vm-e4p">
@@ -163,7 +163,7 @@
                                 <color key="tintColor" name="Secondary Navy"/>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CLY-gc-ISL">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="551"/>
                                 <color key="backgroundColor" name="Flokk Navy"/>
                                 <color key="sectionIndexBackgroundColor" name="Flokk Navy"/>
                                 <prototypes>
@@ -480,7 +480,7 @@
                 <navigationController storyboardIdentifier="GroupsNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="gJz-i0-dBL" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" translucent="NO" backIndicatorImage="backBttnWhite" largeTitles="YES" backIndicatorTransitionMaskImage="backBttnWhite" id="xqz-wd-dZZ">
-                        <rect key="frame" x="0.0" y="20" width="375" height="93"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" name="White"/>
                         <color key="barTintColor" name="Flokk Navy"/>
@@ -730,9 +730,6 @@
         </namedColor>
         <namedColor name="Flokk Teal">
             <color red="0.2199999988079071" green="0.63099998235702515" blue="0.62400001287460327" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="Secondary Navy">
-            <color red="0.17599999904632568" green="0.18000000715255737" blue="0.25499999523162842" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Secondary Navy">
             <color red="0.17599999904632568" green="0.18000000715255737" blue="0.25499999523162842" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

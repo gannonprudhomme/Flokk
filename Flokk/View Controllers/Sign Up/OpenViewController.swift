@@ -19,8 +19,8 @@ class OpenViewController: UIViewController {
         
         /* or from URL */
         
-        let url = URL(string: "https://coolVids.com/coolVid.mp4")!
-        VideoBackground.shared.play(view: videoView, url: url)
+        //let url = URL(string: "https://coolVids.com/coolVid.mp4")!
+        //VideoBackground.shared.play(view: videoView, url: url)
         
         // Do any additional setup after loading the view.
     }
