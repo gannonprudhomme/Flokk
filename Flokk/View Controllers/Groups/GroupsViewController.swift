@@ -23,6 +23,7 @@ protocol LeaveGroupDelegate {
 
 class GroupsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var colorSelectionView: UIView!
     
     // Observer handle for listening to group changes
     var groupChangesHandle: UInt!
@@ -370,6 +371,7 @@ extension GroupsViewController : UITableViewDelegate, UITableViewDataSource {
         cell.group = mainUser.groups[indexPath.row]
         cell.tag = indexPath.row
         cell.initialize()
+        cell.selectedBackgroundView = colorSelectionView
         
         return cell
     }

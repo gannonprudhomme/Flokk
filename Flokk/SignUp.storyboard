@@ -61,6 +61,9 @@
                     <navigationItem key="navigationItem" id="43r-nA-UYv">
                         <barButtonItem key="backBarButtonItem" title=" " id="O2j-5c-RQE"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="videoView" destination="sS3-PR-Qm8" id="pLN-C8-SWp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BzT-7p-7iZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

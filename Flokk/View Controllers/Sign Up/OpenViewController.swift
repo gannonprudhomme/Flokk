@@ -7,11 +7,20 @@
 //
 
 import UIKit
+import SwiftVideoBackground
 
 class OpenViewController: UIViewController {
-
+    @IBOutlet var videoView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        try? VideoBackground.shared.play(view: videoView, videoName: "myVideo", videoType: "mp4")
+        
+        /* or from URL */
+        
+        let url = URL(string: "https://coolVids.com/coolVid.mp4")!
+        VideoBackground.shared.play(view: videoView, url: url)
         
         // Do any additional setup after loading the view.
     }
