@@ -26,20 +26,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gy9-Gu-U8z" customClass="BounceButton" customModule="Flokk">
-                                <rect key="frame" x="100" y="339" width="175" height="51"/>
-                                <state key="normal" image="signUpNavyBttn"/>
+                                <rect key="frame" x="100" y="324" width="175" height="51"/>
+                                <state key="normal" image="signUp - Bold"/>
                                 <connections>
                                     <segue destination="FAM-2j-n0g" kind="show" id="ZhA-Rl-3ue"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ci-Ce-uhQ" customClass="BounceButton" customModule="Flokk">
-                                <rect key="frame" x="127" y="450" width="121" height="36"/>
-                                <state key="normal" image="logInBttn"/>
+                                <rect key="frame" x="100" y="435" width="175" height="51"/>
+                                <state key="normal" image="logIn - Bold"/>
                                 <connections>
                                     <segue destination="Q30-Dc-eNJ" kind="show" id="tLA-iB-RSX"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Flokk of Geese" translatesAutoresizingMaskIntoConstraints="NO" id="Xzm-jT-ZWU">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Flokk of Geese - White" translatesAutoresizingMaskIntoConstraints="NO" id="Xzm-jT-ZWU">
                                 <rect key="frame" x="127" y="69" width="138" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="lB9-zy-T8s"/>
@@ -133,7 +133,7 @@
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IAF-MZ-oJH">
                                 <rect key="frame" x="122.5" y="280.5" width="130" height="42"/>
-                                <state key="normal" image="continueBttn"/>
+                                <state key="normal" image="continue - Bold"/>
                                 <connections>
                                     <action selector="continuePressed:" destination="FAM-2j-n0g" eventType="touchUpInside" id="Vlh-N2-dik"/>
                                 </connections>
@@ -215,7 +215,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aPk-oi-l6q">
                                 <rect key="frame" x="123" y="281" width="130" height="42"/>
-                                <state key="normal" image="registerBttn"/>
+                                <state key="normal" image="register - Bold"/>
                                 <connections>
                                     <action selector="registerPressed:" destination="TK3-m4-SFM" eventType="touchUpInside" id="rOH-Sr-nhI"/>
                                 </connections>
@@ -365,7 +365,7 @@
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EXT-lm-nFN">
                                 <rect key="frame" x="123" y="281" width="130" height="42"/>
-                                <state key="normal" image="logInLarge"/>
+                                <state key="normal" image="logInSmall - Bold"/>
                                 <connections>
                                     <action selector="signInPressed:" destination="Q30-Dc-eNJ" eventType="touchUpInside" id="G95-mx-q2d"/>
                                 </connections>
@@ -447,7 +447,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e1u-Np-5Fy">
                                 <rect key="frame" x="122.5" y="281" width="130" height="41"/>
-                                <state key="normal" image="sendBttn"/>
+                                <state key="normal" image="send - Bold"/>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hHq-YP-fxC">
                                 <rect key="frame" x="75" y="169" width="275" height="30"/>
@@ -516,13 +516,6 @@ into your account.</string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zct-zw-UTE">
-                                <rect key="frame" x="122.5" y="301" width="130" height="85"/>
-                                <state key="normal" image="continueBttn"/>
-                                <connections>
-                                    <action selector="continuePressed:" destination="guP-8x-eyw" eventType="touchUpInside" id="J7w-MF-yft"/>
-                                </connections>
-                            </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Verification Code" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ieh-gj-oT0">
                                 <rect key="frame" x="75" y="189" width="275" height="30"/>
                                 <constraints>
@@ -556,15 +549,22 @@ into your account.</string>
                                 <color key="textColor" name="White"/>
                                 <color key="highlightedColor" name="White"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zct-zw-UTE">
+                                <rect key="frame" x="122" y="336" width="130" height="51"/>
+                                <state key="normal" image="continue - Bold"/>
+                                <connections>
+                                    <action selector="continuePressed:" destination="guP-8x-eyw" eventType="touchUpInside" id="J7w-MF-yft"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" name="Flokk Navy"/>
                         <constraints>
                             <constraint firstItem="FJB-Bg-NUC" firstAttribute="centerX" secondItem="Zct-zw-UTE" secondAttribute="centerX" id="23g-JV-hQ8"/>
                             <constraint firstItem="FJB-Bg-NUC" firstAttribute="leading" secondItem="ZUp-5A-a1D" secondAttribute="leading" constant="89" id="6F5-be-I6H"/>
-                            <constraint firstItem="Zct-zw-UTE" firstAttribute="top" secondItem="SID-jV-HD1" secondAttribute="bottom" constant="83" id="A0w-FQ-2JO"/>
+                            <constraint firstItem="Zct-zw-UTE" firstAttribute="top" secondItem="SID-jV-HD1" secondAttribute="bottom" constant="118" id="A0w-FQ-2JO"/>
                             <constraint firstItem="ieh-gj-oT0" firstAttribute="leading" secondItem="5Vl-tR-YOJ" secondAttribute="trailing" constant="28" id="CZt-UA-clJ"/>
-                            <constraint firstItem="Zct-zw-UTE" firstAttribute="top" secondItem="ieh-gj-oT0" secondAttribute="bottom" constant="82" id="QDE-wP-LDN"/>
-                            <constraint firstItem="Zct-zw-UTE" firstAttribute="centerY" secondItem="ZUp-5A-a1D" secondAttribute="centerY" id="QV1-PU-Qgg"/>
+                            <constraint firstItem="Zct-zw-UTE" firstAttribute="top" secondItem="ieh-gj-oT0" secondAttribute="bottom" constant="117" id="QDE-wP-LDN"/>
+                            <constraint firstItem="Zct-zw-UTE" firstAttribute="centerY" secondItem="ZUp-5A-a1D" secondAttribute="centerY" constant="18" id="QV1-PU-Qgg"/>
                             <constraint firstItem="5Vl-tR-YOJ" firstAttribute="leading" secondItem="ZUp-5A-a1D" secondAttribute="leading" constant="29" id="YeB-Rs-7rI"/>
                             <constraint firstItem="FJB-Bg-NUC" firstAttribute="top" secondItem="ZUp-5A-a1D" secondAttribute="top" constant="88" id="bL4-Re-IbE"/>
                             <constraint firstItem="ieh-gj-oT0" firstAttribute="top" secondItem="ZUp-5A-a1D" secondAttribute="top" constant="169" id="bfW-bo-Zkm"/>
@@ -583,21 +583,21 @@ into your account.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RFZ-IV-Dvg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="100" y="797"/>
+            <point key="canvasLocation" x="104.8" y="806.44677661169419"/>
         </scene>
     </scenes>
     <resources>
-        <image name="Flokk of Geese" width="936" height="1139"/>
+        <image name="Flokk of Geese - White" width="2727" height="3325"/>
         <image name="addProfilePicBttn" width="100" height="100"/>
         <image name="backBttnWhite" width="18" height="15"/>
-        <image name="continueBttn" width="130" height="42"/>
+        <image name="continue - Bold" width="130" height="42"/>
         <image name="emailIcon" width="18" height="14"/>
-        <image name="logInBttn" width="121" height="36"/>
-        <image name="logInLarge" width="130" height="42"/>
+        <image name="logIn - Bold" width="175" height="51"/>
+        <image name="logInSmall - Bold" width="130" height="42"/>
         <image name="passwordIconTeal" width="14" height="18"/>
-        <image name="registerBttn" width="130" height="42"/>
-        <image name="sendBttn" width="130" height="42"/>
-        <image name="signUpNavyBttn" width="175" height="51"/>
+        <image name="register - Bold" width="130" height="42"/>
+        <image name="send - Bold" width="130" height="42"/>
+        <image name="signUp - Bold" width="175" height="51"/>
         <image name="userIconTeal" width="16" height="17"/>
         <namedColor name="Flokk Navy">
             <color red="0.082000002259999996" green="0.086000002919999999" blue="0.16899999979999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
