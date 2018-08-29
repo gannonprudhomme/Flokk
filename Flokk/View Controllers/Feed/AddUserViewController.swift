@@ -11,6 +11,7 @@ import UIKit
 class AddUserViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet var colorSelectionView: UIView!
     
     let searchController = UISearchController(searchResultsController: nil)
     
@@ -90,6 +91,7 @@ extension AddUserViewController :  UITableViewDataSource, UITableViewDelegate {
         
         cell.user = userResults[indexPath.row]
         cell.initialize()
+        cell.selectedBackgroundView = colorSelectionView
         
         cell.tag = indexPath.row
         
