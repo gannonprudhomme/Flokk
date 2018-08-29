@@ -26,6 +26,11 @@ class Group {
     
     var newestPostTime: Double!
     
+    // Assigned when we segue into a group's Feed in Groups.prepareForSegue
+    // Unassigned in Feed.viewDidDisappear
+    // Instance variable of the group so GroupsVC.loadGroupData has access to the Feed's tableView
+    var feedDelegate: NewPostDelegate!
+    
     init(uid: String, name: String) {
         self.uid = uid
         self.name = name

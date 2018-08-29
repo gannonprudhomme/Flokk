@@ -83,6 +83,7 @@ class GroupsViewController: UIViewController {
                 // Get the according group from the selected cell
                 if let tag = (sender as? GroupsTableViewCell)?.tag {
                     vc.group = mainUser.groups[tag]
+                    vc.group.feedDelegate = vc
                 }
                 
                 vc.leaveGroupDelegate = self
@@ -105,7 +106,7 @@ extension GroupsViewController {
         let uid = Auth.auth().currentUser?.uid
         
         // Attempt to load from the local file first
-        if /*uid == ""*/ let value = FileUtils.loadJSON(file: "users/mainUser.json") {
+        if let value = FileUtils.loadJSON(file: "users/mainUser.json") {
             print(value)
             processUserData(value)
             
@@ -140,8 +141,6 @@ extension GroupsViewController {
                     
                     // After removing all the matches, add and remove the according groups
                    
-                    // print("\(newGroupIDs.count) new groups to add!")
-                    
                     // Add all the new groups, if there are any
                     for groupID in newGroupIDs {
                         // Now that we know what data we need to process, get the according data from the database
@@ -155,8 +154,7 @@ extension GroupsViewController {
                                 self.joinedNewGroup(group: group)
                                 
                                 // TODO: Place this in a better place
-                                //
-                                print(mainUser.convertToDict())
+                                // print(mainUser.convertToDict())
                                 FileUtils.saveToJSON(dict: mainUser.convertToDict(), toPath: "users/mainUser.json")
                             }
                         })

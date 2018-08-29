@@ -201,7 +201,6 @@
 		872219FD20F073F2000A00F7 = {
 			isa = PBXGroup;
 			children = (
-				7FEFAF852133A35A00D9537E /* myVideo.mp4 */,
 				87221A0820F073F2000A00F7 /* Flokk */,
 				87221A0720F073F2000A00F7 /* Products */,
 				10533BB5E74E72772E132DDB /* Pods */,
@@ -225,6 +224,7 @@
 				87D2CEAF211A4D41007785DC /* Utils */,
 				7F8012BA2102CBF200CEA5DA /* Camera.storyboard */,
 				7F912B972110DB8E00ADABEE /* Groups.storyboard */,
+				7FEFAF852133A35A00D9537E /* myVideo.mp4 */,
 				7F912B9B211114E000ADABEE /* SignUp.storyboard */,
 				87221A1020F073F2000A00F7 /* Assets.xcassets */,
 				87221A0920F073F2000A00F7 /* AppDelegate.swift */,

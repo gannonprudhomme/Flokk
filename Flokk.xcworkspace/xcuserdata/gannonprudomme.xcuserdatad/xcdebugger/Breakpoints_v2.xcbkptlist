@@ -330,54 +330,6 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Flokk/View Controllers/Groups/GroupsViewController.swift"
-            timestampString = "557165503.109068"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "116"
-            endingLineNumber = "116"
-            landmarkName = "load(completion:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Flokk.GroupsViewController.load(completion: () -&gt; ()) -&gt; ()"
-                  moduleName = "Flokk"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/gannonprudomme/Documents/workspace/Flokk/Flokk/View%20Controllers/Groups/GroupsViewController.swift"
-                  timestampString = "557136839.871878"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "116"
-                  endingLineNumber = "116"
-                  offsetFromSymbolStart = "560">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (__ObjC.DataSnapshot) -&gt; () in Flokk.GroupsViewController.load(completion: () -&gt; ()) -&gt; ()"
-                  moduleName = "Flokk"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/gannonprudomme/Documents/workspace/Flokk/Flokk/View%20Controllers/Groups/GroupsViewController.swift"
-                  timestampString = "557136839.874007"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "117"
-                  endingLineNumber = "117"
-                  offsetFromSymbolStart = "48">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Flokk/View Controllers/Groups/GroupsViewController.swift"
             timestampString = "557165503.109354"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
@@ -400,22 +352,6 @@
             startingLineNumber = "249"
             endingLineNumber = "249"
             landmarkName = "processUserData(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Flokk/View Controllers/Groups/GroupsViewController.swift"
-            timestampString = "557165503.109872"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "124"
-            endingLineNumber = "124"
-            landmarkName = "load(completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

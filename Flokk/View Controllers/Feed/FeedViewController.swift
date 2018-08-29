@@ -15,6 +15,10 @@ protocol UploadPostDelegate {
     func uploadPost(fileURL: URL)
 }
 
+protocol NewPostDelegate {
+    func newPost(post: Post)
+}
+
 class FeedViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
@@ -84,6 +88,8 @@ class FeedViewController: UIViewController {
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         
+        group.feedDelegate = nil
+        
         // Stop the new posts listener
         removeListeners()
         
@@ -116,7 +122,7 @@ class FeedViewController: UIViewController {
 }
 
 // MARK: - Post Handling
-extension FeedViewController: UploadPostDelegate {
+extension FeedViewController: UploadPostDelegate, NewPostDelegate {
     func load() {
         // First check if the group data is not loaded
             // If there is a local file
@@ -143,8 +149,7 @@ extension FeedViewController: UploadPostDelegate {
         // If there posts isn't empty, then they have already been loaded
         if group.posts.count == 0 {
             // Check if the data has been stored locally by attempting to load the data
-            if group.posts.count != 0/*let value = FileUtils.loadJSON(file: "groups/\(group.uid).json")*/ {
-                /*
+            if let value = FileUtils.loadJSON(file: "groups/\(group.uid).json") {
                 // Load in the post data from the json dictionary
                 let members = value["members"] as! [String : String]
                 let creatorUID = value["creator"] as! String
@@ -183,7 +188,7 @@ extension FeedViewController: UploadPostDelegate {
                     
                     // Done loading posts data, call completion with true, meaning posts have actually been loaded
                     completion(true)
-                } */
+                }
             } else {
                 database.child("groups").child(group.uid).child("posts").observeSingleEvent(of: .value, with: { (snapshot) in
                     if let value = snapshot.value as? [String : [String : Any]] {
@@ -345,6 +350,14 @@ extension FeedViewController: UploadPostDelegate {
         
         // Resave the group json
         FileUtils.saveToJSON(dict: group.convertToDict(), toPath: "groups/\(group.uid).json")
+    }
+    
+    // NewPostDelegate function
+    func newPost(post: Post) {
+        // Handle a post addition
+        // Assuming it's already inserted into mainUser.groups.posts, simply insert the tableViewCell?
+        
+        
     }
     
     func sortPosts() {
