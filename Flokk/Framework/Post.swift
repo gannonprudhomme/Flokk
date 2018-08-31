@@ -74,4 +74,12 @@ class Post {
         
         return data
     }
+    
+    public var description: String {
+        var desc = ""
+        
+        desc += "\(uid) \(DateUtils.getDate(timestamp: timestamp)) \n"
+        
+        return desc
+    }
 }

@@ -115,4 +115,23 @@ class Group {
         // Fill the dictionary with the post data
         return data
     }
+    
+    public var description: String {
+        var desc = ""
+        
+        desc += uid + "\n"
+        desc += name + "\n"
+        desc += "Posts: \n"
+        
+        for post in posts {
+            desc += "\t \(post) \n"
+        }
+        
+        desc += "Members: \n"
+        for member in members {
+            desc += "\t \(member.handle!) \n"
+        }
+        
+        return desc
+    }
 }
