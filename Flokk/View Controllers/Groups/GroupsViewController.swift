@@ -42,8 +42,7 @@ class GroupsViewController: UIViewController {
             // Load initial user data
             load {
                 DispatchQueue.main.async {
-                    //self.loadGroups()
-                    self.tableView.reloadData() // I don't like using this
+                    //self.tableView.reloadData() // I don't like using this
                 }
                 
                 // Attach the observer for listening for group additions
@@ -56,9 +55,6 @@ class GroupsViewController: UIViewController {
             //let vc = UIStoryboard(name: "SignUp", bundle: nil).instantiateViewController(withIdentifier: "SignUpNavigationController")
             //present(vc, animated: false, completion: nil)
         }
-        
-        // TODO: Listen for group changes in users/mainUser.uid/groups
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -94,14 +90,7 @@ class GroupsViewController: UIViewController {
 
 // MARK: - Framework functions
 extension GroupsViewController {
-    // Load the groups into the main user
-    func loadGroups() {
-        // what would even be loaded here?
-        // Maybe request the group Icons
-        
-    }
-    
-    // WIP new way of loading data, both locally
+    // WIP: New way of loading data, both locally and from the database
     func load(completion: @escaping () -> Void) {
         let uid = Auth.auth().currentUser?.uid
         
@@ -150,19 +139,19 @@ extension GroupsViewController {
                                 let group = Group(uid: groupID, name: groupName)
                                 
                                 self.joinedNewGroup(group: group)
+                                
+                                // Load all of the data for this group
+                                // Either locally or download it from the database
                                 self.loadGroupData(index: 0)
                                 
                                 // TODO: Place this in a better place
-                                // print(mainUser.convertToDict())
                                 FileUtils.saveToJSON(dict: mainUser.convertToDict(), toPath: "users/mainUser.json")
                             }
                         })
                     }
                     
-                    mainUser.uid = mainUser.uid
                     // Save the (possibly) updated groups to the file system
                     //FileUtils.saveToJSON(dict: mainUser.convertToDict(), toPath: "users/mainUser.json")
-                    completion()
                     
                     // How inefficient is this?
                     // Will it ever be a problem with the table view if the cells aren't inserterd/refreshed into the tableView
@@ -170,16 +159,23 @@ extension GroupsViewController {
                         // Remove the group from the user's groups
                         print("Removing group \(group.uid)")
                         
+                        print(mainUser.groups)
                         let index = mainUser.groups.index(where: { $0.uid == group.uid})!
                         mainUser.groups.remove(at: index)
                         
                         // TODO: Delete all of the local files for this group
                         
+                        // The completion handler already deals with reloading this?
                         // Remove the group from the tableView
                         DispatchQueue.main.async {
                             self.tableView.deleteRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
                         }
+                        
+                        // Save the updated user data
+                        FileUtils.saveToJSON(dict: mainUser.convertToDict(), toPath: "users/mainUser.json")
                     }
+                    
+                    completion()
                 }
             })
             
@@ -269,6 +265,21 @@ extension GroupsViewController {
                 })
             }
         }
+    }
+    
+    func sortGroups() {
+        mainUser.groups.sort(by: { (group1, group2) in
+            if let time1 = group1.newestPostTime {
+                if let time2 = group2.newestPostTime {
+                    return time1 < time2
+                    
+                } else {
+                    return true
+                }
+            } else {
+                return false
+            }
+        })
     }
     
     // TODO: Consider moving this function to a separate class

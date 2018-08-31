@@ -15,6 +15,8 @@ import Foundation
 // - adding observers for new groups/posts and all of the functions incorborated with them
 extension GroupsViewController {
     // Load the data for the group
+    // Downside to doing this here is we have to mutate the group with mainUser.groups[index]
+    // I need to have a reference to the group, while still being able to change it after we leave the function(aka in database retrievals)
     func loadGroupData(index: Int) {
         var group = mainUser.groups[index]
         
@@ -35,23 +37,28 @@ extension GroupsViewController {
                     // Iterate through all of the post IDs
                     // These should be completely new posts
                     for postID in groupValue.keys {
-                        let data = groupValue[postID] as! [String : Any]
-                        
-                        let timestamp = data["timestamp"] as! Double
-                        //let poster = value[postID]!["poster"] as! String // UID of the poster, unused for now
-                        let width = data["width"] as! Int
-                        let height = data["height"] as! Int
-                        
-                        let post = Post(uid: postID, timestamp: timestamp)
-                        post.setDimensions(width: width, height: height)
-                        
-                        // Simplt add it to the posts array
-                        // We don't call group.addPost(...) b/c that is for new posts, not existing oness
-                        group.posts.append(post)
-                        
-                        print("Attempting to add new post to feed Delegate in \(group.name)")
-                        if let _ = group.feedDelegate {
-                            group.feedDelegate.newPost(post: post)
+                        if group.posts.contains(where: {$0.uid == postID}) { // Double check that we don't have this post loaded already
+                            let data = groupValue[postID] as! [String : Any]
+                            
+                            let timestamp = data["timestamp"] as! Double
+                            //let poster = value[postID]!["poster"] as! String // UID of the poster, unused for now
+                            let width = data["width"] as! Int
+                            let height = data["height"] as! Int
+                            
+                            let post = Post(uid: postID, timestamp: timestamp)
+                            post.setDimensions(width: width, height: height)
+                            
+                            // Simplt add it to the posts array
+                            // We don't call group.addPost(...) b/c that is for new posts, not existing oness
+                            mainUser.groups[index].posts.append(post)
+                            //group.posts.append(post)
+                            
+                            print("Attempting to add new post to feed Delegate in \(group.name)")
+                            if let _ = group.feedDelegate {
+                                group.feedDelegate.newPost(post: post)
+                            }
+                        } else {
+                            print("Attempted to load post \(postID) in group \(group.name)")
                         }
                     }
                 }
@@ -87,9 +94,11 @@ extension GroupsViewController {
                     
                     // TODO: Remove the members that aren't in the group anymore
                     for user in oldMembers {
+                        
                     }
                     
                     // Save the file?
+                    FileUtils.saveToJSON(dict: group.convertToDict(), toPath: "groups/\(group.uid).json")
                 }
             })
             
@@ -103,16 +112,12 @@ extension GroupsViewController {
                 if let value = snapshot.value as? [String : Any] {
                     self.processGroupData(group: &mainUser.groups[index], value: value)
                     
+                    //self.sortGroups()
+                    
                     FileUtils.saveToJSON(dict: value, toPath: "groups/\(group.uid).json")
                 }
             })
         }
-        
-        
-    // If the group data is loaded, we have already gone through this process
-        // Do nothing
-        // What about checking for changes? There could've been a post update when we weren't in the group
-        // ^^ well that's what listeners are for
     }
     
     private func processGroupData(group: inout Group, value: [String : Any]) {
@@ -131,6 +136,8 @@ extension GroupsViewController {
         
         // Load the posts
         if let posts = value["posts"] as? [String : [String : Any]] {
+            //print("GROUP \(group.name)")
+            //print(posts)
             for postID in posts.keys {
                 let timestamp = posts[postID]!["timestamp"] as! Double
                 //let poster = value[postID]!["poster"] as! String // UID of the poster, unused for now

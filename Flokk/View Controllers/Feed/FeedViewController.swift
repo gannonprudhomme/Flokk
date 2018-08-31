@@ -86,8 +86,6 @@ class FeedViewController: UIViewController {
         
         //tableView.reloadData()
         
-        // Check for posts that the user just uploaded
-        
         // Check if there were any
     }
     
@@ -144,13 +142,14 @@ extension FeedViewController: UploadPostDelegate, NewPostDelegate {
         // Iterate through a range of posts
         for i in startIndex..<startIndex + count {
             let post = group.posts[i]
+            print(post)
             
             let finalURL = outputURL.appendingPathComponent("\(post.uid).mp4")
             let finalPath = outputPath + "/\(post.uid).mp4"
             
             // Check if the file exists before trying to load it
             if FileUtils.doesFileExist(atPath: finalPath) { // Never works/always false
-                print("Post loaded locally in \(group.name) with uid of \(post.uid)")
+                //print("Post loaded locally in \(group.name) with uid of \(post.uid)")
                 post.filePath = finalPath
                 
                 // Update the according tableViewCell
@@ -176,33 +175,6 @@ extension FeedViewController: UploadPostDelegate, NewPostDelegate {
                 })
             }
         }
-    }
-    
-    // When we scroll down past a certain point, load more posts
-    // Completion handler?
-    func loadMorePosts() {
-        var postDiff = group.posts.count - currentPostCount
-        
-        /*
-        if postDiff > loadCount {
-            postDiff = loadCount
-        } */
-        
-        var indexPaths = [IndexPath]()
-        // currentPostCount is a size(aka size of 1 = index of 0), so i starts at 0
-        for i in 0..<postDiff {
-            print("adding index \(currentPostCount + i) with UID of \(group.posts[currentPostCount + i].uid)")
-            indexPaths.append(IndexPath(row: currentPostCount + i, section: 0))
-        }
-        
-        currentPostCount += postDiff
-        
-        print(indexPaths)
-        tableView.insertRows(at: indexPaths, with: UITableViewRowAnimation.bottom)
-        //tableView.reloadData()
-        
-        // Load more posts
-        loadPostVideos(startIndex: currentPostCount - postDiff, count: postDiff)
     }
     
     // UploadPostDelegate function
@@ -237,7 +209,9 @@ extension FeedViewController: UploadPostDelegate, NewPostDelegate {
         // Add the post to the posts array in the current Group
         group.addPost(post: post)
         
-        currentPostCount += 1
+        // TODO: Update the according group cell in the tableView?
+        
+        //currentPostCount += 1
         
         // Insert it into the top of the tableView, shifting the other
         tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .none)

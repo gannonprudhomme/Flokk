@@ -12,7 +12,7 @@ import Foundation
 typealias Dimensions = (width: Int?, height: Int?)
 
 // Represents a user's post within a Feed
-class Post {
+class Post: CustomStringConvertible {
     var uid: String
     var posterID: String?
     
@@ -78,7 +78,7 @@ class Post {
     public var description: String {
         var desc = ""
         
-        desc += "\(uid) \(DateUtils.getDate(timestamp: timestamp)) \n"
+        desc += "\(uid) \(DateUtils.getDate(timestamp: timestamp))"
         
         return desc
     }

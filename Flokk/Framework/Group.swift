@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 // Represents all groups in Flokk
-class Group {
+class Group: CustomStringConvertible {
     var uid: String
     var name: String
     var icon: UIImage? // Once it's loaded in, set it

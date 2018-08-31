@@ -186,7 +186,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jB9-8q-RSI">
-                                                    <rect key="frame" x="100" y="63" width="63" height="15"/>
+                                                    <rect key="frame" x="100" y="63" width="148" height="15"/>
                                                     <fontDescription key="fontDescription" name="JosefinSans" family="Josefin Sans" pointSize="15"/>
                                                     <color key="textColor" name="Secondary Text"/>
                                                     <nil key="highlightedColor"/>
@@ -217,7 +217,7 @@
                                                 <constraint firstAttribute="bottom" secondItem="jB9-8q-RSI" secondAttribute="bottom" constant="27" id="fPY-ri-U6O"/>
                                                 <constraint firstItem="3PO-01-NXj" firstAttribute="leading" secondItem="Hyt-v4-k6f" secondAttribute="leading" constant="15" id="mbT-UC-sMc"/>
                                                 <constraint firstAttribute="bottom" secondItem="3PO-01-NXj" secondAttribute="bottom" constant="19" id="tzI-AK-t0U"/>
-                                                <constraint firstAttribute="trailing" secondItem="jB9-8q-RSI" secondAttribute="trailing" constant="179" id="udX-qQ-8Wc"/>
+                                                <constraint firstAttribute="trailing" secondItem="jB9-8q-RSI" secondAttribute="trailing" constant="94" id="udX-qQ-8Wc"/>
                                                 <constraint firstItem="Vcs-Az-NHv" firstAttribute="leading" secondItem="jB9-8q-RSI" secondAttribute="leading" id="yJV-ae-ubN"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -740,9 +740,6 @@
         <namedColor name="Secondary Navy">
             <color red="0.17599999904632568" green="0.18000000715255737" blue="0.25499999523162842" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="Secondary Navy">
-            <color red="0.17599999904632568" green="0.18000000715255737" blue="0.25499999523162842" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="Secondary Text">
             <color red="0.61568627450980395" green="0.61568627450980395" blue="0.64313725490196083" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -752,6 +749,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="fgQ-Fh-ruZ"/>
-        <segue reference="0vq-RI-gl1"/>
+        <segue reference="pss-If-7ck"/>
     </inferredMetricsTieBreakers>
 </document>

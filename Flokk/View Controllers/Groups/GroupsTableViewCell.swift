@@ -21,11 +21,14 @@ class GroupsTableViewCell: UITableViewCell {
     
     func initialize() {
         nameLabel.text = group.name
-        timeLabel.text = "Time"
         
         // Group the group icon to a circle
         groupPhotoView?.layer.cornerRadius = groupPhotoView.frame.size.width / 2
         groupPhotoView.clipsToBounds = true
+        
+        if let time = group.newestPostTime {
+            timeLabel.text = DateUtils.getDate(timestamp: time)
+        }
         
         if let icon = group.getIcon() {
             groupPhotoView.image = icon
