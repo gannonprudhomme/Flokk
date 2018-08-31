@@ -50,7 +50,8 @@ class FileUtils {
                 return nil
             }
         } catch let error {
-            print(error)
+            print("Could not load \(url.lastPathComponent)")
+            //print(error)
             
             // File doesn't exist, load it in from the database
             return nil

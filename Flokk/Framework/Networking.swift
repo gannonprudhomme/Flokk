@@ -19,8 +19,9 @@ extension GroupsViewController {
         var group = mainUser.groups[index]
         
         // If there is a local file
-        if let value = FileUtils.loadJSON(file: "groups/\(group.uid)") {
+        if let value = FileUtils.loadJSON(file: "groups/\(group.uid).json") {
             // Read from the local file
+            print("Local file for group \(group.name) loaded")
             processGroupData(group: &group, value: value)
             
             let groupRef = database.child("groups").child(group.uid)
@@ -30,12 +31,11 @@ extension GroupsViewController {
             // Query by the most recent timestamp to only get new posts
             // Add the new posts and download the video for them
             groupRef.child("posts").queryOrdered(byChild: "timestamp").queryStarting(atValue: group.newestPostTime).observeSingleEvent(of: .value, with: { (snapshot) in
-                print(value)
-                if let value = snapshot.value as? [String : Any] {
+                if let groupValue = snapshot.value as? [String : Any] {
                     // Iterate through all of the post IDs
                     // These should be completely new posts
-                    for postID in value.keys {
-                        let data = value[postID] as! [String : Any]
+                    for postID in groupValue.keys {
+                        let data = groupValue[postID] as! [String : Any]
                         
                         let timestamp = data["timestamp"] as! Double
                         //let poster = value[postID]!["poster"] as! String // UID of the poster, unused for now
@@ -48,55 +48,62 @@ extension GroupsViewController {
                         // Simplt add it to the posts array
                         // We don't call group.addPost(...) b/c that is for new posts, not existing oness
                         group.posts.append(post)
+                        
+                        print("Attempting to add new post to feed Delegate in \(group.name)")
+                        if let _ = group.feedDelegate {
+                            group.feedDelegate.newPost(post: post)
+                        }
                     }
                 }
             })
             
             // Download the member data and compare, checking if we have a new user or not
             groupRef.child("members").observeSingleEvent(of: .value, with: { (snapshot) in
-                if let value = snapshot.value as? [String : Any] {
-                    //let oldMembers = self.group.members
-                    let newMemberUIDs = value.keys as! [String]
+                if let membersValue = snapshot.value as? [String : Any] {
+                    //print(membersValue)
+                    var oldMembers = group.members // Copy of the members array that we can mutate
+                    var newMemberUIDs = Array(membersValue.keys)
                     
                     // Remove the matches between the new and old members
+                    for(i, oldUser) in group.members.enumerated().reversed(){
+                        for (j, newUID) in newMemberUIDs.enumerated().reversed() {
+                            if oldUser.uid == newUID {
+                                oldMembers.remove(at: i)
+                                newMemberUIDs.remove(at: j)
+                            }
+                        }
+                    }
                     
+                    // Add the new members to the group
+                    for uid in newMemberUIDs {
+                        // Load in the new user
+                        let handle = membersValue[uid] as! String
+                        
+                        print("Adding new member \(handle) to group \(group.name)")
+                        
+                        // Add the user to the members array for this group
+                        mainUser.groups[index].members.append(User(uid: uid, handle: handle))
+                    }
+                    
+                    // TODO: Remove the members that aren't in the group anymore
+                    for user in oldMembers {
+                    }
+                    
+                    // Save the file?
                 }
             })
             
             // Save the new data locally
-            
-        // If there is no local file
-        } else {
+            // However, we don't know if the new posts(or members) are loaded yet, better to wait for now
+        
+        } else { // If there is no local file
+            print("No local file for group \(group.name)")
             // Download the database data and load it directly in
-            database.child("groups").child(group.uid).child("posts").observeSingleEvent(of: .value, with: { (snapshot) in
-                if let value = snapshot.value as? [String : [String : Any]] {
-                    for postID in value.keys {
-                        let timestamp = value[postID]!["timestamp"] as! Double
-                        //let poster = value[postID]!["poster"] as! String // UID of the poster, unused for now
-                        let width = value[postID]!["width"] as! Int
-                        let height = value[postID]!["height"] as! Int
-                        
-                        let post = Post(uid: postID, timestamp: timestamp)
-                        post.setDimensions(width: width, height: height)
-                        
-                        // Simplt add it to the posts array
-                        // We don't call group.addPost(...) b/c that is for new posts, not existing oness
-                        //group.posts.append(post)
-                    }
+            database.child("groups").child(group.uid).observeSingleEvent(of: .value, with: { (snapshot) in
+                if let value = snapshot.value as? [String : Any] {
+                    self.processGroupData(group: &mainUser.groups[index], value: value)
                     
-                    // Save the post data after all of the posts are loaded
-                   // FileUtils.saveToJSON(dict: group.convertToDict(), toPath: "groups/\(self.group.uid).json")
-                    
-                    // After loading in all of the posts, sort them
-                    //self.sortPosts()
-                    
-                    // Set how many posts to load, depending on how many we have
-                    //self.currentPostCount = self.group.posts.count
-                    
-                    // Done loading posts data, call completion with true, meaning posts have actually been loaded
-                    //completion(true)
-                } else {
-                    //completion(false)
+                    FileUtils.saveToJSON(dict: value, toPath: "groups/\(group.uid).json")
                 }
             })
         }
@@ -105,6 +112,7 @@ extension GroupsViewController {
     // If the group data is loaded, we have already gone through this process
         // Do nothing
         // What about checking for changes? There could've been a post update when we weren't in the group
+        // ^^ well that's what listeners are for
     }
     
     private func processGroupData(group: inout Group, value: [String : Any]) {
@@ -135,6 +143,11 @@ extension GroupsViewController {
                 // Simplt add it to the posts array
                 // We don't call group.addPost(...) b/c that is for new posts, not existing oness
                 group.posts.append(post)
+                
+                if let _ = group.feedDelegate {
+                    // Update the feed
+                    //group.feedDelegate.newPost(post: post)
+                }
             }
             
             // After loading in all of the posts, sort them
@@ -145,27 +158,27 @@ extension GroupsViewController {
                 group.newestPostTime = group.posts[0].timestamp
             } else { // If there are no posts
                 // TOOD: Set the timestamp to the group's creation date
-                //group.newestPostTime = group.creatio
+                //group.newestPostTime = group.creationDate
+                group.newestPostTime = 0
             }
             
             // If the feed's instance exists, update the tableView
-            if let _ = group.feedDelegate {
-                // Update the feed
-            }
+            
             
             // Done loading posts data, call completion with true, meaning posts have actually been loaded
-            //completion(true)
         }
     }
 }
 
 extension GroupsViewController {
-    /*
-    fileprivate func removeMatches<User>(_ first: [User], _ second: [User]) -> [User] {
-        return first.filter({ (user) in
-            second.contains(where: { (user2) in
-                return user2.uid == user.uid
-            })
-        })
-    } */
+    fileprivate func removeMatchingMembers(oldMembers: inout [User], newMemberUIDs: inout [String])  {
+        for(i, oldMember) in oldMembers.enumerated().reversed(){
+            for (j, newUID) in newMemberUIDs.enumerated().reversed() {
+                if oldMember.uid == newUID {
+                    oldMembers.remove(at: i)
+                    newMemberUIDs.remove(at: j)
+                }
+            }
+        }
+    }
 }

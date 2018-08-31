@@ -51,7 +51,6 @@ class AddUserViewController: UIViewController {
         
         // Set font for search bar
         //UIBarButtonItem.appearanceWhenContainedInInstancesOfClasses([UISearchBar.self]).setTitleTextAttributes([NSAttributedStringKey.font : UIFont(name: "OpenSans", size: 15)!], forState: .Normal)
-        
     
         // Set the search bar as the header of the tableView
         tableView.tableHeaderView = searchController.searchBar

@@ -107,7 +107,7 @@ extension GroupsViewController {
         
         // Attempt to load from the local file first
         if let value = FileUtils.loadJSON(file: "users/mainUser.json") {
-            print(value)
+            //print(value)
             processUserData(value)
             
             // Then download the new data anyways and compare with the loaded data
@@ -123,9 +123,7 @@ extension GroupsViewController {
                     var oldGroups = mainUser.groups // Ends up being the groups to remove
                     
                     // Iterate over both groups, and remove the matches from both arrays
-                    for var (i, newID) in newGroupIDs.enumerated().reversed() {
-                        //let newID = newGroupIDs[i]
-                        
+                    for (i, newID) in newGroupIDs.enumerated().reversed() {
                         // Iterate over the old group
                         for (j, group) in oldGroups.enumerated().reversed() {
                             let oldID = group.uid
@@ -152,6 +150,7 @@ extension GroupsViewController {
                                 let group = Group(uid: groupID, name: groupName)
                                 
                                 self.joinedNewGroup(group: group)
+                                self.loadGroupData(index: 0)
                                 
                                 // TODO: Place this in a better place
                                 // print(mainUser.convertToDict())
@@ -174,6 +173,8 @@ extension GroupsViewController {
                         let index = mainUser.groups.index(where: { $0.uid == group.uid})!
                         mainUser.groups.remove(at: index)
                         
+                        // TODO: Delete all of the local files for this group
+                        
                         // Remove the group from the tableView
                         DispatchQueue.main.async {
                             self.tableView.deleteRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
@@ -193,45 +194,34 @@ extension GroupsViewController {
     }
     
     // Load the Flokk user data from the database
-    func loadUserData(completion: @escaping () -> Void) {
+    private func loadUserData(completion: @escaping () -> Void) {
         // Will never be nil, as this is only called after confirming the user is signed in
         let uid = Auth.auth().currentUser?.uid
         
-        // TODO: Check if the data is stored locally, if it's not stored the json data into it, and load it the same way?
-        // Or should we load it into memory and write into it
-        /*if let value = FileUtils.loadJSON(file: "users/mainUser.json")  { // If the file exists locally
-            print("Loading user data from disk")
-            
-            processUserData(value)
-            
-            // Done loading in the data
-            completion()
-        } else */ if uid != "" {
-            // Load it from the dastabase
-            database.child("users").child(uid!).observeSingleEvent(of: .value, with: { (snapshot) in
-                if let value = snapshot.value as? [String : Any] {
-                    self.processUserData(value)
-                    
-                    // Write the current user data
-                    FileUtils.saveToJSON(dict: value, toPath: "users/mainUser.json")
-                    
-                    completion()
-                    
-                    // Load in the profile photo
-                    // Does not matter when this is loaded(in regards to calling completion())
-                    storage.child("users").child(mainUser.uid).child("profilePhoto.jpg").getData(maxSize: MAX_PROFILE_PHOTO_SIZE, completion: { (data, error) in
-                        if error == nil {
-                            mainUser.profilePhoto = UIImage(data: data!)
-                            
-                            // TODO: Save the user's photo if it is not saved already
-                        } else {
-                            print(error!)
-                            return
-                        }
-                    })
-                }
-            })
-        }
+        // Load it from the dastabase
+        database.child("users").child(uid!).observeSingleEvent(of: .value, with: { (snapshot) in
+            if let value = snapshot.value as? [String : Any] {
+                self.processUserData(value)
+                
+                // Write the current user data
+                FileUtils.saveToJSON(dict: value, toPath: "users/mainUser.json")
+                
+                completion()
+                
+                // Load in the profile photo
+                // Does not matter when this is loaded(in regards to calling completion())
+                storage.child("users").child(mainUser.uid).child("profilePhoto.jpg").getData(maxSize: MAX_PROFILE_PHOTO_SIZE, completion: { (data, error) in
+                    if error == nil {
+                        mainUser.profilePhoto = UIImage(data: data!)
+                        
+                        // TODO: Save the user's photo if it is not saved already
+                    } else {
+                        print(error!)
+                        return
+                    }
+                })
+            }
+        })
     }
     
     // Helper function for processing the user data from a dictionary
@@ -253,6 +243,7 @@ extension GroupsViewController {
                 let group = Group(uid: groupID, name: groupName!)
                 
                 mainUser.groups.append(group)
+                loadGroupData(index: mainUser.groups.count - 1)
                 
                 // Attempt to download the group icon
                 group.requestGroupIcon(completion: { (icon) in
@@ -283,47 +274,8 @@ extension GroupsViewController {
     // TODO: Consider moving this function to a separate class
     // Used in load() and processUserData()
     
-    private func processGroupData(uid: String, value: [String : Any]) {
-        if let data = value[uid] as? [String : Any] {
-            let groupName = data["groupName"] as! String
-            let group = Group(uid: uid, name: groupName)
-            
-            // Add the new group to the global list
-            mainUser.groups.append(group)
-            
-            // Insert the group in the first row, without checking what timestamp it's at
-            DispatchQueue.main.async {
-                self.tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .automatic)
-            }
-            
-            // Attempt to download the group icon
-            group.requestGroupIcon(completion: { (icon) in
-                if let icon = icon {
-                    // Once it's loaded, set it in the group
-                    group.setIcon(icon: icon)
-                    
-                    // TODO: Review this operation
-                    // And updated the according row
-                    DispatchQueue.main.async {
-                        // Have to do this because simply counting
-                        var index = -1
-                        for i in 0..<mainUser.groups.count {
-                            if mainUser.groups[i].uid == group.uid {
-                                index = i
-                            }
-                        }
-                        
-                        // Reload the row
-                        self.tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .none)
-                    }
-                }
-            })
-        }
-    }
-    
     // Adds observers listening for changes in the database
     func addListeners() {
-        
         // Begin listening for changes to the mainUser's groups. Called if another user removes/adds the mainUser to a group
         groupChangesHandle = database.child("users").child(mainUser.uid).child("groups").observe(.value, with: { (snapshot) in
             if let value = snapshot.value as? [String : Any] {

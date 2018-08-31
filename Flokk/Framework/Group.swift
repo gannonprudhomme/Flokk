@@ -83,6 +83,10 @@ class Group {
         return icon
     }
     
+    func sortPosts() {
+        posts.sort(by: { $0.timestamp > $1.timestamp})
+    }
+    
     // Converts this Group object to a dictionary for saving the data to JSON(locally)
     // Replicates the structure of the database
     // Need to be careful when I call this. If the group data isn't fully loaded, the file will be missing things
