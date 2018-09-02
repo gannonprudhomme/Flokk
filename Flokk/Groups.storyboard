@@ -72,7 +72,7 @@
                                     <constraint firstAttribute="width" constant="100" id="Myr-Wk-j1k"/>
                                     <constraint firstAttribute="height" constant="100" id="c1x-LA-ky6"/>
                                 </constraints>
-                                <state key="normal" image="addProfilePicBttn"/>
+                                <state key="normal" image="profilePlaceholder - Large"/>
                                 <connections>
                                     <action selector="profilePhotoPressed:" destination="gS6-0y-Qhe" eventType="touchUpInside" id="9aq-Vw-fja"/>
                                 </connections>
@@ -354,50 +354,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Rzm-xJ-hQY">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="91"/>
-                                <color key="backgroundColor" name="Flokk Navy"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="91" id="UPM-YC-HXU"/>
-                                </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="uFr-8f-N4C">
-                                    <size key="itemSize" width="50" height="50"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <label key="backgroundView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="LUh-R6-sP4">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="91"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="default" id="fLX-6L-LNZ" customClass="UserSearchCollectionViewCell" customModule="Flokk" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="20.5" width="50" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Loading Image - Small" translatesAutoresizingMaskIntoConstraints="NO" id="3KW-jL-jB5">
-                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                                </imageView>
-                                            </subviews>
-                                        </view>
-                                        <constraints>
-                                            <constraint firstItem="3KW-jL-jB5" firstAttribute="top" secondItem="fLX-6L-LNZ" secondAttribute="top" id="HFa-4q-CWz"/>
-                                            <constraint firstItem="3KW-jL-jB5" firstAttribute="leading" secondItem="fLX-6L-LNZ" secondAttribute="leading" id="Ky0-T5-x7V"/>
-                                            <constraint firstAttribute="bottom" secondItem="3KW-jL-jB5" secondAttribute="bottom" id="UKx-2Q-Q0k"/>
-                                            <constraint firstAttribute="trailing" secondItem="3KW-jL-jB5" secondAttribute="trailing" id="dZI-hr-4XH"/>
-                                        </constraints>
-                                        <connections>
-                                            <outlet property="profilePhotoView" destination="3KW-jL-jB5" id="d0a-ol-ybg"/>
-                                        </connections>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aDx-Lr-Fow">
                                 <rect key="frame" x="0.0" y="99" width="375" height="504"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -450,6 +406,71 @@
                                 </subviews>
                                 <color key="backgroundColor" name="Secondary Navy"/>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add Members" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7zC-9q-zvq">
+                                <rect key="frame" x="136" y="23" width="102" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="JosefinSans" family="Josefin Sans" pointSize="18"/>
+                                <color key="textColor" name="White"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tIH-r1-7DW">
+                                <rect key="frame" x="77" y="40" width="221" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Choose some people you would like to add to your group.">
+                                        <attributes>
+                                            <color key="NSColor" name="Secondary Text"/>
+                                            <font key="NSFont" size="15" name="JosefinSans"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Rzm-xJ-hQY">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="91"/>
+                                <color key="backgroundColor" name="Flokk Navy"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="91" id="UPM-YC-HXU"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="uFr-8f-N4C">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <label key="backgroundView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="LUh-R6-sP4">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="91"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="default" id="fLX-6L-LNZ" customClass="UserSearchCollectionViewCell" customModule="Flokk" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="20.5" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Loading Image - Small" translatesAutoresizingMaskIntoConstraints="NO" id="3KW-jL-jB5">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="3KW-jL-jB5" firstAttribute="top" secondItem="fLX-6L-LNZ" secondAttribute="top" id="HFa-4q-CWz"/>
+                                            <constraint firstItem="3KW-jL-jB5" firstAttribute="leading" secondItem="fLX-6L-LNZ" secondAttribute="leading" id="Ky0-T5-x7V"/>
+                                            <constraint firstAttribute="bottom" secondItem="3KW-jL-jB5" secondAttribute="bottom" id="UKx-2Q-Q0k"/>
+                                            <constraint firstAttribute="trailing" secondItem="3KW-jL-jB5" secondAttribute="trailing" id="dZI-hr-4XH"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="profilePhotoView" destination="3KW-jL-jB5" id="d0a-ol-ybg"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" name="Flokk Navy"/>
                         <color key="tintColor" name="White"/>
@@ -535,6 +556,27 @@
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Le9-ax-0NY">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="248"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileImagePlaceholder - Small" translatesAutoresizingMaskIntoConstraints="NO" id="R1x-cq-lQj">
+                                                            <rect key="frame" x="20" y="20" width="45" height="45"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="45" id="I9f-ul-kql"/>
+                                                                <constraint firstAttribute="width" constant="45" id="nHY-lN-eQV"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="time?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KhX-d7-SyQ">
+                                                            <rect key="frame" x="28" y="73" width="28" height="12"/>
+                                                            <fontDescription key="fontDescription" name="JosefinSans-Bold" family="Josefin Sans" pointSize="12"/>
+                                                            <color key="textColor" name="White"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="R1x-cq-lQj" firstAttribute="top" secondItem="Le9-ax-0NY" secondAttribute="top" constant="20" id="JsH-QY-CvC"/>
+                                                        <constraint firstItem="KhX-d7-SyQ" firstAttribute="top" secondItem="R1x-cq-lQj" secondAttribute="bottom" constant="8" symbolic="YES" id="aj6-Ty-nZX"/>
+                                                        <constraint firstItem="R1x-cq-lQj" firstAttribute="leading" secondItem="Le9-ax-0NY" secondAttribute="leading" constant="20" id="bq9-XN-18X"/>
+                                                        <constraint firstItem="R1x-cq-lQj" firstAttribute="centerX" secondItem="KhX-d7-SyQ" secondAttribute="centerX" id="xrf-qF-h7h"/>
+                                                    </constraints>
                                                 </view>
                                             </subviews>
                                             <color key="backgroundColor" name="Flokk Navy"/>
@@ -728,6 +770,8 @@
         <image name="friendsIcon" width="21" height="17"/>
         <image name="leave - Bold" width="130" height="42"/>
         <image name="logOut - Bold" width="121" height="36"/>
+        <image name="profileImagePlaceholder - Small" width="45" height="45"/>
+        <image name="profilePlaceholder - Large" width="100" height="100"/>
         <image name="save - Bold" width="175" height="51"/>
         <image name="ski" width="1536" height="1536"/>
         <image name="userIconTeal" width="16" height="17"/>
@@ -740,11 +784,14 @@
         <namedColor name="Secondary Navy">
             <color red="0.17599999904632568" green="0.18000000715255737" blue="0.25499999523162842" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="Secondary Navy">
-            <color red="0.17599999904632568" green="0.18000000715255737" blue="0.25499999523162842" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="Secondary Text">
+            <color red="0.61568627450980395" green="0.61568627450980395" blue="0.64313725490196083" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Secondary Text">
             <color red="0.61568627450980395" green="0.61568627450980395" blue="0.64313725490196083" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="White">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="White">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
