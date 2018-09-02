@@ -59,7 +59,8 @@ class Group: CustomStringConvertible {
     // Otherwise, load it in from Firebase
     func requestGroupIcon(completion: @escaping (UIImage?) -> Void) {
         // Check if the icon is stored locally
-        if let image = FileUtils.loadGroupIcon(group: self) {
+        if let image = FileUtils.loadImage(path: "groups/\(uid).jpg") {
+            //print("\n\(name) icon loaded locally\n")
             icon = image
             
         // If it's not, download it from Firebase
@@ -67,6 +68,11 @@ class Group: CustomStringConvertible {
             storage.child("groups").child(uid).child("icon.jpg").getData(maxSize: MAX_PROFILE_PHOTO_SIZE, completion: { (data, error) in
                 if error == nil {
                     let icon = UIImage(data: data!)
+                    
+                    self.icon = icon
+                    
+                    // Save the group icon locally so we don't have to download it again
+                    //FileUtils.saveGroupIcon(group: self)
                     
                     completion(icon)
                 } else {

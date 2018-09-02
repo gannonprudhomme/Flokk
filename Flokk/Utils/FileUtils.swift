@@ -49,7 +49,7 @@ class FileUtils {
                 // Basically handles 
                 return nil
             }
-        } catch let error {
+        } catch {
             print("Could not load \(url.lastPathComponent)")
             //print(error)
             
@@ -97,36 +97,44 @@ class FileUtils {
         }
     }
     
-    // Attempt to load this groups icon from the local disk
-    // If this returns nil, we have to download the group icon from Firebase
-    static func loadGroupIcon(group: Group) -> UIImage? {
-        let image: UIImage
+    static func loadImage(path: String) -> UIImage? {
+        let url = getDocumentsDirectory().appendingPathComponent(path)
+        
+        do {
+            let data = try Data(contentsOf: url)
+            
+            if let image = UIImage(data: data) {
+                return image
+            }
+        } catch let error {
+            print(error)
+            return nil
+        }
         
         return nil
     }
     
-    // Save the group icon currently saved in group.icon to the disk
-    static func saveGroupIcon(group: Group) {
-        let icon = group.icon
-        let data = icon?.convertJpegToData()
-        
-        let outputURL = createDirectory(path: "groups/\(group.uid)")
-        let url = outputURL?.appendingPathComponent("icon").appendingPathExtension("jpg")
-        
-        FileManager.default.createFile(atPath: (url?.path)!, contents: data, attributes: nil)
+    // Save an image to the local disk
+    static func saveImage(image: UIImage, toPath path: String) {
+        if let data = UIImageJPEGRepresentation(image, 1) {
+            let fileURL = getDocumentsDirectory().appendingPathComponent(path)
+            
+            do {
+                try FileManager.default.createDirectory(at: fileURL.deletingLastPathComponent(), withIntermediateDirectories: true, attributes: nil)
+                
+                try data.write(to: fileURL)
+                
+                print("\n\(path) saved successfully!\n")
+            } catch let error {
+                print(error)
+                return
+            }
+        }
     }
     
-    // Check if the post video is loaded
-    static func isPostLoaded(group: Group, post: Post) -> Bool {
-        let outputURL = FileUtils.createDirectory(path: "groups/\(group.uid)/posts")
-        let url = outputURL?.appendingPathComponent("\(post.uid).mp4")
-        
-        // Attempt to initialize an AVAsset to see if the file exists
-        if let asset = AVAsset(url: url!) as? AVAsset {
-            return true
-        } else {
-            return false
-        }
+    // Save the group icon currently saved in group.icon to the disk
+    static func saveGroupIcon(group: Group) {
+        saveImage(image: group.icon!, toPath: "groups/\(group.uid).jpg")
     }
     
     static func getDocumentsDirectory() -> URL {
@@ -137,11 +145,6 @@ class FileUtils {
 
 // JSON Manipulation functions for app framework
 extension FileUtils {
-    // Save the post to the appropriate group json file
-    static func savePost(_ post: Post, group: Group) {
-        
-    }
-    
     // Save the group to the user's json file and make one for it
     static func saveGroup(_ group: Group) {
         

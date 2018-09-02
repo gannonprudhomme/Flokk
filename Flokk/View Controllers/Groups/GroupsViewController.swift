@@ -248,9 +248,6 @@ extension GroupsViewController {
                 // Attempt to download the group icon
                 group.requestGroupIcon(completion: { (icon) in
                     if let icon = icon {
-                        // Once it's loaded, set it in the group
-                        group.setIcon(icon: icon)
-                        
                         // TODO: Review this operation
                         // And updated the according row
                         DispatchQueue.main.async {
@@ -264,6 +261,12 @@ extension GroupsViewController {
                             
                             // Reload the row
                             self.tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .none)
+                        }
+                        
+                        // TODO: 
+                        // Save the group icon locally in a background thread so we don't have to download it again
+                        DispatchQueue.global(qos: .background).async {
+                            FileUtils.saveGroupIcon(group: group)
                         }
                     }
                 })
@@ -314,10 +317,7 @@ extension GroupsViewController {
         
         // Attempt to download the group icon
         group.requestGroupIcon(completion: { (icon) in
-            if let icon = icon {
-                // Once it's loaded, set it in the group
-                group.setIcon(icon: icon)
-                
+            if let _ = icon {
                 // And updated the according row
                 DispatchQueue.main.async {
                     // This is so fucking stupid
@@ -331,6 +331,10 @@ extension GroupsViewController {
                     
                     // Reload the row
                     self.tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .none)
+                    
+                    // Save the group icon locally so we don't have to download it again
+                    // We does this after reloading the row, so it doesn't wait to refresh while it's saving to the disk
+                    FileUtils.saveGroupIcon(group: group)
                 }
             }
         })
