@@ -21,6 +21,11 @@ protocol LeaveGroupDelegate {
     func leaveGroup(group: Group)
 }
 
+protocol SortGroupsDelegate {
+    func sortGroups()
+    func groupUpdated(group: Group)
+}
+
 class GroupsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var colorSelectionView: UIView!
@@ -41,31 +46,20 @@ class GroupsViewController: UIViewController {
             // User is signed into Firebase, but the Flokk user isn't initialized yet
             // Load initial user data
             load {
-                DispatchQueue.main.async {
-                    //self.loadGroups()
-                    self.tableView.reloadData() // I don't like using this
-                }
-                
                 // Attach the observer for listening for group additions
                 self.addListeners()
+                
+                self.sortGroups()
             }
             
         } else {
+            // No user is signed in, go to the sign in / sign up view
             performSegue(withIdentifier: "groupsToSignUpSegue", sender: nil)
-            // No user is signed in, go to the sign in / sign up
-            //let vc = UIStoryboard(name: "SignUp", bundle: nil).instantiateViewController(withIdentifier: "SignUpNavigationController")
-            //present(vc, animated: false, completion: nil)
         }
-        
-        // TODO: Listen for group changes in users/mainUser.uid/groups
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        // If we add a new group and don't call this, will it be added anyways?
-        tableView.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -76,13 +70,17 @@ class GroupsViewController: UIViewController {
         if segue.identifier == "groupsToCreateGroupSegue" {
             if let vc = segue.destination as? CreateGroupViewController {
                 // Set the create group's delegate at this class, in order to send the new group data back
-                vc.delegate = self
+                vc.addGroupDelegate = self
             }
         } else if segue.identifier == "groupsToFeedSegue" {
             if let vc = segue.destination as? FeedViewController {
                 // Get the according group from the selected cell
                 if let tag = (sender as? GroupsTableViewCell)?.tag {
                     vc.group = mainUser.groups[tag]
+                    vc.group.feedDelegate = vc
+                    
+                    // Deselect the row after seguing so it is not highlighted when we segue back
+                    tableView.deselectRow(at: IndexPath(row: tag, section: 0), animated: false)
                 }
                 
                 vc.leaveGroupDelegate = self
@@ -93,20 +91,10 @@ class GroupsViewController: UIViewController {
 
 // MARK: - Framework functions
 extension GroupsViewController {
-    // Load the groups into the main user
-    func loadGroups() {
-        // what would even be loaded here?
-        // Maybe request the group Icons
-        
-    }
-    
-    // WIP new way of loading data, both locally
+    // WIP: New way of loading data, both locally and from the database
     func load(completion: @escaping () -> Void) {
-        let uid = Auth.auth().currentUser?.uid
-        
         // Attempt to load from the local file first
-        if /*uid == ""*/ let value = FileUtils.loadJSON(file: "users/mainUser.json") {
-            print(value)
+        if let value = FileUtils.loadJSON(file: "users/mainUser.json") {
             processUserData(value)
             
             // Then download the new data anyways and compare with the loaded data
@@ -122,9 +110,7 @@ extension GroupsViewController {
                     var oldGroups = mainUser.groups // Ends up being the groups to remove
                     
                     // Iterate over both groups, and remove the matches from both arrays
-                    for var (i, newID) in newGroupIDs.enumerated().reversed() {
-                        //let newID = newGroupIDs[i]
-                        
+                    for (i, newID) in newGroupIDs.enumerated().reversed() {
                         // Iterate over the old group
                         for (j, group) in oldGroups.enumerated().reversed() {
                             let oldID = group.uid
@@ -140,8 +126,6 @@ extension GroupsViewController {
                     
                     // After removing all the matches, add and remove the according groups
                    
-                    // print("\(newGroupIDs.count) new groups to add!")
-                    
                     // Add all the new groups, if there are any
                     for groupID in newGroupIDs {
                         // Now that we know what data we need to process, get the according data from the database
@@ -152,20 +136,22 @@ extension GroupsViewController {
                                 let groupName = groupValue["name"] as! String
                                 let group = Group(uid: groupID, name: groupName)
                                 
+                                group.loadData()
+                                
                                 self.joinedNewGroup(group: group)
                                 
-                                // TODO: Place this in a better place
-                                //
-                                print(mainUser.convertToDict())
+                                // Load all of the data for this group
+                                // Either locally or download it from the database
+                                
+                                self.sortGroups()
+                                
+                                // TODO: Put this in a better place
                                 FileUtils.saveToJSON(dict: mainUser.convertToDict(), toPath: "users/mainUser.json")
                             }
                         })
                     }
                     
-                    mainUser.uid = mainUser.uid
                     // Save the (possibly) updated groups to the file system
-                    //FileUtils.saveToJSON(dict: mainUser.convertToDict(), toPath: "users/mainUser.json")
-                    completion()
                     
                     // How inefficient is this?
                     // Will it ever be a problem with the table view if the cells aren't inserterd/refreshed into the tableView
@@ -173,14 +159,23 @@ extension GroupsViewController {
                         // Remove the group from the user's groups
                         print("Removing group \(group.uid)")
                         
+                        print(mainUser.groups)
                         let index = mainUser.groups.index(where: { $0.uid == group.uid})!
                         mainUser.groups.remove(at: index)
                         
+                        // TODO: Delete all of the local files for this group
+                        
+                        // The completion handler already deals with reloading this?
                         // Remove the group from the tableView
                         DispatchQueue.main.async {
                             self.tableView.deleteRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
                         }
+                        
+                        // Save the updated user data
+                        FileUtils.saveToJSON(dict: mainUser.convertToDict(), toPath: "users/mainUser.json")
                     }
+                    
+                    completion()
                 }
             })
             
@@ -195,45 +190,34 @@ extension GroupsViewController {
     }
     
     // Load the Flokk user data from the database
-    func loadUserData(completion: @escaping () -> Void) {
+    private func loadUserData(completion: @escaping () -> Void) {
         // Will never be nil, as this is only called after confirming the user is signed in
         let uid = Auth.auth().currentUser?.uid
         
-        // TODO: Check if the data is stored locally, if it's not stored the json data into it, and load it the same way?
-        // Or should we load it into memory and write into it
-        /*if let value = FileUtils.loadJSON(file: "users/mainUser.json")  { // If the file exists locally
-            print("Loading user data from disk")
-            
-            processUserData(value)
-            
-            // Done loading in the data
-            completion()
-        } else */ if uid != "" {
-            // Load it from the dastabase
-            database.child("users").child(uid!).observeSingleEvent(of: .value, with: { (snapshot) in
-                if let value = snapshot.value as? [String : Any] {
-                    self.processUserData(value)
-                    
-                    // Write the current user data
-                    FileUtils.saveToJSON(dict: value, toPath: "users/mainUser.json")
-                    
-                    completion()
-                    
-                    // Load in the profile photo
-                    // Does not matter when this is loaded(in regards to calling completion())
-                    storage.child("users").child(mainUser.uid).child("profilePhoto.jpg").getData(maxSize: MAX_PROFILE_PHOTO_SIZE, completion: { (data, error) in
-                        if error == nil {
-                            mainUser.profilePhoto = UIImage(data: data!)
-                            
-                            // TODO: Save the user's photo if it is not saved already
-                        } else {
-                            print(error!)
-                            return
-                        }
-                    })
-                }
-            })
-        }
+        // Load it from the dastabase
+        database.child("users").child(uid!).observeSingleEvent(of: .value, with: { (snapshot) in
+            if let value = snapshot.value as? [String : Any] {
+                self.processUserData(value)
+                
+                // Write the current user data
+                FileUtils.saveToJSON(dict: value, toPath: "users/mainUser.json")
+                
+                completion()
+                
+                // Load in the profile photo
+                // Does not matter when this is loaded(in regards to calling completion())
+                storage.child("users").child(mainUser.uid).child("profilePhoto.jpg").getData(maxSize: MAX_PROFILE_PHOTO_SIZE, completion: { (data, error) in
+                    if error == nil {
+                        mainUser.profilePhoto = UIImage(data: data!)
+                        
+                        // TODO: Save the user's photo if it is not saved already
+                    } else {
+                        print(error!)
+                        return
+                    }
+                })
+            }
+        })
     }
     
     // Helper function for processing the user data from a dictionary
@@ -253,15 +237,17 @@ extension GroupsViewController {
                 let groupName = groups[groupID]
                 
                 let group = Group(uid: groupID, name: groupName!)
+                group.sortGroupsDelegate = self
                 
-                mainUser.groups.append(group)
+                let index = indexForUpdatedGroup(group: group)
+                
+                mainUser.groups.insert(group, at: index)
+                
+                group.loadData()
                 
                 // Attempt to download the group icon
                 group.requestGroupIcon(completion: { (icon) in
                     if let icon = icon {
-                        // Once it's loaded, set it in the group
-                        group.setIcon(icon: icon)
-                        
                         // TODO: Review this operation
                         // And updated the according row
                         DispatchQueue.main.async {
@@ -276,6 +262,12 @@ extension GroupsViewController {
                             // Reload the row
                             self.tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .none)
                         }
+                        
+                        // TODO: 
+                        // Save the group icon locally in a background thread so we don't have to download it again
+                        DispatchQueue.global(qos: .background).async {
+                            FileUtils.saveGroupIcon(group: group)
+                        }
                     }
                 })
             }
@@ -285,47 +277,8 @@ extension GroupsViewController {
     // TODO: Consider moving this function to a separate class
     // Used in load() and processUserData()
     
-    private func processGroupData(uid: String, value: [String : Any]) {
-        if let data = value[uid] as? [String : Any] {
-            let groupName = data["groupName"] as! String
-            let group = Group(uid: uid, name: groupName)
-            
-            // Add the new group to the global list
-            mainUser.groups.append(group)
-            
-            // Insert the group in the first row, without checking what timestamp it's at
-            DispatchQueue.main.async {
-                self.tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .automatic)
-            }
-            
-            // Attempt to download the group icon
-            group.requestGroupIcon(completion: { (icon) in
-                if let icon = icon {
-                    // Once it's loaded, set it in the group
-                    group.setIcon(icon: icon)
-                    
-                    // TODO: Review this operation
-                    // And updated the according row
-                    DispatchQueue.main.async {
-                        // Have to do this because simply counting
-                        var index = -1
-                        for i in 0..<mainUser.groups.count {
-                            if mainUser.groups[i].uid == group.uid {
-                                index = i
-                            }
-                        }
-                        
-                        // Reload the row
-                        self.tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .none)
-                    }
-                }
-            })
-        }
-    }
-    
     // Adds observers listening for changes in the database
     func addListeners() {
-        
         // Begin listening for changes to the mainUser's groups. Called if another user removes/adds the mainUser to a group
         groupChangesHandle = database.child("users").child(mainUser.uid).child("groups").observe(.value, with: { (snapshot) in
             if let value = snapshot.value as? [String : Any] {
@@ -354,18 +307,17 @@ extension GroupsViewController {
     
     // Called when a remote user adds this user to their group
     func joinedNewGroup(group: Group) {
+        let index = indexForUpdatedGroup(group: group)
+        
         // add it to the user's groups array
-        mainUser.groups.insert(group, at: 0)
+        mainUser.groups.insert(group, at: index)
         
         // Insert the new group into the tableView
-        tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .automatic)
+        tableView.insertRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
         
         // Attempt to download the group icon
         group.requestGroupIcon(completion: { (icon) in
-            if let icon = icon {
-                // Once it's loaded, set it in the group
-                group.setIcon(icon: icon)
-                
+            if let _ = icon {
                 // And updated the according row
                 DispatchQueue.main.async {
                     // This is so fucking stupid
@@ -379,26 +331,18 @@ extension GroupsViewController {
                     
                     // Reload the row
                     self.tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .none)
+                    
+                    // Save the group icon locally so we don't have to download it again
+                    // We does this after reloading the row, so it doesn't wait to refresh while it's saving to the disk
+                    FileUtils.saveGroupIcon(group: group)
                 }
             }
         })
     }
-    
-    // Called when a new post is added, should be a delegate?
-    func groupUpdated(group: Group) {
-        // Update the mainUsers' groups array, and get the index(row) this group is located at
-        let row = mainUser.groupUpdated(group: group)
-        
-        
-        // Move the row to the top
-        tableView.moveRow(at: IndexPath(row: row, section: 0), to: IndexPath(row: 0, section: 0))
-        
-        // TODO: Update the timestamp
-    }
 }
 
 // MARK: - Delegate functions for adding and leaving groups
-extension GroupsViewController: AddGroupDelegate, LeaveGroupDelegate {
+extension GroupsViewController: AddGroupDelegate, LeaveGroupDelegate, SortGroupsDelegate {
     // GroupsViewControllerDelegate function, called from CreateGroupVC
     func createNewGroup(groupName: String, icon: UIImage) {
         let groupID = database.ref.child("groups").childByAutoId().key
@@ -406,11 +350,13 @@ extension GroupsViewController: AddGroupDelegate, LeaveGroupDelegate {
         // Add the data to the user tree
         database.ref.child("users").child(mainUser.uid).child("groups").child(groupID).setValue(groupName)
         
+        let creationDate = Date.timeIntervalSinceReferenceDate
+        
         // Add the data to the groups tree
         let groupRef = database.ref.child("groups").child(groupID)
         groupRef.child("name").setValue(groupName)
         groupRef.child("creator").setValue(mainUser.uid)
-        //groupRef.child("creationDate").setValue(NSDate.timeIntervalSinceReferenceDate) // No purpose for this for now
+        groupRef.child("creationDate").setValue(creationDate) // No purpose for this for now
         
         // Add the mainuser as a member
         groupRef.child("members").child(mainUser.uid).setValue(mainUser.handle)
@@ -422,11 +368,40 @@ extension GroupsViewController: AddGroupDelegate, LeaveGroupDelegate {
         let group = Group(uid: groupID, name: groupName)
         group.setIcon(icon: icon)
         
+        group.newestPostTime = creationDate
+        
         // Prepend this group to the groups array
         mainUser.groups.insert(group, at: 0)
         
         // Insert it into the top of the tableView, shifting the other
         tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .none)
+        
+        FileUtils.saveToJSON(dict: group.convertToDict(), toPath: "groups\(group.uid).json")
+    }
+    
+    // SortGroupsDelegate function
+    // Called within GroupsVC and from Group.loadData()
+    func sortGroups() {
+        mainUser.groups.sort(by: { (group1, group2) in
+            return group1.newestPostTime > group2.newestPostTime
+        })
+        
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
+    
+    // SortGroupsDelegate
+    // Called when a new post is added
+    func groupUpdated(group: Group) {
+        // Update the mainUsers' groups array, and get the index(row) this group is located at
+        let row = mainUser.groupUpdated(group: group)
+        
+        // Move the row to the topd
+        tableView.moveRow(at: IndexPath(row: row, section: 0), to: IndexPath(row: 0, section: 0))
+        
+        // Reload the row with the updated timestamp
+        tableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .automatic)
     }
     
     // LeaveGroupDelegate. Called from GroupSettingsVC

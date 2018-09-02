@@ -44,7 +44,8 @@ class User {
     func groupUpdated(group: Group) -> Int {
         var index = -1
         
-        for i in 0...self.groups.count {
+        // Find the group, inefficient search?
+        for i in 0..<self.groups.count {
             if self.groups[i].uid == group.uid {
                 index = i
             }
@@ -75,7 +76,7 @@ class User {
         // Get the groups data
         var groupData = [String : Any]()
         for group in mainUser.groups {
-            groupData[group.uid] = group.convertToDict()
+            groupData[group.uid] = group.name
         }
         
         data["groups"] = groupData
