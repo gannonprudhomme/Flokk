@@ -44,7 +44,8 @@ class User {
     func groupUpdated(group: Group) -> Int {
         var index = -1
         
-        for i in 0...self.groups.count {
+        // Find the group, inefficient search?
+        for i in 0..<self.groups.count {
             if self.groups[i].uid == group.uid {
                 index = i
             }

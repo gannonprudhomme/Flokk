@@ -62,16 +62,12 @@ class FileUtils {
         // Create the directory for the posts to be stored
         let fileManager = FileManager.default
         
-        var finalURL = getDocumentsDirectory().appendingPathComponent(path)
+        let finalURL = getDocumentsDirectory().appendingPathComponent(path)
         do {
             try fileManager.createDirectory(at: finalURL.deletingLastPathComponent(), withIntermediateDirectories: true, attributes: nil)
             
-            //var finalURL = outputURL.appendingPathComponent("mainUser").appendingPathExtension("json")
-            //var finalURL = getDocumentsDirectory().appendingPathComponent(path)
-            
             let json = JSON(dict)
             let str = json.description
-            let data = str.data(using: .utf8)
             try str.write(to: finalURL, atomically: true, encoding: .utf8)
             
             print("Successfully saved \(finalURL.lastPathComponent)")

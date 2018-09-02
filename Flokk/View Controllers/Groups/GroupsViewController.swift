@@ -21,6 +21,11 @@ protocol LeaveGroupDelegate {
     func leaveGroup(group: Group)
 }
 
+protocol SortGroupsDelegate {
+    func sortGroups()
+    func groupUpdated(group: Group)
+}
+
 class GroupsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var colorSelectionView: UIView!
@@ -41,27 +46,20 @@ class GroupsViewController: UIViewController {
             // User is signed into Firebase, but the Flokk user isn't initialized yet
             // Load initial user data
             load {
-                DispatchQueue.main.async {
-                    //self.tableView.reloadData() // I don't like using this
-                }
-                
                 // Attach the observer for listening for group additions
                 self.addListeners()
+                
+                self.sortGroups()
             }
             
         } else {
+            // No user is signed in, go to the sign in / sign up view
             performSegue(withIdentifier: "groupsToSignUpSegue", sender: nil)
-            // No user is signed in, go to the sign in / sign up
-            //let vc = UIStoryboard(name: "SignUp", bundle: nil).instantiateViewController(withIdentifier: "SignUpNavigationController")
-            //present(vc, animated: false, completion: nil)
         }
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        // If we add a new group and don't call this, will it be added anyways?
-        tableView.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -72,7 +70,7 @@ class GroupsViewController: UIViewController {
         if segue.identifier == "groupsToCreateGroupSegue" {
             if let vc = segue.destination as? CreateGroupViewController {
                 // Set the create group's delegate at this class, in order to send the new group data back
-                vc.delegate = self
+                vc.addGroupDelegate = self
             }
         } else if segue.identifier == "groupsToFeedSegue" {
             if let vc = segue.destination as? FeedViewController {
@@ -80,6 +78,9 @@ class GroupsViewController: UIViewController {
                 if let tag = (sender as? GroupsTableViewCell)?.tag {
                     vc.group = mainUser.groups[tag]
                     vc.group.feedDelegate = vc
+                    
+                    // Deselect the row after seguing so it is not highlighted when we segue back
+                    tableView.deselectRow(at: IndexPath(row: tag, section: 0), animated: false)
                 }
                 
                 vc.leaveGroupDelegate = self
@@ -92,11 +93,8 @@ class GroupsViewController: UIViewController {
 extension GroupsViewController {
     // WIP: New way of loading data, both locally and from the database
     func load(completion: @escaping () -> Void) {
-        let uid = Auth.auth().currentUser?.uid
-        
         // Attempt to load from the local file first
         if let value = FileUtils.loadJSON(file: "users/mainUser.json") {
-            //print(value)
             processUserData(value)
             
             // Then download the new data anyways and compare with the loaded data
@@ -138,20 +136,22 @@ extension GroupsViewController {
                                 let groupName = groupValue["name"] as! String
                                 let group = Group(uid: groupID, name: groupName)
                                 
+                                group.loadData()
+                                
                                 self.joinedNewGroup(group: group)
                                 
                                 // Load all of the data for this group
                                 // Either locally or download it from the database
-                                self.loadGroupData(index: 0)
                                 
-                                // TODO: Place this in a better place
+                                self.sortGroups()
+                                
+                                // TODO: Put this in a better place
                                 FileUtils.saveToJSON(dict: mainUser.convertToDict(), toPath: "users/mainUser.json")
                             }
                         })
                     }
                     
                     // Save the (possibly) updated groups to the file system
-                    //FileUtils.saveToJSON(dict: mainUser.convertToDict(), toPath: "users/mainUser.json")
                     
                     // How inefficient is this?
                     // Will it ever be a problem with the table view if the cells aren't inserterd/refreshed into the tableView
@@ -237,9 +237,13 @@ extension GroupsViewController {
                 let groupName = groups[groupID]
                 
                 let group = Group(uid: groupID, name: groupName!)
+                group.sortGroupsDelegate = self
                 
-                mainUser.groups.append(group)
-                loadGroupData(index: mainUser.groups.count - 1)
+                let index = indexForUpdatedGroup(group: group)
+                
+                mainUser.groups.insert(group, at: index)
+                
+                group.loadData()
                 
                 // Attempt to download the group icon
                 group.requestGroupIcon(completion: { (icon) in
@@ -265,21 +269,6 @@ extension GroupsViewController {
                 })
             }
         }
-    }
-    
-    func sortGroups() {
-        mainUser.groups.sort(by: { (group1, group2) in
-            if let time1 = group1.newestPostTime {
-                if let time2 = group2.newestPostTime {
-                    return time1 < time2
-                    
-                } else {
-                    return true
-                }
-            } else {
-                return false
-            }
-        })
     }
     
     // TODO: Consider moving this function to a separate class
@@ -315,11 +304,13 @@ extension GroupsViewController {
     
     // Called when a remote user adds this user to their group
     func joinedNewGroup(group: Group) {
+        let index = indexForUpdatedGroup(group: group)
+        
         // add it to the user's groups array
-        mainUser.groups.insert(group, at: 0)
+        mainUser.groups.insert(group, at: index)
         
         // Insert the new group into the tableView
-        tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .automatic)
+        tableView.insertRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
         
         // Attempt to download the group icon
         group.requestGroupIcon(completion: { (icon) in
@@ -344,22 +335,10 @@ extension GroupsViewController {
             }
         })
     }
-    
-    // Called when a new post is added, should be a delegate?
-    func groupUpdated(group: Group) {
-        // Update the mainUsers' groups array, and get the index(row) this group is located at
-        let row = mainUser.groupUpdated(group: group)
-        
-        
-        // Move the row to the top
-        tableView.moveRow(at: IndexPath(row: row, section: 0), to: IndexPath(row: 0, section: 0))
-        
-        // TODO: Update the timestamp
-    }
 }
 
 // MARK: - Delegate functions for adding and leaving groups
-extension GroupsViewController: AddGroupDelegate, LeaveGroupDelegate {
+extension GroupsViewController: AddGroupDelegate, LeaveGroupDelegate, SortGroupsDelegate {
     // GroupsViewControllerDelegate function, called from CreateGroupVC
     func createNewGroup(groupName: String, icon: UIImage) {
         let groupID = database.ref.child("groups").childByAutoId().key
@@ -367,11 +346,13 @@ extension GroupsViewController: AddGroupDelegate, LeaveGroupDelegate {
         // Add the data to the user tree
         database.ref.child("users").child(mainUser.uid).child("groups").child(groupID).setValue(groupName)
         
+        let creationDate = Date.timeIntervalSinceReferenceDate
+        
         // Add the data to the groups tree
         let groupRef = database.ref.child("groups").child(groupID)
         groupRef.child("name").setValue(groupName)
         groupRef.child("creator").setValue(mainUser.uid)
-        //groupRef.child("creationDate").setValue(NSDate.timeIntervalSinceReferenceDate) // No purpose for this for now
+        groupRef.child("creationDate").setValue(creationDate) // No purpose for this for now
         
         // Add the mainuser as a member
         groupRef.child("members").child(mainUser.uid).setValue(mainUser.handle)
@@ -383,11 +364,40 @@ extension GroupsViewController: AddGroupDelegate, LeaveGroupDelegate {
         let group = Group(uid: groupID, name: groupName)
         group.setIcon(icon: icon)
         
+        group.newestPostTime = creationDate
+        
         // Prepend this group to the groups array
         mainUser.groups.insert(group, at: 0)
         
         // Insert it into the top of the tableView, shifting the other
         tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .none)
+        
+        FileUtils.saveToJSON(dict: group.convertToDict(), toPath: "groups\(group.uid).json")
+    }
+    
+    // SortGroupsDelegate function
+    // Called within GroupsVC and from Group.loadData()
+    func sortGroups() {
+        mainUser.groups.sort(by: { (group1, group2) in
+            return group1.newestPostTime > group2.newestPostTime
+        })
+        
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
+    
+    // SortGroupsDelegate
+    // Called when a new post is added
+    func groupUpdated(group: Group) {
+        // Update the mainUsers' groups array, and get the index(row) this group is located at
+        let row = mainUser.groupUpdated(group: group)
+        
+        // Move the row to the topd
+        tableView.moveRow(at: IndexPath(row: row, section: 0), to: IndexPath(row: 0, section: 0))
+        
+        // Reload the row with the updated timestamp
+        tableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .automatic)
     }
     
     // LeaveGroupDelegate. Called from GroupSettingsVC

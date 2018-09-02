@@ -26,9 +26,7 @@ class GroupsTableViewCell: UITableViewCell {
         groupPhotoView?.layer.cornerRadius = groupPhotoView.frame.size.width / 2
         groupPhotoView.clipsToBounds = true
         
-        if let time = group.newestPostTime {
-            timeLabel.text = DateUtils.getDate(timestamp: time)
-        }
+        timeLabel.text = DateUtils.getDate(timestamp: group.newestPostTime)
         
         if let icon = group.getIcon() {
             groupPhotoView.image = icon

@@ -13,7 +13,7 @@ class CreateGroupViewController: UIViewController {
     @IBOutlet weak var groupNameField: UITextField!
     
     // For passing the new group back to the groups view
-    var delegate: AddGroupDelegate!
+    var addGroupDelegate: AddGroupDelegate!
     
     var imagePicker = UIImagePickerController()
     
@@ -40,7 +40,7 @@ class CreateGroupViewController: UIViewController {
     
     @IBAction func continuePressed(_ sender: Any) {
         if groupNameField.text!.count > 0 {
-            delegate.createNewGroup(groupName: groupNameField.text!, icon: (groupIconButton.imageView?.image)!)
+            addGroupDelegate.createNewGroup(groupName: groupNameField.text!, icon: (groupIconButton.imageView?.image)!)
             
             self.navigationController?.popViewController(animated: true)
         }

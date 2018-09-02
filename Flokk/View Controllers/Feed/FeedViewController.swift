@@ -59,6 +59,7 @@ class FeedViewController: UIViewController {
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         
+        // Set the group's feed delegate to nil, notifying it that its respective Feed is not in view anymore
         group.feedDelegate = nil
         
         // Stop the new posts listener
