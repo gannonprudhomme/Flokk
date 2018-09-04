@@ -22,10 +22,6 @@ protocol NewPostDelegate {
 class FeedViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
-    // Serves as a queue / priority queue?
-    // Sorted by date, although hopefully Firebase fills it sorted automatically
-    //var posts = [Post]()
-    
     var group: Group!
     
     var leaveGroupDelegate: LeaveGroupDelegate! // Used by GroupSettingsVC
@@ -50,10 +46,6 @@ class FeedViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        //tableView.reloadData()
-        
-        // Check if there were any
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -65,8 +57,7 @@ class FeedViewController: UIViewController {
         // Stop the new posts listener
         removeListeners()
         
-        // Stop the videos from being played
-        
+        // Stop the videos from being played after we segue out
         for c in tableView.visibleCells {
             if let cell = c as? FeedTableViewCell {
                 // Pause the video if it's playing and remove the observers
@@ -97,9 +88,8 @@ class FeedViewController: UIViewController {
 extension FeedViewController: UploadPostDelegate, NewPostDelegate {
     func loadPostVideos(startIndex: Int, count: Int) {
         // Create the directory for the posts to be stored
-        let documentDirectory = FileUtils.getDocumentsDirectory()
         let outputPath = "groups/\(group.uid)/posts"
-        let outputURL = documentDirectory.appendingPathComponent(outputPath)
+        let outputURL = FileUtils.getDocumentsDirectory().appendingPathComponent(outputPath)
         
         do {
             try FileManager.default.createDirectory(at: outputURL, withIntermediateDirectories: true, attributes: nil)
@@ -110,7 +100,7 @@ extension FeedViewController: UploadPostDelegate, NewPostDelegate {
         // Iterate through a range of posts
         for i in startIndex..<startIndex + count {
             let post = group.posts[i]
-            print(post)
+            //print(post)
             
             let finalURL = outputURL.appendingPathComponent("\(post.uid).mp4")
             let finalPath = outputPath + "/\(post.uid).mp4"

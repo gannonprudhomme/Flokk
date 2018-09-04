@@ -377,6 +377,9 @@ extension GroupsViewController: AddGroupDelegate, LeaveGroupDelegate, SortGroups
         tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .none)
         
         FileUtils.saveToJSON(dict: group.convertToDict(), toPath: "groups\(group.uid).json")
+        
+        // Save the group icon
+        FileUtils.saveGroupIcon(group: group)
     }
     
     // SortGroupsDelegate function
