@@ -54,13 +54,11 @@ class Group: CustomStringConvertible {
         sortGroupsDelegate.groupUpdated(group: self)
     }
     
-    // TODO: Should this be done in here?
     // Attempt to load the group Icon. If it's already loaded, return immediately
     // Otherwise, load it in from Firebase
     func requestGroupIcon(completion: @escaping (UIImage?) -> Void) {
         // Check if the icon is stored locally
-        if let image = FileUtils.loadImage(path: "groups/\(uid).jpg") {
-            //print("\n\(name) icon loaded locally\n")
+        if let image = FileUtils.loadImage(path: "groups/\(uid)/icon.jpg") {
             icon = image
             
         // If it's not, download it from Firebase
@@ -156,7 +154,7 @@ extension Group {
     // While still being able to sort the groups whenever we want
     func loadData() {
         // If there is a local file
-        if let value = FileUtils.loadJSON(file: "groups/\(uid).json") {
+        if let value = FileUtils.loadJSON(file: "groups/\(uid)/data.jsonadf") {
             // Read from the local file
             self.processGroupData(value: value)
             
@@ -242,7 +240,7 @@ extension Group {
                     }
                     
                     // Save the file, updating the member changes
-                    FileUtils.saveToJSON(dict: self.convertToDict(), toPath: "groups/\(self.uid).json")
+                    FileUtils.saveToJSON(dict: self.convertToDict(), toPath: "groups/\(self.uid)/data.json")
                 }
             })
         } else { // If there is no local file
@@ -252,7 +250,7 @@ extension Group {
                 if let value = snapshot.value as? [String : Any] {
                     self.processGroupData(value: value)
                     
-                    FileUtils.saveToJSON(dict: value, toPath: "groups/\(self.uid).json")
+                    FileUtils.saveToJSON(dict: value, toPath: "groups/\(self.uid)/data.json")
                 }
             })
         }

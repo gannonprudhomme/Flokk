@@ -135,6 +135,22 @@ extension FeedViewController: UploadPostDelegate, NewPostDelegate {
         }
     }
     
+    func loadPosterIcons(startIndex: Int, count: Int) {
+        // Could also split the posts into maps [String memberUID : Array of post UIDS]
+        // And after loading the member's profile picture, reload all of the posts that that specific user uploaded
+        // This would mean we would have to split the posts after we've loaded them in into these subgroups, before acting upon them
+        
+        // For every post to load poster icons for
+            // Check if the user with that UID is loaded in already
+                // If they are, check if
+            // If not, completely load them
+        
+        
+        for i in startIndex..<(startIndex + count) {
+            
+        }
+    }
+    
     // UploadPostDelegate function
     // Called in VideoPlaybackVC after the user has finalized the post
     func uploadPost(fileURL: URL) {
@@ -168,7 +184,7 @@ extension FeedViewController: UploadPostDelegate, NewPostDelegate {
         tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .none)
         
         // Resave the group json
-        FileUtils.saveToJSON(dict: group.convertToDict(), toPath: "groups/\(group.uid).json")
+        FileUtils.saveToJSON(dict: group.convertToDict(), toPath: "groups/\(group.uid)/data.json")
     }
     
     // NewPostDelegate function
@@ -188,7 +204,6 @@ extension FeedViewController: UploadPostDelegate, NewPostDelegate {
     func addListeners() {
         postChangesHandle = database.child("groups").child(group.uid).child("posts").observe(.value, with: { (snapshot) in
             if let value = snapshot.value as? [String : Any] {
-                print(value)
                 for newPostID in value.keys {
                     var isNewPost = true
                     
@@ -201,7 +216,6 @@ extension FeedViewController: UploadPostDelegate, NewPostDelegate {
                     
                     // If this is a new post
                     if isNewPost {
-                        print(value[newPostID]!)
                         if let data = value[newPostID] as? [String : Any] {
                             
                             let timestamp = data["timestamp"] as! Double

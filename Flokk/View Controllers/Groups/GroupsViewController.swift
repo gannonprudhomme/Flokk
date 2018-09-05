@@ -164,6 +164,7 @@ extension GroupsViewController {
                         mainUser.groups.remove(at: index)
                         
                         // TODO: Delete all of the local files for this group
+                        FileUtils.deleteAllFilesInDirectory(path: "groups/\(group.uid)/posts")
                         
                         // The completion handler already deals with reloading this?
                         // Remove the group from the tableView
@@ -247,7 +248,7 @@ extension GroupsViewController {
                 
                 // Attempt to download the group icon
                 group.requestGroupIcon(completion: { (icon) in
-                    if let icon = icon {
+                    if let _ = icon {
                         // TODO: Review this operation
                         // And updated the according row
                         DispatchQueue.main.async {
@@ -376,7 +377,7 @@ extension GroupsViewController: AddGroupDelegate, LeaveGroupDelegate, SortGroups
         // Insert it into the top of the tableView, shifting the other
         tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .none)
         
-        FileUtils.saveToJSON(dict: group.convertToDict(), toPath: "groups\(group.uid).json")
+        FileUtils.saveToJSON(dict: group.convertToDict(), toPath: "groups/\(group.uid)/data.json")
         
         // Save the group icon
         FileUtils.saveGroupIcon(group: group)
@@ -439,6 +440,9 @@ extension GroupsViewController: AddGroupDelegate, LeaveGroupDelegate, SortGroups
         
         // Remove the user from the group's members list
         database.child("groups").child(group.uid).child("members").child(mainUser.uid).removeValue()
+        
+        // Remove all of the local files for this group
+        FileUtils.deleteAllFilesInDirectory(path: "groups/\(group.uid)/posts")
         
         // Find the row/index of the group to be removed
         var index = -1

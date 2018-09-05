@@ -93,20 +93,28 @@ class GroupSettingsViewController: UIViewController, AddUserDelegate {
         for i in 0..<group.members.count {
             let member = group.members[i]
             
-            storage.child("users").child(member.uid).child("profilePhoto.jpg").getData(maxSize: MAX_PROFILE_PHOTO_SIZE, completion: { (data, error) in
-                if error == nil {
-                    member.profilePhoto = UIImage(data: data!)
-                    
-                    DispatchQueue.main.async {
-                        self.collectionView.reloadItems(at: [IndexPath(item: i, section: 0)])
-                    }
-                    
-                } else {
-                    print("ERROR LOADING \(member.uid) PROFILE PHOTO")
-                    print(error!)
-                    return
+            // Check if it's already loaded before attempting to download it
+            if let _ = member.profilePhoto {
+                DispatchQueue.main.async {
+                    self.collectionView.reloadItems(at: [IndexPath(item: i, section: 0)])
                 }
-            })
+                
+            } else {
+                storage.child("users").child(member.uid).child("profilePhoto.jpg").getData(maxSize: MAX_PROFILE_PHOTO_SIZE, completion: { (data, error) in
+                    if error == nil {
+                        member.profilePhoto = UIImage(data: data!)
+                        
+                        DispatchQueue.main.async {
+                            self.collectionView.reloadItems(at: [IndexPath(item: i, section: 0)])
+                        }
+                        
+                    } else {
+                        print("ERROR LOADING \(member.uid) PROFILE PHOTO")
+                        print(error!)
+                        return
+                    }
+                })
+            }
         }
     }
     

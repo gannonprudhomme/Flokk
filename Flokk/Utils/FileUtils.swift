@@ -96,6 +96,22 @@ class FileUtils {
         }
     }
     
+    // Delete all of the files in the specified directory
+    static func deleteAllFilesInDirectory(path: String) {
+        let fileManager = FileManager.default
+        let url = getDocumentsDirectory().appendingPathComponent(path)
+        do {
+            let paths = try fileManager.contentsOfDirectory(atPath: url.path)
+            
+            for filePath in paths {
+                try fileManager.removeItem(atPath: filePath)
+            }
+        } catch let error {
+            print(error)
+            return
+        }
+    }
+    
     static func loadImage(path: String) -> UIImage? {
         let url = getDocumentsDirectory().appendingPathComponent(path)
         
@@ -134,7 +150,7 @@ class FileUtils {
     
     // Save the group icon currently saved in group.icon to the disk
     static func saveGroupIcon(group: Group) {
-        saveImage(image: group.icon!, toPath: "groups/\(group.uid).jpg")
+        saveImage(image: group.icon!, toPath: "groups/\(group.uid)/icon.jpg")
     }
     
     static func getDocumentsDirectory() -> URL {
