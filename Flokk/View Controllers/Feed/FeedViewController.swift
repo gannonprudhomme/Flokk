@@ -230,13 +230,17 @@ extension FeedViewController: UploadPostDelegate, NewPostDelegate {
                             self.group.addPost(post: post)
                             
                             DispatchQueue.main.async {
-                                self.tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .automatic)
+                                //self.tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .automatic)
                             }
                             
                             // Begin loading the video for the new post
                             self.loadPostVideos(startIndex: 0, count: 1)
                         }
                     }
+                }
+                
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
                 }
             }
         })

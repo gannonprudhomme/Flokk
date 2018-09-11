@@ -41,15 +41,7 @@ class FeedTableViewCell: UITableViewCell {
         }
     }
     
-    /*
-    var videoPlayerItem: AVPlayerItem? = nil {
-        didSet {
-            avPlayer.replaceCurrentItem(with: videoPlayerItem)
-        }
-    } */
-    
     func initialize() {
-        //print("init")
         setAspectRatio()
         addPlayTouchGesture()
         
