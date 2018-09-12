@@ -16,7 +16,7 @@
 		7FEFAF842133A28B00D9537E /* BounceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8012B3210123B000CEA5DA /* BounceButton.swift */; };
 		8711A836210D478C00CCFD38 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8711A835210D478C00CCFD38 /* FeedViewController.swift */; };
 		8711A839210D47CD00CCFD38 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8711A838210D47CD00CCFD38 /* Post.swift */; };
-		8711A83B210D539D00CCFD38 /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8711A83A210D539D00CCFD38 /* FeedTableViewCell.swift */; };
+		8711A83B210D539D00CCFD38 /* FeedTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8711A83A210D539D00CCFD38 /* FeedTableCell.swift */; };
 		8711A8432113E55D00CCFD38 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8711A8422113E55C00CCFD38 /* GoogleService-Info.plist */; };
 		8711A8462113E5F000CCFD38 /* CameraNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8711A8452113E5F000CCFD38 /* CameraNavigationController.swift */; };
 		8720D7C120F1DBBC0069F56B /* VideoPlaybackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8720D7C020F1DBBC0069F56B /* VideoPlaybackViewController.swift */; };
@@ -66,7 +66,7 @@
 		7FE56E1B212F254C00A8CEE8 /* OpenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenViewController.swift; sourceTree = "<group>"; };
 		8711A835210D478C00CCFD38 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		8711A838210D47CD00CCFD38 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
-		8711A83A210D539D00CCFD38 /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
+		8711A83A210D539D00CCFD38 /* FeedTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableCell.swift; sourceTree = "<group>"; };
 		8711A8422113E55C00CCFD38 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8711A8452113E5F000CCFD38 /* CameraNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraNavigationController.swift; sourceTree = "<group>"; };
 		8720D7C020F1DBBC0069F56B /* VideoPlaybackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlaybackViewController.swift; sourceTree = "<group>"; };
@@ -80,6 +80,7 @@
 		872334212130C3FC00CA1BF6 /* GroupMemberCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupMemberCollectionViewCell.swift; sourceTree = "<group>"; };
 		8723342C213371F900CA1BF6 /* FirstScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstScreenViewController.swift; sourceTree = "<group>"; };
 		87706DAC20F960B200663948 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		87C312AE214774CA00778B69 /* Flokk-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Flokk-Bridging-Header.h"; sourceTree = "<group>"; };
 		87D2CEA921167570007785DC /* FirstSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstSignUpViewController.swift; sourceTree = "<group>"; };
 		87D2CEAB211675AD007785DC /* VerifyNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyNumberViewController.swift; sourceTree = "<group>"; };
 		87D2CEAD211A4069007785DC /* SecondSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondSignUpViewController.swift; sourceTree = "<group>"; };
@@ -238,6 +239,7 @@
 				87706DAC20F960B200663948 /* .gitignore */,
 				7F8012B5210123B700CEA5DA /* Animation */,
 				7F8012A92100F69D00CEA5DA /* Fonts */,
+				87C312AE214774CA00778B69 /* Flokk-Bridging-Header.h */,
 			);
 			path = Flokk;
 			sourceTree = "<group>";
@@ -245,7 +247,7 @@
 		872334232130C40100CA1BF6 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				8711A83A210D539D00CCFD38 /* FeedTableViewCell.swift */,
+				8711A83A210D539D00CCFD38 /* FeedTableCell.swift */,
 				87D2CF272124D30A007785DC /* NewFeedTableViewCell.swift */,
 				872334212130C3FC00CA1BF6 /* GroupMemberCollectionViewCell.swift */,
 				87D2CF2321235696007785DC /* UserSearchTableViewCell.swift */,
@@ -331,6 +333,7 @@
 				TargetAttributes = {
 					87221A0520F073F2000A00F7 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0940;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -462,7 +465,7 @@
 				87D2CF26212356C6007785DC /* UserSearchCollectionViewCell.swift in Sources */,
 				7FE56E1C212F254C00A8CEE8 /* OpenViewController.swift in Sources */,
 				87D2CEAC211675AD007785DC /* VerifyNumberViewController.swift in Sources */,
-				8711A83B210D539D00CCFD38 /* FeedTableViewCell.swift in Sources */,
+				8711A83B210D539D00CCFD38 /* FeedTableCell.swift in Sources */,
 				87E363472135297600C7DF85 /* DataLoading.swift in Sources */,
 				8711A836210D478C00CCFD38 /* FeedViewController.swift in Sources */,
 				8711A839210D47CD00CCFD38 /* Post.swift in Sources */,
@@ -606,6 +609,7 @@
 			baseConfigurationReference = 4179953DF8DE914F0B1E1396 /* Pods-Flokk.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L4K4Q74X62;
 				INFOPLIST_FILE = Flokk/Info.plist;
@@ -613,6 +617,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.flokk.flokk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Flokk/Flokk-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -623,6 +629,7 @@
 			baseConfigurationReference = 4E7F9723779119924F127835 /* Pods-Flokk.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L4K4Q74X62;
 				INFOPLIST_FILE = Flokk/Info.plist;
@@ -630,6 +637,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.flokk.flokk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Flokk/Flokk-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

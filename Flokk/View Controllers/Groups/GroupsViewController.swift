@@ -36,6 +36,8 @@ class GroupsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.largeTitleDisplayMode = .always
+        
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -488,6 +490,18 @@ extension GroupsViewController : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = FeedViewController()
+        
+        vc.group = mainUser.groups[indexPath.row]
+        vc.group.feedDelegate = vc
+        vc.leaveGroupDelegate = self
+        
+        tableView.deselectRow(at: indexPath, animated: false)
+        
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
