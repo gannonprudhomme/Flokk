@@ -156,9 +156,12 @@ extension Group {
     // While still being able to sort the groups whenever we want
     func loadData() {
         // If there is a local file
-        if let value = FileUtils.loadJSON(file: "groups/\(uid).json") {
+        let stringVar = "asdf"
+        if stringVar.count == 0
+        // if let value = FileUtils.loadJSON(file: "groups/\(uid).json")
+        {
             // Read from the local file
-            self.processGroupData(value: value)
+            // self.processGroupData(value: value)
             
             let groupRef = database.child("groups").child(uid)
             
