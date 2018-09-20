@@ -15,6 +15,7 @@ Flokk is currently in redevelopment, with an expected release date of early Sept
 - [Record Button](https://github.com/samuelbeek/RecordButton)
 - [ABVideoRangeSlider](https://github.com/AppsBoulevard/ABVideoRangeSlider)
 - [SwiftVideoBackground](https://github.com/dingwilson/SwiftVideoBackground)
+- [Texture](https://github.com/texturegroup/texture)
 
 ## Screen Shots
 ### The Groups
