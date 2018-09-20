@@ -425,7 +425,7 @@
                                     <fragment content="Choose some people you would like to add to your group.">
                                         <attributes>
                                             <color key="NSColor" name="Secondary Text"/>
-                                            <font key="NSFont" size="15" name="JosefinSans"/>
+                                            <font key="NSFont" metaFont="system" size="15"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -585,7 +585,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="label" destination="KhX-d7-SyQ" id="YYg-jA-qi2"/>
                                             <outlet property="mainView" destination="Le9-ax-0NY" id="T6i-M5-Znp"/>
+                                            <outlet property="profilePhotoView" destination="R1x-cq-lQj" id="rac-WZ-W2Q"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

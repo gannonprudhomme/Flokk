@@ -22,10 +22,6 @@ protocol NewPostDelegate {
 class FeedViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
-    // Serves as a queue / priority queue?
-    // Sorted by date, although hopefully Firebase fills it sorted automatically
-    //var posts = [Post]()
-    
     var group: Group!
     
     var leaveGroupDelegate: LeaveGroupDelegate! // Used by GroupSettingsVC
@@ -50,10 +46,6 @@ class FeedViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        //tableView.reloadData()
-        
-        // Check if there were any
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -65,8 +57,7 @@ class FeedViewController: UIViewController {
         // Stop the new posts listener
         removeListeners()
         
-        // Stop the videos from being played
-        
+        // Stop the videos from being played after we segue out
         for c in tableView.visibleCells {
             if let cell = c as? FeedTableViewCell {
                 // Pause the video if it's playing and remove the observers
@@ -97,9 +88,8 @@ class FeedViewController: UIViewController {
 extension FeedViewController: UploadPostDelegate, NewPostDelegate {
     func loadPostVideos(startIndex: Int, count: Int) {
         // Create the directory for the posts to be stored
-        let documentDirectory = FileUtils.getDocumentsDirectory()
         let outputPath = "groups/\(group.uid)/posts"
-        let outputURL = documentDirectory.appendingPathComponent(outputPath)
+        let outputURL = FileUtils.getDocumentsDirectory().appendingPathComponent(outputPath)
         
         do {
             try FileManager.default.createDirectory(at: outputURL, withIntermediateDirectories: true, attributes: nil)
@@ -110,7 +100,7 @@ extension FeedViewController: UploadPostDelegate, NewPostDelegate {
         // Iterate through a range of posts
         for i in startIndex..<startIndex + count {
             let post = group.posts[i]
-            print(post)
+            //print(post)
             
             let finalURL = outputURL.appendingPathComponent("\(post.uid).mp4")
             let finalPath = outputPath + "/\(post.uid).mp4"
@@ -142,6 +132,22 @@ extension FeedViewController: UploadPostDelegate, NewPostDelegate {
                     }
                 })
             }
+        }
+    }
+    
+    func loadPosterIcons(startIndex: Int, count: Int) {
+        // Could also split the posts into maps [String memberUID : Array of post UIDS]
+        // And after loading the member's profile picture, reload all of the posts that that specific user uploaded
+        // This would mean we would have to split the posts after we've loaded them in into these subgroups, before acting upon them
+        
+        // For every post to load poster icons for
+            // Check if the user with that UID is loaded in already
+                // If they are, check if
+            // If not, completely load them
+        
+        
+        for i in startIndex..<(startIndex + count) {
+            
         }
     }
     
@@ -178,7 +184,7 @@ extension FeedViewController: UploadPostDelegate, NewPostDelegate {
         tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .none)
         
         // Resave the group json
-        FileUtils.saveToJSON(dict: group.convertToDict(), toPath: "groups/\(group.uid).json")
+        FileUtils.saveToJSON(dict: group.convertToDict(), toPath: "groups/\(group.uid)/data.json")
     }
     
     // NewPostDelegate function
@@ -198,7 +204,6 @@ extension FeedViewController: UploadPostDelegate, NewPostDelegate {
     func addListeners() {
         postChangesHandle = database.child("groups").child(group.uid).child("posts").observe(.value, with: { (snapshot) in
             if let value = snapshot.value as? [String : Any] {
-                print(value)
                 for newPostID in value.keys {
                     var isNewPost = true
                     
@@ -211,7 +216,6 @@ extension FeedViewController: UploadPostDelegate, NewPostDelegate {
                     
                     // If this is a new post
                     if isNewPost {
-                        print(value[newPostID]!)
                         if let data = value[newPostID] as? [String : Any] {
                             
                             let timestamp = data["timestamp"] as! Double
@@ -226,13 +230,17 @@ extension FeedViewController: UploadPostDelegate, NewPostDelegate {
                             self.group.addPost(post: post)
                             
                             DispatchQueue.main.async {
-                                self.tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .automatic)
+                                //self.tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .automatic)
                             }
                             
                             // Begin loading the video for the new post
                             self.loadPostVideos(startIndex: 0, count: 1)
                         }
                     }
+                }
+                
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
                 }
             }
         })

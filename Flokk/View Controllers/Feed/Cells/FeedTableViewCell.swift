@@ -13,6 +13,9 @@ import AVFoundation
 // Probably needs to be handled elsewhere
 class FeedTableViewCell: UITableViewCell {
     @IBOutlet weak var mainView: UIView!
+    @IBOutlet weak var profilePhotoView: UIImageView!
+    @IBOutlet weak var label: UILabel!
+    
     var post: Post! // The post this cell is representing
     
     var avPlayer = AVPlayer()
@@ -38,15 +41,7 @@ class FeedTableViewCell: UITableViewCell {
         }
     }
     
-    /*
-    var videoPlayerItem: AVPlayerItem? = nil {
-        didSet {
-            avPlayer.replaceCurrentItem(with: videoPlayerItem)
-        }
-    } */
-    
     func initialize() {
-        //print("init")
         setAspectRatio()
         addPlayTouchGesture()
         
@@ -108,7 +103,6 @@ class FeedTableViewCell: UITableViewCell {
         }
     }
     
-    // TODO: Remove this
     // Adds the gesture for pausing & playing the video by tapping it
     func addPlayTouchGesture() {
         let touchGesture = UITapGestureRecognizer(target: self, action: #selector(self.mainViewPressed(_:)))

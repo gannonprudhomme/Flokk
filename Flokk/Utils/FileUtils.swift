@@ -70,12 +70,11 @@ class FileUtils {
             let str = json.description
             try str.write(to: finalURL, atomically: true, encoding: .utf8)
             
-            print("Successfully saved \(finalURL.lastPathComponent)")
+            //print("Successfully saved \(finalURL.lastPathComponent)")
         } catch let error {
             print("Unsuccessfully saved \(finalURL.lastPathComponent)")
             print(error)
         }
-        
     }
     
     static func doesFileExist(atPath: String) -> Bool{
@@ -97,6 +96,22 @@ class FileUtils {
         }
     }
     
+    // Delete all of the files in the specified directory
+    static func deleteAllFilesInDirectory(path: String) {
+        let fileManager = FileManager.default
+        let url = getDocumentsDirectory().appendingPathComponent(path)
+        do {
+            let paths = try fileManager.contentsOfDirectory(atPath: url.path)
+            
+            for filePath in paths {
+                try fileManager.removeItem(atPath: filePath)
+            }
+        } catch let error {
+            print(error)
+            return
+        }
+    }
+    
     static func loadImage(path: String) -> UIImage? {
         let url = getDocumentsDirectory().appendingPathComponent(path)
         
@@ -107,7 +122,8 @@ class FileUtils {
                 return image
             }
         } catch let error {
-            print(error)
+            //print("Could not load image at path: \(path)")
+            //print(error)
             return nil
         }
         
@@ -124,7 +140,7 @@ class FileUtils {
                 
                 try data.write(to: fileURL)
                 
-                print("\n\(path) saved successfully!\n")
+                //print("\n\(path) saved successfully!\n")
             } catch let error {
                 print(error)
                 return
@@ -134,7 +150,7 @@ class FileUtils {
     
     // Save the group icon currently saved in group.icon to the disk
     static func saveGroupIcon(group: Group) {
-        saveImage(image: group.icon!, toPath: "groups/\(group.uid).jpg")
+        saveImage(image: group.icon!, toPath: "groups/\(group.uid)/icon.jpg")
     }
     
     static func getDocumentsDirectory() -> URL {

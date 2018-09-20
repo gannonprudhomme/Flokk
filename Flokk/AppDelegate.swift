@@ -14,6 +14,7 @@ import FirebaseStorage
 var database: DatabaseReference!
 var storage: StorageReference!
 var mainUser: User! // Flokk User, not Firebase
+var users: [User]! // Collection of users throughout the app, store globally in case there are multiple users in a group
 
 // Global constants
 let MAX_PROFILE_PHOTO_SIZE: Int64 = 1 * 4096 * 4096

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 // Tuple for the pixel dimensions of the video
 typealias Dimensions = (width: Int?, height: Int?)
@@ -26,6 +27,9 @@ class Post: CustomStringConvertible {
     // Width and height of the video, in pixels
     // Can this be retrieved from the URL?
     var dimensions: Dimensions?
+    
+    // Preview image that is shown before the video is displayed
+    var previewImage: UIImage?
     
     init(uid: String, timestamp: Double) {
         self.uid = uid
