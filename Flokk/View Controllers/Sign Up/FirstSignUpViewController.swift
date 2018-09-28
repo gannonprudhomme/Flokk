@@ -9,16 +9,19 @@
 import UIKit
 import Firebase
 import FirebaseAuth
+import SwiftVideoBackground
 
 // For now, purpose is to just pass on data to the SecondSignUp VC
 class FirstSignUpViewController: UIViewController {
     @IBOutlet weak var fullNameField: UITextField!
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet var signUpVideoView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+       // try? VideoBackground.shared.play(view: signUpVideoView, videoName: "secondVideo", videoType: "mp4")
         //fullNameField.becomeFirstResponder()
         
     }

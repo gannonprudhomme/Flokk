@@ -55,6 +55,10 @@ class AddUserViewController: UIViewController {
         // Set the search bar as the header of the tableView
         tableView.tableHeaderView = searchController.searchBar
         
+        // Set color for cancel button on search bar
+        let cancelButtonAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+        UIBarButtonItem.appearance().setTitleTextAttributes(cancelButtonAttributes , for: .normal)
+        
         let singleTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.singleTap(sender:)))
         singleTapGestureRecognizer.numberOfTapsRequired = 1
         singleTapGestureRecognizer.isEnabled = true

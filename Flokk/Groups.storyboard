@@ -156,6 +156,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="createGroupImage" translatesAutoresizingMaskIntoConstraints="NO" id="gEK-4r-rxo">
+                                <rect key="frame" x="97.5" y="243" width="179" height="68"/>
+                            </imageView>
                             <view contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="coloredView" translatesAutoresizingMaskIntoConstraints="NO" id="4WT-vm-e4p">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -238,6 +241,8 @@
                             <constraint firstItem="CLY-gc-ISL" firstAttribute="top" secondItem="A7N-RD-fMo" secondAttribute="bottom" id="N5M-Mh-CeF"/>
                             <constraint firstItem="CLY-gc-ISL" firstAttribute="leading" secondItem="Xqp-am-86a" secondAttribute="leading" id="a1q-DB-g6h"/>
                             <constraint firstItem="kcN-dV-btN" firstAttribute="top" secondItem="CLY-gc-ISL" secondAttribute="bottom" id="cWn-Hp-utL"/>
+                            <constraint firstItem="gEK-4r-rxo" firstAttribute="centerX" secondItem="Xqp-am-86a" secondAttribute="centerX" id="ram-HN-7c8"/>
+                            <constraint firstItem="gEK-4r-rxo" firstAttribute="centerY" secondItem="Xqp-am-86a" secondAttribute="centerY" constant="1.5" id="s5y-iz-dXJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Xqp-am-86a"/>
                     </view>
@@ -707,6 +712,7 @@
         <image name="backBttnWhite" width="18" height="15"/>
         <image name="checkBttnTeal" width="19" height="13"/>
         <image name="continue - Bold" width="130" height="42"/>
+        <image name="createGroupImage" width="179" height="68"/>
         <image name="friendsIcon" width="21" height="17"/>
         <image name="leave - Bold" width="130" height="42"/>
         <image name="logOut - Bold" width="121" height="36"/>

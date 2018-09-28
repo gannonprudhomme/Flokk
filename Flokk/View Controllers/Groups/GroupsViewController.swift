@@ -96,7 +96,7 @@ extension GroupsViewController {
     // WIP: New way of loading data, both locally and from the database
     func load(completion: @escaping () -> Void) {
         // Attempt to load from the local file first
-        if let value = FileUtils.loadJSON(file: "users/mainUser.json") {
+        if let value = FileUtils.loadJSON(file: "users/test/mainUser.json") {
             processUserData(value)
             
             // Then download the new data anyways and compare with the loaded data
