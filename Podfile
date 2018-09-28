@@ -11,6 +11,7 @@ target 'Flokk' do
     pod "ABVideoRangeSlider"
     pod "SwiftVideoBackground", "~> 3.0"
     pod "SwiftyJSON", "~> 4.0"
+    pod "Texture" 
     
     # Firebase Pods
     pod "Firebase/Core"

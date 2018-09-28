@@ -43,9 +43,31 @@ PODS:
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
   - NextLevel (0.9.8)
+  - PINCache (3.0.1-beta.6):
+    - PINCache/Arc-exception-safe (= 3.0.1-beta.6)
+    - PINCache/Core (= 3.0.1-beta.6)
+  - PINCache/Arc-exception-safe (3.0.1-beta.6):
+    - PINCache/Core
+  - PINCache/Core (3.0.1-beta.6):
+    - PINOperation (~> 1.1.0)
+  - PINOperation (1.1.1)
+  - PINRemoteImage/Core (3.0.0-beta.13):
+    - PINOperation
+  - PINRemoteImage/iOS (3.0.0-beta.13):
+    - PINRemoteImage/Core
+  - PINRemoteImage/PINCache (3.0.0-beta.13):
+    - PINCache (= 3.0.1-beta.6)
+    - PINRemoteImage/Core
   - RecordButton (1.0.2)
   - SwiftVideoBackground (3.0.0)
   - SwiftyJSON (4.1.0)
+  - Texture (2.7):
+    - Texture/PINRemoteImage (= 2.7)
+  - Texture/Core (2.7)
+  - Texture/PINRemoteImage (2.7):
+    - PINRemoteImage/iOS (= 3.0.0-beta.13)
+    - PINRemoteImage/PINCache
+    - Texture/Core
 
 DEPENDENCIES:
   - ABVideoRangeSlider
@@ -57,6 +79,7 @@ DEPENDENCIES:
   - RecordButton
   - SwiftVideoBackground (~> 3.0)
   - SwiftyJSON (~> 4.0)
+  - Texture
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -73,9 +96,13 @@ SPEC REPOS:
     - leveldb-library
     - nanopb
     - NextLevel
+    - PINCache
+    - PINOperation
+    - PINRemoteImage
     - RecordButton
     - SwiftVideoBackground
     - SwiftyJSON
+    - Texture
 
 SPEC CHECKSUMS:
   ABVideoRangeSlider: f2b6d894170bd0951693de4c1ad625f7f9f8b6a5
@@ -91,10 +118,14 @@ SPEC CHECKSUMS:
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   NextLevel: 14d10b1e6e85ba01f8660a39fb78adedd37bfec0
+  PINCache: d195fdba255283f7e9900a55e3cced377f431f9b
+  PINOperation: a6219e6fc9db9c269eb7a7b871ac193bcf400aac
+  PINRemoteImage: d6d51c5d2adda55f1ce30c96e850b6c4ebd2856a
   RecordButton: 76677be0f4b94f8a387454a23b4b64bd9b6c0e51
   SwiftVideoBackground: 15c69b74458ad57f123c52f55a5bf6865eaf4eae
   SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
+  Texture: 9d7e38965cf22ccd7cd9c249dd78b3f14e70ab6c
 
-PODFILE CHECKSUM: 68ab9b1276bf04898fde03e29f75c21be99798a5
+PODFILE CHECKSUM: 7f664a98b60434485108d11d84dfc70754f54ce2
 
 COCOAPODS: 1.5.3

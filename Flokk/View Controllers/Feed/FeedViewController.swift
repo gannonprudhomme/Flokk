@@ -19,22 +19,58 @@ protocol NewPostDelegate {
     func newPost(post: Post)
 }
 
-class FeedViewController: UIViewController {
-    @IBOutlet weak var tableView: UITableView!
+class FeedViewController: ASViewController<ASDisplayNode> {
+    /*var tableNode: ASTableNode {
+        return node as! ASTableNode
+    } */
     
-    var group: Group!
+    var tableNode: ASTableNode!
+    
+    var cameraButtonNode: ASButtonNode!
+    
+    var group: Group! // Need to move this to a Controller?
     
     var leaveGroupDelegate: LeaveGroupDelegate! // Used by GroupSettingsVC
+    var postChangesHandle: UInt! // Need to move this(listening) to a Controller?
     
-    var postChangesHandle: UInt!
+    init() {
+        super.init(node: ASDisplayNode())
+    }
     
+    // Do any view access in here, but no layout code
     override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        tableView.delegate = self
-        tableView.dataSource = self
-        
         navigationItem.title = group.name
+        navigationItem.largeTitleDisplayMode = .never
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "groupIconTeal"), style: .plain, target: self, action: #selector(self.goToGroupSettings))
+        
+        //self.node.layoutSpecBlock =
+        
+        tableNode = ASTableNode()
+        tableNode.delegate = self
+        tableNode.dataSource = self
+        tableNode.backgroundColor = UIColor(named: "Flokk Navy")
+        tableNode.allowsSelection = false
+        
+        cameraButtonNode = ASButtonNode()
+        cameraButtonNode.setImage(UIImage(named: "addPostBttn"), for: .normal)
+        cameraButtonNode.addTarget(self, action: #selector(self.goToCamera), forControlEvents: .touchUpInside)
+        
+        // Add the nodes to the display node
+        node.addSubnode(tableNode)
+        node.addSubnode(cameraButtonNode)
+        
+        node.layoutSpecBlock = { (node, range) in
+            let insets = ASInsetLayoutSpec(insets: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0), child: self.cameraButtonNode)
+            let relative = ASRelativeLayoutSpec(horizontalPosition: .end, verticalPosition: ASRelativeLayoutSpecPosition.end, sizingOption: .minimumSize, child: insets)
+            
+            let width = UIScreen.main.bounds.width
+            let height = UIScreen.main.bounds.height
+            let stackLayout = ASStackLayoutSpec(direction: .vertical, spacing: 0, justifyContent: .end, alignItems: .end, children: [self.cameraButtonNode])
+            
+            let tableLayout = ASWrapperLayoutSpec(layoutElement: self.tableNode)
+            
+            return ASOverlayLayoutSpec(child: tableLayout, overlay: relative)
+        }
         
         // Load all of the post videos
         // This is assuming the data for this group has already been loaded
@@ -44,13 +80,7 @@ class FeedViewController: UIViewController {
         addListeners()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-    }
-    
     override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        
         // Set the group's feed delegate to nil, notifying it that its respective Feed is not in view anymore
         group.feedDelegate = nil
         
@@ -58,16 +88,35 @@ class FeedViewController: UIViewController {
         removeListeners()
         
         // Stop the videos from being played after we segue out
-        for c in tableView.visibleCells {
-            if let cell = c as? FeedTableViewCell {
-                // Pause the video if it's playing and remove the observers
-                cell.pauseVideo()
-            }
-        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     @IBAction func addPostPressed(_ sender: Any) {
         performSegue(withIdentifier: "feedToCameraSegue", sender: nil)
+    }
+    
+    @objc func goToGroupSettings() {
+        let groupSettingsVC = UIStoryboard(name: "Groups", bundle: nil).instantiateViewController(withIdentifier: "GroupSettingsViewController") as! GroupSettingsViewController
+        
+        groupSettingsVC.group = group
+        groupSettingsVC.leaveGroupDelegate = leaveGroupDelegate
+        
+        navigationController?.pushViewController(groupSettingsVC, animated: true)
+    }
+    
+    @objc func goToCamera() {
+        let cameraVC = UIStoryboard(name: "Camera", bundle: nil).instantiateViewController(withIdentifier: "CameraNavigationController")
+        
+        present(cameraVC, animated: true, completion: nil)
+        
+        //navigationController?.pushViewController(cameraVC, animated: true)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -84,6 +133,27 @@ class FeedViewController: UIViewController {
     }
 }
 
+// TODO: Move this out of the VC
+// MARK: - Table Node Functions
+extension FeedViewController: ASTableDataSource, ASTableDelegate {
+    func tableNode(_ tableNode: ASTableNode, nodeForRowAt indexPath: IndexPath) -> ASCellNode {
+        let post = group.posts[indexPath.row]
+        let node = FeedTableCell(post: post)
+        
+        return node
+    }
+    
+    func tableNode(_ tableNode: ASTableNode, numberOfRowsInSection section: Int) -> Int {
+        return group.posts.count
+    }
+    
+    func numberOfSections(in tableNode: ASTableNode) -> Int {
+        return 1
+    }
+}
+
+
+// TODO: Move this to a Controller
 // MARK: - Post Handling
 extension FeedViewController: UploadPostDelegate, NewPostDelegate {
     func loadPostVideos(startIndex: Int, count: Int) {
@@ -110,9 +180,11 @@ extension FeedViewController: UploadPostDelegate, NewPostDelegate {
                 //print("Post loaded locally in \(group.name) with uid of \(post.uid)")
                 post.filePath = finalPath
                 
+                self.tableNode.reloadRows(at: [IndexPath(row: i, section: 0)], with: .none)
+                
                 // Update the according tableViewCell
                 DispatchQueue.main.async {
-                    self.tableView.reloadRows(at: [IndexPath(row: i, section: 0)], with: .none)
+                    //self.tableView.reloadRows(at: [IndexPath(row: i, section: 0)], with: .none)
                 }
             
             } else { // File does not exist, load it from Firebase Storage
@@ -121,9 +193,11 @@ extension FeedViewController: UploadPostDelegate, NewPostDelegate {
                     if error == nil {
                         post.filePath = finalPath
                         
+                        self.tableNode.reloadRows(at: [IndexPath(row: i, section: 0)], with: .none)
+                        
                         // Update the according tableViewCell once the post has been loaded
                         DispatchQueue.main.async {
-                            self.tableView.reloadRows(at: [IndexPath(row: i, section: 0)], with: .none)
+                            
                         }
                     } else {
                         print("ERROR LOADING POST VIDEO")
@@ -181,7 +255,7 @@ extension FeedViewController: UploadPostDelegate, NewPostDelegate {
         // TODO: Update the according group cell in the tableView?
         
         // Insert it into the top of the tableView, shifting the other
-        tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .none)
+        //tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .none)
         
         // Resave the group json
         FileUtils.saveToJSON(dict: group.convertToDict(), toPath: "groups/\(group.uid)/data.json")
@@ -193,7 +267,7 @@ extension FeedViewController: UploadPostDelegate, NewPostDelegate {
         // Assuming it's already inserted into mainUser.groups.posts, simply insert the tableViewCell
         
         DispatchQueue.main.async {
-            self.tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .automatic)
+            //self.tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .automatic)
         }
         
         // Begin loading the video for the new post
@@ -240,7 +314,7 @@ extension FeedViewController: UploadPostDelegate, NewPostDelegate {
                 }
                 
                 DispatchQueue.main.async {
-                    self.tableView.reloadData()
+                    //self.tableView.reloadData()
                 }
             }
         })
@@ -253,25 +327,3 @@ extension FeedViewController: UploadPostDelegate, NewPostDelegate {
     }
 }
 
-// MARK: - Table View Functions
-extension FeedViewController: UITableViewDataSource, UITableViewDelegate {
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "default", for: indexPath as IndexPath) as! FeedTableViewCell
-        
-        cell.post = group.posts[indexPath.row]
-        cell.initialize()
-        
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return group.posts.count
-    }
-    
-    func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if let feedCell = cell as? FeedTableViewCell {
-            feedCell.pauseVideo()
-        }
-    }
-}
