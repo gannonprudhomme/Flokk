@@ -7,7 +7,7 @@
 ![Imgur](https://i.imgur.com/vVAbqcF.jpg)
 
 Flokk is a group-oriented iOS application that allows users to share 6-second videos in private feeds. 
-Flokk is currently in redevelopment, with an expected release date of early September 2018.
+Flokk is currently in redevelopment, with an expected release date of late Fall 2018
 
 ## Pods/Libraries Used
 - [Firebase](https://firebase.google.com/)
