@@ -157,10 +157,10 @@
 		8711A834210D478100CCFD38 /* Feed */ = {
 			isa = PBXGroup;
 			children = (
+				872D5559215E9F9400619088 /* Controllers */,
+				872D5558215E9F8D00619088 /* View Model */,
+				872D5556215E9F8000619088 /* View Controllers */,
 				872334232130C40100CA1BF6 /* Cells */,
-				8711A835210D478C00CCFD38 /* FeedViewController.swift */,
-				87D2CEC521225722007785DC /* GroupSettingsViewController.swift */,
-				87D2CF2121235493007785DC /* AddUserViewController.swift */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -260,6 +260,30 @@
 				87D2CF25212356C6007785DC /* UserSearchCollectionViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		872D5556215E9F8000619088 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8711A835210D478C00CCFD38 /* FeedViewController.swift */,
+				87D2CEC521225722007785DC /* GroupSettingsViewController.swift */,
+				87D2CF2121235493007785DC /* AddUserViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		872D5558215E9F8D00619088 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		872D5559215E9F9400619088 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		87D2CEA821167524007785DC /* Sign Up */ = {
@@ -619,11 +643,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XT8KNR7TY2;
+				DEVELOPMENT_TEAM = L4K4Q74X62;
 				INFOPLIST_FILE = Flokk/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = flokk;
+				PRODUCT_BUNDLE_IDENTIFIER = com.flokk.flokk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Flokk/Flokk-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -639,11 +663,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XT8KNR7TY2;
+				DEVELOPMENT_TEAM = L4K4Q74X62;
 				INFOPLIST_FILE = Flokk/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = flokk;
+				PRODUCT_BUNDLE_IDENTIFIER = com.flokk.flokk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Flokk/Flokk-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;

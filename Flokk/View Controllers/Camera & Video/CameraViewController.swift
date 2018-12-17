@@ -259,7 +259,7 @@ extension CameraViewController : UIImagePickerControllerDelegate, UINavigationCo
     }
 }
 
-// MARK: Gesture Recognizer
+// MARK: Gesture Recognizer0
 // For holding the record button and detecting when we're done recording(?)
 extension CameraViewController : UIGestureRecognizerDelegate {
     @objc internal func handleLongPressGestureRecognizer(_ gestureRecognizer: UIGestureRecognizer) {

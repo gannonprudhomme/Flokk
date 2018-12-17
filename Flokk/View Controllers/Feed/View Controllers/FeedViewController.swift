@@ -24,6 +24,7 @@ class FeedViewController: ASViewController<ASDisplayNode> {
         return node as! ASTableNode
     } */
     
+    
     var tableNode: ASTableNode!
     
     var cameraButtonNode: ASButtonNode!
@@ -151,7 +152,6 @@ extension FeedViewController: ASTableDataSource, ASTableDelegate {
         return 1
     }
 }
-
 
 // TODO: Move this to a Controller
 // MARK: - Post Handling
