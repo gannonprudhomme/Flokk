@@ -7,10 +7,11 @@
 //
 
 import Foundation
-//import UIKit
+import UIKit
+import Promises
 
 // Contains a global instance of all of the users within the app
-// Also provides functions to load in users given their uid (and other parameters)
+// Also provides functions to load i, "~> 3.0"n users given their uid (and other parameters)
 // Its purpose is basically that it prevents view controllers from a having to have to deal with retrieveing user data by themselves
 class UserModelController {
     var uid: String
@@ -31,6 +32,10 @@ class UserModelController {
     }
     
     
+    
+    func loadUser(uid: String) {
+        
+    }
     
     // function convertToDict() -> [String : Any] { } // Is this necessary/in the right place?
 }
