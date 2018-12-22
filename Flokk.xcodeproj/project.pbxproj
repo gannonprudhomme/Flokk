@@ -19,14 +19,30 @@
 		87221A0A20F073F2000A00F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87221A0920F073F2000A00F7 /* AppDelegate.swift */; };
 		87221A1120F073F2000A00F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87221A1020F073F2000A00F7 /* Assets.xcassets */; };
 		87221A1420F073F2000A00F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87221A1220F073F2000A00F7 /* LaunchScreen.storyboard */; };
+		8747920321C7739D0043C646 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8747920221C7739D0043C646 /* PostModel.swift */; };
+		8747920521C774650043C646 /* GroupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8747920421C774650043C646 /* GroupModel.swift */; };
+		8747920721CDCBCA0043C646 /* GroupModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8747920621CDCBCA0043C646 /* GroupModelController.swift */; };
+		8747920921CDCBD30043C646 /* UserModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8747920821CDCBD30043C646 /* UserModelController.swift */; };
+		8747921221CDD0240043C646 /* FlokkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8747921121CDD0240043C646 /* FlokkTests.swift */; };
 		875691A92101009000284EA3 /* Pods_Flokk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 453D587CDE3B8763B595800A /* Pods_Flokk.framework */; };
 		87706DAD20F960B200663948 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 87706DAC20F960B200663948 /* .gitignore */; };
+		87CA26FE21C7304E00044016 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CA26FD21C7304E00044016 /* UserModel.swift */; };
 		87D2CEB1211A4D52007785DC /* ImageUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D2CEB0211A4D52007785DC /* ImageUtils.swift */; };
 		87D2CEC221223B2B007785DC /* VideoUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D2CEC121223B2B007785DC /* VideoUtils.swift */; };
 		87D2CF2C2127A33D007785DC /* FileUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D2CF2B2127A33D007785DC /* FileUtils.swift */; };
 		87DE4D8B2138C46500FC7DDB /* myVideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 87DE4D8A2138C46400FC7DDB /* myVideo.mp4 */; };
 		87DE4D8D2138D93D00FC7DDB /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DE4D8C2138D93D00FC7DDB /* DateUtils.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8747921421CDD0240043C646 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 872219FE20F073F2000A00F7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 87221A0520F073F2000A00F7;
+			remoteInfo = Flokk;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		4179953DF8DE914F0B1E1396 /* Pods-Flokk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flokk.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Flokk/Pods-Flokk.debug.xcconfig"; sourceTree = "<group>"; };
@@ -47,8 +63,16 @@
 		87221A1020F073F2000A00F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		87221A1320F073F2000A00F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		87221A1520F073F2000A00F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8747920221C7739D0043C646 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
+		8747920421C774650043C646 /* GroupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupModel.swift; sourceTree = "<group>"; };
+		8747920621CDCBCA0043C646 /* GroupModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupModelController.swift; sourceTree = "<group>"; };
+		8747920821CDCBD30043C646 /* UserModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModelController.swift; sourceTree = "<group>"; };
+		8747920F21CDD0240043C646 /* FlokkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlokkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8747921121CDD0240043C646 /* FlokkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlokkTests.swift; sourceTree = "<group>"; };
+		8747921321CDD0240043C646 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		87706DAC20F960B200663948 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		87C312AE214774CA00778B69 /* Flokk-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Flokk-Bridging-Header.h"; sourceTree = "<group>"; };
+		87CA26FD21C7304E00044016 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		87D2CEB0211A4D52007785DC /* ImageUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUtils.swift; sourceTree = "<group>"; };
 		87D2CEC121223B2B007785DC /* VideoUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoUtils.swift; sourceTree = "<group>"; };
 		87D2CF2B2127A33D007785DC /* FileUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileUtils.swift; sourceTree = "<group>"; };
@@ -62,6 +86,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				875691A92101009000284EA3 /* Pods_Flokk.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8747920C21CDD0240043C646 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,11 +144,14 @@
 			path = Feed;
 			sourceTree = "<group>";
 		};
-		8711A837210D47C400CCFD38 /* Framework */ = {
+		8711A837210D47C400CCFD38 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				87CA26FD21C7304E00044016 /* UserModel.swift */,
+				8747920221C7739D0043C646 /* PostModel.swift */,
+				8747920421C774650043C646 /* GroupModel.swift */,
 			);
-			path = Framework;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		8711A8442113E5D900CCFD38 /* Nav Controllers */ = {
@@ -127,7 +161,7 @@
 			path = "Nav Controllers";
 			sourceTree = "<group>";
 		};
-		8720D7C420F46CDB0069F56B /* View Controllers */ = {
+		8720D7C420F46CDB0069F56B /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				87D2CEA821167524007785DC /* Sign Up */,
@@ -135,7 +169,7 @@
 				8711A834210D478100CCFD38 /* Feed */,
 				8720D7C820F46D3C0069F56B /* Camera & Video */,
 			);
-			path = "View Controllers";
+			path = Views;
 			sourceTree = "<group>";
 		};
 		8720D7C820F46D3C0069F56B /* Camera & Video */ = {
@@ -153,6 +187,7 @@
 				7FAD06F0213DC5DB00683608 /* secondVideo.mp4 */,
 				87DE4D8A2138C46400FC7DDB /* myVideo.mp4 */,
 				87221A0820F073F2000A00F7 /* Flokk */,
+				8747921021CDD0240043C646 /* FlokkTests */,
 				87221A0720F073F2000A00F7 /* Products */,
 				10533BB5E74E72772E132DDB /* Pods */,
 				7C49593E9BA90BE52A8276E4 /* Frameworks */,
@@ -164,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				87221A0620F073F2000A00F7 /* Flokk.app */,
+				8747920F21CDD0240043C646 /* FlokkTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -171,8 +207,9 @@
 		87221A0820F073F2000A00F7 /* Flokk */ = {
 			isa = PBXGroup;
 			children = (
-				8720D7C420F46CDB0069F56B /* View Controllers */,
-				8711A837210D47C400CCFD38 /* Framework */,
+				8720D7C420F46CDB0069F56B /* Views */,
+				8711A837210D47C400CCFD38 /* Models */,
+				8747920A21CDCD8D0043C646 /* Model Controllers */,
 				87D2CEAF211A4D41007785DC /* Utils */,
 				7F8012BA2102CBF200CEA5DA /* Camera.storyboard */,
 				7F912B972110DB8E00ADABEE /* Groups.storyboard */,
@@ -216,6 +253,24 @@
 			children = (
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		8747920A21CDCD8D0043C646 /* Model Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8747920621CDCBCA0043C646 /* GroupModelController.swift */,
+				8747920821CDCBD30043C646 /* UserModelController.swift */,
+			);
+			path = "Model Controllers";
+			sourceTree = "<group>";
+		};
+		8747921021CDD0240043C646 /* FlokkTests */ = {
+			isa = PBXGroup;
+			children = (
+				8747921121CDD0240043C646 /* FlokkTests.swift */,
+				8747921321CDD0240043C646 /* Info.plist */,
+			);
+			path = FlokkTests;
 			sourceTree = "<group>";
 		};
 		87D2CEA821167524007785DC /* Sign Up */ = {
@@ -273,13 +328,31 @@
 			productReference = 87221A0620F073F2000A00F7 /* Flokk.app */;
 			productType = "com.apple.product-type.application";
 		};
+		8747920E21CDD0240043C646 /* FlokkTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8747921621CDD0240043C646 /* Build configuration list for PBXNativeTarget "FlokkTests" */;
+			buildPhases = (
+				8747920B21CDD0240043C646 /* Sources */,
+				8747920C21CDD0240043C646 /* Frameworks */,
+				8747920D21CDD0240043C646 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8747921521CDD0240043C646 /* PBXTargetDependency */,
+			);
+			name = FlokkTests;
+			productName = FlokkTests;
+			productReference = 8747920F21CDD0240043C646 /* FlokkTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		872219FE20F073F2000A00F7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0920;
+				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "Gannon Prudomme";
 				TargetAttributes = {
@@ -287,6 +360,11 @@
 						CreatedOnToolsVersion = 9.2;
 						LastSwiftMigration = 0940;
 						ProvisioningStyle = Automatic;
+					};
+					8747920E21CDD0240043C646 = {
+						CreatedOnToolsVersion = 10.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 87221A0520F073F2000A00F7;
 					};
 				};
 			};
@@ -304,6 +382,7 @@
 			projectRoot = "";
 			targets = (
 				87221A0520F073F2000A00F7 /* Flokk */,
+				8747920E21CDD0240043C646 /* FlokkTests */,
 			);
 		};
 /* End PBXProject section */
@@ -325,6 +404,13 @@
 				7F912B9C211114E000ADABEE /* SignUp.storyboard in Resources */,
 				7F912B982110DB8E00ADABEE /* Groups.storyboard in Resources */,
 				8711A8432113E55D00CCFD38 /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8747920D21CDD0240043C646 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,16 +484,37 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8747920921CDCBD30043C646 /* UserModelController.swift in Sources */,
 				87D2CF2C2127A33D007785DC /* FileUtils.swift in Sources */,
+				8747920321C7739D0043C646 /* PostModel.swift in Sources */,
+				8747920521C774650043C646 /* GroupModel.swift in Sources */,
 				7FEFAF842133A28B00D9537E /* BounceButton.swift in Sources */,
 				87DE4D8D2138D93D00FC7DDB /* DateUtils.swift in Sources */,
 				87D2CEC221223B2B007785DC /* VideoUtils.swift in Sources */,
 				87221A0A20F073F2000A00F7 /* AppDelegate.swift in Sources */,
 				87D2CEB1211A4D52007785DC /* ImageUtils.swift in Sources */,
+				87CA26FE21C7304E00044016 /* UserModel.swift in Sources */,
+				8747920721CDCBCA0043C646 /* GroupModelController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8747920B21CDD0240043C646 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8747921221CDD0240043C646 /* FlokkTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8747921521CDD0240043C646 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 87221A0520F073F2000A00F7 /* Flokk */;
+			targetProxy = 8747921421CDD0240043C646 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		87221A1220F073F2000A00F7 /* LaunchScreen.storyboard */ = {
@@ -571,6 +678,45 @@
 			};
 			name = Release;
 		};
+		8747921721CDD0240043C646 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L4K4Q74X62;
+				INFOPLIST_FILE = FlokkTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = flokk.FlokkTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Flokk.app/Flokk";
+			};
+			name = Debug;
+		};
+		8747921821CDD0240043C646 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L4K4Q74X62;
+				INFOPLIST_FILE = FlokkTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = flokk.FlokkTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Flokk.app/Flokk";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -588,6 +734,15 @@
 			buildConfigurations = (
 				87221A1920F073F2000A00F7 /* Debug */,
 				87221A1A20F073F2000A00F7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8747921621CDD0240043C646 /* Build configuration list for PBXNativeTarget "FlokkTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8747921721CDD0240043C646 /* Debug */,
+				8747921821CDD0240043C646 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

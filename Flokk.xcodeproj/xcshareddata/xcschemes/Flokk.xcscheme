@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B62978E4347E6144D87296388CED7633"
+               BlueprintIdentifier = "1258290C4611C4C2DA85E68F19656316"
                BuildableName = "RecordButton.framework"
                BlueprintName = "RecordButton"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">
@@ -70,6 +70,16 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "8747920E21CDD0240043C646"
+               BuildableName = "FlokkTests.xctest"
+               BlueprintName = "FlokkTests"
+               ReferencedContainer = "container:Flokk.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
@@ -81,6 +91,11 @@
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
+         <AdditionalOption
+            key = "DYLD_PRINT_APIS"
+            value = ""
+            isEnabled = "YES">
+         </AdditionalOption>
       </AdditionalOptions>
    </TestAction>
    <LaunchAction
