@@ -14,28 +14,40 @@ import Promises
 // Also provides functions to load i, "~> 3.0"n users given their uid (and other parameters)
 // Its purpose is basically that it prevents view controllers from a having to have to deal with retrieveing user data by themselves
 class UserModelController {
-    var uid: String
-    var handle: String?
-    var fullName: String?
-    // var email: String?
+    var users = [String : UserModel]()
     
-    var profilePhoto: UIImage?
-    
-    var groups: [String]? // List of the uid's for the groups this user is in
-    
-    init(uid: String) {
-        self.uid = uid
-        self.handle = nil
-        self.fullName = nil
-        
-        self.profilePhoto = nil
+    // Load the user's data from the database(all of it expect the profile photo)
+    func loadUser(uid: String) -> Promise<UserModel> {
+        return Promise { fulfill, reject in
+            // Check if the user is loaded in locally? For now, just gonna load directly from the database
+            self.loadUserFromDatabase(uid: uid).then({ user in
+                fulfill(user)
+            }).catch({error in
+                reject(error)
+            })
+        }
     }
     
-    
-    
-    func loadUser(uid: String) {
-        
+    // Load the user's profile photo from storage
+    func loadUserPhoto(uid: String) -> Promise<UIImage?> {
+        return Promise { fulfill, reject in
+            fulfill(nil)
+        }
     }
-    
-    // function convertToDict() -> [String : Any] { } // Is this necessary/in the right place?
+}
+
+extension UserModelController {
+    func loadUserFromDatabase(uid: String) -> Promise<UserModel> {
+        return Promise { fulfill, reject in
+            database.child("users").child(uid).observeSingleEvent(of: .value, with: { (snapshot) in
+                if let value = snapshot.value as? [String : Any] {
+                    // Process user data
+                    
+                    // Save the current user data to a local file(only for main user?)
+                    
+                    // Load the user's profile photo?
+                }
+            })
+        }
+    }
 }

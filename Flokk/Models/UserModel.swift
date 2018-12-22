@@ -17,9 +17,12 @@ class UserModel {
     
     var profilePhoto: UIImage?
     
-//    var groups = [Group]()
+    var groups = [String]() // Array of uids for the groups the user is in
     
     // Constructor
+    init(uid: String) {
+        self.uid = uid
+    }
     
-    
+    // function convertToDict() -> [String : Any] { } // Is this necessary/in the right place?
 }
