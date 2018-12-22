@@ -37,6 +37,7 @@
 		87D2CEC221223B2B007785DC /* VideoUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D2CEC121223B2B007785DC /* VideoUtils.swift */; };
 		87D2CF2C2127A33D007785DC /* FileUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D2CF2B2127A33D007785DC /* FileUtils.swift */; };
 		87D6800921CDE9560098D80A /* LocalFileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D6800821CDE9560098D80A /* LocalFileController.swift */; };
+		87D6800E21CDF8580098D80A /* UserModelControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D6800D21CDF8580098D80A /* UserModelControllerSpec.swift */; };
 		87DE4D8B2138C46500FC7DDB /* myVideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 87DE4D8A2138C46400FC7DDB /* myVideo.mp4 */; };
 		87DE4D8D2138D93D00FC7DDB /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DE4D8C2138D93D00FC7DDB /* DateUtils.swift */; };
 /* End PBXBuildFile section */
@@ -84,6 +85,7 @@
 		87D2CEC121223B2B007785DC /* VideoUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoUtils.swift; sourceTree = "<group>"; };
 		87D2CF2B2127A33D007785DC /* FileUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileUtils.swift; sourceTree = "<group>"; };
 		87D6800821CDE9560098D80A /* LocalFileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFileController.swift; sourceTree = "<group>"; };
+		87D6800D21CDF8580098D80A /* UserModelControllerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModelControllerSpec.swift; sourceTree = "<group>"; };
 		87DE4D8A2138C46400FC7DDB /* myVideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = myVideo.mp4; path = Flokk/myVideo.mp4; sourceTree = "<group>"; };
 		87DE4D8C2138D93D00FC7DDB /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
 		F9374608C52CA402C9DD9E35 /* Pods-Flokk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flokk.release.xcconfig"; path = "Pods/Target Support Files/Pods-Flokk/Pods-Flokk.release.xcconfig"; sourceTree = "<group>"; };
@@ -145,10 +147,6 @@
 		8711A834210D478100CCFD38 /* Feed */ = {
 			isa = PBXGroup;
 			children = (
-				872D5559215E9F9400619088 /* Controllers */,
-				872D5558215E9F8D00619088 /* View Model */,
-				872D5556215E9F8000619088 /* View Controllers */,
-				872334232130C40100CA1BF6 /* Cells */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -157,8 +155,8 @@
 			isa = PBXGroup;
 			children = (
 				87CA26FD21C7304E00044016 /* UserModel.swift */,
-				8747920221C7739D0043C646 /* PostModel.swift */,
 				8747920421C774650043C646 /* GroupModel.swift */,
+				8747920221C7739D0043C646 /* PostModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -237,34 +235,6 @@
 			path = Flokk;
 			sourceTree = "<group>";
 		};
-		872334232130C40100CA1BF6 /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Cells;
-			sourceTree = "<group>";
-		};
-		872D5556215E9F8000619088 /* View Controllers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "View Controllers";
-			sourceTree = "<group>";
-		};
-		872D5558215E9F8D00619088 /* View Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "View Model";
-			sourceTree = "<group>";
-		};
-		872D5559215E9F9400619088 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
 		8747920A21CDCD8D0043C646 /* Model Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -279,6 +249,7 @@
 			children = (
 				8747921121CDD0240043C646 /* FlokkTests.swift */,
 				8747921B21CDD5CD0043C646 /* GroupModelControllerSpec.swift */,
+				87D6800D21CDF8580098D80A /* UserModelControllerSpec.swift */,
 				8747921321CDD0240043C646 /* Info.plist */,
 			);
 			path = FlokkTests;
@@ -508,7 +479,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8747920921CDCBD30043C646 /* UserModelController.swift in Sources */,
 				87D2CF2C2127A33D007785DC /* FileUtils.swift in Sources */,
 				8747920321C7739D0043C646 /* PostModel.swift in Sources */,
 				87D6800921CDE9560098D80A /* LocalFileController.swift in Sources */,
@@ -519,6 +489,7 @@
 				87221A0A20F073F2000A00F7 /* AppDelegate.swift in Sources */,
 				87D2CEB1211A4D52007785DC /* ImageUtils.swift in Sources */,
 				87CA26FE21C7304E00044016 /* UserModel.swift in Sources */,
+				8747920921CDCBD30043C646 /* UserModelController.swift in Sources */,
 				8747920721CDCBCA0043C646 /* GroupModelController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -534,6 +505,7 @@
 				8747924321CDDF340043C646 /* GroupModelController.swift in Sources */,
 				8747921C21CDD5CD0043C646 /* GroupModelControllerSpec.swift in Sources */,
 				8747921221CDD0240043C646 /* FlokkTests.swift in Sources */,
+				87D6800E21CDF8580098D80A /* UserModelControllerSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

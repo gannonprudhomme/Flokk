@@ -7,3 +7,19 @@
 //
 
 import Foundation
+
+// Loads in Models from their respective files
+class LocalFileController {
+    // 
+    static func doesGroupFileExist(uid: String) -> Bool {
+        return false
+    }
+    
+    static func loadGroupFromFile(uid: String) -> [String : Any]? {
+        return nil
+    }
+    
+    static func loadImage(path: String) -> UIImage? {
+        return nil
+    }
+}
