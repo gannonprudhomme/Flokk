@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import Promises
+import FirebaseAuth
 
 // Contains a global instance of all of the users within the app
 // Also provides functions to load i, "~> 3.0"n users given their uid (and other parameters)
@@ -48,6 +49,36 @@ extension UserModelController {
                     // Load the user's profile photo?
                 }
             })
+        }
+    }
+    
+    func processUserData(_ value: [String : Any]) {
+        let uid = Auth.auth().currentUser?.uid
+        
+        let handle = value["handle"] as! String
+        let fullName = value["name"] as! String
+        
+        // mainUser = UserModel(uid: uid!)
+        // mainUser.fullName = fullName
+        
+        // Attempt to load in the group IDs
+        if let groups = value["groups"] as? [String : String] {
+            // Load in each of the groupIDs
+            for groupID in groups.keys {
+                let groupName = groups[groupID]
+                
+                let group = GroupModel(uid: groupID, name: groupName!)
+                // group.sortGroupsDelegate = self
+                
+                //let index = indexForUpdatedGroup(group: group)
+                
+                // mainUser.groups.insert(group, at: index)
+                
+                // group.loadData()
+                
+                // Attempt to download the group icon
+                
+            }
         }
     }
 }
