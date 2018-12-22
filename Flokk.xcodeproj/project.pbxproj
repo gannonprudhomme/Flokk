@@ -38,6 +38,7 @@
 		87D2CF2C2127A33D007785DC /* FileUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D2CF2B2127A33D007785DC /* FileUtils.swift */; };
 		87D6800921CDE9560098D80A /* LocalFileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D6800821CDE9560098D80A /* LocalFileController.swift */; };
 		87D6800E21CDF8580098D80A /* UserModelControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D6800D21CDF8580098D80A /* UserModelControllerSpec.swift */; };
+		87D6801021CE03D00098D80A /* GroupsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D6800F21CE03D00098D80A /* GroupsController.swift */; };
 		87DE4D8B2138C46500FC7DDB /* myVideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 87DE4D8A2138C46400FC7DDB /* myVideo.mp4 */; };
 		87DE4D8D2138D93D00FC7DDB /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DE4D8C2138D93D00FC7DDB /* DateUtils.swift */; };
 /* End PBXBuildFile section */
@@ -86,6 +87,7 @@
 		87D2CF2B2127A33D007785DC /* FileUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileUtils.swift; sourceTree = "<group>"; };
 		87D6800821CDE9560098D80A /* LocalFileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFileController.swift; sourceTree = "<group>"; };
 		87D6800D21CDF8580098D80A /* UserModelControllerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModelControllerSpec.swift; sourceTree = "<group>"; };
+		87D6800F21CE03D00098D80A /* GroupsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsController.swift; sourceTree = "<group>"; };
 		87DE4D8A2138C46400FC7DDB /* myVideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = myVideo.mp4; path = Flokk/myVideo.mp4; sourceTree = "<group>"; };
 		87DE4D8C2138D93D00FC7DDB /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
 		F9374608C52CA402C9DD9E35 /* Pods-Flokk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flokk.release.xcconfig"; path = "Pods/Target Support Files/Pods-Flokk/Pods-Flokk.release.xcconfig"; sourceTree = "<group>"; };
@@ -284,6 +286,7 @@
 			isa = PBXGroup;
 			children = (
 				87D6800821CDE9560098D80A /* LocalFileController.swift */,
+				87D6800F21CE03D00098D80A /* GroupsController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -481,6 +484,7 @@
 			files = (
 				87D2CF2C2127A33D007785DC /* FileUtils.swift in Sources */,
 				8747920321C7739D0043C646 /* PostModel.swift in Sources */,
+				87D6801021CE03D00098D80A /* GroupsController.swift in Sources */,
 				87D6800921CDE9560098D80A /* LocalFileController.swift in Sources */,
 				8747920521C774650043C646 /* GroupModel.swift in Sources */,
 				7FEFAF842133A28B00D9537E /* BounceButton.swift in Sources */,

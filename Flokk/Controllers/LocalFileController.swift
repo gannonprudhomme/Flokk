@@ -8,6 +8,12 @@
 
 import Foundation
 
+enum PATH: String {
+    case GROUPS = "groups/"
+    case USERS = "users/"
+    
+}
+
 // Loads in Models from their respective files
 class LocalFileController {
     // 
@@ -15,7 +21,9 @@ class LocalFileController {
         return false
     }
     
-    static func loadGroupFromFile(uid: String) -> [String : Any]? {
+    static func loadGroupDictFromFile(uid: String) -> [String : Any]? {
+        
+        
         return nil
     }
     
