@@ -170,17 +170,6 @@
 			path = "Nav Controllers";
 			sourceTree = "<group>";
 		};
-		8720D7C420F46CDB0069F56B /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				87D2CEA821167524007785DC /* Sign Up */,
-				87D2CEB6211A5E7D007785DC /* Groups */,
-				8711A834210D478100CCFD38 /* Feed */,
-				8720D7C820F46D3C0069F56B /* Camera & Video */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		8720D7C820F46D3C0069F56B /* Camera & Video */ = {
 			isa = PBXGroup;
 			children = (
@@ -216,7 +205,10 @@
 		87221A0820F073F2000A00F7 /* Flokk */ = {
 			isa = PBXGroup;
 			children = (
-				8720D7C420F46CDB0069F56B /* Views */,
+				87D2CEA821167524007785DC /* Sign Up */,
+				87D2CEB6211A5E7D007785DC /* Groups */,
+				8711A834210D478100CCFD38 /* Feed */,
+				8720D7C820F46D3C0069F56B /* Camera & Video */,
 				8711A837210D47C400CCFD38 /* Models */,
 				8747920A21CDCD8D0043C646 /* Model Controllers */,
 				87D6800A21CDE95A0098D80A /* Controllers */,
@@ -260,6 +252,8 @@
 		87D2CEA821167524007785DC /* Sign Up */ = {
 			isa = PBXGroup;
 			children = (
+				87FE420221D0A96400F21343 /* Views */,
+				87FE420321D0A96900F21343 /* Controllers */,
 			);
 			path = "Sign Up";
 			sourceTree = "<group>";
@@ -297,6 +291,20 @@
 				7F6C0FE121364648005711F0 /* myVideo.mp4 */,
 			);
 			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		87FE420221D0A96400F21343 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		87FE420321D0A96900F21343 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

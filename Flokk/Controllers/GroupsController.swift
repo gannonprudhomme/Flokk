@@ -9,22 +9,18 @@
 import Foundation
 import Promises
 
+// Not a typical Controller as it doesn't communicate with/control any View directly.
+//  However, other controllers that communicate with Views will call functions from this anytime they need access to a group
 // Contains a global instance of all of the groups within the app
 // What the view controllers and such interface with to access/modify Group data
 class GroupsController {
     // Any group that needs more than a UID and a name(ie storing a group icon, posts data, etc) needs to be in here
     var groupsMap = [String : GroupModel]() // Ideally this is a hashmap
     
-    var groupModelController: GroupModelController! // Is this the only instance I need of this?
-    
     // var feedDelegage: FeedDelegate! // Would update the feed with a new post(uid) if the post data hadn't loaded in time before entering the feed
     
-    init(groupMC: GroupModelController) {
-        groupModelController = groupMC
-    }
-
-    // At a point in time, we can't assume that the group will be loaded
-    // Called
+    // At a point in time, we can't always assume that a group is loaded
+    // Called (when?)
     func getGroup(uid: String, name: String) -> Promise<GroupModel> {
         return Promise { fulfill, reject in
             if self.mapContainsGroup(uid: uid) { // If the Group is already loaded in
@@ -36,19 +32,22 @@ class GroupsController {
                 
                 self.loadGroup(uid: uid).then({ groupModel in
                     fulfill(groupModel)
+                }).catch({error in
+                    reject(error) // This might be done automatically
                 })
             }
         }
     }
     
-    // Load the group from the database
+    // Dunno if I really like this in here
     func loadGroup(uid: String) -> Promise<GroupModel> {
         // Immediately register this group in the map so we don't double load
         return Promise { fulfill, reject in
-            // var model = GroupModel(uid: uid, name: name) // Create the GroupModel object
+            var group = GroupModel(uid: uid) // Create the GroupModel object
             
             // If there is a local file
             if LocalFileController.doesGroupFileExist(uid: uid) {
+                // I should probably do the below stuff
                 // Load the local file
                     // processGroupData(value)
                 
@@ -62,9 +61,14 @@ class GroupsController {
                 
             } else { // If there isn't a local file
                 // Didn't load the group from a local file, load it in from the database and (maybe) save it to a file
-                let groupData: [String : Any]! = nil
-                
-                self.groupModelController.loadGroupFromDatabase(uid: uid)
+                group.loadGroupFromDatabase(uid: uid).then({ group in
+                    fulfill(group) // Return the loaded group
+                    
+                    // Save it to a file?
+                    
+                }).catch({ error in
+                    reject(error)
+                })
             }
         }
     }

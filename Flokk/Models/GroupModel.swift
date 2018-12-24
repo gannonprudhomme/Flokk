@@ -10,8 +10,8 @@ import Foundation
 import UIKit
 
 class GroupModel {
-    var uid: String
-    var name: String?
+    var uid: String // Unique Identifier for this Group, used to index these groups for quick access in GroupsController
+    var name: String? // The actual name for this group
     var icon: UIImage? // Need to ensure this is only loaded in once
     
     var members: [String]? // Array of the members' uids
