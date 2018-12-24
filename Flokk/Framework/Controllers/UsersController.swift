@@ -17,7 +17,7 @@ class UsersController {
     func loadUser(uid: String) -> Promise<UserModel> {
         return Promise { fulfill, reject in
             if self.mapContainsUser(uid: uid) { // If the UserModel with that uid is stored in the Map
-                fulfill(self.usersMap[uid]!) // Return the according UserModel
+                fulfill(self.usersDict[uid]!) // Return the according UserModel
             } else { // User isn't loaded
                 // Initialize it
                 

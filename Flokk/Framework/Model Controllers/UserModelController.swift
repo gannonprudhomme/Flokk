@@ -11,9 +11,8 @@ import UIKit
 import FirebaseAuth
 import Promises
 
-// Contains a global instance of all of the users within the app
-// Also provides functions to load in users given their uid (and other parameters)
-// Its purpose is basically that it prevents view controllers from a having to have to deal with retrieveing user data by themselves
+// Provides extra functions for the UserModel class that would clug up the UserModel file
+// Adds various data loading functions from the database
 extension UserModel {
     // Load in the user from the database and set the according values
     func loadUserFromDatabase(uid: String) -> Promise<UserModel> {
@@ -30,13 +29,16 @@ extension UserModel {
         }
     }
     
-    // Load the user's profile photo from storage
+    // Load the user's profile photo from Storage
     func loadUserPhoto(uid: String) -> Promise<UIImage?> {
         return Promise { fulfill, reject in
+            // Load in the photo from Storage, and return nil if it doesn't exist?
+            
             fulfill(nil)
         }
     }
     
+    // Need to process different user data, depending on if we're downloading main user data or not
     func processUserData(_ value: [String : Any]) -> UserModel? {
         let uid = Auth.auth().currentUser?.uid
         
@@ -47,7 +49,7 @@ extension UserModel {
         // mainUser.fullName = fullName
         
         // Attempt to load in the group IDs
-        if let groups = value["groups"] as? [String : String] {
+        if let groups = value["groups"] as? [String : String] { // Change this to a guard?
             // Load in each of the groupIDs
             for groupID in groups.keys {
                 let groupName = groups[groupID]
@@ -69,8 +71,4 @@ extension UserModel {
         // If the data was formatted wrong
         return nil
     }
-}
-
-extension UserModel {
-    
 }

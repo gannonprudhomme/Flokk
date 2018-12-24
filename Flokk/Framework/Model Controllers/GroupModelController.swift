@@ -14,9 +14,7 @@ import Promises
 // Provides extra functions for the GroupModel class that would clug up the GroupModel file
 // Adds various data loading functions from the database
 extension GroupModel {
-    // var groups = [String : GroupModel]() // Ideally this is a hashmap
-    
-    // Load the group fromt the database
+    // Load the group from the database
     func loadGroupFromDatabase(uid: String) -> Promise<GroupModel> {
         return Promise{ fulfill, reject in
             // Retrive the groups data for this group from the databse
@@ -39,21 +37,25 @@ extension GroupModel {
             // Load the local file
                 // processGroupData(value)
             
-            // Load in the posts data
-                // Manually set the post data at groups[uid].postsData and compare it to the old data
+                // Load in the posts data
+                    // Manually set the post data and compare it to the old data
+                        // Notify the relevant FeedController that there were new posts
             
-            // Load in the members data
-                // Manually set the post data at groups[uid].members and compare it to the old data
+                // Load in the members data
+                    // Manually set the post data and compare it to the old data
+                         // Notify the relevant GroupSettingsController that there were new posts
         }
     }
     
     // Load a dict of the group's members containing their uid and name
     func loadGroupMembers(uid: String) -> Promise<[String : String]> {
         return Promise{ fulfill, reject in
-            // First check if the Group is loaded & exists in the database
             let ret = [String : String]()
+            // First check if the Group is loaded & exists in the database
             
-            fulfill(ret)
+            // Download it from the datbase
+                // Return it
+                fulfill(ret)
         }
     }
     
@@ -72,4 +74,9 @@ extension GroupModel {
         // Need to have checks if the group data isn't formatted properly, or data is missing(when it shouldn't be missing)
         
     }
+}
+
+// Post stuff?
+extension GroupModel {
+    
 }

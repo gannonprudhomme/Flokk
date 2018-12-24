@@ -9,6 +9,7 @@
 import Foundation
 import Promises
 
+// Provides extra functions for the PostModel that would clog up the PostModel file
 extension PostModel {
     func loadPostFromDatabase() -> Promise<PostModel> {
         return Promise { fulfill, reject in
