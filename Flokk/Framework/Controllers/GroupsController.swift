@@ -14,8 +14,8 @@ import Promises
 // Contains a global instance of all of the groups within the app
 // What the view controllers and such interface with to access/modify Group data
 class GroupsController {
-    // Any group that needs more than a UID and a name(ie storing a group icon, posts data, etc) needs to be in here
-    var groupsMap = [String : GroupModel]() // Ideally this is a hashmap
+    // Any group that needs more than a UID and a name(ie storing a group icon, posts data, etc) needs to be stored in this Dictionary
+    var groupsDict: [String : GroupModel] = [:]
     
     // var feedDelegage: FeedDelegate! // Would update the feed with a new post(uid) if the post data hadn't loaded in time before entering the feed
     
@@ -24,14 +24,14 @@ class GroupsController {
     func getGroup(uid: String) -> Promise<GroupModel> {
         return Promise { fulfill, reject in
             if self.mapContainsGroup(uid: uid) { // If the Group is already loaded in
-                fulfill(self.groupsMap[uid]!)
+                fulfill(self.groupsDict[uid]!)
                 
             } else {
                 // Add the group to the map
-                self.groupsMap[uid] = GroupModel(uid: uid) // Initialize the user in the Map to prevent multiple network calls
+                self.groupsDict[uid] = GroupModel(uid: uid) // Initialize the user in the Map to prevent multiple network calls
                 
                 self.loadGroup(uid: uid).then({ groupModel in
-                    self.groupsMap[uid] = groupModel // Replace the placeholder group with the loaded in group
+                    self.groupsDict[uid] = groupModel // Replace the placeholder group with the loaded in group
                     
                     fulfill(groupModel)
                 }).catch({ error in
@@ -67,11 +67,16 @@ class GroupsController {
     }
 }
 
+// Post Handling?
+extension GroupsController {
+    
+}
+
 // Map helper functions
 extension GroupsController {
     // Returns true if the uid is in groupsMap
     func mapContainsGroup(uid: String) -> Bool {
-        return groupsMap.contains(where: { key, value in
+        return groupsDict.contains(where: { key, value in
             return key == uid
         })
     }
