@@ -10,10 +10,10 @@ import Foundation
 import UIKit
 
 class UserModel {
-    var uid: String = ""
-    var handle: String?
-    var fullName: String?
-    var email: String?
+    var uid: String // Unique Identifier for this User, used to index these groups for quick access in UsersController
+    var handle: String? // The handle, or username of the user
+    var fullName: String? // The full name of the user
+    var email: String? // Is this necessary to ever have loaded in?
     
     var profilePhoto: UIImage?
     
@@ -24,5 +24,6 @@ class UserModel {
         self.uid = uid
     }
     
+    // Put this in UserModelController
     // function convertToDict() -> [String : Any] { } // Is this necessary/in the right place?
 }

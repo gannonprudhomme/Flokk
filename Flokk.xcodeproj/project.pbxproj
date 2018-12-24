@@ -41,6 +41,7 @@
 		87D6801021CE03D00098D80A /* GroupsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D6800F21CE03D00098D80A /* GroupsController.swift */; };
 		87DE4D8B2138C46500FC7DDB /* myVideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 87DE4D8A2138C46400FC7DDB /* myVideo.mp4 */; };
 		87DE4D8D2138D93D00FC7DDB /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DE4D8C2138D93D00FC7DDB /* DateUtils.swift */; };
+		87FE420521D0AFFD00F21343 /* UsersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FE420421D0AFFD00F21343 /* UsersController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +91,7 @@
 		87D6800F21CE03D00098D80A /* GroupsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsController.swift; sourceTree = "<group>"; };
 		87DE4D8A2138C46400FC7DDB /* myVideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = myVideo.mp4; path = Flokk/myVideo.mp4; sourceTree = "<group>"; };
 		87DE4D8C2138D93D00FC7DDB /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
+		87FE420421D0AFFD00F21343 /* UsersController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersController.swift; sourceTree = "<group>"; };
 		F9374608C52CA402C9DD9E35 /* Pods-Flokk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flokk.release.xcconfig"; path = "Pods/Target Support Files/Pods-Flokk/Pods-Flokk.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -279,8 +281,9 @@
 		87D6800A21CDE95A0098D80A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				87D6800821CDE9560098D80A /* LocalFileController.swift */,
 				87D6800F21CE03D00098D80A /* GroupsController.swift */,
+				87FE420421D0AFFD00F21343 /* UsersController.swift */,
+				87D6800821CDE9560098D80A /* LocalFileController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -492,6 +495,7 @@
 			files = (
 				87D2CF2C2127A33D007785DC /* FileUtils.swift in Sources */,
 				8747920321C7739D0043C646 /* PostModel.swift in Sources */,
+				87FE420521D0AFFD00F21343 /* UsersController.swift in Sources */,
 				87D6801021CE03D00098D80A /* GroupsController.swift in Sources */,
 				87D6800921CDE9560098D80A /* LocalFileController.swift in Sources */,
 				8747920521C774650043C646 /* GroupModel.swift in Sources */,
