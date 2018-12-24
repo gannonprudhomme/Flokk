@@ -1,5 +1,5 @@
 //
-//  GroupModelControllerSpec.swift
+//  UserModelControllerSpec.swift
 //  FlokkTests
 //
 //  Created by Gannon Prudhomme on 12/21/18.
@@ -8,9 +8,10 @@
 
 import XCTest
 
-class GroupModelControllerSpec: XCTestCase {
-    var groupMC: GroupModelController!
-
+// Test everything related to users
+class UserSpec: XCTestCase {
+    var userMC: UserModelController!
+    
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
@@ -21,7 +22,7 @@ class GroupModelControllerSpec: XCTestCase {
 
     func testExample() {
         // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.x
+        // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
 
     func testPerformanceExample() {
@@ -30,5 +31,4 @@ class GroupModelControllerSpec: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
-
 }
