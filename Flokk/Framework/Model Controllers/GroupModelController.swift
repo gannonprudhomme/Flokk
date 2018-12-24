@@ -19,6 +19,7 @@ extension GroupModel {
     // Load the group fromt the database
     func loadGroupFromDatabase(uid: String) -> Promise<GroupModel> {
         return Promise{ fulfill, reject in
+            // Retrive the groups data for this group from the databse
             database.child("groups").child(uid).observeSingleEvent(of: .value, with: { (snapshot) in
                 if let value = snapshot.value as? [String : Any] {
                     self.processGroupData(value)
@@ -29,6 +30,20 @@ extension GroupModel {
                     //reject("Group data loaded incorrectly")
                 }
             })
+        }
+    }
+    
+    //Can we assume the local file exists at this point
+    func loadGroupFromFile(uid: String) -> Promise<GroupModel> {
+        return Promise { fulfill, reject in
+            // Load the local file
+                // processGroupData(value)
+            
+            // Load in the posts data
+                // Manually set the post data at groups[uid].postsData and compare it to the old data
+            
+            // Load in the members data
+                // Manually set the post data at groups[uid].members and compare it to the old data
         }
     }
     
@@ -54,8 +69,7 @@ extension GroupModel {
     // Process the Group data from JSON/dictionary format and load it into this GroupModel instance
     // Called from either the local file or the database group loading
     func processGroupData(_ value: [String : Any]) {
+        // Need to have checks if the group data isn't formatted properly, or data is missing(when it shouldn't be missing)
         
-        // If it was in the wrong format, return nil
-        return nil
     }
 }

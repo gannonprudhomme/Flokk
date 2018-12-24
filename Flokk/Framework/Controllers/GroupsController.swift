@@ -21,25 +21,26 @@ class GroupsController {
     
     // At a point in time, we can't always assume that a group is loaded
     // Called (when?)
-    func getGroup(uid: String, name: String) -> Promise<GroupModel> {
+    func getGroup(uid: String) -> Promise<GroupModel> {
         return Promise { fulfill, reject in
             if self.mapContainsGroup(uid: uid) { // If the Group is already loaded in
                 fulfill(self.groupsMap[uid]!)
                 
             } else {
                 // Add the group to the map
-                self.groupsMap[uid] = GroupModel(uid: uid, name: name)
+                self.groupsMap[uid] = GroupModel(uid: uid) // Initialize the user in the Map to prevent multiple network calls
                 
                 self.loadGroup(uid: uid).then({ groupModel in
+                    self.groupsMap[uid] = groupModel // Replace the placeholder group with the loaded in group
+                    
                     fulfill(groupModel)
-                }).catch({error in
-                    reject(error) // This might be done automatically
+                }).catch({ error in
+                    reject(error)
                 })
             }
         }
     }
     
-    // Dunno if I really like this in here
     func loadGroup(uid: String) -> Promise<GroupModel> {
         // Immediately register this group in the map so we don't double load
         return Promise { fulfill, reject in
@@ -48,14 +49,6 @@ class GroupsController {
             // If there is a local file
             if LocalFileController.doesGroupFileExist(uid: uid) {
                 // I should probably do the below stuff
-                // Load the local file
-                    // processGroupData(value)
-                
-                // Load in the posts data
-                    // Manually set the post data at groups[uid].postsData, compare it to the old data
-                
-                // Load in the members data
-                    // Manually set the post data at groups[uid].members, compare it to the old data
                 
                 fulfill(GroupModel(uid: "", name: ""))
                 
@@ -64,7 +57,7 @@ class GroupsController {
                 group.loadGroupFromDatabase(uid: uid).then({ group in
                     fulfill(group) // Return the loaded group
                     
-                    // Save it to a file?
+                    // Save it to a file? Only if this is a group the main user is in
                     
                 }).catch({ error in
                     reject(error)

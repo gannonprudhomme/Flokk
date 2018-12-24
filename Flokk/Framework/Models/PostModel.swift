@@ -8,17 +8,17 @@
 
 import Foundation
 
-// A post in Flokk is represented as a video, and contains a preview image
+// A post in Flokk is represented as a video, and also contains an according preview image
 // that is displayed before the video is played, which is usually the first frame of the video
 class PostModel {
     // Values
-    var uid: String
-    var authorUID: String?
+    var uid: String // The Unique ID for this post
+    var authorUID: String? // The uid of the user who uploaded this post
     
     // Width and height of the 
     // var dimensions: Dimensions?
     
-    // var previewImage: UIImage?
+    // var previewImage: UIImage? // The image to be displayed before a video is played in a Feed
     
     init(uid: String) {
         self.uid = uid

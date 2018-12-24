@@ -11,16 +11,18 @@ import Foundation
 enum PATH: String {
     case GROUPS = "groups/"
     case USERS = "users/"
-    
+    case ICONS = "/icons/"
 }
 
-// Loads in Models from their respective files
+// Again not really a Controller, as it doesn't communicate with the view
+// Change this into a Util?
+// Loads in/saves Models from/to their respective files
 class LocalFileController {
-    // 
     static func doesGroupFileExist(uid: String) -> Bool {
         return false
     }
     
+    // Returns a dictionary of all of the group data at the given path
     static func loadGroupDictFromFile(uid: String) -> [String : Any]? {
         
         

@@ -207,13 +207,12 @@
 		87221A0820F073F2000A00F7 /* Flokk */ = {
 			isa = PBXGroup;
 			children = (
+				87FE420621D0BA1400F21343 /* New Group */,
 				87D2CEA821167524007785DC /* Sign Up */,
 				87D2CEB6211A5E7D007785DC /* Groups */,
 				8711A834210D478100CCFD38 /* Feed */,
 				8720D7C820F46D3C0069F56B /* Camera & Video */,
-				8711A837210D47C400CCFD38 /* Models */,
-				8747920A21CDCD8D0043C646 /* Model Controllers */,
-				87D6800A21CDE95A0098D80A /* Controllers */,
+				87FE420721D0BA1E00F21343 /* Framework */,
 				87D2CEAF211A4D41007785DC /* Utils */,
 				7F8012BA2102CBF200CEA5DA /* Camera.storyboard */,
 				7F912B972110DB8E00ADABEE /* Groups.storyboard */,
@@ -308,6 +307,23 @@
 			children = (
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		87FE420621D0BA1400F21343 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		87FE420721D0BA1E00F21343 /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				8711A837210D47C400CCFD38 /* Models */,
+				8747920A21CDCD8D0043C646 /* Model Controllers */,
+				87D6800A21CDE95A0098D80A /* Controllers */,
+			);
+			path = Framework;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

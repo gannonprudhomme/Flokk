@@ -15,6 +15,7 @@ class GroupModel {
     var icon: UIImage? // Need to ensure this is only loaded in once
     
     var members: [String]? // Array of the members' uids
+    var posts: [String]? // Array of post uid's within this group, sorted by timestamp greatest to least
     
     // Might be used when we don't know anything about the group, before we load it in
     init(uid: String) {
