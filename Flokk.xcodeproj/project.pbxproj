@@ -23,7 +23,6 @@
 		8747920521C774650043C646 /* GroupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8747920421C774650043C646 /* GroupModel.swift */; };
 		8747920721CDCBCA0043C646 /* GroupModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8747920621CDCBCA0043C646 /* GroupModelController.swift */; };
 		8747920921CDCBD30043C646 /* UserModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8747920821CDCBD30043C646 /* UserModelController.swift */; };
-		8747921221CDD0240043C646 /* FlokkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8747921121CDD0240043C646 /* FlokkTests.swift */; };
 		8747921C21CDD5CD0043C646 /* GroupSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8747921B21CDD5CD0043C646 /* GroupSpec.swift */; };
 		8747924321CDDF340043C646 /* GroupModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8747920621CDCBCA0043C646 /* GroupModelController.swift */; };
 		8747924421CDDFE70043C646 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CA26FD21C7304E00044016 /* UserModel.swift */; };
@@ -78,7 +77,6 @@
 		8747920621CDCBCA0043C646 /* GroupModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupModelController.swift; sourceTree = "<group>"; };
 		8747920821CDCBD30043C646 /* UserModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModelController.swift; sourceTree = "<group>"; };
 		8747920F21CDD0240043C646 /* FlokkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlokkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8747921121CDD0240043C646 /* FlokkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlokkTests.swift; sourceTree = "<group>"; };
 		8747921321CDD0240043C646 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8747921B21CDD5CD0043C646 /* GroupSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupSpec.swift; sourceTree = "<group>"; };
 		87706DAC20F960B200663948 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -236,7 +234,6 @@
 		8747921021CDD0240043C646 /* FlokkTests */ = {
 			isa = PBXGroup;
 			children = (
-				8747921121CDD0240043C646 /* FlokkTests.swift */,
 				8747921B21CDD5CD0043C646 /* GroupSpec.swift */,
 				87D6800D21CDF8580098D80A /* UserSpec.swift */,
 				8747921321CDD0240043C646 /* Info.plist */,
@@ -524,7 +521,6 @@
 				8747924721CDDFE70043C646 /* UserModelController.swift in Sources */,
 				8747924321CDDF340043C646 /* GroupModelController.swift in Sources */,
 				8747921C21CDD5CD0043C646 /* GroupSpec.swift in Sources */,
-				8747921221CDD0240043C646 /* FlokkTests.swift in Sources */,
 				87D6800E21CDF8580098D80A /* UserSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

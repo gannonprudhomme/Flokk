@@ -15,7 +15,7 @@ import Promises
 // Adds various data loading functions from the database
 extension GroupModel {
     // Load the group data from the database
-    func loadGroupFromDatabase(uid: String) -> Promise<GroupModel> {
+    func loadGroupFromDatabase() -> Promise<GroupModel> {
         return Promise{ fulfill, reject in
             // Retrive the groups data for this group from the databse
             database.child("groups").child(uid).observeSingleEvent(of: .value, with: { (snapshot) in
@@ -48,7 +48,7 @@ extension GroupModel {
     }
     
     // Load a dict of the group's members containing their uid and name
-    func loadGroupMembers(uid: String) -> Promise<[String : String]> {
+    func loadGroupMembers() -> Promise<[String : String]> {
         return Promise{ fulfill, reject in
             let ret = [String : String]()
             // First check if the Group is loaded & exists in the database
@@ -60,7 +60,7 @@ extension GroupModel {
     }
     
     // Load the group's icon from Storage - Should this be in here?
-    func loadGroupIcon(uid: String) -> Promise<UIImage?> {
+    func loadGroupIcon() -> Promise<UIImage?> {
         return Promise{ fulfill, reject in
             // First check if the Group is loaded & exists in the database, or is this not necessary'
             
