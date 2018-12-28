@@ -11,7 +11,7 @@ import Promises
 
 // Provides extra functions for the PostModel that would clog up the PostModel file
 extension PostModel {
-    func loadPostFromDatabase() -> Promise<PostModel> {
+    func loadPostFromStorage() -> Promise<PostModel> {
         return Promise { fulfill, reject in
             // Retrieve the data from the databse
                 // If it doesn't exist, reject the Promise

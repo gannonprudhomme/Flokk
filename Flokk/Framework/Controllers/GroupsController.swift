@@ -23,6 +23,7 @@ class GroupsController {
     // Called (when?)
     func getGroup(uid: String) -> Promise<GroupModel> {
         return Promise { fulfill, reject in
+            // Change this to an if let?
             if self.mapContainsGroup(uid: uid) { // If the Group is already loaded in
                 fulfill(self.groupsDict[uid]!)
                 
@@ -65,11 +66,6 @@ class GroupsController {
             }
         }
     }
-}
-
-// Post Handling?
-extension GroupsController {
-    
 }
 
 // Map helper functions
