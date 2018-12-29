@@ -75,7 +75,7 @@ extension GroupModel {
     
     // Process the Group data from JSON/dictionary format and load it into this GroupModel instance
     // Called from either the local file or the database group loading
-    private func processGroupData(_ value: [String : Any]) {
+    func processGroupData(_ value: [String : Any]) {
         // Need to have checks if the group data isn't formatted properly, or data is missing(when it shouldn't be missing)
         
     }

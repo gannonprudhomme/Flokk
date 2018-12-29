@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 enum PATH: String {
     case GROUPS = "groups/"
