@@ -23,18 +23,6 @@
 		8747920521C774650043C646 /* GroupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8747920421C774650043C646 /* GroupModel.swift */; };
 		8747920721CDCBCA0043C646 /* GroupModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8747920621CDCBCA0043C646 /* GroupModelController.swift */; };
 		8747920921CDCBD30043C646 /* UserModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8747920821CDCBD30043C646 /* UserModelController.swift */; };
-		87552FA921D6FAB700A5F989 /* GroupSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87552FA821D6FAB700A5F989 /* GroupSpec.swift */; };
-		87552FAC21D6FAF800A5F989 /* UserSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87552FAB21D6FAF800A5F989 /* UserSpec.swift */; };
-		87552FAD21D6FD2C00A5F989 /* GroupModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8747920621CDCBCA0043C646 /* GroupModelController.swift */; };
-		87552FAE21D6FD4D00A5F989 /* GroupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8747920421C774650043C646 /* GroupModel.swift */; };
-		87552FAF21D6FD4F00A5F989 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CA26FD21C7304E00044016 /* UserModel.swift */; };
-		87552FB021D6FD5200A5F989 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8747920221C7739D0043C646 /* PostModel.swift */; };
-		87552FB121D6FD5600A5F989 /* UserModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8747920821CDCBD30043C646 /* UserModelController.swift */; };
-		87552FB221D6FD5600A5F989 /* PostModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FE420821D0BC2C00F21343 /* PostModelController.swift */; };
-		87552FB321D6FD5A00A5F989 /* GroupsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D6800F21CE03D00098D80A /* GroupsController.swift */; };
-		87552FB421D6FD5A00A5F989 /* UsersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FE420421D0AFFD00F21343 /* UsersController.swift */; };
-		87552FB521D6FD5A00A5F989 /* LocalFileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D6800821CDE9560098D80A /* LocalFileController.swift */; };
-		87552FB621D6FD8D00A5F989 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87221A0920F073F2000A00F7 /* AppDelegate.swift */; };
 		87552FBB21D6FEDB00A5F989 /* GroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87552FBA21D6FEDB00A5F989 /* GroupsViewController.swift */; };
 		87552FBD21D6FEF700A5F989 /* GroupsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87552FBC21D6FEF700A5F989 /* GroupsController.swift */; };
 		87552FBF21D6FF3D00A5F989 /* GroupsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87552FBE21D6FF3D00A5F989 /* GroupsTableViewController.swift */; };
@@ -44,9 +32,24 @@
 		87D2CEC221223B2B007785DC /* VideoUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D2CEC121223B2B007785DC /* VideoUtils.swift */; };
 		87D2CF2C2127A33D007785DC /* FileUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D2CF2B2127A33D007785DC /* FileUtils.swift */; };
 		87D6800921CDE9560098D80A /* LocalFileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D6800821CDE9560098D80A /* LocalFileController.swift */; };
-		87D6801021CE03D00098D80A /* GroupsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D6800F21CE03D00098D80A /* GroupsController.swift */; };
+		87D6801021CE03D00098D80A /* GroupsContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D6800F21CE03D00098D80A /* GroupsContainer.swift */; };
 		87DE4D8B2138C46500FC7DDB /* myVideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 87DE4D8A2138C46400FC7DDB /* myVideo.mp4 */; };
 		87DE4D8D2138D93D00FC7DDB /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DE4D8C2138D93D00FC7DDB /* DateUtils.swift */; };
+		87E6C91E21D83A7A0018FA1E /* GroupSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87552FA821D6FAB700A5F989 /* GroupSpec.swift */; };
+		87E6C91F21D83A7E0018FA1E /* UserSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87552FAB21D6FAF800A5F989 /* UserSpec.swift */; };
+		87E6C92021D83A820018FA1E /* GroupsContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D6800F21CE03D00098D80A /* GroupsContainer.swift */; };
+		87E6C92121D83A820018FA1E /* UsersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FE420421D0AFFD00F21343 /* UsersController.swift */; };
+		87E6C92221D83A820018FA1E /* LocalFileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D6800821CDE9560098D80A /* LocalFileController.swift */; };
+		87E6C92321D83A850018FA1E /* GroupModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8747920621CDCBCA0043C646 /* GroupModelController.swift */; };
+		87E6C92421D83A850018FA1E /* UserModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8747920821CDCBD30043C646 /* UserModelController.swift */; };
+		87E6C92521D83A850018FA1E /* PostModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FE420821D0BC2C00F21343 /* PostModelController.swift */; };
+		87E6C92621D83A890018FA1E /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CA26FD21C7304E00044016 /* UserModel.swift */; };
+		87E6C92721D83A890018FA1E /* GroupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8747920421C774650043C646 /* GroupModel.swift */; };
+		87E6C92821D83A890018FA1E /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8747920221C7739D0043C646 /* PostModel.swift */; };
+		87E6C92921D83A8C0018FA1E /* GroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87552FBA21D6FEDB00A5F989 /* GroupsViewController.swift */; };
+		87E6C92A21D83A8C0018FA1E /* GroupsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87552FBC21D6FEF700A5F989 /* GroupsController.swift */; };
+		87E6C92B21D83A8C0018FA1E /* GroupsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87552FBE21D6FF3D00A5F989 /* GroupsTableViewController.swift */; };
+		87E6C92C21D83AAD0018FA1E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87221A0920F073F2000A00F7 /* AppDelegate.swift */; };
 		87FE420521D0AFFD00F21343 /* UsersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FE420421D0AFFD00F21343 /* UsersController.swift */; };
 		87FE420921D0BC2C00F21343 /* PostModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FE420821D0BC2C00F21343 /* PostModelController.swift */; };
 		8A44DA3380245DB4A1D8DDB6 /* Pods_Flokk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CC8315ABC718F02FCB18558 /* Pods_Flokk.framework */; };
@@ -99,7 +102,7 @@
 		87D2CEC121223B2B007785DC /* VideoUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoUtils.swift; sourceTree = "<group>"; };
 		87D2CF2B2127A33D007785DC /* FileUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileUtils.swift; sourceTree = "<group>"; };
 		87D6800821CDE9560098D80A /* LocalFileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFileController.swift; sourceTree = "<group>"; };
-		87D6800F21CE03D00098D80A /* GroupsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsController.swift; sourceTree = "<group>"; };
+		87D6800F21CE03D00098D80A /* GroupsContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsContainer.swift; sourceTree = "<group>"; };
 		87DE4D8A2138C46400FC7DDB /* myVideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = myVideo.mp4; path = Flokk/myVideo.mp4; sourceTree = "<group>"; };
 		87DE4D8C2138D93D00FC7DDB /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
 		87FE420421D0AFFD00F21343 /* UsersController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersController.swift; sourceTree = "<group>"; };
@@ -287,7 +290,7 @@
 		87D6800A21CDE95A0098D80A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				87D6800F21CE03D00098D80A /* GroupsController.swift */,
+				87D6800F21CE03D00098D80A /* GroupsContainer.swift */,
 				87FE420421D0AFFD00F21343 /* UsersController.swift */,
 				87D6800821CDE9560098D80A /* LocalFileController.swift */,
 			);
@@ -583,7 +586,7 @@
 				8747920321C7739D0043C646 /* PostModel.swift in Sources */,
 				87FE420521D0AFFD00F21343 /* UsersController.swift in Sources */,
 				87552FBB21D6FEDB00A5F989 /* GroupsViewController.swift in Sources */,
-				87D6801021CE03D00098D80A /* GroupsController.swift in Sources */,
+				87D6801021CE03D00098D80A /* GroupsContainer.swift in Sources */,
 				87D6800921CDE9560098D80A /* LocalFileController.swift in Sources */,
 				8747920521C774650043C646 /* GroupModel.swift in Sources */,
 				7FEFAF842133A28B00D9537E /* BounceButton.swift in Sources */,
@@ -603,18 +606,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				87552FB621D6FD8D00A5F989 /* AppDelegate.swift in Sources */,
-				87552FAD21D6FD2C00A5F989 /* GroupModelController.swift in Sources */,
-				87552FB021D6FD5200A5F989 /* PostModel.swift in Sources */,
-				87552FB521D6FD5A00A5F989 /* LocalFileController.swift in Sources */,
-				87552FAE21D6FD4D00A5F989 /* GroupModel.swift in Sources */,
-				87552FA921D6FAB700A5F989 /* GroupSpec.swift in Sources */,
-				87552FB121D6FD5600A5F989 /* UserModelController.swift in Sources */,
-				87552FAF21D6FD4F00A5F989 /* UserModel.swift in Sources */,
-				87552FB421D6FD5A00A5F989 /* UsersController.swift in Sources */,
-				87552FAC21D6FAF800A5F989 /* UserSpec.swift in Sources */,
-				87552FB321D6FD5A00A5F989 /* GroupsController.swift in Sources */,
-				87552FB221D6FD5600A5F989 /* PostModelController.swift in Sources */,
+				87E6C91E21D83A7A0018FA1E /* GroupSpec.swift in Sources */,
+				87E6C92721D83A890018FA1E /* GroupModel.swift in Sources */,
+				87E6C92A21D83A8C0018FA1E /* GroupsController.swift in Sources */,
+				87E6C92C21D83AAD0018FA1E /* AppDelegate.swift in Sources */,
+				87E6C92021D83A820018FA1E /* GroupsContainer.swift in Sources */,
+				87E6C92221D83A820018FA1E /* LocalFileController.swift in Sources */,
+				87E6C92321D83A850018FA1E /* GroupModelController.swift in Sources */,
+				87E6C92421D83A850018FA1E /* UserModelController.swift in Sources */,
+				87E6C92121D83A820018FA1E /* UsersController.swift in Sources */,
+				87E6C91F21D83A7E0018FA1E /* UserSpec.swift in Sources */,
+				87E6C92921D83A8C0018FA1E /* GroupsViewController.swift in Sources */,
+				87E6C92621D83A890018FA1E /* UserModel.swift in Sources */,
+				87E6C92B21D83A8C0018FA1E /* GroupsTableViewController.swift in Sources */,
+				87E6C92521D83A850018FA1E /* PostModelController.swift in Sources */,
+				87E6C92821D83A890018FA1E /* PostModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

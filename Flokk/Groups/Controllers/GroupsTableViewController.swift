@@ -10,21 +10,22 @@ import Foundation
 import UIKit
 
 // Deals with anything related to the table view within GroupsViewController
-class GroupsTableViewController: UITableViewDatasource, UITableViewDelegate {
+class GroupsTableViewController: NSObject, UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "default", for: indexPath as IndexPath) as! GroupsTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "default", for: indexPath as IndexPath) // as! GroupsTableViewCell
         
-        cell.group = mainUser.groups[indexPath.row]
-        cell.tag = indexPath.row
-        cell.initialize()
-        cell.selectedBackgroundView = colorSelectionView
+        // cell.group = mainUser.groups[indexPath.row]
+        // cell.tag = indexPath.row
+        // cell.initialize()
+        //cell.selectedBackgroundView = colorSelectionView
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if mainUser != nil {
-            return mainUser.groups.count
+            return 0
+            //return mainUser.groups.count
         } else {
             return 0
         }
@@ -35,15 +36,19 @@ class GroupsTableViewController: UITableViewDatasource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = FeedViewController()
+        // Initialize a new FeedViewController
+       //let vc = FeedViewController()
         
-        vc.group = mainUser.groups[indexPath.row]
-        vc.group.feedDelegate = vc
-        vc.leaveGroupDelegate = self
+        // Set the according group values
+        //vc.group = mainUser.groups[indexPath.row]
+        //vc.group.feedDelegate = vc
+        //vc.leaveGroupDelegate = self
         
-        tableView.deselectRow(at: indexPath, animated: false)
+        // Deselect the row to make sure it doesn't stay highlighted when we segue back
+        //tableView.deselectRow(at: indexPath, animated: false)
         
-        self.navigationController?.pushViewController(vc, animated: true)
+        // Segue to the FeedViewController, keeping it in the same nav controller
+        //self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {

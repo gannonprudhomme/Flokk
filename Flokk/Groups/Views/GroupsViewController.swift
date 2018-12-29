@@ -14,11 +14,11 @@ import UIKit
 
 // Should I consider renaming this to GroupsView or GroupsViewC
 class GroupsViewController: UIViewController {
-    // Instance of GroupsController?
+    // When should I initialize these
     private var groupsController = GroupsController()
     private var tableViewController =  GroupsTableViewController()
     
-    @IBOutlet weak var tableView: UITableview
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
