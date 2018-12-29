@@ -8,8 +8,8 @@
 
 import Foundation
 import UIKit
-import FirebaseAuth
 import Promises
+import FirebaseAuth
 
 // Provides extra functions for the UserModel class that would clug up the UserModel file
 // Adds various data loading functions from the database

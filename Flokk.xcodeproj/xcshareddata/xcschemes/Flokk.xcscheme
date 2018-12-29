@@ -14,7 +14,7 @@
             buildForAnalyzing = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1258290C4611C4C2DA85E68F19656316"
+               BlueprintIdentifier = "4BC49EBA9680A2DAD25B9F2AE29A84A5"
                BuildableName = "RecordButton.framework"
                BlueprintName = "RecordButton"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">

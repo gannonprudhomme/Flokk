@@ -55,7 +55,7 @@ class GroupsController {
                 
             } else { // If there isn't a local file
                 // Didn't load the group from a local file, load it in from the database and (maybe) save it to a file
-                group.loadGroupFromDatabase(uid: uid).then({ group in
+                group.loadGroupFromDatabase().then({ group in
                     fulfill(group) // Return the loaded group
                     
                     // Save it to a file? Only if this is a group the main user is in

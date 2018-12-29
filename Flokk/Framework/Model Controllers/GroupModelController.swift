@@ -10,6 +10,12 @@ import Foundation
 import UIKit
 import Promises
 
+enum GroupLoadingError: Error {
+    case notFoundInDatabase
+    case databaseError
+    case invalidFileFormatting
+}
+
 // Not a normal kind of controller, as it doesn't interact with the View whatsoever
 // Provides extra functions for the GroupModel class that would clug up the GroupModel file
 // Adds various data loading functions from the database
@@ -18,15 +24,14 @@ extension GroupModel {
     func loadGroupFromDatabase() -> Promise<GroupModel> {
         return Promise{ fulfill, reject in
             // Retrive the groups data for this group from the databse
-            database.child("groups").child(uid).observeSingleEvent(of: .value, with: { (snapshot) in
-                if let value = snapshot.value as? [String : Any] {
-                    self.processGroupData(value)
-                    
-                    // Save the group to the local json file
-                    
-                } else {
-                    //reject("Group data loaded incorrectly")
+            database.child("groups").child(self.uid).observeSingleEvent(of: .value, with: { (snapshot) in
+                guard let value = snapshot.value as? [String : Any] else {
+                    // If the value is loaded in wrong, throw a database error
+                    reject(GroupLoadingError.databaseError)
+                    return
                 }
+                
+                self.processGroupData(value)
             })
         }
     }

@@ -22,11 +22,13 @@ class LocalFileController {
         return false
     }
     
+    static func loadDictFromFile(_ path: String) -> [String : Any]? {
+        return nil
+    }
+    
     // Returns a dictionary of all of the group data at the given path
     static func loadGroupDictFromFile(uid: String) -> [String : Any]? {
-        
-        
-        return nil
+        return loadDictFromFile(PATH.GROUPS.rawValue + uid)
     }
     
     static func loadImage(path: String) -> UIImage? {
