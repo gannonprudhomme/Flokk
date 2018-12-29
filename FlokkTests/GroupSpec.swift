@@ -1,26 +1,36 @@
 //
-//  GroupModelControllerSpec.swift
+//  GroupSpec.swift
 //  FlokkTests
 //
-//  Created by Gannon Prudhomme on 12/21/18.
+//  Created by Gannon Prudhomme on 12/28/18.
 //  Copyright © 2018 Gannon Prudomme. All rights reserved.
 //
 
 import XCTest
 
-// Tests everything related to a Group
 class GroupSpec: XCTestCase {
-    var testGroup: GroupModel!
 
     override func setUp() {
-        print(PATH.GROUPS.rawValue)
     }
 
     override func tearDown() {
-        // Delete any Firebase data here
+        // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-
-    func testDictProcessing() {
+    
+    func testGroupProcessing() {
+        var creatorUID = "someuid"
+        var creationDate = 556859224.197221
+        var groupName = "Some Name"
+        var members: [String : String] = [creatorUID: "creatorHandle"]
         
+        var data: [String : Any] = [
+            "creator": creatorUID,
+            "creationDate": creationDate,
+            "name": groupName,
+            "members": members
+        ]
+        
+        var groupModel = GroupModel(uid: "groupuid")
+        groupModel.processGroupData(data)
     }
 }
