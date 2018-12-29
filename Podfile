@@ -1,13 +1,11 @@
 # Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+# platform :ios, '11.0'
 
 def sharedPods
     use_frameworks!
     
     # Pods for Flokk
     pod "NextLevel", "~> 0.9.8"
-    pod "RecordButton"
-    pod "ABVideoRangeSlider"
     pod "SwiftyJSON", "~> 4.0"
     pod "Texture"
     pod 'PromisesSwift'

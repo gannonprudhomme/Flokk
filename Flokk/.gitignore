@@ -1,4 +1,5 @@
-FlokkTests/
-FlokkUITests/
 build/
+DerivedData/
 .DS_STORE
+.xcuserdata
+.xcshareddata

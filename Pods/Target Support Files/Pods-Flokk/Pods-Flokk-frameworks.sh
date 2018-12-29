@@ -143,7 +143,6 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "${BUILT_PRODUCTS_DIR}/ABVideoRangeSlider-iOS11.0/ABVideoRangeSlider.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/GTMSessionFetcher-iOS11.0/GTMSessionFetcher.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/GoogleUtilities-iOS11.0/GoogleUtilities.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/NextLevel-iOS11.0/NextLevel.framework"
@@ -152,14 +151,12 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/PINRemoteImage-iOS11.0/PINRemoteImage.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/PromisesObjC-iOS11.0/FBLPromises.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/PromisesSwift-iOS11.0/Promises.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/RecordButton-iOS11.0/RecordButton.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftyJSON-iOS11.0/SwiftyJSON.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Texture-iOS11.0/AsyncDisplayKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/leveldb-library-iOS11.0/leveldb.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/nanopb-iOS11.0/nanopb.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "${BUILT_PRODUCTS_DIR}/ABVideoRangeSlider-iOS11.0/ABVideoRangeSlider.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/GTMSessionFetcher-iOS11.0/GTMSessionFetcher.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/GoogleUtilities-iOS11.0/GoogleUtilities.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/NextLevel-iOS11.0/NextLevel.framework"
@@ -168,7 +165,6 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/PINRemoteImage-iOS11.0/PINRemoteImage.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/PromisesObjC-iOS11.0/FBLPromises.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/PromisesSwift-iOS11.0/Promises.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/RecordButton-iOS11.0/RecordButton.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftyJSON-iOS11.0/SwiftyJSON.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Texture-iOS11.0/AsyncDisplayKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/leveldb-library-iOS11.0/leveldb.framework"

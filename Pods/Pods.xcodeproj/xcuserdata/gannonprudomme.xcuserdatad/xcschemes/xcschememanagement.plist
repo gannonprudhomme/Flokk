@@ -4,26 +4,6 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>ABVideoRangeSlider-iOS11.0-ABVideoRangeSlider.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>ABVideoRangeSlider-iOS11.0.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>ABVideoRangeSlider-iOS12.1-ABVideoRangeSlider.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>ABVideoRangeSlider-iOS12.1.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>FirebaseAuth-iOS11.0.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -150,16 +130,6 @@
 			<false/>
 		</dict>
 		<key>PromisesSwift-iOS12.1.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>RecordButton-iOS11.0.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>RecordButton-iOS12.1.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>

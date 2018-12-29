@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6FB7E835A42ED4C194622D59 /* Pods_FlokkTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6DA7B742FE1F3BE072DC513 /* Pods_FlokkTests.framework */; };
 		7F8012BB2102CBF200CEA5DA /* Camera.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F8012BA2102CBF200CEA5DA /* Camera.storyboard */; };
 		7F85D2C021115D93006E2772 /* JosefinSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7F8012A82100F69800CEA5DA /* JosefinSans-Regular.ttf */; };
 		7F85D2C121115D96006E2772 /* JosefinSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7F8012A72100F69800CEA5DA /* JosefinSans-Bold.ttf */; };
@@ -20,31 +19,25 @@
 		87221A0A20F073F2000A00F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87221A0920F073F2000A00F7 /* AppDelegate.swift */; };
 		87221A1120F073F2000A00F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87221A1020F073F2000A00F7 /* Assets.xcassets */; };
 		87221A1420F073F2000A00F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87221A1220F073F2000A00F7 /* LaunchScreen.storyboard */; };
-		8732CC0B21D6EBFF001FA30C /* Pods_Flokk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8732CC0A21D6EBFF001FA30C /* Pods_Flokk.framework */; };
 		8747920321C7739D0043C646 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8747920221C7739D0043C646 /* PostModel.swift */; };
 		8747920521C774650043C646 /* GroupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8747920421C774650043C646 /* GroupModel.swift */; };
 		8747920721CDCBCA0043C646 /* GroupModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8747920621CDCBCA0043C646 /* GroupModelController.swift */; };
 		8747920921CDCBD30043C646 /* UserModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8747920821CDCBD30043C646 /* UserModelController.swift */; };
-		8747921C21CDD5CD0043C646 /* GroupSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8747921B21CDD5CD0043C646 /* GroupSpec.swift */; };
-		8747924321CDDF340043C646 /* GroupModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8747920621CDCBCA0043C646 /* GroupModelController.swift */; };
-		8747924421CDDFE70043C646 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CA26FD21C7304E00044016 /* UserModel.swift */; };
-		8747924521CDDFE70043C646 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8747920221C7739D0043C646 /* PostModel.swift */; };
-		8747924621CDDFE70043C646 /* GroupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8747920421C774650043C646 /* GroupModel.swift */; };
-		8747924721CDDFE70043C646 /* UserModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8747920821CDCBD30043C646 /* UserModelController.swift */; };
+		87552FA921D6FAB700A5F989 /* GroupSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87552FA821D6FAB700A5F989 /* GroupSpec.swift */; };
+		87552FAC21D6FAF800A5F989 /* UserSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87552FAB21D6FAF800A5F989 /* UserSpec.swift */; };
 		87706DAD20F960B200663948 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 87706DAC20F960B200663948 /* .gitignore */; };
 		87CA26FE21C7304E00044016 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CA26FD21C7304E00044016 /* UserModel.swift */; };
 		87D2CEB1211A4D52007785DC /* ImageUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D2CEB0211A4D52007785DC /* ImageUtils.swift */; };
 		87D2CEC221223B2B007785DC /* VideoUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D2CEC121223B2B007785DC /* VideoUtils.swift */; };
 		87D2CF2C2127A33D007785DC /* FileUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D2CF2B2127A33D007785DC /* FileUtils.swift */; };
 		87D6800921CDE9560098D80A /* LocalFileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D6800821CDE9560098D80A /* LocalFileController.swift */; };
-		87D6800E21CDF8580098D80A /* UserSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D6800D21CDF8580098D80A /* UserSpec.swift */; };
 		87D6801021CE03D00098D80A /* GroupsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D6800F21CE03D00098D80A /* GroupsController.swift */; };
 		87DE4D8B2138C46500FC7DDB /* myVideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 87DE4D8A2138C46400FC7DDB /* myVideo.mp4 */; };
 		87DE4D8D2138D93D00FC7DDB /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DE4D8C2138D93D00FC7DDB /* DateUtils.swift */; };
 		87FE420521D0AFFD00F21343 /* UsersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FE420421D0AFFD00F21343 /* UsersController.swift */; };
 		87FE420921D0BC2C00F21343 /* PostModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FE420821D0BC2C00F21343 /* PostModelController.swift */; };
-		9220641A7EADC88841B4BD1C /* Pods_Flokk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8732CC0A21D6EBFF001FA30C /* Pods_Flokk.framework */; };
-		AAFB49F45D0EE4AD05A0909D /* Pods_Flokk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03A60C7F59CE865B9DA891B8 /* Pods_Flokk.framework */; };
+		8A44DA3380245DB4A1D8DDB6 /* Pods_Flokk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CC8315ABC718F02FCB18558 /* Pods_Flokk.framework */; };
+		EDCD49F54E2FE593EDAF7226 /* Pods_FlokkTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0636656666CF4A090859FDC4 /* Pods_FlokkTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,9 +51,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		03A60C7F59CE865B9DA891B8 /* Pods_Flokk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Flokk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		08E82A4DD41248A5D7B6C0C4 /* Pods-Flokk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flokk.release.xcconfig"; path = "Pods/Target Support Files/Pods-Flokk/Pods-Flokk.release.xcconfig"; sourceTree = "<group>"; };
-		7F6C0FE121364648005711F0 /* myVideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = myVideo.mp4; sourceTree = "<group>"; };
+		0636656666CF4A090859FDC4 /* Pods_FlokkTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlokkTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1CC8315ABC718F02FCB18558 /* Pods_Flokk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Flokk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2691C493DFF8B0ECEB98D40D /* Pods-FlokkTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlokkTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlokkTests/Pods-FlokkTests.release.xcconfig"; sourceTree = "<group>"; };
 		7F8012A72100F69800CEA5DA /* JosefinSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JosefinSans-Bold.ttf"; sourceTree = "<group>"; };
 		7F8012A82100F69800CEA5DA /* JosefinSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JosefinSans-Regular.ttf"; sourceTree = "<group>"; };
 		7F8012B3210123B000CEA5DA /* BounceButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BounceButton.swift; sourceTree = "<group>"; };
@@ -75,14 +68,14 @@
 		87221A1020F073F2000A00F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		87221A1320F073F2000A00F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		87221A1520F073F2000A00F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8732CC0A21D6EBFF001FA30C /* Pods_Flokk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_Flokk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8747920221C7739D0043C646 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
 		8747920421C774650043C646 /* GroupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupModel.swift; sourceTree = "<group>"; };
 		8747920621CDCBCA0043C646 /* GroupModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupModelController.swift; sourceTree = "<group>"; };
 		8747920821CDCBD30043C646 /* UserModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModelController.swift; sourceTree = "<group>"; };
 		8747920F21CDD0240043C646 /* FlokkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlokkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8747921321CDD0240043C646 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8747921B21CDD5CD0043C646 /* GroupSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupSpec.swift; sourceTree = "<group>"; };
+		87552FA821D6FAB700A5F989 /* GroupSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupSpec.swift; sourceTree = "<group>"; };
+		87552FAB21D6FAF800A5F989 /* UserSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSpec.swift; sourceTree = "<group>"; };
 		87706DAC20F960B200663948 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		87C312AE214774CA00778B69 /* Flokk-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Flokk-Bridging-Header.h"; sourceTree = "<group>"; };
 		87CA26FD21C7304E00044016 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
@@ -90,16 +83,14 @@
 		87D2CEC121223B2B007785DC /* VideoUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoUtils.swift; sourceTree = "<group>"; };
 		87D2CF2B2127A33D007785DC /* FileUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileUtils.swift; sourceTree = "<group>"; };
 		87D6800821CDE9560098D80A /* LocalFileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFileController.swift; sourceTree = "<group>"; };
-		87D6800D21CDF8580098D80A /* UserSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSpec.swift; sourceTree = "<group>"; };
 		87D6800F21CE03D00098D80A /* GroupsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsController.swift; sourceTree = "<group>"; };
 		87DE4D8A2138C46400FC7DDB /* myVideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = myVideo.mp4; path = Flokk/myVideo.mp4; sourceTree = "<group>"; };
 		87DE4D8C2138D93D00FC7DDB /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
 		87FE420421D0AFFD00F21343 /* UsersController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersController.swift; sourceTree = "<group>"; };
 		87FE420821D0BC2C00F21343 /* PostModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModelController.swift; sourceTree = "<group>"; };
-		924033D2E8AD99405C7A8A28 /* Pods-Flokk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flokk.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Flokk/Pods-Flokk.debug.xcconfig"; sourceTree = "<group>"; };
-		DF27D6E54556BAE96DF52594 /* Pods-FlokkTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlokkTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlokkTests/Pods-FlokkTests.release.xcconfig"; sourceTree = "<group>"; };
-		E1C0F0ACD0FE685285C36DA5 /* Pods-FlokkTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlokkTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlokkTests/Pods-FlokkTests.debug.xcconfig"; sourceTree = "<group>"; };
-		E6DA7B742FE1F3BE072DC513 /* Pods_FlokkTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlokkTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A72F652DFF65AB2F1D46C791 /* Pods-Flokk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flokk.release.xcconfig"; path = "Pods/Target Support Files/Pods-Flokk/Pods-Flokk.release.xcconfig"; sourceTree = "<group>"; };
+		BB6C4BB180AEB5F54B0D653B /* Pods-FlokkTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlokkTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlokkTests/Pods-FlokkTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E1F523477CB055965FABC969 /* Pods-Flokk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flokk.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Flokk/Pods-Flokk.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,8 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AAFB49F45D0EE4AD05A0909D /* Pods_Flokk.framework in Frameworks */,
-				9220641A7EADC88841B4BD1C /* Pods_Flokk.framework in Frameworks */,
+				8A44DA3380245DB4A1D8DDB6 /* Pods_Flokk.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,8 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8732CC0B21D6EBFF001FA30C /* Pods_Flokk.framework in Frameworks */,
-				6FB7E835A42ED4C194622D59 /* Pods_FlokkTests.framework in Frameworks */,
+				EDCD49F54E2FE593EDAF7226 /* Pods_FlokkTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,17 +128,6 @@
 				7F8012B3210123B000CEA5DA /* BounceButton.swift */,
 			);
 			path = Animation;
-			sourceTree = "<group>";
-		};
-		864DAE993381E1DDCA34A8DA /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				924033D2E8AD99405C7A8A28 /* Pods-Flokk.debug.xcconfig */,
-				08E82A4DD41248A5D7B6C0C4 /* Pods-Flokk.release.xcconfig */,
-				E1C0F0ACD0FE685285C36DA5 /* Pods-FlokkTests.debug.xcconfig */,
-				DF27D6E54556BAE96DF52594 /* Pods-FlokkTests.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 		8711A834210D478100CCFD38 /* Feed */ = {
@@ -185,9 +163,8 @@
 				87221A0820F073F2000A00F7 /* Flokk */,
 				8747921021CDD0240043C646 /* FlokkTests */,
 				87221A0720F073F2000A00F7 /* Products */,
-				87DE4D892138C33700FC7DDB /* Recovered References */,
-				864DAE993381E1DDCA34A8DA /* Pods */,
-				8C2589AB6C3FD0391D48FAB7 /* Frameworks */,
+				A03D4915936B06C38526DACE /* Pods */,
+				A2BAEC4BA54A1DA9956B7AD1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -238,9 +215,9 @@
 		8747921021CDD0240043C646 /* FlokkTests */ = {
 			isa = PBXGroup;
 			children = (
-				8747921B21CDD5CD0043C646 /* GroupSpec.swift */,
-				87D6800D21CDF8580098D80A /* UserSpec.swift */,
+				87552FA821D6FAB700A5F989 /* GroupSpec.swift */,
 				8747921321CDD0240043C646 /* Info.plist */,
+				87552FAB21D6FAF800A5F989 /* UserSpec.swift */,
 			);
 			path = FlokkTests;
 			sourceTree = "<group>";
@@ -282,14 +259,6 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		87DE4D892138C33700FC7DDB /* Recovered References */ = {
-			isa = PBXGroup;
-			children = (
-				7F6C0FE121364648005711F0 /* myVideo.mp4 */,
-			);
-			name = "Recovered References";
-			sourceTree = "<group>";
-		};
 		87FE420221D0A96400F21343 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -314,12 +283,22 @@
 			path = Framework;
 			sourceTree = "<group>";
 		};
-		8C2589AB6C3FD0391D48FAB7 /* Frameworks */ = {
+		A03D4915936B06C38526DACE /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				8732CC0A21D6EBFF001FA30C /* Pods_Flokk.framework */,
-				03A60C7F59CE865B9DA891B8 /* Pods_Flokk.framework */,
-				E6DA7B742FE1F3BE072DC513 /* Pods_FlokkTests.framework */,
+				E1F523477CB055965FABC969 /* Pods-Flokk.debug.xcconfig */,
+				A72F652DFF65AB2F1D46C791 /* Pods-Flokk.release.xcconfig */,
+				BB6C4BB180AEB5F54B0D653B /* Pods-FlokkTests.debug.xcconfig */,
+				2691C493DFF8B0ECEB98D40D /* Pods-FlokkTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A2BAEC4BA54A1DA9956B7AD1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1CC8315ABC718F02FCB18558 /* Pods_Flokk.framework */,
+				0636656666CF4A090859FDC4 /* Pods_FlokkTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -331,11 +310,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 87221A1820F073F2000A00F7 /* Build configuration list for PBXNativeTarget "Flokk" */;
 			buildPhases = (
-				425450B3CEE9D1CFF86C67FF /* [CP] Check Pods Manifest.lock */,
+				C77B4669117C92B900AEAF36 /* [CP] Check Pods Manifest.lock */,
 				87221A0220F073F2000A00F7 /* Sources */,
 				87221A0320F073F2000A00F7 /* Frameworks */,
 				87221A0420F073F2000A00F7 /* Resources */,
-				E11B5944B7FEAADA9F3FDD5A /* [CP] Embed Pods Frameworks */,
+				7FE218101B1DBAB7594AE28D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -350,11 +329,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8747921621CDD0240043C646 /* Build configuration list for PBXNativeTarget "FlokkTests" */;
 			buildPhases = (
-				B77B6363A5E056E72D44227C /* [CP] Check Pods Manifest.lock */,
+				FA1EB5CE1B4D79903FF2C358 /* [CP] Check Pods Manifest.lock */,
 				8747920B21CDD0240043C646 /* Sources */,
 				8747920C21CDD0240043C646 /* Frameworks */,
 				8747920D21CDD0240043C646 /* Resources */,
-				560D6E27523736AFE3A6EC9D /* [CP] Embed Pods Frameworks */,
+				34303C3CB8E8C59DF7A64403 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -386,6 +365,7 @@
 					};
 					8747920E21CDD0240043C646 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 87221A0520F073F2000A00F7;
 					};
@@ -440,7 +420,87 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		425450B3CEE9D1CFF86C67FF /* [CP] Check Pods Manifest.lock */ = {
+		34303C3CB8E8C59DF7A64403 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-FlokkTests/Pods-FlokkTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher-iOS12.1/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities-iOS12.1/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/NextLevel-iOS12.1/NextLevel.framework",
+				"${BUILT_PRODUCTS_DIR}/PINCache-iOS12.1/PINCache.framework",
+				"${BUILT_PRODUCTS_DIR}/PINOperation-iOS12.1/PINOperation.framework",
+				"${BUILT_PRODUCTS_DIR}/PINRemoteImage-iOS12.1/PINRemoteImage.framework",
+				"${BUILT_PRODUCTS_DIR}/PromisesObjC-iOS12.1/FBLPromises.framework",
+				"${BUILT_PRODUCTS_DIR}/PromisesSwift-iOS12.1/Promises.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON-iOS12.1/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/Texture-iOS12.1/AsyncDisplayKit.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library-iOS12.1/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb-iOS12.1/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NextLevel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINCache.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINOperation.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINRemoteImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Promises.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AsyncDisplayKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FlokkTests/Pods-FlokkTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7FE218101B1DBAB7594AE28D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Flokk/Pods-Flokk-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher-iOS11.0/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities-iOS11.0/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/NextLevel-iOS11.0/NextLevel.framework",
+				"${BUILT_PRODUCTS_DIR}/PINCache-iOS11.0/PINCache.framework",
+				"${BUILT_PRODUCTS_DIR}/PINOperation-iOS11.0/PINOperation.framework",
+				"${BUILT_PRODUCTS_DIR}/PINRemoteImage-iOS11.0/PINRemoteImage.framework",
+				"${BUILT_PRODUCTS_DIR}/PromisesObjC-iOS11.0/FBLPromises.framework",
+				"${BUILT_PRODUCTS_DIR}/PromisesSwift-iOS11.0/Promises.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON-iOS11.0/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/Texture-iOS11.0/AsyncDisplayKit.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library-iOS11.0/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb-iOS11.0/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NextLevel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINCache.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINOperation.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINRemoteImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Promises.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AsyncDisplayKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Flokk/Pods-Flokk-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C77B4669117C92B900AEAF36 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -458,51 +518,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		560D6E27523736AFE3A6EC9D /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-FlokkTests/Pods-FlokkTests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/ABVideoRangeSlider-iOS12.1/ABVideoRangeSlider.framework",
-				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher-iOS12.1/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleUtilities-iOS12.1/GoogleUtilities.framework",
-				"${BUILT_PRODUCTS_DIR}/NextLevel-iOS12.1/NextLevel.framework",
-				"${BUILT_PRODUCTS_DIR}/PINCache-iOS12.1/PINCache.framework",
-				"${BUILT_PRODUCTS_DIR}/PINOperation-iOS12.1/PINOperation.framework",
-				"${BUILT_PRODUCTS_DIR}/PINRemoteImage-iOS12.1/PINRemoteImage.framework",
-				"${BUILT_PRODUCTS_DIR}/PromisesObjC-iOS12.1/FBLPromises.framework",
-				"${BUILT_PRODUCTS_DIR}/PromisesSwift-iOS12.1/Promises.framework",
-				"${BUILT_PRODUCTS_DIR}/RecordButton-iOS12.1/RecordButton.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyJSON-iOS12.1/SwiftyJSON.framework",
-				"${BUILT_PRODUCTS_DIR}/Texture-iOS12.1/AsyncDisplayKit.framework",
-				"${BUILT_PRODUCTS_DIR}/leveldb-library-iOS12.1/leveldb.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb-iOS12.1/nanopb.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ABVideoRangeSlider.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NextLevel.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINCache.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINOperation.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINRemoteImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Promises.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RecordButton.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AsyncDisplayKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FlokkTests/Pods-FlokkTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B77B6363A5E056E72D44227C /* [CP] Check Pods Manifest.lock */ = {
+		FA1EB5CE1B4D79903FF2C358 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -518,50 +534,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E11B5944B7FEAADA9F3FDD5A /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Flokk/Pods-Flokk-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/ABVideoRangeSlider-iOS11.0/ABVideoRangeSlider.framework",
-				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher-iOS11.0/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleUtilities-iOS11.0/GoogleUtilities.framework",
-				"${BUILT_PRODUCTS_DIR}/NextLevel-iOS11.0/NextLevel.framework",
-				"${BUILT_PRODUCTS_DIR}/PINCache-iOS11.0/PINCache.framework",
-				"${BUILT_PRODUCTS_DIR}/PINOperation-iOS11.0/PINOperation.framework",
-				"${BUILT_PRODUCTS_DIR}/PINRemoteImage-iOS11.0/PINRemoteImage.framework",
-				"${BUILT_PRODUCTS_DIR}/PromisesObjC-iOS11.0/FBLPromises.framework",
-				"${BUILT_PRODUCTS_DIR}/PromisesSwift-iOS11.0/Promises.framework",
-				"${BUILT_PRODUCTS_DIR}/RecordButton-iOS11.0/RecordButton.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyJSON-iOS11.0/SwiftyJSON.framework",
-				"${BUILT_PRODUCTS_DIR}/Texture-iOS11.0/AsyncDisplayKit.framework",
-				"${BUILT_PRODUCTS_DIR}/leveldb-library-iOS11.0/leveldb.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb-iOS11.0/nanopb.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ABVideoRangeSlider.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NextLevel.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINCache.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINOperation.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINRemoteImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Promises.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RecordButton.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AsyncDisplayKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Flokk/Pods-Flokk-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -593,13 +565,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8747924421CDDFE70043C646 /* UserModel.swift in Sources */,
-				8747924521CDDFE70043C646 /* PostModel.swift in Sources */,
-				8747924621CDDFE70043C646 /* GroupModel.swift in Sources */,
-				8747924721CDDFE70043C646 /* UserModelController.swift in Sources */,
-				8747924321CDDF340043C646 /* GroupModelController.swift in Sources */,
-				8747921C21CDD5CD0043C646 /* GroupSpec.swift in Sources */,
-				87D6800E21CDF8580098D80A /* UserSpec.swift in Sources */,
+				87552FA921D6FAB700A5F989 /* GroupSpec.swift in Sources */,
+				87552FAC21D6FAF800A5F989 /* UserSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -675,7 +642,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -728,7 +695,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -738,7 +705,7 @@
 		};
 		87221A1920F073F2000A00F7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 924033D2E8AD99405C7A8A28 /* Pods-Flokk.debug.xcconfig */;
+			baseConfigurationReference = E1F523477CB055965FABC969 /* Pods-Flokk.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -758,7 +725,7 @@
 		};
 		87221A1A20F073F2000A00F7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 08E82A4DD41248A5D7B6C0C4 /* Pods-Flokk.release.xcconfig */;
+			baseConfigurationReference = A72F652DFF65AB2F1D46C791 /* Pods-Flokk.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -777,9 +744,10 @@
 		};
 		8747921721CDD0240043C646 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E1C0F0ACD0FE685285C36DA5 /* Pods-FlokkTests.debug.xcconfig */;
+			baseConfigurationReference = BB6C4BB180AEB5F54B0D653B /* Pods-FlokkTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L4K4Q74X62;
@@ -790,6 +758,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = flokk.FlokkTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Flokk.app/Flokk";
@@ -798,9 +767,10 @@
 		};
 		8747921821CDD0240043C646 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DF27D6E54556BAE96DF52594 /* Pods-FlokkTests.release.xcconfig */;
+			baseConfigurationReference = 2691C493DFF8B0ECEB98D40D /* Pods-FlokkTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L4K4Q74X62;

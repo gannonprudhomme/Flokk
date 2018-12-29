@@ -1,5 +1,4 @@
 PODS:
-  - ABVideoRangeSlider (0.1.5)
   - Firebase/Auth (5.15.0):
     - Firebase/CoreOnly
     - FirebaseAuth (= 5.2.0)
@@ -93,7 +92,6 @@ PODS:
   - PromisesObjC (1.2.4)
   - PromisesSwift (1.2.4):
     - PromisesObjC (= 1.2.4)
-  - RecordButton (1.0.2)
   - SwiftyJSON (4.2.0)
   - Texture (2.7):
     - Texture/PINRemoteImage (= 2.7)
@@ -104,20 +102,17 @@ PODS:
     - Texture/Core
 
 DEPENDENCIES:
-  - ABVideoRangeSlider
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Database
   - Firebase/Storage
   - NextLevel (~> 0.9.8)
   - PromisesSwift
-  - RecordButton
   - SwiftyJSON (~> 4.0)
   - Texture
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
-    - ABVideoRangeSlider
     - Firebase
     - FirebaseAnalytics
     - FirebaseAuth
@@ -137,12 +132,10 @@ SPEC REPOS:
     - PINRemoteImage
     - PromisesObjC
     - PromisesSwift
-    - RecordButton
     - SwiftyJSON
     - Texture
 
 SPEC CHECKSUMS:
-  ABVideoRangeSlider: f2b6d894170bd0951693de4c1ad625f7f9f8b6a5
   Firebase: 8bb9268bff82374f2cbaaabb143e725743c316ae
   FirebaseAnalytics: c06f9d70577d79074214700a71fd5d39de5550fb
   FirebaseAuth: 02e969ff430e156d99d4cb842d77b806b71ad7bb
@@ -162,10 +155,9 @@ SPEC CHECKSUMS:
   PINRemoteImage: d6d51c5d2adda55f1ce30c96e850b6c4ebd2856a
   PromisesObjC: 4a3f2e30a0eb793e9bbb32cd367b625d4a14de5a
   PromisesSwift: 8e1d2cdbc3cafb4f09d4b82df12f645bc19ab64e
-  RecordButton: 76677be0f4b94f8a387454a23b4b64bd9b6c0e51
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
   Texture: 9d7e38965cf22ccd7cd9c249dd78b3f14e70ab6c
 
-PODFILE CHECKSUM: 5c99817794cc51ae981df08acf4e175f9f1700da
+PODFILE CHECKSUM: 6bdc0e78782de35fc22fafcbc127d9c7ae44a60c
 
 COCOAPODS: 1.5.3
