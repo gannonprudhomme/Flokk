@@ -32,5 +32,7 @@ class GroupSpec: XCTestCase {
         
         var groupModel = GroupModel(uid: "groupuid")
         groupModel.processGroupData(data)
+        
+        XCTAssertEqual(creatorUID, groupModel.creatorUID)
     }
 }
