@@ -13,7 +13,7 @@ import Promises
 //  However, other controllers that communicate with Views will call functions from this anytime they need access to a group
 // Contains a global instance of all of the groups within the app
 // What the view controllers and such interface with to access/modify Group data
-class GroupsController {
+class GroupsContainer {
     // Any group that needs more than a UID and a name(ie storing a group icon, posts data, etc) needs to be stored in this Dictionary
     var groupsDict: [String : GroupModel] = [:]
     
@@ -69,7 +69,7 @@ class GroupsController {
 }
 
 // Map helper functions
-extension GroupsController {
+extension GroupsContainer {
     // Returns true if the uid is in groupsMap
     func mapContainsGroup(uid: String) -> Bool {
         return groupsDict.contains(where: { key, value in
