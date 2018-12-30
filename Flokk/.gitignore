@@ -1,5 +1,5 @@
 build/
 DerivedData/
 .DS_STORE
-.xcuserdata
-.xcshareddata
+.xcuserdata/
+.xcshareddata/
