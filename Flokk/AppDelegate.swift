@@ -15,6 +15,9 @@ var mainUser: User! // Global access to the main user
 var database: DatabaseReference!
 var storage: StorageReference!
 
+// GroupsContainer instance?
+// UsersContainer instance?
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?

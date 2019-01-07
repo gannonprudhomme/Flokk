@@ -131,6 +131,11 @@ extension GroupModel {
             for (uid, data) in posts {
                 // Handle the posts, create them and add them to the lists of posts?
                 
+                // Dimensions(width & height)
+                
+                // Poster UID
+                
+                // Timestamp
             }
         }
     }

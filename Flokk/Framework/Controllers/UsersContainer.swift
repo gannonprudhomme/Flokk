@@ -15,6 +15,8 @@ class UsersContainer {
     
     // Load the user's data from the database(all of it expect the profile photo)
     func loadUser(uid: String) -> Promise<UserModel> {
+        // If the uid has formated wrong, some error should be thrown
+        
         return Promise { fulfill, reject in
             if self.mapContainsUser(uid: uid) { // If the UserModel with that uid is stored in the Map
                 fulfill(self.usersDict[uid]!) // Return the according UserModel
