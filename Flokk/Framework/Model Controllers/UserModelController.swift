@@ -11,6 +11,10 @@ import UIKit
 import Promises
 import FirebaseAuth
 
+enum UserLoadingError: Error {
+    case processDataError(String)
+}
+
 // Provides extra functions for the UserModel class that would clug up the UserModel file
 // Adds various data loading functions from the database
 extension UserModel {
@@ -39,17 +43,53 @@ extension UserModel {
     }
     
     // Need to process different user data, depending on if we're downloading main user data or not
-    func processUserData(_ value: [String : Any]) -> UserModel? {
+    // When is this called? Checking a user's profile?
+    func processUserData(_ value: [String : Any]) throws {
+        // Attempt to load in the user's handle from the data
+        guard let handle = value["handle"] as? String else {
+            throw(UserLoadingError.processDataError("Coudln't load in handle"))
+        }
+        self.handle = handle
+        
+        // Attempt to load in the user's full name from the data
+        guard let fullName = value["name"] as? String else {
+            throw(UserLoadingError.processDataError("Coudln't load in fullName"))
+        }
+        self.fullName = fullName
+        
+        // Don't really care about the email, ignoring it for now
+        
+        // Attempt to load in the group IDs
+        if let groups = value["groups"] as? [String : String] { // User won't always have groups, so no guard
+            // Iterate through all of the groups
+            for groupID in groups.keys {
+                // Add it to the list of groups
+                self.groups?.append(groupID)
+            }
+        }
+    }
+    
+    // How should I format this? Probably shouldn't go in here
+    func processMainUserData(_ value: [String : Any]) throws {
         let uid = Auth.auth().currentUser?.uid
         
-        let handle = value["handle"] as! String
-        let fullName = value["name"] as! String
+        // Attempt to load in the user's handle from the data
+        guard let handle = value["handle"] as? String else {
+            throw(UserLoadingError.processDataError("Coudln't load in handle"))
+        }
+        self.handle = handle
+        
+        // Attempt to load in the user's full name from the data
+        guard let fullName = value["name"] as? String else {
+            throw(UserLoadingError.processDataError("Coudln't load in fullName"))
+        }
+        self.fullName = fullName
         
         // mainUser = UserModel(uid: uid!)
         // mainUser.fullName = fullName
         
         // Attempt to load in the group IDs
-        if let groups = value["groups"] as? [String : String] { // Change this to a guard?
+        if let groups = value["groups"] as? [String : String] { // User won't always have groups, so no guard
             // Load in each of the groupIDs
             for groupID in groups.keys {
                 let groupName = groups[groupID]
@@ -67,8 +107,5 @@ extension UserModel {
                 
             }
         }
-        
-        // If the data was formatted wrong
-        return nil
     }
 }

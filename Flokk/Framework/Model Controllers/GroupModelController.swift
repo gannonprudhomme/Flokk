@@ -38,7 +38,7 @@ extension GroupModel {
                     try self.processGroupData(value)
                 } catch GroupLoadingError.processDataError(let errorMessage) { // Handle the error if the group data is lacking necessary data
                     print(errorMessage)
-                } catch {
+                } catch { // Not sure what other error there could be
                     print("some other error")
                 }
                 
@@ -64,6 +64,7 @@ extension GroupModel {
     }
     
     // Load a dict of the group's members containing their uid and name
+    // TODO: When would this be used? The list of the members will probably always be loaded in
     func loadGroupMembers() -> Promise<[String : String]> {
         return Promise{ fulfill, reject in
             let ret = [String : String]()
