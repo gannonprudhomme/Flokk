@@ -9,30 +9,40 @@
 import XCTest
 
 class GroupSpec: XCTestCase {
-
     override func setUp() {
     }
 
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
     
-    func testGroupProcessing() {
-        var creatorUID = "someuid"
-        var creationDate = 556859224.197221
-        var groupName = "Some Name"
-        var members: [String : String] = [creatorUID: "creatorHandle"]
+    func testGroupDatabaseLoading() {
         
-        var data: [String : Any] = [
-            "creator": creatorUID,
-            "creationDate": creationDate,
-            "name": groupName,
-            "members": members
-        ]
+    }
+    
+    // Helper function for creation a dictionary
+    func createGroupDict(name: String?, creator: String?, creationDate: Double?, members: [String: String]?) -> [String: Any] {
+        var data = [String : Any]()
         
-        var groupModel = GroupModel(uid: "groupuid")
-        groupModel.processGroupData(data)
+        // If any of these values are included(not nil), add them to the group dictionary
         
-        XCTAssertEqual(creatorUID, groupModel.creatorUID)
+        if let _ = name {
+            data["name"] = name
+        }
+        
+        if let _ = creator {
+            data["creator"] = creator
+        }
+        
+        if let _ = creationDate {
+            data["creationDate"] = creationDate
+        }
+        
+        if let _ = members {
+            data["members"] = members
+        }
+        
+        print(data)
+        
+        return data
     }
 }
