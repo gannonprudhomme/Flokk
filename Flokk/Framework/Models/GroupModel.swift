@@ -15,6 +15,7 @@ class GroupModel {
     var icon: UIImage? // Need to ensure this is only loaded in once
     
     var creatorUID: String? // The user who created this group's uid
+    var creationDate: Double? // The date when this group was created
     var members: [String]? // Array of the members' uids
     var posts: [String]? // Array of post uid's within this group, sorted by timestamp greatest to least
     
