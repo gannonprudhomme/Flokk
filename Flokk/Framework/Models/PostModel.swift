@@ -8,6 +8,18 @@
 
 import Foundation
 
+// The dimensions of this file, used for pre-allocating
+// Enough space for this post in the Feed View
+struct Dimensions {
+    var width: Int
+    var height: Int
+    
+    init(width: Int, height: Int) {
+        self.width = width
+        self.height = height
+    }
+}
+
 // A post in Flokk is represented as a video, and also contains an according preview image
 // that is displayed before the video is played, which is usually the first frame of the video
 class PostModel {
@@ -20,7 +32,7 @@ class PostModel {
     var filePath: String? // Local (temporary?) file path to the location of the downloaded video
     
     // Width and height of the 
-    // var dimensions: Dimensions?
+    var dimensions: Dimensions?
     
     // var previewImage: UIImage? // The image to be displayed before a video is played in a Feed
     
