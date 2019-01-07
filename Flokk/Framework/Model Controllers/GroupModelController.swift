@@ -10,10 +10,12 @@ import Foundation
 import UIKit
 import Promises
 
+// Errors pertaining to GroupModel loading
 enum GroupLoadingError: Error {
     case notFoundInDatabase
     case databaseError
     case invalidFileFormatting
+    case processDataError(String)
 }
 
 // Not a normal kind of controller, as it doesn't interact with the View whatsoever
@@ -31,7 +33,16 @@ extension GroupModel {
                     return
                 }
                 
-                self.processGroupData(value)
+                // Attempt to process the group data
+                do {
+                    try self.processGroupData(value)
+                } catch GroupLoadingError.processDataError(let errorMessage) { // Handle the error if the group data is lacking necessary data
+                    print(errorMessage)
+                } catch {
+                    print("some other error")
+                }
+                
+                // Anything else?
             })
         }
     }
@@ -75,9 +86,53 @@ extension GroupModel {
     
     // Process the Group data from JSON/dictionary format and load it into this GroupModel instance
     // Called from either the local file or the database group loading
-    func processGroupData(_ value: [String : Any]) {
+    func processGroupData(_ value: [String : Any]) throws {
         // Need to have checks if the group data isn't formatted properly, or data is missing(when it shouldn't be missing)
         
+        // Attempt to load in the Group's name
+        guard let name = value["name"] as? String else {
+            // throw an errorhttps://discord.gg/fcjGqB
+            throw(GroupLoadingError.processDataError("Couldn't load name"))
+        }
+        self.name = name // Set the name for this group
+        
+        // Attempt to load in the creator's UID
+        guard let creatorUID = value["creator"] as? String else {
+            // throw an error
+            throw(GroupLoadingError.processDataError("Couldn't load creatorUID"))
+        }
+        self.creatorUID = creatorUID
+        
+        // Attempt to load in the creation date
+        guard let creationDate = value["creationDate"] as? Double else {
+            // Throw an error
+            throw(GroupLoadingError.processDataError("Couldn't load creationDate"))
+        }
+        self.creationDate = creationDate
+        
+        // Check if there is members data - When will there not be?
+        // Will(should) always have at least 1 member(the creator)
+        guard let members = value["members"] as? [String : String] else {
+            throw(GroupLoadingError.processDataError("Couldn't load members"))
+        }
+        
+        // Format and load the members
+        for (uid, name) in members { // Iterate through all of the members
+            // And add them to the members list
+            self.members.append(uid)
+            
+            //TODO: Add them to UsersContainer?
+        }
+        
+        // Check if there is posts data
+        // Isn't a guard, as there's a chance that a post hasn't been uploaded to a Group
+        if let posts = value["posts"] as? [String: [String : Any]] {
+            // Format and load the posts in here
+            for (uid, data) in posts {
+                // Handle the posts, create them and add them to the lists of posts?
+                
+            }
+        }
     }
 }
 

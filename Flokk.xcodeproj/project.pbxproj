@@ -16,6 +16,7 @@
 		7FAD06F1213DC5DB00683608 /* firstVideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 7FAD06EF213DC5D900683608 /* firstVideo.mp4 */; };
 		7FAD06F2213DC5DB00683608 /* secondVideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 7FAD06F0213DC5DB00683608 /* secondVideo.mp4 */; };
 		7FEFAF842133A28B00D9537E /* BounceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8012B3210123B000CEA5DA /* BounceButton.swift */; };
+		8704F1C921E31C2500FD1239 /* ProcessGroupDataSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8704F1C821E31C2500FD1239 /* ProcessGroupDataSpec.swift */; };
 		8711A8432113E55D00CCFD38 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8711A8422113E55C00CCFD38 /* GoogleService-Info.plist */; };
 		87221A0A20F073F2000A00F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87221A0920F073F2000A00F7 /* AppDelegate.swift */; };
 		87221A1120F073F2000A00F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87221A1020F073F2000A00F7 /* Assets.xcassets */; };
@@ -77,6 +78,7 @@
 		7F912B9B211114E000ADABEE /* SignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
 		7FAD06EF213DC5D900683608 /* firstVideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = firstVideo.mp4; sourceTree = "<group>"; };
 		7FAD06F0213DC5DB00683608 /* secondVideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = secondVideo.mp4; sourceTree = "<group>"; };
+		8704F1C821E31C2500FD1239 /* ProcessGroupDataSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessGroupDataSpec.swift; sourceTree = "<group>"; };
 		8711A8422113E55C00CCFD38 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		87221A0620F073F2000A00F7 /* Flokk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flokk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87221A0920F073F2000A00F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 		8747921021CDD0240043C646 /* FlokkTests */ = {
 			isa = PBXGroup;
 			children = (
+				8704F1C821E31C2500FD1239 /* ProcessGroupDataSpec.swift */,
 				87552FA821D6FAB700A5F989 /* GroupSpec.swift */,
 				87552FAB21D6FAF800A5F989 /* UserSpec.swift */,
 				8747921321CDD0240043C646 /* Info.plist */,
@@ -612,6 +615,7 @@
 				87E6C92C21D83AAD0018FA1E /* AppDelegate.swift in Sources */,
 				87E6C92021D83A820018FA1E /* GroupsContainer.swift in Sources */,
 				87E6C92221D83A820018FA1E /* LocalFileController.swift in Sources */,
+				8704F1C921E31C2500FD1239 /* ProcessGroupDataSpec.swift in Sources */,
 				87E6C92321D83A850018FA1E /* GroupModelController.swift in Sources */,
 				87E6C92421D83A850018FA1E /* UserModelController.swift in Sources */,
 				87E6C92121D83A820018FA1E /* UsersContainer.swift in Sources */,
