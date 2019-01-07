@@ -13,7 +13,7 @@ import Foundation
 class PostModel {
     // Values
     var uid: String // The Unique ID for this post
-    var groupUID: String // The uid for the Group this post was uploaded in
+    var groupUID: String // The uid for the Group this post was uploaded in, how will/when will this be used?
     var timestamp: Double // The date in milliseconds when the post was uploaded
     var authorUID: String? // The uid of the user who uploaded this post
     

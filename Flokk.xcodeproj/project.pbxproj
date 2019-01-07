@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		781ADAE95BD2E1CD8A0CF242 /* Pods_FlokkTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CAC50DFCCBFC10E0EAACE67 /* Pods_FlokkTests.framework */; };
 		7F8012BB2102CBF200CEA5DA /* Camera.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F8012BA2102CBF200CEA5DA /* Camera.storyboard */; };
 		7F85D2C021115D93006E2772 /* JosefinSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7F8012A82100F69800CEA5DA /* JosefinSans-Regular.ttf */; };
 		7F85D2C121115D96006E2772 /* JosefinSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7F8012A72100F69800CEA5DA /* JosefinSans-Bold.ttf */; };
@@ -52,8 +53,7 @@
 		87E6C92C21D83AAD0018FA1E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87221A0920F073F2000A00F7 /* AppDelegate.swift */; };
 		87FE420521D0AFFD00F21343 /* UsersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FE420421D0AFFD00F21343 /* UsersController.swift */; };
 		87FE420921D0BC2C00F21343 /* PostModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FE420821D0BC2C00F21343 /* PostModelController.swift */; };
-		8A44DA3380245DB4A1D8DDB6 /* Pods_Flokk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CC8315ABC718F02FCB18558 /* Pods_Flokk.framework */; };
-		EDCD49F54E2FE593EDAF7226 /* Pods_FlokkTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0636656666CF4A090859FDC4 /* Pods_FlokkTests.framework */; };
+		99A6726D3DDB334CB753A2C2 /* Pods_Flokk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87935A7A0B0DE0EA12AAA30D /* Pods_Flokk.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,9 +67,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0636656666CF4A090859FDC4 /* Pods_FlokkTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlokkTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1CC8315ABC718F02FCB18558 /* Pods_Flokk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Flokk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2691C493DFF8B0ECEB98D40D /* Pods-FlokkTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlokkTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlokkTests/Pods-FlokkTests.release.xcconfig"; sourceTree = "<group>"; };
+		05A542291D4F292FED8F66E2 /* Pods-Flokk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flokk.release.xcconfig"; path = "Pods/Target Support Files/Pods-Flokk/Pods-Flokk.release.xcconfig"; sourceTree = "<group>"; };
+		7CAC50DFCCBFC10E0EAACE67 /* Pods_FlokkTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlokkTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F8012A72100F69800CEA5DA /* JosefinSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JosefinSans-Bold.ttf"; sourceTree = "<group>"; };
 		7F8012A82100F69800CEA5DA /* JosefinSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JosefinSans-Regular.ttf"; sourceTree = "<group>"; };
 		7F8012B3210123B000CEA5DA /* BounceButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BounceButton.swift; sourceTree = "<group>"; };
@@ -96,6 +95,7 @@
 		87552FBC21D6FEF700A5F989 /* GroupsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsController.swift; sourceTree = "<group>"; };
 		87552FBE21D6FF3D00A5F989 /* GroupsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsTableViewController.swift; sourceTree = "<group>"; };
 		87706DAC20F960B200663948 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		87935A7A0B0DE0EA12AAA30D /* Pods_Flokk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Flokk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		87C312AE214774CA00778B69 /* Flokk-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Flokk-Bridging-Header.h"; sourceTree = "<group>"; };
 		87CA26FD21C7304E00044016 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		87D2CEB0211A4D52007785DC /* ImageUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUtils.swift; sourceTree = "<group>"; };
@@ -107,9 +107,9 @@
 		87DE4D8C2138D93D00FC7DDB /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
 		87FE420421D0AFFD00F21343 /* UsersController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersController.swift; sourceTree = "<group>"; };
 		87FE420821D0BC2C00F21343 /* PostModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModelController.swift; sourceTree = "<group>"; };
-		A72F652DFF65AB2F1D46C791 /* Pods-Flokk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flokk.release.xcconfig"; path = "Pods/Target Support Files/Pods-Flokk/Pods-Flokk.release.xcconfig"; sourceTree = "<group>"; };
-		BB6C4BB180AEB5F54B0D653B /* Pods-FlokkTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlokkTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlokkTests/Pods-FlokkTests.debug.xcconfig"; sourceTree = "<group>"; };
-		E1F523477CB055965FABC969 /* Pods-Flokk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flokk.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Flokk/Pods-Flokk.debug.xcconfig"; sourceTree = "<group>"; };
+		8A8059A93E2FC108289DC64E /* Pods-FlokkTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlokkTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlokkTests/Pods-FlokkTests.release.xcconfig"; sourceTree = "<group>"; };
+		A5EFD961FB09D3ED503B221A /* Pods-FlokkTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlokkTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlokkTests/Pods-FlokkTests.debug.xcconfig"; sourceTree = "<group>"; };
+		CFA1B1CB7965CAFDC1FAF017 /* Pods-Flokk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flokk.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Flokk/Pods-Flokk.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,7 +117,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8A44DA3380245DB4A1D8DDB6 /* Pods_Flokk.framework in Frameworks */,
+				99A6726D3DDB334CB753A2C2 /* Pods_Flokk.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,13 +125,33 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EDCD49F54E2FE593EDAF7226 /* Pods_FlokkTests.framework in Frameworks */,
+				781ADAE95BD2E1CD8A0CF242 /* Pods_FlokkTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		284CE24C9F82EE3327F99BB2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CFA1B1CB7965CAFDC1FAF017 /* Pods-Flokk.debug.xcconfig */,
+				05A542291D4F292FED8F66E2 /* Pods-Flokk.release.xcconfig */,
+				A5EFD961FB09D3ED503B221A /* Pods-FlokkTests.debug.xcconfig */,
+				8A8059A93E2FC108289DC64E /* Pods-FlokkTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		375E4F04A2205E45FBAD2B55 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				87935A7A0B0DE0EA12AAA30D /* Pods_Flokk.framework */,
+				7CAC50DFCCBFC10E0EAACE67 /* Pods_FlokkTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		7F8012A92100F69D00CEA5DA /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -182,8 +202,8 @@
 				87221A0820F073F2000A00F7 /* Flokk */,
 				8747921021CDD0240043C646 /* FlokkTests */,
 				87221A0720F073F2000A00F7 /* Products */,
-				A03D4915936B06C38526DACE /* Pods */,
-				A2BAEC4BA54A1DA9956B7AD1 /* Frameworks */,
+				284CE24C9F82EE3327F99BB2 /* Pods */,
+				375E4F04A2205E45FBAD2B55 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -321,26 +341,6 @@
 			path = Framework;
 			sourceTree = "<group>";
 		};
-		A03D4915936B06C38526DACE /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				E1F523477CB055965FABC969 /* Pods-Flokk.debug.xcconfig */,
-				A72F652DFF65AB2F1D46C791 /* Pods-Flokk.release.xcconfig */,
-				BB6C4BB180AEB5F54B0D653B /* Pods-FlokkTests.debug.xcconfig */,
-				2691C493DFF8B0ECEB98D40D /* Pods-FlokkTests.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		A2BAEC4BA54A1DA9956B7AD1 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				1CC8315ABC718F02FCB18558 /* Pods_Flokk.framework */,
-				0636656666CF4A090859FDC4 /* Pods_FlokkTests.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -348,11 +348,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 87221A1820F073F2000A00F7 /* Build configuration list for PBXNativeTarget "Flokk" */;
 			buildPhases = (
-				C77B4669117C92B900AEAF36 /* [CP] Check Pods Manifest.lock */,
+				2FEEDD771B3E3126C286D6B3 /* [CP] Check Pods Manifest.lock */,
 				87221A0220F073F2000A00F7 /* Sources */,
 				87221A0320F073F2000A00F7 /* Frameworks */,
 				87221A0420F073F2000A00F7 /* Resources */,
-				7FE218101B1DBAB7594AE28D /* [CP] Embed Pods Frameworks */,
+				17107896C7403285D5DA86F5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -367,11 +367,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8747921621CDD0240043C646 /* Build configuration list for PBXNativeTarget "FlokkTests" */;
 			buildPhases = (
-				FA1EB5CE1B4D79903FF2C358 /* [CP] Check Pods Manifest.lock */,
+				C2A9A4A3F87E282BF79C0FB5 /* [CP] Check Pods Manifest.lock */,
 				8747920B21CDD0240043C646 /* Sources */,
 				8747920C21CDD0240043C646 /* Frameworks */,
 				8747920D21CDD0240043C646 /* Resources */,
-				34303C3CB8E8C59DF7A64403 /* [CP] Embed Pods Frameworks */,
+				5143ADF34619E8747BD777C1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -458,47 +458,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		34303C3CB8E8C59DF7A64403 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-FlokkTests/Pods-FlokkTests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher-iOS12.1/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleUtilities-iOS12.1/GoogleUtilities.framework",
-				"${BUILT_PRODUCTS_DIR}/NextLevel-iOS12.1/NextLevel.framework",
-				"${BUILT_PRODUCTS_DIR}/PINCache-iOS12.1/PINCache.framework",
-				"${BUILT_PRODUCTS_DIR}/PINOperation-iOS12.1/PINOperation.framework",
-				"${BUILT_PRODUCTS_DIR}/PINRemoteImage-iOS12.1/PINRemoteImage.framework",
-				"${BUILT_PRODUCTS_DIR}/PromisesObjC-iOS12.1/FBLPromises.framework",
-				"${BUILT_PRODUCTS_DIR}/PromisesSwift-iOS12.1/Promises.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyJSON-iOS12.1/SwiftyJSON.framework",
-				"${BUILT_PRODUCTS_DIR}/Texture-iOS12.1/AsyncDisplayKit.framework",
-				"${BUILT_PRODUCTS_DIR}/leveldb-library-iOS12.1/leveldb.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb-iOS12.1/nanopb.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NextLevel.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINCache.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINOperation.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINRemoteImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Promises.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AsyncDisplayKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FlokkTests/Pods-FlokkTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7FE218101B1DBAB7594AE28D /* [CP] Embed Pods Frameworks */ = {
+		17107896C7403285D5DA86F5 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -538,7 +498,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Flokk/Pods-Flokk-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C77B4669117C92B900AEAF36 /* [CP] Check Pods Manifest.lock */ = {
+		2FEEDD771B3E3126C286D6B3 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -556,7 +516,47 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		FA1EB5CE1B4D79903FF2C358 /* [CP] Check Pods Manifest.lock */ = {
+		5143ADF34619E8747BD777C1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-FlokkTests/Pods-FlokkTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher-iOS12.1/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities-iOS12.1/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/NextLevel-iOS12.1/NextLevel.framework",
+				"${BUILT_PRODUCTS_DIR}/PINCache-iOS12.1/PINCache.framework",
+				"${BUILT_PRODUCTS_DIR}/PINOperation-iOS12.1/PINOperation.framework",
+				"${BUILT_PRODUCTS_DIR}/PINRemoteImage-iOS12.1/PINRemoteImage.framework",
+				"${BUILT_PRODUCTS_DIR}/PromisesObjC-iOS12.1/FBLPromises.framework",
+				"${BUILT_PRODUCTS_DIR}/PromisesSwift-iOS12.1/Promises.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON-iOS12.1/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/Texture-iOS12.1/AsyncDisplayKit.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library-iOS12.1/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb-iOS12.1/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NextLevel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINCache.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINOperation.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINRemoteImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Promises.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AsyncDisplayKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FlokkTests/Pods-FlokkTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C2A9A4A3F87E282BF79C0FB5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -759,7 +759,7 @@
 		};
 		87221A1920F073F2000A00F7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E1F523477CB055965FABC969 /* Pods-Flokk.debug.xcconfig */;
+			baseConfigurationReference = CFA1B1CB7965CAFDC1FAF017 /* Pods-Flokk.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -779,7 +779,7 @@
 		};
 		87221A1A20F073F2000A00F7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A72F652DFF65AB2F1D46C791 /* Pods-Flokk.release.xcconfig */;
+			baseConfigurationReference = 05A542291D4F292FED8F66E2 /* Pods-Flokk.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -798,7 +798,7 @@
 		};
 		8747921721CDD0240043C646 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BB6C4BB180AEB5F54B0D653B /* Pods-FlokkTests.debug.xcconfig */;
+			baseConfigurationReference = A5EFD961FB09D3ED503B221A /* Pods-FlokkTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
@@ -821,7 +821,7 @@
 		};
 		8747921821CDD0240043C646 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2691C493DFF8B0ECEB98D40D /* Pods-FlokkTests.release.xcconfig */;
+			baseConfigurationReference = 8A8059A93E2FC108289DC64E /* Pods-FlokkTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;

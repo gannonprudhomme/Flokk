@@ -17,7 +17,7 @@ class UserModel {
     
     var profilePhoto: UIImage?
     
-    var groups = [String]() // Array of uids for the groups the user is in
+    var groups: [String]? // Array of uids for the groups the user is in
     
     // Constructor
     init(uid: String) {
