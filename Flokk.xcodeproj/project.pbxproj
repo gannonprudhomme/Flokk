@@ -39,7 +39,7 @@
 		87E6C91E21D83A7A0018FA1E /* GroupSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87552FA821D6FAB700A5F989 /* GroupSpec.swift */; };
 		87E6C91F21D83A7E0018FA1E /* UserSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87552FAB21D6FAF800A5F989 /* UserSpec.swift */; };
 		87E6C92021D83A820018FA1E /* GroupsContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D6800F21CE03D00098D80A /* GroupsContainer.swift */; };
-		87E6C92121D83A820018FA1E /* UsersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FE420421D0AFFD00F21343 /* UsersController.swift */; };
+		87E6C92121D83A820018FA1E /* UsersContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FE420421D0AFFD00F21343 /* UsersContainer.swift */; };
 		87E6C92221D83A820018FA1E /* LocalFileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D6800821CDE9560098D80A /* LocalFileController.swift */; };
 		87E6C92321D83A850018FA1E /* GroupModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8747920621CDCBCA0043C646 /* GroupModelController.swift */; };
 		87E6C92421D83A850018FA1E /* UserModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8747920821CDCBD30043C646 /* UserModelController.swift */; };
@@ -51,7 +51,7 @@
 		87E6C92A21D83A8C0018FA1E /* GroupsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87552FBC21D6FEF700A5F989 /* GroupsController.swift */; };
 		87E6C92B21D83A8C0018FA1E /* GroupsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87552FBE21D6FF3D00A5F989 /* GroupsTableViewController.swift */; };
 		87E6C92C21D83AAD0018FA1E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87221A0920F073F2000A00F7 /* AppDelegate.swift */; };
-		87FE420521D0AFFD00F21343 /* UsersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FE420421D0AFFD00F21343 /* UsersController.swift */; };
+		87FE420521D0AFFD00F21343 /* UsersContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FE420421D0AFFD00F21343 /* UsersContainer.swift */; };
 		87FE420921D0BC2C00F21343 /* PostModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FE420821D0BC2C00F21343 /* PostModelController.swift */; };
 		99A6726D3DDB334CB753A2C2 /* Pods_Flokk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87935A7A0B0DE0EA12AAA30D /* Pods_Flokk.framework */; };
 /* End PBXBuildFile section */
@@ -105,7 +105,7 @@
 		87D6800F21CE03D00098D80A /* GroupsContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsContainer.swift; sourceTree = "<group>"; };
 		87DE4D8A2138C46400FC7DDB /* myVideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = myVideo.mp4; path = Flokk/myVideo.mp4; sourceTree = "<group>"; };
 		87DE4D8C2138D93D00FC7DDB /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
-		87FE420421D0AFFD00F21343 /* UsersController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersController.swift; sourceTree = "<group>"; };
+		87FE420421D0AFFD00F21343 /* UsersContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersContainer.swift; sourceTree = "<group>"; };
 		87FE420821D0BC2C00F21343 /* PostModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModelController.swift; sourceTree = "<group>"; };
 		8A8059A93E2FC108289DC64E /* Pods-FlokkTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlokkTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlokkTests/Pods-FlokkTests.release.xcconfig"; sourceTree = "<group>"; };
 		A5EFD961FB09D3ED503B221A /* Pods-FlokkTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlokkTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlokkTests/Pods-FlokkTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -311,7 +311,7 @@
 			isa = PBXGroup;
 			children = (
 				87D6800F21CE03D00098D80A /* GroupsContainer.swift */,
-				87FE420421D0AFFD00F21343 /* UsersController.swift */,
+				87FE420421D0AFFD00F21343 /* UsersContainer.swift */,
 				87D6800821CDE9560098D80A /* LocalFileController.swift */,
 			);
 			path = Controllers;
@@ -584,7 +584,7 @@
 				87D2CF2C2127A33D007785DC /* FileUtils.swift in Sources */,
 				87FE420921D0BC2C00F21343 /* PostModelController.swift in Sources */,
 				8747920321C7739D0043C646 /* PostModel.swift in Sources */,
-				87FE420521D0AFFD00F21343 /* UsersController.swift in Sources */,
+				87FE420521D0AFFD00F21343 /* UsersContainer.swift in Sources */,
 				87552FBB21D6FEDB00A5F989 /* GroupsViewController.swift in Sources */,
 				87D6801021CE03D00098D80A /* GroupsContainer.swift in Sources */,
 				87D6800921CDE9560098D80A /* LocalFileController.swift in Sources */,
@@ -614,7 +614,7 @@
 				87E6C92221D83A820018FA1E /* LocalFileController.swift in Sources */,
 				87E6C92321D83A850018FA1E /* GroupModelController.swift in Sources */,
 				87E6C92421D83A850018FA1E /* UserModelController.swift in Sources */,
-				87E6C92121D83A820018FA1E /* UsersController.swift in Sources */,
+				87E6C92121D83A820018FA1E /* UsersContainer.swift in Sources */,
 				87E6C91F21D83A7E0018FA1E /* UserSpec.swift in Sources */,
 				87E6C92921D83A8C0018FA1E /* GroupsViewController.swift in Sources */,
 				87E6C92621D83A890018FA1E /* UserModel.swift in Sources */,

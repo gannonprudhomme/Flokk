@@ -10,7 +10,7 @@ import Foundation
 import Promises
 
 // Contains a global instance of all of the users within the app
-class UsersController {
+class UsersContainer {
     var usersDict: [String : UserModel] = [:] // Dictionary of the users currently loaded within the app
     
     // Load the user's data from the database(all of it expect the profile photo)
@@ -28,7 +28,7 @@ class UsersController {
     }
 }
 
-extension UsersController {
+extension UsersContainer {
     func mapContainsUser(uid: String) -> Bool {
         return usersDict.contains(where: { key, value in
             return key == uid
