@@ -22,6 +22,7 @@ class UserModel {
     // Constructor
     init(uid: String) {
         self.uid = uid
+        self.groups = [String]()
         
         // If the UID has a space in it, some sort of error should be thrown
     }
