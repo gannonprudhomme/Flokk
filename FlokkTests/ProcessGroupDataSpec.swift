@@ -130,8 +130,6 @@ class ProcessGroupDataSpec: XCTestCase {
             data["members"] = members
         }
         
-        print(data)
-        
         return data
     }
 

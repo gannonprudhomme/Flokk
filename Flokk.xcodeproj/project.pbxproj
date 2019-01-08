@@ -256,8 +256,8 @@
 		8747921021CDD0240043C646 /* FlokkTests */ = {
 			isa = PBXGroup;
 			children = (
-				8704F1C821E31C2500FD1239 /* ProcessGroupDataSpec.swift */,
 				87552FA821D6FAB700A5F989 /* GroupSpec.swift */,
+				8704F1C821E31C2500FD1239 /* ProcessGroupDataSpec.swift */,
 				87552FAB21D6FAF800A5F989 /* UserSpec.swift */,
 				8747921321CDD0240043C646 /* Info.plist */,
 			);
