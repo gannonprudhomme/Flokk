@@ -14,8 +14,10 @@ install:
   - pod install
 
 script:
+   - fastlane scan
 #  From recommended template from CocoaPods GitHub
-  - set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace ./Flokk.xcworkspace -scheme Flokk -sdk iphonesimulator9.3 ONLY_ACTIVE_ARCH=NO
-  - pod lib lint
+#  - set -o pipefail
+#  - xcodebuild test -enableCodeCoverage YES -workspace ./Flokk.xcworkspace -scheme Flokk -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
+#  - pod lib lint
 
-  - fastlane scan FlokkTests
+# - fastlane scan FlokkTests
