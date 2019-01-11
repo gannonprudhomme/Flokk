@@ -79,7 +79,9 @@ extension GroupModel {
     // Load the group's icon from Storage - Should this be in here?
     func loadGroupIcon() -> Promise<UIImage?> {
         return Promise{ fulfill, reject in
-            // First check if the Group is loaded & exists in the database, or is this not necessary'
+            // First check if the Group is loaded & exists in the database, or is this not necessary
+            
+            // Check if it's saved locally?
             
             fulfill(nil)
         }
@@ -162,11 +164,33 @@ extension GroupModel {
         
         // Upload the group icon to storage
     }
+    
+    // Called when deleting a group
+    func deleteGroupFromDatabase() {
+        
+        
+        // Delete all of the posts in Storage
+    }
 }
 
 extension GroupModel {
-    // Add a post to this group
-    func uploadPost(post: PostModel) {
+    // Add a post to this group, and upload it to the database under this group
+    // Is this post already going to be in our group? 
+    func addPost(post: PostModel) {
         // How should I handle uploading the post to Storage?
+        
+        // Add it to the database under this group
+        
+        // Add it to UsersContainer? Guess this could happen later
+    }
+    
+    // Add a user to this group
+    // Called when a user adds/invites a user to this group
+    func addUser(user: UserModel) {
+        // Add the user's uid to the members list
+        
+        // Add the user's uid & their handle to the members in the database
+        
+        // Update the GroupSettingsView?
     }
 }
