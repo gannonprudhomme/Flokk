@@ -2,12 +2,14 @@ language: swift
 os: osx
 osx_image: xcode10.1
 xcode_project: Flokk.xcworkspace
-xcode_scheme: FlokkTests
 podfile: Podfile
 
 before_install:
   - gem install cocoapods
   - gem install fastlane
+
+install
+  - pod install
 
 script:
   - fastlane scan FlokkTests
