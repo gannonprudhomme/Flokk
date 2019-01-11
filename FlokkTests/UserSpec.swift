@@ -9,14 +9,33 @@
 import XCTest
 
 class UserSpec: XCTestCase {
-
     override func setUp() {
     }
 
     override func tearDown() {
     }
+    
+    // Test loading the test user from the database
+    func testUserLoadFromDatabase() {
+        var user = UserModel(uid: "B7aPv6ytLdOFUskBcYkj66WfjIg2") // uid of the testuser, retrieved manually
+        
+        let expect = expectation(description: "Test User Loading")
+        
+        user.loadUserFromDatabase().then({ retUser in
+            XCTAssertEqual(retUser.handle, user.handle)
+            XCTAssertEqual(user.handle, "testuser")
+            XCTAssertEqual(user.fullName, "Test User")
+            
+            expect.fulfill()
+        }).catch({error in
+            XCTAssert(false)
+        })
+        
+        // Wait for 3 seconds for the database call to return before evaluating this test
+        wait(for: [expect], timeout: 5)
+    }
 
-    // TODO: Add groups testing
+    // Test processing user data with all data present
     func testUserDataProcessing() {
         let groups: [String : String] = [
             "group1": "idk"

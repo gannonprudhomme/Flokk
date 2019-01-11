@@ -21,9 +21,9 @@ enum UserLoadingError: Error {
 extension UserModel {
     // Load in the user from the database and set the according values
     // When would this be called?
-    func loadUserFromDatabase(uid: String) -> Promise<UserModel> {
+    func loadUserFromDatabase() -> Promise<UserModel> {
         return Promise { fulfill, reject in
-            database.child("users").child(uid).observeSingleEvent(of: .value, with: { (snapshot) in
+            database.child("users").child(self.uid).observeSingleEvent(of: .value, with: { (snapshot) in
                 guard let value = snapshot.value as? [String : Any] else {
                     reject(UserLoadingError.databaseLoadingError)
                     return // Reject should serve as a return, but have to add this to silence Swift
@@ -31,10 +31,10 @@ extension UserModel {
                 
                 // Process user data
                 do {
+                    // Attempt to process the user data, returns an error if its missing any vital information
                     try self.processUserData(value)
                 } catch let error as UserLoadingError {
                     reject(error)
-                    
                 } catch { // Catch any other errors
                     reject(error)
                 }
@@ -42,6 +42,9 @@ extension UserModel {
                 // Save the current user data to a local file(only for main user?)
                 
                 // Load the user's profile photo?
+                
+                // Done, fulfill the Promise
+                fulfill(self)
             })
         }
     }
@@ -58,6 +61,7 @@ extension UserModel {
     // Need to process different user data, depending on if we're downloading main user data or not
     // When is this called? Checking a user's profile?
     func processUserData(_ value: [String : Any]) throws {
+        // TODO: Need to throw an error if the handle has a space in it, or is too many characters long
         // Attempt to load in the user's handle from the data
         guard let handle = value["handle"] as? String else {
             throw(UserLoadingError.processDataError("Coudln't load in handle"))
