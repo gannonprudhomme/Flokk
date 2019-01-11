@@ -2,15 +2,16 @@ language: swift
 os: osx
 osx_image: xcode10.1
 xcode_project: Flokk.xcworkspace
+xcode_destination: platform=iOS Simulator, iOS = 11.0, name=iPhone X
 podfile: Podfile
 
 before_install:
   - gem install cocoapods
+  - pod repo update
+  - pod install
 
 install:
   - bundle install
-  - pod repo update
-  - pod install
 
 script:
   - fastlane beta
