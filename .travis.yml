@@ -7,7 +7,7 @@ podfile: Podfile
 
 before_install:
   - gem install cocoapods
-  - gem install fastlane --no-ri --nordoc --no-document
+  - gem install fastlane
 
 script:
   - fastlane scan -s FlokkTests
