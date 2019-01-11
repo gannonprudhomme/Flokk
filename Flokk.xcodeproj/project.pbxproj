@@ -18,9 +18,12 @@
 		7FEFAF842133A28B00D9537E /* BounceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8012B3210123B000CEA5DA /* BounceButton.swift */; };
 		8704F1C921E31C2500FD1239 /* ProcessGroupDataSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8704F1C821E31C2500FD1239 /* ProcessGroupDataSpec.swift */; };
 		8711A8432113E55D00CCFD38 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8711A8422113E55C00CCFD38 /* GoogleService-Info.plist */; };
-		87221A0A20F073F2000A00F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87221A0920F073F2000A00F7 /* AppDelegate.swift */; };
 		87221A1120F073F2000A00F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87221A1020F073F2000A00F7 /* Assets.xcassets */; };
 		87221A1420F073F2000A00F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87221A1220F073F2000A00F7 /* LaunchScreen.storyboard */; };
+		873CD2EF21E83BCE0032546B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873CD2EE21E83BCE0032546B /* main.swift */; };
+		873CD2F121E83FCF0032546B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873CD2EE21E83BCE0032546B /* main.swift */; };
+		873CD2F221E840AA0032546B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87221A0920F073F2000A00F7 /* AppDelegate.swift */; };
+		873CD2F321E842800032546B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87221A0920F073F2000A00F7 /* AppDelegate.swift */; };
 		8747920321C7739D0043C646 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8747920221C7739D0043C646 /* PostModel.swift */; };
 		8747920521C774650043C646 /* GroupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8747920421C774650043C646 /* GroupModel.swift */; };
 		8747920721CDCBCA0043C646 /* GroupModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8747920621CDCBCA0043C646 /* GroupModelController.swift */; };
@@ -51,14 +54,13 @@
 		87E6C92921D83A8C0018FA1E /* GroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87552FBA21D6FEDB00A5F989 /* GroupsViewController.swift */; };
 		87E6C92A21D83A8C0018FA1E /* GroupsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87552FBC21D6FEF700A5F989 /* GroupsController.swift */; };
 		87E6C92B21D83A8C0018FA1E /* GroupsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87552FBE21D6FF3D00A5F989 /* GroupsTableViewController.swift */; };
-		87E6C92C21D83AAD0018FA1E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87221A0920F073F2000A00F7 /* AppDelegate.swift */; };
 		87FE420521D0AFFD00F21343 /* UsersContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FE420421D0AFFD00F21343 /* UsersContainer.swift */; };
 		87FE420921D0BC2C00F21343 /* PostModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FE420821D0BC2C00F21343 /* PostModelController.swift */; };
 		99A6726D3DDB334CB753A2C2 /* Pods_Flokk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87935A7A0B0DE0EA12AAA30D /* Pods_Flokk.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		8747924121CDDF290043C646 /* PBXContainerItemProxy */ = {
+		873CD2E921E83A0C0032546B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 872219FE20F073F2000A00F7 /* Project object */;
 			proxyType = 1;
@@ -85,6 +87,7 @@
 		87221A1020F073F2000A00F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		87221A1320F073F2000A00F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		87221A1520F073F2000A00F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		873CD2EE21E83BCE0032546B /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		8747920221C7739D0043C646 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
 		8747920421C774650043C646 /* GroupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupModel.swift; sourceTree = "<group>"; };
 		8747920621CDCBCA0043C646 /* GroupModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupModelController.swift; sourceTree = "<group>"; };
@@ -231,6 +234,7 @@
 				7F912B972110DB8E00ADABEE /* Groups.storyboard */,
 				7F912B9B211114E000ADABEE /* SignUp.storyboard */,
 				87221A1020F073F2000A00F7 /* Assets.xcassets */,
+				873CD2EE21E83BCE0032546B /* main.swift */,
 				87221A0920F073F2000A00F7 /* AppDelegate.swift */,
 				87221A1220F073F2000A00F7 /* LaunchScreen.storyboard */,
 				8711A8422113E55C00CCFD38 /* GoogleService-Info.plist */,
@@ -379,7 +383,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				8747924221CDDF290043C646 /* PBXTargetDependency */,
+				873CD2EA21E83A0C0032546B /* PBXTargetDependency */,
 			);
 			name = FlokkTests;
 			productName = FlokkTests;
@@ -586,6 +590,7 @@
 			files = (
 				87D2CF2C2127A33D007785DC /* FileUtils.swift in Sources */,
 				87FE420921D0BC2C00F21343 /* PostModelController.swift in Sources */,
+				873CD2F221E840AA0032546B /* AppDelegate.swift in Sources */,
 				8747920321C7739D0043C646 /* PostModel.swift in Sources */,
 				87FE420521D0AFFD00F21343 /* UsersContainer.swift in Sources */,
 				87552FBB21D6FEDB00A5F989 /* GroupsViewController.swift in Sources */,
@@ -596,9 +601,9 @@
 				87DE4D8D2138D93D00FC7DDB /* DateUtils.swift in Sources */,
 				87D2CEC221223B2B007785DC /* VideoUtils.swift in Sources */,
 				87552FBF21D6FF3D00A5F989 /* GroupsTableViewController.swift in Sources */,
-				87221A0A20F073F2000A00F7 /* AppDelegate.swift in Sources */,
 				87D2CEB1211A4D52007785DC /* ImageUtils.swift in Sources */,
 				87552FBD21D6FEF700A5F989 /* GroupsController.swift in Sources */,
+				873CD2EF21E83BCE0032546B /* main.swift in Sources */,
 				87CA26FE21C7304E00044016 /* UserModel.swift in Sources */,
 				8747920921CDCBD30043C646 /* UserModelController.swift in Sources */,
 				8747920721CDCBCA0043C646 /* GroupModelController.swift in Sources */,
@@ -611,8 +616,8 @@
 			files = (
 				87E6C91E21D83A7A0018FA1E /* GroupSpec.swift in Sources */,
 				87E6C92721D83A890018FA1E /* GroupModel.swift in Sources */,
+				873CD2F321E842800032546B /* AppDelegate.swift in Sources */,
 				87E6C92A21D83A8C0018FA1E /* GroupsController.swift in Sources */,
-				87E6C92C21D83AAD0018FA1E /* AppDelegate.swift in Sources */,
 				87E6C92021D83A820018FA1E /* GroupsContainer.swift in Sources */,
 				87E6C92221D83A820018FA1E /* LocalFileController.swift in Sources */,
 				8704F1C921E31C2500FD1239 /* ProcessGroupDataSpec.swift in Sources */,
@@ -622,6 +627,7 @@
 				87E6C91F21D83A7E0018FA1E /* UserSpec.swift in Sources */,
 				87E6C92921D83A8C0018FA1E /* GroupsViewController.swift in Sources */,
 				87E6C92621D83A890018FA1E /* UserModel.swift in Sources */,
+				873CD2F121E83FCF0032546B /* main.swift in Sources */,
 				87E6C92B21D83A8C0018FA1E /* GroupsTableViewController.swift in Sources */,
 				87E6C92521D83A850018FA1E /* PostModelController.swift in Sources */,
 				87E6C92821D83A890018FA1E /* PostModel.swift in Sources */,
@@ -631,10 +637,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		8747924221CDDF290043C646 /* PBXTargetDependency */ = {
+		873CD2EA21E83A0C0032546B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 87221A0520F073F2000A00F7 /* Flokk */;
-			targetProxy = 8747924121CDDF290043C646 /* PBXContainerItemProxy */;
+			targetProxy = 873CD2E921E83A0C0032546B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

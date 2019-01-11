@@ -18,7 +18,6 @@ var storage: StorageReference!
 // GroupsContainer instance?
 // UsersContainer instance?
 
-@UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
@@ -29,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Load Firebase Database and Storage references to be used throughout the app
         database = Database.database().reference()
         storage = Storage.storage().reference()
-    
+        
         return true
     }
 
