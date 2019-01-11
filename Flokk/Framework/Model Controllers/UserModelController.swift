@@ -12,6 +12,7 @@ import Promises
 import FirebaseAuth
 
 enum UserLoadingError: Error {
+    case databaseLoadingError
     case processDataError(String)
 }
 
@@ -19,22 +20,34 @@ enum UserLoadingError: Error {
 // Adds various data loading functions from the database
 extension UserModel {
     // Load in the user from the database and set the according values
+    // When would this be called?
     func loadUserFromDatabase(uid: String) -> Promise<UserModel> {
         return Promise { fulfill, reject in
             database.child("users").child(uid).observeSingleEvent(of: .value, with: { (snapshot) in
-                if let value = snapshot.value as? [String : Any] {
-                    // Process user data
-                    
-                    // Save the current user data to a local file(only for main user?)
-                    
-                    // Load the user's profile photo?
+                guard let value = snapshot.value as? [String : Any] else {
+                    reject(UserLoadingError.databaseLoadingError)
+                    return // Reject should serve as a return, but have to add this to silence Swift
                 }
+                
+                // Process user data
+                do {
+                    try self.processUserData(value)
+                } catch let error as UserLoadingError {
+                    reject(error)
+                    
+                } catch { // Catch any other errors
+                    reject(error)
+                }
+                
+                // Save the current user data to a local file(only for main user?)
+                
+                // Load the user's profile photo?
             })
         }
     }
     
     // Load the user's profile photo from Storage
-    func loadUserPhoto(uid: String) -> Promise<UIImage?> {
+    func loadProfilePhoto(uid: String) -> Promise<UIImage?> {
         return Promise { fulfill, reject in
             // Load in the photo from Storage, and return nil if it doesn't exist?
             
@@ -107,5 +120,18 @@ extension UserModel {
                 
             }
         }
+    }
+}
+
+// Upload stuff?
+extension UserModel {
+    // Called after creating a new account?
+    func uploadUser() {
+        
+    }
+    
+    // Called after changing a user's profile photo?
+    func uploadProfilePhoto() {
+        
     }
 }
