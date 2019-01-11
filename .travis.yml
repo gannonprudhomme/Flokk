@@ -6,11 +6,12 @@ podfile: Podfile
 
 before_install:
   - gem install cocoapods
-  - gem install fastlane
 
 install:
-  - pod repo update 
+  - bundle install
+  - pod repo update
   - pod install
 
 script:
+  - fastlane beta
   - fastlane scan FlokkTests

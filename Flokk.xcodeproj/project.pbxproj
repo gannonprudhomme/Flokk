@@ -33,6 +33,7 @@
 		87552FBD21D6FEF700A5F989 /* GroupsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87552FBC21D6FEF700A5F989 /* GroupsController.swift */; };
 		87552FBF21D6FF3D00A5F989 /* GroupsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87552FBE21D6FF3D00A5F989 /* GroupsTableViewController.swift */; };
 		87706DAD20F960B200663948 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 87706DAC20F960B200663948 /* .gitignore */; };
+		879D333A21E858EF00EECD14 /* Gemfile in Resources */ = {isa = PBXBuildFile; fileRef = 879D333921E858EF00EECD14 /* Gemfile */; };
 		87CA26FE21C7304E00044016 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CA26FD21C7304E00044016 /* UserModel.swift */; };
 		87D2CEB1211A4D52007785DC /* ImageUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D2CEB0211A4D52007785DC /* ImageUtils.swift */; };
 		87D2CEC221223B2B007785DC /* VideoUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D2CEC121223B2B007785DC /* VideoUtils.swift */; };
@@ -103,6 +104,7 @@
 		87552FBE21D6FF3D00A5F989 /* GroupsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsTableViewController.swift; sourceTree = "<group>"; };
 		87706DAC20F960B200663948 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		87935A7A0B0DE0EA12AAA30D /* Pods_Flokk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Flokk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		879D333921E858EF00EECD14 /* Gemfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Gemfile; sourceTree = SOURCE_ROOT; };
 		87C312AE214774CA00778B69 /* Flokk-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Flokk-Bridging-Header.h"; sourceTree = "<group>"; };
 		87CA26FD21C7304E00044016 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		87D2CEB0211A4D52007785DC /* ImageUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUtils.swift; sourceTree = "<group>"; };
@@ -227,6 +229,7 @@
 		87221A0820F073F2000A00F7 /* Flokk */ = {
 			isa = PBXGroup;
 			children = (
+				879D333921E858EF00EECD14 /* Gemfile */,
 				87D2CEA821167524007785DC /* Sign Up */,
 				87D2CEB6211A5E7D007785DC /* Groups */,
 				8711A834210D478100CCFD38 /* Feed */,
@@ -455,6 +458,7 @@
 				7F85D2C021115D93006E2772 /* JosefinSans-Regular.ttf in Resources */,
 				7F912B9C211114E000ADABEE /* SignUp.storyboard in Resources */,
 				7F912B982110DB8E00ADABEE /* Groups.storyboard in Resources */,
+				879D333A21E858EF00EECD14 /* Gemfile in Resources */,
 				8711A8432113E55D00CCFD38 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
