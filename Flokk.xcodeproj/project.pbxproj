@@ -24,6 +24,7 @@
 		873CD2F121E83FCF0032546B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873CD2EE21E83BCE0032546B /* main.swift */; };
 		873CD2F221E840AA0032546B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87221A0920F073F2000A00F7 /* AppDelegate.swift */; };
 		873CD2F321E842800032546B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87221A0920F073F2000A00F7 /* AppDelegate.swift */; };
+		873CD2F721E849DD0032546B /* .travis.yml in Resources */ = {isa = PBXBuildFile; fileRef = 873CD2F621E849DD0032546B /* .travis.yml */; };
 		8747920321C7739D0043C646 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8747920221C7739D0043C646 /* PostModel.swift */; };
 		8747920521C774650043C646 /* GroupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8747920421C774650043C646 /* GroupModel.swift */; };
 		8747920721CDCBCA0043C646 /* GroupModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8747920621CDCBCA0043C646 /* GroupModelController.swift */; };
@@ -88,6 +89,7 @@
 		87221A1320F073F2000A00F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		87221A1520F073F2000A00F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		873CD2EE21E83BCE0032546B /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		873CD2F621E849DD0032546B /* .travis.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
 		8747920221C7739D0043C646 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
 		8747920421C774650043C646 /* GroupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupModel.swift; sourceTree = "<group>"; };
 		8747920621CDCBCA0043C646 /* GroupModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupModelController.swift; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 		872219FD20F073F2000A00F7 = {
 			isa = PBXGroup;
 			children = (
+				873CD2F621E849DD0032546B /* .travis.yml */,
 				7FAD06EF213DC5D900683608 /* firstVideo.mp4 */,
 				7FAD06F0213DC5DB00683608 /* secondVideo.mp4 */,
 				87DE4D8A2138C46400FC7DDB /* myVideo.mp4 */,
@@ -441,6 +444,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				87DE4D8B2138C46500FC7DDB /* myVideo.mp4 in Resources */,
+				873CD2F721E849DD0032546B /* .travis.yml in Resources */,
 				7FAD06F2213DC5DB00683608 /* secondVideo.mp4 in Resources */,
 				87706DAD20F960B200663948 /* .gitignore in Resources */,
 				87221A1420F073F2000A00F7 /* LaunchScreen.storyboard in Resources */,
