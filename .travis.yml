@@ -10,4 +10,4 @@ before_install:
   - gem install fastlane
 
 script:
-  - fastlane scan -s FlokkTests
+  - fastlane scan FlokkTests
