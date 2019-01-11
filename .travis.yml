@@ -8,11 +8,6 @@ podfile: Podfile
 before_install:
   - gem install cocoapods
   - gem install fastlane --no-ri --nordoc --no-document
-install
-  -
-jobs:
-    include:
-        - stage: XCTTest
-          script:
-            - fastlane scan -s FlokkTests
 
+script:
+  - fastlane scan -s FlokkTests
