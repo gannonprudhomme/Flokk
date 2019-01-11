@@ -9,6 +9,7 @@ before_install:
   - gem install fastlane
 
 install:
+  - pod repo update 
   - pod install
 
 script:
