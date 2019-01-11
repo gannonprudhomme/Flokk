@@ -7,6 +7,12 @@ podfile: Podfile
 
 before_install:
   - gem install cocoapods
-script:
-  - set -o pipefail
-    - xcodebuild clean build -sdk iphonesimulator -workspace Flokk.xcworkspace -scheme Flokk CODE_SIGNING_REQUIRED=NO
+  - gem install fastlane --no-ri --nordoc --no-document
+install
+  -
+jobs:
+    include:
+        - stage: XCTTest
+          script:
+            - fastlane scan -s FlokkTests
+
