@@ -8,7 +8,7 @@ before_install:
   - gem install cocoapods
   - gem install fastlane
 
-install
+install:
   - pod install
 
 script:
