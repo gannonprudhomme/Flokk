@@ -1,4 +1,30 @@
-FlokkTests/
-FlokkUITests/
+## Build generated
 build/
-.DS_STORE
+DerivedData/
+
+## Various settings
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3asdfasdf
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata/
+
+## For some reason excluding xcuserdata/ isn't doing the trick
+Flokk.xcworkspace/xcuserdata/
+
+## Other
+*.moved-aside
+*.xccheckout
+*.xcscmblueprint
+
+## Obj-C/Swift specific
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+.DS_Store

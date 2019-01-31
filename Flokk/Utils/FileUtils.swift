@@ -149,7 +149,7 @@ class FileUtils {
     }
     
     // Save the group icon currently saved in group.icon to the disk
-    static func saveGroupIcon(group: Group) {
+    static func saveGroupIcon(group: GroupModel) {
         saveImage(image: group.icon!, toPath: "groups/\(group.uid)/icon.jpg")
     }
     
@@ -162,11 +162,11 @@ class FileUtils {
 // JSON Manipulation functions for app framework
 extension FileUtils {
     // Save the group to the user's json file and make one for it
-    static func saveGroup(_ group: Group) {
+    static func saveGroup(_ group: GroupModel) {
         
     }
     
-    static func deleteGroup(_ group: Group) {
+    static func deleteGroup(_ group: GroupModel) {
         
     }
 }

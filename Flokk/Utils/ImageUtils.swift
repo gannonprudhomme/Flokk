@@ -19,6 +19,7 @@ extension UIImage {
     }
     
     // Compress an image to reduce file size in order to save data
+    // Currently unused
     func compressImage() -> UIImage {
         let actualHeight:CGFloat = self.size.height
         let actualWidth:CGFloat = self.size.width
@@ -37,6 +38,7 @@ extension UIImage {
         return UIImage(data: imageData)!
     }
     
+    // Unused
     func resized(withPercentage percentage: CGFloat) -> UIImage? {
         let canvasSize = CGSize(width: size.width * percentage, height: size.height * percentage)
         
@@ -47,6 +49,7 @@ extension UIImage {
         return UIGraphicsGetImageFromCurrentImageContext()
     }
     
+    // Unused
     func resized(toWidth width: CGFloat) -> UIImage? {
         let canvasSize = CGSize(width: width, height: CGFloat(ceil(width/size.width * size.height)))
         
@@ -57,6 +60,7 @@ extension UIImage {
         return UIGraphicsGetImageFromCurrentImageContext()
     }
     
+    // Unused
     static func generateProfilePhotoWithText(text: String) -> UIImage {
         let image = UIImage(named: "Grey Empty Profile Picture")!
         
